@@ -1,4 +1,6 @@
 ProgrammingExercises
 ====================
 
-1. Trie
+1. **TRIE**
+    - Add
+    - Delete

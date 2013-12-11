@@ -1,45 +1,26 @@
 package com.cllin.main;
 
-import com.cllin.trie.Trie;
+import com.cllin.chap19.Exercise19_10;
+import com.cllin.trie.TrieExercise;
 
 public class Main {
-	private static final int TRIE = 1;
+	public static final int TRIE = 1;
+	public static final int EX19_10 = 1910;
 	
 	public static void main(String args[]){
-		int option = TRIE;
+		Exercise exercise = null;;
+		
+		int option = EX19_10;
 
 		switch(option){
 			case TRIE:
-				trie();
+				exercise = new TrieExercise();
+				break;
+			case EX19_10:
+				exercise = new Exercise19_10();
 				break;
 		}
-	}
-	
-	private static void trie(){
-		String apple = "apple";
-		String apartment = "apartment";
-		String apart = "apart";
-		String aparent = "aparent";
-		String android = "android";
-		String banana = "banana";
-		String mouse = "mouse";
-		String stapler = "stapler";
 		
-		Trie trie = new Trie();
-		trie.add(apple);
-		trie.add(aparent);
-		trie.add(apart);
-		trie.add(apartment);
-		trie.add(android);
-		trie.add(banana);
-		
-		trie.find(mouse);
-		trie.find(stapler);
-		trie.find(android);
-		trie.find(apple);
-		trie.find(banana);
-		
-		trie.delete(apple);
-		trie.find(apple);
+		exercise.runExercise();
 	}
 }

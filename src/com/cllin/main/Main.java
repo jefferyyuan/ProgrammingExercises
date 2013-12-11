@@ -1,16 +1,18 @@
 package com.cllin.main;
 
+import com.cllin.chap19.Exercise19_08;
 import com.cllin.chap19.Exercise19_10;
 import com.cllin.trie.TrieExercise;
 
 public class Main {
 	public static final int TRIE = 1;
 	public static final int EX19_10 = 1910;
+	public static final int EX19_08 = 1908;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = EX19_10;
+		int option = EX19_08;
 
 		switch(option){
 			case TRIE:
@@ -18,6 +20,9 @@ public class Main {
 				break;
 			case EX19_10:
 				exercise = new Exercise19_10();
+				break;
+			case EX19_08:
+				exercise = new Exercise19_08();
 				break;
 		}
 		

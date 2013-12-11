@@ -30,7 +30,7 @@ public class Exercise19_10 implements Exercise{
 			}
 			System.out.println("P(" + (i + 1) + ")=" + ((float)numberCount[i]/nTests * 100) + "%");
 		}
-		System.out.println("Passed");		
+		System.out.println("Passed");
 	}
 	
 	private int rand7(){

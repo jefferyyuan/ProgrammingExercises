@@ -8,6 +8,10 @@
     - Add
     - Delete
 
+###OPERATOR
+	
+1. **EXCLUSIVE OR**
+
 ###EXERCISE FROM CRACKING THE CODING INTERVIEW
 
 1. **EXERCISE 19-10**

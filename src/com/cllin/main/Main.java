@@ -1,5 +1,8 @@
 package com.cllin.main;
 
+import com.cllin.chap14.Exercise14_01;
+import com.cllin.chap14.Exercise14_02;
+import com.cllin.chap14.Exercise14_03;
 import com.cllin.chap19.Exercise19_01;
 import com.cllin.chap19.Exercise19_03;
 import com.cllin.chap19.Exercise19_05;
@@ -28,11 +31,14 @@ public class Main {
 	public static final int EX19_05 = 1905;
 	public static final int EX19_03 = 1903;
 	public static final int EX19_01 = 1901;
+	public static final int EX14_03 = 1403;
+	public static final int EX14_02 = 1402;
+	public static final int EX14_01 = 1401;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = LINKEDLIST;
+		int option = EX14_03;
 
 		switch(option){
 			case TRIE:
@@ -73,6 +79,15 @@ public class Main {
 				break;
 			case EX19_01:
 				exercise = new Exercise19_01();
+				break;
+			case EX14_03:
+				exercise = new Exercise14_03();
+				break;
+			case EX14_02:
+				exercise = new Exercise14_02();
+				break;
+			case EX14_01:
+				exercise = new Exercise14_01();
 				break;
 		}
 		

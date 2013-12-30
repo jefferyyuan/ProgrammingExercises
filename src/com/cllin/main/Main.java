@@ -3,11 +3,13 @@ package com.cllin.main;
 import com.cllin.chap14.Exercise14_01;
 import com.cllin.chap14.Exercise14_02;
 import com.cllin.chap14.Exercise14_03;
+import com.cllin.chap14.Exercise14_04;
 import com.cllin.chap19.Exercise19_01;
 import com.cllin.chap19.Exercise19_03;
 import com.cllin.chap19.Exercise19_05;
 import com.cllin.chap19.Exercise19_08;
 import com.cllin.chap19.Exercise19_10;
+import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
 import com.cllin.operator.ExclusiveOR;
@@ -26,11 +28,13 @@ public class Main {
 	public static final int SYNCHRONIZATION = 6;
 	public static final int DEADLOCK = 7;
 	public static final int LINKEDLIST = 8;
+	public static final int EXTENDANDSUPER = 9;
 	public static final int EX19_10 = 1910;
 	public static final int EX19_08 = 1908;
 	public static final int EX19_05 = 1905;
 	public static final int EX19_03 = 1903;
 	public static final int EX19_01 = 1901;
+	public static final int EX14_04 = 1404;
 	public static final int EX14_03 = 1403;
 	public static final int EX14_02 = 1402;
 	public static final int EX14_01 = 1401;
@@ -38,7 +42,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = EX14_03;
+		int option = EXTENDANDSUPER;
 
 		switch(option){
 			case TRIE:
@@ -65,6 +69,9 @@ public class Main {
 			case LINKEDLIST:
 				exercise = new LinkedListExercise();
 				break;
+			case EXTENDANDSUPER:
+				exercise = new ExtendAndSuper();
+				break;
 			case EX19_10:
 				exercise = new Exercise19_10();
 				break;
@@ -79,6 +86,9 @@ public class Main {
 				break;
 			case EX19_01:
 				exercise = new Exercise19_01();
+				break;
+			case EX14_04:
+				exercise = new Exercise14_04();
 				break;
 			case EX14_03:
 				exercise = new Exercise14_03();

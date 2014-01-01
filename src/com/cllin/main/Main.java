@@ -1,5 +1,7 @@
 package com.cllin.main;
 
+import com.cllin.chap10.Exercise10_07;
+import com.cllin.chap11.Exercise11_01;
 import com.cllin.chap14.Exercise14_01;
 import com.cllin.chap14.Exercise14_02;
 import com.cllin.chap14.Exercise14_03;
@@ -40,11 +42,13 @@ public class Main {
 	public static final int EX14_03 = 1403;
 	public static final int EX14_02 = 1402;
 	public static final int EX14_01 = 1401;
+	public static final int EX11_01 = 1101;
+	public static final int EX10_07 = 1007;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = EX14_05;
+		int option = EX10_07;
 
 		switch(option){
 			case TRIE:
@@ -103,6 +107,12 @@ public class Main {
 				break;
 			case EX14_01:
 				exercise = new Exercise14_01();
+				break;
+			case EX11_01:
+				exercise = new Exercise11_01();
+				break;
+			case EX10_07:
+				exercise = new Exercise10_07();
 				break;
 		}
 		

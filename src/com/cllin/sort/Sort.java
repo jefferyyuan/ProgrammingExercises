@@ -4,7 +4,7 @@ import com.cllin.main.Exercise;
 
 public class Sort implements Exercise {
 	private final int MAXIMUM = 10000;
-	protected final int SIZE = 1000;
+	protected final int SIZE = 10000;
 	protected int[] numbers = new int[SIZE];
 
 	@Override

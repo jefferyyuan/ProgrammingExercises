@@ -1,5 +1,6 @@
 package com.cllin.main;
 
+import com.cllin.chap10.Exercise10_03;
 import com.cllin.chap10.Exercise10_07;
 import com.cllin.chap11.Exercise11_01;
 import com.cllin.chap14.Exercise14_01;
@@ -17,6 +18,8 @@ import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
 import com.cllin.operator.ExclusiveOR;
 import com.cllin.operator.Ternary;
+import com.cllin.sort.InsertionSort;
+import com.cllin.sort.MergeSort;
 import com.cllin.thread.Deadlock;
 import com.cllin.thread.Synchronization;
 import com.cllin.thread.Thread101;
@@ -32,6 +35,10 @@ public class Main {
 	public static final int DEADLOCK = 7;
 	public static final int LINKEDLIST = 8;
 	public static final int EXTENDANDSUPER = 9;
+	
+	public static final int INSERTIONSORT = 10;
+	public static final int MERGESORT = 11;
+	
 	public static final int EX19_10 = 1910;
 	public static final int EX19_08 = 1908;
 	public static final int EX19_05 = 1905;
@@ -44,11 +51,12 @@ public class Main {
 	public static final int EX14_01 = 1401;
 	public static final int EX11_01 = 1101;
 	public static final int EX10_07 = 1007;
+	public static final int EX10_03 = 1003;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = EX10_07;
+		int option = MERGESORT;
 
 		switch(option){
 			case TRIE:
@@ -77,6 +85,12 @@ public class Main {
 				break;
 			case EXTENDANDSUPER:
 				exercise = new ExtendAndSuper();
+				break;
+			case INSERTIONSORT:
+				exercise = new InsertionSort();
+				break;
+			case MERGESORT:
+				exercise = new MergeSort();
 				break;
 			case EX19_10:
 				exercise = new Exercise19_10();
@@ -113,6 +127,9 @@ public class Main {
 				break;
 			case EX10_07:
 				exercise = new Exercise10_07();
+				break;
+			case EX10_03:
+				exercise = new Exercise10_03();
 				break;
 		}
 		

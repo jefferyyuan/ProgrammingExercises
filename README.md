@@ -16,6 +16,8 @@
 
 ###ALGORITHMS
 1. **INSERTION SORT**
+2. **MERGE SORT**
+    - Mind the difference between pseudocode and implementataion in Java, especially indices of the array
 
 ###EXERCISE FROM CRACKING THE CODING INTERVIEW
 

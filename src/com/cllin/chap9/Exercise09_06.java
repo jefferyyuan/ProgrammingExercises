@@ -13,7 +13,7 @@ public class Exercise09_06 implements Exercise {
 	
 	@Override
 	public void runExercise() {
-		initialization();
+		initialize();
 		
 		for(int i = 0; i < 10; i++){
 			int value = (int)(Math.random() * MAXIMUM);
@@ -30,11 +30,26 @@ public class Exercise09_06 implements Exercise {
 	}
 	
 	private int find(int number){
-//		TODO
-		return 0;
+		int row = 0;
+		for(int i = 0; i < ROW; i++){
+			if(matrix[i][0] > number){
+				row = i;
+				break;
+			}else if(matrix[i][0] == number){
+				return i * ROW;
+			}
+		}
+		
+		for(int i = 0; i < COLUMN; i++){
+			if(matrix[row][i] == number){
+				return row * ROW + i;
+			}			
+		}
+		
+		return -1;
 	}
 	
-	private void initialization(){
+	private void initialize(){
 		unsorted = new int[SIZE];
 		matrix = new int[ROW][COLUMN];
 		

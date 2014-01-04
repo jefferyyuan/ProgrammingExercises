@@ -38,6 +38,8 @@
 12. **EXERCISE 10-07**
 	- Solved with brute force ):
 13. **EXERCISE 10-03**
+14. **EXERCISE 9-06**
+15. **EXERCISE 9-05**
 
 ###OTHER TOPICS
 	

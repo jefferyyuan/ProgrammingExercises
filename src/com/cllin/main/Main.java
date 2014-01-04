@@ -14,6 +14,7 @@ import com.cllin.chap19.Exercise19_03;
 import com.cllin.chap19.Exercise19_05;
 import com.cllin.chap19.Exercise19_08;
 import com.cllin.chap19.Exercise19_10;
+import com.cllin.chap9.Exercise09_06;
 import com.cllin.chap9.Exercise09_07;
 import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.list.LinkedListExercise;
@@ -61,12 +62,13 @@ public class Main {
 	public static final int EX11_01 = 1101;
 	public static final int EX10_07 = 1007;
 	public static final int EX10_03 = 1003;
-	public static final int EX09_07 = 903;
+	public static final int EX09_07 = 907;
+	public static final int EX09_06 = 906;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = EX09_07;
+		int option = EX09_06;
 
 		switch(option){
 			case TRIE:
@@ -155,6 +157,9 @@ public class Main {
 				break;
 			case EX09_07:
 				exercise = new Exercise09_07();
+				break;
+			case EX09_06:
+				exercise = new Exercise09_06();
 				break;
 		}
 		

@@ -37,6 +37,15 @@ public class Sort implements Exercise {
 		}
 		System.out.println("The sequence is sorted");
 	}
+	
+	protected void printArray(){
+		System.out.println("The array is:");
+		System.out.print("\t");
+		for(int i = 0; i < SIZE; i++){
+			System.out.print(numbers[i] + " ");
+		}
+		System.out.println();
+	}
 
 	protected void sort(){
 //		WILL BE OVERRIDDEN

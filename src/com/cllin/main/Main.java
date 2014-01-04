@@ -1,5 +1,6 @@
 package com.cllin.main;
 
+import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.chap10.Exercise10_03;
 import com.cllin.chap10.Exercise10_07;
 import com.cllin.chap11.Exercise11_01;
@@ -13,13 +14,17 @@ import com.cllin.chap19.Exercise19_03;
 import com.cllin.chap19.Exercise19_05;
 import com.cllin.chap19.Exercise19_08;
 import com.cllin.chap19.Exercise19_10;
+import com.cllin.chap9.Exercise09_07;
 import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
 import com.cllin.operator.ExclusiveOR;
 import com.cllin.operator.Ternary;
+import com.cllin.sort.CountingSort;
+import com.cllin.sort.HeapSort;
 import com.cllin.sort.InsertionSort;
 import com.cllin.sort.MergeSort;
+import com.cllin.sort.QuickSort;
 import com.cllin.thread.Deadlock;
 import com.cllin.thread.Synchronization;
 import com.cllin.thread.Thread101;
@@ -35,9 +40,13 @@ public class Main {
 	public static final int DEADLOCK = 7;
 	public static final int LINKEDLIST = 8;
 	public static final int EXTENDANDSUPER = 9;
+	public static final int MAXIMUMSUBARRAY = 10;
 	
-	public static final int INSERTIONSORT = 10;
-	public static final int MERGESORT = 11;
+	public static final int INSERTIONSORT = 3000;
+	public static final int MERGESORT = 3001;
+	public static final int HEAPSORT = 3002;
+	public static final int QUICKSORT = 3003;
+	public static final int COUNTINGSORT = 3004;
 	
 	public static final int EX19_10 = 1910;
 	public static final int EX19_08 = 1908;
@@ -52,11 +61,12 @@ public class Main {
 	public static final int EX11_01 = 1101;
 	public static final int EX10_07 = 1007;
 	public static final int EX10_03 = 1003;
+	public static final int EX09_07 = 903;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = MERGESORT;
+		int option = EX09_07;
 
 		switch(option){
 			case TRIE:
@@ -86,11 +96,23 @@ public class Main {
 			case EXTENDANDSUPER:
 				exercise = new ExtendAndSuper();
 				break;
+			case MAXIMUMSUBARRAY:
+				exercise = new MaximumSubarray();
+				break;
 			case INSERTIONSORT:
 				exercise = new InsertionSort();
 				break;
 			case MERGESORT:
 				exercise = new MergeSort();
+				break;
+			case HEAPSORT:
+				exercise = new HeapSort();
+				break;
+			case QUICKSORT:
+				exercise = new QuickSort();
+				break;
+			case COUNTINGSORT:
+				exercise = new CountingSort();
 				break;
 			case EX19_10:
 				exercise = new Exercise19_10();
@@ -130,6 +152,9 @@ public class Main {
 				break;
 			case EX10_03:
 				exercise = new Exercise10_03();
+				break;
+			case EX09_07:
+				exercise = new Exercise09_07();
 				break;
 		}
 		

@@ -31,6 +31,7 @@ import com.cllin.sort.QuickSort;
 import com.cllin.thread.Deadlock;
 import com.cllin.thread.Synchronization;
 import com.cllin.thread.Thread101;
+import com.cllin.tree.BinarySearchTreeExercise;
 import com.cllin.trie.TrieExercise;
 
 public class Main {
@@ -44,6 +45,7 @@ public class Main {
 	public static final int LINKEDLIST = 8;
 	public static final int EXTENDANDSUPER = 9;
 	public static final int MAXIMUMSUBARRAY = 10;
+	public static final int BINARYSEARCHTREE = 11;
 	
 	public static final int INSERTIONSORT = 3000;
 	public static final int MERGESORT = 3001;
@@ -72,7 +74,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = EX09_03;
+		int option = BINARYSEARCHTREE;
 
 		switch(option){
 			case TRIE:
@@ -119,6 +121,9 @@ public class Main {
 				break;
 			case COUNTINGSORT:
 				exercise = new CountingSort();
+				break;
+			case BINARYSEARCHTREE:
+				exercise = new BinarySearchTreeExercise();
 				break;
 			case EX19_10:
 				exercise = new Exercise19_10();

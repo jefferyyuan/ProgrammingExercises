@@ -1,6 +1,6 @@
 #ProgrammingExercises
 
-*This project is consist of my programming exercises. Mainly about exercises from the book "Craking the Coding Interview" and basic data structure implementation*
+*This project is consist of my programming exercises, including Data Structure, Operator, Sorting, Exercises from "Cracking Coding Interview" and other General Issues*
 
 ======
 ###CONTENT
@@ -8,7 +8,7 @@
 2. [Operator] (#2)
 3. [Sorting] (#3)
 4. [Exercises from "Cracking Coding Interview"] (#4)
-5. [General Topic] (#5)
+5. [General Issue] (#5)
  
 ======
 ###<a name="1"></a>DATA STRUCTURE
@@ -49,7 +49,7 @@
 14. EXERCISE 9-06
 15. EXERCISE 9-05
 
-###<a name="5"></a>GENERAL TOPICS
+###<a name="5"></a>GENERAL ISSUE
 1. THREAD/LOCK
 2. INHERITANCE/SUPER
 3. TESTING WITH JUNIT

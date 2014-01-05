@@ -1,6 +1,8 @@
 package com.cllin.main;
 
+import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MaximumSubarray;
+import com.cllin.algorithms.RodCutting;
 import com.cllin.chap10.Exercise10_03;
 import com.cllin.chap10.Exercise10_07;
 import com.cllin.chap11.Exercise11_01;
@@ -35,7 +37,7 @@ import com.cllin.tree.BinarySearchTreeExercise;
 import com.cllin.trie.TrieExercise;
 
 public class Main {
-	public static final int TRIE = 1;
+//	OPERATORS AND GENERAL PROBLEMS
 	public static final int EXCLUSIVE_OR = 2;
 	public static final int TERNARY = 3;
 	public static final int BITWISE_OPERATION = 4;
@@ -43,16 +45,23 @@ public class Main {
 	public static final int SYNCHRONIZATION = 6;
 	public static final int DEADLOCK = 7;
 	public static final int LINKEDLIST = 8;
-	public static final int EXTENDANDSUPER = 9;
-	public static final int MAXIMUMSUBARRAY = 10;
-	public static final int BINARYSEARCHTREE = 11;
+	public static final int EXTEND_AND_SUPER = 9;
+	public static final int MAXIMUM_SUBARRAY = 10;
 	
+//	SORTING
 	public static final int INSERTIONSORT = 3000;
 	public static final int MERGESORT = 3001;
 	public static final int HEAPSORT = 3002;
 	public static final int QUICKSORT = 3003;
 	public static final int COUNTINGSORT = 3004;
 	
+//	DATA STRUCTURES
+	public static final int TRIE = 4000;
+	public static final int BINARY_SEARCH_TREE = 4001;
+	public static final int ROD_CUTTING = 4002;
+	public static final int LONGEST_COMMON_SUBSEQUENCE = 4003;
+	
+//	EXERCISES FROM "CRACKING CODING INTERVIEW"
 	public static final int EX19_10 = 1910;
 	public static final int EX19_08 = 1908;
 	public static final int EX19_05 = 1905;
@@ -74,7 +83,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = BINARYSEARCHTREE;
+		int option = LONGEST_COMMON_SUBSEQUENCE;
 
 		switch(option){
 			case TRIE:
@@ -101,10 +110,10 @@ public class Main {
 			case LINKEDLIST:
 				exercise = new LinkedListExercise();
 				break;
-			case EXTENDANDSUPER:
+			case EXTEND_AND_SUPER:
 				exercise = new ExtendAndSuper();
 				break;
-			case MAXIMUMSUBARRAY:
+			case MAXIMUM_SUBARRAY:
 				exercise = new MaximumSubarray();
 				break;
 			case INSERTIONSORT:
@@ -122,8 +131,14 @@ public class Main {
 			case COUNTINGSORT:
 				exercise = new CountingSort();
 				break;
-			case BINARYSEARCHTREE:
+			case BINARY_SEARCH_TREE:
 				exercise = new BinarySearchTreeExercise();
+				break;
+			case ROD_CUTTING:
+				exercise = new RodCutting();
+				break;
+			case LONGEST_COMMON_SUBSEQUENCE:
+				exercise = new LongestCommonSubsequence();
 				break;
 			case EX19_10:
 				exercise = new Exercise19_10();

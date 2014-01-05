@@ -13,8 +13,6 @@
 ======
 ###<a name="1"></a>DATA STRUCTURE
 1. TRIE
-    - Add
-    - Delete
 2. LINKED LIST
 
 ###<a name="2"></a>OPERATOR

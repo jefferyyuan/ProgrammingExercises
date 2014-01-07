@@ -16,6 +16,8 @@ import com.cllin.chap19.Exercise19_03;
 import com.cllin.chap19.Exercise19_05;
 import com.cllin.chap19.Exercise19_08;
 import com.cllin.chap19.Exercise19_10;
+import com.cllin.chap9.Exercise09_01;
+import com.cllin.chap9.Exercise09_02;
 import com.cllin.chap9.Exercise09_03;
 import com.cllin.chap9.Exercise09_05;
 import com.cllin.chap9.Exercise09_06;
@@ -79,11 +81,13 @@ public class Main {
 	public static final int EX09_06 = 906;
 	public static final int EX09_05 = 905;
 	public static final int EX09_03 = 903;
+	public static final int EX09_02 = 902;
+	public static final int EX09_01 = 901;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = LONGEST_COMMON_SUBSEQUENCE;
+		int option = EX09_01;
 
 		switch(option){
 			case TRIE:
@@ -189,6 +193,12 @@ public class Main {
 				break;
 			case EX09_03:
 				exercise = new Exercise09_03();
+				break;
+			case EX09_02:
+				exercise = new Exercise09_02();
+				break;
+			case EX09_01:
+				exercise = new Exercise09_01();
 				break;
 		}
 		

@@ -3,6 +3,17 @@ package com.cllin.main;
 import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.algorithms.RodCutting;
+import com.cllin.chap08.Exercise08_04;
+import com.cllin.chap08.Exercise08_05;
+import com.cllin.chap08.Exercise08_06;
+import com.cllin.chap08.Exercise08_07;
+import com.cllin.chap08.Exercise08_08;
+import com.cllin.chap09.Exercise09_01;
+import com.cllin.chap09.Exercise09_02;
+import com.cllin.chap09.Exercise09_03;
+import com.cllin.chap09.Exercise09_05;
+import com.cllin.chap09.Exercise09_06;
+import com.cllin.chap09.Exercise09_07;
 import com.cllin.chap10.Exercise10_03;
 import com.cllin.chap10.Exercise10_07;
 import com.cllin.chap11.Exercise11_01;
@@ -16,12 +27,6 @@ import com.cllin.chap19.Exercise19_03;
 import com.cllin.chap19.Exercise19_05;
 import com.cllin.chap19.Exercise19_08;
 import com.cllin.chap19.Exercise19_10;
-import com.cllin.chap9.Exercise09_01;
-import com.cllin.chap9.Exercise09_02;
-import com.cllin.chap9.Exercise09_03;
-import com.cllin.chap9.Exercise09_05;
-import com.cllin.chap9.Exercise09_06;
-import com.cllin.chap9.Exercise09_07;
 import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
@@ -83,11 +88,16 @@ public class Main {
 	public static final int EX09_03 = 903;
 	public static final int EX09_02 = 902;
 	public static final int EX09_01 = 901;
+	public static final int EX08_08 = 808;
+	public static final int EX08_07 = 807;
+	public static final int EX08_06 = 806;
+	public static final int EX08_05 = 805;
+	public static final int EX08_04 = 804;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = EX09_01;
+		int option = EX08_04;
 
 		switch(option){
 			case TRIE:
@@ -199,6 +209,21 @@ public class Main {
 				break;
 			case EX09_01:
 				exercise = new Exercise09_01();
+				break;
+			case EX08_08:
+				exercise = new Exercise08_08();
+				break;
+			case EX08_07:
+				exercise = new Exercise08_07();
+				break;
+			case EX08_06:
+				exercise = new Exercise08_06();
+				break;
+			case EX08_05:
+				exercise = new Exercise08_05();
+				break;
+			case EX08_04:
+				exercise = new Exercise08_04();
 				break;
 		}
 		

@@ -1,4 +1,4 @@
-package com.cllin.chap9;
+package com.cllin.chap09;
 
 import java.util.Arrays;
 
@@ -15,7 +15,7 @@ public class Exercise09_01 implements Exercise {
 	
 	@Override
 	public void runExercise() {
-		initialization();
+		initialize();
 		a = merge(a, b);
 		check();
 	}
@@ -64,7 +64,7 @@ public class Exercise09_01 implements Exercise {
 		return a;
 	}
 	
-	private void initialization(){
+	private void initialize(){
 		Arrays.fill(a, 0);
 		
 		for(int i = 0; i < SIZE_ACTUAL_A; i++){

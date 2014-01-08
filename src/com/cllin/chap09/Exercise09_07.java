@@ -1,4 +1,4 @@
-package com.cllin.chap9;
+package com.cllin.chap09;
 
 import com.cllin.main.Exercise;
 

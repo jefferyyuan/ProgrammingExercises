@@ -32,6 +32,7 @@ import com.cllin.chap19.Exercise19_03;
 import com.cllin.chap19.Exercise19_05;
 import com.cllin.chap19.Exercise19_08;
 import com.cllin.chap19.Exercise19_10;
+import com.cllin.enumeration.EnumerationExercise;
 import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
@@ -59,6 +60,7 @@ public class Main {
 	public static final int LINKEDLIST = 8;
 	public static final int EXTEND_AND_SUPER = 9;
 	public static final int MAXIMUM_SUBARRAY = 10;
+	public static final int ENUMERATION = 11;
 	
 //	SORTING
 	public static final int INSERTIONSORT = 3000;
@@ -107,7 +109,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = EX07_02;
+		int option = ENUMERATION;
 
 		switch(option){
 			case TRIE:
@@ -163,6 +165,9 @@ public class Main {
 				break;
 			case LONGEST_COMMON_SUBSEQUENCE:
 				exercise = new LongestCommonSubsequence();
+				break;
+			case ENUMERATION:
+				exercise = new EnumerationExercise();
 				break;
 			case EX19_10:
 				exercise = new Exercise19_10();

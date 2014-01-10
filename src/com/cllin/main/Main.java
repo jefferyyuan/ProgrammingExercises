@@ -3,6 +3,8 @@ package com.cllin.main;
 import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.algorithms.RodCutting;
+import com.cllin.chap06.Exercise06_03;
+import com.cllin.chap06.Exercise06_06;
 import com.cllin.chap07.Exercise07_02;
 import com.cllin.chap07.Exercise07_05;
 import com.cllin.chap08.Exercise08_01;
@@ -105,11 +107,13 @@ public class Main {
 	public static final int EX08_01 = 801;
 	public static final int EX07_05 = 705;
 	public static final int EX07_02 = 702;
+	public static final int EX06_06 = 606;
+	public static final int EX06_03 = 603;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = ENUMERATION;
+		int option = EX06_03;
 
 		switch(option){
 			case TRIE:
@@ -254,6 +258,12 @@ public class Main {
 				break;
 			case EX07_02:
 				exercise = new Exercise07_02();
+				break;
+			case EX06_06:
+				exercise = new Exercise06_06();
+				break;
+			case EX06_03:
+				exercise = new Exercise06_03();
 				break;
 		}
 		

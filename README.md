@@ -44,7 +44,7 @@
 10. EXERCISE 14-01
 11. EXERCISE 11-01
 12. EXERCISE 10-07
-	- Solved with brute force ):
+    - Solved with brute force ):
 13. EXERCISE 10-03
 14. EXERCISE 9-06
 15. EXERCISE 9-05
@@ -60,6 +60,9 @@
 25. EXERCISE 8-01
 26. EXERCISE 7-05
 27. EXERCISE 7-02
+28. EXERCISE 6-06
+29. EXERCISE 6-03
+    - A.K.A. [Water Pouring Problem] (http://demonstrations.wolfram.com/WaterPouringProblem/)
 
 ###<a name="5"></a>GENERAL ISSUE
 1. THREAD/LOCK

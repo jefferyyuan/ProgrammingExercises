@@ -4,6 +4,8 @@ import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.algorithms.RodCutting;
 import com.cllin.chap05.Exercise05_01;
+import com.cllin.chap05.Exercise05_02;
+import com.cllin.chap05.Exercise05_03;
 import com.cllin.chap05.Exercise05_05;
 import com.cllin.chap05.Exercise05_06;
 import com.cllin.chap06.Exercise06_03;
@@ -114,12 +116,14 @@ public class Main {
 	public static final int EX06_03 = 603;
 	public static final int EX05_06 = 506;
 	public static final int EX05_05 = 505;
+	public static final int EX05_03 = 503;
+	public static final int EX05_02 = 502;
 	public static final int EX05_01 = 501;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = EX05_05;
+		int option = EX05_02;
 
 		switch(option){
 			case TRIE:
@@ -276,6 +280,12 @@ public class Main {
 				break;
 			case EX05_05:
 				exercise = new Exercise05_05();
+				break;
+			case EX05_03:
+				exercise = new Exercise05_03();
+				break;
+			case EX05_02:
+				exercise = new Exercise05_02();
 				break;
 			case EX05_01:
 				exercise = new Exercise05_01();

@@ -63,6 +63,9 @@
 28. EXERCISE 6-06
 29. EXERCISE 6-03
     - A.K.A. [Water Pouring Problem] (http://demonstrations.wolfram.com/WaterPouringProblem/)
+30. EXERCISE 5-06
+31. EXERCISE 5-05
+32. EXERCISE 5-01
 
 ###<a name="5"></a>GENERAL ISSUE
 1. THREAD/LOCK

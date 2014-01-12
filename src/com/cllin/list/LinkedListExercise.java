@@ -6,7 +6,7 @@ public class LinkedListExercise implements Exercise {
 
 	@Override
 	public void runExercise() {
-		LinkedList list = new LinkedList(Integer.toString(0));
+		LinkedList<String> list = new LinkedList<String>(Integer.toString(0));
 		
 		for(int i = 1; i < 30; i++){
 			list.addNode(list.getNode(Integer.toString(i - 1)), Integer.toString(i));
@@ -18,7 +18,7 @@ public class LinkedListExercise implements Exercise {
 			}
 		}
 		
-		LinkedListNode node = list.getHead();
+		LinkedListNode<String> node = list.getHead();
 		while(node != null){
 			System.out.println("content = " + node.getContent());
 			node = node.getNext();

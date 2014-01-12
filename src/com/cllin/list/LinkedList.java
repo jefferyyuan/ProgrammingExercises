@@ -1,20 +1,30 @@
 package com.cllin.list;
 
-
-public class LinkedList{
-	private LinkedListNode head;
-	private LinkedListNode tail;
+@SuppressWarnings({ "unchecked", "rawtypes" })
+public class LinkedList<T>{
+	private LinkedListNode<T> head;
+	private LinkedListNode<T> tail;
 	private int size = 0;
 	
-	public LinkedList(String contentOfHead){
-		head = new LinkedListNode(contentOfHead);
+	public LinkedList(T contentOfHead){
+		head = new LinkedListNode<T>(contentOfHead);
 		tail = head;
 		size++;
 	}
 	
-	public void addNode(LinkedListNode afterThisNode, String content){
-		LinkedListNode beforeThisNode = afterThisNode.getNext();
-		LinkedListNode node = new LinkedListNode(afterThisNode, content);
+	public void addNode(T content){
+		LinkedListNode<T> afterThisNode = this.tail;
+		LinkedListNode<T> node = new LinkedListNode(afterThisNode, content);
+		
+		afterThisNode.setNext(node);
+		this.tail = node;
+		
+		size++;
+	}
+	
+	public void addNode(LinkedListNode<T> afterThisNode, T content){
+		LinkedListNode<T> beforeThisNode = afterThisNode.getNext();
+		LinkedListNode<T> node = new LinkedListNode(afterThisNode, content);
 		
 		afterThisNode.setNext(node);
 		if(beforeThisNode == null){
@@ -26,12 +36,25 @@ public class LinkedList{
 		size++;
 	}
 	
-	public LinkedListNode getNode(String content){
+	public void addNode(LinkedListNode<T> afterThisNode, LinkedListNode<T> addThisNode){
+		LinkedListNode<T> beforeThisNode = afterThisNode.getNext();
+		
+		afterThisNode.setNext(addThisNode);
+		if(beforeThisNode == null){
+			tail = addThisNode;
+		}else{
+			beforeThisNode.setPrevious(addThisNode);
+		}
+		
+		size++;
+	}
+	
+	public LinkedListNode<T> getNode(T content){
 		if(size == 0){
 			return null;
 		}
 		
-		LinkedListNode node = head;
+		LinkedListNode<T> node = head;
 		while(node != null){
 			if(node.getContent().equals(content)){
 				return node;
@@ -41,9 +64,23 @@ public class LinkedList{
 		return node;
 	}
 	
-	public void deleteNode(LinkedListNode deleteThisNode){
-		LinkedListNode previous = deleteThisNode.getPrevious();
-		LinkedListNode next = deleteThisNode.getNext();
+
+	public LinkedListNode<T> getNode(int index){
+		LinkedListNode<T> node = head;
+		if (node == null) return null;
+		
+		int i = 0;
+		while(i < index){
+			if (node == null) return null;
+			node = node.getNext();
+			i++;
+		}
+		return node;
+	}
+	
+	public void deleteNode(LinkedListNode<T> deleteThisNode){
+		LinkedListNode<T> previous = deleteThisNode.getPrevious();
+		LinkedListNode<T> next = deleteThisNode.getNext();
 		
 		if(previous == null){
 			head = next;
@@ -65,53 +102,29 @@ public class LinkedList{
 		size--;
 	}
 
-	public LinkedListNode getHead(){
+	public LinkedListNode<T> getHead(){
 		return head;
 	}
 	
-	public LinkedListNode getTail(){
+	public LinkedListNode<T> getTail(){
 		return tail;
+	}
+	
+	public void resetSize(){
+		int i = 0;
+		
+		if (this.head == null) i = 0;
+
+		LinkedListNode<T> node = this.head;
+		while(node != null){
+			node = node.getNext();
+			i++;
+		}
+		
+		this.size = i;
 	}
 
 	public int getSize(){
 		return size;
-	}
-}
-
-class LinkedListNode{
-	private LinkedListNode previous;
-	private LinkedListNode next;
-	private String content;
-	
-	public LinkedListNode(String content){
-		previous = null;
-		next = null;
-		this.content = content;			
-	}
-	
-	public LinkedListNode(LinkedListNode prev, String content){
-		previous = prev;
-		next = null;
-		this.content = content;
-	}
-	
-	public void setNext(LinkedListNode next){
-		this.next = next;
-	}
-	
-	public void setPrevious(LinkedListNode previous){
-		this.previous = previous;
-	}
-	
-	public LinkedListNode getPrevious(){
-		return previous;
-	}
-	
-	public LinkedListNode getNext(){
-		return next;
-	}
-	
-	public String getContent(){
-		return content;
 	}
 }

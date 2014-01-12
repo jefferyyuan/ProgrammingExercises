@@ -9,7 +9,7 @@ public class Sort implements Exercise {
 
 	@Override
 	public void runExercise() {
-		initialization();
+		initialize();
 		
 		long start = System.nanoTime();
 		sort();
@@ -21,7 +21,7 @@ public class Sort implements Exercise {
 				+ "ms to sort " + SIZE + " integers");
 	}
 	
-	private void initialization(){
+	private void initialize(){
 		int length = numbers.length;
 		for(int i = 0; i < length; i++){
 			numbers[i] = (int)(Math.random() * MAXIMUM);

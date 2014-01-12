@@ -3,6 +3,12 @@ package com.cllin.main;
 import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.algorithms.RodCutting;
+import com.cllin.chap03.Exercise03_01;
+import com.cllin.chap03.Exercise03_02;
+import com.cllin.chap03.Exercise03_03;
+import com.cllin.chap03.Exercise03_04;
+import com.cllin.chap03.Exercise03_05;
+import com.cllin.chap03.Exercise03_06;
 import com.cllin.chap05.Exercise05_01;
 import com.cllin.chap05.Exercise05_02;
 import com.cllin.chap05.Exercise05_03;
@@ -119,11 +125,17 @@ public class Main {
 	public static final int EX05_03 = 503;
 	public static final int EX05_02 = 502;
 	public static final int EX05_01 = 501;
+	public static final int EX03_06 = 306;
+	public static final int EX03_05 = 305;
+	public static final int EX03_04 = 304;
+	public static final int EX03_03 = 303;
+	public static final int EX03_02 = 302;
+	public static final int EX03_01 = 301;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = EX05_02;
+		int option = EX03_01;
 
 		switch(option){
 			case TRIE:
@@ -289,6 +301,24 @@ public class Main {
 				break;
 			case EX05_01:
 				exercise = new Exercise05_01();
+				break;
+			case EX03_06:
+				exercise = new Exercise03_06();
+				break;
+			case EX03_05:
+				exercise = new Exercise03_05();
+				break;
+			case EX03_04:
+				exercise = new Exercise03_04();
+				break;
+			case EX03_03:
+				exercise = new Exercise03_03();
+				break;
+			case EX03_02:
+				exercise = new Exercise03_02();
+				break;
+			case EX03_01:
+				exercise = new Exercise03_01();
 				break;
 		}
 		

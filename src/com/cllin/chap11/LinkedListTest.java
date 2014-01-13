@@ -8,14 +8,14 @@ import org.junit.Test;
 import com.cllin.list.LinkedList;
 
 public class LinkedListTest {
-	private LinkedList mLinkedList;
+	private LinkedList<String> mLinkedList;
 	
 	private String apple = "apple";
 	private String banana = "banana";
 	
 	@Before
 	public void initialization(){
-		mLinkedList = new LinkedList(apple);
+		mLinkedList = new LinkedList<String>(apple);
 	}
 	
 	@Test

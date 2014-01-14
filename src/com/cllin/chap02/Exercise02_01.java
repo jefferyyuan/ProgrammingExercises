@@ -5,8 +5,8 @@ import com.cllin.list.LinkedListNode;
 import com.cllin.main.Exercise;
 
 public class Exercise02_01 implements Exercise {
-	private final int SIZE = 10 - 1;
-	private final int MAXIMUM = 10;
+	private final int SIZE = 1000 - 1;
+	private final int MAXIMUM = 1000;
 	
 	private LinkedList<Integer> list;
 	

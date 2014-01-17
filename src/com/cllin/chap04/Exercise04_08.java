@@ -1,37 +1,68 @@
 package com.cllin.chap04;
 
 import com.cllin.main.Exercise;
+import com.cllin.tree.BinarySearchTree;
+import com.cllin.tree.Node;
 
 public class Exercise04_08 implements Exercise {
+	private final int MAXIMUM = 100;
+	private final int SIZE = 1000;
+	
+	private int[] copy = new int[SIZE];
+	
+	private BinarySearchTree tree;
 
 	@Override
 	public void runExercise() {
-		// TODO Auto-generated method stub
+		initialize();
+		
+		for(int n = 10; n < 30; n++){
+			findPath(tree.root, n);
+		}
+		
+		System.out.println("All paths are found");
 	}
 	
-//	private void findPath(TreeNode head, int sum, ArrayList<Integer> buffer, int level){
-//		if (head == null) return;
-//		
-//		int tmp = sum;
-//		buffer.add(head.getValue());
-//		
-//		for(int i = level; i >= 0; i--){
-//			sum -= buffer.get(i);
-//			if (sum == 0) print(buffer, i, level);
-//		}
-//		
-//		ArrayList<Integer> clone1 = (ArrayList<Integer>) buffer.clone();
-//		ArrayList<Integer> clone2 = (ArrayList<Integer>) buffer.clone();
-//		
-//		findPath(head.getLeftNode(), tmp, clone1, level + 1);
-//		findPath(head.getRightChild(), tmp, clone2, level + 1);
-//	}
-//	
-//	private void print(ArrayList<Integer> buffer, int level, int totalLevel){
-//		for (int i = level; i <= totalLevel; i++) {
-//			System.out.print(buffer.get(i) + " ");
-//		}
-//		System.out.println();
-//	}
+	private void findPath(Node node, int sum){
+		if (node == null) return;
+		
+		Node head = node;
+		int distance = 0;
+		int tmp = sum;
+		while(head != null){
+			tmp -= head.key;
+			
+			if(tmp == 0){
+				printPath(node, distance, sum);
+				break;
+			}else{
+				distance++;
+				head = head.parent;
+			}
+		}
+		
+		findPath(node.right, sum);
+		findPath(node.left, sum);
+		
+	}
+	
+	private void printPath(Node node, int distance, int sum){
+		while(distance >= 0 && node != null){
+			System.out.printf("%d -> ", node.key);
+			node = node.parent;
+			distance--;
+		}
+		System.out.printf("sum = %d%n", sum);
+	}
+
+	private void initialize(){
+		tree = new BinarySearchTree((int)(Math.random() * MAXIMUM));
+		
+		for(int i = 0; i < SIZE; i++){
+			int key = (int)(Math.random() * MAXIMUM);
+			copy[i] = key;
+			tree.insert(new Node(key, null, null, null));
+		}
+	}
 
 }

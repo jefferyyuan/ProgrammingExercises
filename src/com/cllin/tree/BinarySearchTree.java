@@ -11,6 +11,11 @@ public class BinarySearchTree {
 	
 	public BinarySearchTree(int key){
 		root = new Node(key, null, null, null);
+		size = 1;
+	}
+	
+	public BinarySearchTree(){
+		root = null;
 		size = 0;
 	}
 	

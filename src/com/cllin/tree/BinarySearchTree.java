@@ -20,7 +20,7 @@ public class BinarySearchTree {
 		
 		while(x != null){
 			y = x;
-			if(node.key < x.key){
+			if(node.value < x.value){
 				x = x.left;
 			}else{
 				x = x.right;
@@ -31,7 +31,7 @@ public class BinarySearchTree {
 		
 		if(y == null){
 			root = node;
-		}else if(node.key < y.key){
+		}else if(node.value < y.value){
 			y.left = node;
 		}else{
 			y.right = node;
@@ -91,9 +91,9 @@ public class BinarySearchTree {
 	}
 	
 	public Node search(Node node, int key){
-		if(node == null || node.key == key){
+		if(node == null || node.value == key){
 			return node;
-		}else if(key > node.key){
+		}else if(key > node.value){
 			return search(node.right, key);
 		}else{
 			return search(node.left, key);

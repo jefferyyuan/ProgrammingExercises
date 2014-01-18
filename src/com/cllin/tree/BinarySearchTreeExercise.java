@@ -16,8 +16,8 @@ public class BinarySearchTreeExercise implements Exercise{
 //		tree.inOrderTreeWalk(tree.root);
 		
 		System.out.println();
-		System.out.println("The maximum element in the tree is " + tree.getMaximum(tree.root).key);
-		System.out.println("The minimum element in the tree is " + tree.getMinimum(tree.root).key);
+		System.out.println("The maximum element in the tree is " + tree.getMaximum(tree.root).value);
+		System.out.println("The minimum element in the tree is " + tree.getMinimum(tree.root).value);
 		System.out.println("The size of the tree is " + tree.getSize());
 		
 		int searches = (int)(Math.random() * 10) + 1;
@@ -32,13 +32,13 @@ public class BinarySearchTreeExercise implements Exercise{
 				if(successor == null){
 					System.out.print("It does not have a successor. ");
 				}else{
-					System.out.print("Its successor is " + successor.key + ". ");
+					System.out.print("Its successor is " + successor.value + ". ");
 				}
 				
 				if(predecessor == null){
 					System.out.println("It does not have a predecessor. ");
 				}else{
-					System.out.println("Its predecessor is "+ predecessor.key + ". ");
+					System.out.println("Its predecessor is "+ predecessor.value + ". ");
 				}
 			}else{
 				System.out.println(key + " is not found");

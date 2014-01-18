@@ -8,8 +8,6 @@ public class Exercise04_08 implements Exercise {
 	private final int MAXIMUM = 100;
 	private final int SIZE = 1000;
 	
-	private int[] copy = new int[SIZE];
-	
 	private BinarySearchTree tree;
 
 	@Override
@@ -30,7 +28,7 @@ public class Exercise04_08 implements Exercise {
 		int distance = 0;
 		int tmp = sum;
 		while(head != null){
-			tmp -= head.key;
+			tmp -= head.value;
 			
 			if(tmp == 0){
 				printPath(node, distance, sum);
@@ -48,7 +46,7 @@ public class Exercise04_08 implements Exercise {
 	
 	private void printPath(Node node, int distance, int sum){
 		while(distance >= 0 && node != null){
-			System.out.printf("%d -> ", node.key);
+			System.out.printf("%d -> ", node.value);
 			node = node.parent;
 			distance--;
 		}
@@ -59,9 +57,7 @@ public class Exercise04_08 implements Exercise {
 		tree = new BinarySearchTree((int)(Math.random() * MAXIMUM));
 		
 		for(int i = 0; i < SIZE; i++){
-			int key = (int)(Math.random() * MAXIMUM);
-			copy[i] = key;
-			tree.insert(new Node(key, null, null, null));
+			tree.insert(new Node((int)(Math.random() * MAXIMUM), null, null, null));
 		}
 	}
 

@@ -67,6 +67,8 @@ import com.cllin.cci.chap19.Exercise19_10;
 import com.cllin.enumeration.EnumerationExercise;
 import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
+import com.cllin.leetcode.ReverseInteger;
+import com.cllin.leetcode.SameTree;
 import com.cllin.leetcode.SingleNumber;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
@@ -174,12 +176,14 @@ public class Main {
 	
 //	EXERCISES FROM LEETCODE
 	public static final int MaximumDepthOfBinaryTree = 5001;
-	public static final int SingleNumber = 5002; 
+	public static final int SingleNumber = 5002;
+	public static final int SameTree = 5003;
+	public static final int ReverseInteger = 5004;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = SingleNumber;
+		int option = ReverseInteger;
 
 		switch(option){
 			case TRIE:
@@ -426,6 +430,12 @@ public class Main {
 				break;
 			case SingleNumber:
 				exercise = new SingleNumber();
+				break;
+			case SameTree:
+				exercise = new SameTree();
+				break;
+			case ReverseInteger:
+				exercise = new ReverseInteger();
 				break;
 		}
 		

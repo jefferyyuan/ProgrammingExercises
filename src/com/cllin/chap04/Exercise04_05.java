@@ -8,7 +8,7 @@ import com.cllin.tree.Node;
 
 public class Exercise04_05 implements Exercise {
 	private final int MAXIMUM = 1000;
-	private final int SIZE = 10;
+	private final int SIZE = 1000;
 	
 	private BinarySearchTree tree;
 	private Node node;
@@ -86,22 +86,6 @@ public class Exercise04_05 implements Exercise {
 		}
 		
 		return false;
-//		Arrays.sort(reference);
-//		
-//		int next = -1;
-//		int length = reference.length;
-//		for(int i = 0; i < length; i++){
-//			if(reference[i] == value){
-//				if (i == length - 1) break;
-//				
-//				next = reference[i + 1];
-//				break;
-//			}
-//		}
-//		
-//		if (result == null) return (next == -1)? true : false; 
-//		
-//		return (next == result.value)? true : false;
 	}
 	
 	private ArrayList<Node> inOrderTreeWalk(Node node){

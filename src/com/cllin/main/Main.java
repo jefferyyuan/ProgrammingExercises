@@ -22,6 +22,8 @@ import com.cllin.chap03.Exercise03_03;
 import com.cllin.chap03.Exercise03_04;
 import com.cllin.chap03.Exercise03_05;
 import com.cllin.chap03.Exercise03_06;
+import com.cllin.chap04.Exercise04_03;
+import com.cllin.chap04.Exercise04_04;
 import com.cllin.chap04.Exercise04_05;
 import com.cllin.chap04.Exercise04_06;
 import com.cllin.chap04.Exercise04_07;
@@ -146,6 +148,8 @@ public class Main {
 	public static final int EX04_07 = 407;
 	public static final int EX04_06 = 406;
 	public static final int EX04_05 = 405;
+	public static final int EX04_04 = 404;
+	public static final int EX04_03 = 403;
 	public static final int EX03_06 = 306;
 	public static final int EX03_05 = 305;
 	public static final int EX03_04 = 304;
@@ -169,7 +173,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = EX04_05;
+		int option = EX04_03;
 
 		switch(option){
 			case TRIE:
@@ -347,6 +351,12 @@ public class Main {
 				break;
 			case EX04_05:
 				exercise = new Exercise04_05();
+				break;
+			case EX04_04:
+				exercise = new Exercise04_04();
+				break;
+			case EX04_03:
+				exercise = new Exercise04_03();
 				break;
 			case EX03_06:
 				exercise = new Exercise03_06();

@@ -66,10 +66,13 @@ import com.cllin.cci.chap19.Exercise19_08;
 import com.cllin.cci.chap19.Exercise19_10;
 import com.cllin.enumeration.EnumerationExercise;
 import com.cllin.inheritance.ExtendAndSuper;
+import com.cllin.leetcode.BestTimetoBuyandSellStockII;
+import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
 import com.cllin.leetcode.ReverseInteger;
 import com.cllin.leetcode.SameTree;
 import com.cllin.leetcode.SingleNumber;
+import com.cllin.leetcode.UniqueBinarySearchTrees;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
 import com.cllin.operator.ExclusiveOR;
@@ -179,11 +182,14 @@ public class Main {
 	public static final int SingleNumber = 5002;
 	public static final int SameTree = 5003;
 	public static final int ReverseInteger = 5004;
+	public static final int BestTimetoBuyandSellStockII = 5005;
+	public static final int UniqueBinarySearchTrees = 5006;
+	public static final int LinkedListCycle = 5007;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = ReverseInteger;
+		int option = LinkedListCycle;
 
 		switch(option){
 			case TRIE:
@@ -436,6 +442,15 @@ public class Main {
 				break;
 			case ReverseInteger:
 				exercise = new ReverseInteger();
+				break;
+			case BestTimetoBuyandSellStockII:
+				exercise = new BestTimetoBuyandSellStockII();
+				break;
+			case UniqueBinarySearchTrees:
+				exercise = new UniqueBinarySearchTrees();
+				break;
+			case LinkedListCycle:
+				exercise = new LinkedListCycle();
 				break;
 		}
 		

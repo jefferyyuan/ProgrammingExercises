@@ -69,8 +69,11 @@ import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.leetcode.BestTimetoBuyandSellStockII;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
+import com.cllin.leetcode.PopulatingNextRightPointers;
+import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
 import com.cllin.leetcode.ReverseInteger;
 import com.cllin.leetcode.SameTree;
+import com.cllin.leetcode.SearchInsertPosition;
 import com.cllin.leetcode.SingleNumber;
 import com.cllin.leetcode.UniqueBinarySearchTrees;
 import com.cllin.list.LinkedListExercise;
@@ -185,11 +188,14 @@ public class Main {
 	public static final int BestTimetoBuyandSellStockII = 5005;
 	public static final int UniqueBinarySearchTrees = 5006;
 	public static final int LinkedListCycle = 5007;
+	public static final int PopulatingNextRightPointers = 5008;
+	public static final int SearchInsertPosition = 5009;
+	public static final int RemoveDuplicatesFromSortedList = 5010; 
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = LinkedListCycle;
+		int option = RemoveDuplicatesFromSortedList;
 
 		switch(option){
 			case TRIE:
@@ -451,6 +457,15 @@ public class Main {
 				break;
 			case LinkedListCycle:
 				exercise = new LinkedListCycle();
+				break;
+			case PopulatingNextRightPointers:
+				exercise = new PopulatingNextRightPointers();
+				break;
+			case SearchInsertPosition:
+				exercise = new SearchInsertPosition();
+				break;
+			case RemoveDuplicatesFromSortedList:
+				exercise = new RemoveDuplicatesFromSortedList();
 				break;
 		}
 		

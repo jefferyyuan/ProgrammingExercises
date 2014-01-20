@@ -101,6 +101,8 @@
 6. Populating Next Right Pointers
 7. Remove Duplicates from Sorted List
 8. Search Insert Position
+9. Maximum Depth of Tree
+10. Single Number Problem
 
 ###<a name="6"></a>GENERAL ISSUE
 1. THREAD/LOCK

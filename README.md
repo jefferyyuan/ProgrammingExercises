@@ -8,7 +8,8 @@
 2. [Operator] (#2)
 3. [Sorting] (#3)
 4. [Exercises from "Cracking Coding Interview"] (#4)
-5. [General Issue] (#5)
+5. [Exercises from LeetCode] (#5)
+6. [General Issue] (#5)
  
 ======
 ###<a name="1"></a>DATA STRUCTURE
@@ -91,8 +92,17 @@
 55. EXERCISE 1-02
 56. EXERCISE 1-01
 
+###<a name="6"></a>EXERCISES FROM LEETCODE
+1. Same Tree
+2. Reverse Integer
+3. Best Time to Buy Stock
+4. Linked List Cycle
+5. Unique Binary Search Trees
+6. Populating Next Right Pointers
+7. Remove Duplicates from Sorted List
+8. Search Insert Position
 
-###<a name="5"></a>GENERAL ISSUE
+###<a name="6"></a>GENERAL ISSUE
 1. THREAD/LOCK
 2. INHERITANCE/SUPER
 3. TESTING WITH JUNIT

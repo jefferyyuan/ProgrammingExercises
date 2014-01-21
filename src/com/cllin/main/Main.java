@@ -67,10 +67,12 @@ import com.cllin.cci.chap19.Exercise19_10;
 import com.cllin.enumeration.EnumerationExercise;
 import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.leetcode.BestTimetoBuyandSellStockII;
+import com.cllin.leetcode.BinaryTreeInorderTraversal;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
 import com.cllin.leetcode.PopulatingNextRightPointers;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
+import com.cllin.leetcode.RemoveElement;
 import com.cllin.leetcode.ReverseInteger;
 import com.cllin.leetcode.SameTree;
 import com.cllin.leetcode.SearchInsertPosition;
@@ -190,12 +192,14 @@ public class Main {
 	public static final int LinkedListCycle = 5007;
 	public static final int PopulatingNextRightPointers = 5008;
 	public static final int SearchInsertPosition = 5009;
-	public static final int RemoveDuplicatesFromSortedList = 5010; 
+	public static final int RemoveDuplicatesFromSortedList = 5010;
+	public static final int BinaryTreeInorderTraversal = 5011;
+	public static final int RemoveElement = 5012;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = RemoveDuplicatesFromSortedList;
+		int option = RemoveElement;
 
 		switch(option){
 			case TRIE:
@@ -467,6 +471,13 @@ public class Main {
 			case RemoveDuplicatesFromSortedList:
 				exercise = new RemoveDuplicatesFromSortedList();
 				break;
+			case BinaryTreeInorderTraversal:
+				exercise = new BinaryTreeInorderTraversal();
+				break;
+			case RemoveElement:
+				exercise = new RemoveElement();
+				break;
+
 		}
 		
 		exercise.runExercise();

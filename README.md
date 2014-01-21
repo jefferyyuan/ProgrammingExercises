@@ -103,6 +103,10 @@
 8. Search Insert Position
 9. Maximum Depth of Tree
 10. Single Number Problem
+11. Binary Tree Inorder Traversal
+12. Binary Tree Preorder Traversal
+    - It is within BinaryTreeInorderTraversal.java
+13. Remove Element
 
 ###<a name="6"></a>GENERAL ISSUE
 1. THREAD/LOCK

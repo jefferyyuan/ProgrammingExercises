@@ -71,6 +71,7 @@ import com.cllin.leetcode.BinaryTreeInorderTraversal;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
 import com.cllin.leetcode.PopulatingNextRightPointers;
+import com.cllin.leetcode.RemoveDuplicatesFromSortedArray;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
 import com.cllin.leetcode.RemoveElement;
 import com.cllin.leetcode.ReverseInteger;
@@ -195,11 +196,12 @@ public class Main {
 	public static final int RemoveDuplicatesFromSortedList = 5010;
 	public static final int BinaryTreeInorderTraversal = 5011;
 	public static final int RemoveElement = 5012;
+	public static final int RemoveDuplicatesFromSortedArray = 5013;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = RemoveElement;
+		int option = RemoveDuplicatesFromSortedArray;
 
 		switch(option){
 			case TRIE:
@@ -477,7 +479,9 @@ public class Main {
 			case RemoveElement:
 				exercise = new RemoveElement();
 				break;
-
+			case RemoveDuplicatesFromSortedArray:
+				exercise = new RemoveDuplicatesFromSortedArray();
+				break;
 		}
 		
 		exercise.runExercise();

@@ -32,43 +32,22 @@ public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
 	}
 	
     private int removeDuplicates(int[] A) {
+    	if (A.length == 0) return 0;
     	int length = A.length;
-    	int newLength = A.length;
+    	
+        int i = 0;
+        int j = 1;
 
-    	int i = 1;
-    	int j = 2;
-    	
-    	while (i < j && j < length) {
-    		if (A[i] <= A[i - 1]) {
-    			if (A[j++] > A[i - 1]) {
-    				A[i++] = A[j++];
-    				newLength--;
-    			}
-    		}
-    	}
-    	
-    	for (int k = newLength; k < length; k++) {
-    		A[k] =  -2147483648;
-    	}
-    	
-    	return newLength;
-    	
-//    	int length = A.length;
-//    	int newLength = A.length;
-//
-//    	for (int i = 1; i < length; i++) {
-//    		if (A[i] <= A[i - 1]) {
-//    			for (int j = i + 1; j < length; j++) {
-//    				if (A[j] > A[i - 1]) {
-//    					A[i] = A[j];
-//    					newLength--;
-//    					break;
-//    				}
-//    			}
-//    		}
-//    	}
-//    	
-//    	return newLength;
+        for (j = 1; j < length; j++) {            
+        	if (A[j] != A[i]) A[++i] = A[j];
+        }
+        
+//      Values are set to -2147483648 to pass own test cases
+        for (int k = i + 1; k < length; k++) {
+        	A[k] = -2147483648;
+        }
+        
+        return i + 1;
     }
 
 	@Override
@@ -77,7 +56,9 @@ public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
 		int count = 0;
 		for (int i = 0; i < length; i++) {
 			for (int j = 0; j < i; j++) {
-				if (array[i] == array[j] && array[i] != -2147483648) return false;
+				if (array[i] == array[j] && array[i] != -2147483648) {
+					return false;
+				}
 			}
 			
 			if (array[i] != -2147483648) count++;

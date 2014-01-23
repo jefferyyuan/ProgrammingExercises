@@ -107,11 +107,14 @@
 12. Binary Tree Preorder Traversal
     - It is within BinaryTreeInorderTraversal.java
 13. Remove Element
+14. Remove Duplicates From Sorted Array
+15. Maximum Subarray
 
 ###<a name="6"></a>GENERAL ISSUE
-1. THREAD/LOCK
-2. INHERITANCE/SUPER
-3. TESTING WITH JUNIT
-4. MAXIMUM SUBARRAY PROBLEM
-5. ROD CUTTING PROBLEM
-6. LONGEST COMMON SUBSTRING/SUNSEQUENCE
+1. Thread/Lock
+2. Inheritance/Super
+3. Testing With JUnit
+4. Maximum Subarray Problem
+5. Rod Cutting Problem
+6. Longest Common Substring/Sunsequence
+7. Breadth First Traversal

@@ -25,46 +25,50 @@ public class MaximumSubarray implements Exercise {
 		Solution right = findMaximumSubarray(array, mid + 1, high);
 		Solution cross = findMaximumCrossingArray(array, low, mid, high);
 		
-		if(left.sum > right.sum && left.sum > cross.sum){
+		if (left.sum > right.sum && left.sum > cross.sum) {
 			return left;
-		}else if(right.sum > left.sum && right.sum > cross.sum){
+		} else if (right.sum > left.sum && right.sum > cross.sum) {
 			return right;
-		}else{
+		} else {
 			return cross;
 		}
 	}
 	
 	private Solution findMaximumCrossingArray(int[] array, int low, int mid, int high){
-		int leftSum = -2147483647;
-		int rightSum = -2147483647;
+		int leftSum = 0;
+		int rightSum = 0;
+		int leftMax = array[mid];
+		int rightMax = array[mid + 1];
 		int sum = 0;
-		int maxLeftIndex = 0;
-		int maxRightIndex = 0;
+		int maxLeftIndex = mid;
+		int maxRightIndex = mid + 1;
 		
-		for(int i = mid; i > low - 1; i--){
-			sum += array[i];
-			if(sum > leftSum){
-				leftSum = sum;
+		for (int i = mid; i >= low; i--) {
+			leftSum += array[i];
+			if(leftSum > leftMax){
+				leftMax = leftSum;
 				maxLeftIndex = i;
 			}
 		}
 		
-		for(int i = mid + 1; i < high + 1; i++){
-			sum += array[i];
-			if(sum > rightSum){
-				rightSum = sum;
+		for (int i = mid + 1; i <= high; i++) {
+			rightSum += array[i];
+			if (rightSum > rightMax) {
+				rightMax = rightSum;
 				maxRightIndex = i;
-			}			
+			}		
 		}
+
+		sum = Math.max(Math.max(leftMax, rightMax), leftMax + rightMax);
 		
-		return new Solution(maxLeftIndex, maxRightIndex, leftSum + rightSum);
+		return new Solution(maxLeftIndex, maxRightIndex, sum);
 	}
 	
 	private void initialization(){
 		int length = numbers.length;
-		for(int i = 0; i < length; i++){
+		for (int i = 0; i < length; i++) {
 			numbers[i] = (int)(Math.random() * MAXIMUM);
-			if(getRandomBoolean()) numbers[i] *= (-1);
+			if (getRandomBoolean()) numbers[i] *= (-1);
 		}
 	}
 	

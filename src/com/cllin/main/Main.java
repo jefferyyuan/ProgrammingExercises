@@ -1,5 +1,6 @@
 package com.cllin.main;
 
+import com.cllin.algorithms.BreadthFirstTraversal;
 import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.algorithms.RodCutting;
@@ -106,6 +107,7 @@ public class Main {
 	public static final int EXTEND_AND_SUPER = 9;
 	public static final int MAXIMUM_SUBARRAY = 10;
 	public static final int ENUMERATION = 11;
+	public static final int Breadth_First_Traversal = 12;
 	
 //	SORTING
 	public static final int INSERTIONSORT = 3000;
@@ -202,7 +204,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = MaximumSubarray;
+		int option = Breadth_First_Traversal;
 
 		switch(option){
 			case TRIE:
@@ -261,6 +263,9 @@ public class Main {
 				break;
 			case ENUMERATION:
 				exercise = new EnumerationExercise();
+				break;
+			case Breadth_First_Traversal:
+				exercise = new BreadthFirstTraversal();
 				break;
 			case EX19_10:
 				exercise = new Exercise19_10();

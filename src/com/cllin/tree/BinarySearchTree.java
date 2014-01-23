@@ -131,6 +131,18 @@ public class BinarySearchTree {
 		return parent;
 	}
 	
+	
+	public int getLevel(Node node){
+		int level = 0;
+		
+		while (node.parent != null) {
+			level++;
+			node = node.parent;
+		}
+		
+		return level;
+	}
+	
 	private void transplant(Node origin, Node newNode){
 		if(origin.parent == null){
 			root = newNode;

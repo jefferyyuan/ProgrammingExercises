@@ -197,11 +197,12 @@ public class Main {
 	public static final int BinaryTreeInorderTraversal = 5011;
 	public static final int RemoveElement = 5012;
 	public static final int RemoveDuplicatesFromSortedArray = 5013;
+	public static final int MaximumSubarray = 5014;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = RemoveDuplicatesFromSortedArray;
+		int option = MaximumSubarray;
 
 		switch(option){
 			case TRIE:
@@ -481,6 +482,9 @@ public class Main {
 				break;
 			case RemoveDuplicatesFromSortedArray:
 				exercise = new RemoveDuplicatesFromSortedArray();
+				break;
+			case MaximumSubarray:
+				exercise = new com.cllin.leetcode.MaximumSubarray();
 				break;
 		}
 		

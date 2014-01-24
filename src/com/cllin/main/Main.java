@@ -72,6 +72,7 @@ import com.cllin.leetcode.BinaryTreeInorderTraversal;
 import com.cllin.leetcode.ClimbingStairs;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
+import com.cllin.leetcode.MergeTwoSortedLists;
 import com.cllin.leetcode.PopulatingNextRightPointers;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedArray;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
@@ -204,11 +205,12 @@ public class Main {
 	public static final int MaximumSubarray = 5014;
 	public static final int ClimbingStairs = 5015;
 	public static final int RomanToInteger = 5016;
+	public static final int MergeTwoSortedLists = 5017;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = RomanToInteger;
+		int option = MergeTwoSortedLists;
 
 		switch(option){
 			case TRIE:
@@ -500,6 +502,9 @@ public class Main {
 				break;
 			case RomanToInteger:
 				exercise = new RomanToInteger();
+				break;
+			case MergeTwoSortedLists:
+				exercise = new MergeTwoSortedLists();
 				break;
 		}
 		

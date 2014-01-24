@@ -69,6 +69,7 @@ import com.cllin.enumeration.EnumerationExercise;
 import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.leetcode.BestTimetoBuyandSellStockII;
 import com.cllin.leetcode.BinaryTreeInorderTraversal;
+import com.cllin.leetcode.ClimbingStairs;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
 import com.cllin.leetcode.PopulatingNextRightPointers;
@@ -76,6 +77,7 @@ import com.cllin.leetcode.RemoveDuplicatesFromSortedArray;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
 import com.cllin.leetcode.RemoveElement;
 import com.cllin.leetcode.ReverseInteger;
+import com.cllin.leetcode.RomanToInteger;
 import com.cllin.leetcode.SameTree;
 import com.cllin.leetcode.SearchInsertPosition;
 import com.cllin.leetcode.SingleNumber;
@@ -200,11 +202,13 @@ public class Main {
 	public static final int RemoveElement = 5012;
 	public static final int RemoveDuplicatesFromSortedArray = 5013;
 	public static final int MaximumSubarray = 5014;
+	public static final int ClimbingStairs = 5015;
+	public static final int RomanToInteger = 5016;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = Breadth_First_Traversal;
+		int option = RomanToInteger;
 
 		switch(option){
 			case TRIE:
@@ -490,6 +494,12 @@ public class Main {
 				break;
 			case MaximumSubarray:
 				exercise = new com.cllin.leetcode.MaximumSubarray();
+				break;
+			case ClimbingStairs:
+				exercise = new ClimbingStairs();
+				break;
+			case RomanToInteger:
+				exercise = new RomanToInteger();
 				break;
 		}
 		

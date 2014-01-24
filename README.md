@@ -109,6 +109,9 @@
 13. Remove Element
 14. Remove Duplicates From Sorted Array
 15. Maximum Subarray
+16. Climbing Stairs
+17. Roman to Integer
+18. Merge Two Sorted Lists
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

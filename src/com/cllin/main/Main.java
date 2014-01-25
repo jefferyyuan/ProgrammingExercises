@@ -72,6 +72,7 @@ import com.cllin.leetcode.BinaryTreeInorderTraversal;
 import com.cllin.leetcode.ClimbingStairs;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
+import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
 import com.cllin.leetcode.PopulatingNextRightPointers;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedArray;
@@ -82,6 +83,7 @@ import com.cllin.leetcode.RomanToInteger;
 import com.cllin.leetcode.SameTree;
 import com.cllin.leetcode.SearchInsertPosition;
 import com.cllin.leetcode.SingleNumber;
+import com.cllin.leetcode.SymmetricTree;
 import com.cllin.leetcode.UniqueBinarySearchTrees;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
@@ -206,11 +208,13 @@ public class Main {
 	public static final int ClimbingStairs = 5015;
 	public static final int RomanToInteger = 5016;
 	public static final int MergeTwoSortedLists = 5017;
+	public static final int SymmetricTree = 5018;
+	public static final int MergeSortedArray = 5019;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = MergeTwoSortedLists;
+		int option = MergeSortedArray;
 
 		switch(option){
 			case TRIE:
@@ -505,6 +509,12 @@ public class Main {
 				break;
 			case MergeTwoSortedLists:
 				exercise = new MergeTwoSortedLists();
+				break;
+			case SymmetricTree:
+				exercise = new SymmetricTree();
+				break;
+			case MergeSortedArray:
+				exercise = new MergeSortedArray();
 				break;
 		}
 		

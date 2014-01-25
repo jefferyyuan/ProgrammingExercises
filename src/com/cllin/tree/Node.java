@@ -14,6 +14,13 @@ public class Node {
 		this.parent = parent;
 	}
 	
+	public Node(int key){
+		this.value = key;
+		this.left = null;
+		this.right = null;
+		this.parent = null;
+	}
+	
 	public void printNode(){
 		System.out.print(value);
 	}

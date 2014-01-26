@@ -80,6 +80,7 @@ import com.cllin.leetcode.MaximumDepthOfBinaryTree;
 import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
 import com.cllin.leetcode.PascalsTriangle;
+import com.cllin.leetcode.Permutations;
 import com.cllin.leetcode.PopulatingNextRightPointers;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedArray;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
@@ -226,11 +227,12 @@ public class Main {
 	public static final int SingleNumberII = 5025;
 	public static final int BestTimeToBuyAndSellStock = 5026;
 	public static final int GrayCode = 5027;
+	public static final int Permutations = 5028;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = GrayCode;
+		int option = Permutations;
 
 		switch(option){
 			case TRIE:
@@ -555,6 +557,9 @@ public class Main {
 				break;
 			case GrayCode:
 				exercise = new GrayCode();
+				break;
+			case Permutations:
+				exercise = new Permutations();
 				break;
 		}
 		

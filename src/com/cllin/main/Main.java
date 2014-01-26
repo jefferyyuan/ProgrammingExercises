@@ -73,6 +73,7 @@ import com.cllin.leetcode.BestTimetoBuyandSellStockII;
 import com.cllin.leetcode.BinaryTreeInorderTraversal;
 import com.cllin.leetcode.ClimbingStairs;
 import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
+import com.cllin.leetcode.GrayCode;
 import com.cllin.leetcode.IntegerToRoman;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
@@ -224,11 +225,12 @@ public class Main {
 	public static final int BalancedBinaryTree = 5024;
 	public static final int SingleNumberII = 5025;
 	public static final int BestTimeToBuyAndSellStock = 5026;
+	public static final int GrayCode = 5027;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = BestTimeToBuyAndSellStock;
+		int option = GrayCode;
 
 		switch(option){
 			case TRIE:
@@ -550,6 +552,9 @@ public class Main {
 				break;
 			case BestTimeToBuyAndSellStock:
 				exercise = new BestTimeToBuyAndSellStock();
+				break;
+			case GrayCode:
+				exercise = new GrayCode();
 				break;
 		}
 		

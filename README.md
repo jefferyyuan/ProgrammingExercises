@@ -112,6 +112,19 @@
 16. Climbing Stairs
 17. Roman to Integer
 18. Merge Two Sorted Lists
+19. Merge Sorted Array
+20. Symmetric Tree
+21. Balanced Binary Tree
+22. Best Time to Buy and Sell Stock II
+    - Refer with "Best Time to Buy and Sell Stock"
+    - When only one sell is allowed, it is in fact a Maximum Subarray Problem of the array contains profit of each day
+23. Convert Sorted Array to Binary Search Tree
+24. Integer to Roman
+25. Pascal's Triangle
+26. Single Number II
+    - Refer with "Single Number Problem". Instead of twice, the noises are repeated three times this time
+27. Swap Nodes in Pairs
+28. Gray Code
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

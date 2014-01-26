@@ -67,13 +67,18 @@ import com.cllin.cci.chap19.Exercise19_08;
 import com.cllin.cci.chap19.Exercise19_10;
 import com.cllin.enumeration.EnumerationExercise;
 import com.cllin.inheritance.ExtendAndSuper;
+import com.cllin.leetcode.BalancedBinaryTree;
+import com.cllin.leetcode.BestTimeToBuyAndSellStock;
 import com.cllin.leetcode.BestTimetoBuyandSellStockII;
 import com.cllin.leetcode.BinaryTreeInorderTraversal;
 import com.cllin.leetcode.ClimbingStairs;
+import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
+import com.cllin.leetcode.IntegerToRoman;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
 import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
+import com.cllin.leetcode.PascalsTriangle;
 import com.cllin.leetcode.PopulatingNextRightPointers;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedArray;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
@@ -83,6 +88,8 @@ import com.cllin.leetcode.RomanToInteger;
 import com.cllin.leetcode.SameTree;
 import com.cllin.leetcode.SearchInsertPosition;
 import com.cllin.leetcode.SingleNumber;
+import com.cllin.leetcode.SingleNumberII;
+import com.cllin.leetcode.SwapNodesInPairs;
 import com.cllin.leetcode.SymmetricTree;
 import com.cllin.leetcode.UniqueBinarySearchTrees;
 import com.cllin.list.LinkedListExercise;
@@ -210,11 +217,18 @@ public class Main {
 	public static final int MergeTwoSortedLists = 5017;
 	public static final int SymmetricTree = 5018;
 	public static final int MergeSortedArray = 5019;
+	public static final int ConvertSortedArrayToBinarySearchTree = 5020;
+	public static final int SwapNodesInPairs = 5021;
+	public static final int IntegerToRoman = 5022;
+	public static final int PascalsTriangle = 5023;
+	public static final int BalancedBinaryTree = 5024;
+	public static final int SingleNumberII = 5025;
+	public static final int BestTimeToBuyAndSellStock = 5026;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = MergeSortedArray;
+		int option = BestTimeToBuyAndSellStock;
 
 		switch(option){
 			case TRIE:
@@ -515,6 +529,27 @@ public class Main {
 				break;
 			case MergeSortedArray:
 				exercise = new MergeSortedArray();
+				break;
+			case ConvertSortedArrayToBinarySearchTree:
+				exercise = new ConvertSortedArrayToBinarySearchTree();
+				break;
+			case SwapNodesInPairs:
+				exercise = new SwapNodesInPairs();
+				break;
+			case IntegerToRoman:
+				exercise = new IntegerToRoman();
+				break;
+			case PascalsTriangle:
+				exercise = new PascalsTriangle();
+				break;
+			case BalancedBinaryTree:
+				exercise = new BalancedBinaryTree();
+				break;
+			case SingleNumberII:
+				exercise = new SingleNumberII();
+				break;
+			case BestTimeToBuyAndSellStock:
+				exercise = new BestTimeToBuyAndSellStock();
 				break;
 		}
 		

@@ -1,5 +1,7 @@
 package com.cllin.tree;
 
+import java.util.Arrays;
+
 
 /*
  *	An interface should be implemented between the user and the tree
@@ -17,6 +19,37 @@ public class BinarySearchTree {
 	public BinarySearchTree(){
 		root = null;
 		size = 0;
+	}
+	
+    /**
+     * Build a BST with minimum possible height.
+     *
+     * @param size the number of nodes in the tree
+     * @param maximum the maximum value of nodes in the tree
+     */
+	public void buildTree(int size, int maximum){
+		if (size <= 0) return;
+		
+		int[] numbers = new int[size];
+		for (int i = 0; i < size; i++) {
+			numbers[i] = (int)(Math.random() * maximum);
+		}
+		
+		buildTree(numbers);
+	}
+
+    /**
+     * Build a BST with minimum possible height with the values in an array.
+     *
+     * @param numbers the array whose elements will be used to build the tree 
+     */
+	public void buildTree(int[] numbers){
+		if (numbers.length == 0) return;
+		
+		Arrays.sort(numbers);
+		
+		this.root = buildTree(numbers, 0, numbers.length - 1);
+		this.size = numbers.length;
 	}
 	
 	public void insert(Node node){
@@ -156,4 +189,17 @@ public class BinarySearchTree {
 			origin.parent = newNode.parent;
 		}
 	}
+	
+    private Node buildTree(int[] num, int start, int end) {
+    	if (start == end) return new Node(num[start]);
+    	else if (start > end) return null;
+    	
+    	int mid = (start + end) / 2;
+    	
+    	Node node = new Node(num[mid]);
+    	node.left = buildTree(num, start, mid - 1);
+    	node.right = buildTree(num, mid + 1, end);
+    	
+    	return node;
+    }
 }

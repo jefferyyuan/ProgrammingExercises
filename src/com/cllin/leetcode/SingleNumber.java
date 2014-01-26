@@ -19,7 +19,6 @@ public class SingleNumber implements LeetCodeExercise {
 		}
 		
 		array[SIZE * 2] = (int)(Math.random() * MAXIMUM);
-
 	}
 
 	@Override
@@ -33,11 +32,8 @@ public class SingleNumber implements LeetCodeExercise {
 		}
 		result = number;
 
-		if(test()){
-			System.out.printf("%d is the single number%n", result);
-		}else{
-			System.out.println("Failed");
-		}
+		if (test()) System.out.printf("%d is the single number%n", result);
+		else System.out.println("Failed");
 	}
 
 	@Override

@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 public class BestTimetoBuyandSellStockII implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
 	
-	private int SIZE = 2;
+	private int SIZE = 100;
 	private int[] prices;
 	
 	@Override
@@ -13,7 +13,6 @@ public class BestTimetoBuyandSellStockII implements LeetCodeExercise {
 		for(int i = 0; i < SIZE; i++){
 			prices[i] = (int)(Math.random() * MAXIMUM);
 		}
-
 	}
 
 	@Override

@@ -125,6 +125,16 @@
     - Refer with "Single Number Problem". Instead of twice, the noises are repeated three times this time
 27. Swap Nodes in Pairs
 28. Gray Code
+29. Permutations
+    - Recursion
+30. Binary Tree Level Order Traversal II
+    - Breadth first traversal
+32. Generate Parentheses
+33. Minimum Path Sum
+    - Recursion works just fine, but solving with for-loop and some extra memory will improve the speed
+34. Sort Colors
+35. Linked List Cycle II
+
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

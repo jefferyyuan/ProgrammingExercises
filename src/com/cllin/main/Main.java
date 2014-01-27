@@ -74,12 +74,14 @@ import com.cllin.leetcode.BinaryTreeInorderTraversal;
 import com.cllin.leetcode.BinaryTreeLevelOrderTraversalII;
 import com.cllin.leetcode.ClimbingStairs;
 import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
+import com.cllin.leetcode.GenerateParentheses;
 import com.cllin.leetcode.GrayCode;
 import com.cllin.leetcode.IntegerToRoman;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
 import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
+import com.cllin.leetcode.MinimumPathSum;
 import com.cllin.leetcode.PascalsTriangle;
 import com.cllin.leetcode.Permutations;
 import com.cllin.leetcode.PopulatingNextRightPointers;
@@ -92,6 +94,7 @@ import com.cllin.leetcode.SameTree;
 import com.cllin.leetcode.SearchInsertPosition;
 import com.cllin.leetcode.SingleNumber;
 import com.cllin.leetcode.SingleNumberII;
+import com.cllin.leetcode.SortColors;
 import com.cllin.leetcode.SwapNodesInPairs;
 import com.cllin.leetcode.SymmetricTree;
 import com.cllin.leetcode.UniqueBinarySearchTrees;
@@ -230,11 +233,14 @@ public class Main {
 	public static final int GrayCode = 5027;
 	public static final int Permutations = 5028;
 	public static final int BinaryTreeLevelOrderTraversalII = 5029;
+	public static final int SortColors = 5030;
+	public static final int GenerateParentheses = 5031;
+	public static final int MinimumPathSum = 5032;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = BinaryTreeLevelOrderTraversalII;
+		int option = MinimumPathSum;
 
 		switch(option){
 			case TRIE:
@@ -565,6 +571,15 @@ public class Main {
 				break;
 			case BinaryTreeLevelOrderTraversalII:
 				exercise = new BinaryTreeLevelOrderTraversalII();
+				break;
+			case SortColors:
+				exercise = new SortColors();
+				break;
+			case GenerateParentheses:
+				exercise = new GenerateParentheses();
+				break;
+			case MinimumPathSum:
+				exercise = new MinimumPathSum();
 				break;
 		}
 		

@@ -78,6 +78,7 @@ import com.cllin.leetcode.GenerateParentheses;
 import com.cllin.leetcode.GrayCode;
 import com.cllin.leetcode.IntegerToRoman;
 import com.cllin.leetcode.LinkedListCycle;
+import com.cllin.leetcode.LinkedListCycleII;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
 import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
@@ -236,11 +237,12 @@ public class Main {
 	public static final int SortColors = 5030;
 	public static final int GenerateParentheses = 5031;
 	public static final int MinimumPathSum = 5032;
+	public static final int LinkedListCycleII = 5033;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = MinimumPathSum;
+		int option = LinkedListCycleII;
 
 		switch(option){
 			case TRIE:
@@ -580,6 +582,9 @@ public class Main {
 				break;
 			case MinimumPathSum:
 				exercise = new MinimumPathSum();
+				break;
+			case LinkedListCycleII:
+				exercise = new LinkedListCycleII();
 				break;
 		}
 		

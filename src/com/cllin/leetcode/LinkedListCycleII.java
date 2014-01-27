@@ -1,13 +1,13 @@
 package com.cllin.leetcode;
 
-public class LinkedListCycle implements LeetCodeExercise {
-	private final int SIZE = 1000 - 1;
-	private final int MAXIMUM = 1000;
-	private final int CYCLE_BEGINNING = 500;
+public class LinkedListCycleII implements LeetCodeExercise {
+	private final int SIZE = 2 - 1;
+	private final int MAXIMUM = 100;
+	private final int CYCLE_BEGINNING = 0;
 	
 	private ListNode listA;
 	private ListNode listB;
-
+	
 	@Override
 	public void initialize() {
 		listA = new ListNode((int)(Math.random() * MAXIMUM));
@@ -22,10 +22,10 @@ public class LinkedListCycle implements LeetCodeExercise {
 		}
 		
 		for(int i = 0; i < SIZE; i++){
+			if (i == CYCLE_BEGINNING) cycleBeginning = nodeB;
+			
 			nodeB.next = new ListNode((int)(Math.random() * MAXIMUM));
 			nodeB = nodeB.next;
-			
-			if (i == CYCLE_BEGINNING) cycleBeginning = nodeB;
 		}
 		nodeB.next = cycleBeginning;
 	}
@@ -33,36 +33,44 @@ public class LinkedListCycle implements LeetCodeExercise {
 	@Override
 	public void runExercise() {
 		initialize();
+
+		ListNode a = detectCycle(listA);
+		ListNode b = detectCycle(listB);
 		
-		if (test()) System.out.println("Success");
-		else System.out.println("Failed");		
+		if (a != null || b == null) System.out.println("Failed");
+		else System.out.printf("The cycle starts at %d%n", b.val);
 	}
 	
-    private boolean hasCycle(ListNode head) {
+    private ListNode detectCycle(ListNode head) {
     	ListNode a = head;
     	ListNode b = head;
     	
     	while (a != null && b != null) {
     		if (a.next != null) a = a.next.next;
-    		else return false;
+    		else return null;
     		b = b.next;
     		
-    		if (a == null || b == null) return false;
-    		if (a.hashCode() == b.hashCode()) return true;
+    		if (a == null || b == null) return null;
+    		if (a.hashCode() == b.hashCode()) break;
     	}
     	
-        return false;
+    	a = head;
+    	while (a != null) {
+    		if (a.hashCode() == b.hashCode()) return a;
+    		
+    		a = a.next;
+    		b = b.next;
+    	}
+    	
+        return null;
     }
 
 	@Override
 	public boolean test() {
-		if (hasCycle(listA)) return false;
-		if (!hasCycle(listB)) return false;
-		
-		return true;
+		// TODO Auto-generated method stub
+		return false;
 	}
 
-	@SuppressWarnings("unused")
 	private class ListNode {
 		int val;
 		ListNode next;

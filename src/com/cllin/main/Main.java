@@ -91,6 +91,7 @@ import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
 import com.cllin.leetcode.RemoveElement;
 import com.cllin.leetcode.ReverseInteger;
 import com.cllin.leetcode.RomanToInteger;
+import com.cllin.leetcode.RotateImage;
 import com.cllin.leetcode.SameTree;
 import com.cllin.leetcode.SearchInsertPosition;
 import com.cllin.leetcode.SingleNumber;
@@ -238,11 +239,12 @@ public class Main {
 	public static final int GenerateParentheses = 5031;
 	public static final int MinimumPathSum = 5032;
 	public static final int LinkedListCycleII = 5033;
+	public static final int RotateImage = 5034;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = LinkedListCycleII;
+		int option = RotateImage;
 
 		switch(option){
 			case TRIE:
@@ -585,6 +587,9 @@ public class Main {
 				break;
 			case LinkedListCycleII:
 				exercise = new LinkedListCycleII();
+				break;
+			case RotateImage:
+				exercise = new RotateImage();
 				break;
 		}
 		

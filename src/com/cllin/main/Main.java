@@ -100,6 +100,7 @@ import com.cllin.leetcode.SortColors;
 import com.cllin.leetcode.SwapNodesInPairs;
 import com.cllin.leetcode.SymmetricTree;
 import com.cllin.leetcode.UniqueBinarySearchTrees;
+import com.cllin.leetcode.UniquePaths;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
 import com.cllin.operator.ExclusiveOR;
@@ -240,11 +241,12 @@ public class Main {
 	public static final int MinimumPathSum = 5032;
 	public static final int LinkedListCycleII = 5033;
 	public static final int RotateImage = 5034;
+	public static final int UniquePaths = 5035;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = RotateImage;
+		int option = UniquePaths;
 
 		switch(option){
 			case TRIE:
@@ -590,6 +592,9 @@ public class Main {
 				break;
 			case RotateImage:
 				exercise = new RotateImage();
+				break;
+			case UniquePaths:
+				exercise = new UniquePaths();
 				break;
 		}
 		

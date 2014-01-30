@@ -71,7 +71,9 @@ import com.cllin.leetcode.BalancedBinaryTree;
 import com.cllin.leetcode.BestTimeToBuyAndSellStock;
 import com.cllin.leetcode.BestTimetoBuyandSellStockII;
 import com.cllin.leetcode.BinaryTreeInorderTraversal;
+import com.cllin.leetcode.BinaryTreeLevelOrderTraversal;
 import com.cllin.leetcode.BinaryTreeLevelOrderTraversalII;
+import com.cllin.leetcode.BinaryTreePostorderTraversal;
 import com.cllin.leetcode.ClimbingStairs;
 import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
 import com.cllin.leetcode.GenerateParentheses;
@@ -242,11 +244,13 @@ public class Main {
 	public static final int LinkedListCycleII = 5033;
 	public static final int RotateImage = 5034;
 	public static final int UniquePaths = 5035;
+	public static final int BinaryTreeLevelOrderTraversal = 5036;
+	public static final int BinaryTreePostorderTraversal = 5037;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = UniquePaths;
+		int option = BinaryTreePostorderTraversal;
 
 		switch(option){
 			case TRIE:
@@ -595,6 +599,12 @@ public class Main {
 				break;
 			case UniquePaths:
 				exercise = new UniquePaths();
+				break;
+			case BinaryTreeLevelOrderTraversal:
+				exercise = new BinaryTreeLevelOrderTraversal();
+				break;
+			case BinaryTreePostorderTraversal:
+				exercise = new BinaryTreePostorderTraversal();
 				break;
 		}
 		

@@ -134,6 +134,8 @@
     - Recursion works just fine, but solving with for-loop and some extra memory will improve the speed
 34. Sort Colors
 35. Linked List Cycle II
+36. Rotate Image
+37. Unique Paths
 
 
 ###<a name="6"></a>GENERAL ISSUE

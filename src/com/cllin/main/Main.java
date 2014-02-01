@@ -96,6 +96,7 @@ import com.cllin.leetcode.RomanToInteger;
 import com.cllin.leetcode.RotateImage;
 import com.cllin.leetcode.SameTree;
 import com.cllin.leetcode.SearchInsertPosition;
+import com.cllin.leetcode.SetMatrixZeroes;
 import com.cllin.leetcode.SingleNumber;
 import com.cllin.leetcode.SingleNumberII;
 import com.cllin.leetcode.SortColors;
@@ -246,11 +247,12 @@ public class Main {
 	public static final int UniquePaths = 5035;
 	public static final int BinaryTreeLevelOrderTraversal = 5036;
 	public static final int BinaryTreePostorderTraversal = 5037;
+	public static final int SetMatrixZeroes = 5038;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = BinaryTreePostorderTraversal;
+		int option = SetMatrixZeroes;
 
 		switch(option){
 			case TRIE:
@@ -605,6 +607,9 @@ public class Main {
 				break;
 			case BinaryTreePostorderTraversal:
 				exercise = new BinaryTreePostorderTraversal();
+				break;
+			case SetMatrixZeroes:
+				exercise = new SetMatrixZeroes();
 				break;
 		}
 		

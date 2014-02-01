@@ -2,6 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Stack;
 
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
@@ -12,20 +13,18 @@ public class BinaryTreePostorderTraversal implements LeetCodeExercise {
 	
 	private BinarySearchTree tree;
 	private ArrayList<Integer> result;
-	private int[] reference;
+	private ArrayList<Integer> reference;
 	
 	@Override
 	public void initialize() {
 		tree = new BinarySearchTree();
-		reference = new int[SIZE];
+		reference = new ArrayList<Integer>();
+		int[] numbers = new int[SIZE];
 		
-		for (int i = 0; i < SIZE; i++) {
-			int value = (int)(Math.random() * MAXIMUM);
-			tree.insert(new Node(value, null, null, null));
-			reference[i] = value;
-		}
+		for (int i = 0; i < SIZE; i++) numbers[i] = (int)(Math.random() * MAXIMUM);
+		Arrays.sort(numbers);
 		
-		Arrays.sort(reference);
+		tree.buildTree(numbers);
 	}
 
 	@Override
@@ -39,23 +38,48 @@ public class BinaryTreePostorderTraversal implements LeetCodeExercise {
 	
     public ArrayList<Integer> postorderTraversal(Node root) {
     	ArrayList<Integer> result = new ArrayList<Integer>();
+    	ArrayList<Node> list = new ArrayList<Node>();
+    	Stack<Node> stack = new Stack<Node>();
+    	Node node = null; 
     	
-//    	TODO
+    	stack.add(root); 
+    	
+    	if (root == null) return result;
+    	while (!stack.isEmpty()) {
+    		node = stack.peek();
+    		
+    		if (node.left != null && !list.contains(node.left)) stack.push(node.left);
+    		else {
+    			if (node.right != null && !list.contains(node.right)) stack.push(node.right);
+    			else list.add(stack.pop());
+    		}
+    	}
+    	
+    	for (Node n : list) result.add(n.value);
     	
         return result;
     }
+    
+	private void postTreeWalk(Node node){
+		if(node != null){
+			postTreeWalk(node.left);
+			postTreeWalk(node.right);
+			reference.add(node.value);
+		}
+	}
 
 	@Override
 	public boolean test() {
-		int size = result.size();
-		int length = reference.length;
+		postTreeWalk(tree.root);
 		
-		if (size != length) return false;
+		int size = result.size();
+		if (size != reference.size()) return false;
 		
 		for (int i = size - 1; i >= 0; i--) {
-			if (result.get(i).intValue() != reference[i]) return false;
+			if (result.get(i).intValue() != reference.get(i).intValue()) return false;
 		}
 		
-		return true;	}
+		return true;
+	}
 
 }

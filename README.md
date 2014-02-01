@@ -139,7 +139,9 @@
 38. Binary Tree Level Order Traversal
 39. Binary Tree Postorder Traversal
 40. Set Matrix Zeroes
-
+41. Container With Most Water
+42. Plus One
+43. Remove Nth Node from End of List
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

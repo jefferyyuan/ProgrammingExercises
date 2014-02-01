@@ -115,7 +115,7 @@
 19. Merge Sorted Array
 20. Symmetric Tree
 21. Balanced Binary Tree
-22. Best Time to Buy and Sell Stock II
+22. Best Time to Buy and Sell Stock IIi
     - Refer with "Best Time to Buy and Sell Stock"
     - When only one sell is allowed, it is in fact a Maximum Subarray Problem of the array contains profit of each day
 23. Convert Sorted Array to Binary Search Tree
@@ -136,6 +136,9 @@
 35. Linked List Cycle II
 36. Rotate Image
 37. Unique Paths
+38. Binary Tree Level Order Traversal
+39. Binary Tree Postorder Traversal
+40. Set Matrix Zeroes
 
 
 ###<a name="6"></a>GENERAL ISSUE

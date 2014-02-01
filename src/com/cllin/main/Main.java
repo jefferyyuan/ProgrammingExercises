@@ -75,6 +75,7 @@ import com.cllin.leetcode.BinaryTreeLevelOrderTraversal;
 import com.cllin.leetcode.BinaryTreeLevelOrderTraversalII;
 import com.cllin.leetcode.BinaryTreePostorderTraversal;
 import com.cllin.leetcode.ClimbingStairs;
+import com.cllin.leetcode.ContainerWithMostWater;
 import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
 import com.cllin.leetcode.GenerateParentheses;
 import com.cllin.leetcode.GrayCode;
@@ -87,10 +88,12 @@ import com.cllin.leetcode.MergeTwoSortedLists;
 import com.cllin.leetcode.MinimumPathSum;
 import com.cllin.leetcode.PascalsTriangle;
 import com.cllin.leetcode.Permutations;
+import com.cllin.leetcode.PlusOne;
 import com.cllin.leetcode.PopulatingNextRightPointers;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedArray;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
 import com.cllin.leetcode.RemoveElement;
+import com.cllin.leetcode.RemoveNthNodeFromEndOfList;
 import com.cllin.leetcode.ReverseInteger;
 import com.cllin.leetcode.RomanToInteger;
 import com.cllin.leetcode.RotateImage;
@@ -248,11 +251,14 @@ public class Main {
 	public static final int BinaryTreeLevelOrderTraversal = 5036;
 	public static final int BinaryTreePostorderTraversal = 5037;
 	public static final int SetMatrixZeroes = 5038;
+	public static final int ContainerWithMostWater = 5039;
+	public static final int PlusOne = 5040;
+	public static final int RemoveNthNodeFromEndOfList = 5041;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = SetMatrixZeroes;
+		int option = RemoveNthNodeFromEndOfList;
 
 		switch(option){
 			case TRIE:
@@ -610,6 +616,15 @@ public class Main {
 				break;
 			case SetMatrixZeroes:
 				exercise = new SetMatrixZeroes();
+				break;
+			case ContainerWithMostWater:
+				exercise = new ContainerWithMostWater();
+				break;
+			case PlusOne:
+				exercise = new PlusOne();
+				break;
+			case RemoveNthNodeFromEndOfList:
+				exercise = new RemoveNthNodeFromEndOfList();
 				break;
 		}
 		

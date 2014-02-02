@@ -31,7 +31,7 @@ public class PlusOne implements LeetCodeExercise {
 			digits = plusOne(digits);
 			
 			if (test()) System.out.println("Success");
-			else System.out.println("Failed");	
+			else System.out.println("Failed");
 		}
 	}
 	

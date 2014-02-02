@@ -98,11 +98,13 @@ import com.cllin.leetcode.ReverseInteger;
 import com.cllin.leetcode.RomanToInteger;
 import com.cllin.leetcode.RotateImage;
 import com.cllin.leetcode.SameTree;
+import com.cllin.leetcode.SearchA2DMatrix;
 import com.cllin.leetcode.SearchInsertPosition;
 import com.cllin.leetcode.SetMatrixZeroes;
 import com.cllin.leetcode.SingleNumber;
 import com.cllin.leetcode.SingleNumberII;
 import com.cllin.leetcode.SortColors;
+import com.cllin.leetcode.SpiralMatrixII;
 import com.cllin.leetcode.SwapNodesInPairs;
 import com.cllin.leetcode.SymmetricTree;
 import com.cllin.leetcode.UniqueBinarySearchTrees;
@@ -254,11 +256,13 @@ public class Main {
 	public static final int ContainerWithMostWater = 5039;
 	public static final int PlusOne = 5040;
 	public static final int RemoveNthNodeFromEndOfList = 5041;
+	public static final int SpiralMatrixII = 5042;
+	public static final int SearchA2DMatrix = 5043;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = RemoveNthNodeFromEndOfList;
+		int option = SearchA2DMatrix;
 
 		switch(option){
 			case TRIE:
@@ -625,6 +629,12 @@ public class Main {
 				break;
 			case RemoveNthNodeFromEndOfList:
 				exercise = new RemoveNthNodeFromEndOfList();
+				break;
+			case SpiralMatrixII:
+				exercise = new SpiralMatrixII();
+				break;
+			case SearchA2DMatrix:
+				exercise = new SearchA2DMatrix();
 				break;
 		}
 		

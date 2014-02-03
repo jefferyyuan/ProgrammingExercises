@@ -87,12 +87,14 @@ import com.cllin.leetcode.MaximumDepthOfBinaryTree;
 import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
 import com.cllin.leetcode.MinimumPathSum;
+import com.cllin.leetcode.PalindromeNumber;
 import com.cllin.leetcode.PascalsTriangle;
 import com.cllin.leetcode.PascalsTriangleII;
 import com.cllin.leetcode.PathSum;
 import com.cllin.leetcode.Permutations;
 import com.cllin.leetcode.PlusOne;
 import com.cllin.leetcode.PopulatingNextRightPointers;
+import com.cllin.leetcode.PopulatingNextRightPointersInEachNodeII;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedArray;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedArrayII;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
@@ -270,10 +272,13 @@ public class Main {
 	public static final int SearchInRotatedSortedArray = 5047;
 	public static final int SearchInRotatedSortedArrayII = 5048;
 	public static final int PascalsTriangleII = 5049;
+	public static final int PopulatingNextRightPointersInEachNodeII = 5050;
+	public static final int PalindromeNumber = 5051;
+	
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = PascalsTriangleII;
+		int option = PalindromeNumber;
 
 		switch(option){
 			case TRIE:
@@ -664,6 +669,12 @@ public class Main {
 				break;
 			case PascalsTriangleII:
 				exercise = new PascalsTriangleII();
+				break;
+			case PopulatingNextRightPointersInEachNodeII:
+				exercise = new PopulatingNextRightPointersInEachNodeII();
+				break;
+			case PalindromeNumber:
+				exercise = new PalindromeNumber();
 				break;
 		}
 		

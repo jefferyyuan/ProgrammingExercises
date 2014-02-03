@@ -24,9 +24,7 @@ public class MaximumSubarray implements LeetCodeExercise {
 	@Override
 	public void runExercise() {
 		initialize();
-		
 		result = maxSubArray(array);
-
 		test();
 	}
 	

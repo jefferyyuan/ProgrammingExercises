@@ -151,6 +151,8 @@
 50. Search in Rotated Sorted Array
 51. Search in Rotated Sorted Array II
     - Note that "Search in Rotated Sorted Array" 1 and 2 are expected to be solved with time complexity O(log(n)). Yet, since this solution involves more complex array index computation, linear solution might be faster for smaller n's
+52. Palindrome Number
+53. Populating Next Right Pointers in Each Node II
 
 
 ###<a name="6"></a>GENERAL ISSUE

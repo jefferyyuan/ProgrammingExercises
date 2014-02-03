@@ -153,7 +153,9 @@
     - Note that "Search in Rotated Sorted Array" 1 and 2 are expected to be solved with time complexity O(log(n)). Yet, since this solution involves more complex array index computation, linear solution might be faster for smaller n's
 52. Palindrome Number
 53. Populating Next Right Pointers in Each Node II
-
+54. Minimum Depth of Binary Tree
+55. Sum Root to Leaf Numbers
+56. Trapping Rain Water
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

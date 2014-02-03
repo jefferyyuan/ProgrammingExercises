@@ -75,6 +75,7 @@ import com.cllin.leetcode.BinaryTreeLevelOrderTraversal;
 import com.cllin.leetcode.BinaryTreeLevelOrderTraversalII;
 import com.cllin.leetcode.BinaryTreePostorderTraversal;
 import com.cllin.leetcode.ClimbingStairs;
+import com.cllin.leetcode.Combinations;
 import com.cllin.leetcode.ContainerWithMostWater;
 import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
 import com.cllin.leetcode.GenerateParentheses;
@@ -87,10 +88,13 @@ import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
 import com.cllin.leetcode.MinimumPathSum;
 import com.cllin.leetcode.PascalsTriangle;
+import com.cllin.leetcode.PascalsTriangleII;
+import com.cllin.leetcode.PathSum;
 import com.cllin.leetcode.Permutations;
 import com.cllin.leetcode.PlusOne;
 import com.cllin.leetcode.PopulatingNextRightPointers;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedArray;
+import com.cllin.leetcode.RemoveDuplicatesFromSortedArrayII;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
 import com.cllin.leetcode.RemoveElement;
 import com.cllin.leetcode.RemoveNthNodeFromEndOfList;
@@ -99,6 +103,8 @@ import com.cllin.leetcode.RomanToInteger;
 import com.cllin.leetcode.RotateImage;
 import com.cllin.leetcode.SameTree;
 import com.cllin.leetcode.SearchA2DMatrix;
+import com.cllin.leetcode.SearchInRotatedSortedArray;
+import com.cllin.leetcode.SearchInRotatedSortedArrayII;
 import com.cllin.leetcode.SearchInsertPosition;
 import com.cllin.leetcode.SetMatrixZeroes;
 import com.cllin.leetcode.SingleNumber;
@@ -258,11 +264,16 @@ public class Main {
 	public static final int RemoveNthNodeFromEndOfList = 5041;
 	public static final int SpiralMatrixII = 5042;
 	public static final int SearchA2DMatrix = 5043;
-	
+	public static final int PathSum = 5044;
+	public static final int RemoveDuplicatesFromSortedArrayII = 5045;
+	public static final int Combinations = 5046;
+	public static final int SearchInRotatedSortedArray = 5047;
+	public static final int SearchInRotatedSortedArrayII = 5048;
+	public static final int PascalsTriangleII = 5049;
 	public static void main(String args[]){
 		Exercise exercise = null;;
 		
-		int option = SearchA2DMatrix;
+		int option = PascalsTriangleII;
 
 		switch(option){
 			case TRIE:
@@ -635,6 +646,24 @@ public class Main {
 				break;
 			case SearchA2DMatrix:
 				exercise = new SearchA2DMatrix();
+				break;
+			case PathSum:
+				exercise = new PathSum();
+				break;
+			case RemoveDuplicatesFromSortedArrayII:
+				exercise = new RemoveDuplicatesFromSortedArrayII();
+				break;
+			case Combinations:
+				exercise = new Combinations();
+				break;
+			case SearchInRotatedSortedArray:
+				exercise = new SearchInRotatedSortedArray();
+				break;
+			case SearchInRotatedSortedArrayII:
+				exercise = new SearchInRotatedSortedArrayII();
+				break;
+			case PascalsTriangleII:
+				exercise = new PascalsTriangleII();
 				break;
 		}
 		

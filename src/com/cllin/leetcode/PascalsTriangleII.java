@@ -1,0 +1,53 @@
+package com.cllin.leetcode;
+
+import java.util.ArrayList;
+
+public class PascalsTriangleII implements LeetCodeExercise {
+	private ArrayList<Integer> result;
+	private int rowIndex;
+	
+	@Override
+	public void initialize() {
+		// TODO Auto-generated method stub
+	}
+
+	@Override
+	public void runExercise() {
+		for (int i = 0; i <= 15; i++) {
+			rowIndex = i;
+			result = getRow(rowIndex);
+			
+			if (test()) System.out.println("Success");
+			else System.out.println("Failed");	
+		}
+		
+	}
+	
+    public ArrayList<Integer> getRow(int rowIndex) {
+    	ArrayList<Integer> result = new ArrayList<Integer>();
+    	
+    	long combination = 1;
+    	int bound = rowIndex / 2;
+    	for (int i = 0; i <= bound; i++) {
+    		result.add((int) combination);
+    		combination = combination * (rowIndex - i) / (i + 1);
+    	}
+
+    	if (rowIndex == 0) return result;
+    	
+    	if (rowIndex % 2 == 0) bound--;
+    	for (int i = bound; i >= 0; i--) result.add(result.get(i));
+        
+    	return result;
+    }
+
+	@Override
+	public boolean test() {
+		int count = 0;
+		for (Integer i : result) {
+			count += i.intValue();
+		}
+		
+		return (count == (int) Math.pow(2, rowIndex));
+	}
+}

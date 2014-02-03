@@ -1,22 +1,24 @@
 package com.cllin.leetcode;
 
 public class TrappingRainWater implements LeetCodeExercise {
-	private int[] terrain;
+	private final int[][] testSuites = 
+		{{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}, {5, 4, 1, 2}, {3, 1, 2}};
+	
 	private int result;
 	
 	@Override
 	public void initialize() {
-		terrain = new int[]{0,1,0,2,1,0,1,3,2,1,2,1};
-//		terrain = new int[]{5, 4, 1, 2};
-		terrain = new int[]{3, 1, 2};
 		result = 0;
 	}
 
 	@Override
 	public void runExercise() {
-		initialize();
-		result = trap(terrain);
-		test();
+		for (int i = 0; i < testSuites.length; i++) {
+			initialize();
+			result = trap(testSuites[i]);
+			test();
+		}
+		
 	}
 	
 	private int trap(int[] array) {
@@ -62,7 +64,7 @@ public class TrappingRainWater implements LeetCodeExercise {
 
 	@Override
 	public boolean test() {
-		System.out.printf("The capacity of this terrain is %d%n", result);
+		System.out.printf("The capacity of the terrain is %d%n", result);
 		return false;
 	}
 

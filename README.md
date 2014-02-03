@@ -142,6 +142,16 @@
 41. Container With Most Water
 42. Plus One
 43. Remove Nth Node from End of List
+44. Search A 2D Matrix
+45. Spiral Matrix II
+46. Combinations
+47. Pascals Triangle II
+48. Path Sum
+49. Remove Duplicates From Sorted Array II
+50. Search in Rotated Sorted Array
+51. Search in Rotated Sorted Array II
+    - Note that "Search in Rotated Sorted Array" 1 and 2 are expected to be solved with time complexity O(log(n)). Yet, since this solution involves more complex array index computation, linear solution might be faster for smaller n's
+
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

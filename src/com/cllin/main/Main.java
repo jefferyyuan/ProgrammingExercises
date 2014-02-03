@@ -86,6 +86,7 @@ import com.cllin.leetcode.LinkedListCycleII;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
 import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
+import com.cllin.leetcode.MinimumDepthOfBinaryTree;
 import com.cllin.leetcode.MinimumPathSum;
 import com.cllin.leetcode.PalindromeNumber;
 import com.cllin.leetcode.PascalsTriangle;
@@ -113,8 +114,10 @@ import com.cllin.leetcode.SingleNumber;
 import com.cllin.leetcode.SingleNumberII;
 import com.cllin.leetcode.SortColors;
 import com.cllin.leetcode.SpiralMatrixII;
+import com.cllin.leetcode.SumRootToLeafNumbers;
 import com.cllin.leetcode.SwapNodesInPairs;
 import com.cllin.leetcode.SymmetricTree;
+import com.cllin.leetcode.TrappingRainWater;
 import com.cllin.leetcode.UniqueBinarySearchTrees;
 import com.cllin.leetcode.UniquePaths;
 import com.cllin.list.LinkedListExercise;
@@ -274,11 +277,14 @@ public class Main {
 	public static final int PascalsTriangleII = 5049;
 	public static final int PopulatingNextRightPointersInEachNodeII = 5050;
 	public static final int PalindromeNumber = 5051;
+	public static final int MinimumDepthOfBinaryTree = 5052;
+	public static final int SumRootToLeafNumbers = 5053;
+	public static final int TrappingRainWater = 5054;
 	
 	public static void main(String args[]){
-		Exercise exercise = null;;
+		Exercise exercise = null;
 		
-		int option = PalindromeNumber;
+		int option = TrappingRainWater;
 
 		switch(option){
 			case TRIE:
@@ -675,6 +681,15 @@ public class Main {
 				break;
 			case PalindromeNumber:
 				exercise = new PalindromeNumber();
+				break;
+			case MinimumDepthOfBinaryTree:
+				exercise = new MinimumDepthOfBinaryTree();
+				break;
+			case SumRootToLeafNumbers:
+				exercise = new SumRootToLeafNumbers();
+				break;
+			case TrappingRainWater:
+				exercise = new TrappingRainWater();
 				break;
 		}
 		

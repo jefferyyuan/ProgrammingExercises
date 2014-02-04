@@ -129,35 +129,35 @@
     - Recursion
 30. Binary Tree Level Order Traversal II
     - Breadth first traversal
-32. Generate Parentheses
-33. Minimum Path Sum
+31. Generate Parentheses
+32. Minimum Path Sum
     - Recursion works just fine, but solving with for-loop and some extra memory will improve the speed
-34. Sort Colors
-35. Linked List Cycle II
-36. Rotate Image
-37. Unique Paths
-38. Binary Tree Level Order Traversal
-39. Binary Tree Postorder Traversal
-40. Set Matrix Zeroes
-41. Container With Most Water
-42. Plus One
-43. Remove Nth Node from End of List
-44. Search A 2D Matrix
-45. Spiral Matrix II
-46. Combinations
-47. Pascals Triangle II
-48. Path Sum
-49. Remove Duplicates From Sorted Array II
-50. Search in Rotated Sorted Array
-51. Search in Rotated Sorted Array II
+33. Sort Colors
+34. Linked List Cycle II
+35. Rotate Image
+36. Unique Paths
+37. Binary Tree Level Order Traversal
+38. Binary Tree Postorder Traversal
+39. Set Matrix Zeroes
+40. Container With Most Water
+41. Plus One
+42. Remove Nth Node from End of List
+43. Search A 2D Matrix
+44. Spiral Matrix II
+45. Combinations
+46. Pascals Triangle II
+47. Path Sum
+48. Remove Duplicates From Sorted Array II
+49. Search in Rotated Sorted Array
+50. Search in Rotated Sorted Array II
     - Note that "Search in Rotated Sorted Array" 1 and 2 are expected to be solved with time complexity O(log(n)). Yet, since this solution involves more complex array index computation, linear solution might be faster for smaller n's
-52. Palindrome Number
-53. Populating Next Right Pointers in Each Node II
-54. Minimum Depth of Binary Tree
-55. Sum Root to Leaf Numbers
-56. Trapping Rain Water
-57. N Queens II
-58. Valid Parentheses
+51. Palindrome Number
+52. Populating Next Right Pointers in Each Node II
+53. Minimum Depth of Binary Tree
+54. Sum Root to Leaf Numbers
+55. Trapping Rain Water
+56. N Queens II
+57. Valid Parentheses
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

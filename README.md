@@ -156,6 +156,8 @@
 54. Minimum Depth of Binary Tree
 55. Sum Root to Leaf Numbers
 56. Trapping Rain Water
+57. N Queens II
+58. Valid Parentheses
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

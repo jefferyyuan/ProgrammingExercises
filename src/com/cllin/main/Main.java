@@ -88,6 +88,7 @@ import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
 import com.cllin.leetcode.MinimumDepthOfBinaryTree;
 import com.cllin.leetcode.MinimumPathSum;
+import com.cllin.leetcode.NQueensII;
 import com.cllin.leetcode.PalindromeNumber;
 import com.cllin.leetcode.PascalsTriangle;
 import com.cllin.leetcode.PascalsTriangleII;
@@ -120,6 +121,7 @@ import com.cllin.leetcode.SymmetricTree;
 import com.cllin.leetcode.TrappingRainWater;
 import com.cllin.leetcode.UniqueBinarySearchTrees;
 import com.cllin.leetcode.UniquePaths;
+import com.cllin.leetcode.ValidParentheses;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
 import com.cllin.operator.ExclusiveOR;
@@ -280,11 +282,13 @@ public class Main {
 	public static final int MinimumDepthOfBinaryTree = 5052;
 	public static final int SumRootToLeafNumbers = 5053;
 	public static final int TrappingRainWater = 5054;
+	public static final int NQueensII = 5055;
+	public static final int ValidParentheses = 5056;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = TrappingRainWater;
+		int option = ValidParentheses;
 
 		switch(option){
 			case TRIE:
@@ -690,6 +694,12 @@ public class Main {
 				break;
 			case TrappingRainWater:
 				exercise = new TrappingRainWater();
+				break;
+			case NQueensII:
+				exercise = new NQueensII();
+				break;
+			case ValidParentheses:
+				exercise = new ValidParentheses();
 				break;
 		}
 		

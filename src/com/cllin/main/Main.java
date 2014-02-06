@@ -120,6 +120,7 @@ import com.cllin.leetcode.SpiralMatrixII;
 import com.cllin.leetcode.SumRootToLeafNumbers;
 import com.cllin.leetcode.SwapNodesInPairs;
 import com.cllin.leetcode.SymmetricTree;
+import com.cllin.leetcode.ThreeSumClosest;
 import com.cllin.leetcode.TrappingRainWater;
 import com.cllin.leetcode.UniqueBinarySearchTrees;
 import com.cllin.leetcode.UniquePaths;
@@ -288,11 +289,12 @@ public class Main {
 	public static final int ValidParentheses = 5056;
 	public static final int LengthOfLastWord = 5057;
 	public static final int PathSumII = 5058;
+	public static final int ThreeSumClosest = 5059;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = PathSumII;
+		int option = ThreeSumClosest;
 
 		switch(option){
 			case TRIE:
@@ -710,6 +712,9 @@ public class Main {
 				break;
 			case PathSumII:
 				exercise = new PathSumII();
+				break;
+			case ThreeSumClosest:
+				exercise = new ThreeSumClosest();
 				break;
 		}
 		

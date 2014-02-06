@@ -81,6 +81,7 @@ import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
 import com.cllin.leetcode.GenerateParentheses;
 import com.cllin.leetcode.GrayCode;
 import com.cllin.leetcode.IntegerToRoman;
+import com.cllin.leetcode.LengthOfLastWord;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.LinkedListCycleII;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
@@ -93,6 +94,7 @@ import com.cllin.leetcode.PalindromeNumber;
 import com.cllin.leetcode.PascalsTriangle;
 import com.cllin.leetcode.PascalsTriangleII;
 import com.cllin.leetcode.PathSum;
+import com.cllin.leetcode.PathSumII;
 import com.cllin.leetcode.Permutations;
 import com.cllin.leetcode.PlusOne;
 import com.cllin.leetcode.PopulatingNextRightPointers;
@@ -284,11 +286,13 @@ public class Main {
 	public static final int TrappingRainWater = 5054;
 	public static final int NQueensII = 5055;
 	public static final int ValidParentheses = 5056;
+	public static final int LengthOfLastWord = 5057;
+	public static final int PathSumII = 5058;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = ValidParentheses;
+		int option = PathSumII;
 
 		switch(option){
 			case TRIE:
@@ -700,6 +704,12 @@ public class Main {
 				break;
 			case ValidParentheses:
 				exercise = new ValidParentheses();
+				break;
+			case LengthOfLastWord:
+				exercise = new LengthOfLastWord();
+				break;
+			case PathSumII:
+				exercise = new PathSumII();
 				break;
 		}
 		

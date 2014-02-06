@@ -17,14 +17,12 @@ public class PathSum implements LeetCodeExercise {
 
 	@Override
 	public void runExercise() {
-		
 		initialize();
 		for (int sum = 0; sum < 50; sum++) {
 			boolean result = hasPathSum(tree.root, sum);
 			if (result) System.out.printf("The tree has a root-to-leaf whose sum is %d%n", sum);
 			else System.out.printf("The tree does not have a root-to-leaf whose sum is %d%n", sum);
 		}
-		
 	}
 	
 	private boolean hasPathSum(Node root, int sum) {

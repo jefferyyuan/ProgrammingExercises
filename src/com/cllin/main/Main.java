@@ -124,7 +124,9 @@ import com.cllin.leetcode.ThreeSumClosest;
 import com.cllin.leetcode.TrappingRainWater;
 import com.cllin.leetcode.UniqueBinarySearchTrees;
 import com.cllin.leetcode.UniquePaths;
+import com.cllin.leetcode.UniquePathsII;
 import com.cllin.leetcode.ValidParentheses;
+import com.cllin.leetcode.ValidSudoku;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
 import com.cllin.operator.ExclusiveOR;
@@ -290,11 +292,13 @@ public class Main {
 	public static final int LengthOfLastWord = 5057;
 	public static final int PathSumII = 5058;
 	public static final int ThreeSumClosest = 5059;
+	public static final int ValidSudoku = 5060;
+	public static final int UniquePathsII = 5061;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = ThreeSumClosest;
+		int option = UniquePathsII;
 
 		switch(option){
 			case TRIE:
@@ -715,6 +719,12 @@ public class Main {
 				break;
 			case ThreeSumClosest:
 				exercise = new ThreeSumClosest();
+				break;
+			case ValidSudoku:
+				exercise = new ValidSudoku();
+				break;
+			case UniquePathsII:
+				exercise = new UniquePathsII();
 				break;
 		}
 		

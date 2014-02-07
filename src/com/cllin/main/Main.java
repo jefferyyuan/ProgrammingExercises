@@ -117,6 +117,7 @@ import com.cllin.leetcode.SingleNumber;
 import com.cllin.leetcode.SingleNumberII;
 import com.cllin.leetcode.SortColors;
 import com.cllin.leetcode.SpiralMatrixII;
+import com.cllin.leetcode.Subsets;
 import com.cllin.leetcode.SumRootToLeafNumbers;
 import com.cllin.leetcode.SwapNodesInPairs;
 import com.cllin.leetcode.SymmetricTree;
@@ -294,11 +295,12 @@ public class Main {
 	public static final int ThreeSumClosest = 5059;
 	public static final int ValidSudoku = 5060;
 	public static final int UniquePathsII = 5061;
+	public static final int Subsets = 5062;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = UniquePathsII;
+		int option = Subsets;
 
 		switch(option){
 			case TRIE:
@@ -725,6 +727,9 @@ public class Main {
 				break;
 			case UniquePathsII:
 				exercise = new UniquePathsII();
+				break;
+			case Subsets:
+				exercise = new Subsets();
 				break;
 		}
 		

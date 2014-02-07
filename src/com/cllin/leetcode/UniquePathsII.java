@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 
 public class UniquePathsII implements LeetCodeExercise {
-	private int[][][] testSuites = new int[][][]{
+	private final int[][][] testSuite = new int[][][]{
 			{{1, 0}},
 			{{0, 0}, {0, 0}},
 			{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}},
@@ -22,11 +22,10 @@ public class UniquePathsII implements LeetCodeExercise {
 	@Override
 	public void runExercise() {
 		initialize();
-		for (index = 0; index < testSuites.length; index++) {
-			result = uniquePathsWithObstacles(testSuites[index]);
+		for (index = 0; index < testSuite.length; index++) {
+			result = uniquePathsWithObstacles(testSuite[index]);
 			test();
 		}
-		
 	}
 	
     private int uniquePathsWithObstacles(int[][] obstacleGrid) {
@@ -50,7 +49,7 @@ public class UniquePathsII implements LeetCodeExercise {
 
 	@Override
 	public boolean test() {
-		int[][] grid = testSuites[index];
+		int[][] grid = testSuite[index];
 		int m = grid.length;
 		int n = grid[0].length;
 		

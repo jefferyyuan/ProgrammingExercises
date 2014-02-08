@@ -81,9 +81,11 @@ import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
 import com.cllin.leetcode.GenerateParentheses;
 import com.cllin.leetcode.GrayCode;
 import com.cllin.leetcode.IntegerToRoman;
+import com.cllin.leetcode.JumpGame;
 import com.cllin.leetcode.LengthOfLastWord;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.LinkedListCycleII;
+import com.cllin.leetcode.LongestCommonPrefix;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
 import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
@@ -296,11 +298,13 @@ public class Main {
 	public static final int ValidSudoku = 5060;
 	public static final int UniquePathsII = 5061;
 	public static final int Subsets = 5062;
+	public static final int LongestCommonPrefix = 5063;
+	public static final int JumpGame = 5064;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = Subsets;
+		int option = JumpGame;
 
 		switch(option){
 			case TRIE:
@@ -730,6 +734,12 @@ public class Main {
 				break;
 			case Subsets:
 				exercise = new Subsets();
+				break;
+			case LongestCommonPrefix:
+				exercise = new LongestCommonPrefix();
+				break;
+			case JumpGame:
+				exercise = new JumpGame();
 				break;
 		}
 		

@@ -6,13 +6,13 @@ import java.util.LinkedList;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
-public class BinaryTreeLevelOrderTraversal implements LeetCodeExercise {
+public class BinaryTreeZigzagLevelOrderTraversal implements LeetCodeExercise {
 	private final int SIZE = 10;
 	private final int MAXIMUM = 10;
 	
 	private BinarySearchTree tree;
 	private ArrayList<ArrayList<Integer>> result;
-	
+
 	@Override
 	public void initialize() {
 		tree = new BinarySearchTree();
@@ -22,11 +22,11 @@ public class BinaryTreeLevelOrderTraversal implements LeetCodeExercise {
 	@Override
 	public void runExercise() {
 		initialize();
-		result = levelOrder(tree.root);
+		result = zigzagLevelOrder(tree.root);
 		test();
 	}
 	
-    private ArrayList<ArrayList<Integer>> levelOrder(Node root) {
+	private ArrayList<ArrayList<Integer>> zigzagLevelOrder(Node root) {
     	ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
     	ArrayList<Node> list = new ArrayList<Node>();
     	LinkedList<Node> queue = new LinkedList<Node>();
@@ -79,6 +79,19 @@ public class BinaryTreeLevelOrderTraversal implements LeetCodeExercise {
     		}
     	}
     	result.add(l);
+    	
+    	size = result.size();
+    	for (int i = 0; i < size; i++) {
+    		if (i % 2 == 1) {
+    			int s = result.get(i).size();
+    			int bound = s / 2;
+    			for (int j = 0; j < bound; j++) {
+    				int tmp = result.get(i).get(j);
+    				result.get(i).set(j, result.get(i).get(s - j - 1));
+    				result.get(i).set(s - j - 1, tmp);
+    			}
+    		}
+    	}
     	
     	return result;
     }

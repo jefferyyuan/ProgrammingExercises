@@ -74,11 +74,14 @@ import com.cllin.leetcode.BinaryTreeInorderTraversal;
 import com.cllin.leetcode.BinaryTreeLevelOrderTraversal;
 import com.cllin.leetcode.BinaryTreeLevelOrderTraversalII;
 import com.cllin.leetcode.BinaryTreePostorderTraversal;
+import com.cllin.leetcode.BinaryTreeZigzagLevelOrderTraversal;
 import com.cllin.leetcode.ClimbingStairs;
 import com.cllin.leetcode.Combinations;
 import com.cllin.leetcode.ContainerWithMostWater;
 import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
 import com.cllin.leetcode.ConvertSortedListToBinarySearchTree;
+import com.cllin.leetcode.CountAndSay;
+import com.cllin.leetcode.FlattenBinaryTreeToLinkedList;
 import com.cllin.leetcode.GenerateParentheses;
 import com.cllin.leetcode.GrayCode;
 import com.cllin.leetcode.IntegerToRoman;
@@ -113,6 +116,7 @@ import com.cllin.leetcode.RomanToInteger;
 import com.cllin.leetcode.RotateImage;
 import com.cllin.leetcode.SameTree;
 import com.cllin.leetcode.SearchA2DMatrix;
+import com.cllin.leetcode.SearchForARange;
 import com.cllin.leetcode.SearchInRotatedSortedArray;
 import com.cllin.leetcode.SearchInRotatedSortedArrayII;
 import com.cllin.leetcode.SearchInsertPosition;
@@ -306,11 +310,16 @@ public class Main {
 	public static final int SubsetsII = 5065;
 	public static final int LongestConsecutiveSequence = 5066;
 	public static final int ConvertSortedListToBinarySearchTree = 5067;
+	public static final int SearchForARange = 5068;
+	public static final int FlattenBinaryTreeToLinkedList = 5069;
+	public static final int CountAndSay = 5070;
+	public static final int BinaryTreeZigzagLevelOrderTraversal = 5071;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = ConvertSortedListToBinarySearchTree;
+//		int option = BinaryTreeZigzagLevelOrderTraversal;
+		int option = 5037;
 
 		switch(option){
 			case TRIE:
@@ -755,6 +764,18 @@ public class Main {
 				break;
 			case ConvertSortedListToBinarySearchTree:
 				exercise = new ConvertSortedListToBinarySearchTree();
+				break;
+			case SearchForARange:
+				exercise = new SearchForARange();
+				break;
+			case FlattenBinaryTreeToLinkedList:
+				exercise = new FlattenBinaryTreeToLinkedList();
+				break;
+			case CountAndSay:
+				exercise = new CountAndSay();
+				break;
+			case BinaryTreeZigzagLevelOrderTraversal:
+				exercise = new BinaryTreeZigzagLevelOrderTraversal();
 				break;
 		}
 		

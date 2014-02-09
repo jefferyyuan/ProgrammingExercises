@@ -49,10 +49,8 @@ public class BinaryTreePostorderTraversal implements LeetCodeExercise {
     		node = stack.peek();
     		
     		if (node.left != null && !list.contains(node.left)) stack.push(node.left);
-    		else {
-    			if (node.right != null && !list.contains(node.right)) stack.push(node.right);
-    			else list.add(stack.pop());
-    		}
+    		else if (node.right != null && !list.contains(node.right)) stack.push(node.right);
+    		else list.add(stack.pop());
     	}
     	
     	for (Node n : list) result.add(n.value);
@@ -60,8 +58,8 @@ public class BinaryTreePostorderTraversal implements LeetCodeExercise {
         return result;
     }
     
-	private void postTreeWalk(Node node){
-		if(node != null){
+	private void postTreeWalk(Node node) {
+		if (node != null) {
 			postTreeWalk(node.left);
 			postTreeWalk(node.right);
 			reference.add(node.value);

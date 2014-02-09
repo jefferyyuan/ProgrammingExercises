@@ -4,7 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Subsets implements LeetCodeExercise {
-	private final int[][] testSuite = {{}, {1}, {1, 2, 3}, {1, 2, 3, 4}, {4, 1, 0}};
+	private final int[][] testSuite = {
+			{}, 
+			{1}, 
+			{1, 2, 3}, 
+			{1, 2, 3, 4}, 
+			{4, 1, 0}};
 	
 	private int index;
 	private ArrayList<ArrayList<Integer>> result;
@@ -17,7 +22,7 @@ public class Subsets implements LeetCodeExercise {
 	@Override
 	public void runExercise() {
 		initialize();
-		for (index = 4; index < testSuite.length; index++) {
+		for (index = 0; index < testSuite.length; index++) {
 			result = subsets(testSuite[index]);
 			test();
 		}
@@ -76,8 +81,6 @@ public class Subsets implements LeetCodeExercise {
 			
 			System.out.println();
 		}
-		
-		
 		return false;
 	}
 

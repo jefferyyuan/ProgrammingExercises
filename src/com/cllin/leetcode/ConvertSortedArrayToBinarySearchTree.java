@@ -10,14 +10,13 @@ public class ConvertSortedArrayToBinarySearchTree implements LeetCodeExercise {
 	
 	private int[] numbers;
 	private Node root;
-	private String result;
 	
 	@Override
 	public void initialize() {
 		numbers = new int[SIZE];
 		
 		for (int i = 0; i < SIZE; i++) {
-			numbers[i] = (int)(Math.random() * MAXIMUM);
+			numbers[i] = (int) (Math.random() * MAXIMUM);
 		}
 		
 		Arrays.sort(numbers);
@@ -64,7 +63,7 @@ public class ConvertSortedArrayToBinarySearchTree implements LeetCodeExercise {
 
 	@Override
 	public boolean test() {
-		result = inOrderTreeWalk(root);
+		String result = inOrderTreeWalk(root);
 		
 		String reference = new String();
 		for (int n : numbers) {

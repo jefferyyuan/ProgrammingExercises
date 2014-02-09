@@ -78,6 +78,7 @@ import com.cllin.leetcode.ClimbingStairs;
 import com.cllin.leetcode.Combinations;
 import com.cllin.leetcode.ContainerWithMostWater;
 import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
+import com.cllin.leetcode.ConvertSortedListToBinarySearchTree;
 import com.cllin.leetcode.GenerateParentheses;
 import com.cllin.leetcode.GrayCode;
 import com.cllin.leetcode.IntegerToRoman;
@@ -86,6 +87,7 @@ import com.cllin.leetcode.LengthOfLastWord;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.LinkedListCycleII;
 import com.cllin.leetcode.LongestCommonPrefix;
+import com.cllin.leetcode.LongestConsecutiveSequence;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
 import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
@@ -120,6 +122,7 @@ import com.cllin.leetcode.SingleNumberII;
 import com.cllin.leetcode.SortColors;
 import com.cllin.leetcode.SpiralMatrixII;
 import com.cllin.leetcode.Subsets;
+import com.cllin.leetcode.SubsetsII;
 import com.cllin.leetcode.SumRootToLeafNumbers;
 import com.cllin.leetcode.SwapNodesInPairs;
 import com.cllin.leetcode.SymmetricTree;
@@ -300,11 +303,14 @@ public class Main {
 	public static final int Subsets = 5062;
 	public static final int LongestCommonPrefix = 5063;
 	public static final int JumpGame = 5064;
+	public static final int SubsetsII = 5065;
+	public static final int LongestConsecutiveSequence = 5066;
+	public static final int ConvertSortedListToBinarySearchTree = 5067;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = JumpGame;
+		int option = ConvertSortedListToBinarySearchTree;
 
 		switch(option){
 			case TRIE:
@@ -740,6 +746,15 @@ public class Main {
 				break;
 			case JumpGame:
 				exercise = new JumpGame();
+				break;
+			case SubsetsII:
+				exercise = new SubsetsII();
+				break;
+			case LongestConsecutiveSequence:
+				exercise = new LongestConsecutiveSequence();
+				break;
+			case ConvertSortedListToBinarySearchTree:
+				exercise = new ConvertSortedListToBinarySearchTree();
 				break;
 		}
 		

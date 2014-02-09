@@ -158,6 +158,22 @@
 55. Trapping Rain Water
 56. N Queens II
 57. Valid Parentheses
+58. Path Sum II
+59. Length Of Last Word
+60. Three Sum Closest
+61. Unique Paths II
+62. Valid Sudoku
+63. Subsets
+64. Jump Game
+65. Longest Common Prefix
+66. Convert Sorted List to BST
+67. Longest Consecutive Sequence
+68. Subsets II
+69. Count and Say
+70. Flatten Binary Tree to Linked List
+    - Preorder BST traversal
+71. Search for a Range
+72. Binary Tree Zigzag Level Order Traversal
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

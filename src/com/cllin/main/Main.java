@@ -318,8 +318,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-//		int option = BinaryTreeZigzagLevelOrderTraversal;
-		int option = 5037;
+		int option = BinaryTreeZigzagLevelOrderTraversal;
 
 		switch(option){
 			case TRIE:

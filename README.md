@@ -174,6 +174,10 @@
     - Preorder BST traversal
 71. Search for a Range
 72. Binary Tree Zigzag Level Order Traversal
+73. Power
+74. Partition List
+75. Combination Sum
+76. Triangle
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

@@ -44,18 +44,10 @@ public class CombinationSum implements LeetCodeExercise {
 
 		Arrays.sort(candidates);
 		
-		ArrayList<ArrayList<Integer>> combinations = getCombination(new ArrayList<Integer>(), candidates, target);
-		
-		int size = combinations.size();
-		for (int p = 0; p < size; p++) {
-			if (!solution.contains(combinations.get(p))) solution.add(combinations.get(p));
-		}
-		
-		return solution;
+		return getCombination(new ArrayList<Integer>(), candidates, target);
 	}
 	
 	private ArrayList<ArrayList<Integer>> getCombination(ArrayList<Integer> current, int[] candidates, int target) {
-		int length = candidates.length;
 		ArrayList<ArrayList<Integer>> solution = new ArrayList<ArrayList<Integer>>();
 		
 		if (target < 0) return solution;
@@ -65,13 +57,14 @@ public class CombinationSum implements LeetCodeExercise {
 			return solution;
 		}
 		
-		for (int i = 0; i < length; i++) {
-			if (target - candidates[i] >= 0) {
-				ArrayList<Integer> c = new ArrayList<Integer>(current);
-				c.add(candidates[i]);
-				
-				solution.addAll(getCombination(c, candidates, target - candidates[i]));
-			} else break;
+		int length = candidates.length;
+		int start = (current.size() > 0)? Arrays.binarySearch(candidates, current.get(current.size() - 1)) : 0;
+		
+		for (int i = start; i < length && candidates[i] <= target; i++) {
+			ArrayList<Integer> c = new ArrayList<Integer>(current);
+			c.add(candidates[i]);
+			
+			solution.addAll(getCombination(c, candidates, target - candidates[i]));
 		}
 		
 		return solution;

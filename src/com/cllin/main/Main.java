@@ -135,6 +135,7 @@ import com.cllin.leetcode.SwapNodesInPairs;
 import com.cllin.leetcode.SymmetricTree;
 import com.cllin.leetcode.ThreeSumClosest;
 import com.cllin.leetcode.TrappingRainWater;
+import com.cllin.leetcode.Triangle;
 import com.cllin.leetcode.UniqueBinarySearchTrees;
 import com.cllin.leetcode.UniquePaths;
 import com.cllin.leetcode.UniquePathsII;
@@ -320,11 +321,12 @@ public class Main {
 	public static final int PartitionList = 5072;
 	public static final int Power = 5073;
 	public static final int CombinationSum = 5074;
+	public static final int Triangle = 5075;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = CombinationSum;
+		int option = Triangle;
 
 		switch(option){
 			case TRIE:
@@ -790,6 +792,9 @@ public class Main {
 				break;
 			case CombinationSum:
 				exercise = new CombinationSum();
+				break;
+			case Triangle:
+				exercise = new Triangle();
 				break;
 		}
 		

@@ -76,6 +76,7 @@ import com.cllin.leetcode.BinaryTreeLevelOrderTraversalII;
 import com.cllin.leetcode.BinaryTreePostorderTraversal;
 import com.cllin.leetcode.BinaryTreeZigzagLevelOrderTraversal;
 import com.cllin.leetcode.ClimbingStairs;
+import com.cllin.leetcode.CombinationSum;
 import com.cllin.leetcode.Combinations;
 import com.cllin.leetcode.ContainerWithMostWater;
 import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
@@ -98,6 +99,7 @@ import com.cllin.leetcode.MinimumDepthOfBinaryTree;
 import com.cllin.leetcode.MinimumPathSum;
 import com.cllin.leetcode.NQueensII;
 import com.cllin.leetcode.PalindromeNumber;
+import com.cllin.leetcode.PartitionList;
 import com.cllin.leetcode.PascalsTriangle;
 import com.cllin.leetcode.PascalsTriangleII;
 import com.cllin.leetcode.PathSum;
@@ -106,6 +108,7 @@ import com.cllin.leetcode.Permutations;
 import com.cllin.leetcode.PlusOne;
 import com.cllin.leetcode.PopulatingNextRightPointers;
 import com.cllin.leetcode.PopulatingNextRightPointersInEachNodeII;
+import com.cllin.leetcode.Power;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedArray;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedArrayII;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
@@ -314,11 +317,14 @@ public class Main {
 	public static final int FlattenBinaryTreeToLinkedList = 5069;
 	public static final int CountAndSay = 5070;
 	public static final int BinaryTreeZigzagLevelOrderTraversal = 5071;
+	public static final int PartitionList = 5072;
+	public static final int Power = 5073;
+	public static final int CombinationSum = 5074;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = BinaryTreeZigzagLevelOrderTraversal;
+		int option = CombinationSum;
 
 		switch(option){
 			case TRIE:
@@ -775,6 +781,15 @@ public class Main {
 				break;
 			case BinaryTreeZigzagLevelOrderTraversal:
 				exercise = new BinaryTreeZigzagLevelOrderTraversal();
+				break;
+			case PartitionList:
+				exercise = new PartitionList();
+				break;
+			case Power:
+				exercise = new Power();
+				break;
+			case CombinationSum:
+				exercise = new CombinationSum();
 				break;
 		}
 		

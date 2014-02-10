@@ -16,29 +16,12 @@ public class Triangle implements LeetCodeExercise {
 		SIZE = (int) (Math.random() * MAXIMUM) + 1;
 		
 		triangle = new ArrayList<ArrayList<Integer>>();
-//		for (int i = 1; i <= SIZE; i++) {
-//			ArrayList<Integer> level = new ArrayList<Integer>();
-//			for (int j = 0; j < i; j++) level.add((int) (Math.random() * MAXIMUM));
-//			
-//			triangle.add(level);
-//		}
-		
-		ArrayList<Integer> lv1 = new ArrayList<Integer>();
-		lv1.add(-1);
-		
-		ArrayList<Integer> lv2 = new ArrayList<Integer>();
-		lv2.add(2);
-		lv2.add(3);
-		
-		ArrayList<Integer> lv3 = new ArrayList<Integer>();
-		lv3.add(1);
-		lv3.add(-1);
-		lv3.add(-3);
-		
-		triangle.add(lv1);
-		triangle.add(lv2);
-		triangle.add(lv3);
-		
+		for (int i = 1; i <= SIZE; i++) {
+			ArrayList<Integer> level = new ArrayList<Integer>();
+			for (int j = 0; j < i; j++) level.add((int) (Math.random() * MAXIMUM));
+			
+			triangle.add(level);
+		}
 	}
 
 	@Override

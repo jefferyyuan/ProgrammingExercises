@@ -99,6 +99,7 @@ import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
 import com.cllin.leetcode.MinimumDepthOfBinaryTree;
 import com.cllin.leetcode.MinimumPathSum;
+import com.cllin.leetcode.NQueens;
 import com.cllin.leetcode.NQueensII;
 import com.cllin.leetcode.PalindromeNumber;
 import com.cllin.leetcode.PartitionList;
@@ -144,6 +145,7 @@ import com.cllin.leetcode.UniquePaths;
 import com.cllin.leetcode.UniquePathsII;
 import com.cllin.leetcode.ValidParentheses;
 import com.cllin.leetcode.ValidSudoku;
+import com.cllin.leetcode.ValidateBinarySearchTree;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
 import com.cllin.operator.ExclusiveOR;
@@ -328,11 +330,13 @@ public class Main {
 	public static final int UniqueBinarySearchTreesII = 5076;
 	public static final int LetterCombinationsOfAPhoneNumber = 5077;
 	public static final int InsertionSortList = 5078;
+	public static final int NQueens = 5079;
+	public static final int ValidateBinarySearchTree = 5080;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = InsertionSortList;
+		int option = ValidateBinarySearchTree;
 
 		switch(option){
 			case TRIE:
@@ -810,6 +814,12 @@ public class Main {
 				break;
 			case InsertionSortList:
 				exercise = new InsertionSortList();
+				break;
+			case NQueens:
+				exercise = new NQueens();
+				break;
+			case ValidateBinarySearchTree:
+				exercise = new ValidateBinarySearchTree();
 				break;
 		}
 		

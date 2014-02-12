@@ -21,6 +21,7 @@ public class ContainerWithMostWater implements LeetCodeExercise {
 		for (int i = 0; i < 10; i++) {
 			initialize();
 			area = maxArea(height);
+			
 			if (test()) System.out.println("Success");
 			else System.out.println("Failed");	
 		}

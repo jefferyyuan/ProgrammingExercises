@@ -85,9 +85,11 @@ import com.cllin.leetcode.CountAndSay;
 import com.cllin.leetcode.FlattenBinaryTreeToLinkedList;
 import com.cllin.leetcode.GenerateParentheses;
 import com.cllin.leetcode.GrayCode;
+import com.cllin.leetcode.InsertionSortList;
 import com.cllin.leetcode.IntegerToRoman;
 import com.cllin.leetcode.JumpGame;
 import com.cllin.leetcode.LengthOfLastWord;
+import com.cllin.leetcode.LetterCombinationsOfAPhoneNumber;
 import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.LinkedListCycleII;
 import com.cllin.leetcode.LongestCommonPrefix;
@@ -137,6 +139,7 @@ import com.cllin.leetcode.ThreeSumClosest;
 import com.cllin.leetcode.TrappingRainWater;
 import com.cllin.leetcode.Triangle;
 import com.cllin.leetcode.UniqueBinarySearchTrees;
+import com.cllin.leetcode.UniqueBinarySearchTreesII;
 import com.cllin.leetcode.UniquePaths;
 import com.cllin.leetcode.UniquePathsII;
 import com.cllin.leetcode.ValidParentheses;
@@ -322,11 +325,14 @@ public class Main {
 	public static final int Power = 5073;
 	public static final int CombinationSum = 5074;
 	public static final int Triangle = 5075;
+	public static final int UniqueBinarySearchTreesII = 5076;
+	public static final int LetterCombinationsOfAPhoneNumber = 5077;
+	public static final int InsertionSortList = 5078;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = Triangle;
+		int option = InsertionSortList;
 
 		switch(option){
 			case TRIE:
@@ -795,6 +801,15 @@ public class Main {
 				break;
 			case Triangle:
 				exercise = new Triangle();
+				break;
+			case UniqueBinarySearchTreesII:
+				exercise = new UniqueBinarySearchTreesII();
+				break;
+			case LetterCombinationsOfAPhoneNumber:
+				exercise = new LetterCombinationsOfAPhoneNumber();
+				break;
+			case InsertionSortList:
+				exercise = new InsertionSortList();
 				break;
 		}
 		

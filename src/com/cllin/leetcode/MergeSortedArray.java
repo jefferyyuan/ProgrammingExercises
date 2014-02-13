@@ -58,13 +58,10 @@ public class MergeSortedArray implements LeetCodeExercise {
     		if (i < m + delta && A[i] < B[j]) {
     			i++;
     		} else {
-    			for (int p = m + delta - 1; p >= i ; p--) {
-    				A[p + 1] = A[p];
-    			}
-    			delta++;
-    			
+    			for (int p = m + delta - 1; p >= i ; p--) A[p + 1] = A[p];
+
     			A[i] = B[j];
-    			
+    			delta++;
     			i++;
     			j++;
     		}

@@ -118,6 +118,7 @@ import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
 import com.cllin.leetcode.RemoveElement;
 import com.cllin.leetcode.RemoveNthNodeFromEndOfList;
 import com.cllin.leetcode.ReverseInteger;
+import com.cllin.leetcode.ReverseLinkedListII;
 import com.cllin.leetcode.RomanToInteger;
 import com.cllin.leetcode.RotateImage;
 import com.cllin.leetcode.SameTree;
@@ -332,11 +333,12 @@ public class Main {
 	public static final int InsertionSortList = 5078;
 	public static final int NQueens = 5079;
 	public static final int ValidateBinarySearchTree = 5080;
+	public static final int ReverseLinkedListII = 5081;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = ValidateBinarySearchTree;
+		int option = ReverseLinkedListII;
 
 		switch(option){
 			case TRIE:
@@ -820,6 +822,9 @@ public class Main {
 				break;
 			case ValidateBinarySearchTree:
 				exercise = new ValidateBinarySearchTree();
+				break;
+			case ReverseLinkedListII:
+				exercise = new ReverseLinkedListII();
 				break;
 		}
 		

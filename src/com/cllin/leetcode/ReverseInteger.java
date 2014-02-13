@@ -46,7 +46,7 @@ public class ReverseInteger implements LeetCodeExercise {
 			x *= -1;
 		}
 		
-		while(x > 0){
+		while (x > 0) {
 			digits.add(x % 10);
 			x = (x - x % 10) / 10;
 		}
@@ -54,9 +54,8 @@ public class ReverseInteger implements LeetCodeExercise {
 		int size = digits.size();
 		int result = 0;
 		
-		for(int i = 0; i < size; i++){
+		for (int i = 0; i < size; i++) {
 			if (result + digits.get(i) * Math.pow(10, (size - i - 1)) > MAXIMUM) return 0;
-			
 			result += digits.get(i) * Math.pow(10, (size - i - 1));
 		}
 		

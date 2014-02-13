@@ -178,6 +178,12 @@
 74. Partition List
 75. Combination Sum
 76. Triangle
+77. Unique BST II
+78. Letter Combinations of a Phone Number
+79. Insertion Sort List
+80. N Queens
+81. Valid BST
+
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

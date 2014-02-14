@@ -67,6 +67,7 @@ import com.cllin.cci.chap19.Exercise19_08;
 import com.cllin.cci.chap19.Exercise19_10;
 import com.cllin.enumeration.EnumerationExercise;
 import com.cllin.inheritance.ExtendAndSuper;
+import com.cllin.leetcode.AddBinary;
 import com.cllin.leetcode.BalancedBinaryTree;
 import com.cllin.leetcode.BestTimeToBuyAndSellStock;
 import com.cllin.leetcode.BestTimetoBuyandSellStockII;
@@ -79,6 +80,7 @@ import com.cllin.leetcode.ClimbingStairs;
 import com.cllin.leetcode.CombinationSum;
 import com.cllin.leetcode.Combinations;
 import com.cllin.leetcode.ConstructBinaryTreeFromInorderAndPostorderTraversal;
+import com.cllin.leetcode.ConstructBinaryTreeFromPreorderAndInorderTraversal;
 import com.cllin.leetcode.ContainerWithMostWater;
 import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
 import com.cllin.leetcode.ConvertSortedListToBinarySearchTree;
@@ -336,11 +338,13 @@ public class Main {
 	public static final int ValidateBinarySearchTree = 5080;
 	public static final int ReverseLinkedListII = 5081;
 	public static final int ConstructBinaryTreeFromInorderAndPostorderTraversal = 5082;
+	public static final int ConstructBinaryTreeFromPreorderAndInorderTraversal = 5083;
+	public static final int AddBinary = 5084;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = ConstructBinaryTreeFromInorderAndPostorderTraversal;
+		int option = AddBinary;
 
 		switch(option){
 			case TRIE:
@@ -830,6 +834,12 @@ public class Main {
 				break;
 			case ConstructBinaryTreeFromInorderAndPostorderTraversal:
 				exercise = new ConstructBinaryTreeFromInorderAndPostorderTraversal();
+				break;
+			case ConstructBinaryTreeFromPreorderAndInorderTraversal:
+				exercise = new ConstructBinaryTreeFromPreorderAndInorderTraversal();
+				break;
+			case AddBinary:
+				exercise = new AddBinary();
 				break;
 		}
 		

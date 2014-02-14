@@ -36,7 +36,7 @@ public class BinaryTreePostorderTraversal implements LeetCodeExercise {
 		else System.out.println("Failed");		
 	}
 	
-    public ArrayList<Integer> postorderTraversal(Node root) {
+	private ArrayList<Integer> postorderTraversal(Node root) {
     	ArrayList<Integer> result = new ArrayList<Integer>();
     	ArrayList<Node> list = new ArrayList<Node>();
     	Stack<Node> stack = new Stack<Node>();

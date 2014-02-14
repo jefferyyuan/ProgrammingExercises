@@ -31,6 +31,11 @@ public class ReverseLinkedListII implements LeetCodeExercise {
 		
 	}
 	
+	/*
+	 * TODO
+	 * The nesting structure is too complex!
+	 * Add a dummy node whose next is the head would make the code simpler
+	 */
 	private ListNode reverseBetween(ListNode head, int m, int n) {
 		if (head == null || m == n) return head;
         

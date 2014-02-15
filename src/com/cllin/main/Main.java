@@ -104,6 +104,7 @@ import com.cllin.leetcode.MinimumDepthOfBinaryTree;
 import com.cllin.leetcode.MinimumPathSum;
 import com.cllin.leetcode.NQueens;
 import com.cllin.leetcode.NQueensII;
+import com.cllin.leetcode.NextPermutation;
 import com.cllin.leetcode.PalindromeNumber;
 import com.cllin.leetcode.PartitionList;
 import com.cllin.leetcode.PascalsTriangle;
@@ -118,6 +119,7 @@ import com.cllin.leetcode.Power;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedArray;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedArrayII;
 import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
+import com.cllin.leetcode.RemoveDuplicatesFromSortedListII;
 import com.cllin.leetcode.RemoveElement;
 import com.cllin.leetcode.RemoveNthNodeFromEndOfList;
 import com.cllin.leetcode.ReverseInteger;
@@ -340,11 +342,13 @@ public class Main {
 	public static final int ConstructBinaryTreeFromInorderAndPostorderTraversal = 5082;
 	public static final int ConstructBinaryTreeFromPreorderAndInorderTraversal = 5083;
 	public static final int AddBinary = 5084;
+	public static final int RemoveDuplicatesFromSortedListII = 5085;
+	public static final int NextPermutation = 5086;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = AddBinary;
+		int option = NextPermutation;
 
 		switch(option){
 			case TRIE:
@@ -840,6 +844,12 @@ public class Main {
 				break;
 			case AddBinary:
 				exercise = new AddBinary();
+				break;
+			case RemoveDuplicatesFromSortedListII:
+				exercise = new RemoveDuplicatesFromSortedListII();
+				break;
+			case NextPermutation:
+				exercise = new NextPermutation();
 				break;
 		}
 		

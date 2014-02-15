@@ -39,9 +39,8 @@ public class SameTree implements LeetCodeExercise {
 		result2 = isSameTree(tree2.root, treeCopy.root);
 		result3 = isSameTree(tree.root, tree2.root);
 		
-		if (!test()) System.out.println("Failed");
-		else System.out.println("Success");
-
+		if (test()) System.out.println("Success"); 
+		else System.out.println("Failed");
 	}
 	
 	private boolean isSameTree(Node p, Node q){

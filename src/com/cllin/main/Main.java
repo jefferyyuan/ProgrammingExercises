@@ -106,6 +106,7 @@ import com.cllin.leetcode.NQueens;
 import com.cllin.leetcode.NQueensII;
 import com.cllin.leetcode.NextPermutation;
 import com.cllin.leetcode.PalindromeNumber;
+import com.cllin.leetcode.PalindromePartitioning;
 import com.cllin.leetcode.PartitionList;
 import com.cllin.leetcode.PascalsTriangle;
 import com.cllin.leetcode.PascalsTriangleII;
@@ -344,11 +345,12 @@ public class Main {
 	public static final int AddBinary = 5084;
 	public static final int RemoveDuplicatesFromSortedListII = 5085;
 	public static final int NextPermutation = 5086;
+	public static final int PalindromePartitioning = 5087;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = NextPermutation;
+		int option = PalindromePartitioning;
 
 		switch(option){
 			case TRIE:
@@ -850,6 +852,9 @@ public class Main {
 				break;
 			case NextPermutation:
 				exercise = new NextPermutation();
+				break;
+			case PalindromePartitioning:
+				exercise = new PalindromePartitioning();
 				break;
 		}
 		

@@ -85,7 +85,9 @@ import com.cllin.leetcode.ContainerWithMostWater;
 import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
 import com.cllin.leetcode.ConvertSortedListToBinarySearchTree;
 import com.cllin.leetcode.CountAndSay;
+import com.cllin.leetcode.EditDistance;
 import com.cllin.leetcode.FlattenBinaryTreeToLinkedList;
+import com.cllin.leetcode.GasStation;
 import com.cllin.leetcode.GenerateParentheses;
 import com.cllin.leetcode.GrayCode;
 import com.cllin.leetcode.InsertionSortList;
@@ -113,6 +115,7 @@ import com.cllin.leetcode.PascalsTriangleII;
 import com.cllin.leetcode.PathSum;
 import com.cllin.leetcode.PathSumII;
 import com.cllin.leetcode.Permutations;
+import com.cllin.leetcode.PermutationsII;
 import com.cllin.leetcode.PlusOne;
 import com.cllin.leetcode.PopulatingNextRightPointers;
 import com.cllin.leetcode.PopulatingNextRightPointersInEachNodeII;
@@ -125,6 +128,7 @@ import com.cllin.leetcode.RemoveElement;
 import com.cllin.leetcode.RemoveNthNodeFromEndOfList;
 import com.cllin.leetcode.ReverseInteger;
 import com.cllin.leetcode.ReverseLinkedListII;
+import com.cllin.leetcode.ReverseNodesInKGroup;
 import com.cllin.leetcode.RomanToInteger;
 import com.cllin.leetcode.RotateImage;
 import com.cllin.leetcode.SameTree;
@@ -346,11 +350,15 @@ public class Main {
 	public static final int RemoveDuplicatesFromSortedListII = 5085;
 	public static final int NextPermutation = 5086;
 	public static final int PalindromePartitioning = 5087;
+	public static final int PermutationsII = 5088;
+	public static final int EditDistance = 5089;
+	public static final int GasStation = 5090;
+	public static final int ReverseNodesInKGroup = 5091;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = PalindromePartitioning;
+		int option = ReverseNodesInKGroup;
 
 		switch(option){
 			case TRIE:
@@ -855,6 +863,18 @@ public class Main {
 				break;
 			case PalindromePartitioning:
 				exercise = new PalindromePartitioning();
+				break;
+			case PermutationsII:
+				exercise = new PermutationsII();
+				break;
+			case EditDistance:
+				exercise = new EditDistance();
+				break;
+			case GasStation:
+				exercise = new GasStation();
+				break;
+			case ReverseNodesInKGroup:
+				exercise = new ReverseNodesInKGroup();
 				break;
 		}
 		

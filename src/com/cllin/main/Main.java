@@ -85,6 +85,7 @@ import com.cllin.leetcode.ContainerWithMostWater;
 import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
 import com.cllin.leetcode.ConvertSortedListToBinarySearchTree;
 import com.cllin.leetcode.CountAndSay;
+import com.cllin.leetcode.DistinctSubsequences;
 import com.cllin.leetcode.EditDistance;
 import com.cllin.leetcode.FlattenBinaryTreeToLinkedList;
 import com.cllin.leetcode.GasStation;
@@ -354,11 +355,12 @@ public class Main {
 	public static final int EditDistance = 5089;
 	public static final int GasStation = 5090;
 	public static final int ReverseNodesInKGroup = 5091;
+	public static final int DistinctSubsequences = 5092;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = ReverseNodesInKGroup;
+		int option = DistinctSubsequences;
 
 		switch(option){
 			case TRIE:
@@ -875,6 +877,9 @@ public class Main {
 				break;
 			case ReverseNodesInKGroup:
 				exercise = new ReverseNodesInKGroup();
+				break;
+			case DistinctSubsequences:
+				exercise = new DistinctSubsequences();
 				break;
 		}
 		

@@ -95,6 +95,7 @@ import com.cllin.leetcode.GrayCode;
 import com.cllin.leetcode.InsertionSortList;
 import com.cllin.leetcode.IntegerToRoman;
 import com.cllin.leetcode.JumpGame;
+import com.cllin.leetcode.JumpGameII;
 import com.cllin.leetcode.LengthOfLastWord;
 import com.cllin.leetcode.LetterCombinationsOfAPhoneNumber;
 import com.cllin.leetcode.LinkedListCycle;
@@ -358,11 +359,12 @@ public class Main {
 	public static final int ReverseNodesInKGroup = 5091;
 	public static final int DistinctSubsequences = 5092;
 	public static final int CombinationSumII = 5093;
+	public static final int JumpGameII = 5094;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = CombinationSumII;
+		int option = JumpGameII;
 
 		switch(option){
 			case TRIE:
@@ -885,6 +887,9 @@ public class Main {
 				break;
 			case CombinationSumII:
 				exercise = new CombinationSumII();
+				break;
+			case JumpGameII:
+				exercise = new JumpGameII();
 				break;
 		}
 		

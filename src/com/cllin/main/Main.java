@@ -78,6 +78,7 @@ import com.cllin.leetcode.BinaryTreePostorderTraversal;
 import com.cllin.leetcode.BinaryTreeZigzagLevelOrderTraversal;
 import com.cllin.leetcode.ClimbingStairs;
 import com.cllin.leetcode.CombinationSum;
+import com.cllin.leetcode.CombinationSumII;
 import com.cllin.leetcode.Combinations;
 import com.cllin.leetcode.ConstructBinaryTreeFromInorderAndPostorderTraversal;
 import com.cllin.leetcode.ConstructBinaryTreeFromPreorderAndInorderTraversal;
@@ -356,11 +357,12 @@ public class Main {
 	public static final int GasStation = 5090;
 	public static final int ReverseNodesInKGroup = 5091;
 	public static final int DistinctSubsequences = 5092;
+	public static final int CombinationSumII = 5093;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = DistinctSubsequences;
+		int option = CombinationSumII;
 
 		switch(option){
 			case TRIE:
@@ -880,6 +882,9 @@ public class Main {
 				break;
 			case DistinctSubsequences:
 				exercise = new DistinctSubsequences();
+				break;
+			case CombinationSumII:
+				exercise = new CombinationSumII();
 				break;
 		}
 		

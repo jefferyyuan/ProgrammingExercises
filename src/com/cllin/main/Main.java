@@ -68,6 +68,7 @@ import com.cllin.cci.chap19.Exercise19_10;
 import com.cllin.enumeration.EnumerationExercise;
 import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.leetcode.AddBinary;
+import com.cllin.leetcode.Anagrams;
 import com.cllin.leetcode.BalancedBinaryTree;
 import com.cllin.leetcode.BestTimeToBuyAndSellStock;
 import com.cllin.leetcode.BestTimetoBuyandSellStockII;
@@ -102,7 +103,9 @@ import com.cllin.leetcode.LinkedListCycle;
 import com.cllin.leetcode.LinkedListCycleII;
 import com.cllin.leetcode.LongestCommonPrefix;
 import com.cllin.leetcode.LongestConsecutiveSequence;
+import com.cllin.leetcode.LongestSubstringWithoutRepeatingCharacters;
 import com.cllin.leetcode.MaximumDepthOfBinaryTree;
+import com.cllin.leetcode.MergeKSortedLists;
 import com.cllin.leetcode.MergeSortedArray;
 import com.cllin.leetcode.MergeTwoSortedLists;
 import com.cllin.leetcode.MinimumDepthOfBinaryTree;
@@ -360,11 +363,14 @@ public class Main {
 	public static final int DistinctSubsequences = 5092;
 	public static final int CombinationSumII = 5093;
 	public static final int JumpGameII = 5094;
+	public static final int MergeKSortedLists = 5095;
+	public static final int LongestSubstringWithoutRepeatingCharacters = 5096;
+	public static final int Anagrams = 5097;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = JumpGameII;
+		int option = Anagrams;
 
 		switch(option){
 			case TRIE:
@@ -890,6 +896,15 @@ public class Main {
 				break;
 			case JumpGameII:
 				exercise = new JumpGameII();
+				break;
+			case MergeKSortedLists:
+				exercise = new MergeKSortedLists();
+				break;
+			case LongestSubstringWithoutRepeatingCharacters:
+				exercise = new LongestSubstringWithoutRepeatingCharacters();
+				break;
+			case Anagrams:
+				exercise = new Anagrams();
 				break;
 		}
 		

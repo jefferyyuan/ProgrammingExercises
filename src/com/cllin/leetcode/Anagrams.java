@@ -1,6 +1,7 @@
 package com.cllin.leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Anagrams implements LeetCodeExercise {
@@ -28,21 +29,28 @@ public class Anagrams implements LeetCodeExercise {
 	
 	private ArrayList<String> anagrams(String[] strings) {
 		ArrayList<String> anagrams = new ArrayList<String>();
+		HashMap<String, ArrayList<Integer>> counts = new HashMap<String, ArrayList<Integer>>();
 		
 		if (strings == null || strings.length == 0) return anagrams;
 		
 		int length = strings.length;
 		for (int i = 0; i < length; i++) {
-			boolean existAnagram = false;
+			String sorted = sort(strings[i]);
+			ArrayList<Integer> list = counts.get(sorted);
 			
-			for (int j = i + 1; j < length; j++) {
-				if (isAnagram(strings[i], strings[j])) {
-					anagrams.add(strings[j]);
-					
-					if (!existAnagram) {
-						anagrams.add(strings[i]);
-						existAnagram = true;
-					}
+			if (list == null)
+				list = new ArrayList<Integer>();
+			
+			list.add(i);
+			counts.put(sorted, list);
+		}
+		
+		for (String key : counts.keySet()) {
+			ArrayList<Integer> list = counts.get(key);
+			
+			if (list.size() > 1) {
+				for (int index : counts.get(key)) {
+					anagrams.add(strings[index]);
 				}
 			}
 		}
@@ -50,29 +58,13 @@ public class Anagrams implements LeetCodeExercise {
     	return anagrams;
     }
 	
-	private boolean isAnagram(String s1, String s2) {
-		if (s1 == null || s2 == null) return false;
-		if (s1.length() != s2.length()) return false;
+	private String sort(String string) {
+		if (string == null) return null;
 		
-		int length = s1.length();
-		HashMap<Character, Integer> counts = new HashMap<Character, Integer>();
+		char[] array = string.toCharArray();
+		Arrays.sort(array);
 		
-		for (int i = 0; i < length; i++) {
-			char key = s1.charAt(i);
-			if (counts.containsKey(key)) counts.put(key, counts.get(key) + 1);
-			else counts.put(key, 1);
-		}
-		
-		for (int i = 0; i < length; i++) {
-			char key = s2.charAt(i);
-			
-			if (counts.containsKey(key)) counts.put(key, counts.get(key) - 1);
-			else return false;
-			
-			if (counts.get(key) == 0) counts.remove(key);
-		}
-		
-		return (counts.size() == 0);
+		return new String(array);
 	}
 
 	@Override
@@ -89,5 +81,4 @@ public class Anagrams implements LeetCodeExercise {
 		
 		return true;
 	}
-
 }

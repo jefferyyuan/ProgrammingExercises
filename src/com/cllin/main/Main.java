@@ -68,6 +68,7 @@ import com.cllin.cci.chap19.Exercise19_10;
 import com.cllin.enumeration.EnumerationExercise;
 import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.leetcode.AddBinary;
+import com.cllin.leetcode.AddTwoNumbers;
 import com.cllin.leetcode.Anagrams;
 import com.cllin.leetcode.BalancedBinaryTree;
 import com.cllin.leetcode.BestTimeToBuyAndSellStock;
@@ -366,11 +367,12 @@ public class Main {
 	public static final int MergeKSortedLists = 5095;
 	public static final int LongestSubstringWithoutRepeatingCharacters = 5096;
 	public static final int Anagrams = 5097;
+	public static final int AddTwoNumbers = 5098;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = Anagrams;
+		int option = AddTwoNumbers;
 
 		switch(option){
 			case TRIE:
@@ -905,6 +907,9 @@ public class Main {
 				break;
 			case Anagrams:
 				exercise = new Anagrams();
+				break;
+			case AddTwoNumbers:
+				exercise = new AddTwoNumbers();
 				break;
 		}
 		

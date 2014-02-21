@@ -183,6 +183,24 @@
 79. Insertion Sort List
 80. N Queens
 81. Valid BST
+82. Reverse Linked List II
+83. Construct Binary Tree from Inorder and Postorder Traversal 
+84. Construct Binary Tree from Inorder and Postorder Traversal
+85. Add Binary
+86. Next Permutation
+87. Remove Duplicates from Sorted List II
+88. Palindrome Partitioning
+89. Edit Distance
+90. Gas Station
+91. Permutions II
+92. Reverse Nodes in K Group
+93. Distinct Sunsequences
+94. Combination Sum II
+95. Jump Game II
+96. Longest Substring Without Repeating Characters
+97. Merge K Sorted Lists
+98. Anagrams
+99. Add Two Numbers
 
 
 ###<a name="6"></a>GENERAL ISSUE

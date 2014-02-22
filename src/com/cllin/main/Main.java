@@ -164,6 +164,7 @@ import com.cllin.leetcode.UniquePathsII;
 import com.cllin.leetcode.ValidParentheses;
 import com.cllin.leetcode.ValidSudoku;
 import com.cllin.leetcode.ValidateBinarySearchTree;
+import com.cllin.leetcode.ZigZagConversion;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
 import com.cllin.operator.ExclusiveOR;
@@ -368,11 +369,12 @@ public class Main {
 	public static final int LongestSubstringWithoutRepeatingCharacters = 5096;
 	public static final int Anagrams = 5097;
 	public static final int AddTwoNumbers = 5098;
+	public static final int ZigZagConversion = 5099;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = AddTwoNumbers;
+		int option = ZigZagConversion;
 
 		switch(option){
 			case TRIE:
@@ -910,6 +912,9 @@ public class Main {
 				break;
 			case AddTwoNumbers:
 				exercise = new AddTwoNumbers();
+				break;
+			case ZigZagConversion:
+				exercise = new ZigZagConversion();
 				break;
 		}
 		

@@ -67,104 +67,7 @@ import com.cllin.cci.chap19.Exercise19_08;
 import com.cllin.cci.chap19.Exercise19_10;
 import com.cllin.enumeration.EnumerationExercise;
 import com.cllin.inheritance.ExtendAndSuper;
-import com.cllin.leetcode.AddBinary;
-import com.cllin.leetcode.AddTwoNumbers;
-import com.cllin.leetcode.Anagrams;
-import com.cllin.leetcode.BalancedBinaryTree;
-import com.cllin.leetcode.BestTimeToBuyAndSellStock;
-import com.cllin.leetcode.BestTimetoBuyandSellStockII;
-import com.cllin.leetcode.BinaryTreeInorderTraversal;
-import com.cllin.leetcode.BinaryTreeLevelOrderTraversal;
-import com.cllin.leetcode.BinaryTreeLevelOrderTraversalII;
-import com.cllin.leetcode.BinaryTreePostorderTraversal;
-import com.cllin.leetcode.BinaryTreeZigzagLevelOrderTraversal;
-import com.cllin.leetcode.ClimbingStairs;
-import com.cllin.leetcode.CombinationSum;
-import com.cllin.leetcode.CombinationSumII;
-import com.cllin.leetcode.Combinations;
-import com.cllin.leetcode.ConstructBinaryTreeFromInorderAndPostorderTraversal;
-import com.cllin.leetcode.ConstructBinaryTreeFromPreorderAndInorderTraversal;
-import com.cllin.leetcode.ContainerWithMostWater;
-import com.cllin.leetcode.ConvertSortedArrayToBinarySearchTree;
-import com.cllin.leetcode.ConvertSortedListToBinarySearchTree;
-import com.cllin.leetcode.CountAndSay;
-import com.cllin.leetcode.DistinctSubsequences;
-import com.cllin.leetcode.EditDistance;
-import com.cllin.leetcode.FlattenBinaryTreeToLinkedList;
-import com.cllin.leetcode.GasStation;
-import com.cllin.leetcode.GenerateParentheses;
-import com.cllin.leetcode.GrayCode;
-import com.cllin.leetcode.InsertionSortList;
-import com.cllin.leetcode.IntegerToRoman;
-import com.cllin.leetcode.JumpGame;
-import com.cllin.leetcode.JumpGameII;
-import com.cllin.leetcode.LengthOfLastWord;
-import com.cllin.leetcode.LetterCombinationsOfAPhoneNumber;
-import com.cllin.leetcode.LinkedListCycle;
-import com.cllin.leetcode.LinkedListCycleII;
-import com.cllin.leetcode.LongestCommonPrefix;
-import com.cllin.leetcode.LongestConsecutiveSequence;
-import com.cllin.leetcode.LongestSubstringWithoutRepeatingCharacters;
-import com.cllin.leetcode.MaximumDepthOfBinaryTree;
-import com.cllin.leetcode.MergeKSortedLists;
-import com.cllin.leetcode.MergeSortedArray;
-import com.cllin.leetcode.MergeTwoSortedLists;
-import com.cllin.leetcode.MinimumDepthOfBinaryTree;
-import com.cllin.leetcode.MinimumPathSum;
-import com.cllin.leetcode.NQueens;
-import com.cllin.leetcode.NQueensII;
-import com.cllin.leetcode.NextPermutation;
-import com.cllin.leetcode.PalindromeNumber;
-import com.cllin.leetcode.PalindromePartitioning;
-import com.cllin.leetcode.PartitionList;
-import com.cllin.leetcode.PascalsTriangle;
-import com.cllin.leetcode.PascalsTriangleII;
-import com.cllin.leetcode.PathSum;
-import com.cllin.leetcode.PathSumII;
-import com.cllin.leetcode.Permutations;
-import com.cllin.leetcode.PermutationsII;
-import com.cllin.leetcode.PlusOne;
-import com.cllin.leetcode.PopulatingNextRightPointers;
-import com.cllin.leetcode.PopulatingNextRightPointersInEachNodeII;
-import com.cllin.leetcode.Power;
-import com.cllin.leetcode.RemoveDuplicatesFromSortedArray;
-import com.cllin.leetcode.RemoveDuplicatesFromSortedArrayII;
-import com.cllin.leetcode.RemoveDuplicatesFromSortedList;
-import com.cllin.leetcode.RemoveDuplicatesFromSortedListII;
-import com.cllin.leetcode.RemoveElement;
-import com.cllin.leetcode.RemoveNthNodeFromEndOfList;
-import com.cllin.leetcode.ReverseInteger;
-import com.cllin.leetcode.ReverseLinkedListII;
-import com.cllin.leetcode.ReverseNodesInKGroup;
-import com.cllin.leetcode.RomanToInteger;
-import com.cllin.leetcode.RotateImage;
-import com.cllin.leetcode.SameTree;
-import com.cllin.leetcode.SearchA2DMatrix;
-import com.cllin.leetcode.SearchForARange;
-import com.cllin.leetcode.SearchInRotatedSortedArray;
-import com.cllin.leetcode.SearchInRotatedSortedArrayII;
-import com.cllin.leetcode.SearchInsertPosition;
-import com.cllin.leetcode.SetMatrixZeroes;
-import com.cllin.leetcode.SingleNumber;
-import com.cllin.leetcode.SingleNumberII;
-import com.cllin.leetcode.SortColors;
-import com.cllin.leetcode.SpiralMatrixII;
-import com.cllin.leetcode.Subsets;
-import com.cllin.leetcode.SubsetsII;
-import com.cllin.leetcode.SumRootToLeafNumbers;
-import com.cllin.leetcode.SwapNodesInPairs;
-import com.cllin.leetcode.SymmetricTree;
-import com.cllin.leetcode.ThreeSumClosest;
-import com.cllin.leetcode.TrappingRainWater;
-import com.cllin.leetcode.Triangle;
-import com.cllin.leetcode.UniqueBinarySearchTrees;
-import com.cllin.leetcode.UniqueBinarySearchTreesII;
-import com.cllin.leetcode.UniquePaths;
-import com.cllin.leetcode.UniquePathsII;
-import com.cllin.leetcode.ValidParentheses;
-import com.cllin.leetcode.ValidSudoku;
-import com.cllin.leetcode.ValidateBinarySearchTree;
-import com.cllin.leetcode.ZigZagConversion;
+import com.cllin.leetcode.*;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
 import com.cllin.operator.ExclusiveOR;
@@ -370,11 +273,14 @@ public class Main {
 	public static final int Anagrams = 5097;
 	public static final int AddTwoNumbers = 5098;
 	public static final int ZigZagConversion = 5099;
+	public static final int RecoverBinarySearchTree = 5100;
+	public static final int FourSum = 5101;
+	public static final int FirstMissingPositive = 5102;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = ZigZagConversion;
+		int option = FirstMissingPositive;
 
 		switch(option){
 			case TRIE:
@@ -915,6 +821,15 @@ public class Main {
 				break;
 			case ZigZagConversion:
 				exercise = new ZigZagConversion();
+				break;
+			case RecoverBinarySearchTree:
+				exercise = new RecoverBinarySearchTree();
+				break;
+			case FourSum:
+				exercise = new FourSum();
+				break;
+			case FirstMissingPositive:
+				exercise = new FirstMissingPositive();
 				break;
 		}
 		

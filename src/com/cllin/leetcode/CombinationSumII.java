@@ -44,7 +44,8 @@ public class CombinationSumII implements LeetCodeExercise {
 		return getCombination(new ArrayList<Integer>(), 0, num, target);
     }
 	
-	private ArrayList<ArrayList<Integer>> getCombination(ArrayList<Integer> current, int startIndex, int[] candidates, int target) {
+	private ArrayList<ArrayList<Integer>> getCombination(ArrayList<Integer> current, 
+			int startIndex, int[] candidates, int target) {
 		ArrayList<ArrayList<Integer>> solution = new ArrayList<ArrayList<Integer>>();
 		
 		if (candidates == null || target < 0) return solution;

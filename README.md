@@ -201,6 +201,14 @@
 97. Merge K Sorted Lists
 98. Anagrams
 99. Add Two Numbers
+100. Zig Zag Conversion
+101. Recover Binary Search Tree
+102. First Missing Positive
+103. 4 Sum
+104. First Missing Positive
+105. Best Time to Buy and Sell Stock III
+106. Rotate List
+107. SqrtX
 
 
 ###<a name="6"></a>GENERAL ISSUE

@@ -30,11 +30,44 @@ public class FirstMissingPositive implements LeetCodeExercise {
 	
 	private int firstMissingPositive(int[] array) {
 		if (array == null || array.length == 0) return 1;
-
-//		TODO
 		
-		return 0;
+		int length = array.length;
+		int shift = segregate(array);
+		
+		int index;
+		for (int i = shift; i < length; i++) {
+			index = Math.abs(array[i]) - 1 + shift;
+			if (index < length && array[index] > 0) {
+				array[index] = (-1) * array[index];
+			}
+		}
+		
+		for (int i = shift; i < length; i++) {
+			if (array[i] > 0) {
+				return i - shift + 1;
+			}
+		}
+		
+		return length - shift + 1;
     }
+	
+	private int segregate(int[] array) {
+		int temp;
+		int shift = 0;
+		int length = array.length;
+		
+		for (int i = 0; i < length; i++) {
+			if (array[i] <= 0) {
+				temp = array[i];
+				array[i] = array[shift];
+				array[shift] = temp;
+				
+				shift++;
+			}
+		}
+		
+		return shift;
+	}
 
 	@Override
 	public boolean test() {

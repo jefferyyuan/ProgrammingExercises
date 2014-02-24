@@ -276,11 +276,14 @@ public class Main {
 	public static final int RecoverBinarySearchTree = 5100;
 	public static final int FourSum = 5101;
 	public static final int FirstMissingPositive = 5102;
+	public static final int BestTimeToBuyAndSellStockIII = 5103;
+	public static final int SqrtX = 5104;
+	public static final int RotateList = 5105;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = FirstMissingPositive;
+		int option = RotateList;
 
 		switch(option){
 			case TRIE:
@@ -830,6 +833,15 @@ public class Main {
 				break;
 			case FirstMissingPositive:
 				exercise = new FirstMissingPositive();
+				break;
+			case BestTimeToBuyAndSellStockIII:
+				exercise = new BestTimeToBuyAndSellStockIII();
+				break;
+			case SqrtX:
+				exercise = new SqrtX();
+				break;
+			case RotateList:
+				exercise = new RotateList();
 				break;
 		}
 		

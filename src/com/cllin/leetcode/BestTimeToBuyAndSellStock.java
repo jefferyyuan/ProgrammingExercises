@@ -20,8 +20,6 @@ public class BestTimeToBuyAndSellStock implements LeetCodeExercise {
 	public void runExercise() {
 		for (SIZE = 0; SIZE <= 100; SIZE++) {
 			initialize();
-//			int[] p = {7,2,4,1};
-//			int maximumProfit = maxProfit(p);
 			int maximumProfit = maxProfit(prices);
 			System.out.printf("The maximum profit possible is %d%n", maximumProfit);
 		}

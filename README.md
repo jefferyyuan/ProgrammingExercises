@@ -92,7 +92,7 @@
 55. EXERCISE 1-02
 56. EXERCISE 1-01
 
-###<a name="5"></a>EXERCISES FROM LEETCODE
+###<a name="5"></a>EXERCISE FROM LEETCODE
 1. Same Tree
 2. Reverse Integer
 3. Best Time to Buy Stock

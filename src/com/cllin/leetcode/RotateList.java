@@ -40,9 +40,7 @@ public class RotateList implements LeetCodeExercise {
 		}
 		
 		int size = stack.size();
-		if (n == size) {
-			return head;
-		} else if (n > size) {
+		if (n >= size) {
 			return rotateRight(head, n % size);
 		}
 		

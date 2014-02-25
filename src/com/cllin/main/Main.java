@@ -279,11 +279,13 @@ public class Main {
 	public static final int BestTimeToBuyAndSellStockIII = 5103;
 	public static final int SqrtX = 5104;
 	public static final int RotateList = 5105;
+	public static final int ValidPalindrome = 5106;
+	public static final int CopyListWithRandomPointer = 5107;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = RotateList;
+		int option = CopyListWithRandomPointer;
 
 		switch(option){
 			case TRIE:
@@ -842,6 +844,12 @@ public class Main {
 				break;
 			case RotateList:
 				exercise = new RotateList();
+				break;
+			case ValidPalindrome:
+				exercise = new ValidPalindrome();
+				break;
+			case CopyListWithRandomPointer:
+				exercise = new CopyListWithRandomPointer();
 				break;
 		}
 		

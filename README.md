@@ -209,6 +209,8 @@
 105. Best Time to Buy and Sell Stock III
 106. Rotate List
 107. SqrtX
+108. Copy List With Random Pointer
+109. Valid Palindrome
 
 
 ###<a name="6"></a>GENERAL ISSUE

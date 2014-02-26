@@ -281,11 +281,12 @@ public class Main {
 	public static final int RotateList = 5105;
 	public static final int ValidPalindrome = 5106;
 	public static final int CopyListWithRandomPointer = 5107;
+	public static final int ScrambleString = 5108;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = CopyListWithRandomPointer;
+		int option = ScrambleString;
 
 		switch(option){
 			case TRIE:
@@ -850,6 +851,9 @@ public class Main {
 				break;
 			case CopyListWithRandomPointer:
 				exercise = new CopyListWithRandomPointer();
+				break;
+			case ScrambleString:
+				exercise = new ScrambleString();
 				break;
 		}
 		

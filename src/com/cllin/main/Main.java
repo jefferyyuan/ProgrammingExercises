@@ -283,11 +283,13 @@ public class Main {
 	public static final int CopyListWithRandomPointer = 5107;
 	public static final int ScrambleString = 5108;
 	public static final int PermutationSequence = 5109;
+	public static final int MaximalRectangle = 5110;
+	public static final int CloneGraph = 5111;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = PermutationSequence;
+		int option = CloneGraph;
 
 		switch(option){
 			case TRIE:
@@ -858,6 +860,12 @@ public class Main {
 				break;
 			case PermutationSequence:
 				exercise = new PermutationSequence();
+				break;
+			case MaximalRectangle:
+				exercise = new MaximalRectangle();
+				break;
+			case CloneGraph:
+				exercise = new CloneGraph();
 				break;
 		}
 		

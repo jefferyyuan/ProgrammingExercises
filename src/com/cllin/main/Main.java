@@ -287,11 +287,13 @@ public class Main {
 	public static final int CloneGraph = 5111;
 	public static final int ImplementStrStr = 5112;
 	public static final int LongestPalindromicSubstring = 5113;
+	public static final int SudokuSolver = 5114;
+	public static final int LargestRectangleInHistogram = 5115;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = LongestPalindromicSubstring;
+		int option = LargestRectangleInHistogram;
 
 		switch(option){
 			case TRIE:
@@ -874,6 +876,12 @@ public class Main {
 				break;
 			case LongestPalindromicSubstring:
 				exercise = new LongestPalindromicSubstring();
+				break;
+			case SudokuSolver:
+				exercise = new SudokuSolver();
+				break;
+			case LargestRectangleInHistogram:
+				exercise = new LargestRectangleInHistogram();
 				break;
 		}
 		

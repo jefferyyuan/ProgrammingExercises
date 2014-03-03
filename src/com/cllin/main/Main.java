@@ -289,11 +289,15 @@ public class Main {
 	public static final int LongestPalindromicSubstring = 5113;
 	public static final int SudokuSolver = 5114;
 	public static final int LargestRectangleInHistogram = 5115;
+	public static final int InsertInterval = 5116;
+	public static final int MergeIntervals = 5117;
+	public static final int SpiralMatrix = 5118;
+	public static final int RestoreIPAddresses = 5119;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = LargestRectangleInHistogram;
+		int option = RestoreIPAddresses;
 
 		switch(option){
 			case TRIE:
@@ -882,6 +886,18 @@ public class Main {
 				break;
 			case LargestRectangleInHistogram:
 				exercise = new LargestRectangleInHistogram();
+				break;
+			case InsertInterval:
+				exercise = new InsertInterval();
+				break;
+			case MergeIntervals:
+				exercise = new MergeIntervals();
+				break;
+			case SpiralMatrix:
+				exercise = new SpiralMatrix();
+				break;
+			case RestoreIPAddresses:
+				exercise = new RestoreIPAddresses();
 				break;
 		}
 		

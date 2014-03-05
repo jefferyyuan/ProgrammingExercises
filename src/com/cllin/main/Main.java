@@ -293,11 +293,13 @@ public class Main {
 	public static final int MergeIntervals = 5117;
 	public static final int SpiralMatrix = 5118;
 	public static final int RestoreIPAddresses = 5119;
+	public static final int WordBreak = 5120;
+	public static final int MultiplyStrings = 5121;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = RestoreIPAddresses;
+		int option = MultiplyStrings;
 
 		switch(option){
 			case TRIE:
@@ -898,6 +900,12 @@ public class Main {
 				break;
 			case RestoreIPAddresses:
 				exercise = new RestoreIPAddresses();
+				break;
+			case WordBreak:
+				exercise = new WordBreak();
+				break;
+			case MultiplyStrings:
+				exercise = new MultiplyStrings();
 				break;
 		}
 		

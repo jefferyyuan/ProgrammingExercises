@@ -295,11 +295,12 @@ public class Main {
 	public static final int RestoreIPAddresses = 5119;
 	public static final int WordBreak = 5120;
 	public static final int MultiplyStrings = 5121;
+	public static final int SortList = 5122;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = MultiplyStrings;
+		int option = SortList;
 
 		switch(option){
 			case TRIE:
@@ -906,6 +907,9 @@ public class Main {
 				break;
 			case MultiplyStrings:
 				exercise = new MultiplyStrings();
+				break;
+			case SortList:
+				exercise = new SortList();
 				break;
 		}
 		

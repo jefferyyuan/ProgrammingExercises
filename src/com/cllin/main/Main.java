@@ -296,11 +296,14 @@ public class Main {
 	public static final int WordBreak = 5120;
 	public static final int MultiplyStrings = 5121;
 	public static final int SortList = 5122;
+	public static final int BinaryTreeMaximumPathSum = 5123;
+	public static final int RegularExpressionMatching = 5124;
+	public static final int TwoSum = 5125;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = SortList;
+		int option = TwoSum;
 
 		switch(option){
 			case TRIE:
@@ -910,6 +913,15 @@ public class Main {
 				break;
 			case SortList:
 				exercise = new SortList();
+				break;
+			case BinaryTreeMaximumPathSum:
+				exercise = new BinaryTreeMaximumPathSum();
+				break;
+			case RegularExpressionMatching:
+				exercise = new RegularExpressionMatching();
+				break;
+			case TwoSum:
+				exercise = new TwoSum();
 				break;
 		}
 		

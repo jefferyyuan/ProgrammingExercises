@@ -211,7 +211,28 @@
 107. SqrtX
 108. Copy List With Random Pointer
 109. Valid Palindrome
-
+110. Scramble String
+111. Permutation Sequence
+112. Clone Graph
+113. Maximal Rectangle
+114. Implement StrStr
+115. Longest Palindromic Substring
+116. Sudoku Solver
+117. Largest Rectangle in Histogram
+118. Insert Interval
+119. Merge Intervals
+120. Restore IP addresses
+121. Sprial Matrix
+122. Multiply Strings
+123. Word Break
+124. Sort List
+125. Binary Tree Maximum Path Sum
+126. Regular Expression Matching
+127. Two Sum
+128. Evaluate Reverse Polish Notation
+129. Reorder List
+130. Simplify Path
+131. Word Search
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

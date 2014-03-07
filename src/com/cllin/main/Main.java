@@ -299,11 +299,15 @@ public class Main {
 	public static final int BinaryTreeMaximumPathSum = 5123;
 	public static final int RegularExpressionMatching = 5124;
 	public static final int TwoSum = 5125;
+	public static final int WordSearch = 5126;
+	public static final int ReorderList = 5127;
+	public static final int EvaluateReversePolishNotation = 5128;
+	public static final int SimplifyPath = 5129;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = TwoSum;
+		int option = SimplifyPath;
 
 		switch(option){
 			case TRIE:
@@ -922,6 +926,18 @@ public class Main {
 				break;
 			case TwoSum:
 				exercise = new TwoSum();
+				break;
+			case WordSearch:
+				exercise = new WordSearch();
+				break;
+			case ReorderList:
+				exercise = new ReorderList();
+				break;
+			case EvaluateReversePolishNotation:
+				exercise = new EvaluateReversePolishNotation();
+				break;
+			case SimplifyPath:
+				exercise = new SimplifyPath();
 				break;
 		}
 		

@@ -303,11 +303,13 @@ public class Main {
 	public static final int ReorderList = 5127;
 	public static final int EvaluateReversePolishNotation = 5128;
 	public static final int SimplifyPath = 5129;
+	public static final int LongestValidParentheses = 5130;
+	public static final int InterleavingString = 5131;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = SimplifyPath;
+		int option = InterleavingString;
 
 		switch(option){
 			case TRIE:
@@ -938,6 +940,12 @@ public class Main {
 				break;
 			case SimplifyPath:
 				exercise = new SimplifyPath();
+				break;
+			case LongestValidParentheses:
+				exercise = new LongestValidParentheses();
+				break;
+			case InterleavingString:
+				exercise = new InterleavingString();
 				break;
 		}
 		

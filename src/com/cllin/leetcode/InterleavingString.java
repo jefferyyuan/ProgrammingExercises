@@ -35,44 +35,35 @@ public class InterleavingString implements LeetCodeExercise {
 		
 		if (s3.length() != s1.length() + s2.length()) return false;
 		
-    	return interleave(s1, s2, s3, true);
-    }
-	
-	private boolean interleave(String s1, String s2, String s3, boolean flag) {
-		if (s3.length() != s1.length() + s2.length()) return false;
+		int l1 = s1.length();
+		int l2 = s2.length();
 		
-		if (s2.length() == 0) return s3.equals(s1);
+		boolean[][] table = new boolean[l1 + 1][l2 + 1];
 		
-		if (flag) {
-			if (s1.length() == 1) {
-				return s3.equals(s1 + s2);
-			}
-			
-			for (int i = 1; i < s1.length(); i++) {
-				if (s3.substring(0, i).equals(s1.substring(0, i))) {
-					
-					if (interleave(s1.substring(i), s2, s3.substring(i), false)) {
-						return true;
+		for (int i = 0; i < l1 + 1; i++) {
+			for (int j = 0; j < l2 + 1; j++) {
+				if (i == 0 || j == 0) {
+					if (i == 0 && j == 0) {
+						table[i][j] = true;
+					} else if (i == 0 && s2.charAt(j - 1) == s3.charAt(j - 1)) {
+						table[i][j] = table[i][j - 1];
+					} else if (j == 0 && s1.charAt(i - 1) == s3.charAt(i - 1)) {
+						table[i][j] = table[i - 1][j];
+					} 
+				} else {
+					if (s1.charAt(i - 1) == s3.charAt(i + j - 1) && s2.charAt(j - 1) != s3.charAt(i + j - 1)) {
+						table[i][j] = table[i - 1][j];
+					} else if (s1.charAt(i - 1) != s3.charAt(i + j - 1) && s2.charAt(j - 1) == s3.charAt(i + j - 1)) {
+						table[i][j] = table[i][j - 1];
+					} else if (s1.charAt(i - 1) == s3.charAt(i + j - 1) && s2.charAt(j - 1) == s3.charAt(i + j - 1)) {
+						table[i][j] = table[i - 1][j] || table[i][j - 1];
 					}
 				}
 			}
-		} else {
-			if (s2.length() == 1) {
-				return s3.equals(s2 + s1);
-			}
-			
-			for (int i = 1; i < s2.length(); i++) {
-				if (s3.substring(0, i).equals(s2.substring(0, i))) {
-					
-					if (interleave(s1, s2.substring(i), s3.substring(i), true)) {
-						return true;
-					}
-				}
-			}			
 		}
 		
-		return false;
-	}
+    	return table[l1][l2];
+    }
 
 	@Override
 	public boolean test() {

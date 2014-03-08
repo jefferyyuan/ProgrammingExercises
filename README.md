@@ -185,7 +185,7 @@
 81. Valid BST
 82. Reverse Linked List II
 83. Construct Binary Tree from Inorder and Postorder Traversal 
-84. Construct Binary Tree from Inorder and Postorder Traversal
+84. Construct Binary Tree from Inorder and Preorder Traversal
 85. Add Binary
 86. Next Permutation
 87. Remove Duplicates from Sorted List II
@@ -205,34 +205,35 @@
 101. Recover Binary Search Tree
 102. First Missing Positive
 103. 4 Sum
-104. First Missing Positive
-105. Best Time to Buy and Sell Stock III
-106. Rotate List
-107. SqrtX
-108. Copy List With Random Pointer
-109. Valid Palindrome
-110. Scramble String
-111. Permutation Sequence
-112. Clone Graph
-113. Maximal Rectangle
-114. Implement StrStr
-115. Longest Palindromic Substring
-116. Sudoku Solver
-117. Largest Rectangle in Histogram
-118. Insert Interval
-119. Merge Intervals
-120. Restore IP addresses
-121. Sprial Matrix
-122. Multiply Strings
-123. Word Break
-124. Sort List
-125. Binary Tree Maximum Path Sum
-126. Regular Expression Matching
-127. Two Sum
-128. Evaluate Reverse Polish Notation
-129. Reorder List
-130. Simplify Path
-131. Word Search
+104. Best Time to Buy and Sell Stock III
+105. Rotate List
+106. SqrtX
+107. Copy List With Random Pointer
+108. Valid Palindrome
+109. Scramble String
+110. Permutation Sequence
+111. Clone Graph
+112. Maximal Rectangle
+113. Implement StrStr
+114. Longest Palindromic Substring
+115. Sudoku Solver
+116. Largest Rectangle in Histogram
+117. Insert Interval
+118. Merge Intervals
+119. Restore IP addresses
+120. Sprial Matrix
+121. Multiply Strings
+122. Word Break
+123. Sort List
+124. Binary Tree Maximum Path Sum
+125. Regular Expression Matching
+126. Two Sum
+127. Evaluate Reverse Polish Notation
+128. Reorder List
+129. Simplify Path
+130. Word Search
+131. Longest Valid Parenthese
+132. Interleaving String
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

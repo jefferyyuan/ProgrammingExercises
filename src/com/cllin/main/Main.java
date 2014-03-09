@@ -305,11 +305,13 @@ public class Main {
 	public static final int SimplifyPath = 5129;
 	public static final int LongestValidParentheses = 5130;
 	public static final int InterleavingString = 5131;
+	public static final int SubstringWithConcatenationOfAllWords = 5132;
+	public static final int PalindromePartitioningII = 5133;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = InterleavingString;
+		int option = PalindromePartitioningII;
 
 		switch(option){
 			case TRIE:
@@ -946,6 +948,12 @@ public class Main {
 				break;
 			case InterleavingString:
 				exercise = new InterleavingString();
+				break;
+			case SubstringWithConcatenationOfAllWords:
+				exercise = new SubstringWithConcatenationOfAllWords();
+				break;
+			case PalindromePartitioningII:
+				exercise = new PalindromePartitioningII();
 				break;
 		}
 		

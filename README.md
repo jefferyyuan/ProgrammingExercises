@@ -234,6 +234,11 @@
 130. Word Search
 131. Longest Valid Parenthese
 132. Interleaving String
+133. Palindrome Partitioning II
+134. Substring With Concatenation of All Words 
+133. Candy
+134. Minimum Window Substring
+135. Word Ladder
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

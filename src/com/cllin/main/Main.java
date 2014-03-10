@@ -307,11 +307,14 @@ public class Main {
 	public static final int InterleavingString = 5131;
 	public static final int SubstringWithConcatenationOfAllWords = 5132;
 	public static final int PalindromePartitioningII = 5133;
+	public static final int Candy = 5134;
+	public static final int MinimumWindowSubstring = 5135;
+	public static final int WordLadder = 5136;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = PalindromePartitioningII;
+		int option = WordLadder;
 
 		switch(option){
 			case TRIE:
@@ -954,6 +957,15 @@ public class Main {
 				break;
 			case PalindromePartitioningII:
 				exercise = new PalindromePartitioningII();
+				break;
+			case Candy:
+				exercise = new Candy();
+				break;
+			case MinimumWindowSubstring:
+				exercise = new MinimumWindowSubstring();
+				break;
+			case WordLadder:
+				exercise = new WordLadder();
 				break;
 		}
 		

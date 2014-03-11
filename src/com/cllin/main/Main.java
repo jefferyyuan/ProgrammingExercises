@@ -310,11 +310,12 @@ public class Main {
 	public static final int Candy = 5134;
 	public static final int MinimumWindowSubstring = 5135;
 	public static final int WordLadder = 5136;
+	public static final int MedianOfTwoSortedArrays = 5137;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = WordLadder;
+		int option = MedianOfTwoSortedArrays;
 
 		switch(option){
 			case TRIE:
@@ -966,6 +967,9 @@ public class Main {
 				break;
 			case WordLadder:
 				exercise = new WordLadder();
+				break;
+			case MedianOfTwoSortedArrays:
+				exercise = new MedianOfTwoSortedArrays();
 				break;
 		}
 		

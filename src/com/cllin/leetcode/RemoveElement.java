@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class RemoveElement implements LeetCodeExercise {
 	private final int MAXIMUM = 1000;
 	private final int SIZE = 1000;

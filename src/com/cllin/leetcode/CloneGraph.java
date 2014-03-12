@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class CloneGraph implements LeetCodeExercise {
 	
 	private UndirectedGraphNode[] testSuite = {

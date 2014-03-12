@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 
 public class ClimbingStairs implements LeetCodeExercise {
 	private int levels;

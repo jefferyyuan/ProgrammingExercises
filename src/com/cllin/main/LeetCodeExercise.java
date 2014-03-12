@@ -1,6 +1,5 @@
-package com.cllin.leetcode;
+package com.cllin.main;
 
-import com.cllin.main.Exercise;
 
 public interface LeetCodeExercise extends Exercise {
 	public void initialize();

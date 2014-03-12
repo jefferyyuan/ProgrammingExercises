@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class RemoveNthNodeFromEndOfList implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
 	private final int LENGTH = 100;

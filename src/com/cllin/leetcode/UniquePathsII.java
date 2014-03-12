@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 
 public class UniquePathsII implements LeetCodeExercise {
 	private final int[][][] testSuite = new int[][][]{

@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
 	private final int SIZE = 1000;

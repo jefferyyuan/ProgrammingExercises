@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class SetMatrixZeroes implements LeetCodeExercise {
 	private final int MAXIMUM = 5;
 	private final int SIZE_X = 10;

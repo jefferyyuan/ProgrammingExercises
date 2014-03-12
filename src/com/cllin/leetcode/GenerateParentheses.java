@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class GenerateParentheses implements LeetCodeExercise {
 	
 	private ArrayList<String> result;

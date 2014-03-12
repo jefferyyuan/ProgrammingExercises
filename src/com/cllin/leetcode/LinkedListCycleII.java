@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class LinkedListCycleII implements LeetCodeExercise {
 	private final int SIZE = 2 - 1;
 	private final int MAXIMUM = 100;

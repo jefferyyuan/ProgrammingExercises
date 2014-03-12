@@ -3,6 +3,8 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class WordLadder implements LeetCodeExercise {
 
 	private ArrayList<TestCase> testSuite;

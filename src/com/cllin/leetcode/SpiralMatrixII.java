@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class SpiralMatrixII implements LeetCodeExercise {
 	private int n;
 	private int[][] matrix;

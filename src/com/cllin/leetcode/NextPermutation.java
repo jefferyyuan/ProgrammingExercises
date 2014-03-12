@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class NextPermutation implements LeetCodeExercise {
 	private final int[][] testSuite = {
 			{1, 2, 3}, 

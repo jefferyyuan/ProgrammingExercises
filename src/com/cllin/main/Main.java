@@ -311,11 +311,15 @@ public class Main {
 	public static final int MinimumWindowSubstring = 5135;
 	public static final int WordLadder = 5136;
 	public static final int MedianOfTwoSortedArrays = 5137;
+	public static final int ThreeSum = 5138;
+	public static final int DecodeWays = 5139;
+	public static final int DivideTwoIntegers = 5140;
+	public static final int ReverseWordsInAString = 5141;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = MedianOfTwoSortedArrays;
+		int option = ReverseWordsInAString;
 
 		switch(option){
 			case TRIE:
@@ -970,6 +974,18 @@ public class Main {
 				break;
 			case MedianOfTwoSortedArrays:
 				exercise = new MedianOfTwoSortedArrays();
+				break;
+			case ThreeSum:
+				exercise = new ThreeSum();
+				break;
+			case DecodeWays:
+				exercise = new DecodeWays();
+				break;
+			case DivideTwoIntegers:
+				exercise = new DivideTwoIntegers();
+				break;
+			case ReverseWordsInAString:
+				exercise = new ReverseWordsInAString();
 				break;
 		}
 		

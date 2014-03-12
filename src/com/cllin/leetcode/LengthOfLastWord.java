@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class LengthOfLastWord implements LeetCodeExercise {
 	private static final String[] testSuite = {"", " ", "   ","a ", " a", "  a  bc  ", "laptop", "hello world ", "how do you do?"};
 	

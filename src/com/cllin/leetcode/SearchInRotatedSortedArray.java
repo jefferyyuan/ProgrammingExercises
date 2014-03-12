@@ -3,6 +3,8 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class SearchInRotatedSortedArray implements LeetCodeExercise {
 	private final int MAXIMUM = 200;
 	private final int SIZE = 100;

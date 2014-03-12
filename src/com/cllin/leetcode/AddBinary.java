@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class AddBinary implements LeetCodeExercise {
 	private final TestCase[] testSuite = {
 		new TestCase("", "", "0"),

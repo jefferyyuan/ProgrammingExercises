@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.Stack;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class LargestRectangleInHistogram implements LeetCodeExercise {
 
 	private int[][] testSuite = {

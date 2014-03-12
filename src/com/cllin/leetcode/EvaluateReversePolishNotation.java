@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class EvaluateReversePolishNotation implements LeetCodeExercise {
 
 	private final String[][] testSuite = {

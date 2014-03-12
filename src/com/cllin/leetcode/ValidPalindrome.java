@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class ValidPalindrome implements LeetCodeExercise {
 	
 	private final TestCase[] testSuite = {

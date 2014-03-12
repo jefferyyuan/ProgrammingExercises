@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class LetterCombinationsOfAPhoneNumber implements LeetCodeExercise {
 	private String[] testSuite = {"","23", "5566"};
 	

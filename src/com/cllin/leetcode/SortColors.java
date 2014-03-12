@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class SortColors implements LeetCodeExercise {
 	private final int MAXIMUM = 3;
 	private final int SIZE = 1000;

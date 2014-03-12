@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class JumpGame implements LeetCodeExercise {
 	private final int[][] testSuite = {
 			{2, 3, 1, 1, 4},

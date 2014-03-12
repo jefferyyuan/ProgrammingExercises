@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class EditDistance implements LeetCodeExercise {
 	private final TestCase[] testSuite = {
 			new TestCase("", ""),

@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class Triangle implements LeetCodeExercise {
 	private final int MAXIMUM = 10;
 	

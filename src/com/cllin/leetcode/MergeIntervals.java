@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class MergeIntervals implements LeetCodeExercise {
 
 	private ArrayList<ArrayList<Interval>> testSuite;

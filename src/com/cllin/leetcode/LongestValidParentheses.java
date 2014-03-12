@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class LongestValidParentheses implements LeetCodeExercise {
 
 	private final String[] testSuite = {

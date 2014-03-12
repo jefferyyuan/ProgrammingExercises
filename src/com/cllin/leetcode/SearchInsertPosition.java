@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class SearchInsertPosition implements LeetCodeExercise {
 	private final int MAXIMUM = 10;
 	private final int SIZE = 10;

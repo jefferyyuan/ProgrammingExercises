@@ -3,6 +3,8 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class ReverseInteger implements LeetCodeExercise {
 	private final int MAXIMUM = (1 << 30) - 1 + (1 << 30);
 	private final int SIZE = 5;

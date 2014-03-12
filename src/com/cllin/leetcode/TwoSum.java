@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.HashMap;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class TwoSum implements LeetCodeExercise {
 
 	private int[][] testSuite = {

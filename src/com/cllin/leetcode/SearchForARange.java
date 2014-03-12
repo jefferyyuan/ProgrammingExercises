@@ -3,6 +3,8 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class SearchForARange implements LeetCodeExercise {
 	private final int SIZE = 10;
 	private final int MAXIMUM = 10;

@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class SwapNodesInPairs implements LeetCodeExercise {
 	private final int SIZE = 100;
 	private final int MAXIMUM = 1000;

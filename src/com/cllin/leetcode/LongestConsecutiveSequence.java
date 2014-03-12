@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.HashMap;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class LongestConsecutiveSequence implements LeetCodeExercise {
 	private final int SIZE = 1000;
 	private final int MAXIMUM = 2000;

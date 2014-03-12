@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class MedianOfTwoSortedArrays implements LeetCodeExercise {
 	
 	private int MAXIMUM = 100;

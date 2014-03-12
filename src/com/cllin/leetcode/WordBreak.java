@@ -4,6 +4,8 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class WordBreak implements LeetCodeExercise {
 
 	private final TestCase[] testSuite = {

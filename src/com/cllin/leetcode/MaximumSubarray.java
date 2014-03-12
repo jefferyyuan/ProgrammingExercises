@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 
 public class MaximumSubarray implements LeetCodeExercise {
 	private final int MAXIMUM = 100;

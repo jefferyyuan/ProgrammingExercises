@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class TrappingRainWater implements LeetCodeExercise {
 	private final int[][] testSuites = 
 		{{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}, {5, 4, 1, 2}, {3, 1, 2}};

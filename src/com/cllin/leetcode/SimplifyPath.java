@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.LinkedList;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class SimplifyPath implements LeetCodeExercise {
 
 	private final String[] testSuite = {

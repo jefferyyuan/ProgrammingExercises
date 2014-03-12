@@ -3,6 +3,8 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class SubstringWithConcatenationOfAllWords implements LeetCodeExercise {
 
 	private TestCase[] testSuite = {

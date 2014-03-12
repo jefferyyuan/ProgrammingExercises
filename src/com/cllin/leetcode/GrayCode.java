@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class GrayCode implements LeetCodeExercise {
 	private final int[] testSuite = {0, 1, 2, 3, 4, 5, 6};
 	

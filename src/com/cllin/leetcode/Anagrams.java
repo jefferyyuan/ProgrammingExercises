@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class Anagrams implements LeetCodeExercise {
 	
 	private final String[][] testSuite = {

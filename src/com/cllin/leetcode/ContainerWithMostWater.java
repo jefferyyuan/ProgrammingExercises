@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class ContainerWithMostWater implements LeetCodeExercise {
 	private final int MAXIMUM = 2;
 	private final int SIZE = 100;

@@ -3,6 +3,8 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class Subsets implements LeetCodeExercise {
 	private final int[][] testSuite = {
 			{}, 

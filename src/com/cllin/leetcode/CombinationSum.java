@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class CombinationSum implements LeetCodeExercise {
 	private static final int[][] testSuite = new int[][]{
 		{}, 

@@ -1,5 +1,7 @@
 package com.cllin.leetcode;
 
+import com.cllin.main.LeetCodeExercise;
+
 public class RotateImage implements LeetCodeExercise {
 	private final int SIZE = 2;
 	private final int MAXIMUM = 10;

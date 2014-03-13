@@ -239,6 +239,11 @@
 133. Candy
 134. Minimum Window Substring
 135. Word Ladder
+136. Median of Two Sorted Arrays
+137. Decode Ways
+138. Divide Two Integers
+139. Reverse Words in a String
+140. Three Sum
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

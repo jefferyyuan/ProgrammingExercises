@@ -316,11 +316,12 @@ public class Main {
 	public static final int DivideTwoIntegers = 5140;
 	public static final int ReverseWordsInAString = 5141;
 	public static final int WordBreakII = 5142;
+	public static final int StringToInteger = 5143;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = WordBreakII;
+		int option = StringToInteger;
 
 		switch(option){
 			case TRIE:
@@ -990,6 +991,9 @@ public class Main {
 				break;
 			case WordBreakII:
 				exercise = new WordBreakII();
+				break;
+			case StringToInteger:
+				exercise = new StringToInteger();
 				break;
 		}
 		

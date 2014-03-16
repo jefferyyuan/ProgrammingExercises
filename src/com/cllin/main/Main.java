@@ -317,11 +317,13 @@ public class Main {
 	public static final int ReverseWordsInAString = 5141;
 	public static final int WordBreakII = 5142;
 	public static final int StringToInteger = 5143;
+	public static final int SurroundedRegions = 5144;
+	public static final int TextJustification = 5145;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = StringToInteger;
+		int option = TextJustification;
 
 		switch(option){
 			case TRIE:
@@ -994,6 +996,12 @@ public class Main {
 				break;
 			case StringToInteger:
 				exercise = new StringToInteger();
+				break;
+			case SurroundedRegions:
+				exercise = new SurroundedRegions();
+				break;
+			case TextJustification:
+				exercise = new TextJustification();
 				break;
 		}
 		

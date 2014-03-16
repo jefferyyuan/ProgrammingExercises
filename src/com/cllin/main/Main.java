@@ -319,11 +319,12 @@ public class Main {
 	public static final int StringToInteger = 5143;
 	public static final int SurroundedRegions = 5144;
 	public static final int TextJustification = 5145;
+	public static final int LRUCache = 5146;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = TextJustification;
+		int option = LRUCache;
 
 		switch(option){
 			case TRIE:
@@ -1002,6 +1003,9 @@ public class Main {
 				break;
 			case TextJustification:
 				exercise = new TextJustification();
+				break;
+			case LRUCache:
+				exercise = new LRUCache();
 				break;
 		}
 		

@@ -320,11 +320,12 @@ public class Main {
 	public static final int SurroundedRegions = 5144;
 	public static final int TextJustification = 5145;
 	public static final int LRUCache = 5146;
+	public static final int WildcardMatching = 5147;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = LRUCache;
+		int option = WildcardMatching;
 
 		switch(option){
 			case TRIE:
@@ -1006,6 +1007,9 @@ public class Main {
 				break;
 			case LRUCache:
 				exercise = new LRUCache();
+				break;
+			case WildcardMatching:
+				exercise = new WildcardMatching();
 				break;
 		}
 		

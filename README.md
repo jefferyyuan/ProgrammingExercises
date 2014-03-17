@@ -244,6 +244,12 @@
 138. Divide Two Integers
 139. Reverse Words in a String
 140. Three Sum
+141. Word Break II
+142. String to Integer
+143. Surrounded Regions
+144. Text Justification
+145. LRU Cache
+146. Wildcard Matching
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

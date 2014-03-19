@@ -321,11 +321,12 @@ public class Main {
 	public static final int TextJustification = 5145;
 	public static final int LRUCache = 5146;
 	public static final int WildcardMatching = 5147;
+	public static final int ValidNumber = 5148;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = WildcardMatching;
+		int option = ValidNumber;
 
 		switch(option){
 			case TRIE:
@@ -1010,6 +1011,9 @@ public class Main {
 				break;
 			case WildcardMatching:
 				exercise = new WildcardMatching();
+				break;
+			case ValidNumber:
+				exercise = new ValidNumber();
 				break;
 		}
 		

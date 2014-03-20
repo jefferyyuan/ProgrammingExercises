@@ -250,6 +250,7 @@
 144. Text Justification
 145. LRU Cache
 146. Wildcard Matching
+147. Valid Number
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

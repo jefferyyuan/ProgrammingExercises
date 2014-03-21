@@ -326,7 +326,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = ValidNumber;
+		int option = HEAPSORT;
 
 		switch(option){
 			case TRIE:

@@ -1,21 +1,20 @@
 package com.cllin.sort;
 
 /*
- * Class							:Sorting algorithm
  * Worst case performance			:O(n ^ 2)
  * Best case performance			:O(n log n) (simple partition)
  * Average case performance			:O(n log n)
- * Worst case space complexity		:O(n)
+ * Worst case space complexity		:O(1) (in place)
  *
  * Reference						:http://en.wikipedia.org/wiki/Quicksort
  */
 
 public class QuickSort extends Sort {
 	protected void sort(){
-		quickSort(0, SIZE - 1);
+		quickSort(numbers, 0, SIZE - 1);
 	}
 	
-	private int partition(int start, int end) {
+	private int partition(int[] numbers, int start, int end) {
 		int x = numbers[end];
 		int i = start - 1;
 		
@@ -37,7 +36,7 @@ public class QuickSort extends Sort {
 	}
 	
 	@SuppressWarnings("unused")
-	private int randomizedPartition(int start, int end) {
+	private int randomizedPartition(int[] numbers, int start, int end) {
 		int index = (int)(Math.random() * (end -  start + 1)) + start;
 		
 //		Swap the random element and the last element
@@ -45,15 +44,15 @@ public class QuickSort extends Sort {
 		numbers[index] = numbers[end];
 		numbers[end] = tmp;
 		
-		return partition(start, end);
+		return partition(numbers, start, end);
 	}
 	
-	private void quickSort(int start, int end) {
+	private void quickSort(int[] numbers, int start, int end) {
 		if (end > start) {
-			int partitionIndex = partition(start, end);
+			int partitionIndex = partition(numbers, start, end);
 //			int partitionIndex = randomizedPartition(start, end);
-			quickSort(start, partitionIndex - 1);
-			quickSort(partitionIndex, end);
+			quickSort(numbers, start, partitionIndex - 1);
+			quickSort(numbers, partitionIndex, end);
 		}
 	}
 }

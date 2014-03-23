@@ -322,11 +322,13 @@ public class Main {
 	public static final int LRUCache = 5146;
 	public static final int WildcardMatching = 5147;
 	public static final int ValidNumber = 5148;
+	public static final int MaxPointsOnALine = 5149;
+	public static final int WordLadderII = 5150;
 	
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = HEAPSORT;
+		int option = WordLadderII;
 
 		switch(option){
 			case TRIE:
@@ -1014,6 +1016,12 @@ public class Main {
 				break;
 			case ValidNumber:
 				exercise = new ValidNumber();
+				break;
+			case MaxPointsOnALine:
+				exercise = new MaxPointsOnALine();
+				break;
+			case WordLadderII:
+				exercise = new WordLadderII();
 				break;
 		}
 		

@@ -251,6 +251,8 @@
 145. LRU Cache
 146. Wildcard Matching
 147. Valid Number
+148. Max Points on a Line
+149. Word Ladder II
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

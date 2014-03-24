@@ -4,6 +4,14 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Description
+ * Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).
+ * You may assume that the intervals were initially sorted according to their start times.
+ * 
+ * Source: http://oj.leetcode.com/problems/insert-interval/
+ */
+
 public class InsertInterval implements LeetCodeExercise {
 
 	private ArrayList<ArrayList<Interval>> testSuite;
@@ -73,7 +81,7 @@ public class InsertInterval implements LeetCodeExercise {
 	}
 
 	private ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
-		if (intervals == null) {
+		if (intervals == null || intervals.size() == 0) {
 			intervals = new ArrayList<Interval>();
 			intervals.add(newInterval);
 			return intervals;
@@ -84,28 +92,22 @@ public class InsertInterval implements LeetCodeExercise {
 			index++;
 		}
 		
-		if (index == intervals.size()) {
-			intervals.add(newInterval);
-		} else {
-			intervals.add(index, newInterval);
+		intervals.add(index, newInterval);
+		
+//		Merge with the previous interval if needed
+		if (index > 0 && intervals.get(index - 1).end >= intervals.get(index).start) {
+			int end = Math.max(intervals.get(index - 1).end, intervals.get(index).end);
+			
+			Interval interval = new Interval(intervals.get(index - 1).start, end);
+			intervals.set(index - 1, interval);
+			intervals.remove(index--);
 		}
-		
-		if (intervals.size() == 1) return intervals;
-		
-		if (index != 0) {
-			if (intervals.get(index - 1).end >= intervals.get(index).start) {
-				int end = Math.max(intervals.get(index - 1).end, intervals.get(index).end);
-				
-				Interval interval = new Interval(intervals.get(index - 1).start, end);
-				intervals.set(index - 1, interval);
-				intervals.remove(index--);
-			}
-		}
-		
-		int j = (index == 0)? 1 : index + 1;
+
+//		Merge with the next interval if needed
+		int j = index + 1;
 		while (j < intervals.size() && intervals.get(j).start <= newInterval.end) {
 			int end = Math.max(intervals.get(index).end, intervals.get(j).end);
-			
+
 			Interval interval = new Interval(intervals.get(index).start, end);
 			intervals.set(index, interval);
 			intervals.remove(j);

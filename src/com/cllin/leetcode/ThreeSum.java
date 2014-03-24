@@ -5,6 +5,17 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Description
+ * Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? 
+ * Find all unique triplets in the array which gives the sum of zero.
+ * 
+ * Elements in a triplet (a,b,c) must be in non-descending order. (ie, a <= b <= c)
+ * The solution set must not contain duplicate triplets.
+ *
+ * Source: http://oj.leetcode.com/problems/3sum/
+ */
+
 public class ThreeSum implements LeetCodeExercise {
 	
 	private final int[][] testSuite = {
@@ -52,16 +63,23 @@ public class ThreeSum implements LeetCodeExercise {
 			while (i < num.length && i >= 1 && num[i] == num[i - 1]) i++;
 			
 			int j = i + 1;
-			while (j < num.length && j > i + 1 && num[j] == num[j - 1]) j++;
-			
 			int k = num.length - 1;
-			while (k > j && k <= num.length - 2 && num[k] == num[k + 1]) k++;
 			
-			if (i >= num.length - 1 || k <= j) break;
-			if (num[i] > 0 || num[k] < 0) break;
+			if (i >= num.length - 1 || k <= j || num[i] > 0 || num[k] < 0) break;
 			
 			while (j < k) {
-				if (num[i] + num[j] + num[k] == 0) {
+				/************************************************
+				 * The key of this question is how to move the pointers:
+				 * 1) Move j if the sum is still negative, hasn't reach 0.
+				 * 2) Reset j to i + 1, move k if the sum exceeds 0.
+				 * 3) If the sum equals 0, save the triplet does not exist in the solution set. Then move j and k.
+				 */
+				if (num[i] + num[j] + num[k] < 0) {
+					j++;
+				} else if (num[i] + num[j] + num[k] > 0) {
+					k--;
+					j = i + 1;
+				} else {
 					ArrayList<Integer> triplet = new ArrayList<Integer>();
 					triplet.add(num[i]);
 					triplet.add(num[j]);
@@ -74,13 +92,7 @@ public class ThreeSum implements LeetCodeExercise {
 					j++;
 					k--;
 				}
-				
-				if (num[i] + num[j] + num[k] < 0) {
-					j++;
-				} else if (num[i] + num[j] + num[k] > 0) {
-					k--;
-					j = i + 1;
-				}
+				/************************************************/
 			}
 			i++;
 		}

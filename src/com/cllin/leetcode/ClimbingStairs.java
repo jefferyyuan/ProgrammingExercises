@@ -2,6 +2,13 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Description
+ * You are climbing a stair case. It takes n steps to reach to the top.
+ * Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+ * 
+ * Source: http://oj.leetcode.com/problems/climbing-stairs/
+ */
 
 public class ClimbingStairs implements LeetCodeExercise {
 	private int levels;
@@ -20,6 +27,10 @@ public class ClimbingStairs implements LeetCodeExercise {
 		
 	}
 	
+	/************************************************
+	 * This is in fact to get the nth Fibonacci number.
+	 * There is a way to compute Fibonacci sequence in constant extra space.
+	/************************************************/
 	private int climbStairs(int n) {
 		if (n == 0) return 0;
 		else if (n == 1) return 1;
@@ -27,10 +38,10 @@ public class ClimbingStairs implements LeetCodeExercise {
 		
 		int result = 0;
 		int last = 2;
-		int lastOfLast = 1;
+		int lastTwo = 1;
 		for (int i = 3; i <= n; i++) {
-			result = last + lastOfLast;
-			lastOfLast = last;
+			result = last + lastTwo;
+			lastTwo = last;
 			last = result;
 		}
 
@@ -39,7 +50,6 @@ public class ClimbingStairs implements LeetCodeExercise {
 
 	@Override
 	public boolean test() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

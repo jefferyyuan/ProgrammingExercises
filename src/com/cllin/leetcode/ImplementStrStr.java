@@ -2,6 +2,20 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Description
+ * Implement strStr().
+ * Returns a pointer to the first occurrence of needle in haystack, or null if needle is not part of haystack.
+ * 
+ * Source: http://oj.leetcode.com/problems/implement-strstr/
+ * 
+ * C++ Function
+ * strstr() returns a pointer to the first occurrence of str2 in str1, or a null pointer if str2 is not part of str1.
+ * 
+ * Source: http://www.cplusplus.com/reference/cstring/strstr/
+ */
+
+
 public class ImplementStrStr implements LeetCodeExercise {
 
 	private TestCase[] testSuite = {
@@ -38,13 +52,12 @@ public class ImplementStrStr implements LeetCodeExercise {
 		int needleLength = needle.length();
 		
 		for (int i = 0; i < hayLength - needleLength; i++) {
-			int j = i;
+			int j = 0;
 			boolean flag = true;
-			for (j = 0; j < needleLength; j++) {
-				if (haystack.charAt(i + j) != needle.charAt(j)) {
-					flag = false;
-					break;
-				}
+			
+			while (j < needleLength && flag) {
+				flag = haystack.charAt(i + j) == needle.charAt(j);
+				j++;
 			}
 			
 			if (flag) return haystack.substring(i);

@@ -6,6 +6,13 @@ import java.util.Comparator;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Description
+ * Given a collection of intervals, merge all overlapping intervals.
+ * 
+ * http://oj.leetcode.com/problems/merge-intervals/
+ */
+
 public class MergeIntervals implements LeetCodeExercise {
 
 	private ArrayList<ArrayList<Interval>> testSuite;
@@ -50,6 +57,11 @@ public class MergeIntervals implements LeetCodeExercise {
 		}
 	}
 	
+	/************************************************
+	 * The keys of this question are:
+	 * 1) Implementing a comparator that support Interval
+	 * 2) Merge and delete intervals if needed
+	 */
 	private ArrayList<Interval> merge(ArrayList<Interval> intervals) {
 		if (intervals == null) return new ArrayList<Interval>();
 		if (intervals.size() <= 1) return intervals;
@@ -73,6 +85,24 @@ public class MergeIntervals implements LeetCodeExercise {
     	return intervals;
     }
 	
+	private class Interval {
+		int start, end;
+		Interval(int s, int e) {
+			start = s;
+			end = e;
+		}
+	}
+	
+	private class IntervalComparator implements Comparator<Interval> {
+		@Override
+		public int compare(Interval i1, Interval i2) {
+			if (i1.start < i2.start) return -1;
+			if (i1.start > i2.start) return 1;
+			
+			return 0;
+		}
+	}
+	
 	@Override
 	public boolean test() {
 		System.out.print("For the interval set: ");
@@ -90,23 +120,5 @@ public class MergeIntervals implements LeetCodeExercise {
 		System.out.println("\n------------------");
 		
 		return true;
-	}
-
-	private class Interval {
-		int start, end;
-		Interval(int s, int e) {
-			start = s;
-			end = e;
-		}
-	}
-	
-	private class IntervalComparator implements Comparator<Interval> {
-		@Override
-		public int compare(Interval i1, Interval i2) {
-			if (i1.start < i2.start) return -1;
-			if (i1.start > i2.start) return 1;
-			
-			return 0;
-		}
 	}
 }

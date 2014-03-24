@@ -27,10 +27,10 @@ public class ClimbingStairs implements LeetCodeExercise {
 		
 	}
 	
-	/************************************************
-	 * This is in fact to get the nth Fibonacci number.
+	/*
+	 * In fact, the nth Fibonacci number is the solution.
 	 * There is a way to compute Fibonacci sequence in constant extra space.
-	/************************************************/
+	 */
 	private int climbStairs(int n) {
 		if (n == 0) return 0;
 		else if (n == 1) return 1;

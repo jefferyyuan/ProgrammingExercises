@@ -68,7 +68,7 @@ public class ThreeSum implements LeetCodeExercise {
 			if (i >= num.length - 1 || k <= j || num[i] > 0 || num[k] < 0) break;
 			
 			while (j < k) {
-				/************************************************
+				/*
 				 * The key of this question is how to move the pointers:
 				 * 1) Move j if the sum is still negative, hasn't reach 0.
 				 * 2) Reset j to i + 1, move k if the sum exceeds 0.
@@ -92,7 +92,6 @@ public class ThreeSum implements LeetCodeExercise {
 					j++;
 					k--;
 				}
-				/************************************************/
 			}
 			i++;
 		}

@@ -2,6 +2,13 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Description
+ * Implement atoi to convert a string to an integer.
+ * 
+ * Source: http://oj.leetcode.com/problems/string-to-integer-atoi/
+ */
+
 public class StringToInteger implements LeetCodeExercise {
 
 	private String[] testSuite = {

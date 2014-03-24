@@ -2,6 +2,13 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Description
+ * Implement pow(x, n).
+ * 
+ * Source: http://oj.leetcode.com/problems/powx-n/
+ */
+
 public class Power implements LeetCodeExercise {
 	private final int MAXIMUM = 10;
 	

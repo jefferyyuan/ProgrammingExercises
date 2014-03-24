@@ -2,6 +2,13 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Description
+ * Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in place.
+ * 
+ * Source: http://oj.leetcode.com/problems/set-matrix-zeroes/
+ */
+
 public class SetMatrixZeroes implements LeetCodeExercise {
 	private final int MAXIMUM = 5;
 	private final int SIZE_X = 10;
@@ -28,6 +35,10 @@ public class SetMatrixZeroes implements LeetCodeExercise {
 		test();
 	}
 	
+	/*
+	 * Use the first row and column to store whether this row/column should be set to zero.
+	 * Before that, store whether the first row/column should be set to zero.
+	 */
     private void setZeroes(int[][] matrix) {
         if (matrix.length == 0 || matrix[0].length == 0) return;
         int rows = matrix.length;

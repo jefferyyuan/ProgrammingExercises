@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Description
  * Given a collection of intervals, merge all overlapping intervals.
  * 
- * http://oj.leetcode.com/problems/merge-intervals/
+ * Source: http://oj.leetcode.com/problems/merge-intervals/
  */
 
 public class MergeIntervals implements LeetCodeExercise {
@@ -57,7 +57,7 @@ public class MergeIntervals implements LeetCodeExercise {
 		}
 	}
 	
-	/************************************************
+	/*
 	 * The keys of this question are:
 	 * 1) Implementing a comparator that support Interval
 	 * 2) Merge and delete intervals if needed

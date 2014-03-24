@@ -4,6 +4,14 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Description
+ * Merge two sorted linked lists and return it as a new list.
+ * The new list should be made by splicing together the nodes of the first two lists.
+ * 
+ * Source: http://oj.leetcode.com/problems/merge-two-sorted-lists/
+ */
+
 public class MergeTwoSortedLists implements LeetCodeExercise {
 	private final int MAXIMUM = 1000;
 	private final int SIZE = 1000;
@@ -32,7 +40,7 @@ public class MergeTwoSortedLists implements LeetCodeExercise {
 		Arrays.sort(reference1);
 		Arrays.sort(reference2);
 
-//		Creating the LinkedList
+//		Create the LinkedList
 		list1 = new ListNode(reference1[0]);
 		list2 = new ListNode(reference2[0]);
 		
@@ -66,8 +74,6 @@ public class MergeTwoSortedLists implements LeetCodeExercise {
 	
     private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
     	if (l1 == null && l2 == null) return null;
-    	else if (l1 == null) return l2;
-    	else if (l2 == null) return l1;
     	
     	ListNode head = new ListNode(-1);
     	ListNode node = head;
@@ -86,22 +92,7 @@ public class MergeTwoSortedLists implements LeetCodeExercise {
     		node = node.next;
     	}
 
-    	if (iter1 == null && iter2 == null) return head.next;
-    	else if (iter1 != null) {
-    		while (iter1 != null) {
-    			node.next = iter1;
-    			iter1 = iter1.next;
-    			
-        		node = node.next;
-    		}
-    	} else {
-    		while (iter2 != null) {
-    			node.next = iter2;
-    			iter2 = iter2.next;
-    			
-        		node = node.next;
-    		}
-    	}
+    	node.next = (iter1 == null)? iter2 : iter1;
     	
     	return head.next;
     }

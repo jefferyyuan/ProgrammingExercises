@@ -1,8 +1,18 @@
 package com.cllin.leetcode;
 
-import java.util.ArrayList;
-
 import com.cllin.main.LeetCodeExercise;
+
+/*
+ * Description
+ * Given a binary tree, determine if it is a valid binary search tree (BST).
+ * 
+ * Assume a BST is defined as follows:
+ * 		1) The left subtree of a node contains only nodes with keys less than the node's key.
+ * 		2) The right subtree of a node contains only nodes with keys greater than the node's key.
+ * 		3) Both the left and right subtrees must also be binary search trees.
+ * 
+ * Source: http://oj.leetcode.com/problems/validate-binary-search-tree/
+ */
 
 public class ValidateBinarySearchTree implements LeetCodeExercise {
 	private TreeNode[] testSuite = {
@@ -60,25 +70,25 @@ public class ValidateBinarySearchTree implements LeetCodeExercise {
 	}
 	
 	private boolean isValidBST(TreeNode root) {
-		if (root == null) return true;
-		return (inorderTraversal(root, new ArrayList<Integer>()) != null);
+		return isValidBSTHelper(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 
-//	Return null if the tree on top of this node is not a valid BST
-	private ArrayList<Integer> inorderTraversal(TreeNode node, ArrayList<Integer> visited) {
-		if (node == null || visited == null) return visited;
+	/*
+	 * Return true if:
+	 * 1) This is a null node
+	 * 2) Keys on the left child is smaller the key of the node AND Keys on the right child is larger the key of the node
+	 * 
+	 * Else, return false.
+	 */
+	private boolean isValidBSTHelper(TreeNode node, int min, int max) {
+		if (node == null) return true;
 		
-		visited = inorderTraversal(node.left, visited);
-		
-		if (visited == null) return visited;
-		else {
-			int size = visited.size();
-			if (size > 0 && visited.get(size - 1) >= node.val) return null;
-			
-			visited.add(node.val);
+		int value = node.val;
+		if (value > min && value < max) {
+			return isValidBSTHelper(node.left, min, value) && isValidBSTHelper(node.right, value, max);
 		}
 		
-		return inorderTraversal(node.right, visited);
+		return false;
 	}
 
 	@Override

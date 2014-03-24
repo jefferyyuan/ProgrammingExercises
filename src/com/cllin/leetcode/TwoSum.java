@@ -4,6 +4,18 @@ import java.util.HashMap;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Description
+ * Given an array of integers, find two numbers such that they add up to a specific target number.
+ * 
+ * The function twoSum should return indices of the two numbers such that they add up to the target, 
+ * where index1 must be less than index2. Please note that your returned answers (both index1 and index2) are not zero-based.
+ * 
+ * You may assume that each input would have exactly one solution.
+ * 
+ * Source: http://oj.leetcode.com/problems/two-sum/
+ */
+
 public class TwoSum implements LeetCodeExercise {
 
 	private int[][] testSuite = {
@@ -35,6 +47,10 @@ public class TwoSum implements LeetCodeExercise {
 		}
 	}
 	
+	/*
+	 * Use a hashmap to avoid the time cost for sorting the array.
+	 * If space is the concern, sort the array and search with two indices.
+	 */
 	private int[] twoSum(int[] numbers, int target) {
 		int[] notFound = new int[]{-1, -1};
 		if (numbers == null || numbers.length < 2) return notFound;
@@ -49,7 +65,7 @@ public class TwoSum implements LeetCodeExercise {
 			
 			int key = target - numbers[p];
 			Integer index = sorted.get(key);
-			if (index != null && index.intValue() < p) {
+			if (index != null && index.intValue() != p) {
 				return new int[]{index.intValue() + 1, p + 1};
 			}
 			

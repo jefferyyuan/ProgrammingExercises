@@ -4,6 +4,17 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Description
+ * Given two sorted integer arrays A and B, merge B into A as one sorted array.
+ * 
+ * Note:
+ * You may assume that A has enough space (size that is greater or equal to m + n) to hold additional elements from B. 
+ * The number of elements initialized in A and B are m and n respectively.
+ * 
+ * Source: http://oj.leetcode.com/problems/merge-sorted-array/
+ */
+
 public class MergeSortedArray implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
 	private final int SIZE = 100;
@@ -49,25 +60,34 @@ public class MergeSortedArray implements LeetCodeExercise {
 		else System.out.println("Failed");	
 	}
 	
+	/*
+	 * Start copying the elements from the end
+	 * 1) If A[i] > B[j], A[position] = A[i]. Then move i and position left by 1
+	 * 2) If A[i] < B[j], A[position] = A[j]. Then move j and position left by 1
+	 * 
+	 * When one of i and j is smaller than 0
+	 * 1) i < 0, all elements from A are copied, copy the rest of B
+	 * 2) j < 0, all elements from B are copied, copy the rest of A, which is already there, so no need for copying
+	 */
     private void merge(int A[], int m, int B[], int n) {
     	if (A.length == 0 || B.length == 0) return;
     	
-    	int i = 0;
-    	int j = 0;
-    	int delta = 0;
-    	
-    	while (i < m || j < n) {
-    		if (i < m + delta && A[i] < B[j]) {
-    			i++;
-    		} else {
-    			for (int p = m + delta - 1; p >= i ; p--) A[p + 1] = A[p];
+    	int i = m - 1;
+    	int j = n - 1;
+    	int position = m + n - 1; 
 
-    			A[i] = B[j];
-    			delta++;
-    			i++;
-    			j++;
+    	while (i >= 0 && j >= 0) {
+    		if (j < 0 || A[i] > B[j]) {
+    			A[position] = A[i--];
+    		} else {
+    			A[position] = B[j--];
     		}
-    		if (j >= n) break;
+    		
+    		position--;
+    	}
+    	
+    	while (j >= 0) {
+    		A[position--] = B[j--];
     	}
     }
 

@@ -2,6 +2,16 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Description
+ * Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
+ * For example,
+ * "A man, a plan, a canal: Panama" is a palindrome.
+ * "race a car" is not a palindrome.
+ * 
+ * Source: http://oj.leetcode.com/problems/valid-palindrome/
+ */
+
 public class ValidPalindrome implements LeetCodeExercise {
 	
 	private final TestCase[] testSuite = {
@@ -31,25 +41,26 @@ public class ValidPalindrome implements LeetCodeExercise {
 		
 		string = string.toLowerCase();
 		
-		int length = string.length();
-		StringBuffer buffer = new StringBuffer();
-		for (int i = 0; i < length; i++) {
-			char ascii = string.charAt(i);
-			if ((48 <= (int) ascii && (int) ascii <= 57) || (97 <= (int) ascii && (int) ascii <= 122)) {
-				buffer.append(ascii);
+//		Iterate the string with two pointers, pass if it is not an alphanumeric character
+		int i = 0;
+		int j = string.length() - 1;
+		while (j > i) {
+			if (!isAlphanumeric(string.charAt(i))) i++;
+			else if (!isAlphanumeric(string.charAt(j))) j--;
+			else {
+				if (string.charAt(i) != string.charAt(j)) return false;
+				i++;
+				j--;
 			}
-		}
-		
-		string = buffer.toString();
-		length = string.length();
-		
-		if (length == 0) return true;
-		for (int i = 0; i <= length / 2; i++) {
-			if (string.charAt(i) != string.charAt(length - 1 - i)) return false;
+			
 		}
 		
 		return true;
     }
+	
+	private boolean isAlphanumeric(char c) {
+		return ((48 <= (int) c && (int) c <= 57) || (97 <= (int) c && (int) c <= 122));
+	}
 
 	@Override
 	public boolean test() {

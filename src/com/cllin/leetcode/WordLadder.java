@@ -5,6 +5,27 @@ import java.util.HashSet;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given two words (start and end), and a dictionary, 
+ * find the length of shortest transformation sequence from start to end, such that:
+ * 	1) Only one letter can be changed at a time
+ * 	2) Each intermediate word must exist in the dictionary
+ * 
+ * For example,
+ * Given:
+ * 		start = "hit"
+ * 		end = "cog"
+ * 		dict = ["hot","dot","dog","lot","log"]
+ * As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog", return its length 5.
+ * 
+ * Note:
+ * 	1) Return 0 if there is no such transformation sequence.
+ * 	2) All words have the same length.
+ * 	3) All words contain only lower-case alphabetic characters.
+ * 
+ * Source: http://oj.leetcode.com/problems/word-ladder/
+ */
+
 public class WordLadder implements LeetCodeExercise {
 
 	private ArrayList<TestCase> testSuite;
@@ -75,6 +96,14 @@ public class WordLadder implements LeetCodeExercise {
 		}
 	}
 	
+	/*
+	 * Use two HashSets to store:
+	 * 	1) Visited words
+	 * 	2) Queue of words, cleared and updated with words reachable by current queue
+	 * 	
+	 * When the end is reachable, the shortest path is found.
+	 * If the queue is empty and the end has never been reached, it means the end is unreachable
+	 */
 	private int ladderLength(String start, String end, HashSet<String> dictionary) {
 		if (start.equals(end)) return 0;
 		
@@ -112,11 +141,11 @@ public class WordLadder implements LeetCodeExercise {
 		for (String start : starts) {
 			for (int i = 0; i < start.length(); i++) {
 				char[] charArray = start.toCharArray();
-				for (int j = (int) 'a'; j <= (int) 'z'; j++) {
-					charArray[i] = Character.toString((char) j).charAt(0);
+				for (int p = (int) 'a'; p <= (int) 'z'; p++) {
+					charArray[i] = Character.toString((char) p).charAt(0);
 					
 					String transform = new String(charArray);
-					if (!start.equals(transform) && dictionary.contains(transform)) {
+					if (dictionary.contains(transform) && !starts.contains(transform)) {
 						reachable.add(transform);
 					}
 				}

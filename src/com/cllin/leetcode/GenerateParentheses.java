@@ -4,51 +4,55 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
+ * 
+ * Source: http://oj.leetcode.com/problems/generate-parentheses/ 
+ */
+
 public class GenerateParentheses implements LeetCodeExercise {
 	
+	private int n;
 	private ArrayList<String> result;
 	
 	@Override
 	public void initialize() {
-		result = new ArrayList<String>();
 	}
 
 	@Override
 	public void runExercise() {
-		initialize();
-		test();
+		for (n = 1; n <= 5; n++) {
+			result = generateParenthesis(n);
+			test();
+		}
 	}
 	
-	
     private ArrayList<String> generateParenthesis(int n) {
-    	printParenthese(n, n, new String(), 0);
+    	ArrayList<String> result = new ArrayList<String>();
+    	printParenthese(result, n, n, new String(), 0);
     	return result;
     }
     
-	private void printParenthese(int left, int right, String string, int count){
-		if (left < 0 || right < left) return;
+	private void printParenthese(ArrayList<String> result, int left, int right, String string, int count){
+		if (left < 0) return;
 		
 		if (left == 0 && right == 0) {
+//			A new string should be created so the result won't be over-written by future results 
 			result.add(new String(string));
 			return;
-		} else {
-			if (left > 0) printParenthese(left - 1, right, string + '(', count + 1);
-			if (right > left) printParenthese(left, right - 1, string + ')', count + 1);
 		}
+		
+		if (left > 0) printParenthese(result, left - 1, right, string + '(', count + 1);
+		if (right > left) printParenthese(result, left, right - 1, string + ')', count + 1);
 	}
 
 	@Override
 	public boolean test() {
-		for (int i = 2; i <= 5; i++) {
-			System.out.printf("n = %d%n", i);
-			
-			ArrayList<String> r = generateParenthesis(i);
-			for (String string : r) System.out.printf("%s ", string);
-			
-			System.out.println("\n------------");
-			
-			result = new ArrayList<String>();
+		System.out.printf("n = %d%n", n);
+		for (String string : result) {
+			System.out.printf("%s ", string);
 		}
+		System.out.println("\n------------");
 		
 		return false;
 	}

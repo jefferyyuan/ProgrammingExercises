@@ -3,7 +3,6 @@ package com.cllin.leetcode;
 import com.cllin.main.LeetCodeExercise;
 
 /*
- * Description
  * Given a binary tree, determine if it is a valid binary search tree (BST).
  * 
  * Assume a BST is defined as follows:

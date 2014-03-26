@@ -7,6 +7,12 @@ import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
+/*
+ * Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
+ * 
+ * Source: http://oj.leetcode.com/problems/binary-tree-level-order-traversal/
+ */
+
 public class BinaryTreeLevelOrderTraversal implements LeetCodeExercise {
 	private final int SIZE = 10;
 	private final int MAXIMUM = 10;
@@ -29,57 +35,28 @@ public class BinaryTreeLevelOrderTraversal implements LeetCodeExercise {
 	
     private ArrayList<ArrayList<Integer>> levelOrder(Node root) {
     	ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-    	ArrayList<Node> list = new ArrayList<Node>();
-    	LinkedList<Node> queue = new LinkedList<Node>();
+    	LinkedList<Node> thisLevel = new LinkedList<Node>();
+    	LinkedList<Node> nextLevel = new LinkedList<Node>();
     	
     	if (root == null) return result;
     	
-//    	Get all elements in an ArrayList<Node>
-    	ArrayList<Integer> counts = new ArrayList<Integer>();
-    	int index = 0;
-    	int count = 0;
-    	int nextLevelCount = 0;
-    	
-    	queue.add(root);
-    	counts.add(1);
-    	
-    	while (queue.size() > 0) {
-    		Node n = queue.pollFirst();
-    		list.add(n);
-    		count++;
+    	thisLevel.add(root);
+    	while (!thisLevel.isEmpty()) {
+    		ArrayList<Integer> level = new ArrayList<Integer>();
     		
-    		if (n.left != null) {
-    			queue.add(n.left);
-    			nextLevelCount++;
+    		while (!thisLevel.isEmpty()) {
+    			Node n = thisLevel.pop();
+    			
+    			if (n.left != null) nextLevel.add(n.left);
+    			if (n.right != null) nextLevel.add(n.right);
+    			
+    			level.add(n.value);
     		}
     		
-    		if (n.right != null) {
-    			queue.add(n.right);
-    			nextLevelCount++;    			
-    		}
-    		
-    		if (count == counts.get(index)) {
-    			counts.add(nextLevelCount);
-    			nextLevelCount = 0;
-    			count = 0;
-    			index++;
-    			list.add(new Node(-2147483648));
-    		}
+    		result.add(level);
+    		thisLevel = nextLevel;
+    		nextLevel = new LinkedList<Node>();
     	}
-    	
-//    	Sort the array by level of the node
-    	int size = list.size();
-    	ArrayList<Integer> l = new ArrayList<Integer>();
-    	for (int i = 0; i <= size - 2; i++) {
-    		Node n = list.get(i);
-    		if (n.value == -2147483648) {
-    			result.add(l);
-    			l = new ArrayList<Integer>();
-    		} else {
-    			l.add(n.value);
-    		}
-    	}
-    	result.add(l);
     	
     	return result;
     }
@@ -93,5 +70,4 @@ public class BinaryTreeLevelOrderTraversal implements LeetCodeExercise {
 		
 		return false;
 	}
-
 }

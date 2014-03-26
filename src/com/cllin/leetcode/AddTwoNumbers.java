@@ -2,6 +2,17 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * You are given two linked lists representing two non-negative numbers.
+ * The digits are stored in reverse order and each of their nodes contain a single digit.
+ * Add the two numbers and return it as a linked list.
+ * 
+ * 	Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+ * 	Output: 7 -> 0 -> 8
+ * 
+ * Source: http://oj.leetcode.com/problems/add-two-numbers/
+ */
+
 public class AddTwoNumbers implements LeetCodeExercise {
 	private final int MAXIMUM = 10;
 	
@@ -59,38 +70,31 @@ public class AddTwoNumbers implements LeetCodeExercise {
     	ListNode dummyHead = new ListNode(-1);
     	ListNode node = dummyHead;
     	
-    	int sum;
+    	int sum = 0;
     	boolean addOne = false;
-    	while (n1 != null || n2 != null) {
-    		if (n1 != null && n2 != null) {
-    			sum = n1.val + n2.val;
-    			sum = (addOne)? sum + 1 : sum;
-    			
-    			node.next = new ListNode(sum % 10);
-    			addOne = (sum >= 10);
-    			
-    			node = node.next;
-    			n1 = n1.next;
-    			n2 = n2.next;
-    		} else if (n1 != null) {
-    			sum = n1.val;
-    			sum = (addOne)? sum + 1 : sum;
-    			
-    			node.next = new ListNode(sum % 10);
-    			addOne = (sum >= 10);
-    			
-    			node = node.next;
-    			n1 = n1.next;
-    		} else if (n2 != null) {
-    			sum = n2.val;
-    			sum = (addOne)? sum + 1 : sum;
-    			
-    			node.next = new ListNode(sum % 10);
-    			addOne = (sum >= 10);
-    			
-    			node = node.next;
-    			n2 = n2.next;
-    		}
+    	while (n1 != null && n2 != null) {
+    		sum = n1.val + n2.val;
+    		sum = (addOne)? sum + 1 : sum;
+    		
+    		node.next = new ListNode(sum % 10);
+    		addOne = (sum >= 10);
+    		
+    		node = node.next;
+    		n1 = n1.next;
+    		n2 = n2.next;
+    	}
+    	
+    	ListNode remain = (n1 == null)? n2 : n1;
+    	while (remain != null) {
+			sum = remain.val;
+			sum = (addOne)? sum + 1 : sum;
+			
+			node.next = new ListNode(sum % 10);
+			addOne = (sum >= 10);
+			
+			node = node.next;
+    		
+    		remain = remain.next;
     	}
     	
     	if (addOne) {

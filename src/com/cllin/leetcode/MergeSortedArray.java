@@ -5,7 +5,6 @@ import java.util.Arrays;
 import com.cllin.main.LeetCodeExercise;
 
 /*
- * Description
  * Given two sorted integer arrays A and B, merge B into A as one sorted array.
  * 
  * Note:

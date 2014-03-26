@@ -6,6 +6,12 @@ import java.util.HashMap;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an array of strings, return all groups of strings that are anagrams.
+ * 
+ * Source: http://oj.leetcode.com/problems/anagrams/
+ */
+
 public class Anagrams implements LeetCodeExercise {
 	
 	private final String[][] testSuite = {
@@ -29,6 +35,11 @@ public class Anagrams implements LeetCodeExercise {
 		}
 	}
 	
+	/*
+	 * Strings that are anagram shares the same characters.
+	 * 1) Sort the string as an array of characters
+	 * 2) Arrays should be identical if the strings are anagram
+	 */
 	private ArrayList<String> anagrams(String[] strings) {
 		ArrayList<String> anagrams = new ArrayList<String>();
 		HashMap<String, ArrayList<Integer>> counts = new HashMap<String, ArrayList<Integer>>();
@@ -38,19 +49,14 @@ public class Anagrams implements LeetCodeExercise {
 		int length = strings.length;
 		for (int i = 0; i < length; i++) {
 			String sorted = sort(strings[i]);
-			ArrayList<Integer> list = counts.get(sorted);
-			
-			if (list == null)
-				list = new ArrayList<Integer>();
+			ArrayList<Integer> list = (counts.containsKey(sorted))? counts.get(sorted) : new ArrayList<Integer>();
 			
 			list.add(i);
 			counts.put(sorted, list);
 		}
 		
 		for (String key : counts.keySet()) {
-			ArrayList<Integer> list = counts.get(key);
-			
-			if (list.size() > 1) {
+			if (counts.get(key).size() > 1) {
 				for (int index : counts.get(key)) {
 					anagrams.add(strings[index]);
 				}

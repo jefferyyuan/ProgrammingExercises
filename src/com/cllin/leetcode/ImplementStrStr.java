@@ -3,13 +3,11 @@ package com.cllin.leetcode;
 import com.cllin.main.LeetCodeExercise;
 
 /*
- * Description
  * Implement strStr().
  * Returns a pointer to the first occurrence of needle in haystack, or null if needle is not part of haystack.
  * 
  * Source: http://oj.leetcode.com/problems/implement-strstr/
  * 
- * C++ Function
  * strstr() returns a pointer to the first occurrence of str2 in str1, or a null pointer if str2 is not part of str1.
  * 
  * Source: http://www.cplusplus.com/reference/cstring/strstr/

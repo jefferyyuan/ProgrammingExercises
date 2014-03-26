@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
+ * 
+ * Source: http://oj.leetcode.com/problems/combinations/
+ */
+
 public class Combinations implements LeetCodeExercise {
 	private final int MAXIMUM = 10;
 	
@@ -32,13 +38,10 @@ public class Combinations implements LeetCodeExercise {
 	}
 	
     private ArrayList<ArrayList<Integer>> combine(int n, int k) {
+    	if (n == 0 || k == 0 || n < k) return new ArrayList<ArrayList<Integer>>();
+
     	ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-    	
-    	if (n == 0 || n < k) return result;
-    	
-    	if (k == 0) {
-    		return result;
-    	} else if (k == 1) {
+    	if (k == 1) {
         	for (int i = 1; i <= n; i++) {
         		ArrayList<Integer> c = new ArrayList<Integer>();
         		c.add(new Integer(i));
@@ -51,18 +54,13 @@ public class Combinations implements LeetCodeExercise {
     	ArrayList<ArrayList<Integer>> combinations = combine(n, k - 1);
     	
     	for (ArrayList<Integer> combination : combinations) {
-    		int max = 0;
-    		for (int num : combination) {
-    			if (num > max) max = num;
-    		}
+    		int max = combination.get(combination.size() - 1);
     		
-    		for (int i = max; i <= n; i++) {
-    			if (!combination.contains(new Integer(i))) {
-    				ArrayList<Integer> c = new ArrayList<Integer>(combination);
-    				c.add(new Integer(i));
-    				
-    				result.add(c);
-    			}
+    		for (int i = max + 1; i <= n; i++) {
+    			ArrayList<Integer> c = new ArrayList<Integer>(combination);
+    			c.add(new Integer(i));
+    			
+    			result.add(c);
     		}
     	}
     	

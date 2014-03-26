@@ -2,6 +2,17 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given two binary strings, return their sum (also a binary string).
+ * 
+ * For example,
+ * 		a = "11"
+ * 		b = "1"
+ * 		Return "100".
+ * 
+ * Source: http://oj.leetcode.com/problems/add-binary/
+ */
+
 public class AddBinary implements LeetCodeExercise {
 	private final TestCase[] testSuite = {
 		new TestCase("", "", "0"),
@@ -34,69 +45,37 @@ public class AddBinary implements LeetCodeExercise {
 	}
 	
 	private String addBinary(String a, String b) {
+		boolean addOne = false;
 		int indexA = a.length() - 1;
 		int indexB = b.length() - 1;
-		boolean addOne = false;
 		StringBuffer buffer = new StringBuffer();
 		
-		while (indexA >= 0 || indexB >= 0) {
-			char charA;
-			char charB;
-			char result = 0;
-			
-			if (indexA >= 0 && indexB >= 0) {
-				charA = a.charAt(indexA);
-				charB = b.charAt(indexB);
-				
-				if (charA == charB) {
-					result = '0';
-					if (addOne) {
-						result = '1';
-						addOne = false;
-					}
-					
-					if (charA == '1') addOne = true;
-				} else {
-					result = '1';
-					if (addOne) {
-						result = '0';
-						addOne = true;
-					}					
-				}
-			} else if (indexA >= 0) {
-				charA = a.charAt(indexA);
-
-				if (charA == '0') {
-					if (addOne) {
-						result = '1';
-						addOne = false;
-					} else result = charA;
-				} else {
-					if (addOne) {
-						result = '0';
-						addOne = true;
-					} else result = charA;
-				}
-			} else if (indexB >= 0)  {
-				charB = b.charAt(indexB);
-
-				if (charB == '0') {
-					if (addOne) {
-						result = '1';
-						addOne = false;
-					} else result = charB;
-				} else {
-					if (addOne) {
-						result = '0';
-						addOne = true;
-					} else result = charB;
-				}
-				
+		while (indexA >= 0 && indexB >= 0) {
+			char charA = a.charAt(indexA);
+			char charB = b.charAt(indexB);
+	
+			char result = (charA == charB)? '0' : '1';
+			if (addOne) {
+				result = (result == '0')? '1' : '0';
 			}
+			addOne = (charA == charB)? charA == '1' : addOne;
 
 			buffer.append(result);
 			indexA--;
 			indexB--;
+		}
+		
+		int index = (indexA >= 0)? indexA : indexB;
+		String remaining = (indexA >= 0)? a : b;
+		
+		while (index >= 0) {
+			char c = remaining.charAt(index);
+			char result = (addOne)? ((c == '0')? '1' : '0') : c;
+			
+			addOne = addOne && c == '1';
+			
+			buffer.append(result);
+			index--;
 		}
 		
 		if (addOne) buffer.append('1');

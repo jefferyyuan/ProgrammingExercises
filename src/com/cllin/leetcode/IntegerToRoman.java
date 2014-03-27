@@ -2,6 +2,13 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an integer, convert it to a Roman numeral.
+ * Input is guaranteed to be within the range from 1 to 3999.
+ * 
+ * Source: http://oj.leetcode.com/problems/integer-to-roman/
+ */
+
 public class IntegerToRoman implements LeetCodeExercise {
 	private final int SIZE = 100;
 	private final int MAXIMUM = 3998;
@@ -28,7 +35,7 @@ public class IntegerToRoman implements LeetCodeExercise {
 	}
 	
     private String intToRoman(int num) {
-    	String string = new String();
+    	StringBuffer buffer = new StringBuffer();
 
     	int[] digits = new int[4];
     	
@@ -39,61 +46,57 @@ public class IntegerToRoman implements LeetCodeExercise {
     	}
     	
     	for (int i = 0; i < digits[3]; i++) {
-    		string += "M";
+    		buffer.append("M");
     	}
     	
-    	if (digits[2] == 9) {
-    		string += "CM";
-    	} else if (digits[2] == 4) {
-    		string += "CD";
-    	} else if (digits[2] >= 5) {
-    		string += "D";
-    		
-    		int k = digits[2] - 5;
-    		for (int i = 0; i < k; i++) {
-    			string += "C";
-    		}
+    	buffer.append(getRoman(2, digits[2]));
+    	buffer.append(getRoman(1, digits[1]));
+    	buffer.append(getRoman(0, digits[0]));
+    	
+    	return buffer.toString();
+    }
+    
+    private String getRoman(int power, int digit) {
+    	StringBuffer buffer = new StringBuffer();
+    	
+    	String one = new String();
+    	String four = new String();
+    	String five = new String();
+    	String nine = new String();
+    	
+    	if (power == 0) {
+    		one = "I";
+    		four = "IV";
+    		five = "V";
+    		nine = "IX";
+    	} else if (power == 1) {
+    		one = "X";
+    		four = "XL";
+    		five = "L";
+    		nine = "XC";
+    	} else if (power == 2) {
+    		one = "C";
+    		four = "CD";
+    		five = "D";
+    		nine = "CM";    		
+    	}
+    	
+    	if (digit == 9) {
+    		buffer.append(nine);
+    	} else if (digit == 4) {
+    		buffer.append(four);
     	} else {
-    		for (int i = 0; i < digits[2]; i++) {
-    			string += "C";
+    		if (digit >= 5) {
+    			buffer.append(five);
+    			digit -= 5;
     		}
-    	}
-    	
-    	if (digits[1] == 9) {
-    		string += "XC";
-    	} else if (digits[1] == 4) {
-    		string += "XL";
-    	} else if (digits[1] >= 5) {
-    		string += "L";
     		
-    		int k = digits[1] - 5;
-    		for (int i = 0; i < k; i++) {
-    			string += "X";
-    		}
-    	} else {
-    		for (int i = 0; i < digits[1]; i++) {
-    			string += "X";
+    		for (int i = 0; i < digit; i++) {
+    			buffer.append(one);
     		}
     	}
     	
-    	if (digits[0] == 9) {
-    		string += "IX";
-    	} else if (digits[0] == 4) {
-    		string += "IV";
-    	} else if (digits[0] >= 5) {
-    		string += "V";
-    		
-    		int k = digits[0] - 5;
-    		for (int i = 0; i < k; i++) {
-    			string += "I";
-    		}
-    	} else {
-    		for (int i = 0; i < digits[0]; i++) {
-    			string += "I";
-    		}
-    	}
-    	
-    	return string;
+    	return buffer.toString();
     }
 
 	@Override

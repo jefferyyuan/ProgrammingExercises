@@ -35,11 +35,13 @@ public class MaxPointsOnALine implements LeetCodeExercise {
 		int nPoints = points.length;
 		LinkedList<Double> slopes = new LinkedList<Double>();
 		
+//		For every point,
 		for (int i = 0; i < nPoints; i++) {
 			int nDuplicates = 1;
 			Point point = points[i];
 			slopes = new LinkedList<Double>();
 			
+//			considering every other point
 			for (int j = 0; j < nPoints; j++) {
 				if (i != j) {
 					Point p = points[j];

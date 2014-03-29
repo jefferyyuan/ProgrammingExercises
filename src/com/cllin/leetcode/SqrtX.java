@@ -2,6 +2,13 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Implement int sqrt(int x).
+ * Compute and return the square root of x.
+ * 
+ * Source: http://oj.leetcode.com/problems/sqrtx/
+ */
+
 public class SqrtX implements LeetCodeExercise {
 
 	@Override
@@ -17,6 +24,7 @@ public class SqrtX implements LeetCodeExercise {
 		}
 	}
 	
+//	Classic binary search
 	private int sqrt(int x) {
 		if (x <= 0) return 0;
 		else if (x == 1) return 1;

@@ -35,11 +35,11 @@ public class LongestCommonPrefix implements LeetCodeExercise {
 		if (length == 0) return prefix;
 		
 		prefix = strings[0];
-		for (int i = 0; i < length; i++) {
+		for (int i = 1; i < length; i++) {
 			String s = strings[i];
 			int l = s.length();
-			if (l == 0) return new String();
 			
+			if (l == 0) return new String();
 			for (int p = 0; p < l && p < prefix.length(); p++) {
 				if (s.charAt(p) != prefix.charAt(p)) prefix = prefix.substring(0, p);
 			}

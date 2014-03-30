@@ -4,6 +4,15 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a collection of numbers, return all possible permutations.
+ * For example,
+ * 		[1,2,3] have the following permutations:
+ * 		[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], and [3,2,1].
+ * 
+ * Source: http://oj.leetcode.com/problems/permutations/
+ */
+
 public class Permutations implements LeetCodeExercise {
 	private final int SIZE = 5;
 	private final int MAXIMUM = 5;
@@ -36,9 +45,9 @@ public class Permutations implements LeetCodeExercise {
     	
     	if (length == 0) return result;
     	
+    	int[] n = new int[length - 1];
     	for (int i = 0; i < length; i++) {
     		ArrayList<ArrayList<Integer>> r = new ArrayList<ArrayList<Integer>>();
-    		int[] n = new int[length - 1];
     		
     		int index = 0;
     		for (int j = 0; j < length; j++) {
@@ -54,19 +63,12 @@ public class Permutations implements LeetCodeExercise {
     		result.addAll(r);
     	}
     	
+//    	This is not necessary if it is guaranteed that there are no duplicate elements 
     	for (int i = 0; i < result.size(); i++) {
     		if (result.get(i).size() < length) result.remove(i);
     		
     		for (int j = i + 1; j < result.size(); j++) {
-    			boolean identical = true;
-    			for (int k = 0; k < length; k++) {
-    				if (result.get(i).get(k) != result.get(j).get(k)) {
-    					identical = false;
-    					break;
-    				}
-    			}
-    			
-    			if (identical) result.remove(j);
+    			if (result.get(i).equals(result.get(j))) result.remove(j);
     		}
     	}
     	

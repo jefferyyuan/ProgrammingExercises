@@ -2,6 +2,15 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a 2D board and a word, find if the word exists in the grid.
+ * The word can be constructed from letters of sequentially adjacent cell, 
+ * where "adjacent" cells are those horizontally or vertically neighboring. 
+ * The same letter cell may not be used more than once.
+ * 
+ * Source: http://oj.leetcode.com/problems/word-search/
+ */
+
 public class WordSearch implements LeetCodeExercise {
 	private final TestCase[] testSuite = {
 			new TestCase(
@@ -49,6 +58,7 @@ public class WordSearch implements LeetCodeExercise {
 		}
 	}
 	
+//	Depth-first search
 	private boolean exist(char[][] board, String word) {
 		if (board == null || board.length == 0) return word.length() == 0;
 		
@@ -101,11 +111,11 @@ public class WordSearch implements LeetCodeExercise {
 				return true;
 			}
 			
+//			Restore the board
 			board[i][j] = temp;
-			return false;
-		} else {
-			return false;
 		}
+		
+		return false;
     }
 
 	@Override

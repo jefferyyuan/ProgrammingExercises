@@ -5,6 +5,16 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a set of distinct integers, S, return all possible subsets.
+ * 
+ * Note:
+ * Elements in a subset must be in non-descending order.
+ * The solution set must not contain duplicate subsets.
+ * 
+ * Source: http://oj.leetcode.com/problems/subsets/
+ */
+
 public class Subsets implements LeetCodeExercise {
 	private final int[][] testSuite = {
 			{}, 
@@ -30,6 +40,10 @@ public class Subsets implements LeetCodeExercise {
 		}
 	}
 	
+	/*
+	 * Classic BFS, build the next level based on the previous level.
+	 * Note that it is restricted that elements should be in non-descending order. 
+	 */
 	private ArrayList<ArrayList<Integer>> subsets(int[] set) {
 		int length = set.length;
 		
@@ -46,22 +60,28 @@ public class Subsets implements LeetCodeExercise {
 			for (int j = lastLevelMinIndex; j <= lastLevelMaxIndex; j++) {
 				ArrayList<Integer> subset = subsets.get(j);
 				
-				int lastMaxIdx = -1;
-				int lastMax = -2147483648;
+//				Get the maximum value of the previous level
+				int lastMax = Integer.MIN_VALUE;
 				for (int p = 0; p < subset.size(); p++) {
 					if (subset.get(p) > lastMax) {
 						lastMax = subset.get(p);
-						lastMaxIdx = p;
 					}
 				}
+
+				/*
+				 * Build a new subset by adding one new element.
+				 * New new element should be larger than the maximum of the previous level
+				 */
+				int index = 0;
+				while (index < set.length && set[index] <= lastMax) {
+					index++;
+				}
 				
-				for (int p = 0; p < length; p++) {
-					if (lastMaxIdx == -1 || set[p] > subset.get(lastMaxIdx)) {
-						ArrayList<Integer> s = new ArrayList<Integer>(subset);
-						s.add(set[p]);
-						subsets.add(s);
-						thisLevelMaxIndex++;
-					}
+				for (int p = index; p < length; p++) {
+					ArrayList<Integer> s = new ArrayList<Integer>(subset);
+					s.add(set[p]);
+					subsets.add(s);
+					thisLevelMaxIndex++;
 				}
 			}
 			

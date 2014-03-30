@@ -9,8 +9,8 @@ import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
 public class BinaryTreePostorderTraversal implements LeetCodeExercise {
-	private final int MAXIMUM = 10;
-	private final int SIZE = 10;
+	private final int MAXIMUM = 3;
+	private final int SIZE = 3;
 	
 	private BinarySearchTree tree;
 	private ArrayList<Integer> result;
@@ -41,20 +41,21 @@ public class BinaryTreePostorderTraversal implements LeetCodeExercise {
     	ArrayList<Integer> result = new ArrayList<Integer>();
     	ArrayList<Node> list = new ArrayList<Node>();
     	Stack<Node> stack = new Stack<Node>();
-    	Node node = null; 
-    	
-    	stack.add(root); 
     	
     	if (root == null) return result;
+    	
+    	stack.add(root); 
     	while (!stack.isEmpty()) {
-    		node = stack.peek();
+    		Node node = stack.peek();
     		
     		if (node.left != null && !list.contains(node.left)) stack.push(node.left);
     		else if (node.right != null && !list.contains(node.right)) stack.push(node.right);
-    		else list.add(stack.pop());
+    		else {
+    			Node n = stack.pop();
+    			list.add(n);
+    			result.add(n.value);
+    		}
     	}
-    	
-    	for (Node n : list) result.add(n.value);
     	
         return result;
     }

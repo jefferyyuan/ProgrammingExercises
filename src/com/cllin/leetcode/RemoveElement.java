@@ -25,36 +25,30 @@ public class RemoveElement implements LeetCodeExercise {
 	@Override
 	public void runExercise() {
 		initialize();
+		
+		array = new int[]{0,4,4,0,4,4,4,0,2};
+		value = 4;
+		
 		newLength = removeElement(array, value);
 		if (test()) System.out.println("Success");
 		else System.out.println("Failed");
 	}
 	
     private int removeElement(int[] A, int elem) {
-        int length = A.length;
-        int newLength = A.length;
+        int lastValidIndex = A.length - 1;
         
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i <= lastValidIndex; i++) {
         	if (A[i] == elem) {
-        		
 //        		Swap with the last valid element
-        		for (int j = length - 1; j >= i; j--) {
-        			if (A[j] == elem) {
-        				A[j] = -2147483648;
-        				newLength--;
-        			}
-        			
-        			if (A[j] != -2147483648) {
-        				A[i] = A[j]; 
-        				A[j] = -2147483648;
-        				newLength--;
-        				break;
-        			}
+        		while (lastValidIndex >= 0 && A[lastValidIndex] == elem) {
+        			lastValidIndex--;
         		}
+        		
+        		if (i < lastValidIndex) A[i] = A[lastValidIndex--]; 
         	}
         }
         
-        return newLength;
+        return lastValidIndex + 1;
     }
     
 

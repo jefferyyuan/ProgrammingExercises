@@ -2,10 +2,16 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Stack;
 
 import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
+
+/*
+ * Source: http://oj.leetcode.com/problems/binary-tree-inorder-traversal/
+ * Source: http://oj.leetcode.com/problems/binary-tree-preorder-traversal/
+ */
 
 public class BinaryTreeInorderTraversal implements LeetCodeExercise {
 	private final int MAXIMUM = 1000;
@@ -38,29 +44,54 @@ public class BinaryTreeInorderTraversal implements LeetCodeExercise {
 		else System.out.println("Failed");		
 	}
 	
+	/* Iterative implementation requires extra O(n) space for:,
+	 * 1) a stack
+	 * 2) a list that stores visited node
+	 */
     private ArrayList<Integer> inorderTraversal(Node root) {
-    	ArrayList<Integer> rtn = new ArrayList<Integer>();
+    	ArrayList<Integer> result = new ArrayList<Integer>();
+    	ArrayList<Node> list = new ArrayList<Node>();
+    	Stack<Node> stack = new Stack<Node>();
     	
-    	if (root == null) return rtn;
+    	if (root == null) return result;
     	
-    	rtn.addAll(inorderTraversal(root.left));
-    	rtn.add(root.value);
-    	rtn.addAll(inorderTraversal(root.right));
+    	stack.add(root);
     	
-    	return rtn;
+    	while (!stack.isEmpty()) {
+    		Node node = stack.peek();
+    		
+    		if (node.left != null && !list.contains(node.left)) stack.push(node.left);
+    		else {
+    			Node n = stack.pop();
+    			list.add(n);
+    			result.add(n.value);
+    			
+    			if (node.right != null && !list.contains(node.right)) stack.push(node.right);
+    		}
+    	}
+    	
+    	return result;
     }
     
     @SuppressWarnings("unused")
 	private ArrayList<Integer> preorderTraversal(Node root) {
-        ArrayList<Integer> rtn = new ArrayList<Integer>();
+    	ArrayList<Integer> result = new ArrayList<Integer>();
+    	ArrayList<Node> list = new ArrayList<Node>();
+    	Stack<Node> stack = new Stack<Node>();
     	
-    	if (root == null) return rtn;
+    	if (root == null) return result;
     	
-    	rtn.add(root.value);
-    	rtn.addAll(preorderTraversal(root.left));
-    	rtn.addAll(preorderTraversal(root.right));
+    	stack.add(root); 
+    	while (!stack.isEmpty()) {
+    		Node node = stack.pop();
+    		list.add(node);
+    		result.add(node.value);
+    		
+    		if (node.right != null && !list.contains(node.right)) stack.push(node.right);
+    		if (node.left != null && !list.contains(node.left)) stack.push(node.left);
+    	}
     	
-    	return rtn;
+        return result;
     }
 
 	@Override

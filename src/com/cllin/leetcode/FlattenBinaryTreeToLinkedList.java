@@ -4,6 +4,11 @@ import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
+/*
+ * Given a binary tree, flatten it to a linked list in-place.
+ * 
+ * Source: http://oj.leetcode.com/problems/flatten-binary-tree-to-linked-list/
+ */
 public class FlattenBinaryTreeToLinkedList implements LeetCodeExercise {
 	private final int SIZE = 5;
 	private final int MAXIMUM = 10;
@@ -23,29 +28,40 @@ public class FlattenBinaryTreeToLinkedList implements LeetCodeExercise {
 	}
 	
 	private void flatten(Node root) {
-		root = new Node(1);
-		root.right = new Node(2);
-		
-		Node head = new Node(0);
-		preorderTraversal(root, head);
-		root = head;
+		traversal(root);
 	}
 	
-	private Node preorderTraversal(Node node, Node end) {
-		if (node == null) return end;
-
-		Node buf = node.right;
-		end.right = node;
-		end = end.right;
-
-		Node newEnd = preorderTraversal(node.left, end);
-		if (newEnd != null) end = newEnd;
+	/*
+	 * 1. Flatten left tree
+	 * 		IF node.left == null
+	 * 			1) Link node.right to the tail of the flatten left tree
+	 * 			2) Set node.right as the head of the flatten left tree
+	 * 		ELSE    Set tail as node
+	 * 
+	 * 2. Flatten right tree
+	 * 		IF node.right != null
+	 * 			Set tail as the tail of the flatten right tree
+	 * 3. Return tail
+	 */
+	private Node traversal(Node node) {
+		if (node == null) return null;
 		
-		newEnd = preorderTraversal(buf, end);
-		if (newEnd != null) end = newEnd; 
+		Node right = node.right;
+		Node tail = null;
 		
-		node.left = null;
-		return end;
+		if (node.left != null) {
+			tail = traversal(node.left);
+			tail.right = right;
+			
+			node.right = node.left;
+			node.left = null;
+		} else {
+			tail = node;
+		}
+		
+		if (right != null) tail = traversal(right);
+		
+		return tail;
 	}
 
 	@Override

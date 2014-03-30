@@ -2,6 +2,18 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2. 
+ * (each operation is counted as 1 step.)
+ * 
+ * You have the following 3 operations permitted on a word:
+ * 		a) Insert a character
+ * 		b) Delete a character
+ * 		c) Replace a character
+ * 
+ * Source: http://oj.leetcode.com/problems/edit-distance/
+ */
+
 public class EditDistance implements LeetCodeExercise {
 	private final TestCase[] testSuite = {
 			new TestCase("", ""),
@@ -23,17 +35,25 @@ public class EditDistance implements LeetCodeExercise {
 		}
 	}
 	
+	/*
+	 * Say, we want to edit word1, changing it to word2
+	 * D(i, j) = Distance from word1(0, i) to word2(0, j)
+	 * 		1) If word1(i) == word2(j), 
+	 * 				D(i, j) = D(i - 1, j - 1)		------ Need not to edit
+	 * 
+	 * 		2) Else, D(i, j) = Minimum(D(i - 1, j - 1), D(i, j - 1), D(i - 1, j)) + 1
+	 * 				D(i - 1, j - 1) + 1				------ word1(0, i - 1) is edited to word2(0, j - 1), 
+	 * 															REPLACE word1(i) with word2(j)
+	 * 				D(i, j - 1) + 1					------ word1(0, i) is edited to word2(0, j - 1),
+	 * 															DELETE word2(j)
+	 * 				D(i - 1, j) + 1					------ word1(0, i - 1) is edited to word2(0, j),
+	 * 															INSERT word1(i) to the edited word
+	 */
 	private int minDistance(String word1, String word2) {
 		if (word1 == null || word2 == null) {
 			if (word1 == null && word2 == null) return 0;
 			else if (word1 == null) return word2.length();
 			else if (word2 == null) return word1.length();
-		}
-		
-		if (word1.length() == 0 || word2.length() == 0) {
-			if (word1.length() == 0 && word2.length() == 0) return 0;
-			else if (word1.length() == 0) return word2.length();
-			else if (word2.length() == 0) return word1.length();
 		}
 		
 		int length1 = word1.length();
@@ -48,6 +68,7 @@ public class EditDistance implements LeetCodeExercise {
 				if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
 					distanceMap[i][j] = distanceMap[i - 1][j - 1];
 				} else {
+					
 					int min = Math.min(distanceMap[i - 1][j], distanceMap[i][j - 1]);
 					min = Math.min(min, distanceMap[i - 1][j - 1]);
 					

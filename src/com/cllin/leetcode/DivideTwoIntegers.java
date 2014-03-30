@@ -2,6 +2,12 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Divide two integers without using multiplication, division and mod operator.
+ * 
+ * Source: http://oj.leetcode.com/problems/divide-two-integers/
+ */
+
 public class DivideTwoIntegers implements LeetCodeExercise {
 
 	private final int MAXIMUM = 100;
@@ -23,17 +29,16 @@ public class DivideTwoIntegers implements LeetCodeExercise {
 		}
 	}
 	
+//	Binary search
 	private int divide(int dividend, int divisor) {
 		if (divisor == 0) return Integer.MAX_VALUE;
 		if (dividend == 0) return 0;
 		
-		boolean timeMinusOne = ((dividend > 0 && divisor < 0) || (dividend < 0 && divisor > 0));
+		boolean isNegative = ((dividend > 0 && divisor < 0) || (dividend < 0 && divisor > 0));
 		
 		long a = (long) Math.abs((double) dividend);
 		long b = (long) Math.abs((double) divisor);
 		
-		if (divisor == 1) return (timeMinusOne)? (int) (0 - a) : (int) a;
-		if (a == b) return (timeMinusOne)? -1 : 1;
 		if (a < b) return 0; 
 
 		int quotient = 0;
@@ -46,7 +51,7 @@ public class DivideTwoIntegers implements LeetCodeExercise {
 			}
 		}
 		
-		return (timeMinusOne)? 0 - quotient : quotient;
+		return (isNegative)? -quotient : quotient;
     }
 
 	@Override

@@ -328,7 +328,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = ConvertSortedListToBinarySearchTree;
+		int option = LetterCombinationsOfAPhoneNumber;
 
 		switch(option){
 			case TRIE:

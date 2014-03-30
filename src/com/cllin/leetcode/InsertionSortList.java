@@ -2,7 +2,11 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
-
+/*
+ * Sort a linked list using insertion sort.
+ * 
+ * Source: http://oj.leetcode.com/problems/insertion-sort-list/
+ */
 
 public class InsertionSortList implements LeetCodeExercise {
 	private final int SIZE = 1000;
@@ -30,9 +34,20 @@ public class InsertionSortList implements LeetCodeExercise {
 		else System.out.println("Failed");	
 	}
 	
+	/*
+	 * Iterative through the list:
+	 * 	1) node is in its place, i.e. prev.value < node.value
+	 * 		Do nothing, move on
+	 * 	2) node is not in its place
+	 * 		a) node is the smallest element so far
+	 * 			Insert the node to the head
+	 * 		b) node is the largest element so far
+	 * 			Do nothing, move on
+	 * 		c) node is neither
+	 * 			Insert the node to its place
+	 */
 	private ListNode insertionSortList(ListNode head) {
 		if (head == null) return null;
-		else if (head.next == null) return head;
 		
 		ListNode node = head.next;
 		ListNode prev = head;
@@ -40,19 +55,21 @@ public class InsertionSortList implements LeetCodeExercise {
 		while (node != null) {
 			ListNode next = node.next;
 			
+//			Node is not in its place
 			if (prev.val > node.val) {
 				ListNode n = head.next;
 				ListNode p = head;
 				
+//				Case: node.value is the smallest element in this list
 				if (node.val < p.val) {
-//					Case: node.value is the smallest element in this list
 					head = node;
 					node.next = p;
 					prev.next = next;
 					
 					node = next;
 				} else {
-					while (n.hashCode() != node.hashCode()) {
+					while (n != node) {
+//						Case: the node finds its place between head and current place (exclusively)
 						if (p.val <= node.val && node.val < n.val) {
 							p.next = node;
 							node.next = n;
@@ -64,13 +81,15 @@ public class InsertionSortList implements LeetCodeExercise {
 						p = n;
 						n = n.next;
 					}
+					
 //					Case: node.value is the largest element so far
-					if (node != null && n.hashCode() == node.hashCode()) {
+					if (node != null && n == node) {
 						prev = node;
 						node = next;
 					}
 				}
 			} else {
+//				Node is in its place, do nothing, moving on
 				prev = node;
 				node = next;
 			}

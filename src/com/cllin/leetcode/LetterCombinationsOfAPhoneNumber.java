@@ -1,8 +1,15 @@
 package com.cllin.leetcode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import com.cllin.main.LeetCodeExercise;
+
+/*
+ * Given a digit string, return all possible letter combinations that the number could represent.
+ * 
+ * Source: http://oj.leetcode.com/problems/letter-combinations-of-a-phone-number/
+ */
 
 public class LetterCombinationsOfAPhoneNumber implements LeetCodeExercise {
 	private String[] testSuite = {"","23", "5566"};
@@ -25,52 +32,50 @@ public class LetterCombinationsOfAPhoneNumber implements LeetCodeExercise {
 		}
 	}
 	
+//	Classic Breadth-first search
 	private ArrayList<String> letterCombinations(String digits) {
-		ArrayList<String> combinations = new ArrayList<String>();
 		if (digits.length() == 0) {
-//			It is required to have a null String to pass the test cases of LeetCode ):
+//			It is required to have a null String to pass the test cases of LeetCode, blah :S
+			ArrayList<String> combinations = new ArrayList<String>();
 			combinations.add(new String());
 			return combinations;
 		}
+		
+		LinkedList<String> previousCombinations = new LinkedList<String>();
+		LinkedList<String> combinations = new LinkedList<String>();
 
-		int thisLevel = 0;
-		int previousLevel = 0;
 		int length = digits.length();
 		for (int i = 0; i < length; i++) {
-			int size = combinations.size();
 			int digit = Character.getNumericValue(digits.charAt(i));
 			char[] characters = getCharacters(digit);
 			
-			if (size == 0) {
+			if (previousCombinations.size() == 0) {
 				for (char c : characters) {
-					combinations.add(String.valueOf(c));
-					thisLevel++;
+					combinations.push(String.valueOf(c));
 				}
 			} else {
-				for (int j = size - previousLevel; j < size; j++) {
+				while (!previousCombinations.isEmpty()) {
+					String newCombination = new String(previousCombinations.poll());
+					
 					for (char c : characters) {
-						StringBuffer newCombination = new StringBuffer(combinations.get(j));
-						newCombination.append(c);
-						combinations.add(newCombination.toString());
-						thisLevel++;
+						combinations.add(newCombination + String.valueOf(c));
 					}
 				}
 			}
 			
-			previousLevel = thisLevel;
-			thisLevel = 0;
+			previousCombinations = combinations;
+			combinations = new LinkedList<String>();
 		}
 		
-		int size = combinations.size();
 		ArrayList<String> output = new ArrayList<String>();
-		for (int i = size - previousLevel; i < size; i++) {
-			output.add(combinations.get(i));
+		while (!previousCombinations.isEmpty()) {
+			output.add(previousCombinations.poll());
 		}
 		
 		return output;
     }
 	
-	private static char[] getCharacters(int digit) {
+	private final char[] getCharacters(int digit) {
 		switch (digit) {
 		case 2:
 			return new char[]{'a', 'b', 'c'};

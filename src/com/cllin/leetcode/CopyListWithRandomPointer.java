@@ -4,6 +4,15 @@ import java.util.LinkedList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * A linked list is given such that each node contains an additional random pointer 
+ * which could point to any node in the list or null.
+ * 
+ * Return a deep copy of the list.
+ * 
+ * Source: http://oj.leetcode.com/problems/copy-list-with-random-pointer/
+ */
+
 public class CopyListWithRandomPointer implements LeetCodeExercise {
 	
 	private RandomListNode[] testSuite = {
@@ -75,10 +84,13 @@ public class CopyListWithRandomPointer implements LeetCodeExercise {
 		RandomListNode node, newNode, originNext;
 		RandomListNode dummyNewHead = new RandomListNode(-1);
 		
+		/*
+		 * Initialize the new list,
+		 * 1) newNode.next = NEW_NODE(OLD.next)
+		 * 2) newNode.random = OLD
+		 */
 		node = head;
 		newNode = dummyNewHead;
-		
-//		SET THE NEXT OF THE NEW LIST
 		while (node != null) {
 			newNode.next = new RandomListNode(node.label);
 			newNode.next.random = node;
@@ -87,6 +99,7 @@ public class CopyListWithRandomPointer implements LeetCodeExercise {
 			node = node.next;
 		}
 		
+//		Link OLD.next to NEW
 		node = head;
 		newNode = dummyNewHead.next;
 		while (node != null) {
@@ -97,7 +110,14 @@ public class CopyListWithRandomPointer implements LeetCodeExercise {
 			newNode = newNode.next;
 		}
 		
-//		SET THE RANDOM OF THE NEW LIST
+		/*
+		 * Set NEW.random and be ready to restore the old list
+		 * 1) NEW.random = OLD.random.next
+		 * 		- OLD.random.next = The copy of OLD.random, which is what NEW.random should link to
+		 * 		- OLD = NEW.random
+		 * 2) Store the pointers of NEXT for each OLD in a queue
+		 */
+		
 		newNode = dummyNewHead.next;
 		LinkedList<RandomListNode> originNexts = new LinkedList<RandomListNode>();
 		while (newNode != null) {
@@ -108,13 +128,12 @@ public class CopyListWithRandomPointer implements LeetCodeExercise {
 			newNode = newNode.next;
 		}
 		
-//		RESTORE THE NEXT OF THE ORIGIN LIST
+//		Restore the origin list
 		node = head;
 		while (node != null) {
 			node.next = originNexts.poll();
 			node = node.next;
 		}
-		
 		
 		return dummyNewHead.next;
     }

@@ -2,6 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 
 import com.cllin.main.LeetCodeExercise;
@@ -66,14 +67,14 @@ public class CloneGraph implements LeetCodeExercise {
 	private UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
 		if (node == null) return null;
 		
-		ArrayList<Integer> visited = new ArrayList<Integer>();
-		LinkedList<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+		HashSet<Integer> visited = new HashSet<Integer>();
 		HashMap<Integer, UndirectedGraphNode> newNodes = new HashMap<Integer, UndirectedGraphNode>();
+		LinkedList<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
 		
 		queue.add(node);
 		
 		while (!queue.isEmpty()) {
-			UndirectedGraphNode n = queue.pop();
+			UndirectedGraphNode n = queue.poll();
 
 			if (!visited.contains(n.label)) {
 				UndirectedGraphNode newNode = newNodes.get(n.label);
@@ -94,6 +95,7 @@ public class CloneGraph implements LeetCodeExercise {
 					newNode.neighbors.add(newNeighbor);
 					queue.add(neighbor);
 				}
+				
 				visited.add(n.label);
 			}
 		}

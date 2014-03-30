@@ -6,6 +6,12 @@ import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
+/*
+ * Given inorder and postorder traversal of a tree, construct the binary tree.
+ * 
+ * Source: http://oj.leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+ */
+
 public class ConstructBinaryTreeFromInorderAndPostorderTraversal implements
 		LeetCodeExercise {
 

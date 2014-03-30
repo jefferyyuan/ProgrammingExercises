@@ -1,11 +1,18 @@
 package com.cllin.leetcode;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.Stack;
 
 import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
+
+/*
+ * Given a binary tree, return the zigzag level order traversal of its nodes' values. 
+ * (i.e., from left to right, then right to left for the next level and alternate between).
+ * 
+ * Source: http://oj.leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+ */
 
 public class BinaryTreeZigzagLevelOrderTraversal implements LeetCodeExercise {
 	private final int SIZE = 10;
@@ -28,75 +35,40 @@ public class BinaryTreeZigzagLevelOrderTraversal implements LeetCodeExercise {
 	}
 	
 	private ArrayList<ArrayList<Integer>> zigzagLevelOrder(Node root) {
-    	ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-    	ArrayList<Node> list = new ArrayList<Node>();
-    	LinkedList<Node> queue = new LinkedList<Node>();
+    	ArrayList<ArrayList<Integer>> levels = new ArrayList<ArrayList<Integer>>();
+    	Stack<Node> thisLevel = new Stack<Node>();
+    	Stack<Node> nextLevel = new Stack<Node>();
     	
-    	if (root == null) return result;
+    	if (root == null) return levels;
     	
-//    	Get all elements in an ArrayList<Node>
-    	ArrayList<Integer> counts = new ArrayList<Integer>();
-    	int index = 0;
-    	int count = 0;
-    	int nextLevelCount = 0;
-    	
-    	queue.add(root);
-    	counts.add(1);
-    	
-    	while (queue.size() > 0) {
-    		Node n = queue.pollFirst();
-    		list.add(n);
-    		count++;
+    	int count = 1;
+    	thisLevel.add(root);
+    	while (!thisLevel.isEmpty()) {
+    		ArrayList<Integer> level = new ArrayList<Integer>();
     		
-    		if (n.left != null) {
-    			queue.add(n.left);
-    			nextLevelCount++;
-    		}
-    		
-    		if (n.right != null) {
-    			queue.add(n.right);
-    			nextLevelCount++;    			
-    		}
-    		
-    		if (count == counts.get(index)) {
-    			counts.add(nextLevelCount);
-    			nextLevelCount = 0;
-    			count = 0;
-    			index++;
-    			list.add(new Node(-2147483648));
-    		}
+        	while (!thisLevel.isEmpty()) {
+        		Node n = thisLevel.pop();
+        		
+        		level.add(n.value);
+        		
+        		if (count % 2 == 0) {
+        			if (n.right != null) nextLevel.push(n.right);        			
+        			if (n.left != null) nextLevel.push(n.left);
+        		} else {
+        			if (n.left != null) nextLevel.push(n.left);
+        			if (n.right != null) nextLevel.push(n.right);        			
+        		}
+        	}
+        	
+        	thisLevel = nextLevel;
+        	nextLevel = new Stack<Node>();
+        	levels.add(level);
+        	count++;
     	}
     	
-//    	Sort the array by level of the node
-    	int size = list.size();
-    	ArrayList<Integer> l = new ArrayList<Integer>();
-    	for (int i = 0; i <= size - 2; i++) {
-    		Node n = list.get(i);
-    		if (n.value == -2147483648) {
-    			result.add(l);
-    			l = new ArrayList<Integer>();
-    		} else {
-    			l.add(n.value);
-    		}
-    	}
-    	result.add(l);
-    	
-    	size = result.size();
-    	for (int i = 0; i < size; i++) {
-    		if (i % 2 == 1) {
-    			int s = result.get(i).size();
-    			int bound = s / 2;
-    			for (int j = 0; j < bound; j++) {
-    				int tmp = result.get(i).get(j);
-    				result.get(i).set(j, result.get(i).get(s - j - 1));
-    				result.get(i).set(s - j - 1, tmp);
-    			}
-    		}
-    	}
-    	
-    	return result;
+    	return levels;
     }
-
+	
 	@Override
 	public boolean test() {
 		for (ArrayList<Integer> level : result) {

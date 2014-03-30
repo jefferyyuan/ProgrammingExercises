@@ -1,13 +1,18 @@
 package com.cllin.leetcode;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
+ * 
+ * Source: http://oj.leetcode.com/problems/convert-sorted-list-to-binary-search-tree/
+ */
+
 public class ConvertSortedListToBinarySearchTree implements LeetCodeExercise {
-	private final int SIZE = 1000;
-	private final int MAXIMUM = 2000;
+	private final int SIZE = 10;
+	private final int MAXIMUM = 10;
 	
 	private ListNode head;
 	private TreeNode root;
@@ -39,28 +44,34 @@ public class ConvertSortedListToBinarySearchTree implements LeetCodeExercise {
 	}
 	
 	private TreeNode sortedListToBST(ListNode head) {
-		ArrayList<Integer> numbers = new ArrayList<Integer>();
 		ListNode node = head;
-		
+
+		int size = 0;
 		while (node != null) {
-			numbers.add(node.val);
+			size++;
 			node = node.next;
 		}
 		
-		return buildTree(numbers, 0, numbers.size() - 1);
+		list = head;
+		return buildTree(0, size - 1);
 	}
 	
-    private TreeNode buildTree(ArrayList<Integer> num, int start, int end) {
-    	if (start == end) return new TreeNode(num.get(start));
-    	else if (start > end) return null;
+	private ListNode list;
+    private TreeNode buildTree(int start, int end) {
+    	if (start > end) return null;
+    	int mid = start + (end - start) / 2;
     	
-    	int mid = (start + end) / 2;
+    	TreeNode leftChild = buildTree(start, mid - 1);
     	
-    	TreeNode node = new TreeNode(num.get(mid));
-    	node.left = buildTree(num, start, mid - 1);
-    	node.right = buildTree(num, mid + 1, end);
+    	TreeNode parent = new TreeNode(list.val);
+    	list = list.next;
     	
-    	return node;
+    	TreeNode rightChild = buildTree(mid + 1, end);
+    	
+    	parent.left = leftChild;
+    	parent.right = rightChild;
+    	
+    	return parent;
     }
     
 	private String inOrderTreeWalk(TreeNode node) {

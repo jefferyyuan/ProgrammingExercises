@@ -2,6 +2,15 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
+ * 
+ * Follow up:
+ * Can you solve it without using extra space?
+ * 
+ * Source: http://oj.leetcode.com/problems/linked-list-cycle-ii/
+ */
+
 public class LinkedListCycleII implements LeetCodeExercise {
 	private final int SIZE = 2 - 1;
 	private final int MAXIMUM = 100;
@@ -50,6 +59,7 @@ public class LinkedListCycleII implements LeetCodeExercise {
     	while (a != null && b != null) {
     		if (a.next != null) a = a.next.next;
     		else return null;
+    		
     		b = b.next;
     		
     		if (a == null || b == null) return null;

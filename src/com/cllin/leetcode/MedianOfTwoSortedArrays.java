@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
+ * 
+ * Source: http://oj.leetcode.com/problems/maximum-subarray/
+ */
+
 public class MedianOfTwoSortedArrays implements LeetCodeExercise {
 	
 	private int MAXIMUM = 100;
@@ -54,40 +60,47 @@ public class MedianOfTwoSortedArrays implements LeetCodeExercise {
 		}
     }
 	
+	/*
+	 * In a sorted array, A[i] is larger than exact i elements, making it the (i + 1)th element
+	 * 
+	 * A[i] is the (i + 1)th element of A(aStart, aEnd)
+	 * B[j - 1] is the (j)th element of A(aStart, aEnd)
+	 * 
+	 * If B[j - 1] < A[i] < B[j], A[i] is the (i + j + 1)th element of A + B
+	 * In this case,
+	 * 		k = i + j + 1, and
+	 * 		i = k * A / (A + B), so
+	 * 		j = k - i - 1
+	 */
 	private double getKth(int A[], int B[], int k, int aStart, int aEnd, int bStart, int bEnd) {
 		int lengthA = aEnd - aStart + 1;
 		int lengthB = bEnd - bStart + 1;
 
-		if (lengthA == 0) {
-			return B[bStart + k];
-		}
-		
-		if (lengthB == 0) {
-			return A[aStart + k];
-		}
+		if (lengthA == 0) return B[bStart + k];
+		if (lengthB == 0) return A[aStart + k];
 		
 		if (k == 0) {
 			return (A[aStart] < B[bStart])? A[aStart] : B[bStart];
 		}
 		
-		int aIdx = lengthA * k / (lengthA + lengthB);
-		int bIdx = k - aIdx - 1;
-		
-		aIdx += aStart;
-		bIdx += bStart;
-		
-		if (A[aIdx] >= B[bIdx]) {
-			k -= (bIdx - bStart + 1);
-			
-			aEnd = aIdx;
-			bStart = bIdx + 1;
+		int i = lengthA * k / (lengthA + lengthB);
+		int j = k - i - 1;
+
+		i += aStart;
+		j += bStart;
+
+		if (A[i] >= B[j]) {
+			k -= (j - bStart + 1);
+
+			aEnd = i;
+			bStart = j + 1;
 		} else {
-			k -= (aIdx - aStart + 1);
-			
-			aStart = aIdx + 1;
-			bEnd = bIdx;			
+			k -= (i - aStart + 1);
+
+			aStart = i + 1;
+			bEnd = j;			
 		}
-		
+
 		return getKth(A, B, k, aStart, aEnd, bStart, bEnd);
 	}
 

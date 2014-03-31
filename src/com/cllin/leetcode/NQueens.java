@@ -4,6 +4,14 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an integer n, return all distinct solutions to the n-queens puzzle.
+ * Each solution contains a distinct board configuration of the n-queens' placement, 
+ * where 'Q' and '.' both indicate a queen and an empty space respectively.
+ * 
+ * Source: http://oj.leetcode.com/problems/n-queens/
+ */
+
 public class NQueens implements LeetCodeExercise {
 
 	private int N;

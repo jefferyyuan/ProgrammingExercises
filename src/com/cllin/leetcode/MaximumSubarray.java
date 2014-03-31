@@ -2,6 +2,12 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
+ * For example, given the array [-2, 1, -3, 4, -1, 2, 1, -5, 4], the contiguous subarray [4, -1, 2, 1] has the largest sum = 6.
+ * 
+ * Source: http://oj.leetcode.com/problems/maximum-subarray/
+ */
 
 public class MaximumSubarray implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
@@ -30,6 +36,13 @@ public class MaximumSubarray implements LeetCodeExercise {
 		test();
 	}
 	
+	/*
+	 * S(n) = sum of maximum subarray of A(0, n)
+	 * If S(n) + A(n + 1) > 0,
+	 * 		S(n + 1) = S(n) + A(n + 1)
+	 * Else,
+	 * 		S(n + 1) = S(n)
+	 */
     public int maxSubArray(int[] array) {
     	int length = array.length;
     	if (length == 0) return 0; 
@@ -48,9 +61,8 @@ public class MaximumSubarray implements LeetCodeExercise {
     }
 
     private int detect(int[] array) {
-    	int length = array.length;
-        int max = array[0];
-        for (int i = 0; i < length; i++) {
+        int max = Integer.MIN_VALUE;
+        for (int i = 0; i < array.length; i++) {
             if (array[i] >= 0) return 0;
             max = Math.max(array[i], max);
         }

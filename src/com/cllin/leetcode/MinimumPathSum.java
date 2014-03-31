@@ -2,6 +2,13 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a m x n grid filled with non-negative numbers, 
+ * find a path from top left to bottom right which minimizes the sum of all numbers along its path.
+ * 
+ * Source: http://oj.leetcode.com/problems/minimum-path-sum/
+ */
+
 public class MinimumPathSum implements LeetCodeExercise {
 	private final int MAXIMUM = 10;
 	
@@ -33,24 +40,28 @@ public class MinimumPathSum implements LeetCodeExercise {
 		test();
 	}
 	
+	/*
+	 * S(m, n) = minimum path sum from A(0, 0) to A(m, n)
+	 * S(m, n) = minimum(S(m - 1, n), S(m, n - 1)) + A(m, n)
+	 */
     private int minPathSum(int[][] grid) {
     	if (grid.length < 1 || grid[0].length < 1) return 0;
     	
     	int m = grid.length;
     	int n = grid[0].length;
-    	int[][] minimum = new int[m][n];
+    	int[][] sum = new int[m][n];
     	
-    	minimum[0][0] = grid[0][0];
-    	for (int i = 1; i < m; i++) minimum[i][0] = minimum[i - 1][0] + grid[i][0];
-    	for (int i = 1; i < n; i++) minimum[0][i] = minimum[0][i - 1] + grid[0][i];
+    	sum[0][0] = grid[0][0];
+    	for (int i = 1; i < m; i++) sum[i][0] = sum[i - 1][0] + grid[i][0];
+    	for (int i = 1; i < n; i++) sum[0][i] = sum[0][i - 1] + grid[0][i];
     	
     	for (int i = 1; i < m; i++) {
     		for (int j = 1; j < n; j++) {
-    			minimum[i][j] = Math.min(minimum[i - 1][j], minimum[i][j - 1]) + grid[i][j];
+    			sum[i][j] = Math.min(sum[i - 1][j], sum[i][j - 1]) + grid[i][j];
     		}
     	}
     	
-    	return minimum[m - 1][n - 1];
+    	return sum[m - 1][n - 1];
     }
 
 	@Override

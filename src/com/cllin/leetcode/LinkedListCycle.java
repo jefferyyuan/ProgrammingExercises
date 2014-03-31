@@ -2,6 +2,15 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a linked list, determine if it has a cycle in it.
+ * 
+ * Follow up:
+ * Can you solve it without using extra space?
+ * 
+ * Source: http://oj.leetcode.com/problems/linked-list-cycle/
+ */
+
 public class LinkedListCycle implements LeetCodeExercise {
 	private final int SIZE = 1000 - 1;
 	private final int MAXIMUM = 1000;
@@ -47,6 +56,7 @@ public class LinkedListCycle implements LeetCodeExercise {
     	while (a != null && b != null) {
     		if (a.next != null) a = a.next.next;
     		else return false;
+    		
     		b = b.next;
     		
     		if (a == null || b == null) return false;

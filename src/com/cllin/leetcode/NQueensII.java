@@ -2,8 +2,12 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
-
-
+/*
+ * Follow up for N-Queens problem.
+ * Now, instead outputting board configurations, return the total number of distinct solutions.
+ * 
+ * Source: http://oj.leetcode.com/problems/n-queens-ii/
+ */
 
 public class NQueensII implements LeetCodeExercise {
 
@@ -61,22 +65,12 @@ public class NQueensII implements LeetCodeExercise {
 	}
 	
 	private boolean isSafe(int x, int y, int n, boolean[][] chessBoard) {
-		for (int i = x; i >= 0; i--) {
-			if (!chessBoard[i][y]) return false; 
-		}
-		
-		for (int j = y; j >= 0; j--) {
-			if (!chessBoard[x][j]) return false; 
-		}
-		
 		int i, j;
-		for (i = x, j = y; i >= 0 && j >= 0; i--, j--) {
-			if (!chessBoard[i][j]) return false; 
-		}
 		
-		for (i = x, j = y; i < n && j >= 0; i++, j--) {
-			if (!chessBoard[i][j]) return false; 
-		}
+		for (i = x; i >= 0; i--) if (!chessBoard[i][y]) return false; 
+		for (j = y; j >= 0; j--) if (!chessBoard[x][j]) return false; 
+		for (i = x, j = y; i >= 0 && j >= 0; i--, j--) if (!chessBoard[i][j]) return false; 
+		for (i = x, j = y; i < n && j >= 0; i++, j--) if (!chessBoard[i][j]) return false; 
 		
 		return true;
 	}

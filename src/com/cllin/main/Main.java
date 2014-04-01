@@ -328,7 +328,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = MedianOfTwoSortedArrays;
+		int option = PalindromePartitioningII;
 
 		switch(option){
 			case TRIE:

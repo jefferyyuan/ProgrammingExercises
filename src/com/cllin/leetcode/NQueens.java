@@ -40,6 +40,8 @@ public class NQueens implements LeetCodeExercise {
 		}
 		
 		ArrayList<ArrayList<Integer>> maps = placeQueen(0, n, chessBoard);
+		
+//		Translate the maps to the requested form
 		for (ArrayList<Integer> map : maps) {
 			String[] board = new String[n];
 			
@@ -64,24 +66,28 @@ public class NQueens implements LeetCodeExercise {
 		ArrayList<ArrayList<Integer>> boards = new ArrayList<ArrayList<Integer>>();
 		if (col == n) return boards;
 
+//		For 0 <= i < n, try placing the queen at (i, col)
 		for (int i = 0; i < n; i++) {
+//			Advance if (i, col is safe),
 			if (isSafe(i, col, n, chessBoard)) {
 				
 				chessBoard[i][col] = false;
 				ArrayList<ArrayList<Integer>> b = new ArrayList<ArrayList<Integer>>();
+				
+//				Advance to next column and store all possible solution
 				b.addAll(placeQueen(col + 1, n, chessBoard));
 				
-				if (boards.size() == 1) {
-//					If a solution is found, clear all elements after this column for further explorations
+				if (boards.size() > 0) {
+//					If solution is found, clear all places after this column for further explorations
 					for (int p = 0; p < n; p++) {
 						for (int q = col; q < n; q++) chessBoard[p][q] = true;
 					}
 				} else {
-//					Else, just clear this element for further explorations
+//					Else, just clear this place for further explorations
 					chessBoard[i][col] = true;
 				}
 				
-//				Add to the board if a new solution is found
+//				Add to the solution set if a new solution is found
 				if (col == n - 1) {
 					ArrayList<Integer> solution = new ArrayList<Integer>();
 					solution.add(i);
@@ -91,9 +97,8 @@ public class NQueens implements LeetCodeExercise {
 					for (ArrayList<Integer> board : b) {
 						board.add(i);
 					}
+					boards.addAll(b);
 				}
-				
-				boards.addAll(b);
 			}
 		}
 		
@@ -101,10 +106,12 @@ public class NQueens implements LeetCodeExercise {
 	}
 	
 	private boolean isSafe(int x, int y, int n, boolean[][] chessBoard) {
-		for (int i = x; i >= 0; i--) if (!chessBoard[i][y]) return false; 
-		for (int j = y; j >= 0; j--) if (!chessBoard[x][j]) return false; 
-		
 		int i, j;
+//		Check vertically and horizontally
+		for (i = x; i >= 0; i--) if (!chessBoard[i][y]) return false; 
+		for (j = y; j >= 0; j--) if (!chessBoard[x][j]) return false; 
+
+//		Check diagonally
 		for (i = x, j = y; i >= 0 && j >= 0; i--, j--) 	if (!chessBoard[i][j]) return false; 
 		for (i = x, j = y; i < n && j >= 0; i++, j--) if (!chessBoard[i][j]) return false; 
 		

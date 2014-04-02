@@ -236,23 +236,23 @@
 132. Interleaving String
 133. Palindrome Partitioning II
 134. Substring With Concatenation of All Words 
-133. Candy
-134. Minimum Window Substring
-135. Word Ladder
-136. Median of Two Sorted Arrays
-137. Decode Ways
-138. Divide Two Integers
-139. Reverse Words in a String
-140. Three Sum
-141. Word Break II
-142. String to Integer
-143. Surrounded Regions
-144. Text Justification
-145. LRU Cache
-146. Wildcard Matching
-147. Valid Number
-148. Max Points on a Line
-149. Word Ladder II
+135. Candy
+136. Minimum Window Substring
+137. Word Ladder
+138. Median of Two Sorted Arrays
+139. Decode Ways
+140. Divide Two Integers
+141. Reverse Words in a String
+142. Three Sum
+143. Word Break II
+144. String to Integer
+145. Surrounded Regions
+146. Text Justification
+147. LRU Cache
+148. Wildcard Matching
+149. Valid Number
+150. Max Points on a Line
+151. Word Ladder II
 
 ###<a name="6"></a>GENERAL ISSUE
 1. Thread/Lock

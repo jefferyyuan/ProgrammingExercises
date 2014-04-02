@@ -1,6 +1,7 @@
 package com.cllin.main;
 
 import com.cllin.algorithms.BreadthFirstTraversal;
+import com.cllin.algorithms.KPalindrome;
 import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.algorithms.RodCutting;
@@ -96,6 +97,7 @@ public class Main {
 	public static final int MAXIMUM_SUBARRAY = 10;
 	public static final int ENUMERATION = 11;
 	public static final int Breadth_First_Traversal = 12;
+	public static final int KPalindrome = 13;
 	
 //	SORTING
 	public static final int INSERTIONSORT = 3000;
@@ -328,7 +330,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = PalindromePartitioningII;
+		int option = KPalindrome;
 
 		switch(option){
 			case TRIE:
@@ -1022,6 +1024,9 @@ public class Main {
 				break;
 			case WordLadderII:
 				exercise = new WordLadderII();
+				break;
+			case KPalindrome:
+				exercise = new KPalindrome();
 				break;
 		}
 		

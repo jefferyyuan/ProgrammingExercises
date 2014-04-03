@@ -98,7 +98,7 @@
 3. Best Time to Buy Stock
 4. Linked List Cycle
 5. Unique Binary Search Trees
-6. Populating Next Right Pointers
+6. Populating Next Right Pointers in Each Node
 7. Remove Duplicates from Sorted List
 8. Search Insert Position
 9. Maximum Depth of Tree

@@ -1,10 +1,14 @@
 package com.cllin.leetcode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-
 import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.Node;
+
+/*
+ * Follow up for problem "Populating Next Right Pointers in Each Node".
+ * What if the given tree could be any binary tree? Would your previous solution still work?
+ * 
+ * Source: http://oj.leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/
+ */
 
 public class PopulatingNextRightPointersInEachNodeII implements
 		LeetCodeExercise {
@@ -26,47 +30,34 @@ public class PopulatingNextRightPointersInEachNodeII implements
 		test();
 	}
 	
-    private void connect(TreeLinkNode root) {
-    	if (root == null) return;
+    private void connect(TreeLinkNode node) {
+    	if (node == null) return;
+
+    	TreeLinkNode next = node.next;
+    	while (next != null) {
+    		if (next.left != null) {
+    			next = next.left;
+    			break;
+    		}
+    		
+    		if (next.right != null) {
+    			next = next.right;
+    			break;
+    		}
+    		
+    		next = next.next;
+    	}
     	
-        LinkedList<TreeLinkNode> queue = new LinkedList<TreeLinkNode>();
-        ArrayList<TreeLinkNode> list = new ArrayList<TreeLinkNode>();
-        TreeLinkNode node = root;
-        
-        queue.add(node);
-        int count = 0;
-        int capacity = 1;
-        int nextLevelCapacity = 0;
-        
-        while (!queue.isEmpty()) {
-        	TreeLinkNode n = queue.pollFirst();
-        	count++;
-        	list.add(n);
-        	
-        	if (n.left != null) {
-        		queue.add(n.left);
-        		nextLevelCapacity++;
-        	}
-        	
-        	if (n.right != null) {
-        		queue.add(n.right);
-        		nextLevelCapacity++;
-        	}
-        	
-        	if (count == capacity) {
-        		count = 0;
-        		capacity = nextLevelCapacity;
-        		nextLevelCapacity = 0;
-        		
-        		int size = list.size();
-        		for (int i = 0; i < size - 1; i++) {
-        			list.get(i).next = list.get(i + 1);
-        		}
-        		list.get(size - 1).next = null;
-        		
-        		list = new ArrayList<TreeLinkNode>();
-        	}
-        }
+    	if (node.right != null) {
+    		node.right.next = next;
+    	}
+    	
+    	if (node.left != null) {
+    		node.left.next = (node.right == null)? next : node.right;
+    	}
+    	
+    	connect(node.left);
+    	connect(node.right);
     }
 
 	@Override
@@ -75,7 +66,6 @@ public class PopulatingNextRightPointersInEachNodeII implements
 		return false;
 	}
 	
-	@SuppressWarnings("unused")
 	private class TreeLinkNode extends Node {
 		TreeLinkNode left, right, next;
 		

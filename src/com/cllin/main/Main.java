@@ -183,7 +183,7 @@ public class Main {
 	public static final int BestTimetoBuyandSellStockII = 5005;
 	public static final int UniqueBinarySearchTrees = 5006;
 	public static final int LinkedListCycle = 5007;
-	public static final int PopulatingNextRightPointers = 5008;
+	public static final int PopulatingNextRightPointersInEachNode = 5008;
 	public static final int SearchInsertPosition = 5009;
 	public static final int RemoveDuplicatesFromSortedList = 5010;
 	public static final int BinaryTreeInorderTraversal = 5011;
@@ -330,7 +330,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = KPalindrome;
+		int option = RegularExpressionMatching;
 
 		switch(option){
 			case TRIE:
@@ -596,8 +596,8 @@ public class Main {
 			case LinkedListCycle:
 				exercise = new LinkedListCycle();
 				break;
-			case PopulatingNextRightPointers:
-				exercise = new PopulatingNextRightPointers();
+			case PopulatingNextRightPointersInEachNode:
+				exercise = new PopulatingNextRightPointersInEachNode();
 				break;
 			case SearchInsertPosition:
 				exercise = new SearchInsertPosition();

@@ -4,6 +4,13 @@ import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
+/*
+ * Given a binary tree and a sum, 
+ * determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
+ * 
+ * Source: http://oj.leetcode.com/problems/path-sum/
+ */
+
 public class PathSum implements LeetCodeExercise {
 	private final int MAXIMUM = 10;
 	private final int SIZE = 10;

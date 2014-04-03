@@ -4,6 +4,13 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Follow up for "Remove Duplicates":
+ * What if duplicates are allowed at most twice?
+ * 
+ * Source: http://oj.leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+ */
+
 public class RemoveDuplicatesFromSortedArrayII implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
 	private final int SIZE = 100;
@@ -33,25 +40,22 @@ public class RemoveDuplicatesFromSortedArrayII implements LeetCodeExercise {
 	}
 	
     private int removeDuplicates(int[] array) {
-    	if (array.length == 0) return 0; 
-    	
     	int length = array.length;
-    	int i = 0;
+    	if (length <= 2) return length;
     	
-    	while (i < length) {
-    		if (array[i + 1] != array[i]) i++;
-    		else {
-    			if (array[i + 2] != array[i]) i += 2;
-    			else {
-    				for (int j = i + 2; j <= length - 2; j++) {
-    					array[j] = array[j + 1];
-    				}
-    				length--;
-    			}
+    	int i = 1;
+    	int j = 2;
+    	
+    	while (j < length) {
+    		if (array[j] == array[i] && array[j] == array[i - 1]) {
+    			j++;
+    		} else {
+    			array[++i] = array[j];
+    			j++;
     		}
     	}
     	
-        return length;
+        return i + 1;
     }
 
 	@Override

@@ -4,6 +4,13 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
+ * Do not allocate extra space for another array, you must do this in place with constant memory.
+ * 
+ * Source: http://oj.leetcode.com/problems/remove-duplicates-from-sorted-array/
+ */
+
 public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
 	private final int SIZE = 1000;
@@ -33,18 +40,25 @@ public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
 		else System.out.println("Failed");		
 	}
 	
+	/*
+	 * i indicates the last unique element
+	 * j traverses the entire array, if there is a new unique element, move it after the previous unique element
+	 */
     private int removeDuplicates(int[] A) {
     	if (A.length == 0) return 0;
     	int length = A.length;
     	
         int i = 0;
         int j = 1;
-
-        for (j = 1; j < length; j++) {            
-        	if (A[j] != A[i]) A[++i] = A[j];
+        while (j < length) {
+        	if (A[j] != A[i]) {
+        		A[++i] = A[j];
+        	}
+        	
+        	j++;
         }
         
-//      Values are set to -2147483648 to pass own test cases
+//      Values are set to -2147483648 to pass my own test cases
         for (int k = i + 1; k < length; k++) {
         	A[k] = -2147483648;
         }

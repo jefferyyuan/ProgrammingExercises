@@ -4,6 +4,13 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a sorted linked list, delete all nodes that have duplicate numbers, 
+ * leaving only distinct numbers from the original list.
+ * 
+ * Source: http://oj.leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
+ */
+
 public class RemoveDuplicatesFromSortedListII implements LeetCodeExercise {
 
 	private final int MAXIMUM = 10;
@@ -32,6 +39,7 @@ public class RemoveDuplicatesFromSortedListII implements LeetCodeExercise {
 	public void runExercise() {
 		initialize();
 		head = deleteDuplicates(head);
+		
 		if (test()) System.out.println("Success");
 		else System.out.println("Failed");
 

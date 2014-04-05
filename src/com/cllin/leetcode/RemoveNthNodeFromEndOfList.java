@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a linked list, remove the nth node from the end of list and return its head.
+ * 
+ * Source: http://oj.leetcode.com/problems/remove-nth-node-from-end-of-list/
+ */
+
 public class RemoveNthNodeFromEndOfList implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
 	private final int LENGTH = 100;

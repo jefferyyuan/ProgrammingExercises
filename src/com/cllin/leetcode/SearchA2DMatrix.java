@@ -4,6 +4,24 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
+ * 		1) Integers in each row are sorted from left to right.
+ * 		2) The first integer of each row is greater than the last integer of the previous row.
+ * 
+ * For example,
+ * Consider the following matrix:
+ * 		[
+ * 		  [1,   3,  5,  7],
+ * 		  [10, 11, 16, 20],
+ * 		  [23, 30, 34, 50]
+ * 		]
+ * 
+ * Given target = 3, return true.
+ * 
+ * Source: http://oj.leetcode.com/problems/search-a-2d-matrix/
+ */
+
 public class SearchA2DMatrix implements LeetCodeExercise {
 	private int MAXIMUM;
 	private int SIZE_X;
@@ -87,27 +105,28 @@ public class SearchA2DMatrix implements LeetCodeExercise {
     		if (matrix[mid][0] <= target && target <= matrix[mid + 1][0]) {
     			x = mid;
     			break;
-    		} else if (target < matrix[mid][0]) end = mid - 1;
-    		else if (matrix[mid + 1][0] < target) start = mid + 1;
+    		}
+    		
+    		if (target < matrix[mid][0]) {
+    			end = mid - 1;
+    		} else if (matrix[mid + 1][0] < target) {
+    			start = mid + 1;
+    		}
     	}
     	
     	if (x == -1) return false;
-    	else if (x == m - 1) {
-    		if (matrix[x][0] == target) return true;
-    	} else {
-    		if (matrix[x][0] == target || matrix[x + 1][0] == target) {
-    			return true;
-    		} else if (n == 1) return false;
-    	}
+    	if (matrix[x][0] == target || (x < m - 1 && matrix[x + 1][0] == target)) return true;
     	
     	start = 0;
     	end = n - 1;
     	while (start <= end) {
     		mid = (start + end) / 2;
     		
-    		if (target < matrix[x][mid]) end = mid - 1;
-    		else if (matrix[x][mid] < target) start = mid + 1;
-    		else {
+    		if (target < matrix[x][mid]) {
+    			end = mid - 1;
+    		} else if (matrix[x][mid] < target) {
+    			start = mid + 1;
+    		} else {
     			y = mid;
     			break;
     		}

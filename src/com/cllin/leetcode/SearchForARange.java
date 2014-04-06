@@ -5,6 +5,19 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a sorted array of integers, find the starting and ending position of a given target value.
+ * 
+ * Your algorithm's runtime complexity must be in the order of O(log n).
+ * If the target is not found in the array, return [-1, -1].
+ * 
+ * For example,
+ * Given [5, 7, 7, 8, 8, 10] and target value 8,
+ * return [3, 4].
+ * 
+ * Source: http://oj.leetcode.com/problems/search-for-a-range/
+ */
+
 public class SearchForARange implements LeetCodeExercise {
 	private final int SIZE = 10;
 	private final int MAXIMUM = 10;
@@ -41,47 +54,24 @@ public class SearchForARange implements LeetCodeExercise {
 		int length = array.length;
 		
 		if (length == 0) return range;
+		if (target < array[0] || array[length - 1] < target ) return range;
 		
-		int begin = -1;
-		int end = -1;
+		int index = binarySearch(array, target, 0, length - 1);
+		if (index == -1) return range;
 		
-		if (array[0] == target) begin = 0;
-		else if (target < array[0]) begin = -1;
-		else {
-			for (int n = target - 1;;n--) {
-				int index = binarySearch(array, n, 0, length);
-				if (index != -1) {
-					for (int i = index; i < length; i++) {
-						if (array[i] == target) {
-							begin = i;
-							break;
-						}
-					}
-					break;
-				}
-			}
+		int begin = index;
+		int end = index;
+		
+		while (begin >= 0 && array[begin] == target) {
+			begin--;
 		}
 		
-		if (array[length - 1] == target) end = length - 1;
-		else if (array[length - 1] < target) end = -1;
-		else {
-			for (int n = target + 1;;n++) {
-				int index = binarySearch(array, n, 0, length);
-				if (index != -1) {
-					for (int i = index; i >= 0; i--) {
-						if (array[i] == target) {
-							end = i;
-							break;
-						}
-					}
-					break;
-				}
-			}
+		while (end <= length - 1 && array[end] == target) {
+			end++;
 		}
 		
-		range = new int[]{begin, end};
-    	return range;
-    }
+		return new int[]{(begin == -1)? 0 : begin + 1, (end == length)? length - 1 : end - 1};
+	}
 	
 	private int binarySearch(int[] array, int target, int start, int end) {
     	if (start == end) return (array[start] == target)? start : -1;

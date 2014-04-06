@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a string containing only digits, restore it by returning all possible valid IP address combinations.
+ * 
+ * Source: http://oj.leetcode.com/problems/restore-ip-addresses/
+ */
+
 public class RestoreIPAddresses implements LeetCodeExercise {
 
 	private final String[] testSuite = {
@@ -39,27 +45,24 @@ public class RestoreIPAddresses implements LeetCodeExercise {
 		if (level == 4) {
 			if (isValidAddress(string)) {
 				addresses.add(string);
-				return addresses;
 			}
+			return addresses;
 		}
 		
-		for (int i = 1; i <= 3; i++) {
-			if (string.length() >= i) {
-				ArrayList<String> addr = new ArrayList<String>();
-				String address = string.substring(0, i);
-				if (isValidAddress(address)) {
-					addr = getAddresses(string.substring(i), level + 1);
-					
-					int size = addr.size();
-					for (int p = 0; p < size; p++) {
-						String s = address + "." + addr.get(p);
-						addr.set(p, s);
-					}
-					
-					addresses.addAll(addr);
+		for (int i = 1; i <= 3 && i <= string.length(); i++) {
+			ArrayList<String> addr = new ArrayList<String>();
+			String address = string.substring(0, i);
+			
+			if (isValidAddress(address)) {
+				addr = getAddresses(string.substring(i), level + 1);
+				
+				int size = addr.size();
+				for (int p = 0; p < size; p++) {
+					String s = address + "." + addr.get(p);
+					addr.set(p, s);
 				}
-			} else {
-				break;
+				
+				addresses.addAll(addr);
 			}
 		}
 		
@@ -68,6 +71,8 @@ public class RestoreIPAddresses implements LeetCodeExercise {
 	
 	private boolean isValidAddress(String address) {
 		int addr = Integer.parseInt(address, 10);
+		
+//		Ruling out the leading zeros
 		if (address.length() != Integer.toString(addr).length()) return false;
 		
 		return (0 <= addr && addr < 256);

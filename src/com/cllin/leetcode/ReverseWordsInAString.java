@@ -2,6 +2,24 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an input string, reverse the string word by word.
+ * 
+ * For example,
+ * Given s = "the sky is blue",
+ * return "blue is sky the".
+ * 
+ * Clarification
+ * 		1) What constitutes a word?
+ * 			A sequence of non-space characters constitutes a word.
+ * 		2) Could the input string contain leading or trailing spaces?
+ * 			Yes. However, your reversed string should not contain leading or trailing spaces.
+ * 		3) How about multiple spaces between two words?
+ * 			Reduce them to a single space in the reversed string.
+ * 
+ * Source: http://oj.leetcode.com/problems/reverse-words-in-a-string/
+ */
+
 public class ReverseWordsInAString implements LeetCodeExercise {
 
 	private final String[] testSuite = {
@@ -33,6 +51,8 @@ public class ReverseWordsInAString implements LeetCodeExercise {
 		if (string == null || string.length() == 0) return new String();
 		
 		int length = string.length();
+
+//		Swap characters in the entire string
 		char[] charArray = string.toCharArray();
 		for (int i = 0; i < length / 2; i++) {
 			char tmp = charArray[length - 1 - i];
@@ -40,6 +60,7 @@ public class ReverseWordsInAString implements LeetCodeExercise {
 			charArray[i] = tmp;
 		}
 		
+//		Swap characters in a word
 		int i = 0;
 		while (i < length) {
 			int j = i + 1;
@@ -60,6 +81,7 @@ public class ReverseWordsInAString implements LeetCodeExercise {
 			}
 		}
 		
+//		Remove redundant spaces
 		StringBuffer buffer = new StringBuffer(new String(charArray));
 		for (int idx = 1; idx < buffer.length(); idx++) {
 			if (buffer.charAt(idx) == ' ' && buffer.charAt(idx - 1) == ' ') {
@@ -68,6 +90,7 @@ public class ReverseWordsInAString implements LeetCodeExercise {
 			}
 		}
 		
+//		Remove leading spaces
 		while (buffer.length() >= 0 && buffer.charAt(0) == ' ') {
 			buffer.deleteCharAt(0);
 		}

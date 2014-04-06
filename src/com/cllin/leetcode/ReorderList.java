@@ -2,9 +2,21 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a singly linked list L: L0 -> L1 -> ... -> Ln-1 -> Ln,
+ * reorder it to: L0 -> Ln -> L1 -> Ln-1 -> L2 -> Ln-2 -> ...
+ * 
+ * You must do this in-place without altering the nodes' values.
+ * 
+ * For example,
+ * Given {1,2,3,4}, reorder it to {1,4,2,3}.
+ * 
+ * Source: http://oj.leetcode.com/problems/reorder-list/
+ */
+
 public class ReorderList implements LeetCodeExercise {
 
-	private int SIZE = 7;
+	private int SIZE = 4;
 	private ListNode head;
 	
 	@Override
@@ -34,34 +46,25 @@ public class ReorderList implements LeetCodeExercise {
 		
 		System.out.println("------------------");
 	}
-	
 	private void reorderList(ListNode head) {
 		if (head == null) return;
 		
-//		GET THE TOTAL COUNT OF THE LIST
-		int count = 1;
-		ListNode node = head;
+//		Get the tail of the first half, and the head of the second half 
+		ListNode fast = head;
+		ListNode slow = head;
 		
-		while (node != null) {
-			node = node.next;
-			count++;
+		while (fast != null && fast.next != null) {
+			fast = fast.next.next;
+			slow = slow.next;
 		}
 		
-//		GET THE END OF THE FIRST HALF OF THE LIST
-		int index = 1;
-		node = head;
-		while (index < count / 2) {
-			node = node.next;
-			index++;
-		}
-		index--;
-		
-		ListNode endOfFirstHalf = node;
-		
-//		REVERSE THE SECOND HALF OF THE LIST
-		node = node.next;
+		ListNode node = (fast == null)? slow : slow.next;
 		ListNode prev = null;
 		ListNode next = null;
+		
+		if (fast != null) slow.next = null;
+
+//		Reverse the second half
 		while (node != null) {
 			next = node.next;
 			node.next = prev;
@@ -69,9 +72,8 @@ public class ReorderList implements LeetCodeExercise {
 			node = next;
 		}
 		
-		endOfFirstHalf.next = null;
 		
-//		RE-LINK THE LIST ITERATIVELY
+//		Re-link the list
 		ListNode dummyHead = new ListNode(Integer.MIN_VALUE);
 		node = dummyHead;
 		ListNode first = head;
@@ -94,7 +96,6 @@ public class ReorderList implements LeetCodeExercise {
 		}
 		
 		node.next = null;
-		
 		head = dummyHead.next;
     }
 

@@ -330,7 +330,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = RemoveNthNodeFromEndOfList;
+		int option = SearchForARange;
 
 		switch(option){
 			case TRIE:

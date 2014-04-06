@@ -330,7 +330,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = RegularExpressionMatching;
+		int option = RemoveNthNodeFromEndOfList;
 
 		switch(option){
 			case TRIE:

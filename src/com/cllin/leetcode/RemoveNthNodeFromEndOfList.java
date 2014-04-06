@@ -7,6 +7,10 @@ import com.cllin.main.LeetCodeExercise;
 /*
  * Given a linked list, remove the nth node from the end of list and return its head.
  * 
+ * Note:
+ * Given n will always be valid.
+ * Try to do this in one pass.
+ * 
  * Source: http://oj.leetcode.com/problems/remove-nth-node-from-end-of-list/
  */
 
@@ -50,24 +54,31 @@ public class RemoveNthNodeFromEndOfList implements LeetCodeExercise {
 	}
 	
     private ListNode removeNthFromEnd(ListNode head, int n) {
-    	if (head == null) return null;
-    	else if (n == 0) return head;
+    	ListNode i = head;
+    	ListNode j = head;
     	
-    	ArrayList<ListNode> list = new ArrayList<ListNode>();
-    	
-    	ListNode node = head;
-    	while (node != null) {
-    		list.add(node);
-    		node = node.next;
+    	int count = 0;
+    	while (i != null && count < n) {
+    		i = i.next;
+    		count++;
     	}
     	
-    	int index = list.size() - n;
-    	if (index == list.size() - 1) {
-    		if (index == 0) return null;
-    		else list.get(index - 1).next = null;
-    	} else if (index == 0) {
-    		return head.next;
-    	} else list.get(index - 1).next = list.get(index + 1);
+    	/*
+    	 * Remove the first element
+    	 * It is guaranteed that n is always valid, so no need to worry about cases about n > list size
+    	 */
+    	if (i == null && count == n) {
+    		head = head.next;
+    		return head;
+    	} 
+    	
+    	while (i.next != null) {
+    		i = i.next;
+    		j = j.next;
+    	}
+    	
+    	ListNode next = j.next;
+    	j.next = next.next;
     	
         return head;
     }

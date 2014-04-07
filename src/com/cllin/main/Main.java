@@ -330,7 +330,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = CombinationSumII;
+		int option = DistinctSubsequences;
 
 		switch(option){
 			case TRIE:

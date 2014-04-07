@@ -2,6 +2,16 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). 
+ * n vertical lines are drawn such that the two end points of line i is at (i, ai) and (i, 0). 
+ * Find two lines, which together with x-axis forms a container, such that the container contains the most water.
+ * 
+ * Note: You may not slant the container.
+ * 
+ * Source: http://oj.leetcode.com/problems/container-with-most-water/
+ */
+
 public class ContainerWithMostWater implements LeetCodeExercise {
 	private final int MAXIMUM = 2;
 	private final int SIZE = 100;
@@ -38,8 +48,7 @@ public class ContainerWithMostWater implements LeetCodeExercise {
     	int right = length - 1;
 
     	while (left < right) {
-    		int area = Math.min(height[left], height[right]) * (right - left);
-    		max = Math.max(max, area);
+    		max = Math.max(max, Math.min(height[left], height[right]) * (right - left));
     		
     		if (height[left] > height[right]) right--;
     		else left++;
@@ -47,9 +56,8 @@ public class ContainerWithMostWater implements LeetCodeExercise {
     	
     	return max;
     }
-    
 	
-    private int maxAreaRecursive(int[] height) {
+    private int maxAreaNaive(int[] height) {
     	int length = height.length;
     	if (length == 0) return 0;
     	
@@ -65,7 +73,7 @@ public class ContainerWithMostWater implements LeetCodeExercise {
 
 	@Override
 	public boolean test() {
-		return (area == maxAreaRecursive(height))? true : false;
+		return (area == maxAreaNaive(height))? true : false;
 	}
 
 }

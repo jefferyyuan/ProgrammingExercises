@@ -2,12 +2,25 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * The count-and-say sequence is the sequence of integers beginning as follows:
+ * 1, 11, 21, 1211, 111221, ...
+ * 
+ * 1 is read off as "one 1" or 11.
+ * 11 is read off as "two 1s" or 21.
+ * 21 is read off as "one 2, then one 1" or 1211.
+ * Given an integer n, generate the nth sequence.
+ * 
+ * Note: The sequence of integers will be represented as a string.
+ * 
+ * Source: http://oj.leetcode.com/problems/count-and-say/
+ */
+
 public class CountAndSay implements LeetCodeExercise {
 
 	@Override
 	public void initialize() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -20,32 +33,31 @@ public class CountAndSay implements LeetCodeExercise {
 	
 	private String countAndSay(int n) {
 		String sequence = "1";
-		for (int i = 1; i < n; i++) {
-			sequence = getSequence(sequence);
+		
+		int iteration = 1;
+		while (iteration < n) {
+			int length = sequence.length();
+			StringBuffer buffer = new StringBuffer();
+			
+			int i = 0;
+			while (i < length) {
+				char c = sequence.charAt(i);
+				int count = 1;
+				int j = i + 1;
+				while (j < length && sequence.charAt(j) == c) {
+					count++;
+					j++;
+				}
+				
+				buffer.append(count).append(c);
+				i = j;
+			}
+			
+			sequence = buffer.toString();
+			iteration++;
 		}
 		
     	return sequence;
-	}
-	
-	private String getSequence(String string) {
-		int i = 0;
-		int length = string.length();
-		StringBuffer buffer = new StringBuffer();
-		
-		while (i < length) {
-			char c = string.charAt(i);
-			int number = Character.getNumericValue(string.charAt(i));
-			int count = 1;
-			int j = 0;
-			for (j = i + 1; j < length; j++) {
-				if (string.charAt(j) != c) break;
-				else count++;
-			}
-			
-			buffer.append(count).append(number);
-			i = j;
-		}
-		return buffer.toString();
 	}
 
 	@Override

@@ -4,6 +4,25 @@ import java.util.LinkedList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a 2D board containing 'X' and 'O', capture all regions surrounded by 'X'.
+ * A region is captured by flipping all 'O's into 'X's in that surrounded region.
+ * 
+ * For example,
+ * 		X X X X
+ * 		X O O X
+ * 		X X O X
+ * 		X O X X
+ * 
+ * After running your function, the board should be:
+ * 		X X X X
+ * 		X X X X
+ * 		X X X X
+ * 		X O X X
+ * 
+ * Source: http://oj.leetcode.com/problems/surrounded-regions/
+ */
+
 public class SurroundedRegions implements LeetCodeExercise {
 
 	private final char[][][] testSuite = {

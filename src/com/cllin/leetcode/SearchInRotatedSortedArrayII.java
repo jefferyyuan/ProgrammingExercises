@@ -4,6 +4,13 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Follow up for "Search in Rotated Sorted Array":
+ * What if duplicates are allowed? Would this affect the run-time complexity? How and why?
+ * 
+ * Source: http://oj.leetcode.com/problems/search-in-rotated-sorted-array-ii/
+ */
+
 public class SearchInRotatedSortedArrayII implements LeetCodeExercise {
 	private final int MAXIMUM = 200;
 	private final int SIZE = 100;
@@ -45,32 +52,34 @@ public class SearchInRotatedSortedArrayII implements LeetCodeExercise {
 	}
 	
     private boolean search(int[] numbers, int target) {
-    	int length = numbers.length;
+    	int start = 0;
+    	int end = numbers.length - 1;
     	
-    	if (length == 0) return false;
-    	else if (length == 1) return (numbers[0] == target);
-    	
-    	if (target < numbers[0]) {
-    		for (int i = length - 1; i >= 0; i--) {
-    			if (target == numbers[i]) return true; 
-    			else if (target > numbers[i]) return false;
-    			
-    			if (i > 0 && numbers[i] < numbers[i - 1]) break;
+    	while (start <= end) {
+    		int mid = (start + end) / 2;
+    		
+    		if (numbers[mid] == target) return true;
+    		
+    		if (numbers[start] < numbers[mid]) {
+    			if (numbers[start] <= target && target < numbers[mid]) {
+    				end = mid - 1;
+    			} else {
+    				start = mid + 1;
+    			}
+    		} else if (numbers[start] > numbers[mid]) {
+    			if (numbers[mid] < target && target <= numbers[end]) {
+    				start = mid + 1;
+    			} else {
+    				end = mid - 1;
+    			}
+    		} else {
+    			start++;
     		}
-    	} else if (target > numbers[0]) {
-    		for (int i = 0; i <= length - 1; i++) {
-    			if (target == numbers[i]) return true; 
-    			else if (target < numbers[i]) return false;
-    			
-    			if (i < length - 1 && numbers[i] > numbers[i + 1]) break;
-    		}
-    	} else {
-    		return true;
     	}
     	
     	return false;
     }
-
+    
 	@Override
 	public boolean test() {
 		boolean found = false;

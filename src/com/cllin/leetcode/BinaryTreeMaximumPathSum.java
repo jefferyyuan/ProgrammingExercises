@@ -44,23 +44,31 @@ public class BinaryTreeMaximumPathSum implements LeetCodeExercise {
 		}
 	}
 	
+	int globalMaximum = Integer.MIN_VALUE;
 	private int maxPathSum(TreeNode root) {
 		if (root == null) return 0;
 
-		int[] max = new int[]{Integer.MIN_VALUE};
-		traverse(root, max);
-		return max[0];
+		traverse(root);
+		return globalMaximum;
     }
 	
-	private int traverse(TreeNode node, int[] globalMaximum) {
+	/*
+	 * Compare the path sum of:
+	 * 	1) n
+	 *  2) n + left
+	 *  3) n + right
+	 *  4) n + left + right
+	 *  5) Global maximum
+	 */
+	private int traverse(TreeNode node) {
 		if (node == null) return 0;
 		
 		int n = node.val;
-		int left = traverse(node.left, globalMaximum); 
-		int right = traverse(node.right, globalMaximum);
+		int left = traverse(node.left); 
+		int right = traverse(node.right);
 		
 		int localMaximum = Math.max(n, Math.max(n + left, n + right));
-		globalMaximum[0] = Math.max(globalMaximum[0], Math.max(localMaximum, n + left + right));
+		globalMaximum = Math.max(globalMaximum, Math.max(localMaximum, n + left + right));
 		
 		return localMaximum;
 	}

@@ -6,6 +6,20 @@ import java.util.Collections;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a collection of candidate numbers (C) and a target number (T), 
+ * find all unique combinations in C where the candidate numbers sums to T.
+ * 
+ * Each number in C may only be used once in the combination.
+ * 
+ * Note:
+ * All numbers (including target) will be positive integers.
+ * Elements in a combination (a1, a2, ..., ak) must be in non-descending order. (ie, a1 <= a2 <= ... <= ak).
+ * The solution set must not contain duplicate combinations.
+ * 
+ * Source: http://oj.leetcode.com/problems/combination-sum-ii/
+ */
+
 public class CombinationSumII implements LeetCodeExercise {
 	private static final int[][] testSuite = new int[][]{
 		{},
@@ -73,13 +87,14 @@ public class CombinationSumII implements LeetCodeExercise {
 	
 	private int getNextDistinctNumberIndex(int[] candidates, int currentIndex) {
 		int length = candidates.length;
-		int index = length;
-		int currentNumber = candidates[currentIndex];
-		for (int i = currentIndex + 1; i < length; i++) {
-			if (candidates[i] != currentNumber) return i;
-		} 
 		
-		return index;
+		int i = currentIndex;
+		while (i < length) {
+			if (candidates[i] != candidates[currentIndex]) return i;
+			i++;
+		}
+		
+		return i;
 	}
 
 	@Override

@@ -4,12 +4,19 @@ import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
+/*
+ * Given a binary tree, determine if it is height-balanced.
+ * For this problem, a height-balanced binary tree is defined as a binary tree in which 
+ * the depth of the two subtrees of every node never differ by more than 1.
+ * 
+ * Source: http://oj.leetcode.com/problems/balanced-binary-tree/
+ */
+
 public class BalancedBinaryTree implements LeetCodeExercise {
 	private final int SIZE = 1000;
 	private final int MAXIMUM = 1000;
 	
 	private BinarySearchTree tree;
-    boolean isBalanced;
 	
 	@Override
 	public void initialize() {
@@ -34,6 +41,7 @@ public class BalancedBinaryTree implements LeetCodeExercise {
 		
 	}
 	
+	boolean isBalanced;
     private boolean isBalanced(Node root) {
     	traversal(root, 0);
     	return isBalanced;

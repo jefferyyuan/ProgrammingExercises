@@ -6,6 +6,19 @@ import java.util.Set;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a string s and a dictionary of words dictionary, 
+ * determine if s can be segmented into a space-separated sequence of one or more dictionary words.
+ * 
+ * For example, given
+ * s = "leetcode",
+ * dictionary = ["leet", "code"].
+ * 
+ * Return true because "leetcode" can be segmented as "leet code".
+ * 
+ * Source: http://oj.leetcode.com/problems/word-break/
+ */
+
 public class WordBreak implements LeetCodeExercise {
 
 	private final TestCase[] testSuite = {
@@ -37,6 +50,9 @@ public class WordBreak implements LeetCodeExercise {
 		}
 	}
 
+	/*
+	 * B(i) = A(i, n) is breakable by words from the dictionary
+	 */
 	private boolean wordBreak(String string, Set<String> dictionary) {
 		if (string == null) return false;
 		

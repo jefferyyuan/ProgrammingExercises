@@ -6,6 +6,21 @@ import java.util.Set;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a string s and a dictionary of words dictionary, 
+ * add spaces in s to construct a sentence where each word is a valid dictionary word.
+ * 
+ * Return all such possible sentences.
+ * 
+ * For example, given
+ * s = "catsanddog",
+ * dictionary = ["cat", "cats", "and", "sand", "dog"].
+ * 
+ * A solution is ["cats and dog", "cat sand dog"].
+ * 
+ * Source: http://oj.leetcode.com/problems/word-break-ii/
+ */
+
 public class WordBreakII implements LeetCodeExercise {
 
 	private int index;
@@ -85,6 +100,7 @@ public class WordBreakII implements LeetCodeExercise {
 		}
 	}
 	
+//	Modified version of Word Break I
 	private ArrayList<String> wordBreak(String string, Set<String> dictionary) {
 		ArrayList<String> solutions = new ArrayList<String>();
 		if (string == null || string.length() == 0 || dictionary == null || dictionary.isEmpty()) {

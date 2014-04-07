@@ -5,9 +5,19 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+ * (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+ * 
+ * You are given a target value to search. If found in the array return its index, otherwise return -1.
+ * You may assume no duplicate exists in the array
+ * 
+ * Source: http://oj.leetcode.com/problems/search-in-rotated-sorted-array/
+ */
+
 public class SearchInRotatedSortedArray implements LeetCodeExercise {
-	private final int MAXIMUM = 200;
-	private final int SIZE = 100;
+	private final int MAXIMUM = 20;
+	private final int SIZE = 10;
 	
 	private int[] numbers;
 	private int target;
@@ -51,6 +61,9 @@ public class SearchInRotatedSortedArray implements LeetCodeExercise {
 		for (int i = 0; i < 10; i++) {
 			initialize();
 			
+			numbers = new int[]{1, 3, 5};
+			target = 1;
+			
 			result = search(numbers, target);
 			if (test()) System.out.println("Success");
 			else System.out.println("Failed");	
@@ -58,31 +71,30 @@ public class SearchInRotatedSortedArray implements LeetCodeExercise {
 	}
 	
     private int search(int[] numbers, int target) {
-    	int index = -1;
-    	int length = numbers.length;
+    	int start = 0;
+    	int end = numbers.length - 1;
     	
-    	if (length == 0) return index;
-    	else if (length == 1) return (numbers[0] == target)? 0 : index;
-    	
-    	if (target < numbers[0]) {
-    		for (int i = length - 1; i >= 0; i--) {
-    			if (target == numbers[i]) return i; 
-    			else if (target > numbers[i]) return index;
-    			
-    			if (i > 0 && numbers[i] < numbers[i - 1]) break;
+    	while (start <= end) {
+    		int mid = (start + end) / 2;
+    		
+    		if (numbers[mid] == target) return mid;
+    		
+    		if (numbers[start] <= numbers[mid]) {
+    			if (numbers[start] <= target && target < numbers[mid]) {
+    				end = mid - 1;
+    			} else {
+    				start = mid + 1;
+    			}
+    		} else {
+    			if (numbers[mid] < target && target <= numbers[end]) {
+    				start = mid + 1;
+    			} else {
+    				end = mid - 1;
+    			}
     		}
-    	} else if (target > numbers[0]) {
-    		for (int i = 0; i <= length - 1; i++) {
-    			if (target == numbers[i]) return i; 
-    			else if (target < numbers[i]) return index;
-    			
-    			if (i < length - 1 && numbers[i] > numbers[i + 1]) break;
-    		}
-    	} else {
-    		return 0;
     	}
     	
-    	return index;
+    	return -1;
     }
 
 	@Override

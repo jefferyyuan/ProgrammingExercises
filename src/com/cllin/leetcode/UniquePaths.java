@@ -2,6 +2,16 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * A robot is located at the top-left corner of a m x n grid.
+ * The robot can only move either down or right at any point in time.
+ * The robot is trying to reach the bottom-right corner of the grid.
+ * 
+ * How many possible unique paths are there?
+ * 
+ * Source: http://oj.leetcode.com/problems/unique-paths/
+ */
+
 public class UniquePaths implements LeetCodeExercise {
 	private final int MAXIMUM = 10;
 	
@@ -20,11 +30,6 @@ public class UniquePaths implements LeetCodeExercise {
 			System.out.printf("There are %d unique paths to reach another conrner of a %d * %d grid%n", paths, m, n);
 		}
 	}
-	
-    @SuppressWarnings("unused")
-	private int uniquePathsInRecursive(int m, int n) {
-    	return (m == 1 || n == 1)? 1 : uniquePathsInRecursive(m - 1, n) + uniquePathsInRecursive(m, n - 1);
-    }
     
     private int uniquePaths(int m, int n) {
     	if (m == 1 || n == 1) return 1;

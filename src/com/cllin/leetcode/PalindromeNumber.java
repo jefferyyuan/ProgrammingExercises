@@ -23,8 +23,7 @@ public class PalindromeNumber implements LeetCodeExercise {
 	}
 	
     private boolean isPalindrome(int x) {
-    	if (x == 0) return true;
-    	else if (x < 0) return false;
+    	if (x <= 0) return x == 0;
     	
     	int digits = 0;
     	int reference = x;
@@ -34,15 +33,17 @@ public class PalindromeNumber implements LeetCodeExercise {
     		digits++;
     	}
     	
-    	int boundary = digits / 2;
-    	int shift = digits - 1;
-    	for (int i = 0; x > 0 && i <= boundary; i++) {
-    		int d = x / (int) Math.pow(10, shift);
+    	digits--;
+    	while (x > 0) {
+    		int head = x / (int) Math.pow(10, digits);
+    		int tail = x % 10;
     		
-    		if ((x - d) % 10 != 0) return false;
-    		x -= (d + d * (int) Math.pow(10, shift));
+    		if (head != tail) return false;
+    		
+    		x -= tail;
+    		x %= (int) Math.pow(10, digits);
     		x /= 10;
-    		shift -= 2;
+    		digits -= 2;
     	}
     	
         return true;

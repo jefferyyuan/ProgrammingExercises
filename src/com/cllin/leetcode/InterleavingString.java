@@ -2,6 +2,19 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given s1, s2, s3, find whether s3 is formed by the interleaving of s1 and s2.
+ * 
+ * For example,
+ * Given:
+ * 		s1 = "aabcc",
+ * 		s2 = "dbbca",
+ * 		When s3 = "aadbbcbcac", return true.
+ * 		When s3 = "aadbbbaccc", return false.
+ * 
+ * Source: http://oj.leetcode.com/problems/interleaving-string/
+ */
+
 public class InterleavingString implements LeetCodeExercise {
 
 	private final TestCase[] testSuite = {
@@ -26,6 +39,17 @@ public class InterleavingString implements LeetCodeExercise {
 		}
 	}
 	
+	/*
+	 * S(i, j) = Is S3(i + j) an interleave of S1(0, i) and S2(0, j)
+	 * If S1(i) == S3(i + j) && S2(j) != S3(i + j)
+	 * 		S(i, j) = S(i - 1, j)
+	 * If S1(i) != S3(i + j) && S2(j) == S3(i + j)
+	 * 		S(i, j) = S(i, j - 1)
+	 * If S1(i) == S3(i + j) && S2(j) == S3(i + j)
+	 * 		S(i, j) = S(i - 1, j) || S(i, j - 1)
+	 * ELSE
+	 * 		S(i, j) = false
+	 */
 	private boolean isInterleave(String s1, String s2, String s3) {
 		if (s3 == null) return (s1 == null && s2 == null);
 		if (s1 == null || s2 == null) {
@@ -42,24 +66,25 @@ public class InterleavingString implements LeetCodeExercise {
 		
 		boolean[][] table = new boolean[l1 + 1][l2 + 1];
 		
-		for (int i = 0; i < l1 + 1; i++) {
-			for (int j = 0; j < l2 + 1; j++) {
-				if (i == 0 || j == 0) {
-					if (i == 0 && j == 0) {
-						table[i][j] = true;
-					} else if (i == 0 && s2.charAt(j - 1) == s3.charAt(j - 1)) {
-						table[i][j] = table[i][j - 1];
-					} else if (j == 0 && s1.charAt(i - 1) == s3.charAt(i - 1)) {
-						table[i][j] = table[i - 1][j];
-					} 
+		table[0][0] = true;
+		for (int i = 1; i < l1 + 1; i++) {
+			table[i][0] = (s1.charAt(i - 1) == s3.charAt(i - 1))? table[i - 1][0] : false;
+		}
+		
+		for (int j = 1; j < l2 + 1; j++) {
+			table[0][j] = (s2.charAt(j - 1) == s3.charAt(j - 1))? table[0][j - 1] : false;
+		}
+		
+		for (int i = 1; i < l1 + 1; i++) {
+			for (int j = 1; j < l2 + 1; j++) {
+				if (s1.charAt(i - 1) == s3.charAt(i + j - 1) && s2.charAt(j - 1) != s3.charAt(i + j - 1)) {
+					table[i][j] = table[i - 1][j];
+				} else if (s1.charAt(i - 1) != s3.charAt(i + j - 1) && s2.charAt(j - 1) == s3.charAt(i + j - 1)) {
+					table[i][j] = table[i][j - 1];
+				} else if (s1.charAt(i - 1) == s3.charAt(i + j - 1) && s2.charAt(j - 1) == s3.charAt(i + j - 1)) {
+					table[i][j] = table[i - 1][j] || table[i][j - 1];
 				} else {
-					if (s1.charAt(i - 1) == s3.charAt(i + j - 1) && s2.charAt(j - 1) != s3.charAt(i + j - 1)) {
-						table[i][j] = table[i - 1][j];
-					} else if (s1.charAt(i - 1) != s3.charAt(i + j - 1) && s2.charAt(j - 1) == s3.charAt(i + j - 1)) {
-						table[i][j] = table[i][j - 1];
-					} else if (s1.charAt(i - 1) == s3.charAt(i + j - 1) && s2.charAt(j - 1) == s3.charAt(i + j - 1)) {
-						table[i][j] = table[i - 1][j] || table[i][j - 1];
-					}
+					table[i][j] = false;
 				}
 			}
 		}

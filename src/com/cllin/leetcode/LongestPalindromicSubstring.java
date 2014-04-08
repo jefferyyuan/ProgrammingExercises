@@ -2,6 +2,12 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a string S, find the longest palindromic substring in S. 
+ * You may assume that the maximum length of S is 1000, and there exists one unique longest palindromic substring.
+ * 
+ * Source: http://oj.leetcode.com/problems/longest-palindromic-substring/
+ */
 
 public class LongestPalindromicSubstring implements LeetCodeExercise {
 
@@ -41,55 +47,27 @@ public class LongestPalindromicSubstring implements LeetCodeExercise {
 		if (string == null) return null;
 		if (string.length() == 0) return new String();
 		
-    	return getLongestPalindrome(string, 0, string.length() - 1);
+		int length = string.length();
+		String longest = string.substring(0, 1);
+		
+		for (int i = 0; i < length; i++) {
+			String oneSeed = getPalindrome(string, i, i);
+			String twoSeeds = getPalindrome(string, i, i + 1);
+			String localLongest = (oneSeed.length() > twoSeeds.length())? oneSeed : twoSeeds;
+			
+			if (localLongest.length() > longest.length()) longest = localLongest;
+		}
+		
+    	return longest;
     }
 	
-	private String getLongestPalindrome(String string, int start, int end) {
-		if (start > end) return new String();
-		if (start == end) return Character.toString(string.charAt(start));
-		
-		int mid = (start + end) / 2;
-		
-		String a1 = getLongestPalindromeAcross(string, mid);
-		String a2 = getLongestPalindromeAcross(string, mid - 1);
-		
-		String longestAcross = (a1.length() > a2.length())? a1 : a2;
-		
-		if (longestAcross.length() == string.length()) return longestAcross;
-		
-		String longestFromLeft = getLongestPalindrome(string, start, mid);
-		String longestFromRight = getLongestPalindrome(string, mid + 1, end);
-
-		if (longestFromLeft.length() > longestFromRight.length()) {
-			return (longestFromLeft.length() > longestAcross.length())? longestFromLeft : longestAcross;
-		} else {
-			return (longestFromRight.length() > longestAcross.length())? longestFromRight : longestAcross;
-		}
-	}
-	
-	private String getLongestPalindromeAcross(String string, int mid) {
-		int length = string.length();
-		if (mid < 0 || mid >= length) return new String();
-		
-		StringBuffer both1 = new StringBuffer(Character.toString(string.charAt(mid)));
-		for (int i = 1; mid - i >= 0 && mid + i < length; i++) {
-			if (string.charAt(mid - i) != string.charAt(mid + i)) break;
-			
-			both1.insert(0, string.charAt(mid - i));
-			both1.append(string.charAt(mid - i));
+	private String getPalindrome(String string, int start, int end) {
+		while (start >= 0 && end < string.length() && string.charAt(start) == string.charAt(end)) {
+			start--;
+			end++;
 		}
 		
-		StringBuffer both2 = new StringBuffer();
-		for (int i = 0; mid - i >= 0 && mid + 1 + i < length; i++) {
-			if (string.charAt(mid - i) != string.charAt(mid + 1 + i)) {
-				break;
-			}
-			
-			both2.insert(0, string.charAt(mid - i));
-			both2.append(string.charAt(mid - i));
-		}
-		
-		return (both1.length() > both2.length())? both1.toString() : both2.toString();
+		return string.substring(start + 1, end);
 	}
 
 	@Override

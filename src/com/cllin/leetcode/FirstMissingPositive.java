@@ -36,14 +36,18 @@ public class FirstMissingPositive implements LeetCodeExercise {
 		int length = array.length;
 		int shift = segregate(array);
 		
-		int index;
+		/*
+		 * Save the count of each valid number in negative number
+		 * Count of 1 should be saved in array[shift]
+		 */
 		for (int i = shift; i < length; i++) {
-			index = Math.abs(array[i]) - 1 + shift;
+			int index = Math.abs(array[i]) - 1 + shift;
 			if (index < length && array[index] > 0) {
 				array[index] = (-1) * array[index];
 			}
 		}
-		
+	
+//		Starting from 1, which is saved in array[shift], iterate the array until the first non-negative number 
 		for (int i = shift; i < length; i++) {
 			if (array[i] > 0) {
 				return i - shift + 1;
@@ -53,6 +57,7 @@ public class FirstMissingPositive implements LeetCodeExercise {
 		return length - shift + 1;
     }
 	
+//	Move all non-positive number to the left of the array
 	private int segregate(int[] array) {
 		int temp;
 		int shift = 0;

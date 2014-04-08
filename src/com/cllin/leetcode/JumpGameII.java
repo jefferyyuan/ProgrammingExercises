@@ -24,7 +24,7 @@ public class JumpGameII implements LeetCodeExercise {
 
 	@Override
 	public void runExercise() {
-		for (index = 6; index < testSuite.length; index++) {
+		for (index = 0; index < testSuite.length; index++) {
 			numMinimumJumps = jump(testSuite[index]);
 			test();
 		}

@@ -2,6 +2,20 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
+ * If such arrangement is not possible, it must rearrange it as the lowest possible order (ie, sorted in ascending order).
+ * 
+ * The replacement must be in-place, do not allocate extra memory.
+ * 
+ * Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
+ * 		1,2,3 -> 1,3,2
+ * 		3,2,1 -> 1,2,3
+ * 		1,1,5 -> 1,5,1
+ * 
+ * Source: http://oj.leetcode.com/problems/next-permutation/
+ */
+
 public class NextPermutation implements LeetCodeExercise {
 	private final int[][] testSuite = {
 			{1, 2, 3}, 
@@ -71,7 +85,7 @@ public class NextPermutation implements LeetCodeExercise {
 			num[p] = num[q];
 			num[q] = buf;
 			
-//			Sort the numbers after i
+//			Sort the numbers after p
 			for (int i = p + 1; i < length; i++) {
 				for (int j = i + 1; j < length; j++) {
 					if (num[i] > num[j]) {

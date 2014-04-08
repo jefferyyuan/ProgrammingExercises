@@ -2,6 +2,13 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a string, find the length of the longest substring without repeating characters. 
+ * For example, the longest substring without repeating letters for "abcabcbb" is "abc", which the length is 3. 
+ * For "bbbbb" the longest substring is "b", with the length of 1.
+ * 
+ * Source: http://oj.leetcode.com/problems/longest-substring-without-repeating-characters/
+ */
 
 public class LongestSubstringWithoutRepeatingCharacters implements
 		LeetCodeExercise {
@@ -29,6 +36,12 @@ public class LongestSubstringWithoutRepeatingCharacters implements
 		}
 	}
 	
+	/*
+	 * L(i) = Longest valid substring in A(0, i)
+	 * L(i + 1) = 
+	 * 		1) If A(i + 1) does not exist in the current longest substring, L(i + 1)
+	 * 		2) Else, the length of the new substring, which starts after the previous A(i + 1) 
+	 */
     private int lengthOfLongestSubstring(String string) {
     	if (string == null || string.length() == 0) return 0; 
 

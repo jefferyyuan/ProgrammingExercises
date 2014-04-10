@@ -13,20 +13,20 @@
  
 ======
 ###<a name="1"></a>DATA STRUCTURE
-1. TRIE
-2. LINKED LIST
+1. Trie
+2. Linked List
 
 ###<a name="2"></a>OPERATOR
-1. EXCLUSIVE OR
-2. BITWISE OPERATIONS
-3. TERNARY OPERATORS
+1. Exclusive Or
+2. Bitwise Operations
+3. Ternary Operations
 
 ###<a name="3"></a>SORTING
-1. INSERTION SORT
-2. MERGE SORT
-3. HEAP SORT
-4. QUICK SORT
-5. COUNTING SORT
+1. Insertion Sort
+2. Merge Sort
+3. Heap Sort
+4. Quick Sort
+5. Counting Sort
 
 ###<a name="4"></a>EXERCISE FROM CRACKING THE CODING INTERVIEW
 1. EXERCISE 19-10

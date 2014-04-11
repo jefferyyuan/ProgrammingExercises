@@ -6,12 +6,17 @@ import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
+/*
+ * Given a binary tree and a sum, find all root-to-leaf paths where each path's sum equals the given sum.
+ * 
+ * Source: http://oj.leetcode.com/problems/path-sum-ii/
+ */
+
 public class PathSumII implements LeetCodeExercise {
 	private final int MAXIMUM = 10;
 	private final int SIZE = 10;
 	
 	private BinarySearchTree tree;
-	private ArrayList<ArrayList<Integer>> result;
 	
 	@Override
 	public void initialize() {
@@ -38,6 +43,7 @@ public class PathSumII implements LeetCodeExercise {
 		}
 	}
 	
+	private ArrayList<ArrayList<Integer>> result;
     private ArrayList<ArrayList<Integer>> pathSum(Node root, int target) {
     	result = new ArrayList<ArrayList<Integer>>();
     	

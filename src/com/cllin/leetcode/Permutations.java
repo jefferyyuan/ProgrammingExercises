@@ -1,6 +1,7 @@
 package com.cllin.leetcode;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
@@ -40,36 +41,45 @@ public class Permutations implements LeetCodeExercise {
 	
     private ArrayList<ArrayList<Integer>> permute(int[] num) {
     	int length = num.length;
-    	ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-    	result.add(new ArrayList<Integer>());
     	
-    	if (length == 0) return result;
-    	
-    	int[] n = new int[length - 1];
-    	for (int i = 0; i < length; i++) {
-    		ArrayList<ArrayList<Integer>> r = new ArrayList<ArrayList<Integer>>();
-    		
-    		int index = 0;
-    		for (int j = 0; j < length; j++) {
-    			if (j != i) {
-    				n[index] = num[j];
-    				index++;
-    			}
-    		}
-    		
-    		r = permute(n);
-    		for (ArrayList<Integer> l : r) l.add(num[i]); 
-    		
-    		result.addAll(r);
+    	if (length == 0) {
+    		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+    		result.add(new ArrayList<Integer>());
+    		return result;
     	}
     	
-//    	This is not necessary if it is guaranteed that there are no duplicate elements 
-    	for (int i = 0; i < result.size(); i++) {
-    		if (result.get(i).size() < length) result.remove(i);
-    		
-    		for (int j = i + 1; j < result.size(); j++) {
-    			if (result.get(i).equals(result.get(j))) result.remove(j);
+    	Arrays.sort(num);
+        return getPermutations(num, 1);
+    }
+    
+    private ArrayList<ArrayList<Integer>> getPermutations(int[] num, int level) {
+    	int length = num.length;
+    	ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+    	
+    	if (level == num.length) {
+    		for (int i = 0; i < length; i++) {
+    			if (num[i] != Integer.MIN_VALUE) {
+    				ArrayList<Integer> r = new ArrayList<Integer>();
+    				r.add(num[i]);
+    				result.add(r);
+    				return result;
+    			}
     		}
+    	}
+    	
+    	for (int i = 0; i < length; i++) {
+    		if (num[i] == Integer.MIN_VALUE) continue;
+    		
+    		int temp = num[i];
+    		ArrayList<ArrayList<Integer>> r = new ArrayList<ArrayList<Integer>>();
+
+    		num[i] = Integer.MIN_VALUE;
+    		
+    		r = getPermutations(num, level + 1);
+    		for (ArrayList<Integer> l : r) l.add(temp); 
+    		
+    		result.addAll(r);
+    		num[i] = temp;
     	}
     	
         return result;

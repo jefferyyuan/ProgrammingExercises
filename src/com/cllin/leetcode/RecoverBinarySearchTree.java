@@ -2,6 +2,12 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Two elements of a binary search tree (BST) are swapped by mistake.
+ * Recover the tree without changing its structure.
+ * 
+ * Source: http://oj.leetcode.com/problems/recover-binary-search-tree/
+ */
 
 public class RecoverBinarySearchTree implements LeetCodeExercise {
 	
@@ -44,9 +50,13 @@ public class RecoverBinarySearchTree implements LeetCodeExercise {
 		}
 	}
 	
-	TreeNode first;
-	TreeNode second;
-	TreeNode prev;
+	/*
+	 * Iterate the tree, if these is a node in wrong place, store its address.
+	 * Swap the nodes if there are nodes that are in wrong place.
+	 */
+	private TreeNode first;
+	private TreeNode second;
+	private TreeNode prev;
     private void recoverTree(TreeNode root) {
     	if (root == null) return;
     	

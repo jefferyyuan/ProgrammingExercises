@@ -2,6 +2,13 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a non-negative number represented as an array of digits, plus one to the number.
+ * The digits are stored such that the most significant digit is at the head of the list.
+ * 
+ * Source: http://oj.leetcode.com/problems/plus-one/
+ */
+
 public class PlusOne implements LeetCodeExercise {
 	private final int MAXIMUM = 10;
 	

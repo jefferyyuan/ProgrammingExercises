@@ -2,9 +2,28 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an array with n objects colored red, white or blue, 
+ * sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.
+ * 
+ * Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
+ * 
+ * Note:
+ * You are not suppose to use the library's sort function for this problem.
+ * 
+ * Follow up:
+ * A rather straight forward solution is a two-pass algorithm using counting sort.
+ * First, iterate the array counting number of 0's, 1's, and 2's, 
+ * then overwrite array with total number of 0's, then 1's and followed by 2's.
+ * 
+ * Could you come up with an one-pass algorithm using only constant space?
+ * 
+ * Source: http://oj.leetcode.com/problems/sort-colors/
+ */
+
 public class SortColors implements LeetCodeExercise {
 	private final int MAXIMUM = 3;
-	private final int SIZE = 1000;
+	private final int SIZE = 10;
 	
 	private int[] numbers;
 	
@@ -28,23 +47,32 @@ public class SortColors implements LeetCodeExercise {
 	}
 	
     private int[] sortColors(int[] A) {
-    	int length = A.length;
-    	if (length == 0) return null;
+    	if (A.length == 0) return null;
     	
-    	int[] counts = {0, 0, 0};
+    	int R = 0;
+    	int B = A.length - 1;
     	
-    	for (int i = 0; i < length; i++) counts[A[i]]++;
-
-    	int firstBound = counts[0];
-    	int secondBound = counts[0] + counts[1];
-    	
-    	for (int i = 0; i < length; i++) {
-    		if (i < firstBound) A[i] = 0;
-    		else if (i < secondBound) A[i] = 1;
-    		else A[i] = 2;
+    	int i = 0;
+    	while (i < B + 1) {
+    		switch(A[i]) {
+    		case 0:
+    			swap(A, R++, i);
+    			break;
+    		case 2:
+    			swap(A, B--, i);
+    			continue;
+    		}
+    		
+    		i++;
     	}
     	
         return A;
+    }
+    
+    private void swap(int[] A, int x, int y) {
+    	int temp = A[x];
+    	A[x] = A[y];
+    	A[y] = temp;
     }
 
 	@Override

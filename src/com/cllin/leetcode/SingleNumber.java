@@ -4,6 +4,15 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an array of integers, every element appears twice except for one. Find that single one.
+ * 
+ * Note:
+ * Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+ * 
+ * Source: http://oj.leetcode.com/problems/single-number/
+ */
+
 public class SingleNumber implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
 	private final int SIZE = 100;
@@ -27,16 +36,20 @@ public class SingleNumber implements LeetCodeExercise {
 	public void runExercise() {
 		initialize();
 		
-		int length = array.length;
-		int number = 0;
-		for(int i = 0; i < length; i++){
-			number ^= array[i];
-		}
-		result = number;
+		result = singleNumber(array);
 
 		if (test()) System.out.printf("%d is the single number%n", result);
 		else System.out.println("Failed");
 	}
+	
+    public int singleNumber(int[] A) {
+		int number = 0;
+		for (int i = 0; i < A.length; i++) {
+			number ^= A[i];
+		}
+		
+		return number;
+    }
 
 	@Override
 	public boolean test() {

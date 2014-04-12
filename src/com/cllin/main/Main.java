@@ -330,7 +330,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = RotateList;
+		int option = SpiralMatrix;
 
 		switch(option){
 			case TRIE:

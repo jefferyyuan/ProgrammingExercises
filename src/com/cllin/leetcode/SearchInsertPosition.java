@@ -4,6 +4,21 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a sorted array and a target value, return the index if the target is found. 
+ * If not, return the index where it would be if it were inserted in order.
+ * 
+ * You may assume no duplicates in the array.
+ * 
+ * Here are few examples.
+ * [1,3,5,6], 5 -> 2
+ * [1,3,5,6], 2 -> 1
+ * [1,3,5,6], 7 -> 4
+ * [1,3,5,6], 0 -> 0
+ * 
+ * Source: http://oj.leetcode.com/problems/search-insert-position/
+ */
+
 public class SearchInsertPosition implements LeetCodeExercise {
 	private final int MAXIMUM = 10;
 	private final int SIZE = 10;
@@ -27,18 +42,12 @@ public class SearchInsertPosition implements LeetCodeExercise {
 	}
 	
     public int searchInsert(int[] A, int target) {
-    	int position = -1;
-    	int length = A.length;
-    	
-    	if (length < 1) return position;
-    	if (target <= A[0]) return 0;
-    	if (A[length - 1] < target) return length;
-    	
-    	for (int i = 0; i < length - 1; i++) {
-    		if (A[i] < target && target <= A[i + 1]) return i + 1; 
+    	int position = 0;
+    	while (position < A.length && target > A[position]) {
+    		position++;
     	}
     	
-        return length;
+        return position;
     }
 
 	@Override

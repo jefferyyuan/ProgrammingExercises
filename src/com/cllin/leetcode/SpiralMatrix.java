@@ -4,6 +4,22 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
+ * 
+ * For example,
+ * Given the following matrix:
+ * 	[
+ * 	 [ 1, 2, 3 ],
+ * 	 [ 4, 5, 6 ],
+ * 	 [ 7, 8, 9 ]
+ * 	]
+ * 
+ * You should return [1,2,3,6,9,8,7,4,5].
+ * 
+ * Source: http://oj.leetcode.com/problems/spiral-matrix/
+ */
+
 public class SpiralMatrix implements LeetCodeExercise {
 
 	private final int[][][] testSuite = {
@@ -61,7 +77,7 @@ public class SpiralMatrix implements LeetCodeExercise {
 		if (matrix == null || matrix.length == 0) return output;
 		
 		int index = -1;
-		while (!isFinished(matrix, index)) {
+		while (!isFinished(matrix, index + 1)) {
 			index = goRightOrLeft(output, matrix, goRight, index);
 			index = goUpOrDown(output, matrix, goDown, index);
 			index = goRightOrLeft(output, matrix, goLeft, index);
@@ -83,9 +99,9 @@ public class SpiralMatrix implements LeetCodeExercise {
 			j = 0;
 		}
 		
-		while (0 <= j && j < cols && i < rows && matrix[i][j] != -2147483648) {
+		while (0 <= j && j < cols && i < rows && matrix[i][j] != Integer.MIN_VALUE) {
 			output.add(matrix[i][j]);
-			matrix[i][j] = -2147483648;
+			matrix[i][j] = Integer.MIN_VALUE;
 			j += delta;
 		}
 		
@@ -100,9 +116,9 @@ public class SpiralMatrix implements LeetCodeExercise {
 		int i = index / cols + delta;
 		int j = index % cols;
 		
-		while (0 <= i && i < rows && j < cols && matrix[i][j] != -2147483648) {
+		while (0 <= i && i < rows && j < cols && matrix[i][j] != Integer.MIN_VALUE) {
 			output.add(matrix[i][j]);
-			matrix[i][j] = -2147483648;
+			matrix[i][j] = Integer.MIN_VALUE;
 			i += delta;
 		}
 		
@@ -110,16 +126,12 @@ public class SpiralMatrix implements LeetCodeExercise {
 	}
 	
 	private boolean isFinished(int[][] matrix, int index) {
-		int rows = matrix.length;
 		int cols = matrix[0].length;
 		
-		for (int i = 0; i < rows; i++) {
-			for (int j = 0; j < cols; j++) {
-				if (matrix[i][j] != -2147483648) return false;
-			}
-		}
+		int i = index / cols;
+		int j = index % cols;
 		
-		return true;
+		return i >= matrix.length || matrix[i][j] == Integer.MIN_VALUE;
 	}
 
 	@Override

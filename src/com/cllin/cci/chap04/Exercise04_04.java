@@ -7,6 +7,7 @@ import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
+@SuppressWarnings("unused")
 public class Exercise04_04 implements Exercise {
 	private final int MAXIMUM = 10;
 	private final int SIZE = 5;

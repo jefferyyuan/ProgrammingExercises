@@ -4,6 +4,15 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an array of integers, every element appears three times except for one. Find that single one.
+ * 
+ * Note:
+ * Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+ * 
+ * Source: http://oj.leetcode.com/problems/single-number-ii/
+ */
+
 public class SingleNumberII implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
 	private final int SIZE = 3;
@@ -43,8 +52,6 @@ public class SingleNumberII implements LeetCodeExercise {
         int[] count = new int[32];
         
         Arrays.fill(count, 0);
-        
-        if (length % 3 != 1) return -1;
         
         for (int i = 0; i < 32; i++) {
         	for (int j = 0; j < length; j++) {

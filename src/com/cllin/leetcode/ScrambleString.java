@@ -4,6 +4,12 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a string s1, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.
+ * 
+ * Source: http://oj.leetcode.com/problems/scramble-string/
+ */
+
 public class ScrambleString implements LeetCodeExercise {
 
 	private final TestCase[] testSuite = {

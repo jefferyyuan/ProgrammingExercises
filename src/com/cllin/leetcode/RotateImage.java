@@ -2,6 +2,16 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * You are given an n x n 2D matrix representing an image.
+ * Rotate the image by 90 degrees (clockwise).
+ * 
+ * Follow up:
+ * Could you do this in-place?
+ * 
+ * Source: http://oj.leetcode.com/problems/rotate-image/
+ */
+
 public class RotateImage implements LeetCodeExercise {
 	private final int SIZE = 2;
 	private final int MAXIMUM = 10;
@@ -32,6 +42,9 @@ public class RotateImage implements LeetCodeExercise {
 		else System.out.println("Failed");	
 	}
 	
+	/*
+	 * Swap diagonally then swap horizontally
+	 */
     public void rotate(int[][] matrix) {
     	if (matrix.length == 0 || matrix[0].length == 0) return;
     	

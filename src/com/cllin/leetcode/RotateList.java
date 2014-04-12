@@ -1,8 +1,16 @@
 package com.cllin.leetcode;
 
-import java.util.Stack;
-
 import com.cllin.main.LeetCodeExercise;
+
+/*
+ * Given a list, rotate the list to the right by k places, where k is non-negative.
+ * 
+ * For example:
+ * Given 1 -> 2 -> 3 -> 4 -> 5 -> NULL and k = 2,
+ * return 4 -> 5 -> 1 -> 2 -> 3 -> NULL.
+ * 
+ * Source: http://oj.leetcode.com/problems/rotate-list/
+ */
 
 public class RotateList implements LeetCodeExercise {
 	
@@ -34,37 +42,38 @@ public class RotateList implements LeetCodeExercise {
 	private ListNode rotateRight(ListNode head, int n) {
 		if (head == null || n == 0) return head;
 		
-		ListNode node = head;
-		Stack<ListNode> stack = new Stack<ListNode>();
-		while (node != null) {
-			stack.push(node);
+		ListNode fast = head;
+		ListNode slow = head;
+		ListNode newTail = slow;
+		
+//		Get the head of the new list
+		int count = 0;
+		while (fast != null && count < n) {
+			fast = fast.next;
+			count++;
+		}
+		
+//		If n > list size
+		if (fast == null) {
+			return rotateRight(head, n % count);
+		}
+		
+		while (fast != null) {
+			fast = fast.next;
+			newTail = slow;
+			slow = slow.next;
+		}
+		
+//		Get the tail of the first half of the new string, append the second half to it
+		ListNode node = slow;
+		while (node.next != null) {
 			node = node.next;
 		}
 		
-		int size = stack.size();
-		if (n >= size) {
-			return rotateRight(head, n % size);
-		}
-		
-		ListNode tempTail = stack.pop();
-		for (int i = 1; i < n; i++) {
-			node = stack.pop();
-		}
-		head = (n == 1)? tempTail : node;
-		
-		ListNode newTail = stack.pop();
-		if (stack.isEmpty()) {
-			node = newTail;
-		} else {
-			while (!stack.isEmpty()) {
-				node = stack.pop();
-			}
-		}
-		
-		tempTail.next = node;
+		node.next = head;
 		newTail.next = null;
 		
-    	return head;
+    	return slow;
     }
 
 	@Override

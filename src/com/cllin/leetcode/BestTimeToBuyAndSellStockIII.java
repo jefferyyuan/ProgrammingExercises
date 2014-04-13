@@ -4,6 +4,16 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Say you have an array for which the i-th element is the price of a given stock on day i.
+ * Design an algorithm to find the maximum profit. You may complete at most two transactions.
+ * 
+ * Note:
+ * You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).
+ * 
+ * Source: http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+ */
+
 public class BestTimeToBuyAndSellStockIII implements LeetCodeExercise {
 	private final int[][] testSuite = {
 			{1, 2},
@@ -42,9 +52,9 @@ public class BestTimeToBuyAndSellStockIII implements LeetCodeExercise {
 		int peak = prices[length - 1];
 		int maximumProfit = 0;
 		
-		for (int i = 0; i < length; i++) {
+		for (int i = 1; i < length; i++) {
 			valley = Math.min(valley, prices[i]);
-			if (i >= 1) historyMaximumProfit[i] = Math.max(prices[i] - valley, historyMaximumProfit[i - 1]);
+			historyMaximumProfit[i] = Math.max(prices[i] - valley, historyMaximumProfit[i - 1]);
 		}
 		
 		for (int i = length - 1; i >= 0; i--) {
@@ -53,7 +63,6 @@ public class BestTimeToBuyAndSellStockIII implements LeetCodeExercise {
 			
 			maximumProfit = Math.max(historyMaximumProfit[i] + futureMaximumProfit[i], maximumProfit);
 		}
-		
 		
 		return maximumProfit;
     }

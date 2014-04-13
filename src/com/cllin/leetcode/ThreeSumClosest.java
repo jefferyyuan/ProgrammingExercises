@@ -4,6 +4,16 @@ import java.util.Arrays;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target. 
+ * Return the sum of the three integers. You may assume that each input would have exactly one solution.
+ * 
+ * For example, 
+ * given array S = {-1 2 1 -4}, and target = 1.
+ * The sum that is closest to the target is 2. (-1 + 2 + 1 = 2).
+ * 
+ * Source: http://oj.leetcode.com/problems/3sum-closest/
+ */
 
 public class ThreeSumClosest implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
@@ -20,13 +30,10 @@ public class ThreeSumClosest implements LeetCodeExercise {
 		for (int i = 0; i < SIZE; i++) {
 			numbers[i] = (int) (Math.random() * MAXIMUM) - (MAXIMUM / 2);
 		}
-		
-//		numbers = new int[]{0, 1, 2};
 	}
 
 	@Override
 	public void runExercise() {
-		
 		initialize();
 		int lowerBound = - (MAXIMUM / 2);
 		int upperBound = MAXIMUM / 2;
@@ -34,7 +41,6 @@ public class ThreeSumClosest implements LeetCodeExercise {
 			result = threeSumClosest(numbers, target);
 			test();
 		}
-		
 	}
 	
     private int threeSumClosest(int[] num, int target) {

@@ -6,6 +6,12 @@ import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
+/*
+ * Given a binary tree, check whether it is a mirror of itself (i.e., symmetric around its center).
+ * 
+ * Source: http://oj.leetcode.com/problems/symmetric-tree/
+ */
+
 public class SymmetricTree implements LeetCodeExercise {
 	private final int MAXIMUM = 0;
 	private final int SIZE = 100;
@@ -40,7 +46,7 @@ public class SymmetricTree implements LeetCodeExercise {
     	
     	int size = preOrder.size();
     	for (int i = 0; i < size; i++) {
-    		if (!preOrder.get(i).equals(postOrder.get(size - i - 1))) return false;
+    		if (!preOrder.get(i).equals(postOrder.get(size - 1 - i))) return false;
     	}
     	
         return true;

@@ -2,6 +2,16 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Say you have an array for which the i-th element is the price of a given stock on day i.
+ * Design an algorithm to find the maximum profit. 
+ * 
+ * You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times). 
+ * However, you may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).
+ * 
+ * Source: http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+ */
+
 public class BestTimetoBuyandSellStockII implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
 	
@@ -28,32 +38,11 @@ public class BestTimetoBuyandSellStockII implements LeetCodeExercise {
 	
     private int maxProfit(int[] prices) {
     	if (prices.length <= 1) return 0;
-    	
-        int length = prices.length;
     	int profit = 0;
-    	int boughtInPrice = 0;
-        boolean haveStock = false;
         
-        
-        for(int i = 0; i < length; i++){
-        	if (i == length - 1) {
-        		if (haveStock) {
-        			profit += (prices[i] - boughtInPrice);
-        			haveStock = false;
-        		}
-    			break;
-        	}
-        	
-        	if (haveStock) {
-        		if (prices[i + 1] < prices[i]) {
-        			profit += (prices[i] - boughtInPrice);
-        			haveStock = false;
-        		}
-        	} else {
-        		if (prices[i + 1] > prices[i]) {
-        			boughtInPrice = prices[i];
-        			haveStock = true;
-        		}
+        for (int i = 1; i <= prices.length - 1; i++) {
+        	if (prices[i] - prices[i - 1] > 0) {
+        		profit += prices[i] - prices[i - 1];
         	}
         }
         

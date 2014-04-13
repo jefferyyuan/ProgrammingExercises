@@ -2,6 +2,16 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given n non-negative integers representing an elevation map where the width of each bar is 1, 
+ * compute how much water it is able to trap after raining.
+ * 
+ * For example,
+ * Given [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1], return 6.
+ * 
+ * Source: http://oj.leetcode.com/problems/trapping-rain-water/
+ */
+
 public class TrappingRainWater implements LeetCodeExercise {
 	private final int[][] testSuites = 
 		{{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1}, {5, 4, 1, 2}, {3, 1, 2}};
@@ -36,7 +46,7 @@ public class TrappingRainWater implements LeetCodeExercise {
 				int boundary = i + 1;
 				int localMax = 0;
 				int localMaxIndex = 0;
-				for (; boundary < length && array[boundary] < array[i];) {
+				while (boundary < length && array[boundary] < array[i]) {
 					if (boundary > i + 1 && array[boundary] > localMax) {
 						localMax = array[boundary];
 						localMaxIndex = boundary;

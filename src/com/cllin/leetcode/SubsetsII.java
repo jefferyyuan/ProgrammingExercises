@@ -2,8 +2,30 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 
 import com.cllin.main.LeetCodeExercise;
+
+/*
+ * Given a collection of integers that might contain duplicates, S, return all possible subsets.
+ * 
+ * Note:
+ * Elements in a subset must be in non-descending order.
+ * The solution set must not contain duplicate subsets.
+ * 
+ * For example,
+ * If S = [1,2,2], a solution is:
+ * 	[
+ * 	  [2],
+ * 	  [1],
+ * 	  [1,2,2],
+ * 	  [2,2],
+ * 	  [1,2],
+ * 	  []
+ * 	]
+ * 
+ * Source: http://oj.leetcode.com/problems/subsets-ii/
+ */
 
 public class SubsetsII implements LeetCodeExercise {
 	private final int[][] testSuite = {
@@ -39,44 +61,26 @@ public class SubsetsII implements LeetCodeExercise {
     	Arrays.sort(set);
     	for (int i = 0; i < length; i++) numbers.add(set[i]);
     	
-    	ArrayList<ArrayList<Integer>> result = getPowerSet(numbers);
+    	HashSet<ArrayList<Integer>> powerSet = getPowerSet(numbers, 0);
+    	ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
     	
-    	for (int i = 0; i < result.size(); i++) {
-    		for (int j = i + 1; j < result.size(); j++) {
-    			if (result.get(i).size() == result.get(j).size()) {
-    				ArrayList<Integer> subset = result.get(j);
-    				int size = subset.size();
-    				
-    				boolean isIdentical = true;
-    				for (int k = 0; k < size; k++) {
-    					if (result.get(i).get(k).intValue() != result.get(j).get(k).intValue()) {
-    						isIdentical = false;
-    						break;
-    					}
-    				}
-    				
-//    				Check if duplicate subsets appear in sequence 
-    				if (isIdentical) result.remove(j--);
-    			}
-    		}
-    	}
+    	result.addAll(powerSet);
     	
         return result;
     }
     
-    private ArrayList<ArrayList<Integer>> getPowerSet(ArrayList<Integer> set) {
+    private HashSet<ArrayList<Integer>> getPowerSet(ArrayList<Integer> set, int start) {
     	int size = set.size();
-    	ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-    	if (size == 0) {
+    	HashSet<ArrayList<Integer>> result = new HashSet<ArrayList<Integer>>();
+    	
+    	if (start == size) {
     		result.add(new ArrayList<Integer>());
     		return result;
     	}
     	
-    	int head = set.get(0);
-    	ArrayList<Integer> rest = new ArrayList<Integer>();
-    	for (int i = 1; i < size; i++) rest.add(set.get(i));
+    	int head = set.get(start);
+    	HashSet<ArrayList<Integer>> subsets = getPowerSet(set, start + 1);
     	
-    	ArrayList<ArrayList<Integer>> subsets = getPowerSet(rest);
     	for (ArrayList<Integer> subset : subsets) {
     		ArrayList<Integer> newSubset = new ArrayList<Integer>();
     		newSubset.add(head);

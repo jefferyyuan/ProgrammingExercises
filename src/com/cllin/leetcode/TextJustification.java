@@ -4,6 +4,22 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an array of words and a length L, 
+ * format the text such that each line has exactly L characters and is fully (left and right) justified.
+ * 
+ * You should pack your words in a greedy approach; that is, pack as many words as you can in each line. 
+ * Pad extra spaces ' ' when necessary so that each line has exactly L characters.
+ * 
+ * Extra spaces between words should be distributed as evenly as possible. 
+ * If the number of spaces on a line do not divide evenly between words, 
+ * the empty slots on the left will be assigned more spaces than the slots on the right.
+ * 
+ * For the last line of text, it should be left justified and no extra space is inserted between words.
+ * 
+ * Source: http://oj.leetcode.com/problems/text-justification/
+ */
+
 public class TextJustification implements LeetCodeExercise {
 
 	private final TestCase[] testSuite = {
@@ -44,11 +60,13 @@ public class TextJustification implements LeetCodeExercise {
 			int start = index;
 			int currentLength = -1;
 			
+//			Count how many words can fit in this line
 			while (index < words.length && currentLength + 1 + words[index].length() <= L) {
 				currentLength += (currentLength == 0)? words[index].length() : 1 + words[index].length();
 				index++;
 			}
-			
+
+//			Count how long the space in this line should be 
 			index--;
 			StringBuffer buffer = new StringBuffer();
 			int count = index - start + 1;
@@ -61,7 +79,8 @@ public class TextJustification implements LeetCodeExercise {
 			for (int p = 0; p < nSpace; p++) {
 				space.append(' ');
 			}
-			
+
+//			Build line
 			int i = start;
 			ArrayList<StringBuffer> buf = new ArrayList<StringBuffer>();
 			
@@ -73,6 +92,7 @@ public class TextJustification implements LeetCodeExercise {
 			
 			buf.add(new StringBuffer(words[i]));
 			
+//			Adjust spaces between word if needed
 			if (count != 1 && left % (count - 1) != 0 && index != words.length - 1) {
 				int remain = left % (count - 1);
 				for (int p = 0; p < buf.size(); p++) {
@@ -84,11 +104,10 @@ public class TextJustification implements LeetCodeExercise {
 					buffer.append(buf.get(p));
 				}
 			} else {
-				for (int p = 0; p < buf.size(); p++) {
-					buffer.append(buf.get(p));
-				}
+				buffer.append(buf);
 			}
 			
+//			Fill the line with spaces if needed
 			while (buffer.length() < L) {
 				buffer.append(' ');
 			}

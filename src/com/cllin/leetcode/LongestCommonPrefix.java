@@ -2,6 +2,12 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Write a function to find the longest common prefix string amongst an array of strings.
+ * 
+ * Source: http://oj.leetcode.com/problems/longest-common-prefix/
+ */
+
 public class LongestCommonPrefix implements LeetCodeExercise {
 	private static final String[][] testSuite = {
 			{"", "apple"}, 

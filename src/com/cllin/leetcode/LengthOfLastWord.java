@@ -1,8 +1,16 @@
 package com.cllin.leetcode;
 
-import java.util.ArrayList;
-
 import com.cllin.main.LeetCodeExercise;
+
+/*
+ * Given a string s consists of upper/lower-case alphabets and empty space characters ' ', 
+ * return the length of last word in the string.
+ * 
+ * If the last word does not exist, return 0.
+ * Note: A word is defined as a character sequence consists of non-space characters only.
+ * 
+ * Source: http://oj.leetcode.com/problems/length-of-last-word/
+ */
 
 public class LengthOfLastWord implements LeetCodeExercise {
 	private static final String[] testSuite = {"", " ", "   ","a ", " a", "  a  bc  ", "laptop", "hello world ", "how do you do?"};
@@ -26,26 +34,20 @@ public class LengthOfLastWord implements LeetCodeExercise {
 	}
 	
     private int lengthOfLastWord(String string) {
-    	int length = string.length();
-    	if (length == 0) return 0;
+    	if (string.length() == 0) return 0;
 
-    	ArrayList<Integer> isNotSpace = new ArrayList<Integer>();
-    	for (int i = 0; i < length; i++) {
-    		if (string.charAt(i) != ' ') isNotSpace.add(i);
+    	int index = string.length() - 1;
+    	while (index >= 0 && string.charAt(index) == ' ') {
+    		index--;
     	}
     	
-    	int notSpaces = isNotSpace.size();
-    	int count = 1;
-    	
-    	if (notSpaces == 0) return 0;
-    	for (int i = notSpaces - 1; i >= 0; i--) {
-    		if (i >= 1 && isNotSpace.get(i - 1) == (isNotSpace.get(i) - 1)) count++;
-    		else break;
-    		
-    		if (i == 0 && isNotSpace.get(i) == 0) count++;
+    	int length = 0;
+    	while (index >= 0 && string.charAt(index) != ' ') {
+    		length++;
+    		index--;
     	}
     	
-    	return count;
+    	return length;
     }
 
 	@Override

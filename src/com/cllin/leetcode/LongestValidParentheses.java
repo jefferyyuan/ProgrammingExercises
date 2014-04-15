@@ -1,6 +1,18 @@
 package com.cllin.leetcode;
 
+import java.util.Stack;
+
 import com.cllin.main.LeetCodeExercise;
+
+/*
+ * Given a string containing just the characters '(' and ')', 
+ * find the length of the longest valid (well-formed) parentheses substring.
+ * 
+ * For "(()", the longest valid parentheses substring is "()", which has length = 2.
+ * Another example is ")()())", where the longest valid parentheses substring is "()()", which has length = 4.
+ * 
+ * Source: http://oj.leetcode.com/problems/longest-valid-parentheses/
+ */
 
 public class LongestValidParentheses implements LeetCodeExercise {
 
@@ -31,40 +43,24 @@ public class LongestValidParentheses implements LeetCodeExercise {
 	private int longestValidParentheses(String string) {
 		if (string == null || string.length() == 0) return 0;
 		
-		int i = 0;
 		int max = 0;
-		int count = 0;
-		char[] charArray = string.toCharArray();
-		while (i < string.length()) {
-			if (charArray[i] == ')') {
-				for (int j = i - 1; j >= 0; j--) {
-					if (charArray[j] == '(') {
-						charArray[i] = '*';
-						charArray[j] = '*';
-						break;
-					}
+		Stack<Integer> stack = new Stack<Integer>();
+		
+		int index = 0;
+		int last = -1;
+		while (index < string.length()) {
+			if (string.charAt(index) == '(') {
+				stack.push(index);
+			} else {
+				if (stack.isEmpty()) {
+					last = index;
+				} else {
+					stack.pop();
+					max = Math.max(max, stack.isEmpty()? index - last : index - stack.peek());
 				}
 			}
 			
-			i++;
-		}
-
-		i = 0;
-		while (i < string.length()) {
-			if (charArray[i] == '*') {
-				count = 0;
-				for (int j = i; j < string.length() && charArray[j] == '*'; j++) {
-					count++;
-				}
-				
-				max = Math.max(max, count);
-				
-				while (i < string.length() && charArray[i] == '*') {
-					i++;
-				}
-			} else {
-				i++;
-			}
+			index++;
 		}
 		
     	return max;

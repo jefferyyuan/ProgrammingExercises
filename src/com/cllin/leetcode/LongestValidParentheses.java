@@ -40,6 +40,13 @@ public class LongestValidParentheses implements LeetCodeExercise {
 		}
 	}
 	
+	/*
+	 * When we see a ')',
+	 * 1) The stack is empty. Which means this is done. Next valid parenthesis will start from here.
+	 * 2) The stack is not empty. Which means we have got a valid parenthesis. After popping the first '(', update the maximum with:
+	 * 		2-1) If the stack is empty, it means the valid parenthesis starts right after the last ')'
+	 * 		2-2) If not, it means the valid parenthesis starts right after the last '('
+	 */
 	private int longestValidParentheses(String string) {
 		if (string == null || string.length() == 0) return 0;
 		

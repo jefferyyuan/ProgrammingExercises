@@ -330,7 +330,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = SubsetsII;
+		int option = PascalsTriangle;
 
 		switch(option){
 			case TRIE:

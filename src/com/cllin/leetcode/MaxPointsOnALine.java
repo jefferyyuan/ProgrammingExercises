@@ -5,6 +5,12 @@ import java.util.LinkedList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given n points on a 2D plane, find the maximum number of points that lie on the same straight line.
+ * 
+ * Source: http://oj.leetcode.com/problems/max-points-on-a-line/
+ */
+
 public class MaxPointsOnALine implements LeetCodeExercise {
 	
 	private final Point[][] testSuite = {
@@ -43,42 +49,38 @@ public class MaxPointsOnALine implements LeetCodeExercise {
 			
 //			considering every other point
 			for (int j = 0; j < nPoints; j++) {
-				if (i != j) {
-					Point p = points[j];
-					if (p.x == point.x) {
-						if (p.y == point.y) {
+				if (j == i) continue;
+				
+				Point p = points[j];
+				if (p.x == point.x) {
+					if (p.y == point.y) {
 //						Duplicate point
-							nDuplicates++;
-						} else {
-//						Vertical line
-							slopes.push(Double.MAX_VALUE);
-						}
+						nDuplicates++;
 					} else {
-//					Ordinary line
-						slopes.push((double) (p.y - point.y) / (double) (p.x - point.x));
+//						Vertical line
+						slopes.push(Double.MAX_VALUE);
 					}
+				} else {
+//					Ordinary line
+					slopes.push((double) (p.y - point.y) / (double) (p.x - point.x));
 				}
 			}
 			
 //			Now we have the slope of this point and every other point
 			Collections.sort(slopes);
 			int count = 1;
-			int size = slopes.size();
 			
-			if (size == 0) count = 0;
-			for (int p = 1; p < size; p++) {
+			if (slopes.size() <= 1) output = Math.max(output, slopes.size() + nDuplicates);
+			for (int p = 1; p < slopes.size(); p++) {
 				if (slopes.get(p).equals(slopes.get(p - 1))) {
 //					If duplicate slope exists, which means multiple points on the same line
 					count++;
 				} else {
 //					Update if needed, refresh the count
-					if (count + nDuplicates > output) output = count + nDuplicates;
-					
 					count = 1;
 				}
+				output = Math.max(output, count + nDuplicates);
 			}
-			
-			if (count + nDuplicates > output) output = count + nDuplicates;
 		}
 		
     	return output;

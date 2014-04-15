@@ -4,6 +4,18 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an index k, return the kth row of the Pascal's triangle.
+ * 
+ * For example, given k = 3,
+ * Return [1,3,3,1].
+ * 
+ * Note:
+ * Could you optimize your algorithm to use only O(k) extra space?
+ * 
+ * http://oj.leetcode.com/problems/pascals-triangle-ii/
+ */
+
 public class PascalsTriangleII implements LeetCodeExercise {
 	private ArrayList<Integer> result;
 	private int rowIndex;
@@ -25,6 +37,7 @@ public class PascalsTriangleII implements LeetCodeExercise {
 		
 	}
 	
+//	Binomial expansion
     public ArrayList<Integer> getRow(int rowIndex) {
     	ArrayList<Integer> result = new ArrayList<Integer>();
     	

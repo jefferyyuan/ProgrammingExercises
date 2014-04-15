@@ -4,6 +4,13 @@ import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
+/*
+ * Given a binary tree, find its maximum depth.
+ * The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+ * 
+ * Source: http://oj.leetcode.com/problems/maximum-depth-of-binary-tree/
+ */
+
 public class MaximumDepthOfBinaryTree implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
 	private final int SIZE = 100;
@@ -23,13 +30,12 @@ public class MaximumDepthOfBinaryTree implements LeetCodeExercise {
 	public void runExercise() {
 		initialize();
 		
-		int maxDepth = getMaxDepth();
+		int maxDepth = getMaxDepth(tree.root);
 		System.out.printf("The maximum depth of the tree is %d", maxDepth);
 	}
 	
-	private int getMaxDepth(){
-		if (tree == null || tree.root == null) return 0;
-		return getDepth(tree.root, 1);
+	private int getMaxDepth(Node root){
+    	return (root == null)? 0 : getDepth(root, 1);
 	}
 	
 	private int getDepth(Node node, int depth){

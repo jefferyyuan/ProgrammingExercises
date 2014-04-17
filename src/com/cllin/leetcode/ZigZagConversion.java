@@ -2,6 +2,21 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
+ * 		P   A   H   N
+ * 		A P L S I I G
+ * 		Y   I   R
+ * 
+ * And then read line by line: "PAHNAPLSIIGYIR"
+ * 
+ * Write the code that will take a string and make this conversion given a number of rows:
+ * string convert(string text, int nRows);
+ * convert("PAYPALISHIRING", 3) should return "PAHNAPLSIIGYIR".
+ * 
+ * Source: http://oj.leetcode.com/problems/zigzag-conversion/
+ */
+
 public class ZigZagConversion implements LeetCodeExercise {
 
 	private final TestCase[] testSuite = {
@@ -44,8 +59,13 @@ public class ZigZagConversion implements LeetCodeExercise {
 			nCols = length / 2;
 			if (length % 2 == 1) nCols++;
 		} else {
-			for (int i = 0; i < length;) {
-				i = (nCols % (nRows - 1) == 0)? i + nRows : i + 1;
+			int i = 0;
+			while (i < length) {
+				if (nCols % (nRows - 1) == 0) {
+					i += nRows;
+				} else {
+					i++;
+				}
 				nCols++;
 			}
 		}

@@ -4,6 +4,23 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * The set [1, 2, 3, ..., n] contains a total of n! unique permutations.
+ * By listing and labeling all of the permutations in order,
+ * We get the following sequence (i.e., for n = 3):
+ * 	"123"
+ * 	"132"
+ * 	"213"
+ * 	"231"
+ * 	"312"
+ * 	"321"
+ * 
+ * Given n and k, return the k-th permutation sequence.
+ * Note: Given n will be between 1 and 9 inclusive.
+ * 
+ * Source: http://oj.leetcode.com/problems/permutation-sequence/
+ */
+
 public class PermutationSequence implements LeetCodeExercise {
 
 	@Override
@@ -35,8 +52,7 @@ public class PermutationSequence implements LeetCodeExercise {
     }
 	
 	private String permute(ArrayList<Integer> candidates, int k) {
-		String string = new String();
-		if (candidates == null || candidates.size() == 0) return string;
+		if (candidates == null || candidates.size() == 0) return new String();
 		
 		int n = candidates.size();
 		int factorial = getFactorial(n - 1);
@@ -51,10 +67,11 @@ public class PermutationSequence implements LeetCodeExercise {
 	}
 	
 	private int getFactorial(int n) {
-		if (n == 0) return 1;
 		int factorial = 1;
-
-		for (int i = 1; i <= n; i++) factorial *= i;
+		for (int i = 1; i <= n; i++) {
+			factorial *= i;
+		}
+		
 		return factorial;
 	}
 

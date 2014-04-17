@@ -4,6 +4,13 @@ import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
+/*
+ * Given two binary trees, write a function to check if they are equal or not.
+ * Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
+ * 
+ * Source: http://oj.leetcode.com/problems/same-tree/
+ */
+
 public class SameTree implements LeetCodeExercise {
 	private final int MAXIMUM = 100;
 	private final int SIZE = 100;
@@ -56,8 +63,6 @@ public class SameTree implements LeetCodeExercise {
 		return isSameNode(p.left, q.left) && isSameNode(p.right, q.right);
 	}
 	
-	
-
 	@Override
 	public boolean test() {
 		if (!result1 || result2 || result3) return false; 

@@ -4,6 +4,16 @@ import java.util.LinkedList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an absolute path for a file (Unix-style), simplify it.
+ * 
+ * For example,
+ * path = "/home/", => "/home"
+ * path = "/a/./b/../../c/", => "/c"
+ * 
+ * Source: http://oj.leetcode.com/problems/simplify-path/
+ */
+
 public class SimplifyPath implements LeetCodeExercise {
 
 	private final String[] testSuite = {
@@ -36,21 +46,22 @@ public class SimplifyPath implements LeetCodeExercise {
 	private String simplifyPath(String path) {
 		if (path == null || path.length() == 0) return new String();
 
-		LinkedList<String> directories = new LinkedList<String>();
 		int i = 0;
+		LinkedList<String> directories = new LinkedList<String>();
 		while (i < path.length()) {
 			if (path.charAt(i) == '/') {
 				i++;
-			} else {
-				int index = path.indexOf("/", i);
-				String d = (index == -1)? path.substring(i) : path.substring(i, index);
-				i = (index == -1)? path.length() : index + 1;
-				
-				if (d.equals("..")) {
-					if (!directories.isEmpty()) directories.removeLast();
-				} else if (!d.equals(".")) {
-					directories.add(d);
-				}
+				continue;
+			}
+			
+			int index = path.indexOf("/", i);
+			String d = (index == -1)? path.substring(i) : path.substring(i, index);
+			i = (index == -1)? path.length() : index + 1;
+			
+			if (d.equals("..")) {
+				if (!directories.isEmpty()) directories.removeLast();
+			} else if (!d.equals(".")) {
+				directories.add(d);
 			}
 		}
 		

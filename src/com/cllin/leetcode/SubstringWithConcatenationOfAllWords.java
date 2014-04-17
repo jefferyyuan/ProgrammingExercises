@@ -5,6 +5,19 @@ import java.util.Hashtable;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * You are given a string, S, and a list of words, L, that are all of the same length. 
+ * Find all starting indices of substring(s) in S that is a concatenation of each word in L exactly once 
+ * and without any intervening characters.
+ * 
+ * For example, given:
+ * S: "barfoothefoobarman"
+ * L: ["foo", "bar"]
+ * You should return the indices: [0,9]. (order does not matter).
+ * 
+ * Source: http://oj.leetcode.com/problems/substring-with-concatenation-of-all-words/
+ */
+
 public class SubstringWithConcatenationOfAllWords implements LeetCodeExercise {
 
 	private TestCase[] testSuite = {
@@ -61,7 +74,9 @@ public class SubstringWithConcatenationOfAllWords implements LeetCodeExercise {
 					
 					if (localOccurances.get(word) > occurances.get(word)) isValidSubstring = false;
 					
-					if (substring.length() == wordLength) isValidSubstring = localOccurances.get(word) == occurances.get(word);
+					if (substring.length() == wordLength) {
+						isValidSubstring = localOccurances.get(word) == occurances.get(word);
+					}
 					
 					substring = substring.substring(wordLength);
 				} else {

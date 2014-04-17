@@ -4,6 +4,25 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
+ * For example, given the following triangle
+ * 
+ * 	[
+ * 	     [2],
+ * 	    [3,4],
+ * 	   [6,5,7],
+ * 	  [4,1,8,3]
+ * 	]
+ * 
+ * The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
+ * 
+ * Note:
+ * Bonus point if you are able to do this using only O(n) extra space, where n is the total number of rows in the triangle.
+ * 
+ * Source: http://oj.leetcode.com/problems/triangle/
+ */
+
 public class Triangle implements LeetCodeExercise {
 	private final int MAXIMUM = 10;
 	
@@ -35,33 +54,19 @@ public class Triangle implements LeetCodeExercise {
 	
 	private int minimumTotal(ArrayList<ArrayList<Integer>> triangle) {
 		int height = triangle.size();
-		int sum = 2147483647;
-		int[] last = new int[height];
-		int[] current = new int[height];
 		
-		for (int i = 0; i < height; i++) {
-			for (int j = 0; j <= i; j++) {
-				int value = 0;
-				if (i == 0) {
-					value = triangle.get(i).get(j);
-				} else {
-					if (j == 0) value = last[0] + triangle.get(i).get(j);
-					else if (j == i) value = last[i - 1] + triangle.get(i).get(j);
-					else {
-						value = Math.min(last[j - 1], last[j]) + triangle.get(i).get(j);
-					}
+		for (int i = height - 2; i >= 0; i--) {
+			for (int j = 0; j < i + 1; j++) {
+				int min = Integer.MAX_VALUE;
+				for (int k = j; k <= j + 1; k++) {
+					min = Math.min(min, triangle.get(i + 1).get(k) + triangle.get(i).get(j));
 				}
 				
-				current[j] = value;
+				triangle.get(i).set(j, min);
 			}
-			
-			last = current;
-			current = new int[height];
 		}
 		
-		for (int i = 0; i < height; i++) sum = Math.min(last[i], sum);
-		
-		return sum;
+		return triangle.get(0).get(0);
 	}
 
 	@Override

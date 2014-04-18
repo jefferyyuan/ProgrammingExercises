@@ -5,7 +5,7 @@ import java.util.Arrays;
 import com.cllin.main.LeetCodeExercise;
 
 /*
- * Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
+ * Find the contiguous sub-array within an array (containing at least one number) which has the largest sum.
  * 
  * Source: http://oj.leetcode.com/problems/maximum-subarray/
  */
@@ -61,12 +61,14 @@ public class MedianOfTwoSortedArrays implements LeetCodeExercise {
     }
 	
 	/*
-	 * In a sorted array, A[i] is larger than exact i elements, making it the (i + 1)th element
+	 * Say, we want the k-th element of A + B.
 	 * 
-	 * A[i] is the (i + 1)th element of A(aStart, aEnd)
-	 * B[j - 1] is the (j)th element of A(aStart, aEnd)
+	 * In a sorted array, A[i] is larger than exact i elements, making it the (i + 1)-th element.
 	 * 
-	 * If B[j - 1] < A[i] < B[j], A[i] is the (i + j + 1)th element of A + B
+	 * A[i] is the (i + 1)-th element of A(aStart, aEnd).
+	 * B[j - 1] is the (j)-th element of B(bStart, bEnd).
+	 * 
+	 * If B[j - 1] < A[i] < B[j], A[i] is the (i + 1 + j)-th element of A + B.
 	 * In this case,
 	 * 		k = i + j + 1, and
 	 * 		i = k * A / (A + B), so
@@ -86,15 +88,18 @@ public class MedianOfTwoSortedArrays implements LeetCodeExercise {
 		int i = lengthA * k / (lengthA + lengthB);
 		int j = k - i - 1;
 
+//		Shift the indices
 		i += aStart;
 		j += bStart;
 
 		if (A[i] >= B[j]) {
+//			The new array contains the first half of A and second half of B
 			k -= (j - bStart + 1);
 
 			aEnd = i;
 			bStart = j + 1;
 		} else {
+//			The new array contains the second half of A and first half of B
 			k -= (i - aStart + 1);
 
 			aStart = i + 1;

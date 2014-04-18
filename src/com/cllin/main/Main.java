@@ -330,7 +330,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = ZigZagConversion;
+		int option = WildcardMatching;
 
 		switch(option){
 			case TRIE:

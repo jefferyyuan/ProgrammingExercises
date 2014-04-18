@@ -2,6 +2,19 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an array of non-negative integers, you are initially positioned at the first index of the array.
+ * Each element in the array represents your maximum jump length at that position.
+ * Your goal is to reach the last index in the minimum number of jumps.
+ * 
+ * For example:
+ * Given array A = [2, 3, 1, 1, 4]
+ * 
+ * The minimum number of jumps to reach the last index is 2. (Jump 1 step from index 0 to 1, then 3 steps to the last index.)
+ * 
+ * Source: http://oj.leetcode.com/problems/jump-game-ii/
+ */
+
 public class JumpGameII implements LeetCodeExercise {
 
 	private final int[][] testSuite = {
@@ -30,27 +43,31 @@ public class JumpGameII implements LeetCodeExercise {
 		}
 	}
 	
+	/*
+	 * S(i) = Minimum steps to get to i
+	 * For p = 1 to A[i], S(i + p) = Min(S(i + p), S(i) + 1)
+	 */
 	private int jump(int[] array) {
 		if (array == null || array.length <= 1) return 0;
 		if (array[0] == 0) return -1;
 		
-		int count = 0;
+		int steps = 0;
 		int last = 0;
-		int current = 0;
+		int reachable = 0;
 		int length = array.length;
 		
 		for (int i = 0; i < length; i++) {
 			if (i > last) {
-				if (current == last && last < length - 1) return -1;
+				if (reachable == last && last < length - 1) return -1;
 				
-				last = current;
-				count++;
+				last = reachable;
+				steps++;
 			}
 			
-			current = Math.max(current, i + array[i]);
+			reachable = Math.max(reachable, i + array[i]);
 		}
 		
-		return count;
+		return steps;
 	}
 
 	@Override

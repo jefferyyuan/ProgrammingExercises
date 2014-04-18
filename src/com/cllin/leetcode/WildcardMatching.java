@@ -75,20 +75,19 @@ public class WildcardMatching implements LeetCodeExercise {
 	private boolean isMatch(String s, String p) {
 		if (s.length() == 0 && p.length() == 0) return true;
 		if (p == null || p.length() == 0) return false; 
-		
+
 		int sLength = s.length();
 		int pLength = p.length();
-		
-		int i = 0;
-		int j = 0;
-		
+
+		int i = 0, j = 0;
+
 		boolean hasStar = false;
 		int afterStarI =Integer.MAX_VALUE;
 		int afterStarJ =Integer.MAX_VALUE;
-		
+
 		while (j < sLength) {
 			if (i == pLength) return false;
-			
+
 			if (p.charAt(i) == '?' || p.charAt(i) == s.charAt(j)) {
 				i++;
 				j++;
@@ -97,14 +96,14 @@ public class WildcardMatching implements LeetCodeExercise {
 				while (i < pLength && p.charAt(i) == '*') {
 					i++;
 				}
-				
+
 				if (i == pLength) return true;
 				if (!p.substring(i).contains("*")) {
 					if (sLength - j < pLength - i) return false;
-					
+
 					j = sLength - (pLength - i);
 				}
-				
+
 				afterStarI = i;
 				afterStarJ = j;
 			} else if (hasStar) {
@@ -114,12 +113,12 @@ public class WildcardMatching implements LeetCodeExercise {
 				return false;
 			}
 		}
-		
+
 		while (i < pLength) {
 			if (p.charAt(i) != '*') return false;
 			i++;
 		}
-		
+
     	return true;
     }
 	

@@ -4,6 +4,13 @@ import java.util.Stack;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, 
+ * find the area of largest rectangle in the histogram.
+ * 
+ * Source: http://oj.leetcode.com/problems/largest-rectangle-in-histogram/
+ */
+
 public class LargestRectangleInHistogram implements LeetCodeExercise {
 
 	private int[][] testSuite = {
@@ -35,36 +42,56 @@ public class LargestRectangleInHistogram implements LeetCodeExercise {
 		}
 	}
 
+	/*
+	 * Say, H is in non-descending order with size n, 
+	 * the maximum rectangle area between n and i is H(i) * (n - i + 1) 
+	 * 
+	 * In this question, H is in random order, so we need to build a stack that is in non-descending order.
+	 * 
+	 * There are two things to do:
+	 * 	1) Build/maintain non-descending stack, S
+	 * 	2) Calculate maximum rectangle area, A
+	 * 
+	 * Iterate the array:
+	 * 		If H(i) >= S.peek()	|| S.isEmpty()		------ Still non-descending
+	 * 			S.push(i)							------ Build/maintain the stack
+	 * 		Else
+	 * 			Get last maximal, im, A = h * w
+	 * 			h = H(im)
+	 * 			w = i || i - S.peek() - 1			------ Calculate maximum rectangle area, A
+	 * 												------ Why i? i is the local n, the rectangle stops here
+	 * 
+	 * In case of there are pending maximum after iterating the array once,
+	 * update maximum area based on the remaining in the stack. 
+	 */
 	private int largestRectangleArea(int[] heights) {
 		if (heights == null || heights.length == 0) return 0;
 		
 		int max = 0;
 		int length = heights.length;
-		Stack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> maximals = new Stack<Integer>();
 		
 		int i = 0;
 		while (i < length) {
-			if (stack.isEmpty() || heights[i] >= heights[stack.peek()]) {
-				stack.push(i);
-				i++;
+			if (maximals.isEmpty() || heights[i] >= heights[maximals.peek()]) {
+				maximals.push(i++);
 			} else {
-				int area = 0;
-				if (!stack.isEmpty()) {
-					int index = stack.pop();
-					
-					int height = heights[index];
-					int width = (stack.isEmpty())? i : (i - stack.peek() - 1);
-					area = height * width;
-				}
-				max = Math.max(max, area);
+				if (maximals.isEmpty()) continue;
+				
+				int lastMaximal = maximals.pop();
+				
+				int height = heights[lastMaximal];
+				int width = (maximals.isEmpty())? i : (i - maximals.peek() - 1);
+				
+				max = Math.max(max, height * width);
 			}
 		}
 		
-		while (!stack.isEmpty()) {
-			int index = stack.pop();
+		while (!maximals.isEmpty()) {
+			int lastMaximal = maximals.pop();
 			
-			int height = heights[index];
-			int width = (stack.isEmpty())? i : (i - stack.peek() - 1);
+			int height = heights[lastMaximal];
+			int width = (maximals.isEmpty())? i : (i - maximals.peek() - 1);
 			max = Math.max(max, height * width);
 		}
 		

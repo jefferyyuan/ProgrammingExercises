@@ -25,6 +25,9 @@ import com.cllin.main.LeetCodeExercise;
 public class WildcardMatching implements LeetCodeExercise {
 
 	private final TestCase[] testSuite = {
+			new TestCase("b", "*a*"),
+			new TestCase("aa", "*"),
+			new TestCase("aa", "a"),
 			new TestCase("babbba", "*bb?b*?"),
 			new TestCase("ba", "*?b??"),
 			new TestCase("abcd", "abc*d"),
@@ -34,7 +37,6 @@ public class WildcardMatching implements LeetCodeExercise {
 			new TestCase("a", ""),
 			new TestCase("a", "aa"),
 			new TestCase("a", "a*"),
-			new TestCase("aa", "a"),
 			new TestCase("aa", "aa"),
 			new TestCase("aaa", "aa"),
 			new TestCase("aa", "*"),
@@ -73,50 +75,38 @@ public class WildcardMatching implements LeetCodeExercise {
 	}
 
 	private boolean isMatch(String s, String p) {
-		if (s.length() == 0 && p.length() == 0) return true;
-		if (p == null || p.length() == 0) return false; 
-
-		int sLength = s.length();
-		int pLength = p.length();
-
+		int sI = 0;
+		int sJ = 0;
+		boolean hasAsterisk = false;
+		
 		int i = 0, j = 0;
-
-		boolean hasStar = false;
-		int afterStarI =Integer.MAX_VALUE;
-		int afterStarJ =Integer.MAX_VALUE;
-
-		while (j < sLength) {
-			if (i == pLength) return false;
-
-			if (p.charAt(i) == '?' || p.charAt(i) == s.charAt(j)) {
+		while (j < s.length()) {
+			if (i < p.length() && (p.charAt(i) == s.charAt(j) || p.charAt(i) == '?')) {
 				i++;
 				j++;
-			} else if (p.charAt(i) == '*') {
-				hasStar = true;
-				while (i < pLength && p.charAt(i) == '*') {
+			} else if (i < p.length() && p.charAt(i) == '*') {
+//				Skip consecutive asterisks
+				while (i < p.length() && p.charAt(i) == '*') {
 					i++;
 				}
-
-				if (i == pLength) return true;
-				if (!p.substring(i).contains("*")) {
-					if (sLength - j < pLength - i) return false;
-
-					j = sLength - (pLength - i);
-				}
-
-				afterStarI = i;
-				afterStarJ = j;
-			} else if (hasStar) {
-				i = afterStarI;
-				j = ++afterStarJ;
-			} else { 
+				
+//				Return true if the string ends with an asterisk
+				if (i == p.length()) return true;
+				
+				hasAsterisk = true;
+				sI = i;
+				sJ = j;
+			} else if (hasAsterisk) {
+//				If it doesn't match, go back to last asterisk, forward source string by one
+				i = sI;
+				j = ++sJ;
+			} else {
 				return false;
 			}
 		}
 
-		while (i < pLength) {
-			if (p.charAt(i) != '*') return false;
-			i++;
+		while (i < p.length()) {
+			if (p.charAt(i++) != '*') return false;
 		}
 
     	return true;

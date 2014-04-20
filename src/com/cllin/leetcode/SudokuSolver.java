@@ -2,6 +2,14 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Write a program to solve a Sudoku puzzle by filling the empty cells.
+ * Empty cells are indicated by the character '.'.
+ * 
+ * You may assume that there will be only one unique solution.
+ * 
+ * Source: http://oj.leetcode.com/problems/sudoku-solver/
+ */
 
 public class SudokuSolver implements LeetCodeExercise {
 
@@ -69,7 +77,7 @@ public class SudokuSolver implements LeetCodeExercise {
 		int length = board.length;
 		int gridSize = (int) Math.sqrt(length);
 		
-//		CHECK BY ROWS AND COLUMNS 
+//		Check by rows and columns 
 		for (int m = 0; m < length; m++) {
 			if (m != i) {
 				if (board[m][j] == board[i][j]) {
@@ -84,7 +92,7 @@ public class SudokuSolver implements LeetCodeExercise {
 			}						
 		}
 		
-//		CHECK BY GRID
+//		Check by grid
 		int startX = i / gridSize;
 		int startY = j / gridSize;
 		for (int m = 0; m < gridSize; m++) {

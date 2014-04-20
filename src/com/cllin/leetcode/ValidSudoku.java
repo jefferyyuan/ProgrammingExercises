@@ -4,6 +4,18 @@ import java.util.ArrayList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Determine if a Sudoku is valid.
+ * The Sudoku board could be partially filled, where empty cells are filled with the character '.'.
+ * 
+ * A partially filled sudoku which is valid.
+ * 
+ * Note:
+ * A valid Sudoku board (partially filled) is not necessarily solvable. Only the filled cells need to be validated.
+ * 
+ * Source: http://oj.leetcode.com/problems/valid-sudoku/
+ */
+
 public class ValidSudoku implements LeetCodeExercise {
 
 	@Override
@@ -22,32 +34,35 @@ public class ValidSudoku implements LeetCodeExercise {
 		
 		int length = board.length;
 		
+//		Check by row
 		for (int i = 0; i < length; i++) {
 			ArrayList<Boolean> taken = new ArrayList<Boolean>(length);
 			for (int p = 1; p <= length; p++) taken.add(false);
 			
 			for (int j = 0; j < length; j++) {
-				if (board[i][j] != '.') {
-					int num = Character.getNumericValue(board[i][j]);
-					if (taken.get(num - 1)) return false;
-					taken.set(num - 1, true);
-				}
+				if (board[i][j] == '.') continue;
+				
+				int num = Character.getNumericValue(board[i][j]);
+				if (taken.get(num - 1)) return false;
+				taken.set(num - 1, true);
 			}
 		}
 		
+//		Check by column
 		for (int j = 0; j < length; j++) {
 			ArrayList<Boolean> taken = new ArrayList<Boolean>(length);
 			for (int p = 1; p <= length; p++) taken.add(false);
 			
 			for (int i = 0; i < length; j++) {
-				if (board[i][j] != '.') {
-					int num = Character.getNumericValue(board[i][j]);
-					if (taken.get(num - 1)) return false;
-					taken.set(num - 1, true);
-				}
+				if (board[i][j] == '.') continue;
+				
+				int num = Character.getNumericValue(board[i][j]);
+				if (taken.get(num - 1)) return false;
+				taken.set(num - 1, true);
 			}
 		}
 		
+//		Check by grid
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 3; j++) {
 				int lowerBoundX = i * 3;
@@ -59,11 +74,11 @@ public class ValidSudoku implements LeetCodeExercise {
 				
 				for (int p = lowerBoundX; p < upperBoundX; p++) {
 					for (int q = lowerBoundY; q < upperBoundY; q++) {
-						if (board[p][q] != '.') {
-							int num = Character.getNumericValue(board[p][q]);
-							if (taken.get(num - 1)) return false;
-							taken.set(num - 1, true);
-						}
+						if (board[i][j] == '.') continue;
+						
+						int num = Character.getNumericValue(board[p][q]);
+						if (taken.get(num - 1)) return false;
+						taken.set(num - 1, true);
 					}
 				}
 			}

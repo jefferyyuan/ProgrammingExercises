@@ -1,8 +1,14 @@
 package com.cllin.leetcode;
 
-import java.util.ArrayList;
+import java.util.Stack;
 
 import com.cllin.main.LeetCodeExercise;
+
+/*
+ * Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing all ones and return its area.
+ * 
+ * Source: http://oj.leetcode.com/problems/maximal-rectangle/
+ */
 
 public class MaximalRectangle implements LeetCodeExercise {
 
@@ -40,60 +46,51 @@ public class MaximalRectangle implements LeetCodeExercise {
 	private int maximalRectangle(char[][] matrix) {
 		if (matrix == null || matrix.length == 0) return 0;
 		
-		ArrayList<ArrayList<Integer>> histogram = buildHistogram(matrix);
-		int maximum = getMaximumFromHistogram(histogram);
+		int maximum = 0;
+		int[] histogram = new int[matrix[0].length];
+		
+		for (int i = 0; i < matrix.length; i++) {
+//			Build histogram
+			for (int j = 0; j < matrix[0].length; j++) {
+				histogram[j] = (matrix[i][j] == '1')? histogram[j] + 1 : 0;
+			}
+			
+//			Applied the same thing in "Largest Rectangle In Histogram"
+			maximum = Math.max(maximum, getMaximum(histogram));
+		}
 
 		return maximum;
     }
 	
-	private int getMaximumFromHistogram(ArrayList<ArrayList<Integer>> histogram) {
-		int size = histogram.size();
+	private int getMaximum(int[] histogram) {
 		int maximum = 0;
-		for (int i = 0; i < size; i++) {
-			int s = histogram.get(i).size();
-			int localMaximum = 0;
-			
-			for (int j = 0; j < s; j++) {
-				if (histogram.get(i).get(j) != 0) {
-					
-					int localHeight = histogram.get(i).get(j);
-					for (int height = localHeight; height > 0; height--) {
-						int width = 0;
-						for (int p = j; p < s && histogram.get(i).get(p) >= height; p++) {
-							width++;
-						}
-						
-						localMaximum = Math.max(localMaximum, width * height);
-					}
-					
-				}
+		Stack<Integer> maximals = new Stack<Integer>();
+		
+		int p = 0;
+		while (p < histogram.length) {
+			if (maximals.isEmpty() || histogram[p] >= histogram[maximals.peek()]) {
+				maximals.push(p++);
+			} else {
+				if (maximals.isEmpty()) continue;
+				
+				int lastMaximal = maximals.pop();
+				
+				int height = histogram[lastMaximal];
+				int width = (maximals.isEmpty())? p : (p - maximals.peek() - 1);
+				
+				maximum = Math.max(maximum, height * width);
 			}
-			maximum = Math.max(maximum, localMaximum);
+		}
+		
+		while (!maximals.isEmpty()) {
+			int lastMaximal = maximals.pop();
+			
+			int height = histogram[lastMaximal];
+			int width = (maximals.isEmpty())? p : (p - maximals.peek() - 1);
+			maximum = Math.max(maximum, height * width);
 		}
 		
 		return maximum;
-	}
-	
-	private ArrayList<ArrayList<Integer>> buildHistogram(char[][] matrix) {
-		int m = matrix.length;
-		int n = matrix[0].length;
-		ArrayList<ArrayList<Integer>> histogram = new ArrayList<ArrayList<Integer>>();
-
-		for (int i = 0; i < m; i++) {
-			ArrayList<Integer> h = new ArrayList<Integer>();
-			for (int j = 0; j < n; j++) {
-				if (matrix[i][j] == '0') {
-					h.add(0);
-				} else {
-					int count = 0;
-					for (int p = i; p >= 0 && matrix[p][j] == '1'; p--) count++;
-					h.add(count);
-				}
-			}
-			histogram.add(h);
-		}
-		
-		return histogram;
 	}
 
 	@Override

@@ -1,45 +1,44 @@
 package com.cllin.sort;
 
+/*
+ * Average case performance			:O(n log n)
+ * Worst case space complexity		:O(n)
+ */
+
 public class MergeSort extends Sort {
 	protected void sort(){
-		mergeSort(0, numbers.length - 1);
+		mergeSort(numbers, 0, numbers.length - 1);
 	}
 	
-	private void mergeSort(int start, int end){
-		if(end > start){
+	private void mergeSort(int[] array, int start, int end) {
+		if (end > start) {
 			int mid = (end + start) / 2;
-			mergeSort(start, mid);
-			mergeSort(mid + 1, end);
-			merge(start, mid, end);
+			
+			mergeSort(array, start, mid);
+			mergeSort(array, mid + 1, end);
+			merge(array, start, mid, end);
 		}
 	}
 	
-	private void merge(int start, int mid, int end){
-		int sizeOfFirstHalf = mid - start + 2;
-		int sizeOfSecondHalf = end - mid + 1;
-		int[] firstHalf = new int[sizeOfFirstHalf];
-		int[] secondHalf = new int[sizeOfSecondHalf];
+	private void merge(int[] array, int start, int mid, int end) {
+		int left = start;
+		int right = mid + 1;
+		int[] temp = new int[end - start + 1];
 		
-		firstHalf[sizeOfFirstHalf - 1] = 2147483647;
-		for(int i = 0; i < sizeOfFirstHalf - 1; i++){
-			firstHalf[i] = numbers[i + start];
-		}
-		
-		secondHalf[sizeOfSecondHalf - 1] = 2147483647;
-		for(int i = 0; i < sizeOfSecondHalf - 1; i++){
-			secondHalf[i] = numbers[i + mid + 1];
-		}
-		
-		int i = 0;
-		int j = 0;
-		for(int k = start; k < end + 1; k++){
-			if(firstHalf[i] <= secondHalf[j]){
-				numbers[k] = firstHalf[i];
-				i++;
-			}else{
-				numbers[k] = secondHalf[j];
-				j++;
+		for (int i = 0; i < temp.length; i++) {
+			if (left > mid || (right <= end && array[left] >= array[right])) {
+				temp[i] = array[right++];
+				continue;
 			}
+			
+			if (right > end || (left <= mid && array[left] < array[right])) {
+				temp[i] = array[left++];
+				continue;
+			}
+		}
+		
+		for (int i = 0; i < temp.length; i++) {
+			array[start + i] = temp[i];
 		}
 	}
 }

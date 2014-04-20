@@ -78,6 +78,7 @@ import com.cllin.sort.HeapSort;
 import com.cllin.sort.InsertionSort;
 import com.cllin.sort.MergeSort;
 import com.cllin.sort.QuickSort;
+import com.cllin.sort.SelectionSort;
 import com.cllin.thread.Deadlock;
 import com.cllin.thread.Synchronization;
 import com.cllin.thread.Thread101;
@@ -100,11 +101,12 @@ public class Main {
 	public static final int KPalindrome = 13;
 	
 //	SORTING
-	public static final int INSERTIONSORT = 3000;
-	public static final int MERGESORT = 3001;
-	public static final int HEAPSORT = 3002;
-	public static final int QUICKSORT = 3003;
-	public static final int COUNTINGSORT = 3004;
+	public static final int InsertionSort = 3001;
+	public static final int MergeSort = 3002;
+	public static final int HeapSort = 3003;
+	public static final int QuickSort = 3004;
+	public static final int CountingSort = 3005;
+	public static final int SelectionSort = 3006;
 	
 //	DATA STRUCTURES
 	public static final int TRIE = 4000;
@@ -330,7 +332,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = MaximalRectangle;
+		int option = QuickSort;
 
 		switch(option){
 			case TRIE:
@@ -363,20 +365,23 @@ public class Main {
 			case MAXIMUM_SUBARRAY:
 				exercise = new MaximumSubarray();
 				break;
-			case INSERTIONSORT:
+			case InsertionSort:
 				exercise = new InsertionSort();
 				break;
-			case MERGESORT:
+			case MergeSort:
 				exercise = new MergeSort();
 				break;
-			case HEAPSORT:
+			case HeapSort:
 				exercise = new HeapSort();
 				break;
-			case QUICKSORT:
+			case QuickSort:
 				exercise = new QuickSort();
 				break;
-			case COUNTINGSORT:
+			case CountingSort:
 				exercise = new CountingSort();
+				break;
+			case SelectionSort:
+				exercise = new SelectionSort();
 				break;
 			case BINARY_SEARCH_TREE:
 				exercise = new BinarySearchTreeExercise();
@@ -1031,5 +1036,7 @@ public class Main {
 		}
 		
 		exercise.runExercise();
+		
+		System.exit(0);
 	}
 }

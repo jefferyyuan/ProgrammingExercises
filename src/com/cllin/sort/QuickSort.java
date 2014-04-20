@@ -5,8 +5,6 @@ package com.cllin.sort;
  * Best case performance			:O(n log n) (simple partition)
  * Average case performance			:O(n log n)
  * Worst case space complexity		:O(1) (in place)
- *
- * Reference						:http://en.wikipedia.org/wiki/Quicksort
  */
 
 public class QuickSort extends Sort {
@@ -14,45 +12,49 @@ public class QuickSort extends Sort {
 		quickSort(numbers, 0, SIZE - 1);
 	}
 	
-	private int partition(int[] numbers, int start, int end) {
-		int x = numbers[end];
+	private void quickSort(int[] array, int start, int end) {
+		if (end > start) {
+			int partitionIndex = partition(array, start, end);
+			
+			quickSort(array, start, partitionIndex - 1);
+			quickSort(array, partitionIndex, end);
+		}
+	}
+	
+	private int partition(int[] array, int start, int end) {
+//		Pivotal index is end here, it can also be selected randomly
+		int x = array[end];
 		int i = start - 1;
 		
-//		Swap if the element is smaller than the last element
+//		Swap if the element is smaller than the last element, x
 		for (int j = start; j < end; j++) {
-			if (numbers[j] <= x) {
+			if (array[j] <= x) {
 				i++;
-				int tmp = numbers[j];
-				numbers[j] = numbers[i];
-				numbers[i] = tmp;
+				
+				int tmp = array[j];
+				array[j] = array[i];
+				array[i] = tmp;
 			}
 		}
+
+//		Every element before i (inclusive) is smaller than x
+		int tmp = array[i + 1];
+		array[i + 1] = array[end];
+		array[end] = tmp;
 		
-		int tmp = numbers[i + 1];
-		numbers[i + 1] = numbers[end];
-		numbers[end] = tmp;
-		
+//		Every element after i + 1 is larger than x
 		return i + 1;
 	}
 	
 	@SuppressWarnings("unused")
-	private int randomizedPartition(int[] numbers, int start, int end) {
+	private int randomizedPartition(int[] array, int start, int end) {
 		int index = (int)(Math.random() * (end -  start + 1)) + start;
 		
 //		Swap the random element and the last element
-		int tmp = numbers[index];
-		numbers[index] = numbers[end];
-		numbers[end] = tmp;
+		int tmp = array[index];
+		array[index] = array[end];
+		array[end] = tmp;
 		
-		return partition(numbers, start, end);
-	}
-	
-	private void quickSort(int[] numbers, int start, int end) {
-		if (end > start) {
-			int partitionIndex = partition(numbers, start, end);
-//			int partitionIndex = randomizedPartition(start, end);
-			quickSort(numbers, start, partitionIndex - 1);
-			quickSort(numbers, partitionIndex, end);
-		}
+		return partition(array, start, end);
 	}
 }

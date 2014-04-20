@@ -1,11 +1,14 @@
 package com.cllin.sort;
 
+import java.util.Arrays;
+
 import com.cllin.main.Exercise;
 
 public class Sort implements Exercise {
 	private final int MAXIMUM = 100;
-	protected final int SIZE = 100;
+	protected final int SIZE = 10;
 	protected int[] numbers = new int[SIZE];
+	private int[] reference = new int[SIZE];
 
 	@Override
 	public void runExercise() {
@@ -23,13 +26,17 @@ public class Sort implements Exercise {
 	private void initialize() {
 		int length = numbers.length;
 		for (int i = 0; i < length; i++) {
-			numbers[i] = (int) (Math.random() * MAXIMUM);
+			int n = (int) (Math.random() * MAXIMUM);
+			numbers[i] = n;
+			reference[i] = n;
 		}
+		
+		Arrays.sort(reference);
 	}
 	
 	private void test() {
-		for (int i = 0; i < SIZE - 1; i++) {
-			if (numbers[i] > numbers[i + 1]) {
+		for (int i = 0; i < SIZE; i++) {
+			if (numbers[i] != reference[i]) {
 				System.out.println("Failed");
 				return;
 			}
@@ -47,7 +54,6 @@ public class Sort implements Exercise {
 	}
 
 	protected void sort(){
-//		TODO
 //		WILL BE OVERRIDDEN
 	};
 }

@@ -1,5 +1,7 @@
 package com.cllin.main;
 
+import com.cllin.algorithms.AnagramSubstring;
+import com.cllin.algorithms.BoundedSlices;
 import com.cllin.algorithms.BreadthFirstTraversal;
 import com.cllin.algorithms.KPalindrome;
 import com.cllin.algorithms.LongestCommonSubsequence;
@@ -82,25 +84,38 @@ import com.cllin.sort.SelectionSort;
 import com.cllin.thread.Deadlock;
 import com.cllin.thread.Synchronization;
 import com.cllin.thread.Thread101;
+import com.cllin.tree.AVLTreeExercise;
 import com.cllin.tree.BinarySearchTreeExercise;
 import com.cllin.trie.TrieExercise;
 
 public class Main {
-//	OPERATORS AND GENERAL PROBLEMS
-	public static final int EXCLUSIVE_OR = 2;
-	public static final int TERNARY = 3;
-	public static final int BITWISE_OPERATION = 4;
-	public static final int THREAD101 = 5;
-	public static final int SYNCHRONIZATION = 6;
-	public static final int DEADLOCK = 7;
-	public static final int LINKEDLIST = 8;
-	public static final int EXTEND_AND_SUPER = 9;
-	public static final int MAXIMUM_SUBARRAY = 10;
-	public static final int ENUMERATION = 11;
-	public static final int Breadth_First_Traversal = 12;
-	public static final int KPalindrome = 13;
+	/************************************************************
+	 * Operators and Java Concepts
+	 ************************************************************/
+	public static final int Exclusive_Or = 1;
+	public static final int TernaryOperators = 2;
+	public static final int BitwiseOperation = 3;
+	public static final int Thread101 = 4;
+	public static final int Synchronization = 5;
+	public static final int Deadlock = 6;
+	public static final int ExtendAndSuper = 7;
+	public static final int Enumeration = 9;
 	
-//	SORTING
+	/************************************************************
+	 * Programming Problems
+	 ************************************************************/	
+	public static final int BreadthFirstTraversal = 51;
+	public static final int KPalindrome = 52;
+	public static final int RodCutting = 53;
+	public static final int LongestCommonSubsequence = 54;
+	public static final int MaximumSubarray_NOT_LEETCODE = 55;
+	public static final int BoundedSlices = 56;
+	public static final int AnagramSubstring = 57;
+	
+	
+	/************************************************************
+	 * Sorting
+	 ************************************************************/
 	public static final int InsertionSort = 3001;
 	public static final int MergeSort = 3002;
 	public static final int HeapSort = 3003;
@@ -108,13 +123,17 @@ public class Main {
 	public static final int CountingSort = 3005;
 	public static final int SelectionSort = 3006;
 	
-//	DATA STRUCTURES
-	public static final int TRIE = 4000;
-	public static final int BINARY_SEARCH_TREE = 4001;
-	public static final int ROD_CUTTING = 4002;
-	public static final int LONGEST_COMMON_SUBSEQUENCE = 4003;
+	/************************************************************
+	 * Data Structures
+	 ************************************************************/
+	public static final int Trie = 4001;
+	public static final int BinarySearchTree = 4002;
+	public static final int AVLTree = 4003;
+	public static final int LinkedList = 4004;
 	
-//	EXERCISES FROM "CRACKING CODING INTERVIEW"
+	/************************************************************
+	 * Exercises from "Cracking the Coding Interview"
+	 ************************************************************/
 	public static final int EX19_10 = 1910;
 	public static final int EX19_08 = 1908;
 	public static final int EX19_05 = 1905;
@@ -177,7 +196,9 @@ public class Main {
 	public static final int EX01_02 = 102;
 	public static final int EX01_01 = 101;
 	
-//	EXERCISES FROM LEETCODE
+	/************************************************************
+	 * Exercises from LeetCode
+	 ************************************************************/
 	public static final int MaximumDepthOfBinaryTree = 5001;
 	public static final int SingleNumber = 5002;
 	public static final int SameTree = 5003;
@@ -332,39 +353,81 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = QuickSort;
+		int option = AnagramSubstring;
 
 		switch(option){
-			case TRIE:
+/************************************************************
+ * Operators and Java Concepts
+ ************************************************************/
+		case Exclusive_Or:
+			exercise = new ExclusiveOR();
+			break;
+		case TernaryOperators:
+			exercise = new Ternary();
+			break;
+		case BitwiseOperation:
+			exercise = new BitwiseOperation();
+			break;
+		case Thread101:
+			exercise = new Thread101();
+			break;
+		case Synchronization:
+			exercise = new Synchronization();
+			break;
+		case Deadlock:
+			exercise = new Deadlock();
+			break;
+		case ExtendAndSuper:
+			exercise = new ExtendAndSuper();
+			break;
+		case Enumeration:
+			exercise = new EnumerationExercise();
+			break;
+		
+/************************************************************
+ * Programming Problems
+ ************************************************************/
+		case BreadthFirstTraversal:
+			exercise = new BreadthFirstTraversal();
+			break;
+		case KPalindrome:
+			exercise = new KPalindrome();
+			break;
+		case RodCutting:
+			exercise = new RodCutting();
+			break;
+		case LongestCommonSubsequence:
+			exercise = new LongestCommonSubsequence();
+			break;
+		case MaximumSubarray_NOT_LEETCODE:
+			exercise = new MaximumSubarray();
+			break;
+		case BoundedSlices:
+			exercise = new BoundedSlices();
+			break;
+		case AnagramSubstring:
+			exercise = new AnagramSubstring();
+			break;
+		
+/************************************************************
+ * Data Structures
+ ************************************************************/
+			case Trie:
 				exercise = new TrieExercise();
 				break;
-			case EXCLUSIVE_OR:
-				exercise = new ExclusiveOR();
+			case BinarySearchTree:
+				exercise = new BinarySearchTreeExercise();
 				break;
-			case TERNARY:
-				exercise = new Ternary();
+			case AVLTree:
+				exercise = new AVLTreeExercise();
 				break;
-			case BITWISE_OPERATION:
-				exercise = new BitwiseOperation();
-				break;
-			case THREAD101:
-				exercise = new Thread101();
-				break;
-			case SYNCHRONIZATION:
-				exercise = new Synchronization();
-				break;
-			case DEADLOCK:
-				exercise = new Deadlock();
-				break;
-			case LINKEDLIST:
+			case LinkedList:
 				exercise = new LinkedListExercise();
 				break;
-			case EXTEND_AND_SUPER:
-				exercise = new ExtendAndSuper();
-				break;
-			case MAXIMUM_SUBARRAY:
-				exercise = new MaximumSubarray();
-				break;
+				
+/************************************************************
+ * Sorting
+ ************************************************************/				
 			case InsertionSort:
 				exercise = new InsertionSort();
 				break;
@@ -383,21 +446,10 @@ public class Main {
 			case SelectionSort:
 				exercise = new SelectionSort();
 				break;
-			case BINARY_SEARCH_TREE:
-				exercise = new BinarySearchTreeExercise();
-				break;
-			case ROD_CUTTING:
-				exercise = new RodCutting();
-				break;
-			case LONGEST_COMMON_SUBSEQUENCE:
-				exercise = new LongestCommonSubsequence();
-				break;
-			case ENUMERATION:
-				exercise = new EnumerationExercise();
-				break;
-			case Breadth_First_Traversal:
-				exercise = new BreadthFirstTraversal();
-				break;
+				
+/************************************************************
+ * Exercises from "Cracking the Coding Interview"
+ ************************************************************/
 			case EX19_10:
 				exercise = new Exercise19_10();
 				break;
@@ -580,6 +632,10 @@ public class Main {
 			case EX01_01:
 				exercise = new Exercise01_01();
 				break;
+				
+/************************************************************
+ * Exercises from LeetCode
+ ************************************************************/
 			case MaximumDepthOfBinaryTree:
 				exercise = new MaximumDepthOfBinaryTree();
 				break;
@@ -1029,9 +1085,6 @@ public class Main {
 				break;
 			case WordLadderII:
 				exercise = new WordLadderII();
-				break;
-			case KPalindrome:
-				exercise = new KPalindrome();
 				break;
 		}
 		

@@ -5,8 +5,12 @@ import com.cllin.algorithms.BoundedSlices;
 import com.cllin.algorithms.BreadthFirstTraversal;
 import com.cllin.algorithms.KPalindrome;
 import com.cllin.algorithms.LongestCommonSubsequence;
+import com.cllin.algorithms.MajorityCounting;
 import com.cllin.algorithms.MaximumSubarray;
+import com.cllin.algorithms.RearrangeArray;
+import com.cllin.algorithms.RepeatedPattern;
 import com.cllin.algorithms.RodCutting;
+import com.cllin.algorithms.SubarraySum;
 import com.cllin.cci.chap01.Exercise01_01;
 import com.cllin.cci.chap01.Exercise01_02;
 import com.cllin.cci.chap01.Exercise01_03;
@@ -111,7 +115,10 @@ public class Main {
 	public static final int MaximumSubarray_NOT_LEETCODE = 55;
 	public static final int BoundedSlices = 56;
 	public static final int AnagramSubstring = 57;
-	
+	public static final int MajorityCounting = 58;
+	public static final int SubarraySum = 59;
+	public static final int RearrangeArray = 60;
+	public static final int RepeatedPattern = 61;
 	
 	/************************************************************
 	 * Sorting
@@ -353,7 +360,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = AnagramSubstring;
+		int option = RepeatedPattern;
 
 		switch(option){
 /************************************************************
@@ -407,6 +414,18 @@ public class Main {
 			break;
 		case AnagramSubstring:
 			exercise = new AnagramSubstring();
+			break;
+		case MajorityCounting:
+			exercise = new MajorityCounting();
+			break;
+		case SubarraySum:
+			exercise = new SubarraySum();
+			break;
+		case RearrangeArray:
+			exercise = new RearrangeArray();
+			break;
+		case RepeatedPattern:
+			exercise = new RepeatedPattern();
 			break;
 		
 /************************************************************

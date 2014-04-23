@@ -2,6 +2,13 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an array and a value, remove all instances of that value in place and return the new length.
+ * The order of elements can be changed. It doesn't matter what you leave beyond the new length.
+ * 
+ * Source: http://oj.leetcode.com/problems/remove-element/
+ */
+
 public class RemoveElement implements LeetCodeExercise {
 	private final int MAXIMUM = 1000;
 	private final int SIZE = 1000;
@@ -26,7 +33,7 @@ public class RemoveElement implements LeetCodeExercise {
 	public void runExercise() {
 		initialize();
 		
-		array = new int[]{0,4,4,0,4,4,4,0,2};
+		array = new int[]{0, 4, 4, 0, 4, 4, 4, 0, 2};
 		value = 4;
 		
 		newLength = removeElement(array, value);

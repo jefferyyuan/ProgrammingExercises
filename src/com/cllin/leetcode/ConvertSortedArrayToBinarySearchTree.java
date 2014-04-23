@@ -9,7 +9,6 @@ import com.cllin.tree.Node;
  * Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
  * 
  * Source: http://oj.leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
- * 
  */
 
 public class ConvertSortedArrayToBinarySearchTree implements LeetCodeExercise {
@@ -58,15 +57,15 @@ public class ConvertSortedArrayToBinarySearchTree implements LeetCodeExercise {
     }
 	
 	private String inOrderTreeWalk(Node node) {
-		String string = new String();
+		StringBuffer buffer = new StringBuffer();
 		
-		if (node == null) return string;
+		if (node == null) return buffer.toString();
 		
-		string += inOrderTreeWalk(node.left);
-		string += Integer.toString(node.value);
-		string += inOrderTreeWalk(node.right);
+		buffer.append(inOrderTreeWalk(node.left));
+		buffer.append(Integer.toString(node.value));
+		buffer.append(inOrderTreeWalk(node.right));
 		
-		return string;
+		return buffer.toString();
 	}
 
 	@Override

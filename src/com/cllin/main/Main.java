@@ -4,12 +4,14 @@ import com.cllin.algorithms.AnagramSubstring;
 import com.cllin.algorithms.BoundedSlices;
 import com.cllin.algorithms.BreadthFirstTraversal;
 import com.cllin.algorithms.KPalindrome;
+import com.cllin.algorithms.KthOfUnsortedArray;
 import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MajorityCounting;
 import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.algorithms.RearrangeArray;
 import com.cllin.algorithms.RepeatedPattern;
 import com.cllin.algorithms.RodCutting;
+import com.cllin.algorithms.StringTransformation;
 import com.cllin.algorithms.SubarraySum;
 import com.cllin.cci.chap01.Exercise01_01;
 import com.cllin.cci.chap01.Exercise01_02;
@@ -119,6 +121,8 @@ public class Main {
 	public static final int SubarraySum = 59;
 	public static final int RearrangeArray = 60;
 	public static final int RepeatedPattern = 61;
+	public static final int StringTransformation = 62;
+	public static final int KthOfUnsortedArray = 63;
 	
 	/************************************************************
 	 * Sorting
@@ -360,7 +364,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = RepeatedPattern;
+		int option = KthOfUnsortedArray;
 
 		switch(option){
 /************************************************************
@@ -426,6 +430,12 @@ public class Main {
 			break;
 		case RepeatedPattern:
 			exercise = new RepeatedPattern();
+			break;
+		case StringTransformation:
+			exercise = new StringTransformation();
+			break;
+		case KthOfUnsortedArray:
+			exercise = new KthOfUnsortedArray();
 			break;
 		
 /************************************************************

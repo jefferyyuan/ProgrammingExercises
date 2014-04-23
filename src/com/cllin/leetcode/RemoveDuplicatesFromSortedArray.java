@@ -60,7 +60,7 @@ public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
         
 //      Values are set to -2147483648 to pass my own test cases
         for (int k = i + 1; k < length; k++) {
-        	A[k] = -2147483648;
+        	A[k] = Integer.MIN_VALUE;
         }
         
         return i + 1;
@@ -72,12 +72,12 @@ public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
 		int count = 0;
 		for (int i = 0; i < length; i++) {
 			for (int j = 0; j < i; j++) {
-				if (array[i] == array[j] && array[i] != -2147483648) {
+				if (array[i] == array[j] && array[i] != Integer.MIN_VALUE) {
 					return false;
 				}
 			}
 			
-			if (array[i] != -2147483648) count++;
+			if (array[i] != Integer.MIN_VALUE) count++;
 		}
 		
 		return (count == result)? true : false;

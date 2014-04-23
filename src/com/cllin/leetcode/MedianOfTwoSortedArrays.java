@@ -5,9 +5,10 @@ import java.util.Arrays;
 import com.cllin.main.LeetCodeExercise;
 
 /*
- * Find the contiguous sub-array within an array (containing at least one number) which has the largest sum.
+ * There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. 
+ * The overall run time complexity should be O(log (m+n)).
  * 
- * Source: http://oj.leetcode.com/problems/maximum-subarray/
+ * Source: http://oj.leetcode.com/problems/median-of-two-sorted-arrays/
  */
 
 public class MedianOfTwoSortedArrays implements LeetCodeExercise {

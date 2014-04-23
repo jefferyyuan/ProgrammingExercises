@@ -2,6 +2,18 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Given an unsorted integer array, find the first missing positive integer.
+ * 
+ * For example,
+ * Given [1, 2, 0] return 3,
+ * and [3, 4, -1, 1] return 2.
+ * 
+ * Your algorithm should run in O(n) time and uses constant space.
+ * 
+ * Source: http://oj.leetcode.com/problems/first-missing-positive/
+ */
+
 public class FirstMissingPositive implements LeetCodeExercise {
 	
 	private final int[][] testSuite = {

@@ -176,6 +176,20 @@ public class BinarySearchTree {
 		return level;
 	}
 	
+	public String printTree() {
+		return inorderTraversal(this.root, new StringBuffer()).toString();
+	}
+	
+	private StringBuffer inorderTraversal(Node node, StringBuffer buffer) {
+		if (node == null) return buffer;
+		
+		buffer = inorderTraversal(node.left, buffer);
+		buffer.append(node.value);
+		buffer = inorderTraversal(node.right, buffer);
+		
+		return buffer;
+	}
+	
 	private void transplant(Node origin, Node newNode){
 		if(origin.parent == null){
 			root = newNode;

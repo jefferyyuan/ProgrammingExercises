@@ -3,6 +3,7 @@ package com.cllin.main;
 import com.cllin.algorithms.AnagramSubstring;
 import com.cllin.algorithms.BoundedSlices;
 import com.cllin.algorithms.BreadthFirstTraversal;
+import com.cllin.algorithms.EditString;
 import com.cllin.algorithms.KPalindrome;
 import com.cllin.algorithms.KthOfUnsortedArray;
 import com.cllin.algorithms.LongestCommonSubsequence;
@@ -11,6 +12,7 @@ import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.algorithms.RearrangeArray;
 import com.cllin.algorithms.RepeatedPattern;
 import com.cllin.algorithms.RodCutting;
+import com.cllin.algorithms.SerializeBinaryTree;
 import com.cllin.algorithms.StringTransformation;
 import com.cllin.algorithms.SubarraySum;
 import com.cllin.cci.chap01.Exercise01_01;
@@ -105,7 +107,7 @@ public class Main {
 	public static final int Synchronization = 5;
 	public static final int Deadlock = 6;
 	public static final int ExtendAndSuper = 7;
-	public static final int Enumeration = 9;
+	public static final int Enumeration = 8;
 	
 	/************************************************************
 	 * Programming Problems
@@ -123,6 +125,8 @@ public class Main {
 	public static final int RepeatedPattern = 61;
 	public static final int StringTransformation = 62;
 	public static final int KthOfUnsortedArray = 63;
+	public static final int SerializeBinaryTree = 64;
+	public static final int EditString = 65;
 	
 	/************************************************************
 	 * Sorting
@@ -364,7 +368,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = KthOfUnsortedArray;
+		int option = EditString;
 
 		switch(option){
 /************************************************************
@@ -436,6 +440,12 @@ public class Main {
 			break;
 		case KthOfUnsortedArray:
 			exercise = new KthOfUnsortedArray();
+			break;
+		case SerializeBinaryTree:
+			exercise = new SerializeBinaryTree();
+			break;
+		case EditString:
+			exercise = new EditString();
 			break;
 		
 /************************************************************

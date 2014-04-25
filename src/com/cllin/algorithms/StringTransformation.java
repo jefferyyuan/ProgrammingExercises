@@ -33,11 +33,40 @@ public class StringTransformation implements Exercise {
 	}
 	
 	private String transform(String string) {
-		int i, j;
-		int length = string.length();
-		char[] charArray = string.toCharArray();
+		char[] array = string.toCharArray();
 		
-		return new String(charArray);
+		return new String(array);
+	}
+	
+	private char[] stringTransform(char[] array, int start, int end) {
+		if (start >= end) {
+			return array;
+		}
+		
+		int length = end - start + 1;
+		int mid = start + length / 2 + (((start + length / 2) % 2 == 0)? 0 : 1);
+		
+		int i = (length % 2 == 0)? start + 1 : start;
+		int j = mid;
+		
+		while (j <= end) {
+			swap(array, i, j);
+			i += 2;
+			j += 2;
+		}
+		
+		if (length > 3) {
+			stringTransform(array, start, start + length / 2 - 1);
+			stringTransform(array, start + length / 2, end);
+		}
+		
+		return array;
+	}
+	
+	private void swap(char[] array, int i, int j) {
+		char temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
 	}
 	
 	private void test() {

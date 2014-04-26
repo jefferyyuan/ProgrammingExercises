@@ -5,30 +5,38 @@
 ======
 ###CONTENT
 1. [Data Structure](#1)
-2. [Operator] (#2)
+2. [Operators and Java Concepts] (#2)
 3. [Sorting] (#3)
 4. [Exercises from "Cracking Coding Interview"] (#4)
 5. [Exercises from LeetCode] (#5)
-6. [General Issue] (#6)
+6. [Programming Questions] (#6)
  
 ======
-###<a name="1"></a>DATA STRUCTURE
+###<a name="1"></a>Data Structure
 1. Trie
-2. Linked List
+2. Binary Search Tree
+3. AVL Tree
+4. LinkedList
 
-###<a name="2"></a>OPERATOR
+###<a name="2"></a>Operators and Java Concepts
 1. Exclusive Or
-2. Bitwise Operations
-3. Ternary Operations
+2. Ternary Operators
+3. Bitwise Operation
+4. Thread
+5. Synchronization
+6. Deadlock
+7. Extend and Super
+8. Enumeration
 
-###<a name="3"></a>SORTING
+###<a name="3"></a>Sorting
 1. Insertion Sort
 2. Merge Sort
 3. Heap Sort
 4. Quick Sort
 5. Counting Sort
+6. Selection Sort
 
-###<a name="4"></a>EXERCISE FROM CRACKING THE CODING INTERVIEW
+###<a name="4"></a>Exercises from "Cracking Coding Interview"
 1. EXERCISE 19-10
     - Use a function that generate Integer in range (1, 5) to generate Interger in range (1, 7) randomly
     - There are various implementations for this exercise. **An interesting question is how to control the distribution if needed.** If there is any restriction on the output, can the new integer generator remain the same distribution? For uniform distribution, it is possible. However, if the origin generator outputs in normal distribution, some integral transform is required
@@ -92,7 +100,7 @@
 55. EXERCISE 1-02
 56. EXERCISE 1-01
 
-###<a name="5"></a>EXERCISE FROM LEETCODE
+###<a name="5"></a>Exercises from LeetCode
 1. Same Tree
 2. Reverse Integer
 3. Best Time to Buy Stock
@@ -254,11 +262,19 @@
 150. Max Points on a Line
 151. Word Ladder II
 
-###<a name="6"></a>GENERAL ISSUE
-1. Thread/Lock
-2. Inheritance/Super
-3. Testing With JUnit
-4. Maximum Subarray Problem
-5. Rod Cutting Problem
-6. Longest Common Substring/Sunsequence
-7. Breadth First Traversal
+###<a name="6"></a>Programming Questions
+1. Breadth First Traversal
+2. K Palindrome
+3. Rod Cutting
+4. Longest Common Subsequence
+5. Maximum Subarray
+6. Bounded Slices
+7. Anagram Substring
+8. Majority Counting
+9. Subarray Sum
+10. Rearrange Array
+11. Repeated Pattern
+12. String Transformation
+13. Kth of UnsortedArray
+14. Serialize Binary Tree
+15. Edit String

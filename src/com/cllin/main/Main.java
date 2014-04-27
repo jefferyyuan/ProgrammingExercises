@@ -9,6 +9,9 @@ import com.cllin.algorithms.KthOfUnsortedArray;
 import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MajorityCounting;
 import com.cllin.algorithms.MaximumSubarray;
+import com.cllin.algorithms.MinimumSequence;
+import com.cllin.algorithms.MinimumWindow;
+import com.cllin.algorithms.PotsOfGold;
 import com.cllin.algorithms.RearrangeArray;
 import com.cllin.algorithms.RepeatedPattern;
 import com.cllin.algorithms.RodCutting;
@@ -127,6 +130,9 @@ public class Main {
 	public static final int KthOfUnsortedArray = 63;
 	public static final int SerializeBinaryTree = 64;
 	public static final int EditString = 65;
+	public static final int MinimumSequence = 66;
+	public static final int PotsOfGold = 67;
+	public static final int MinimumWindow = 68;
 	
 	/************************************************************
 	 * Sorting
@@ -368,7 +374,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = StringTransformation;
+		int option = MinimumWindow;
 
 		switch(option){
 /************************************************************
@@ -446,6 +452,15 @@ public class Main {
 			break;
 		case EditString:
 			exercise = new EditString();
+			break;
+		case MinimumSequence:
+			exercise = new MinimumSequence();
+			break;
+		case PotsOfGold:
+			exercise = new PotsOfGold();
+			break;
+		case MinimumWindow:
+			exercise = new MinimumWindow();
 			break;
 		
 /************************************************************

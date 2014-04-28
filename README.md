@@ -4,7 +4,7 @@
 
 ======
 ###CONTENT
-1. [Data Structure](#1)
+1. [Data Structure] (#1)
 2. [Operators and Java Concepts] (#2)
 3. [Sorting] (#3)
 4. [Exercises from "Cracking Coding Interview"] (#4)
@@ -278,3 +278,6 @@
 13. Kth of UnsortedArray
 14. Serialize Binary Tree
 15. Edit String
+16. Minimum Sequence
+17. Pots of Gold
+18. Minimum Window

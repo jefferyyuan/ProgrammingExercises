@@ -58,14 +58,11 @@ public class TwoSum implements LeetCodeExercise {
 		int length = numbers.length;
 		
 		for (int p = 0; p < length; p++) {
-			if (sorted.get(numbers[p]) == null) {
-				sorted.put(numbers[p], p);
-			}
+			if (!sorted.containsKey(numbers[p])) sorted.put(numbers[p], p);
 			
 			int key = target - numbers[p];
-			Integer index = sorted.get(key);
-			if (index != null && index.intValue() != p) {
-				return new int[]{index.intValue() + 1, p + 1};
+			if (sorted.containsKey(key) && sorted.get(key) != p) {
+				return new int[]{sorted.get(key) + 1, p + 1};
 			}
 			
 		}

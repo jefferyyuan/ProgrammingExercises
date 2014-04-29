@@ -63,15 +63,15 @@ public class ConvertSortedListToBinarySearchTree implements LeetCodeExercise {
     	
     	TreeNode leftChild = buildTree(start, mid - 1);
     	
-    	TreeNode parent = new TreeNode(list.val);
+    	TreeNode node = new TreeNode(list.val);
     	list = list.next;
     	
     	TreeNode rightChild = buildTree(mid + 1, end);
     	
-    	parent.left = leftChild;
-    	parent.right = rightChild;
+    	node.left = leftChild;
+    	node.right = rightChild;
     	
-    	return parent;
+    	return node;
     }
     
 	private String inOrderTreeWalk(TreeNode node) {

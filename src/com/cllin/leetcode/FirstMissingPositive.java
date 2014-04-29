@@ -71,13 +71,11 @@ public class FirstMissingPositive implements LeetCodeExercise {
 	
 //	Move all non-positive number to the left of the array
 	private int segregate(int[] array) {
-		int temp;
 		int shift = 0;
-		int length = array.length;
 		
-		for (int i = 0; i < length; i++) {
+		for (int i = 0; i < array.length; i++) {
 			if (array[i] <= 0) {
-				temp = array[i];
+				int temp = array[i];
 				array[i] = array[shift];
 				array[shift] = temp;
 				

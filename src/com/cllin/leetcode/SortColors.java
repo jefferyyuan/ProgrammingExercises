@@ -57,7 +57,7 @@ public class SortColors implements LeetCodeExercise {
     		switch(A[i]) {
     		case 0:
     			swap(A, R++, i);
-    			break;
+    			continue;
     		case 2:
     			swap(A, B--, i);
     			continue;

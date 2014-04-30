@@ -274,7 +274,7 @@
 9. Subarray Sum
 10. Rearrange Array
 11. Repeated Pattern
-12. String Transformation
+12. String Transformation (To be implemented)
 13. Kth of UnsortedArray
 14. Serialize Binary Tree
 15. Edit String

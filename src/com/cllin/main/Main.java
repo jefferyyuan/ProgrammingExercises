@@ -11,13 +11,13 @@ import com.cllin.algorithms.MajorityCounting;
 import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.algorithms.MinimumSequence;
 import com.cllin.algorithms.MinimumWindow;
+import com.cllin.algorithms.PartialSort;
 import com.cllin.algorithms.PotsOfGold;
 import com.cllin.algorithms.RearrangeArray;
 import com.cllin.algorithms.RepeatedPattern;
 import com.cllin.algorithms.RodCutting;
 import com.cllin.algorithms.SerializeBinaryTree;
 import com.cllin.algorithms.SixSixPair;
-import com.cllin.algorithms.StringTransformation;
 import com.cllin.algorithms.SubarraySum;
 import com.cllin.algorithms.SubsequenceInHaystack;
 import com.cllin.cci.chap01.Exercise01_01;
@@ -128,15 +128,15 @@ public class Main {
 	public static final int SubarraySum = 59;
 	public static final int RearrangeArray = 60;
 	public static final int RepeatedPattern = 61;
-	public static final int StringTransformation = 62;
-	public static final int KthOfUnsortedArray = 63;
-	public static final int SerializeBinaryTree = 64;
-	public static final int EditString = 65;
-	public static final int MinimumSequence = 66;
-	public static final int PotsOfGold = 67;
-	public static final int MinimumWindow = 68;
-	public static final int SixSixPair = 69;
-	public static final int SubsequenceInHaystack = 70;
+	public static final int KthOfUnsortedArray = 62;
+	public static final int SerializeBinaryTree = 63;
+	public static final int EditString = 64;
+	public static final int MinimumSequence = 65;
+	public static final int PotsOfGold = 66;
+	public static final int MinimumWindow = 67;
+	public static final int SixSixPair = 68;
+	public static final int SubsequenceInHaystack = 69;
+	public static final int PartialSort = 70;
 	
 	/************************************************************
 	 * Sorting
@@ -378,7 +378,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = SubsequenceInHaystack;
+		int option = PartialSort;
 
 		switch(option){
 /************************************************************
@@ -445,9 +445,6 @@ public class Main {
 		case RepeatedPattern:
 			exercise = new RepeatedPattern();
 			break;
-		case StringTransformation:
-			exercise = new StringTransformation();
-			break;
 		case KthOfUnsortedArray:
 			exercise = new KthOfUnsortedArray();
 			break;
@@ -471,6 +468,9 @@ public class Main {
 			break;
 		case SubsequenceInHaystack:
 			exercise = new SubsequenceInHaystack();
+			break;
+		case PartialSort:
+			exercise = new PartialSort();
 			break;
 		
 /************************************************************

@@ -274,10 +274,12 @@
 9. Subarray Sum
 10. Rearrange Array
 11. Repeated Pattern
-12. String Transformation (To be implemented)
-13. Kth of UnsortedArray
-14. Serialize Binary Tree
-15. Edit String
-16. Minimum Sequence
-17. Pots of Gold
-18. Minimum Window
+12. Kth of UnsortedArray
+13. Serialize Binary Tree
+14. Edit String
+15. Minimum Sequence
+16. Pots of Gold
+17. Minimum Window
+18. 6-6 Pair
+19. Subsequence in Haystack
+20. Partial Sort

@@ -9,6 +9,8 @@ import com.cllin.main.Exercise;
 /*
  * Given two strings, a haystack and a needle, 
  * return the number of subsequences of haystack that is in the same order as the needle.
+ * 
+ * Actually, this is the same question as the Distinct Subsequences in LeetCode
  */
 
 public class SubsequenceInHaystack implements Exercise {
@@ -20,7 +22,7 @@ public class SubsequenceInHaystack implements Exercise {
 	public void runExercise() {
 		int numValid = getCount(haystack, needle);
 		
-		System.out.printf("There are %d valid subsequences for:%nH = %s%nN = %s", numValid, haystack, needle);
+		System.out.printf("There are %d valid substring for:%nH = %s%nN = %s", numValid, haystack, needle);
 	}
 
 	private int getCount(String haystack, String needle) {

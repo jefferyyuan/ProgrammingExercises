@@ -18,31 +18,28 @@ import com.cllin.main.LeetCodeExercise;
  */
 
 public class LongestConsecutiveSequence implements LeetCodeExercise {
-	private final int SIZE = 1000;
-	private final int MAXIMUM = 2000;
 	
-	private int[] array;
+	private final int[][] testSuite = {
+			new int[]{0},
+			new int[]{100, 4, 200, 1, 3, 2},
+			new int[]{2147483646, -2147483647, 0, 2, 2147483644, -2147483645, 2147483645},
+			new int[]{-3, -9, -3, 4, -3, -9, -3, -6, 8, -3, 0, 1, 5, -1, -4, 0, -7, 1, 5}
+	};
+	private int index;
 	private int result;
 
 	@Override
 	public void initialize() {
-		result = 0;
-		array = new int[SIZE];
-		for (int i = 0; i < SIZE; i++) {
-			array[i] = (int) (Math.random() * MAXIMUM);
-		}
+		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public void runExercise() {
-		initialize();
-//		array = new int[]{0};
-//		array = new int[]{100, 4, 200, 1, 3, 2};
-		array = new int[]{2147483646, -2147483647, 0, 2, 2147483644, -2147483645, 2147483645};
-//		array = new int[]{-3, -9, -3, 4, -3, -9, -3, -6, 8, -3, 0, 1, 5, -1, -4, 0, -7, 1, 5};
+		for (index = 0; index < testSuite.length; index++) {
+			result = longestConsecutive(testSuite[index]);
+			test();
+		}
 
-		result = longestConsecutive(array);
-		test();
 	}
 	
 	private int longestConsecutive(int[] num) {
@@ -88,6 +85,12 @@ public class LongestConsecutiveSequence implements LeetCodeExercise {
 	
 	@Override
 	public boolean test() {
+		System.out.print("A = { ");
+		for (int n : testSuite[index]) {
+			System.out.printf("%d ", n);
+		}
+		System.out.printf("}%n");
+		
 		System.out.printf("The length of the longest consecutive sequence is %d%n", result);
 		return false;
 	}

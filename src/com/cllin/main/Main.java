@@ -1,11 +1,13 @@
 package com.cllin.main;
 
+import com.cllin.algorithms.AggregatedNumber;
 import com.cllin.algorithms.AnagramSubstring;
 import com.cllin.algorithms.BoundedSlices;
 import com.cllin.algorithms.BreadthFirstTraversal;
 import com.cllin.algorithms.EditString;
 import com.cllin.algorithms.KPalindrome;
 import com.cllin.algorithms.KthOfUnsortedArray;
+import com.cllin.algorithms.LongestArithmeticProgression;
 import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MajorityCounting;
 import com.cllin.algorithms.MaximumSubarray;
@@ -18,6 +20,7 @@ import com.cllin.algorithms.RepeatedPattern;
 import com.cllin.algorithms.RodCutting;
 import com.cllin.algorithms.SerializeBinaryTree;
 import com.cllin.algorithms.SixSixPair;
+import com.cllin.algorithms.SortByDictionary;
 import com.cllin.algorithms.SubarraySum;
 import com.cllin.algorithms.SubsequenceInHaystack;
 import com.cllin.cci.chap01.Exercise01_01;
@@ -84,6 +87,7 @@ import com.cllin.cci.chap19.Exercise19_10;
 import com.cllin.enumeration.EnumerationExercise;
 import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.leetcode.*;
+import com.cllin.list.HeapExercise;
 import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
 import com.cllin.operator.ExclusiveOR;
@@ -137,6 +141,9 @@ public class Main {
 	public static final int SixSixPair = 68;
 	public static final int SubsequenceInHaystack = 69;
 	public static final int PartialSort = 70;
+	public static final int SortByDictionary = 71;
+	public static final int LongestArithmeticProgression = 72;
+	public static final int AggregatedNumber = 73;
 	
 	/************************************************************
 	 * Sorting
@@ -155,6 +162,7 @@ public class Main {
 	public static final int BinarySearchTree = 4002;
 	public static final int AVLTree = 4003;
 	public static final int LinkedList = 4004;
+	public static final int Heap = 4005;
 	
 	/************************************************************
 	 * Exercises from "Cracking the Coding Interview"
@@ -378,7 +386,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = PartialSort;
+		int option = AggregatedNumber;
 
 		switch(option){
 /************************************************************
@@ -472,6 +480,15 @@ public class Main {
 		case PartialSort:
 			exercise = new PartialSort();
 			break;
+		case SortByDictionary:
+			exercise = new SortByDictionary();
+			break;
+		case LongestArithmeticProgression:
+			exercise = new LongestArithmeticProgression();
+			break;
+		case AggregatedNumber:
+			exercise = new AggregatedNumber();
+			break;
 		
 /************************************************************
  * Data Structures
@@ -487,6 +504,9 @@ public class Main {
 			break;
 		case LinkedList:
 			exercise = new LinkedListExercise();
+			break;
+		case Heap:
+			exercise = new HeapExercise();
 			break;
 				
 /************************************************************

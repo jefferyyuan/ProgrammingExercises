@@ -5,6 +5,7 @@ import com.cllin.algorithms.AnagramSubstring;
 import com.cllin.algorithms.BoundedSlices;
 import com.cllin.algorithms.BreadthFirstTraversal;
 import com.cllin.algorithms.EditString;
+import com.cllin.algorithms.GenerateEquation;
 import com.cllin.algorithms.KPalindrome;
 import com.cllin.algorithms.KthOfUnsortedArray;
 import com.cllin.algorithms.LongestArithmeticProgression;
@@ -15,6 +16,7 @@ import com.cllin.algorithms.MinimumSequence;
 import com.cllin.algorithms.MinimumWindow;
 import com.cllin.algorithms.PartialSort;
 import com.cllin.algorithms.PotsOfGold;
+import com.cllin.algorithms.PrintEvolutionaryTree;
 import com.cllin.algorithms.RearrangeArray;
 import com.cllin.algorithms.RepeatedPattern;
 import com.cllin.algorithms.RodCutting;
@@ -144,6 +146,8 @@ public class Main {
 	public static final int SortByDictionary = 71;
 	public static final int LongestArithmeticProgression = 72;
 	public static final int AggregatedNumber = 73;
+	public static final int GenerateEquation = 74;
+	public static final int PrintEvolutionaryTree = 75;
 	
 	/************************************************************
 	 * Sorting
@@ -386,7 +390,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = AggregatedNumber;
+		int option = PrintEvolutionaryTree;
 
 		switch(option){
 /************************************************************
@@ -488,6 +492,12 @@ public class Main {
 			break;
 		case AggregatedNumber:
 			exercise = new AggregatedNumber();
+			break;
+		case GenerateEquation:
+			exercise = new GenerateEquation();
+			break;
+		case PrintEvolutionaryTree:
+			exercise = new PrintEvolutionaryTree();
 			break;
 		
 /************************************************************

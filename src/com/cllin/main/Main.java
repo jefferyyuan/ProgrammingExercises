@@ -5,7 +5,9 @@ import com.cllin.algorithms.AnagramSubstring;
 import com.cllin.algorithms.BoundedSlices;
 import com.cllin.algorithms.BreadthFirstTraversal;
 import com.cllin.algorithms.EditString;
+import com.cllin.algorithms.FirstUniqueElement;
 import com.cllin.algorithms.GenerateEquation;
+import com.cllin.algorithms.GenerateRandom;
 import com.cllin.algorithms.KPalindrome;
 import com.cllin.algorithms.KthOfUnsortedArray;
 import com.cllin.algorithms.LongestArithmeticProgression;
@@ -148,6 +150,8 @@ public class Main {
 	public static final int AggregatedNumber = 73;
 	public static final int GenerateEquation = 74;
 	public static final int PrintEvolutionaryTree = 75;
+	public static final int GenerateRandom = 76;
+	public static final int FirstUniqueElement = 77;
 	
 	/************************************************************
 	 * Sorting
@@ -390,7 +394,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = PrintEvolutionaryTree;
+		int option = FirstUniqueElement;
 
 		switch(option){
 /************************************************************
@@ -498,6 +502,12 @@ public class Main {
 			break;
 		case PrintEvolutionaryTree:
 			exercise = new PrintEvolutionaryTree();
+			break;
+		case GenerateRandom:
+			exercise = new GenerateRandom();
+			break;
+		case FirstUniqueElement:
+			exercise = new FirstUniqueElement();
 			break;
 		
 /************************************************************

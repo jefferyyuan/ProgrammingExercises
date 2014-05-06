@@ -1,5 +1,6 @@
 package com.cllin.algorithms;
 
+import java.util.HashMap;
 import java.util.HashSet;
 
 import com.cllin.main.Exercise;
@@ -25,12 +26,18 @@ public class GenerateRandom implements Exercise {
 	
 	@Override
 	public void runExercise() {
-		N = 100;
+		N = 30;
 		initialize();
 		
-		for (int i = 0; i < 100; i++) {
-			System.out.printf("getRandom(N, array) = %d%n", getRandom(N, array));
+		System.out.printf("N = %d%n", N);
+		
+		System.out.print("K = { ");
+		for (int n : array) {
+			System.out.printf("%d ", n);
 		}
+		System.out.printf("}%n");
+		
+		test();
 	}
 	
 	private int getRandom(int N, int K[]) {
@@ -39,14 +46,15 @@ public class GenerateRandom implements Exercise {
 		int i = 0;
 		int j = 0;
 		int valid = 0;
-		while (valid < target) {
-			if (K[j] == i) {
+		while (valid <= target) {
+			while (j < K.length && K[j] == i) {
+				i++;
 				j++;
-				i++;
-			} else {
-				i++;
-				valid++;
 			}
+			
+			if (valid == target) break;
+			i++;
+			valid++;
 		}
 		
 		return i;
@@ -69,5 +77,21 @@ public class GenerateRandom implements Exercise {
 
 	private final int uniform(int n) {
 		return (int) (Math.random() * n);
+	}
+	
+	private void test() {
+		final int TRIALS = 10000;
+		HashMap<Integer, Integer> counts = new HashMap<Integer, Integer>();
+		for (int i = 0; i < TRIALS; i++) {
+			int random = getRandom(N, array);
+			
+			int count = (counts.containsKey(random))? counts.get(random) + 1 : 1;
+			counts.put(random, count);
+		}
+		
+		for (Integer key : counts.keySet()) {
+			double probability = (double) counts.get(key) / (double) TRIALS;
+			System.out.printf("P(%d) = %f%n", key.intValue(), probability);
+		}
 	}
 }

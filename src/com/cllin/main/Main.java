@@ -394,7 +394,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = FirstUniqueElement;
+		int option = GenerateRandom;
 
 		switch(option){
 /************************************************************

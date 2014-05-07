@@ -17,6 +17,7 @@
 2. Binary Search Tree
 3. AVL Tree
 4. LinkedList
+5. Heap
 
 ###<a name="2"></a>Operators and Java Concepts
 1. Exclusive Or
@@ -283,3 +284,10 @@
 18. 6-6 Pair
 19. Subsequence in Haystack
 20. Partial Sort
+21. Aggregated Number
+22. Longest Arithmetic Progression
+23. Sort by Dictionary
+24. Generate Equation
+25. Print Evolutionary Tree
+26. Generate Random
+27. First Unique Element

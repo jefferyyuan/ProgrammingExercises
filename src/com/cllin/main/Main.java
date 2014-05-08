@@ -30,7 +30,7 @@ import com.cllin.algorithms.SixSixPair;
 import com.cllin.algorithms.SortByDictionary;
 import com.cllin.algorithms.SubarraySum;
 import com.cllin.algorithms.SubsequenceInHaystack;
-import com.cllin.algorithms.SubstitudeCharacters;
+import com.cllin.algorithms.SubstituteCharacters;
 import com.cllin.cci.chap01.Exercise01_01;
 import com.cllin.cci.chap01.Exercise01_02;
 import com.cllin.cci.chap01.Exercise01_03;
@@ -524,7 +524,7 @@ public class Main {
 			exercise = new CombinationsOfTargetedSum();
 			break;
 		case SubstitudeCharacters:
-			exercise = new SubstitudeCharacters();
+			exercise = new SubstituteCharacters();
 			break;
 		case ConvertNumber:
 			exercise = new ConvertNumber();

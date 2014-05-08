@@ -22,7 +22,7 @@ import com.cllin.main.Exercise;
  * Source: http://www.careercup.com/question?id=15419952
  */
 
-public class SubstitudeCharacters implements Exercise {
+public class SubstituteCharacters implements Exercise {
 
 	private int index;
 	private ArrayList<TestCase> testSuite;
@@ -32,12 +32,12 @@ public class SubstitudeCharacters implements Exercise {
 	public void runExercise() {
 		initialize();
 		for (index = 0; index < testSuite.size(); index++) {
-			output = getSubstitude(testSuite.get(index).map, testSuite.get(index).string);
+			output = getSubstitute(testSuite.get(index).map, testSuite.get(index).string);
 			test();
 		}
 	}
 	
-	private ArrayList<String> getSubstitude(HashMap<Character, ArrayList<Character>> map, String string) {
+	private ArrayList<String> getSubstitute(HashMap<Character, ArrayList<Character>> map, String string) {
 		ArrayList<String> queue = new ArrayList<String>();
 		ArrayList<String> next = new ArrayList<String>();
 		queue.add(new String());

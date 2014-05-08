@@ -4,6 +4,9 @@ import com.cllin.algorithms.AggregatedNumber;
 import com.cllin.algorithms.AnagramSubstring;
 import com.cllin.algorithms.BoundedSlices;
 import com.cllin.algorithms.BreadthFirstTraversal;
+import com.cllin.algorithms.BuildMinimumSum;
+import com.cllin.algorithms.CombinationsOfTargetedSum;
+import com.cllin.algorithms.ConvertNumber;
 import com.cllin.algorithms.EditString;
 import com.cllin.algorithms.FirstUniqueElement;
 import com.cllin.algorithms.GenerateEquation;
@@ -27,6 +30,7 @@ import com.cllin.algorithms.SixSixPair;
 import com.cllin.algorithms.SortByDictionary;
 import com.cllin.algorithms.SubarraySum;
 import com.cllin.algorithms.SubsequenceInHaystack;
+import com.cllin.algorithms.SubstitudeCharacters;
 import com.cllin.cci.chap01.Exercise01_01;
 import com.cllin.cci.chap01.Exercise01_02;
 import com.cllin.cci.chap01.Exercise01_03;
@@ -152,6 +156,10 @@ public class Main {
 	public static final int PrintEvolutionaryTree = 75;
 	public static final int GenerateRandom = 76;
 	public static final int FirstUniqueElement = 77;
+	public static final int BuildMinimumSum = 78;
+	public static final int CombinationsOfTargetedSum = 79;
+	public static final int SubstitudeCharacters = 80;
+	public static final int ConvertNumber = 81;
 	
 	/************************************************************
 	 * Sorting
@@ -394,7 +402,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = GenerateRandom;
+		int option = ConvertNumber;
 
 		switch(option){
 /************************************************************
@@ -508,6 +516,18 @@ public class Main {
 			break;
 		case FirstUniqueElement:
 			exercise = new FirstUniqueElement();
+			break;
+		case BuildMinimumSum:
+			exercise = new BuildMinimumSum();
+			break;
+		case CombinationsOfTargetedSum:
+			exercise = new CombinationsOfTargetedSum();
+			break;
+		case SubstitudeCharacters:
+			exercise = new SubstitudeCharacters();
+			break;
+		case ConvertNumber:
+			exercise = new ConvertNumber();
 			break;
 		
 /************************************************************

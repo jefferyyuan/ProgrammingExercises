@@ -117,7 +117,6 @@ public class CopyListWithRandomPointer implements LeetCodeExercise {
 		 * 		- OLD = NEW.random
 		 * 2) Store the pointers of NEXT for each OLD in a queue
 		 */
-		
 		newNode = dummyNewHead.next;
 		LinkedList<RandomListNode> originNexts = new LinkedList<RandomListNode>();
 		while (newNode != null) {

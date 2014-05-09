@@ -51,20 +51,20 @@ public class SwapNodesInPairs implements LeetCodeExercise {
     	
     	ListNode first = head;
     	ListNode second = null;
-    	ListNode newHead = head.next;
-    	ListNode nextIter = null;
+    	ListNode next = null;
     	ListNode last = null;
+    	ListNode newHead = head.next;
     	
     	while (first != null && first.next != null) {
-    		nextIter = first.next.next;
+    		next = first.next.next;
     		second = first.next;
     		
     		second.next = first;
-    		first.next = nextIter;
+    		first.next = next;
     		
     		if (last != null) last.next = second;
     		last = first;
-    		first = nextIter;
+    		first = next;
     	}
     	
         return newHead;

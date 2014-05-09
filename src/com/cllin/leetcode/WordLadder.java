@@ -122,12 +122,8 @@ public class WordLadder implements LeetCodeExercise {
 			}
 			
 			visited.addAll(queue);
-			queue = new HashSet<String>();
-			for (String string : reachable) {
-				if (!visited.contains(string)) {
-					queue.add(string);
-				}
-			}
+			queue.addAll(reachable);
+			queue.removeAll(visited);
 			
 			distance++;
 		}
@@ -135,17 +131,17 @@ public class WordLadder implements LeetCodeExercise {
 		return 0;
     }
 	
-	private HashSet<String> getReachable(HashSet<String> starts, HashSet<String> dictionary) {
+	private HashSet<String> getReachable(HashSet<String> queue, HashSet<String> dictionary) {
 		HashSet<String> reachable = new HashSet<String>();
 		
-		for (String start : starts) {
-			for (int i = 0; i < start.length(); i++) {
-				char[] charArray = start.toCharArray();
+		for (String string : queue) {
+			for (int i = 0; i < string.length(); i++) {
+				char[] charArray = string.toCharArray();
 				for (int p = (int) 'a'; p <= (int) 'z'; p++) {
-					charArray[i] = Character.toString((char) p).charAt(0);
+					charArray[i] = (char) p;
 					
 					String transform = new String(charArray);
-					if (dictionary.contains(transform) && !starts.contains(transform)) {
+					if (dictionary.contains(transform)) {
 						reachable.add(transform);
 					}
 				}

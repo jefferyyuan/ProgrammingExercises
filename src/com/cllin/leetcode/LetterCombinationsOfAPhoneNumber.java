@@ -44,8 +44,7 @@ public class LetterCombinationsOfAPhoneNumber implements LeetCodeExercise {
 		LinkedList<String> previousCombinations = new LinkedList<String>();
 		LinkedList<String> combinations = new LinkedList<String>();
 
-		int length = digits.length();
-		for (int i = 0; i < length; i++) {
+		for (int i = 0; i < digits.length(); i++) {
 			int digit = Character.getNumericValue(digits.charAt(i));
 			char[] characters = getCharacters(digit);
 			
@@ -67,12 +66,7 @@ public class LetterCombinationsOfAPhoneNumber implements LeetCodeExercise {
 			combinations = new LinkedList<String>();
 		}
 		
-		ArrayList<String> output = new ArrayList<String>();
-		while (!previousCombinations.isEmpty()) {
-			output.add(previousCombinations.poll());
-		}
-		
-		return output;
+		return new ArrayList<String>(previousCombinations);
     }
 	
 	private final char[] getCharacters(int digit) {

@@ -74,8 +74,8 @@ public class MergeTwoSortedLists implements LeetCodeExercise {
     private ListNode mergeTwoLists(ListNode l1, ListNode l2) {
     	if (l1 == null && l2 == null) return null;
     	
-    	ListNode head = new ListNode(-1);
-    	ListNode node = head;
+    	ListNode dummy = new ListNode(-1);
+    	ListNode node = dummy;
     	ListNode iter1 = l1;
     	ListNode iter2 = l2;
     	
@@ -93,7 +93,7 @@ public class MergeTwoSortedLists implements LeetCodeExercise {
 
     	node.next = (iter1 == null)? iter2 : iter1;
     	
-    	return head.next;
+    	return dummy.next;
     }
 
 	@Override

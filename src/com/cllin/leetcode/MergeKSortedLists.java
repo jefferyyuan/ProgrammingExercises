@@ -105,14 +105,14 @@ public class MergeKSortedLists implements LeetCodeExercise {
 		
 		while (lists.size() > 0) {
 			int minIndex = -1;
-			ListNode min = new ListNode(2147483647);
+			ListNode min = new ListNode(Integer.MAX_VALUE);
 			
 			for (int i = 0; i < lists.size(); i++) {
 				if (lists.get(i) == null) {
 					lists.remove(i--);
 				} else if (lists.get(i).val < min.val) {
-					min = lists.get(i);
 					minIndex = i;
+					min = lists.get(i);
 				}
 			}
 			

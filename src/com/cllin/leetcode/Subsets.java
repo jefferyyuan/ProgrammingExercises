@@ -63,9 +63,7 @@ public class Subsets implements LeetCodeExercise {
 //				Get the maximum value of the previous level
 				int lastMax = Integer.MIN_VALUE;
 				for (int p = 0; p < subset.size(); p++) {
-					if (subset.get(p) > lastMax) {
-						lastMax = subset.get(p);
-					}
+					lastMax = Math.max(lastMax, subset.get(p));
 				}
 
 				/*

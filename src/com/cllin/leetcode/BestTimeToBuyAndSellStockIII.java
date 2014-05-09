@@ -57,9 +57,9 @@ public class BestTimeToBuyAndSellStockIII implements LeetCodeExercise {
 			historyMaximumProfit[i] = Math.max(prices[i] - valley, historyMaximumProfit[i - 1]);
 		}
 		
-		for (int i = length - 1; i >= 0; i--) {
+		for (int i = length - 2; i >= 0; i--) {
 			peak = Math.max(peak, prices[i]);
-			if (i <= length - 2) futureMaximumProfit[i] = Math.max(peak - prices[i], futureMaximumProfit[i + 1]);
+			futureMaximumProfit[i] = Math.max(peak - prices[i], futureMaximumProfit[i + 1]);
 			
 			maximumProfit = Math.max(historyMaximumProfit[i] + futureMaximumProfit[i], maximumProfit);
 		}

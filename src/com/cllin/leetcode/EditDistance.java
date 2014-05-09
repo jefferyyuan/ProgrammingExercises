@@ -68,7 +68,6 @@ public class EditDistance implements LeetCodeExercise {
 				if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
 					distanceMap[i][j] = distanceMap[i - 1][j - 1];
 				} else {
-					
 					int min = Math.min(distanceMap[i - 1][j], distanceMap[i][j - 1]);
 					min = Math.min(min, distanceMap[i - 1][j - 1]);
 					

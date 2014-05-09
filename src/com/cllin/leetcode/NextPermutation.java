@@ -9,9 +9,9 @@ import com.cllin.main.LeetCodeExercise;
  * The replacement must be in-place, do not allocate extra memory.
  * 
  * Here are some examples. Inputs are in the left-hand column and its corresponding outputs are in the right-hand column.
- * 		1,2,3 -> 1,3,2
- * 		3,2,1 -> 1,2,3
- * 		1,1,5 -> 1,5,1
+ * 		1, 2, 3 -> 1, 3, 2
+ * 		3, 2, 1 -> 1, 2, 3
+ * 		1, 1, 5 -> 1, 5, 1
  * 
  * Source: http://oj.leetcode.com/problems/next-permutation/
  */
@@ -53,8 +53,7 @@ public class NextPermutation implements LeetCodeExercise {
 		}
 		
 		if (isDescending) {
-			int bound = length / 2;
-			for (int i = 0; i < bound; i++) {
+			for (int i = 0; i < length / 2; i++) {
 				int buf = num[i];
 				num[i] = num[length - 1 - i];
 				num[length - 1 - i] = buf;

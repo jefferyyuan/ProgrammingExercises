@@ -37,6 +37,7 @@ public class PlusOne implements LeetCodeExercise {
 	public void runExercise() {
 		for (int i = 0; i < 10; i++) {
 			initialize();
+			
 			digits = plusOne(digits);
 			
 			if (test()) System.out.println("Success");
@@ -50,20 +51,20 @@ public class PlusOne implements LeetCodeExercise {
  
     	digits[length - 1]++;
     	for (int i = length - 2; i >= 0; i--) {
-    		if (digits[i + 1] == 10) {
-    			digits[i]++;
-    			digits[i + 1] = 0;
+    		if (digits[i + 1] >= 10) {
+    			digits[i] += digits[i + 1] / 10;
+    			digits[i + 1] %= 10;
     		}
     	}
     	
-    	if (digits[0] == 10) {
+    	if (digits[0] >= 10) {
     		int[] result = new int[length + 1];
     		for (int i = length - 1; i >= 2; i--) {
     			result[i] = digits[i];
     		}
     		
-    		result[1] = 0;
-    		result[0] = 1;
+    		result[1] = digits[0] % 10;
+    		result[0] = digits[0] / 10;
     		
     		return result;
     	}

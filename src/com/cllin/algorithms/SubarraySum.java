@@ -48,12 +48,12 @@ public class SubarraySum implements Exercise {
 	
 	private ArrayList<Integer> hasSum(int[] array, int target) {
 		int sum = 0;
-		ArrayList<Integer> indices = new ArrayList<Integer>();
 		HashMap<Integer, Integer> sums = new HashMap<Integer, Integer>();
 		
 		for (int i = 0; i < array.length; i++) {
 			sum += array[i];
 			if (sums.containsKey(sum - target) || array[i] == target) {
+				ArrayList<Integer> indices = new ArrayList<Integer>();
 				int start = (array[i] == target)? i : sums.get(sum - target) + 1;
 				int end = i;
 				indices.add(start);
@@ -64,7 +64,7 @@ public class SubarraySum implements Exercise {
 			sums.put(sum, i);
 		}
 		
-		return indices;
+		return new ArrayList<Integer>();
 	}
 	
 	private void test() {

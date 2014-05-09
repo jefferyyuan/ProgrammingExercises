@@ -33,9 +33,6 @@ public class RemoveElement implements LeetCodeExercise {
 	public void runExercise() {
 		initialize();
 		
-		array = new int[]{0, 4, 4, 0, 4, 4, 4, 0, 2};
-		value = 4;
-		
 		newLength = removeElement(array, value);
 		if (test()) System.out.println("Success");
 		else System.out.println("Failed");

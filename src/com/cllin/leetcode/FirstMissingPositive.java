@@ -49,7 +49,7 @@ public class FirstMissingPositive implements LeetCodeExercise {
 		int shift = segregate(array);
 		
 		/*
-		 * Save the count of each valid number in negative number
+		 * Save the existence of each valid number in negative number
 		 * Count of 1 should be saved in array[shift]
 		 */
 		for (int i = shift; i < length; i++) {

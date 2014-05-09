@@ -402,7 +402,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = ConvertNumber;
+		int option = BoundedSlices;
 
 		switch(option){
 /************************************************************

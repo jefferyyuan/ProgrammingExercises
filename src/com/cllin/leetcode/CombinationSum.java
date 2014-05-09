@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * 
  * Note:
  * All numbers (including target) will be positive integers.
- * Elements in a combination (a1, a2, ¡K , ak) must be in non-descending order. (ie, a1 <= a2 <= ¡K <= ak).
+ * Elements in a combination (a1, a2, ... , ak) must be in non-descending order. (ie, a1 <= a2 <= ... <= ak).
  * The solution set must not contain duplicate combinations.
  * 
  * For example, given candidate set 2,3,6,7 and target 7,
@@ -59,15 +59,13 @@ public class CombinationSum implements LeetCodeExercise {
 	
 //	Depth-first search
 	private ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
-		ArrayList<ArrayList<Integer>> solution = new ArrayList<ArrayList<Integer>>();
-		if (candidates.length == 0 || target <= 0) return solution;
+		if (candidates.length == 0 || target <= 0) return new ArrayList<ArrayList<Integer>>();
 
 		Arrays.sort(candidates);
-		
-		return getCombination(new ArrayList<Integer>(), candidates, target);
+		return getCombination(new ArrayList<Integer>(), candidates, 0, target);
 	}
 	
-	private ArrayList<ArrayList<Integer>> getCombination(ArrayList<Integer> current, int[] candidates, int target) {
+	private ArrayList<ArrayList<Integer>> getCombination(ArrayList<Integer> current, int[] candidates, int index, int target) {
 		ArrayList<ArrayList<Integer>> solution = new ArrayList<ArrayList<Integer>>();
 		
 		if (target < 0) return solution;
@@ -76,14 +74,11 @@ public class CombinationSum implements LeetCodeExercise {
 			return solution;
 		}
 		
-		int length = candidates.length;
-		int start = (current.size() > 0)? Arrays.binarySearch(candidates, current.get(current.size() - 1)) : 0;
-		
-		for (int i = start; i < length && candidates[i] <= target; i++) {
+		for (int i = index; i < candidates.length && candidates[i] <= target; i++) {
 			ArrayList<Integer> c = new ArrayList<Integer>(current);
 			c.add(candidates[i]);
 			
-			solution.addAll(getCombination(c, candidates, target - candidates[i]));
+			solution.addAll(getCombination(c, candidates, i, target - candidates[i]));
 		}
 		
 		return solution;

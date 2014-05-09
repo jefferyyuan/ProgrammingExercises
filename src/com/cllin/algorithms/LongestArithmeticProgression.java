@@ -52,16 +52,10 @@ public class LongestArithmeticProgression implements Exercise {
 		Arrays.sort(array);
 		
 		for (int i = 0; i < length; i++) {
-			sequenceLength[i] = 1;
-			constant[i] = 0;
+			sequenceLength[i] = (i > 0)? 2 : 1;
+			constant[i] = (i > 0)? array[i] - array[0] : 0;
 			
-			for (int j = 0; j < i; j++) {
-				if (j == 0) {
-					sequenceLength[i] = 2;
-					constant[i] = array[i] - array[j];
-					continue;
-				}
-				
+			for (int j = 1; j < i; j++) {
 				if (array[j] + constant[j] == array[i] && sequenceLength[j] + 1 > sequenceLength[i]) {
 					sequenceLength[i] = sequenceLength[j] + 1;
 					constant[i] = constant[j];

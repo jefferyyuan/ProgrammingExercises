@@ -62,6 +62,7 @@ public class MaximumSubarray implements LeetCodeExercise {
 
     private int detect(int[] array) {
         int max = Integer.MIN_VALUE;
+        
         for (int i = 0; i < array.length; i++) {
             if (array[i] >= 0) return 0;
             max = Math.max(array[i], max);

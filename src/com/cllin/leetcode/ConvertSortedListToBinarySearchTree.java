@@ -44,9 +44,8 @@ public class ConvertSortedListToBinarySearchTree implements LeetCodeExercise {
 	}
 	
 	private TreeNode sortedListToBST(ListNode head) {
-		ListNode node = head;
-
 		int size = 0;
+		ListNode node = head;
 		while (node != null) {
 			size++;
 			node = node.next;

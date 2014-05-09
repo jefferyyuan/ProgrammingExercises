@@ -40,16 +40,14 @@ public class LongestSubstringWithoutRepeatingCharacters implements
 	 * L(i) = Longest valid substring in A(0, i)
 	 * L(i + 1) = 
 	 * 		1) If A(i + 1) does not exist in the current longest substring, L(i) + A(i + 1)
-	 * 		2) Else, the length of the new substring, which starts after the previous A(i + 1) 
+	 * 		2) Else, update the longest length. The new substring starts from the last occurance of A(i + 1) 
 	 */
     private int lengthOfLongestSubstring(String string) {
     	if (string == null || string.length() == 0) return 0; 
 
     	int longestSubstringLength = 0;
-    	int length = string.length();
     	String buffer = new String();
-    	
-    	for (int i = 0; i < length; i++) {
+    	for (int i = 0; i < string.length(); i++) {
     		char c = string.charAt(i);
     		int index = buffer.indexOf(c);
     		

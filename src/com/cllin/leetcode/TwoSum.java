@@ -55,9 +55,7 @@ public class TwoSum implements LeetCodeExercise {
 		if (numbers == null || numbers.length < 2) return notFound;
 		
 		HashMap<Integer, Integer> sorted = new HashMap<Integer, Integer>();
-		int length = numbers.length;
-		
-		for (int p = 0; p < length; p++) {
+		for (int p = 0; p < numbers.length; p++) {
 			if (!sorted.containsKey(numbers[p])) sorted.put(numbers[p], p);
 			
 			int key = target - numbers[p];

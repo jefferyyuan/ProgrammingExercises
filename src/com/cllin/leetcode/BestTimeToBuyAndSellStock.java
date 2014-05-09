@@ -37,9 +37,8 @@ public class BestTimeToBuyAndSellStock implements LeetCodeExercise {
     private int maxProfit(int[] prices) {
     	if (prices.length < 2) return 0;
     	
-    	int maximumProfit = 0;
     	int profit = 0;
-    	
+    	int maximumProfit = 0;
     	for (int i = 1; i < prices.length; i++) {
     		profit = Math.max(0, profit + prices[i] - prices[i - 1]);
     		maximumProfit = Math.max(maximumProfit, profit);

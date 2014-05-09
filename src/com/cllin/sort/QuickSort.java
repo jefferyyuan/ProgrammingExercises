@@ -24,26 +24,27 @@ public class QuickSort extends Sort {
 	private int partition(int[] array, int start, int end) {
 //		Pivotal index is end here, it can also be selected randomly
 		int x = array[end];
-		int i = start - 1;
+		int index = start - 1;
 		
 //		Swap if the element is smaller than the last element, x
 		for (int j = start; j < end; j++) {
 			if (array[j] <= x) {
-				i++;
-				
-				int tmp = array[j];
-				array[j] = array[i];
-				array[i] = tmp;
+				index++;
+				swap(index, j, array);
 			}
 		}
 
 //		Every element before i (inclusive) is smaller than x
-		int tmp = array[i + 1];
-		array[i + 1] = array[end];
-		array[end] = tmp;
+		swap(index + 1, end, array);
 		
 //		Every element after i + 1 is larger than x
-		return i + 1;
+		return index + 1;
+	}
+	
+	private void swap(int i, int j, int[] array) {
+		int tmp = array[j];
+		array[j] = array[i];
+		array[i] = tmp;
 	}
 	
 	@SuppressWarnings("unused")

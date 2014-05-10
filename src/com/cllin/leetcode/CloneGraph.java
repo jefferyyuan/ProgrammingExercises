@@ -7,6 +7,22 @@ import java.util.LinkedList;
 
 import com.cllin.main.LeetCodeExercise;
 
+/*
+ * Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.
+ * 
+ * Nodes are labeled uniquely.
+ * We use # as a separator for each node, and , as a separator for node label and each neighbor of the node.
+ * 
+ * As an example, consider the serialized graph {0,1,2#1,2#2,2}.
+ * The graph has a total of three nodes, and therefore contains three parts as separated by #.
+ * 
+ * First node is labeled as 0. Connect node 0 to both nodes 1 and 2.
+ * Second node is labeled as 1. Connect node 1 to node 2.
+ * Third node is labeled as 2. Connect node 2 to node 2 (itself), thus forming a self-cycle.
+ * 
+ * Source: http://oj.leetcode.com/problems/clone-graph/
+ */
+
 public class CloneGraph implements LeetCodeExercise {
 	
 	private UndirectedGraphNode[] testSuite = {
@@ -67,7 +83,7 @@ public class CloneGraph implements LeetCodeExercise {
 	private UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
 		if (node == null) return null;
 		
-		HashSet<Integer> visited = new HashSet<Integer>();
+		HashSet<Integer> created = new HashSet<Integer>();
 		HashMap<Integer, UndirectedGraphNode> newNodes = new HashMap<Integer, UndirectedGraphNode>();
 		LinkedList<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
 		
@@ -76,7 +92,7 @@ public class CloneGraph implements LeetCodeExercise {
 		while (!queue.isEmpty()) {
 			UndirectedGraphNode n = queue.poll();
 
-			if (!visited.contains(n.label)) {
+			if (!created.contains(n.label)) {
 				UndirectedGraphNode newNode = newNodes.get(n.label);
 				
 				if (newNode == null) {
@@ -96,7 +112,7 @@ public class CloneGraph implements LeetCodeExercise {
 					queue.add(neighbor);
 				}
 				
-				visited.add(n.label);
+				created.add(n.label);
 			}
 		}
 		

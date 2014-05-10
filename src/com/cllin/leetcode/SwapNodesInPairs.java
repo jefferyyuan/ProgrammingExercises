@@ -48,11 +48,12 @@ public class SwapNodesInPairs implements LeetCodeExercise {
 	
     private ListNode swapPairs(ListNode head) {
     	if (head == null || head.next == null) return head;
-    	
+
+//    	Swap first and second, then connect them with previous and next
     	ListNode first = head;
     	ListNode second = null;
     	ListNode next = null;
-    	ListNode last = null;
+    	ListNode previous = null;
     	ListNode newHead = head.next;
     	
     	while (first != null && first.next != null) {
@@ -62,8 +63,8 @@ public class SwapNodesInPairs implements LeetCodeExercise {
     		second.next = first;
     		first.next = next;
     		
-    		if (last != null) last.next = second;
-    		last = first;
+    		if (previous != null) previous.next = second;
+    		previous = first;
     		first = next;
     	}
     	

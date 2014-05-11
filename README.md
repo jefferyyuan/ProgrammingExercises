@@ -291,3 +291,7 @@
 25. Print Evolutionary Tree
 26. Generate Random
 27. First Unique Element
+28. Build Minimum Sum
+29. Combinations of Targeted Sum
+30. Convert Number
+31. Substitude Characters

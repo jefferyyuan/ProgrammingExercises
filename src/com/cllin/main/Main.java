@@ -23,6 +23,7 @@ import com.cllin.algorithms.PartialSort;
 import com.cllin.algorithms.PotsOfGold;
 import com.cllin.algorithms.PrintEvolutionaryTree;
 import com.cllin.algorithms.RearrangeArray;
+import com.cllin.algorithms.ReconstructJourney;
 import com.cllin.algorithms.RepeatedPattern;
 import com.cllin.algorithms.RodCutting;
 import com.cllin.algorithms.SerializeBinaryTree;
@@ -160,6 +161,7 @@ public class Main {
 	public static final int CombinationsOfTargetedSum = 79;
 	public static final int SubstitudeCharacters = 80;
 	public static final int ConvertNumber = 81;
+	public static final int ReconstructJourney = 82;
 	
 	/************************************************************
 	 * Sorting
@@ -402,7 +404,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = BoundedSlices;
+		int option = ReconstructJourney;
 
 		switch(option){
 /************************************************************
@@ -528,6 +530,9 @@ public class Main {
 			break;
 		case ConvertNumber:
 			exercise = new ConvertNumber();
+			break;
+		case ReconstructJourney:
+			exercise = new ReconstructJourney();
 			break;
 		
 /************************************************************

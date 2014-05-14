@@ -17,6 +17,7 @@ import com.cllin.algorithms.LongestArithmeticProgression;
 import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MajorityCounting;
 import com.cllin.algorithms.MaximumSubarray;
+import com.cllin.algorithms.MergeContacts;
 import com.cllin.algorithms.MinimumSequence;
 import com.cllin.algorithms.MinimumWindow;
 import com.cllin.algorithms.PartialSort;
@@ -32,6 +33,7 @@ import com.cllin.algorithms.SortByDictionary;
 import com.cllin.algorithms.SubarraySum;
 import com.cllin.algorithms.SubsequenceInHaystack;
 import com.cllin.algorithms.SubstituteCharacters;
+import com.cllin.algorithms.UniqueWindows;
 import com.cllin.cci.chap01.Exercise01_01;
 import com.cllin.cci.chap01.Exercise01_02;
 import com.cllin.cci.chap01.Exercise01_03;
@@ -162,6 +164,7 @@ public class Main {
 	public static final int SubstitudeCharacters = 80;
 	public static final int ConvertNumber = 81;
 	public static final int ReconstructJourney = 82;
+	public static final int MergeContacts = 83;
 	
 	/************************************************************
 	 * Sorting
@@ -404,7 +407,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = ReconstructJourney;
+		int option = 0;
 
 		switch(option){
 /************************************************************
@@ -533,6 +536,9 @@ public class Main {
 			break;
 		case ReconstructJourney:
 			exercise = new ReconstructJourney();
+			break;
+		case MergeContacts:
+			exercise = new MergeContacts();
 			break;
 		
 /************************************************************

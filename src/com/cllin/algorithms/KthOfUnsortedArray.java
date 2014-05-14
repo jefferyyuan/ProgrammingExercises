@@ -53,15 +53,13 @@ public class KthOfUnsortedArray implements Exercise {
 		int pivotIndex = (int) (Math.random() * (end - start + 1)) + start;
 		pivotIndex = partition(array, start, end, pivotIndex);
 		
-		if (k - 1 == pivotIndex) {
-			return array[pivotIndex];
-		} else if (k - 1 < pivotIndex) {
+		if (k - 1 < pivotIndex) {
 			return getKth(array, start, pivotIndex - 1, k);
 		} else if (k - 1 > pivotIndex) {
 			return getKth(array, pivotIndex + 1, end, k);
+		} else {
+			return array[pivotIndex];
 		}
-		
-		return 0;
 	}
 	
 	private int partition(int[] array, int start, int end, int k) {

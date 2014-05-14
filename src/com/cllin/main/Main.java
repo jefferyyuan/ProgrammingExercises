@@ -6,6 +6,7 @@ import com.cllin.algorithms.BoundedSlices;
 import com.cllin.algorithms.BreadthFirstTraversal;
 import com.cllin.algorithms.BuildMinimumSum;
 import com.cllin.algorithms.CombinationsOfTargetedSum;
+import com.cllin.algorithms.ConsecutiveGroups;
 import com.cllin.algorithms.ConvertNumber;
 import com.cllin.algorithms.EditString;
 import com.cllin.algorithms.FirstUniqueElement;
@@ -23,6 +24,7 @@ import com.cllin.algorithms.MinimumWindow;
 import com.cllin.algorithms.PartialSort;
 import com.cllin.algorithms.PotsOfGold;
 import com.cllin.algorithms.PrintEvolutionaryTree;
+import com.cllin.algorithms.PyramidOfCups;
 import com.cllin.algorithms.RearrangeArray;
 import com.cllin.algorithms.ReconstructJourney;
 import com.cllin.algorithms.RepeatedPattern;
@@ -30,10 +32,10 @@ import com.cllin.algorithms.RodCutting;
 import com.cllin.algorithms.SerializeBinaryTree;
 import com.cllin.algorithms.SixSixPair;
 import com.cllin.algorithms.SortByDictionary;
+import com.cllin.algorithms.StringReduction;
 import com.cllin.algorithms.SubarraySum;
 import com.cllin.algorithms.SubsequenceInHaystack;
 import com.cllin.algorithms.SubstituteCharacters;
-import com.cllin.algorithms.UniqueWindows;
 import com.cllin.cci.chap01.Exercise01_01;
 import com.cllin.cci.chap01.Exercise01_02;
 import com.cllin.cci.chap01.Exercise01_03;
@@ -165,6 +167,9 @@ public class Main {
 	public static final int ConvertNumber = 81;
 	public static final int ReconstructJourney = 82;
 	public static final int MergeContacts = 83;
+	public static final int ConsecutiveGroups = 84;
+	public static final int StringReduction = 85;
+	public static final int PyramidOfCups = 86;
 	
 	/************************************************************
 	 * Sorting
@@ -407,7 +412,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = 0;
+		int option = PyramidOfCups;
 
 		switch(option){
 /************************************************************
@@ -539,6 +544,15 @@ public class Main {
 			break;
 		case MergeContacts:
 			exercise = new MergeContacts();
+			break;
+		case ConsecutiveGroups:
+			exercise = new ConsecutiveGroups();
+			break;
+		case StringReduction:
+			exercise = new StringReduction();
+			break;
+		case PyramidOfCups:
+			exercise = new PyramidOfCups();
 			break;
 		
 /************************************************************

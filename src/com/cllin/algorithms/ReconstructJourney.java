@@ -10,7 +10,7 @@ import com.cllin.main.Exercise;
  * You have with you the airplane tickets that you used for traveling. 
  * Each ticket contains just the start location and the end location. 
  * 
- * Reconstruct your journey?
+ * Reconstruct your journey.
  * 
  * Source: http://www.careercup.com/question?id=5072902038749184
  */

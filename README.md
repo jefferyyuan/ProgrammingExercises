@@ -295,3 +295,8 @@
 29. Combinations of Targeted Sum
 30. Convert Number
 31. Substitude Characters
+32. Reconstruct Journey
+33. Merge Contacts
+34. Consecutive Groups
+35. Pyramid of Cups
+36. String Reduction

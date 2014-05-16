@@ -37,6 +37,7 @@ import com.cllin.algorithms.SubarraySum;
 import com.cllin.algorithms.SubsequenceInHaystack;
 import com.cllin.algorithms.SubstituteCharacters;
 import com.cllin.algorithms.SubstringConcatenation;
+import com.cllin.algorithms.WordsFromLetterCollection;
 import com.cllin.cci.chap01.Exercise01_01;
 import com.cllin.cci.chap01.Exercise01_02;
 import com.cllin.cci.chap01.Exercise01_03;
@@ -172,6 +173,7 @@ public class Main {
 	public static final int StringReduction = 85;
 	public static final int PyramidOfCups = 86;
 	public static final int SubstringConcatenation = 87;
+	public static final int WordsFromLetterCollection = 88;
 	
 	/************************************************************
 	 * Sorting
@@ -414,7 +416,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = SubstringConcatenation;
+		int option = WordsFromLetterCollection;
 
 		switch(option){
 /************************************************************
@@ -558,6 +560,9 @@ public class Main {
 			break;
 		case SubstringConcatenation:
 			exercise = new SubstringConcatenation();
+			break;
+		case WordsFromLetterCollection:
+			exercise = new WordsFromLetterCollection();
 			break;
 		
 /************************************************************

@@ -36,7 +36,7 @@ public class ConsecutiveGroups implements Exercise {
 		}
 	}
 	
-//	Assuming there is not duplicates in the array. If so, valueToIndex should be HashMap<Integer, ArrayList<Integer>>, etc.
+//	Assuming there are no duplicates in the array. If so, valueToIndex should be HashMap<Integer, ArrayList<Integer>>, etc.
 	private ArrayList<ArrayList<Integer>> getGroup(int[] array) {
 		int minimum = Integer.MAX_VALUE;
 		int maximum = Integer.MIN_VALUE;

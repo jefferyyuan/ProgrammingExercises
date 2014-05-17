@@ -48,23 +48,19 @@ public class AggregatedNumber implements Exercise {
 	private boolean isMatch(String string, int i, int j) {
 		String first = string.substring(0, i);
 		String second = string.substring(i, j);
-		StringBuffer buffer = new StringBuffer();
 		
+		StringBuffer buffer = new StringBuffer();
 		buffer.append(first).append(second);
 		
 		while (buffer.length() < string.length()) {
 			String third = Integer.toString(Integer.parseInt(first) + Integer.parseInt(second), 10);
-			
 			buffer.append(third);
-			if (buffer.length() > string.length() || !string.substring(0, buffer.length()).equals(buffer.toString())) {
-				return false;
-			}
 			
 			first = second;
 			second = third;
 		}
 		
-		return true;
+		return buffer.equals(string);
 	}
 
 }

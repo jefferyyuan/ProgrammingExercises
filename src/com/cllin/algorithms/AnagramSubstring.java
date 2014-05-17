@@ -38,8 +38,7 @@ public class AnagramSubstring implements Exercise {
 
 		HashMap<Character, Integer> counts = new HashMap<Character, Integer>();
 		HashMap<Character, Integer> reference = new HashMap<Character, Integer>();
-		for (int i = 0; i < A.length(); i++) {
-			char key = A.charAt(i);
+		for (char key : A.toCharArray()) {
 			int count = (reference.containsKey(key))? reference.get(key) : 0;
 			reference.put(key, count + 1);
 		}

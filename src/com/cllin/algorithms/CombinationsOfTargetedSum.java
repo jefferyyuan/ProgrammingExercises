@@ -44,13 +44,13 @@ public class CombinationsOfTargetedSum implements Exercise {
 		
 		HashSet<ArrayList<Integer>> queue = new HashSet<ArrayList<Integer>>();
 		HashSet<ArrayList<Integer>> next = new HashSet<ArrayList<Integer>>();
+		
 		ArrayList<Integer> initialState = new ArrayList<Integer>();
 		initialState.add(1);
 		initialState.add(1);
 		queue.add(initialState);
 		
-		int i = 2;
-		while (i < n) {
+		for (int i = 2; i < n; i++) {
 			for (ArrayList<Integer> combination : queue) {
 				ArrayList<Integer> naiveCombination = new ArrayList<Integer>(combination);
 				naiveCombination.add(0, 1);
@@ -64,9 +64,9 @@ public class CombinationsOfTargetedSum implements Exercise {
 				}
 			}
 			
-			i++;
 			queue = next;
 			next = new HashSet<ArrayList<Integer>>();
+			
 		}
 		
 		ArrayList<ArrayList<Integer>> combinations = new ArrayList<ArrayList<Integer>>();

@@ -11,7 +11,6 @@ public class BreadthFirstTraversal implements Exercise {
 	private final int SIZE = 10;
 	
 	private BinarySearchTree tree;
-	private LinkedList<Node> queue;
 	
 	@Override
 	public void runExercise() {
@@ -24,30 +23,27 @@ public class BreadthFirstTraversal implements Exercise {
 	private void breadFirstTraversal(Node node) {
 		if (node == null) return;
 		
+		LinkedList<Node> queue = new LinkedList<Node>();
+		LinkedList<Node> next = new LinkedList<Node>();
 		queue.add(node);
 		
-		while (queue.size() > 0) {
+		
+		while (!queue.isEmpty()) {
 			Node n = queue.pollFirst();
-			
-			if (n.left != null) queue.add(n.left);
-			if (n.right != null) queue.add(n.right);
-			
-			boolean hasSiblings = false;
-			for (Node a : queue) {
-				if (tree.getLevel(a) == tree.getLevel(n)) {
-					hasSiblings = true;
-					break;
-				}
-			}
+			if (n.left != null) next.add(n.left);
+			if (n.right != null) next.add(n.right);
 			
 			System.out.printf("%d ", n.value);
-			if (!hasSiblings) System.out.println();
+			if (queue.isEmpty()) {
+				queue = next;
+				next = new LinkedList<Node>();
+				System.out.println();
+			}
 		}
 	}
 	
 	private void initialize(){
 		buildTree();
-		queue = new LinkedList<Node>();
 	}
 	
 	private void buildTree(){

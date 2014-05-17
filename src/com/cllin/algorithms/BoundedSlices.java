@@ -37,9 +37,10 @@ public class BoundedSlices implements Exercise {
 		if (array == null || array.length == 0) return slices;
 		
 		for (int i = 0; i < array.length; i++) {
-			int j = i;
 			int min = i, max = i;
-			while (j < array.length && Math.abs(array[j] - array[min]) <= 2 && Math.abs(array[j] - array[max]) <= 2) {
+			
+			for (int j = i; j < array.length 
+					&& (Math.abs(array[j] - array[min]) <= 2 && Math.abs(array[j] - array[max]) <= 2); j++) {
 				if (array[j] < array[min]) min = j;
 				if (array[j] > array[max]) max = j;
 				
@@ -47,7 +48,6 @@ public class BoundedSlices implements Exercise {
 				slice.add(i);
 				slice.add(j);
 				slices.add(slice);
-				j++;
 			}
 		}
 		

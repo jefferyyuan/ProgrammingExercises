@@ -8,7 +8,7 @@ import com.cllin.main.Exercise;
  * Given the array of digits (0 is also allowed), 
  * what is the minimal sum of two integers that are made of the digits contained in the array?
  * 
- * For example, array: 1 2 7 8 9. The minimum sum (129 + 78) should be 207.
+ * For example, array: 1 2 7 8 9. The minimum sum (179 + 28) should be 207.
  * 
  * Source: http://www.careercup.com/question?id=5678435150069760
  */
@@ -34,7 +34,6 @@ public class BuildMinimumSum implements Exercise {
 		int a = 0;
 		int b = 0;
 		int index = 0;
-		
 		while (index + 1 < array.length) {
 			a = a * 10 + array[index];
 			b = b * 10 + array[index + 1];

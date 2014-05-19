@@ -5,6 +5,7 @@ import com.cllin.algorithms.AnagramSubstring;
 import com.cllin.algorithms.BoundedSlices;
 import com.cllin.algorithms.BreadthFirstTraversal;
 import com.cllin.algorithms.BuildMinimumSum;
+import com.cllin.algorithms.CeilingValue;
 import com.cllin.algorithms.CombinationsOfTargetedSum;
 import com.cllin.algorithms.ConsecutiveGroups;
 import com.cllin.algorithms.ConvertNumber;
@@ -37,6 +38,7 @@ import com.cllin.algorithms.SubarraySum;
 import com.cllin.algorithms.SubsequenceInHaystack;
 import com.cllin.algorithms.SubstituteCharacters;
 import com.cllin.algorithms.SubstringConcatenation;
+import com.cllin.algorithms.SumOfPairs;
 import com.cllin.algorithms.WordsFromLetterCollection;
 import com.cllin.cci.chap01.Exercise01_01;
 import com.cllin.cci.chap01.Exercise01_02;
@@ -174,6 +176,8 @@ public class Main {
 	public static final int PyramidOfCups = 86;
 	public static final int SubstringConcatenation = 87;
 	public static final int WordsFromLetterCollection = 88;
+	public static final int SumOfPairs = 89;
+	public static final int CeilingValue = 90;
 	
 	/************************************************************
 	 * Sorting
@@ -416,7 +420,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = WordsFromLetterCollection;
+		int option = CeilingValue;
 
 		switch(option){
 /************************************************************
@@ -563,6 +567,12 @@ public class Main {
 			break;
 		case WordsFromLetterCollection:
 			exercise = new WordsFromLetterCollection();
+			break;
+		case SumOfPairs:
+			exercise = new SumOfPairs();
+			break;
+		case CeilingValue:
+			exercise = new CeilingValue();
 			break;
 		
 /************************************************************

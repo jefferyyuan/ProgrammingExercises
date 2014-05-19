@@ -300,3 +300,5 @@
 34. Consecutive Groups
 35. Pyramid of Cups
 36. String Reduction
+37. Substring Concatenation
+38. Words from Letter Collection

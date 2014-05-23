@@ -27,6 +27,7 @@ import com.cllin.algorithms.PartialSort;
 import com.cllin.algorithms.PotsOfGold;
 import com.cllin.algorithms.PrintEvolutionaryTree;
 import com.cllin.algorithms.PyramidOfCups;
+import com.cllin.algorithms.QueueInAnInteger;
 import com.cllin.algorithms.RearrangeArray;
 import com.cllin.algorithms.ReconstructJourney;
 import com.cllin.algorithms.RepeatedPattern;
@@ -180,6 +181,7 @@ public class Main {
 	public static final int SumOfPairs = 89;
 	public static final int CeilingValue = 90;
 	public static final int MinimumQueue = 91;
+	public static final int QueueInAnInteger = 92;
 	
 	/************************************************************
 	 * Sorting
@@ -422,7 +424,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = MinimumQueue;
+		int option = QueueInAnInteger;
 
 		switch(option){
 /************************************************************
@@ -578,6 +580,9 @@ public class Main {
 			break;
 		case MinimumQueue:
 			exercise = new MinimumQueue();
+			break;
+		case QueueInAnInteger:
+			exercise = new QueueInAnInteger();
 			break;
 		
 /************************************************************

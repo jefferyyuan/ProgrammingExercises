@@ -12,51 +12,71 @@ import com.cllin.main.Exercise;
 
 public class QueueInAnInteger implements Exercise {
 
+//	Use -1 to mark a poll
+	private final int[][] testSuite = new int[][]{
+			new int[]{0, 0, 8, 2, -1, 4, 1}
+	};
+	
 	private int integerQueue = 1;
 	private LinkedList<Integer> queue;
 	
 	@Override
 	public void runExercise() {
-		push(0);
-		queue.add(0);
+		for (int[] test : testSuite) {
+			queue = new LinkedList<Integer>();
+			for (int n : test) {
+				if (n == -1) {
+					poll();
+					queue.poll();
+				} else {
+					push(n);
+					queue.add(n);
+				}
+			}
+			
+			test();
+		}
+	}
+
+	private void push(int value) {
+		integerQueue *= 10;
+		integerQueue += value;
+	}
+	
+	private int poll() {
+		int size = size();
+		if (size == 0) return -1;
 		
-		push(0);
-		queue.add(0);
+		int value = (integerQueue % (int) Math.pow(10, size)) / (int) Math.pow(10, size - 1);
+		int newValue = integerQueue % (int) Math.pow(10, size - 1);
 		
-		push(8);
-		queue.add(8);
+		integerQueue = newValue + (int) Math.pow(10, size - 1);
 		
-		push(2);
-		queue.add(2);
-		
-		push(4);
-		queue.add(4);
-		
-		push(1);
-		queue.add(1);
-		
-		push(0);
-		queue.add(0);
-		
+		return value;
+	}
+	
+	private int size() {
+		int size = 0;
+		int queue = integerQueue;
+		while (queue > 1) {
+			queue /= 10;
+			size++;
+		}
+		return size;
+	}
+	
+	private void test() {
+		boolean isSuccess = true;
 		while (!queue.isEmpty()) {
 			int a = poll();
 			int b = queue.pollFirst();
 			
 			if (a != b) {
-				System.out.println("Failed");
+				isSuccess = false;
+				break;
 			}
 		}
-	}
-
-	private void push(int value) {
 		
-	}
-	
-	private int poll() {
-		return 0;
-	}
-	
-	private int size() {
-		return 0;
+		System.out.printf("%s%n", (isSuccess)? "Success" : "Failed");
 	}
 }

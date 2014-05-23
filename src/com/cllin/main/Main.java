@@ -20,6 +20,7 @@ import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MajorityCounting;
 import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.algorithms.MergeContacts;
+import com.cllin.algorithms.MinimumQueue;
 import com.cllin.algorithms.MinimumSequence;
 import com.cllin.algorithms.MinimumWindow;
 import com.cllin.algorithms.PartialSort;
@@ -178,6 +179,7 @@ public class Main {
 	public static final int WordsFromLetterCollection = 88;
 	public static final int SumOfPairs = 89;
 	public static final int CeilingValue = 90;
+	public static final int MinimumQueue = 91;
 	
 	/************************************************************
 	 * Sorting
@@ -420,7 +422,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = CeilingValue;
+		int option = MinimumQueue;
 
 		switch(option){
 /************************************************************
@@ -573,6 +575,9 @@ public class Main {
 			break;
 		case CeilingValue:
 			exercise = new CeilingValue();
+			break;
+		case MinimumQueue:
+			exercise = new MinimumQueue();
 			break;
 		
 /************************************************************

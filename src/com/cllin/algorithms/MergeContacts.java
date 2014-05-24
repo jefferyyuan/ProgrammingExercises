@@ -63,19 +63,15 @@ public class MergeContacts implements Exercise {
 		}
 		
 		for (Contact contact : contacts) {
-			HashSet<String> cluster = null;
+			HashSet<String> cluster = new HashSet<String>();
 			for (HashSet<String> c : clusters) {
 				if (c.contains(contact.name)) {
 					cluster = c;
 				}
 			}
 			
-			if (cluster == null) {
-				cluster = new HashSet<String>();
-				clusters.add(cluster);
-			}
-			
 			cluster.addAll(reachables.get(contact.name));
+			clusters.add(cluster);
 		}
 		
 		return clusters;

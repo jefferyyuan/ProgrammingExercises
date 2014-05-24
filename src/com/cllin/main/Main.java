@@ -4,6 +4,7 @@ import com.cllin.algorithms.AggregatedNumber;
 import com.cllin.algorithms.AnagramSubstring;
 import com.cllin.algorithms.BoundedSlices;
 import com.cllin.algorithms.BreadthFirstTraversal;
+import com.cllin.algorithms.BreakingPoint;
 import com.cllin.algorithms.BuildMinimumSum;
 import com.cllin.algorithms.CeilingValue;
 import com.cllin.algorithms.CombinationsOfTargetedSum;
@@ -41,6 +42,7 @@ import com.cllin.algorithms.SubsequenceInHaystack;
 import com.cllin.algorithms.SubstituteCharacters;
 import com.cllin.algorithms.SubstringConcatenation;
 import com.cllin.algorithms.SumOfPairs;
+import com.cllin.algorithms.SumUnderThreshold;
 import com.cllin.algorithms.WordsFromLetterCollection;
 import com.cllin.cci.chap01.Exercise01_01;
 import com.cllin.cci.chap01.Exercise01_02;
@@ -182,6 +184,8 @@ public class Main {
 	public static final int CeilingValue = 90;
 	public static final int MinimumQueue = 91;
 	public static final int QueueInAnInteger = 92;
+	public static final int SumUnderThreshold = 93;
+	public static final int BreakingPoint = 94;
 	
 	/************************************************************
 	 * Sorting
@@ -424,7 +428,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = QueueInAnInteger;
+		int option = BreakingPoint;
 
 		switch(option){
 /************************************************************
@@ -583,6 +587,12 @@ public class Main {
 			break;
 		case QueueInAnInteger:
 			exercise = new QueueInAnInteger();
+			break;
+		case SumUnderThreshold:
+			exercise = new SumUnderThreshold();
+			break;
+		case BreakingPoint:
+			exercise = new BreakingPoint();
 			break;
 		
 /************************************************************

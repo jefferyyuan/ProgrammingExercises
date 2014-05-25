@@ -24,8 +24,10 @@ import com.cllin.algorithms.MergeContacts;
 import com.cllin.algorithms.MinimumQueue;
 import com.cllin.algorithms.MinimumSequence;
 import com.cllin.algorithms.MinimumWindow;
+import com.cllin.algorithms.NumberOfBlocks;
 import com.cllin.algorithms.PartialSort;
 import com.cllin.algorithms.PotsOfGold;
+import com.cllin.algorithms.PrefixOfStrings;
 import com.cllin.algorithms.PrintEvolutionaryTree;
 import com.cllin.algorithms.PyramidOfCups;
 import com.cllin.algorithms.QueueInAnInteger;
@@ -186,6 +188,8 @@ public class Main {
 	public static final int QueueInAnInteger = 92;
 	public static final int SumUnderThreshold = 93;
 	public static final int BreakingPoint = 94;
+	public static final int NumberOfBlocks = 95;
+	public static final int PrefixOfStrings = 96;
 	
 	/************************************************************
 	 * Sorting
@@ -428,7 +432,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = BreakingPoint;
+		int option = PrefixOfStrings;
 
 		switch(option){
 /************************************************************
@@ -593,6 +597,12 @@ public class Main {
 			break;
 		case BreakingPoint:
 			exercise = new BreakingPoint();
+			break;
+		case NumberOfBlocks:
+			exercise = new NumberOfBlocks();
+			break;
+		case PrefixOfStrings:
+			exercise = new PrefixOfStrings();
 			break;
 		
 /************************************************************

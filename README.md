@@ -9,7 +9,7 @@
 3. [Sorting] (#3)
 4. [Exercises from "Cracking Coding Interview"] (#4)
 5. [Exercises from LeetCode] (#5)
-6. [Programming Questions] (#6)
+6. [Other Exercises] (#6)
  
 ======
 ###<a name="1"></a>Data Structure
@@ -263,7 +263,7 @@
 150. Max Points on a Line
 151. Word Ladder II
 
-###<a name="6"></a>Programming Questions
+###<a name="6"></a>Other Exercises
 1. Breadth First Traversal
 2. K Palindrome
 3. Rod Cutting

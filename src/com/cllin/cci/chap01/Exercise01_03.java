@@ -2,44 +2,52 @@ package com.cllin.cci.chap01;
 
 import com.cllin.main.Exercise;
 
+/*
+ * Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer.
+ * 
+ * NOTE: One or two additional variables are fine. An extra copy of the array is not.
+ * FOLLOW UP: Write the test cases for this method.
+ */
+
 public class Exercise01_03 implements Exercise {
 
+//	Null string, all duplicates, no duplicates, continuous duplicates, non-continuous duplicates
+	private final String[] testSuite = {null, "zzzzz", "car", "apple", "banana"};
+	
 	@Override
 	public void runExercise() {
-		
-//		Null String, All Spaces, All Dduplicates, No Duplicates, Continuous Duplicates, Noncontinuous Duplicates
-		String[] testSuite = {null, "     ", "zzzzz", "car", "apple", "banana"};
-		for(String string : testSuite){
+		for (String string : testSuite) {
 			test(string);
 		}
 	}
 	
-	private String removeDuplicates(String string){
+	private String removeDuplicates(String string) {
 		if (string == null) return null;
 		
-		char[] input = string.toCharArray();
-		int length = input.length;
-		
-		for(int i = 0; i < length; i++){
-			for(int j = 0; j < i; j++){
-				if(input[j] == input[i]){
-					input[i] = '0';
+		StringBuffer buffer = new StringBuffer();
+		for (int i = 0; i < string.length(); i++) {
+			boolean isDuplicate = false;
+			
+			for (int j = 0; j < i; j++) {
+				if (string.charAt(j) == string.charAt(i)) {
+					isDuplicate = true;
+					break;
 				}
 			}
+			
+			if (!isDuplicate) buffer.append(string.charAt(i));
 		}
 		
-		return new String(input).replace("0", "");
+		return buffer.toString();
 	}
 	
 	private void test(String string){
 		String output = removeDuplicates(string);
 		
-		if(output != null){
-			int length = output.length();
-			
-			for(int i = 0; i < length; i++){
-				for(int j = 0; j < i; j++){
-					if(output.charAt(j) == output.charAt(i)){
+		if (output != null) {
+			for (int i = 0; i < output.length(); i++) {
+				for (int j = 0; j < i; j++) {
+					if (output.charAt(j) == output.charAt(i)) {
 						System.out.println("Failed");
 						return;
 					}

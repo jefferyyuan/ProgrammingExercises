@@ -36,13 +36,10 @@ public class TwoSum implements LeetCodeExercise {
 	@Override
 	public void runExercise() {
 		for (index = 0; index < testSuite.length; index++) {
-			
 			for (target = 0; target < 10; target++) {
 				indices = twoSum(testSuite[index], target);
 				test();
 			}
-			
-			System.out.println("------------------");
 		}
 	}
 	
@@ -79,6 +76,7 @@ public class TwoSum implements LeetCodeExercise {
 			System.out.printf("}, the sum of element #%d and #%d is %d%n", indices[0], indices[1], target);
 		}
 		
+		System.out.println("------------------------------");
 		return true;
 	}
 

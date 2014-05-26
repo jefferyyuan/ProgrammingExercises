@@ -1,24 +1,28 @@
 package com.cllin.cci.chap01;
 
 import java.util.HashMap;
-import java.util.Map;
 
 import com.cllin.main.Exercise;
 
+/*
+ * Write a method to decide if two strings are anagrams or not.
+ */
+
 public class Exercise01_04 implements Exercise {
 
+	private final TestCase[] testSuite = new TestCase[]{
+			new TestCase("mary", "army"),
+			new TestCase("no", "on")
+	};
+	
 	@Override
 	public void runExercise() {
-		String mary = "mary";
-		String army = "army";
-		String on = "on";
-		String no = "no";
-		
-		printResult(areAnagrams(army, mary), army, mary);
-		printResult(areAnagrams(on, no), on, no);
+		for (TestCase test : testSuite) {
+			printResult(areAnagrams(test.s1, test.s2), test.s1, test.s2);
+		}
 	}
 	
-	private boolean areAnagrams(String s1, String s2){
+	private boolean areAnagrams(String s1, String s2) {
 		if (s1.length() != s2.length()) return false;
 		
 		s1 = s1.toLowerCase();
@@ -27,35 +31,35 @@ public class Exercise01_04 implements Exercise {
 		HashMap<Character, Integer> count1 = new HashMap<Character, Integer>();
 		HashMap<Character, Integer> count2 = new HashMap<Character, Integer>();
 
-		int length = s1.length();
-		for(int i = 0; i < length; i++){
+		for (int i = 0; i < s1.length(); i++) {
 			char char1 = s1.charAt(i);
 			char char2 = s2.charAt(i);
-			
-			if(count1.containsKey(char1)){
-				count1.put(char1, count1.get(char1) + 1);
-			}else{
-				count1.put(char1, 1);
-			}
-			
-			if(count2.containsKey(char2)){
-				count2.put(char2, count2.get(char2) + 1);
-			}else{
-				count2.put(char2, 1);
-			}
+
+			int c1 = (count1.containsKey(char1))? count1.get(char1) : 0;
+			int c2 = (count2.containsKey(char2))? count1.get(char2) : 0;
+			count1.put(char1, c1 + 1);
+			count1.put(char2, c2 + 1);
 		}
 		
-		for(Map.Entry<Character, Integer> entry : count1.entrySet()){
-			if (!count2.containsKey(entry.getKey())) return false;
-			if (count2.get(entry.getKey()) != entry.getValue()) return false;
-		}	
+		for (Character character : count1.keySet()) {
+			if (!count2.containsKey(character) || count2.get(character) != count1.get(character)) {
+				return false;
+			}
+		}
 		
 		return true;
 	}
 	
-	private void printResult(boolean result, String s1, String s2){
-		if(result) System.out.printf("%s and %s are anagrams%n", s1, s2);
-		else System.out.printf("%s and %s are not anagrams%n", s1, s2);
+	private void printResult(boolean result, String s1, String s2) {
+		System.out.printf("%s and %s %s anagrams%n", s1, s2, (result)? "are" : "are not");
 	}
 
+	private class TestCase {
+		String s1;
+		String s2;
+		TestCase(String s1, String s2) {
+			this.s1 = s1;
+			this.s2 = s2;
+		}
+	}
 }

@@ -42,24 +42,21 @@ public class Anagrams implements LeetCodeExercise {
 	 */
 	private ArrayList<String> anagrams(String[] strings) {
 		ArrayList<String> anagrams = new ArrayList<String>();
-		HashMap<String, ArrayList<Integer>> counts = new HashMap<String, ArrayList<Integer>>();
+		HashMap<String, ArrayList<String>> counts = new HashMap<String, ArrayList<String>>();
 		
 		if (strings == null || strings.length == 0) return anagrams;
 		
-		int length = strings.length;
-		for (int i = 0; i < length; i++) {
+		for (int i = 0; i < strings.length; i++) {
 			String sorted = sort(strings[i]);
-			ArrayList<Integer> list = (counts.containsKey(sorted))? counts.get(sorted) : new ArrayList<Integer>();
+			ArrayList<String> list = (counts.containsKey(sorted))? counts.get(sorted) : new ArrayList<String>();
 			
-			list.add(i);
+			list.add(strings[i]);
 			counts.put(sorted, list);
 		}
 		
 		for (String key : counts.keySet()) {
 			if (counts.get(key).size() > 1) {
-				for (int index : counts.get(key)) {
-					anagrams.add(strings[index]);
-				}
+				anagrams.addAll(counts.get(key));
 			}
 		}
 		

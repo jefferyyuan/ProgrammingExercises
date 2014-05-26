@@ -43,7 +43,7 @@ public class RotateImage implements LeetCodeExercise {
 	}
 	
 	/*
-	 * Swap diagonally then swap horizontally
+	 * Mirror diagonally then mirror it horizontally
 	 */
     public void rotate(int[][] matrix) {
     	if (matrix.length == 0 || matrix[0].length == 0) return;
@@ -52,11 +52,9 @@ public class RotateImage implements LeetCodeExercise {
     	
 		for (int i = 0; i < length; i++) {
 			for (int j = i + 1; j < length; j++) {
-				if (i != j) {
-					int buf = matrix[i][j];
-					matrix[i][j] = matrix[j][i];
-					matrix[j][i] = buf;
-				}
+				int buf = matrix[i][j];
+				matrix[i][j] = matrix[j][i];
+				matrix[j][i] = buf;
 			}
 		}
 		

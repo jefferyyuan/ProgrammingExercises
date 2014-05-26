@@ -9,8 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/implement-strstr/
  * 
  * strstr() returns a pointer to the first occurrence of str2 in str1, or a null pointer if str2 is not part of str1.
- * 
- * Source: http://www.cplusplus.com/reference/cstring/strstr/
+ * Reference: http://www.cplusplus.com/reference/cstring/strstr/
  */
 
 
@@ -43,8 +42,7 @@ public class ImplementStrStr implements LeetCodeExercise {
 	
 	private String strStr(String haystack, String needle) {
 		if (haystack == null) return null;
-		if (haystack.length() == needle.length() && haystack.equals(needle)) return haystack;
-		if (needle.length() == 0) return haystack;
+		if (needle == null || needle.length() == 0) return haystack;
 		
 		int hayLength = haystack.length();
 		int needleLength = needle.length();

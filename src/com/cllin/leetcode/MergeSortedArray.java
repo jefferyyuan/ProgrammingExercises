@@ -62,7 +62,7 @@ public class MergeSortedArray implements LeetCodeExercise {
 	/*
 	 * Start copying the elements from the end
 	 * 1) If A[i] > B[j], A[position] = A[i]. Then move i and position left by 1
-	 * 2) If A[i] < B[j], A[position] = A[j]. Then move j and position left by 1
+	 * 2) If A[i] < B[j], A[position] = B[j]. Then move j and position left by 1
 	 * 
 	 * When one of i and j is smaller than 0
 	 * 1) i < 0, all elements from A are copied, copy the rest of B

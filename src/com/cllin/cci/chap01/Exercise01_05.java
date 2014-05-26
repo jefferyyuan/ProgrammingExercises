@@ -2,27 +2,39 @@ package com.cllin.cci.chap01;
 
 import com.cllin.main.Exercise;
 
+/*
+ * Write a method to replace all spaces in a string with '%20'.
+ */
+
 public class Exercise01_05 implements Exercise {
-	private final String string = "true and false are defined constants of the language and are not the same as True and False, TRUE and FALSE, zero and nonzero, 1 and 0 or any other numeric value";
+	
+	private final String[] testSuite = new String[]{
+			"true and false are defined constants of the language and are not the same as True and False"
+	};
+	
+	private String input;
+	private String output;
 
 	@Override
 	public void runExercise() {
-		String output = replaceSpaces(string);
-		
-		System.out.printf("Origin = %s%n", string);
-		System.out.printf("Output = %s%n", output);
+		for (String string : testSuite) {
+			input = string;
+			output = replaceSpaces(input);
+			test();
+		}
 	}
 	
-	private String replaceSpaces(String input){
+	private String replaceSpaces(String input) {
 		StringBuffer output = new StringBuffer();
 		
-		int length = input.length();
-		for(int i = 0; i < length; i++){
-			if (input.charAt(i) == ' ') output.append("%20");
-			else output.append(input.charAt(i));
+		for(int i = 0; i < input.length(); i++){
+			output.append((input.charAt(i) == ' ')? "%20" : input.charAt(i));
 		}
 		
 		return output.toString();
 	}
 
+	private void test() {
+		System.out.printf("Origin = %s,%nOutput = %s%n", input, output);
+	}
 }

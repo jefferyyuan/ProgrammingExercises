@@ -37,9 +37,7 @@ public class StringToInteger implements LeetCodeExercise {
 	}
 	
 	private int atoi(String string) {
-		if (string == null || string.length() == 0) {
-			return 0;
-		}
+		if (string == null || string.length() == 0) return 0;
 
 		char[] charArray = string.toCharArray();
 		int index = 0;

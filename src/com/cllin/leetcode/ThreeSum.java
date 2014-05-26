@@ -48,23 +48,20 @@ public class ThreeSum implements LeetCodeExercise {
 	
 	private ArrayList<ArrayList<Integer>> threeSum(int[] num) {
 		ArrayList<ArrayList<Integer>> set  = new ArrayList<ArrayList<Integer>>();
-		if (num == null || num.length < 3) {
-			return set;
-		}
+		if (num == null || num.length < 3) return set;
 		
 		Arrays.sort(num);
-		if (num[0] > 0 || num[num.length - 1] < 0) {
-			return set;
-		}
+		if (num[0] > 0 || num[num.length - 1] < 0) return set;
 		
 		int i = 0;
 		while (i <= num.length - 3) {
+//			Skip duplicated elements
 			while (i < num.length && i >= 1 && num[i] == num[i - 1]) i++;
 			
 			int j = i + 1;
 			int k = num.length - 1;
 			
-			if (i >= num.length - 1 || k <= j || num[i] > 0 || num[k] < 0) break;
+			if (i > num.length - 3 || k <= j || num[i] > 0 || num[k] < 0) break;
 			
 			while (j < k) {
 				/*

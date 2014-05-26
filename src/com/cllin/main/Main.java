@@ -432,7 +432,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = PrefixOfStrings;
+		int option = EX01_07;
 
 		switch(option){
 /************************************************************

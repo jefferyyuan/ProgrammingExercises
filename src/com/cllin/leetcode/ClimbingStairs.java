@@ -31,9 +31,7 @@ public class ClimbingStairs implements LeetCodeExercise {
 	 * There is a way to compute Fibonacci sequence in constant extra space.
 	 */
 	private int climbStairs(int n) {
-		if (n == 0) return 0;
-		else if (n == 1) return 1;
-		else if (n == 2) return 2;
+		if (n <= 2) return (n < 0)? 0 : n;
 		
 		int result = 0;
 		int last = 2;

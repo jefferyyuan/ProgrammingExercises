@@ -1,7 +1,5 @@
 package com.cllin.cci.chap02;
 
-import java.util.Stack;
-
 import com.cllin.main.Exercise;
 
 /*
@@ -24,49 +22,55 @@ public class Exercise02_04 implements Exercise {
 	private int referenceA = 0;
 	private int referenceB = 0;
 	
+	private Node output;
+	
 	@Override
 	public void runExercise() {
 		initialize();
 		
-		int output = add(listA, listB);
-		if (referenceA + referenceB != output) {
-			System.out.println("Failed");
-			return;
-		}
-		
-		System.out.println("Success!");
+		output = add(listA, listB);
+		System.out.printf("%s%n", (test())? "Success!" : "Failed");
 	}
 	
-	private int add(Node listA, Node listB) {
-		int count = 1;
-		Stack<Integer> sum = new Stack<Integer>();
-		Node nodeA = listA;
-		Node nodeB = listB;
-		
-		while (nodeA != null || nodeB != null) {
-			if (nodeA == null && nodeB != null) {
-				sum.push(nodeB.value);
-				nodeB = nodeB.next;
-			} else if (nodeB == null && nodeA != null) {
-				sum.push(nodeA.value);
-				nodeA = nodeA.next;
-			} else {
-				sum.push(nodeA.value + nodeB.value);
-				nodeA = nodeA.next;
-				nodeB = nodeB.next;
-			}
-			count *= 10;
-		}
-		
-		count /= 10;
-		
-		int output = 0;
-		while (!sum.isEmpty()) {
-			output += sum.pop() * count;
-			count /= 10;
-		}
-		
-		return output;
+	private Node add(Node listA, Node listB) {
+    	Node n1 = listA;
+    	Node n2 = listB;
+
+    	Node dummyHead = new Node(-1);
+    	Node node = dummyHead;
+    	
+    	int sum = 0;
+    	boolean addOne = false;
+    	while (n1 != null && n2 != null) {
+    		sum = n1.value + n2.value;
+    		sum = (addOne)? sum + 1 : sum;
+    		
+    		node.next = new Node(sum % 10);
+    		addOne = (sum >= 10);
+    		
+    		node = node.next;
+    		n1 = n1.next;
+    		n2 = n2.next;
+    	}
+    	
+    	Node remain = (n1 == null)? n2 : n1;
+    	while (remain != null) {
+			sum = remain.value;
+			sum = (addOne)? sum + 1 : sum;
+			
+			node.next = new Node(sum % 10);
+			addOne = (sum >= 10);
+			
+			node = node.next;
+    		
+    		remain = remain.next;
+    	}
+    	
+    	if (addOne) {
+    		node.next = new Node(1);
+    	}
+    	
+    	return dummyHead.next;
 	}
 	
 	private void initialize() {
@@ -92,6 +96,21 @@ public class Exercise02_04 implements Exercise {
 		
 		listA = dummyA.next;
 		listB = dummyB.next;
+	}
+	
+	private boolean test() {
+		int solution = 0;
+		int power = 1;
+		Node node = output;
+		
+		while (node != null) {
+			solution += node.value * power;
+			
+			power *= 10;
+			node = node.next;
+		}
+		
+		return (solution == referenceA + referenceB);
 	}
 	
 	private class Node {

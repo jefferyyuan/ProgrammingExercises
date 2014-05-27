@@ -70,7 +70,6 @@ public class DecodeWays implements LeetCodeExercise {
 		
 		for (int i = string.length() - 1; i >= 0; i--) {
 			int n = Character.getNumericValue(string.charAt(i));
-			
 			table[i] = (n > 0)? table[i + 1] : 0;
 			
 			if (i + 1 < string.length()) {

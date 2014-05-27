@@ -430,7 +430,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = DecodeWays;
+		int option = StringToInteger;
 
 		switch(option){
 /************************************************************

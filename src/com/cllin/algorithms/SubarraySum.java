@@ -6,7 +6,7 @@ import java.util.HashMap;
 import com.cllin.main.Exercise;
 
 /*
- * Given an array of positive and negative numbers, find if there is a subarray with k sum.
+ * Given an array of positive and negative numbers, find if there is a subarray whose sum is k.
  * 
  * Examples:
  * 		Input: {4, 2, -3, 1, 6}, k = 0

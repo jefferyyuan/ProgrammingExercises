@@ -9,7 +9,7 @@ import com.cllin.main.Exercise;
  * Return the pair of indices that forms the slice where the difference between the maximum and minimum in the slice <= 2. 
  * 
  * Output:
- * (0,0) (1,1) (2,2) (3,3) (4,4) (0,1) (1,2) (1,3) (2,3) 
+ * 		(0,0) (1,1) (2,2) (3,3) (4,4) (0,1) (1,2) (1,3) (2,3) 
  *
  * Source: http://www.careercup.com/question?id=5090693043191808
  */
@@ -32,6 +32,7 @@ public class BoundedSlices implements Exercise {
 		}
 	}
 	
+//	Time Complexity = O(n ^ 2), n is the size of the array
 	private ArrayList<ArrayList<Integer>> boundedSlices(int[] array) {
 		ArrayList<ArrayList<Integer>> slices = new ArrayList<ArrayList<Integer>>();
 		if (array == null || array.length == 0) return slices;

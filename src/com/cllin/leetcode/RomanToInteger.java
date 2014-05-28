@@ -67,7 +67,7 @@ public class RomanToInteger implements LeetCodeExercise {
 			results.add(romanToInt(string));
 		}
 		
-		if (test()) System.out.println("Success");
+		if (test()) System.out.println("Success!");
 		else System.out.println("Failed");
 	}
 	
@@ -103,11 +103,12 @@ public class RomanToInteger implements LeetCodeExercise {
     	
     	int index = 0;
     	while (index < s.length()) {
-    		for (String roman : romans.keySet()) {
-    			while (index < s.length() && s.charAt(index) == roman.charAt(0)) {
-    				output += romans.get(roman);
-    				index++;
-    			}
+    		String key = s.substring(index, index + 1);
+    		if (romans.containsKey(key)) {
+    			output += romans.get(key);
+    			index++;
+    		} else {
+    			return -1;
     		}
     	}
         

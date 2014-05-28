@@ -58,12 +58,12 @@ public class Permutations implements LeetCodeExercise {
     	
     	if (level == num.length) {
     		for (int i = 0; i < length; i++) {
-    			if (num[i] != Integer.MIN_VALUE) {
-    				ArrayList<Integer> r = new ArrayList<Integer>();
-    				r.add(num[i]);
-    				result.add(r);
-    				return result;
-    			}
+    			if (num[i] == Integer.MIN_VALUE) continue;
+    			
+    			ArrayList<Integer> r = new ArrayList<Integer>();
+    			r.add(num[i]);
+    			result.add(r);
+    			return result;
     		}
     	}
     	

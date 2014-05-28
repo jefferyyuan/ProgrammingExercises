@@ -36,6 +36,7 @@ public class SqrtX implements LeetCodeExercise {
 		while (start < end) {
 			root = (start + end) / 2;
 			
+//			Using root <= x / root instead of root * root <= x to avoid overflowing
 			if (root <= x / root && (x / (root + 1)) < (root + 1)) {
 				return (int) root;
 			} else if (root < (x / root)) {

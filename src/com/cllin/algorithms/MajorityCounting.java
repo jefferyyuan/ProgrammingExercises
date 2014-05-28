@@ -36,8 +36,8 @@ public class MajorityCounting implements Exercise {
 	}
 
 	private int majorityCount(int[] array) {
-		int majorityIndex = 0;
 		int count = 1;
+		int majorityIndex = 0;
 		
 		for (int i = 1; i < array.length; i++) {
 			count = (array[i] == array[majorityIndex])? count + 1 : count - 1;

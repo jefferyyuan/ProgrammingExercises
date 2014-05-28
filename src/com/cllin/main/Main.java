@@ -430,11 +430,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-<<<<<<< HEAD
-		int option = EX03_05;
-=======
-		int option = StringToInteger;
->>>>>>> 95e5740597e6b0041e0840e74c88c5722a0ac265
+		int option = RomanToInteger;
 
 		switch(option){
 /************************************************************

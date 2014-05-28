@@ -6,7 +6,7 @@ import com.cllin.main.Exercise;
 
 
 /*
- * Given an array array[] of size n where every element is in range from 0 to n-1. 
+ * Given an array array[] of size n where every element is in range from 0 to n - 1. 
  * Rearrange the given array so that array[i] becomes array[array[i]]. This should be done with O(1) extra space.
  * 
  * Examples:

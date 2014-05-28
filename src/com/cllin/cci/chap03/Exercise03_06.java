@@ -4,6 +4,12 @@ import java.util.Stack;
 
 import com.cllin.main.Exercise;
 
+/*
+ * Write a program to sort a stack in ascending order.
+ * You should not make any assumptions about how the stack is implemented.
+ * The following are the only functions that should be used to write this program: push, pop, peek, isEmpty.
+ */
+
 public class Exercise03_06 implements Exercise {
 	private final int MAXIMUM = 1000;
 	private final int SIZE = 1000;
@@ -12,30 +18,32 @@ public class Exercise03_06 implements Exercise {
 	@Override
 	public void runExercise() {
 		initialize();
-		sort();
-		check();
+		stack = sort(stack);
+		test();
 	}
 	
-	private void sort(){
+	private Stack<Integer> sort(Stack<Integer> stack) {
 		Stack<Integer> buffer = new Stack<Integer>();
 		
-		while(!stack.isEmpty()){
+		while (!stack.isEmpty()) {
 			int fromOrigin = stack.pop();
-			while(!buffer.isEmpty() && buffer.peek() > fromOrigin){
+			while (!buffer.isEmpty() && buffer.peek() > fromOrigin) {
 				stack.push(buffer.pop());
 			}
 			buffer.push(fromOrigin);
 		}
 		
-		while(!buffer.isEmpty()){
+		while (!buffer.isEmpty()) {
 			stack.push(buffer.pop());
 		}
+		
+		return stack;
 	}
 	
-	private void check(){
-		int prev = -2147483647;
-		while(!stack.isEmpty()){
-			if(stack.peek() < prev){
+	private void test() {
+		int prev = Integer.MIN_VALUE;
+		while (!stack.isEmpty()) {
+			if (stack.peek() < prev) {
 				System.out.println("Failed");
 				return;
 			}

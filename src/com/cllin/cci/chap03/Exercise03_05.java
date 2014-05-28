@@ -1,53 +1,53 @@
 package com.cllin.cci.chap03;
 
+import java.util.LinkedList;
 import java.util.Stack;
 
 import com.cllin.main.Exercise;
 
+/*
+ * Implement a MyQueue class which implements a queue using two stacks.
+ */
+
 public class Exercise03_05 implements Exercise {
 	private final int MAXIMUM = 1000;
 	private final int SIZE = 1000;
-	private int[] numbers = new int[SIZE];
 	
+	private LinkedList<Integer> reference;
 	private MyQueue myQueue;
 	
 	@Override
 	public void runExercise() {
 		initialize();
-		
 		test();
 	}
 	
-	private void initialize(){
-		int length = numbers.length;
-		for(int i = 0; i < length; i++){
-			numbers[i] = (int)(Math.random() * MAXIMUM);
+	private void initialize() {
+		myQueue = new MyQueue();
+		reference = new LinkedList<Integer>();
+		
+		for (int i = 0; i < SIZE; i++) {
+			int n = (int) (Math.random() * MAXIMUM);
+			
+			myQueue.add(n);
+			reference.add(n);
 		}
 		
-		myQueue = new MyQueue();
 	}
 	
-	private void test(){
-		int length = numbers.length;
-		for(int i = 0; i < length; i++){
-			myQueue.add(numbers[i]);
-		}
-		
-		if(myQueue.size() != SIZE){
+	private void test() {
+		if (myQueue.size() != reference.size()) {
 			System.out.println("Failed");
 			return;
-		}else{
-			System.out.printf("MyQueue.size()=%d%n", myQueue.size());
 		}
 		
-		int i = 0;
-		while(!myQueue.isEmpty()){
-			if(myQueue.peek() != numbers[i] || myQueue.remove() != numbers[i]){
+		while (!myQueue.isEmpty()) {
+			if (myQueue.peek() != reference.peek() || myQueue.remove() != reference.poll()) {
 				System.out.println("Failed");
 				return;
 			}
-			i++;
 		}
+		
 		System.out.println("Success!");
 	}
 	
@@ -55,45 +55,45 @@ public class Exercise03_05 implements Exercise {
 		Stack<Integer> stackA;
 		Stack<Integer> stackB;
 		
-		public MyQueue(){
+		public MyQueue() {
 			stackA = new Stack<Integer>();
 			stackB = new Stack<Integer>();
 		}
 		
-		public void add(int element){
+		public void add(int element) {
 			stackA.push(element);
 		}
 		
-		public int remove(){
+		public int remove() {
 			pourAToB();
 			int element = stackB.pop();
 			pourBToA();
 			return element;
 		}
 		
-		public int peek(){
+		public int peek() {
 			pourAToB();
 			int element = stackB.peek();
 			pourBToA();
 			return element;
 		}
 		
-		public int size(){
+		public int size() {
 			return stackA.size();
 		}
 		
-		public boolean isEmpty(){
+		public boolean isEmpty() {
 			return stackA.isEmpty();
 		}
 		
-		private void pourAToB(){
-			while(!stackA.isEmpty()){
+		private void pourAToB() {
+			while (!stackA.isEmpty()) {
 				stackB.push(stackA.pop());
 			}
 		}
 		
-		private void pourBToA(){
-			while(!stackB.isEmpty()){
+		private void pourBToA() {
+			while (!stackB.isEmpty()) {
 				stackA.push(stackB.pop());
 			}
 		}

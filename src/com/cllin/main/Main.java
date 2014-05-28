@@ -432,7 +432,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = EX01_07;
+		int option = EX03_05;
 
 		switch(option){
 /************************************************************

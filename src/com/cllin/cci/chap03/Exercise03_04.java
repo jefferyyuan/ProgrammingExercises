@@ -4,8 +4,18 @@ import java.util.Stack;
 
 import com.cllin.main.Exercise;
 
+/*
+ * In the classic problem of the Towers of Hanoi, you have 3 rods and N disks of different sizes which can slide onto any tower.
+ * The puzzle starts with disks sorted in ascending order of size from top to bottom
+ * (e.g., each disk sits on top of an even larger one). You have the following constraints:
+ * 		1) Only one disk can be moved at a time.
+ * 		2) A disk is slid off the top of one rod onto the next rod.
+ * 		3) A disk can only be placed on top of a larger disk.
+ * 
+ * Write a program to move the disks from the first rod to the last using Stacks.
+ */
+
 public class Exercise03_04 implements Exercise {
-	private final int MAXIMUM = 10;
 	private final int SIZE = 10;
 	private Stack<Integer> stack1;
 	private Stack<Integer> stack2;
@@ -14,28 +24,27 @@ public class Exercise03_04 implements Exercise {
 	@Override
 	public void runExercise() {
 		initialize();
-		sort();
 		moveDisk(SIZE, stack1, stack2,stack3);
 		test();
 	}
 	
-	private void moveDisk(int n, Stack<Integer> from, Stack<Integer> buffer, Stack<Integer> destination){
-		if(n > 0){
+	private void moveDisk(int n, Stack<Integer> from, Stack<Integer> buffer, Stack<Integer> destination) {
+		if (n > 0) {
 			moveDisk(n - 1, from, destination, buffer);
 			destination.push(from.pop());
 			moveDisk(n - 1, buffer, from, destination);
 		}
 	}
 	
-	private void test(){
-		if(!stack1.isEmpty() || !stack2.isEmpty()){
+	private void test() {
+		if (!stack1.isEmpty() || !stack2.isEmpty()) {
 			System.out.println("Failed");
 			return;
 		}
 		
-		int prev = -2147483647;
-		while(!stack3.isEmpty()){
-			if(stack3.peek() < prev){
+		int prev = Integer.MIN_VALUE;
+		while (!stack3.isEmpty()) {
+			if (stack3.peek() < prev) {
 				System.out.println("Failed");
 				return;
 			}
@@ -45,29 +54,13 @@ public class Exercise03_04 implements Exercise {
 		System.out.println("Success!");
 	}
 	
-	private void initialize(){
+	private void initialize() {
 		stack1 = new Stack<Integer>();
 		stack2 = new Stack<Integer>();
 		stack3 = new Stack<Integer>();
-		for(int i = 0; i < SIZE; i++){
-			stack1.push((int)(Math.random() * MAXIMUM));
+		
+		for (int i = SIZE; i >= 1; i--) {
+			stack1.push(i);
 		}
 	}
-
-	private void sort(){
-		Stack<Integer> buffer = new Stack<Integer>();
-		
-		while(!stack1.isEmpty()){
-			int fromOrigin = stack1.pop();
-			while(!buffer.isEmpty() && buffer.peek() > fromOrigin){
-				stack1.push(buffer.pop());
-			}
-			buffer.push(fromOrigin);
-		}
-		
-		while(!buffer.isEmpty()){
-			stack1.push(buffer.pop());
-		}
-	}
-	
 }

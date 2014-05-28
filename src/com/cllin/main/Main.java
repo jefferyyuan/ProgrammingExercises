@@ -111,7 +111,6 @@ import com.cllin.enumeration.EnumerationExercise;
 import com.cllin.inheritance.ExtendAndSuper;
 import com.cllin.leetcode.*;
 import com.cllin.list.HeapExercise;
-import com.cllin.list.LinkedListExercise;
 import com.cllin.operator.BitwiseOperation;
 import com.cllin.operator.ExclusiveOR;
 import com.cllin.operator.Ternary;
@@ -207,8 +206,7 @@ public class Main {
 	public static final int Trie = 4001;
 	public static final int BinarySearchTree = 4002;
 	public static final int AVLTree = 4003;
-	public static final int LinkedList = 4004;
-	public static final int Heap = 4005;
+	public static final int Heap = 4004;
 	
 	/************************************************************
 	 * Exercises from "Cracking the Coding Interview"
@@ -432,7 +430,11 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
+<<<<<<< HEAD
 		int option = EX03_05;
+=======
+		int option = StringToInteger;
+>>>>>>> 95e5740597e6b0041e0840e74c88c5722a0ac265
 
 		switch(option){
 /************************************************************
@@ -616,9 +618,6 @@ public class Main {
 			break;
 		case AVLTree:
 			exercise = new AVLTreeExercise();
-			break;
-		case LinkedList:
-			exercise = new LinkedListExercise();
 			break;
 		case Heap:
 			exercise = new HeapExercise();

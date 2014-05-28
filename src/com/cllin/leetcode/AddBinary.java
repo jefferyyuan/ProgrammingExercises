@@ -67,7 +67,6 @@ public class AddBinary implements LeetCodeExercise {
 		
 		int index = (indexA >= 0)? indexA : indexB;
 		String remaining = (indexA >= 0)? a : b;
-		
 		while (index >= 0) {
 			char c = remaining.charAt(index);
 			char result = (addOne)? ((c == '0')? '1' : '0') : c;

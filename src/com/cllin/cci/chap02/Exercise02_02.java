@@ -1,63 +1,83 @@
 package com.cllin.cci.chap02;
 
-import com.cllin.list.LinkedList;
-import com.cllin.list.LinkedListNode;
+import java.util.LinkedList;
+
 import com.cllin.main.Exercise;
 
+/*
+ * Implement an algorithm to find the n-th to last element of a singly linked list.
+ * In another word, find the n-th element from the tail.
+ */
+
 public class Exercise02_02 implements Exercise {
-	private final int SIZE = 1000 - 1;
+	private final int SIZE = 1000;
 	private final int MAXIMUM = 1000;
 	private final int[] testSuite = {20, 50, 100, 800, 556, 183, 999, 1000};
 	
-	private LinkedList<Integer> list;
+	private int n;
+	private Node listHead;
+	private Node result;
+	private LinkedList<Integer> reference;
 	
 	@Override
 	public void runExercise() {
 		initialize();
-		test();
+		for (int testCase : testSuite) {
+			n = testCase;
+			result = getNToLast(listHead, n);
+			test();
+		}
 	}
 	
-	private LinkedListNode<Integer> getNToLast(int n){
-		if (list.getHead() == null) return null;
+	private Node getNToLast(Node list, int n) {
+		if (list == null) return null;
 		
-		LinkedListNode<Integer> node1 = list.getHead();
-		LinkedListNode<Integer> node2 = list.getHead();
+		Node node1 = list;
+		Node node2 = list;
 		
 		int count = 1;
 		while(count < n){
 			if (node2 == null) return null;
 			
-			node2 = node2.getNext();
+			node2 = node2.next;
 			count++;
 		}
 		
-		while(node2.getNext() != null){
-			node1 = node1.getNext();
-			node2 = node2.getNext();
+		while (node2.next != null) {
+			node1 = node1.next;
+			node2 = node2.next;
 		}
 		
 		return node1;
 	}
 	
-	private void test(){
-		for(int n : testSuite){
-			LinkedListNode<Integer> result = getNToLast(n);
-			LinkedListNode<Integer> reference = list.getNode(list.getSize() - n);
-			
-			if(result.hashCode() != reference.hashCode()){
-				System.out.println("Failed");
-				return;
-			}
-		}
-		System.out.println("Success!");
+	private void test() {
+		System.out.printf("%s%n", (result.value == reference.get(SIZE - n))? "Success!" : "Failed");
 	}
 	
-	private void initialize(){
-		int a = (int)(Math.random() * MAXIMUM);
-		list = new LinkedList<Integer>(a);
+	private void initialize() {
+		reference = new LinkedList<Integer>();
 		
-		for(int i = 0; i < SIZE; i++){
-			list.addNode((int)(Math.random() * MAXIMUM));
+		Node dummy = new Node(-1);
+		Node node  = dummy;
+		
+		for (int i = 0; i < SIZE; i++) {
+			int value = (int)(Math.random() * MAXIMUM);
+			
+			reference.add(value);
+			node.next = new Node(value);
+			node = node.next;
+		}
+		
+		listHead = dummy.next;
+	}
+	
+	private class Node {
+		int value;
+		Node next;
+		
+		Node(int value) {
+			this.value = value;
 		}
 	}
 

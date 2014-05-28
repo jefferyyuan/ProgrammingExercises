@@ -11,7 +11,7 @@ import com.cllin.main.Exercise;
  */
 
 public class Exercise03_06 implements Exercise {
-	private final int MAXIMUM = 1000;
+	private final int MAXIMUM = 10;
 	private final int SIZE = 1000;
 	private Stack<Integer> stack;
 

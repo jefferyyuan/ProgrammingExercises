@@ -56,14 +56,13 @@ public class LinkedListCycleII implements LeetCodeExercise {
     	ListNode a = head;
     	ListNode b = head;
     	
-    	while (a != null && b != null) {
-    		if (a.next != null) a = a.next.next;
-    		else return null;
-    		
+    	while (a != null && b != null && a.hashCode() != b.hashCode()) {
+    		if (a.next == null) return null;
+
+    		a = a.next.next;
     		b = b.next;
     		
     		if (a == null || b == null) return null;
-    		if (a.hashCode() == b.hashCode()) break;
     	}
     	
     	a = head;

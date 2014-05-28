@@ -11,6 +11,7 @@ import com.cllin.main.LeetCodeExercise;
 public class StringToInteger implements LeetCodeExercise {
 
 	private String[] testSuite = {
+			"+-+2",
 			"1",
 			"     +004500",
 			"+1",
@@ -52,7 +53,7 @@ public class StringToInteger implements LeetCodeExercise {
 		
 		int validLength = 0;
 		while (index < string.length() && validLength <= 10) {
-			int value = (int) charArray[index] - 48;
+			int value = (int) charArray[index] - (int) '0';
 			if (value < 0 || value > 9) {
 				break;
 			}

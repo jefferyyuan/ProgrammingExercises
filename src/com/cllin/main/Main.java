@@ -430,7 +430,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = RomanToInteger;
+		int option = EX04_08;
 
 		switch(option){
 /************************************************************

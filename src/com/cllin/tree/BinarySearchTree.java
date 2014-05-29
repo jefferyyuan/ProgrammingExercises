@@ -11,7 +11,7 @@ public class BinarySearchTree {
 	public Node root;
 	private int size;
 	
-	public BinarySearchTree(int key){
+	public BinarySearchTree(int key) {
 		root = new Node(key, null, null, null);
 		size = 1;
 	}
@@ -27,7 +27,24 @@ public class BinarySearchTree {
      * @param size the number of nodes in the tree
      * @param maximum the maximum value of nodes in the tree
      */
-	public void buildTree(int size, int maximum){
+	public BinarySearchTree(int size, int maximum) {
+		this.size = size;
+		
+		int[] numbers = new int[size];
+		for (int i = 0; i < size; i++) {
+			numbers[i] = (int)(Math.random() * maximum);
+		}
+		
+		buildTree(numbers);
+	}
+	
+    /**
+     * Build a BST with minimum possible height.
+     *
+     * @param size the number of nodes in the tree
+     * @param maximum the maximum value of nodes in the tree
+     */
+	public void buildTree(int size, int maximum) {
 		if (size <= 0) return;
 		
 		int[] numbers = new int[size];
@@ -43,7 +60,7 @@ public class BinarySearchTree {
      *
      * @param numbers the array whose elements will be used to build the tree 
      */
-	public void buildTree(int[] numbers){
+	public void buildTree(int[] numbers) {
 		if (numbers.length == 0) return;
 		
 		Arrays.sort(numbers);
@@ -52,43 +69,38 @@ public class BinarySearchTree {
 		this.size = numbers.length;
 	}
 	
-	public void insert(Node node){
+	public void insert(Node node) {
 		Node x = root;
 		Node y = null;
 		
-		while(x != null){
+		while (x != null) {
 			y = x;
-			if(node.value < x.value){
-				x = x.left;
-			}else{
-				x = x.right;
-			}
+			x = (node.value < x.value)? x.left : x.right;
 		}
 		
 		node.parent = y;
 		
-		if(y == null){
+		if (y == null) {
 			root = node;
-		}else if(node.value < y.value){
+		} else if (node.value < y.value) {
 			y.left = node;
-		}else{
+		} else {
 			y.right = node;
 		}
+		
 		size++;
 	}
 	
-	public void delete(Node node){
-		if(node == null){
-			return;
-		}
+	public void delete(Node node) {
+		if (node == null) return;
 		
-		if(node.left == null){
+		if (node.left == null) {
 			transplant(node, node.right);
-		}else if(node.right == null){
+		} else if(node.right == null) {
 			transplant(node, node.left);
-		}else{
+		} else {
 			Node successor = getSuccessor(node);
-			if(successor.parent != node){
+			if (successor.parent != node) {
 				transplant(successor, successor.right);
 				successor.right = node.right;
 				successor.right.parent = successor;
@@ -101,63 +113,63 @@ public class BinarySearchTree {
 		size--;
 	}
 	
-	public int getSize(){
+	public int getSize() {
 		return size;
 	}
 	
-	public void inOrderTreeWalk(Node node){
-		if(node != null){
-			inOrderTreeWalk(node.left);
-			node.printNode();
-			System.out.print(" ");
-			inOrderTreeWalk(node.right);
-		}
+	public void inOrderTreeWalk(Node node) {
+		if (node == null) return;
+		
+		inOrderTreeWalk(node.left);
+		node.printNode();
+		System.out.print(" ");
+		inOrderTreeWalk(node.right);
 	}
 	
-	public Node getMinimum(Node node){
-		while(node.left != null){
+	public Node getMinimum(Node node) {
+		while (node.left != null) {
 			node = node.left;
 		}
 		return node;
 	}
 	
-	public Node getMaximum(Node node){
-		while(node.right != null){
+	public Node getMaximum(Node node) {
+		while (node.right != null) {
 			node = node.right;
 		}
 		return node;
 	}
 	
-	public Node search(Node node, int key){
-		if(node == null || node.value == key){
+	public Node search(Node node, int key) {
+		if (node == null || node.value == key) {
 			return node;
-		}else if(key > node.value){
+		} else if (key > node.value) {
 			return search(node.right, key);
-		}else{
+		} else {
 			return search(node.left, key);
 		}
 	}
 	
-	public Node getSuccessor(Node node){
-		if(node.right != null){
+	public Node getSuccessor(Node node) {
+		if (node.right != null) {
 			return getMinimum(node.right);
 		}
 		
 		Node parent = node.parent;
-		while(parent != null && node == parent.right){
+		while (parent != null && node == parent.right) {
 			node = parent;
 			parent = parent.parent;
 		}
 		return parent;
 	}
 	
-	public Node getPredecessor(Node node){
-		if(node.left != null){
+	public Node getPredecessor(Node node) {
+		if (node.left != null) {
 			return getMaximum(node.left);
 		}
 		
 		Node parent = node.parent;
-		while(parent != null && node == parent.left){
+		while (parent != null && node == parent.left) {
 			node = parent;
 			parent = parent.parent;
 		}
@@ -165,7 +177,7 @@ public class BinarySearchTree {
 	}
 	
 	
-	public int getLevel(Node node){
+	public int getLevel(Node node) {
 		int level = 0;
 		
 		while (node.parent != null) {
@@ -190,16 +202,16 @@ public class BinarySearchTree {
 		return buffer;
 	}
 	
-	private void transplant(Node origin, Node newNode){
-		if(origin.parent == null){
+	private void transplant(Node origin, Node newNode) {
+		if (origin.parent == null) {
 			root = newNode;
-		}else if(origin == origin.parent.left){
+		} else if(origin == origin.parent.left) {
 			origin.parent.left = newNode;
-		}else{
+		} else {
 			origin.parent.right = newNode;
 		}
 		
-		if(newNode != null){
+		if (newNode != null) {
 			origin.parent = newNode.parent;
 		}
 	}

@@ -1,8 +1,15 @@
 package com.cllin.cci.chap04;
 
+import java.util.ArrayList;
+
 import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
+
+/*
+ * Given a binary tree and a target value, design an algorithm to print all paths which sum up to that value.
+ * Note that it can be any path in the tree - it does not have to start at the root.
+ */
 
 public class Exercise04_08 implements Exercise {
 	private final int MAXIMUM = 100;
@@ -14,51 +21,45 @@ public class Exercise04_08 implements Exercise {
 	public void runExercise() {
 		initialize();
 		
-		for(int n = 10; n < 30; n++){
-			findPath(tree.root, n);
+		for (int n = 10; n < 30; n++) {
+			findPath(tree.root, n, new ArrayList<Integer>());
 		}
 		
 		System.out.println("All paths are found");
 	}
 	
-	private void findPath(Node node, int sum){
+	private void findPath(Node node, int sum, ArrayList<Integer> path) {
 		if (node == null) return;
 		
-		Node head = node;
-		int distance = 0;
+		path.add(node.value);
+
 		int tmp = sum;
-		while(head != null){
-			tmp -= head.value;
+		int end = path.size() - 1;
+		int start = end;
+		
+		for (int i = start; i >= 0; i--) {
+			tmp -= path.get(i);
 			
-			if(tmp == 0){
-				printPath(node, distance, sum);
-				break;
-			}else{
-				distance++;
-				head = head.parent;
+			if (tmp == 0) {
+				start = i;
+				printPath(sum, start, end, path);
 			}
 		}
 		
-		findPath(node.right, sum);
-		findPath(node.left, sum);
-		
+		findPath(node.right, sum, new ArrayList<Integer>(path));
+		findPath(node.left, sum, new ArrayList<Integer>(path));
 	}
 	
-	private void printPath(Node node, int distance, int sum){
-		while(distance >= 0 && node != null){
-			System.out.printf("%d -> ", node.value);
-			node = node.parent;
-			distance--;
+	private void printPath(int sum, int start, int end, ArrayList<Integer> path) {
+		for (int i = start; i <= end; i++) {
+			System.out.printf("%d -> ", path.get(i));
 		}
-		System.out.printf("sum = %d%n", sum);
+		
+		System.out.printf(", sum = %d%n", sum);
 	}
 
-	private void initialize(){
-		tree = new BinarySearchTree((int)(Math.random() * MAXIMUM));
-		
-		for(int i = 0; i < SIZE; i++){
-			tree.insert(new Node((int)(Math.random() * MAXIMUM), null, null, null));
-		}
+	private void initialize() {
+		tree = new BinarySearchTree(SIZE, MAXIMUM);
 	}
 
 }

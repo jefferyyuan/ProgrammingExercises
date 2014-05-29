@@ -4,6 +4,11 @@ import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
+/*
+ * Design an algorithm and write code to find the first common ancestor of two nodes in a binary tree.
+ * Avoid storing additional nodes in a data structure. NOTE: This is not necessarily a binary search tree.
+ */
+
 public class Exercise04_06 implements Exercise {
 	private final int MAXIMUM = 1000;
 	private final int SIZE = 1000;
@@ -14,56 +19,52 @@ public class Exercise04_06 implements Exercise {
 
 	@Override
 	public void runExercise() {
-		for(int i = 0; i < 10; i++){
+		for (int i = 0; i < 10; i++) {
 			initialize();
-			Node fcs = getFirstCommonAncestor(tree.root);
-			System.out.printf("The value of the First Common Ancestor is %d%n", fcs.value);
+			Node fcs = getFirstCommonAncestor(tree.root, nodeA, nodeB);
+			
+			System.out.printf("The first common ancestor of %d and %d is %d%n", nodeA.value, nodeB.value, fcs.value);
 		}
 		
 	}
 	
-	private Node getFirstCommonAncestor(Node node){
+	private Node getFirstCommonAncestor(Node node, Node nodeA, Node nodeB){
 		if (node == null) return null;
+		if (node == nodeA || node == nodeB) return node;
 		
-		if(getCoveredNodes(node.left) == 1 && getCoveredNodes(node.right) == 1){
+		if (getCoveredNodes(node.left, nodeA, nodeB) == 1 && getCoveredNodes(node.right, nodeA, nodeB) == 1) {
 			return node;
-		}else if(getCoveredNodes(node.left) == 2){
-			if (node.left == nodeA || node.left == nodeB) return node.left;
-			
-			return getFirstCommonAncestor(node.left);
-		}else if(getCoveredNodes(node.right) == 2){
-			if (node.right == nodeA || node.right == nodeB) return node.right;
-			
-			return getFirstCommonAncestor(node.right);
+		} else if (getCoveredNodes(node.left, nodeA, nodeB) == 2) {
+			return getFirstCommonAncestor(node.left, nodeA, nodeB);
+		} else if(getCoveredNodes(node.right, nodeA, nodeB) == 2) {
+			return getFirstCommonAncestor(node.right, nodeA, nodeB);
 		}
 		
 		return null;
 	}
 	
-	private int getCoveredNodes(Node node){
+	private int getCoveredNodes(Node node, Node nodeA, Node nodeB) {
 		if (node == null) return 0;
 		
 		int nCoveredNodes = 0;
-		if(node.hashCode() == nodeA.hashCode() || node.hashCode() == nodeB.hashCode()){
-			nCoveredNodes++;
-		}
+		if (node.hashCode() == nodeA.hashCode()) nCoveredNodes++;
+		if (node.hashCode() == nodeB.hashCode()) nCoveredNodes++;
 		
-		nCoveredNodes += getCoveredNodes(node.right) + getCoveredNodes(node.left);
+		nCoveredNodes += getCoveredNodes(node.right, nodeA, nodeB) + getCoveredNodes(node.left, nodeA, nodeB);
 		
 		return nCoveredNodes;
 	}
 
-	private void initialize(){
-		int a = (int)(Math.random() * SIZE);
-		int b = (int)(Math.random() * SIZE);
-		while(b == a){
-			b = (int)(Math.random() * SIZE);
+	private void initialize() {
+		int a = (int) (Math.random() * SIZE);
+		int b = (int) (Math.random() * SIZE);
+		
+		while (b == a) {
+			b = (int) (Math.random() * SIZE);
 		}
 		
-		
 		tree = new BinarySearchTree((int)(Math.random() * MAXIMUM));
-		
-		for(int i = 0; i < SIZE; i++){
+		for (int i = 0; i < SIZE; i++) {
 			Node node = new Node((int)(Math.random() * MAXIMUM), null, null, null);
 			if (i == a) nodeA = node;
 			if (i == b) nodeB = node;

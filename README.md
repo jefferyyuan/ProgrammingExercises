@@ -1,6 +1,6 @@
 #ProgrammingExercises
 
-*This project is consist of my programming exercises, including Data Structure, Operator, Sorting, Exercises from "Cracking Coding Interview" and other General Issues*
+*This project consists of my programming exercises, including Data Structure, Operator, Sorting, Exercises from "Cracking Coding Interview" and other General Issues*
 
 ======
 ###CONTENT

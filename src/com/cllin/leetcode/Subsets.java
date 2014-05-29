@@ -53,23 +53,24 @@ public class Subsets implements LeetCodeExercise {
 		if (length == 0) return subsets;
 		Arrays.sort(set);
 
-		int thisLevelMaxIndex = 0;
-		int lastLevelMinIndex = 0;
-		int lastLevelMaxIndex = 0;
-		for (int i = 0; i < length; i++) {
-			for (int j = lastLevelMinIndex; j <= lastLevelMaxIndex; j++) {
-				ArrayList<Integer> subset = subsets.get(j);
+		ArrayList<ArrayList<Integer>> thisLevel = new ArrayList<ArrayList<Integer>>();
+		ArrayList<ArrayList<Integer>> nextLevel = new ArrayList<ArrayList<Integer>>();
+		
+		ArrayList<Integer> initial = new ArrayList<Integer>();
+		thisLevel.add(initial);
+		
+		while (!thisLevel.isEmpty()) {
+			while (!thisLevel.isEmpty()) {
+				ArrayList<Integer> subset = thisLevel.remove(0);
 				
 //				Get the maximum value of the previous level
 				int lastMax = Integer.MIN_VALUE;
 				for (int p = 0; p < subset.size(); p++) {
 					lastMax = Math.max(lastMax, subset.get(p));
 				}
-
-				/*
-				 * Build a new subset by adding one new element.
-				 * New new element should be larger than the maximum of the previous level
-				 */
+				
+//				Build a new subset by adding one new element.
+//				New elements should be larger than the maximum of the previous level
 				int index = 0;
 				while (index < set.length && set[index] <= lastMax) {
 					index++;
@@ -78,13 +79,13 @@ public class Subsets implements LeetCodeExercise {
 				for (int p = index; p < length; p++) {
 					ArrayList<Integer> s = new ArrayList<Integer>(subset);
 					s.add(set[p]);
+					nextLevel.add(s);
 					subsets.add(s);
-					thisLevelMaxIndex++;
 				}
 			}
 			
-			lastLevelMinIndex = lastLevelMaxIndex + 1;
-			lastLevelMaxIndex = thisLevelMaxIndex;
+			thisLevel = nextLevel;
+			nextLevel = new ArrayList<ArrayList<Integer>>();
 		}
 		
         return subsets;

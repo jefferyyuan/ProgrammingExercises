@@ -19,38 +19,21 @@ public class MinimumSequence implements Exercise {
 	
 	private int index;
 	private int sum;
-	private int[] minimumSequence;
+	private int minimumSequenceLength;
 	
 	@Override
 	public void runExercise() {
 		for (index = 0; index < testSuite.length; index++) {
 			for (sum = 1; sum <= 12; sum++) {
-				minimumSequence = getMinimumSequence(testSuite[index], sum);
+				minimumSequenceLength = getMinimumSequenceLength(testSuite[index], sum);
 				test();
 			}
 		}
 	}
 
-	private int[] getMinimumSequence(int[] array, int target) {
-		int sum = 0;
-		for (int i = 0; i < array.length; i++) {
-			sum += array[i];
-		}
-		if (sum < target) return new int[0];
-		
-		int start = 0;
-		int end = array.length - 1;
-		while (sum > target && start < end) {
-			if (array[start] < array[end]) {
-				if (sum - array[start] < target) break;
-				sum -= array[start++];
-			} else {
-				if (sum - array[end] < target) break;
-				sum -= array[end--];
-			}
-		}
-		
-		return new int[]{start, end};
+	private int getMinimumSequenceLength(int[] array, int target) {
+//		TODO
+		return -1;
 	}
 	
 	private void test() {
@@ -62,13 +45,12 @@ public class MinimumSequence implements Exercise {
 		
 		System.out.printf("S = %d%n", sum);
 		
-		System.out.print("Minimum Sequence = { ");
-		int start = minimumSequence[0];
-		int end = (minimumSequence.length == 1)? minimumSequence[0] : minimumSequence[1];
-		for (int i = start; i <= end; i++) {
-			System.out.printf("%d ", testSuite[index][i]);
+		if (minimumSequenceLength == -1) {
+			System.out.printf("Does not exist subsequence whose sum is larger than %d%n", sum);
+			return;
 		}
-		System.out.printf("}%n");
+		
+		System.out.printf("Minimum sequence length = %d%n", minimumSequenceLength);
 		
 		System.out.println("------------------------------");
 	}

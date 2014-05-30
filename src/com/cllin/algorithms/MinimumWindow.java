@@ -35,7 +35,7 @@ public class MinimumWindow implements Exercise {
 		}
 	}
 	
-	private int[] getMinimumWindow(int[] l1, int[] l2, int[] l3) {
+	private static int[] getMinimumWindow(int[] l1, int[] l2, int[] l3) {
 		LinkedList<Integer> list1 = new LinkedList<Integer>();
 		LinkedList<Integer> list2 = new LinkedList<Integer>();
 		LinkedList<Integer> list3 = new LinkedList<Integer>();
@@ -78,7 +78,7 @@ public class MinimumWindow implements Exercise {
 		return max - min;
 	}
 	
-	private int getEdge(boolean getLeft, 
+	private static int getEdge(boolean getLeft, 
 			LinkedList<Integer> list1, LinkedList<Integer> list2, LinkedList<Integer> list3) {
 		int result = (getLeft)? Integer.MAX_VALUE : Integer.MIN_VALUE;
 		int[] set = (getLeft)? 

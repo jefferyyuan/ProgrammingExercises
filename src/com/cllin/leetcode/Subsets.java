@@ -45,12 +45,10 @@ public class Subsets implements LeetCodeExercise {
 	 * Note that it is restricted that elements should be in non-descending order. 
 	 */
 	private ArrayList<ArrayList<Integer>> subsets(int[] set) {
-		int length = set.length;
-		
 		ArrayList<ArrayList<Integer>> subsets = new ArrayList<ArrayList<Integer>>();
 		subsets.add(new ArrayList<Integer>());
 		
-		if (length == 0) return subsets;
+		if (set == null || set.length == 0) return subsets;
 		Arrays.sort(set);
 
 		ArrayList<ArrayList<Integer>> thisLevel = new ArrayList<ArrayList<Integer>>();
@@ -76,7 +74,7 @@ public class Subsets implements LeetCodeExercise {
 					index++;
 				}
 				
-				for (int p = index; p < length; p++) {
+				for (int p = index; p < set.length; p++) {
 					ArrayList<Integer> s = new ArrayList<Integer>(subset);
 					s.add(set[p]);
 					nextLevel.add(s);

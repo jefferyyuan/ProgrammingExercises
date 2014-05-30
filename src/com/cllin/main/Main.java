@@ -10,6 +10,7 @@ import com.cllin.algorithms.CeilingValue;
 import com.cllin.algorithms.CombinationsOfTargetedSum;
 import com.cllin.algorithms.ConsecutiveGroups;
 import com.cllin.algorithms.ConvertNumber;
+import com.cllin.algorithms.DifferenceOfPairs;
 import com.cllin.algorithms.EditString;
 import com.cllin.algorithms.FirstUniqueElement;
 import com.cllin.algorithms.GenerateEquation;
@@ -189,6 +190,7 @@ public class Main {
 	public static final int BreakingPoint = 94;
 	public static final int NumberOfBlocks = 95;
 	public static final int PrefixOfStrings = 96;
+	public static final int DifferenceOfPairs = 97;
 	
 	/************************************************************
 	 * Sorting
@@ -430,7 +432,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = Subsets;
+		int option = DifferenceOfPairs;
 
 		switch(option){
 /************************************************************
@@ -601,6 +603,9 @@ public class Main {
 			break;
 		case PrefixOfStrings:
 			exercise = new PrefixOfStrings();
+			break;
+		case DifferenceOfPairs:
+			exercise = new DifferenceOfPairs();
 			break;
 		
 /************************************************************

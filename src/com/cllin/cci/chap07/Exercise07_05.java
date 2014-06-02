@@ -4,6 +4,10 @@ import java.util.ArrayList;
 
 import com.cllin.main.Exercise;
 
+/*
+ * Design the data structures for an online book reader system.
+ */
+
 public class Exercise07_05 implements Exercise {
 
 	@Override
@@ -51,10 +55,10 @@ public class Exercise07_05 implements Exercise {
 	}
 	
 	@SuppressWarnings("unused")
-	private class Book implements SuperBook{
+	private class Book implements SuperBook {
 		private String name;
 		private String content;
-		public Book(String name, String content){
+		public Book(String name, String content) {
 			this.name = name;
 			this.content = content;
 		}
@@ -73,7 +77,7 @@ public class Exercise07_05 implements Exercise {
 //			Blah blah
 		}
 		
-		public int getPage(){
+		public int getPage() {
 			return page;
 		}
 		

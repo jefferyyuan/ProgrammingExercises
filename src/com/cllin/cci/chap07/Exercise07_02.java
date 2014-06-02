@@ -4,6 +4,17 @@ import java.util.ArrayList;
 
 import com.cllin.main.Exercise;
 
+/*
+ * Imagine you have a call center with three levels of employees: fresher, technical lead (TL), product manager (PM). 
+ * There can be multiple employees, but only one TL or PM. 
+ * 
+ * An incoming telephone call must be allocated to a fresher who is free. 
+ * If a fresher can¡¦t handle the call, he or she must escalate the call to technical lead. 
+ * If the TL is not free or not able to handle it, then the call should be escalated to PM. 
+ * 
+ * Design the classes and data structures for this problem. Implement a method getCallHandler().
+ */
+
 public class Exercise07_02 implements Exercise {
 
 	@Override
@@ -11,9 +22,9 @@ public class Exercise07_02 implements Exercise {
 		CallCenter center = new CallCenter();
 		
 		int trials = 10;
-		for(int i = 0; i < trials; i++){
+		for (int i = 0; i < trials; i++) {
 			center.getCall();
-			System.out.println("------");
+			System.out.println("------------------------------");
 		}
 	}
 	
@@ -24,7 +35,7 @@ public class Exercise07_02 implements Exercise {
 		private TechnicalLead mTechnicalLead;
 		private ProductManager mProductManager;
 		
-		public CallCenter(){
+		public CallCenter() {
 			mFresherList = new ArrayList<Fresher>();
 			mTechnicalLead = new TechnicalLead();
 			mProductManager = new ProductManager();
@@ -34,18 +45,19 @@ public class Exercise07_02 implements Exercise {
 			}
 		}
 		
-		private Employee escalatePhone(Employee employee){
-			if(employee.getClass().equals(Fresher.class)){
+		private Employee escalatePhone(Employee employee) {
+			if (employee.getClass().equals(Fresher.class)) {
 				return mTechnicalLead;
-			}else if(employee.getClass().equals(TechnicalLead.class)){
+			} else if(employee.getClass().equals(TechnicalLead.class)) {
 				return mProductManager;
+			} else {
+				return null;
 			}
-			return null;
 		}
 		
-		public void getCall(){
-			for(Fresher fresher : mFresherList){
-				if(fresher.isAvaliable()){
+		public void getCall() {
+			for (Fresher fresher : mFresherList) {
+				if (fresher.isAvaliable()) {
 					getCallHandler(fresher);
 					return;
 				}
@@ -53,9 +65,9 @@ public class Exercise07_02 implements Exercise {
 			System.out.println("Sorry, we don't have any fresher avaliable now. Please call again later, thank you!");
 		}
 		
-		public void getCallHandler(Employee employee){
+		public void getCallHandler(Employee employee) {
 			boolean isGood = employee.takePhoneCall();
-			if(!isGood){
+			if (!isGood) {
 				getCallHandler(escalatePhone(employee));
 			}
 		}
@@ -74,11 +86,7 @@ public class Exercise07_02 implements Exercise {
 			@Override
 			public boolean takePhoneCall() {
 				boolean isAble = isAbleToHandle();
-				if(isAble){
-					System.out.println("I'm a fresher. Your problem is solved, thank you for your call!");
-				}else{
-					System.out.println("I'm a fresher. Sorry that I cannot solve your problem, please allow me to transfer the call to our technical lead");
-				}
+				System.out.printf("%s%n", (isAble)? "I'm a fresher. Your problem is solved, thank you for your call!" : "I'm a fresher. Sorry that I cannot solve your problem, please allow me to transfer the call to our technical lead");
 				return isAble;
 			}
 
@@ -104,16 +112,12 @@ public class Exercise07_02 implements Exercise {
 				boolean isAvaliable = isAvaliable();
 				boolean isAble = isAbleToHandle();
 				
-				if(!isAvaliable){
+				if (!isAvaliable) {
 					System.out.println("I'm the technical lead. Sorry that I am not free now, please allow me to transfer the call to our product manager");
 					return false;
 				}
 				
-				if(isAble){
-					System.out.println("I'm the technical lead. Your problem is solved, thank you for your call!");
-				}else{
-					System.out.println("I'm the technical lead. Sorry that I cannot solve your problem, please allow me to transfer the call to our product manager");
-				}
+				System.out.printf("%s%n", (isAble)? "I'm the technical lead. Your problem is solved, thank you for your call!" : "I'm the technical lead. Sorry that I cannot solve your problem, please allow me to transfer the call to our product manager");
 				return isAble;
 			}
 

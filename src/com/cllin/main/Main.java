@@ -432,7 +432,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = WordLadderII;
+		int option = EX05_06;
 
 		switch(option){
 /************************************************************

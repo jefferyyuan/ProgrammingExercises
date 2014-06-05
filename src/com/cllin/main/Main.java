@@ -432,9 +432,9 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = WordLadderII;
+		int option = EX06_03;
 
-		switch(option){
+		switch (option) {
 /************************************************************
  * Operators and Java Concepts
  ************************************************************/

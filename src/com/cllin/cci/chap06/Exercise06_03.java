@@ -2,66 +2,61 @@ package com.cllin.cci.chap06;
 
 import com.cllin.main.Exercise;
 
+/*
+ * You have a five quart jug and a three quart jug, and an unlimited supply of water (but no measuring cups).
+ * How would you come up with exactly four quarts of water?
+ */
+
 public class Exercise06_03 implements Exercise {
 	private final int MAXIMUM_A = 11;
 	private final int MAXIMUM_B = 7;
-	private int mJugA = 0;
-	private int mJugB = 0;
 	
 	@Override
 	public void runExercise() {
-		for(int i = 1; i < MAXIMUM_A; i++){
-			System.out.println("------");
-			int nSteps = getWater(i);
+		for (int i = 0; i <= MAXIMUM_A; i++) {
+			int nSteps = getWater(i, MAXIMUM_A, MAXIMUM_B);
 			System.out.printf("It takes %d steps to get %d%n", nSteps, i);
+			System.out.println("------------------------------");
 		}
 	}
 	
-	private int getWater(int goal){
+	private static int getWater(int goal, int maxA, int maxB) {
+		if (goal > maxA && goal > maxB) return Integer.MAX_VALUE;
+		
 		int nSteps = 0;
 		NextStep next = NextStep.A_POUR_TO_B;
-		mJugA = MAXIMUM_A;
-		mJugB = 0;
+		int jugA = maxA;
+		int jugB = 0;
 		
-		while(mJugA != goal && mJugB != goal){
-			switch(next){
+		while (jugA != goal && jugB != goal) {
+			switch(next) {
 			case A_POUR_TO_B:
-				if(mJugA >= MAXIMUM_B){
-					mJugA -= (MAXIMUM_B - mJugB);
-					mJugB = MAXIMUM_B;
-				}else{
-					mJugB += mJugA;
-					mJugA = 0;
+				if (jugA >= maxB) {
+					jugA -= (maxB - jugB);
+					jugB = maxB;
+				} else {
+					jugB += jugA;
+					jugA = 0;
 				}
 				next = NextStep.CLEAR_B;
 				break;
 			case CLEAR_B:
-				mJugB = 0;
+				jugB = 0;
 				next = NextStep.A_POUR_TO_B;
 				break;
 			case FILL_A:
-				mJugA = MAXIMUM_A;
+				jugA = maxA;
 				next = NextStep.A_POUR_TO_B;
 				break;
 			}
 			
-			if (mJugA == 0) next = NextStep.FILL_A;
+			if (jugA == 0) next = NextStep.FILL_A;
 			nSteps++;
 			
-			printJugs();
-			
-			if (!isValid()) return -1;
+			System.out.printf("JugA=%d, JugB=%d%n", jugA, jugB);
 		}
 		
 		return nSteps;
-	}
-	
-	private void printJugs(){
-		System.out.printf("JugA=%d, JugB=%d%n", mJugA, mJugB);
-	}
-	
-	private boolean isValid(){
-		return (mJugA <= MAXIMUM_A && mJugB <= MAXIMUM_B);
 	}
 	
 	private enum NextStep {

@@ -2,6 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Stack;
 
 import com.cllin.main.LeetCodeExercise;
@@ -18,7 +19,9 @@ public class BinaryTreeInorderTraversal implements LeetCodeExercise {
 	private final int SIZE = 1000;
 	
 	private BinarySearchTree tree;
-	private ArrayList<Integer> result;
+	private ArrayList<Integer> inorder;
+	@SuppressWarnings("unused")
+	private ArrayList<Integer> preorder;
 	private int[] reference;
 	
 	@Override
@@ -38,19 +41,20 @@ public class BinaryTreeInorderTraversal implements LeetCodeExercise {
 	@Override
 	public void runExercise() {
 		initialize();
-		result = inorderTraversal(tree.root);
+		inorder = inorderTraversal(tree.root);
+		preorder = preorderTraversal(tree.root);
 		
 		if (test()) System.out.println("Success");
-		else System.out.println("Failed");		
+		else System.out.println("Failed");
 	}
 	
 	/* Iterative implementation requires extra O(n) space for:,
 	 * 1) a stack
-	 * 2) a list that stores visited node
+	 * 2) a hashset that stores visited node
 	 */
     private ArrayList<Integer> inorderTraversal(Node root) {
     	ArrayList<Integer> result = new ArrayList<Integer>();
-    	ArrayList<Node> list = new ArrayList<Node>();
+    	HashSet<Node> list = new HashSet<Node>();
     	Stack<Node> stack = new Stack<Node>();
     	
     	if (root == null) return result;
@@ -73,10 +77,9 @@ public class BinaryTreeInorderTraversal implements LeetCodeExercise {
     	return result;
     }
     
-    @SuppressWarnings("unused")
 	private ArrayList<Integer> preorderTraversal(Node root) {
     	ArrayList<Integer> result = new ArrayList<Integer>();
-    	ArrayList<Node> list = new ArrayList<Node>();
+    	HashSet<Node> list = new HashSet<Node>();
     	Stack<Node> stack = new Stack<Node>();
     	
     	if (root == null) return result;
@@ -96,13 +99,10 @@ public class BinaryTreeInorderTraversal implements LeetCodeExercise {
 
 	@Override
 	public boolean test() {
-		int size = result.size();
-		int length = reference.length;
+		if (inorder.size() != reference.length) return false;
 		
-		if (size != length) return false;
-		
-		for (int i = 0; i < size; i++) {
-			if (result.get(i).intValue() != reference[i]) return false;
+		for (int i = 0; i < inorder.size(); i++) {
+			if (inorder.get(i).intValue() != reference[i]) return false;
 		}
 		
 		return true;

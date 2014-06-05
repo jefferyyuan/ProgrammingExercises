@@ -2,6 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Stack;
 
 import com.cllin.main.LeetCodeExercise;
@@ -39,7 +40,7 @@ public class BinaryTreePostorderTraversal implements LeetCodeExercise {
 	
 	private ArrayList<Integer> postorderTraversal(Node root) {
     	ArrayList<Integer> result = new ArrayList<Integer>();
-    	ArrayList<Node> list = new ArrayList<Node>();
+    	HashSet<Node> list = new HashSet<Node>();
     	Stack<Node> stack = new Stack<Node>();
     	
     	if (root == null) return result;

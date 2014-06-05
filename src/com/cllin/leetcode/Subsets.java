@@ -2,6 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 import com.cllin.main.LeetCodeExercise;
 
@@ -51,15 +52,15 @@ public class Subsets implements LeetCodeExercise {
 		if (set == null || set.length == 0) return subsets;
 		Arrays.sort(set);
 
-		ArrayList<ArrayList<Integer>> thisLevel = new ArrayList<ArrayList<Integer>>();
-		ArrayList<ArrayList<Integer>> nextLevel = new ArrayList<ArrayList<Integer>>();
+		LinkedList<ArrayList<Integer>> thisLevel = new LinkedList<ArrayList<Integer>>();
+		LinkedList<ArrayList<Integer>> nextLevel = new LinkedList<ArrayList<Integer>>();
 		
 		ArrayList<Integer> initial = new ArrayList<Integer>();
 		thisLevel.add(initial);
 		
 		while (!thisLevel.isEmpty()) {
 			while (!thisLevel.isEmpty()) {
-				ArrayList<Integer> subset = thisLevel.remove(0);
+				ArrayList<Integer> subset = thisLevel.poll();
 				
 //				Get the maximum value of the previous level
 				int lastMax = Integer.MIN_VALUE;
@@ -83,7 +84,7 @@ public class Subsets implements LeetCodeExercise {
 			}
 			
 			thisLevel = nextLevel;
-			nextLevel = new ArrayList<ArrayList<Integer>>();
+			nextLevel = new LinkedList<ArrayList<Integer>>();
 		}
 		
         return subsets;

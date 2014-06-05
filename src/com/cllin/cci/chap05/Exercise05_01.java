@@ -4,7 +4,7 @@ import com.cllin.main.Exercise;
 
 /*
  * Given two 32-bit numbers, N and M, and two bit positions, i and j.
- * Write a method to set all bits between i and j in N equal to M.
+ * Write a method to set all bits between i (inclusive) and j (exclusive) in N equal to M.
  * 
  * For example, 
  * Input: N = 10000000000, M = 10101, i = 2, j = 6

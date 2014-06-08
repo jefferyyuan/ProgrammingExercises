@@ -9,10 +9,10 @@ public class Exercise10_03 implements Exercise {
 	
 	@Override
 	public void runExercise() {
-		for(Line line : lines){
-			for(Line anotherLine : lines){
-				if(!line.isIntersecting(anotherLine)){
-					System.out.println(line.printLine() + " and " + anotherLine.printLine() + " would not intersect");
+		for (Line line : lines) {
+			for (Line anotherLine : lines) {
+				if (line.isIntersecting(anotherLine)) {
+					System.out.println(line.getLine() + " and " + anotherLine.getLine() + " will not intersect");
 				}
 			}
 		}
@@ -23,32 +23,32 @@ public class Exercise10_03 implements Exercise {
 		private int yIntercept = 0;
 		private boolean isVertical = false;
 		
-		public Line(int slope, int yIntercept, boolean isVertical){
+		public Line(int slope, int yIntercept, boolean isVertical) {
 			this.slope = slope;
 			this.yIntercept = yIntercept;
 			this.isVertical = isVertical;
 		}
 		
-		public boolean isIntersecting(Line line){
-			if(this.isVertical && line.isVertical){
-				return (this.yIntercept == line.yIntercept)? true : false;
-			}else if(this.isVertical != line.isVertical){
+		public boolean isIntersecting(Line line) {
+			if (this.isVertical && line.isVertical) {
+				return this.yIntercept == line.yIntercept;
+			} else if (this.isVertical != line.isVertical) {
 				return true;
 			}
 			
-			if(this.slope != line.slope){
+			if (this.slope != line.slope) {
 				return true;
-			}else if(this.yIntercept == line.yIntercept){
+			} else if (this.yIntercept == line.yIntercept) {
 				return true;
 			}
 			
 			return false;
 		}
 		
-		public String printLine(){
-			if(this.isVertical){
+		public String getLine() {
+			if (this.isVertical) {
 				return "x=" + yIntercept;
-			}else{
+			} else {
 				return "y=" + slope + "x + " + yIntercept;
 			}
 		}

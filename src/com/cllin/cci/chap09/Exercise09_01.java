@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 import com.cllin.main.Exercise;
 
+/*
+ * You are given two sorted arrays, A and B, and A has a large enough buffer at the end to hold B. 
+ * Write a method to merge B into A in sorted order.
+ */
+
 public class Exercise09_01 implements Exercise {
 
 	private final int MAXIMUM = 10000;
@@ -16,67 +21,62 @@ public class Exercise09_01 implements Exercise {
 	@Override
 	public void runExercise() {
 		initialize();
-		a = merge(a, b);
+		a = merge(a, b, SIZE_ACTUAL_A, SIZE_B);
 		check();
 	}
 	
-	private void check(){
+	private void check() {
 		int size = SIZE_ACTUAL_A + SIZE_B;
-		for(int i = 1; i < size; i++){
+		for (int i = 1; i < size; i++) {
 			if(a[i] < a[i - 1]){
 				System.out.println("Failed");
 				return;
 			}
 		}
 		
-		for(int i = size; i < SIZE_A; i++){
-			if(a[i] != 0){
+		for (int i = size; i < SIZE_A; i++) {
+			if (a[i] != 0) {
 				System.out.println("Failed");
 				return;
 			}
 		}
-		System.out.println("Passed");
+		System.out.println("Success!");
 	}
 	
-	private int[] merge(int[] a, int[] b){
-		int idxA = SIZE_ACTUAL_A - 1;
-		int idxB = b.length - 1;
-		int idx = idxA + idxB + 1;
+	private int[] merge(int[] a, int[] b, int sizeA, int sizeB) {
+		int i = sizeA - 1;
+		int j = sizeB - 1;
+		int idx = i + j + 1;
 		
-		while(idxA >= 0 && idxB >= 0){
-			if(a[idxA] > b[idxB]){
-				a[idx] = a[idxA];
-				idx--;
-				idxA--;
-			}else{
-				a[idx] = b[idxB];
-				idx--;
-				idxB--;
+		while (i >= 0 && j >= 0) {
+			if (a[i] > b[j]) {
+				a[idx--] = a[i--];
+			} else {
+				a[idx--] = b[j--];
 			}
 		}
 		
-		while(idxB >= 0){
-			a[idx] = b[idxB];
+		while (j >= 0) {
+			a[idx--] = b[j--];
 			idx--;
-			idxB--;
+			j--;
 		}
 		
 		return a;
 	}
 	
-	private void initialize(){
+	private void initialize() {
 		Arrays.fill(a, 0);
 		
-		for(int i = 0; i < SIZE_ACTUAL_A; i++){
-			a[i] = (int)(Math.random() * MAXIMUM);
+		for (int i = 0; i < SIZE_ACTUAL_A; i++) {
+			a[i] = (int) (Math.random() * MAXIMUM);
 		}
 		
-		for(int i = 0; i < SIZE_B; i++){
-			b[i] = (int)(Math.random() * MAXIMUM);
+		for (int i = 0; i < SIZE_B; i++) {
+			b[i] = (int) (Math.random() * MAXIMUM);
 		}
 		
 		Arrays.sort(a, 0, SIZE_ACTUAL_A);
 		Arrays.sort(b);
 	}
-
 }

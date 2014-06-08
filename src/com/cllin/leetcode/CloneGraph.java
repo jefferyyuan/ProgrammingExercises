@@ -80,10 +80,15 @@ public class CloneGraph implements LeetCodeExercise {
 		}
 	}
 	
+	/*
+	 * Classic BFS.
+	 * 		1) Create new node if it has never been created
+	 * 		2) For each neighbor, find/create it, then build the link
+	 */
 	private UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
 		if (node == null) return null;
 		
-		HashSet<Integer> created = new HashSet<Integer>();
+		HashSet<Integer> finished = new HashSet<Integer>();
 		HashMap<Integer, UndirectedGraphNode> newNodes = new HashMap<Integer, UndirectedGraphNode>();
 		LinkedList<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
 		
@@ -91,29 +96,28 @@ public class CloneGraph implements LeetCodeExercise {
 		
 		while (!queue.isEmpty()) {
 			UndirectedGraphNode n = queue.poll();
+			if (finished.contains(n.label)) continue;
 
-			if (!created.contains(n.label)) {
-				UndirectedGraphNode newNode = newNodes.get(n.label);
-				
-				if (newNode == null) {
-					newNode = new UndirectedGraphNode(n.label);
-					newNodes.put(n.label, newNode);
-				}
-				
-				for (UndirectedGraphNode neighbor : n.neighbors) {
-					UndirectedGraphNode newNeighbor = newNodes.get(neighbor.label);
-					
-					if (newNeighbor == null) {
-						newNeighbor = new UndirectedGraphNode(neighbor.label);
-						newNodes.put(newNeighbor.label, newNeighbor);
-					}
-					
-					newNode.neighbors.add(newNeighbor);
-					queue.add(neighbor);
-				}
-				
-				created.add(n.label);
+			UndirectedGraphNode newNode = newNodes.get(n.label);
+			
+			if (newNode == null) {
+				newNode = new UndirectedGraphNode(n.label);
+				newNodes.put(n.label, newNode);
 			}
+			
+			for (UndirectedGraphNode neighbor : n.neighbors) {
+				UndirectedGraphNode newNeighbor = newNodes.get(neighbor.label);
+				
+				if (newNeighbor == null) {
+					newNeighbor = new UndirectedGraphNode(neighbor.label);
+					newNodes.put(newNeighbor.label, newNeighbor);
+				}
+				
+				newNode.neighbors.add(newNeighbor);
+				queue.add(neighbor);
+			}
+			
+			finished.add(n.label);
 		}
 		
 		return newNodes.get(node.label);

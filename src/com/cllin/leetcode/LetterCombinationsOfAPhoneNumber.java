@@ -33,7 +33,7 @@ public class LetterCombinationsOfAPhoneNumber implements LeetCodeExercise {
 	}
 	
 //	Classic Breadth-first search
-	private ArrayList<String> letterCombinations(String digits) {
+	private static ArrayList<String> letterCombinations(String digits) {
 		if (digits.length() == 0) {
 //			It is required to have a null String to pass the test cases of LeetCode, blah :S
 			ArrayList<String> combinations = new ArrayList<String>();
@@ -50,7 +50,7 @@ public class LetterCombinationsOfAPhoneNumber implements LeetCodeExercise {
 			
 			if (previousCombinations.size() == 0) {
 				for (char c : characters) {
-					combinations.push(String.valueOf(c));
+					combinations.add(String.valueOf(c));
 				}
 			} else {
 				while (!previousCombinations.isEmpty()) {
@@ -69,7 +69,7 @@ public class LetterCombinationsOfAPhoneNumber implements LeetCodeExercise {
 		return new ArrayList<String>(previousCombinations);
     }
 	
-	private final char[] getCharacters(int digit) {
+	private static char[] getCharacters(int digit) {
 		switch (digit) {
 		case 2:
 			return new char[]{'a', 'b', 'c'};
@@ -95,19 +95,19 @@ public class LetterCombinationsOfAPhoneNumber implements LeetCodeExercise {
 
 	@Override
 	public boolean test() {
-		int result = 1;
+		int expectedSize = 1;
 		String input = testSuite[index];
 		
-		if (input.length() == 0) result = 1;
+		if (input.length() == 0) expectedSize = 1;
 		else {
 			for (char c : input.toCharArray()) {
 				int digit  = Character.getNumericValue(c);
-				if (digit < 7 || digit == 8) result *= 3;
-				else result *= 4;
+				if (digit < 7 || digit == 8) expectedSize *= 3;
+				else expectedSize *= 4;
 			}
 		}
 		
-		return (this.result.size() == result);
+		return (result.size() == expectedSize);
 	}
 
 }

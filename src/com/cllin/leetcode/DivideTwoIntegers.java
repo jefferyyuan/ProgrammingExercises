@@ -45,7 +45,7 @@ public class DivideTwoIntegers implements LeetCodeExercise {
 		while (a >= b) {
 			long q = b;
 
-			for (int count = 1; a >= q; q += q, count += count) {
+			for (int count = 1; a - q >= 0; q += q, count += count) {
 				a -= q;
 				quotient += count;
 			}

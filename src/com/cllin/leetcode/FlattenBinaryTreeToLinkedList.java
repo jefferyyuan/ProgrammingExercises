@@ -43,7 +43,7 @@ public class FlattenBinaryTreeToLinkedList implements LeetCodeExercise {
 	 * 			Set tail as the tail of the flatten right tree
 	 * 3. Return tail
 	 */
-	private Node traversal(Node node) {
+	private static Node traversal(Node node) {
 		if (node == null) return null;
 		
 		Node right = node.right;
@@ -51,8 +51,8 @@ public class FlattenBinaryTreeToLinkedList implements LeetCodeExercise {
 		
 		if (node.left != null) {
 			tail = traversal(node.left);
-			tail.right = right;
 			
+			tail.right = right;
 			node.right = node.left;
 			node.left = null;
 		} else {

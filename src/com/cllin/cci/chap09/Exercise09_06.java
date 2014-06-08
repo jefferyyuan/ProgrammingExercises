@@ -1,93 +1,114 @@
 package com.cllin.cci.chap09;
 
+import java.util.Arrays;
+
 import com.cllin.main.Exercise;
 
+/*
+ * Given a matrix in which each row and each column is sorted, write a method to find an element in it.
+ */
+
 public class Exercise09_06 implements Exercise {
-	private final int ROW = 1000;
-	private final int COLUMN = 1000;
+	private final int ROW = 100;
+	private final int COLUMN = 100;
 	private final int SIZE = ROW * COLUMN;
 	private final int MAXIMUM = 10000;
 	
-	private int[] unsorted;
+	private int[] reference;
 	private int[][] matrix;
 	
 	@Override
 	public void runExercise() {
 		initialize();
 		
-		for(int i = 0; i < 10; i++){
-			int value = (int)(Math.random() * MAXIMUM);
-			int key = find(value);
-			if(key == -1){
-				System.out.println(value + " cannot be found");
-			}else{
+		for (int i = 0; i < 10; i++) {
+			int target = (int) (Math.random() * MAXIMUM);
+			
+			int key = find(matrix, target);
+			int ref = search(reference, target);
+			
+			if (key == -1 && ref == -1) {
+				System.out.println(target + " does not exist in the matrix, success!");
+			} else if (key != -1 && ref != -1) {
 				int col = key % ROW;
 				int row = (key - col) / ROW;
-				System.out.println(value + " is found at (" + row + "," + col + ")");
+				System.out.println(target + " is found at (" + row + "," + col + "), success");
+			} else {
+				System.out.println("Failed");
 			}
 		}
 
 	}
 	
-	private int find(int number){
-		int row = 0;
-		for(int i = 0; i < ROW; i++){
-			if(matrix[i][0] > number){
-				row = i;
+	private static int find(int[][] matrix, int target){
+		int nRows = matrix.length;
+		int nCols = matrix[0].length;
+		
+		int row = -1;
+		int i, j, k;
+		
+		i = 0;
+		j = nRows - 1;
+		while (i <= j) {
+			k = (i + j) / 2;
+			
+			if (matrix[k][0] == target) return k * nCols;
+			if (k < nRows - 1 && (matrix[k][0] < target && target < matrix[k + 1][0])) {
+				row = k;
 				break;
-			}else if(matrix[i][0] == number){
-				return i * ROW;
 			}
+			
+			if (matrix[k][0] < target) {
+				i = k + 1;
+			} else if (matrix[k][0] > target) {
+				j = k - 1;
+			} 
 		}
 		
-		for(int i = 0; i < COLUMN; i++){
-			if(matrix[row][i] == number){
-				return row * ROW + i;
-			}			
+		if (row == -1) return -1;
+		
+		i = 0;
+		j = nCols - 1;
+		while (i <= j) {
+			k = (i + j) / 2;
+			
+			if (matrix[row][k] == target) return row * nCols + k;
+			
+			if (matrix[row][k] < target) {
+				i = k + 1;
+			} else if (matrix[row][k] > target) {
+				j = k - 1;
+			}
 		}
 		
 		return -1;
 	}
 	
 	private void initialize(){
-		unsorted = new int[SIZE];
+		reference = new int[SIZE];
 		matrix = new int[ROW][COLUMN];
 		
-		for(int i = 0; i < SIZE; i++){
-			unsorted[i] = (int)(Math.random() * MAXIMUM);
+		int nRows = matrix.length;
+		int nCols = matrix[0].length;
+		for (int i = 0; i < reference.length; i++) {
+			reference[i] = (int)(Math.random() * MAXIMUM);
 		}
 		
-		sort();
+		Arrays.sort(reference);
 		
-		for(int i = 0; i < ROW; i++){
-			for(int j = 0; j < COLUMN; j++){
-				matrix[i][j] = unsorted[i * ROW + j];
+		for (int i = 0; i < nRows; i++) {
+			for (int j = 0; j < nCols; j++) {
+				matrix[i][j] = reference[i * ROW + j];
 			}
 		}
 		
 	}
 	
-	private void sort(){
-		int[] counts = new int[MAXIMUM + 1];
-		int[] sorted = new int[SIZE];
-		
-		for(int i = 0; i < MAXIMUM + 1; i++){
-			counts[i] = 0;
+	private static int search(int[] array, int target) {
+		for (int i = 0; i < array.length; i++) {
+			if (array[i] == target) return i;
 		}
 		
-		for(int i = 0; i < SIZE; i++){
-			counts[unsorted[i]]++;
-		}
-		
-		for(int i = 1; i < MAXIMUM + 1; i++){
-			counts[i] += counts[i - 1];
-		}
-		
-		for(int i = SIZE - 1; i >= 0; i--){
-			sorted[counts[unsorted[i]] - 1] = unsorted[i];
-			counts[unsorted[i]]--;
-		}
-		
-		unsorted = sorted;
+		return -1;
 	}
 }

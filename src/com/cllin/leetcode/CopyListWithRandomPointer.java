@@ -78,7 +78,7 @@ public class CopyListWithRandomPointer implements LeetCodeExercise {
 		}
 	}
 	
-	private RandomListNode copyRandomList(RandomListNode head) {
+	private static RandomListNode copyRandomList(RandomListNode head) {
 		if (head == null) return null;
 		
 		RandomListNode node, newNode, originNext;
@@ -156,7 +156,7 @@ public class CopyListWithRandomPointer implements LeetCodeExercise {
 		return true;
 	}
 
-	private class RandomListNode {
+	private static class RandomListNode {
 		int label;
 		RandomListNode next, random;
 		RandomListNode(int x) {

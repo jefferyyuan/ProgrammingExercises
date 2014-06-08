@@ -38,10 +38,9 @@ public class MaximumSubarray implements LeetCodeExercise {
 	
 	/*
 	 * S(n) = sum of maximum subarray of A(0, n)
-	 * If S(n) + A(n + 1) > 0,
-	 * 		S(n + 1) = S(n) + A(n + 1)
-	 * Else,
-	 * 		S(n + 1) = S(n)
+	 * S(n) = 
+	 * 		1) S(n - 1) + A(n), if S(n - 1) + A(n) > 0
+	 * 		2) Else, S(n - 1)
 	 */
     public int maxSubArray(int[] array) {
     	int length = array.length;

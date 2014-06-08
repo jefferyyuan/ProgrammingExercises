@@ -42,7 +42,7 @@ public class LongestConsecutiveSequence implements LeetCodeExercise {
 
 	}
 	
-	private int longestConsecutive(int[] num) {
+	private static int longestConsecutive(int[] num) {
 		if (num == null || num.length == 0) return 0;
 		
 		int maximum = 0;
@@ -56,10 +56,7 @@ public class LongestConsecutiveSequence implements LeetCodeExercise {
 			min = Math.min(min, num[i]);
 			
 			set.add(num[i]);
-		}
-		
-		for (int key : set) {
-			keys.add(key);
+			keys.add(num[i]);
 		}
 		
 		for (int i = 0; i < keys.size(); i++) {

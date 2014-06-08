@@ -26,7 +26,7 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal implements
 	@Override
 	public void initialize() {
 		int[] numbers = new int[SIZE];
-		for (int i = 0; i < SIZE; i++) numbers[i] = i + 1;
+		for (int i = 1; i <= SIZE; i++) numbers[i - 1] = i;
 		
 		tree = new BinarySearchTree();
 		tree.buildTree(numbers);
@@ -51,12 +51,13 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal implements
 		if (test()) System.out.println("Success");
 		else System.out.println("Failed");	
 	}
-	
-	private Node buildTree(int[] inorder, int[] postorder) {
+
+//	Assuming the value of the nodes are unique
+//	Memory usage can be improved if the arrays are reused
+	private static Node buildTree(int[] inorder, int[] postorder) {
 		if (inorder == null || postorder == null) return null;
-		
 		if (inorder.length != postorder.length) return null;
-		else if (inorder.length == 0) return null;
+		if (inorder.length == 0) return null;
 		
 		int length = inorder.length;
 		int rootValue = postorder[length - 1];

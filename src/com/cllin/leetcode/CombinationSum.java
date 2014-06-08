@@ -57,15 +57,16 @@ public class CombinationSum implements LeetCodeExercise {
 		}
 	}
 	
-//	Depth-first search
-	private ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
+//	Depth-first search. Assuming C and T are all positive.
+	private static ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
 		if (candidates.length == 0 || target <= 0) return new ArrayList<ArrayList<Integer>>();
 
 		Arrays.sort(candidates);
 		return getCombination(new ArrayList<Integer>(), candidates, 0, target);
 	}
 	
-	private ArrayList<ArrayList<Integer>> getCombination(ArrayList<Integer> current, int[] candidates, int index, int target) {
+	private static ArrayList<ArrayList<Integer>> getCombination(
+			ArrayList<Integer> current, int[] candidates, int index, int target) {
 		ArrayList<ArrayList<Integer>> solution = new ArrayList<ArrayList<Integer>>();
 		
 		if (target < 0) return solution;

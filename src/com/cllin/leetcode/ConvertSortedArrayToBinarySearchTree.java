@@ -39,11 +39,11 @@ public class ConvertSortedArrayToBinarySearchTree implements LeetCodeExercise {
 		else System.out.println("Failed");	
 	}
 	
-    private Node sortedArrayToBST(int[] num) {
+    private static Node sortedArrayToBST(int[] num) {
         return buildTree(num, 0, num.length - 1);
     }
     
-    private Node buildTree(int[] num, int start, int end) {
+    private static Node buildTree(int[] num, int start, int end) {
     	if (start == end) return new Node(num[start]);
     	else if (start > end) return null;
     	

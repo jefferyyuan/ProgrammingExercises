@@ -27,7 +27,7 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal implements
 	@Override
 	public void initialize() {
 		int[] numbers = new int[SIZE];
-		for (int i = 0; i < SIZE; i++) numbers[i] = i + 1;
+		for (int i = 1; i <= SIZE; i++) numbers[i - 1] = i;
 		
 		tree = new BinarySearchTree();
 		tree.buildTree(numbers);
@@ -48,9 +48,6 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal implements
 	public void runExercise() {
 		initialize();
 		
-		inorder = new int[]{1, 2, 3, 4};
-		preorder = new int[]{1, 4, 2, 3};
-		
 		root = buildTree(preorder, inorder);
 
 		if (test()) System.out.println("Success");
@@ -59,9 +56,8 @@ public class ConstructBinaryTreeFromPreorderAndInorderTraversal implements
 	
 	private Node buildTree(int[] preorder, int[] inorder) {
 		if (inorder == null || preorder == null) return null;
-		
 		if (inorder.length != preorder.length) return null;
-		else if (inorder.length == 0) return null;
+		if (inorder.length == 0) return null;
 		
 		int length = inorder.length;
 		int rootValue = preorder[0];

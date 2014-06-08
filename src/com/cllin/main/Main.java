@@ -91,11 +91,10 @@ import com.cllin.cci.chap08.Exercise08_07;
 import com.cllin.cci.chap08.Exercise08_08;
 import com.cllin.cci.chap09.Exercise09_01;
 import com.cllin.cci.chap09.Exercise09_02;
-import com.cllin.cci.chap09.Exercise09_03;
-import com.cllin.cci.chap09.Exercise09_05;
 import com.cllin.cci.chap09.Exercise09_06;
 import com.cllin.cci.chap09.Exercise09_07;
 import com.cllin.cci.chap10.Exercise10_03;
+import com.cllin.cci.chap10.Exercise10_04;
 import com.cllin.cci.chap10.Exercise10_07;
 import com.cllin.cci.chap11.Exercise11_01;
 import com.cllin.cci.chap14.Exercise14_01;
@@ -225,11 +224,11 @@ public class Main {
 	public static final int EX14_01 = 1401;
 	public static final int EX11_01 = 1101;
 	public static final int EX10_07 = 1007;
+	public static final int EX10_04 = 1004;
 	public static final int EX10_03 = 1003;
 	public static final int EX09_07 = 907;
 	public static final int EX09_06 = 906;
 	public static final int EX09_05 = 905;
-	public static final int EX09_03 = 903;
 	public static final int EX09_02 = 902;
 	public static final int EX09_01 = 901;
 	public static final int EX08_08 = 808;
@@ -432,7 +431,7 @@ public class Main {
 	public static void main(String args[]){
 		Exercise exercise = null;
 		
-		int option = EX08_07;
+		int option = LetterCombinationsOfAPhoneNumber;
 
 		switch (option) {
 /************************************************************
@@ -685,6 +684,9 @@ public class Main {
 		case EX10_07:
 			exercise = new Exercise10_07();
 			break;
+		case EX10_04:
+			exercise = new Exercise10_04();
+			break;
 		case EX10_03:
 			exercise = new Exercise10_03();
 			break;
@@ -693,11 +695,6 @@ public class Main {
 			break;
 		case EX09_06:
 			exercise = new Exercise09_06();
-		case EX09_05:
-			exercise = new Exercise09_05();
-			break;
-		case EX09_03:
-			exercise = new Exercise09_03();
 			break;
 		case EX09_02:
 			exercise = new Exercise09_02();

@@ -55,7 +55,7 @@ public class PalindromePartitioningII implements LeetCodeExercise {
 		boolean[][] isPalindrome = new boolean[length][length]; 
 		
 //		Naive cut
-		for (int i = 0; i < length + 1; i++) {
+		for (int i = 0; i <= length; i++) {
 			partition[i] = length - i;
 		}
 		

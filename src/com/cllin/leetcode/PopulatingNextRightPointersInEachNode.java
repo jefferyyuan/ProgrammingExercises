@@ -27,24 +27,21 @@ public class PopulatingNextRightPointersInEachNode implements LeetCodeExercise {
 		connect(new TreeLinkNode(0));
 	}
 	
-    private void connect(TreeLinkNode root) {
-        if (root == null) return;
+    private static void connect(TreeLinkNode root) {
         link(root, null);
     }
     
-    private void link(TreeLinkNode node, TreeLinkNode next){
+    private static void link(TreeLinkNode node, TreeLinkNode next){
     	if (node == null) return;
     	
     	node.next = next;
-    	link(node.left, node.right);
     	
-    	if (next == null) link(node.right, null);
-    	else link(node.right, next.left);
+    	link(node.left, node.right);
+    	link(node.right, (next == null)? null : next.left);
     }
 
 	@Override
 	public boolean test() {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

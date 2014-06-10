@@ -33,14 +33,14 @@ public class PathSum implements LeetCodeExercise {
 		}
 	}
 	
-	private boolean hasPathSum(Node root, int sum) {
+	private static boolean hasPathSum(Node root, int sum) {
 		return traverse(root, 0, sum);
     }
 	
-	private boolean traverse(Node node, int sum, int target) {
+	private static boolean traverse(Node node, int sum, int target) {
 		if (node == null) return false;
 		
-		if (node.left == null && node.right == null) return (sum + node.value == target)? true : false;
+		if (node.left == null && node.right == null) return sum + node.value == target;
 		
 		return traverse(node.left, sum + node.value, target) || traverse(node.right, sum + node.value, target);
 	}

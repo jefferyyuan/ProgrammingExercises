@@ -96,7 +96,7 @@ import com.cllin.cci.chap09.Exercise09_07;
 import com.cllin.cci.chap10.Exercise10_03;
 import com.cllin.cci.chap10.Exercise10_04;
 import com.cllin.cci.chap10.Exercise10_07;
-import com.cllin.cci.chap11.Exercise11_01;
+import com.cllin.cci.chap11.Exercise11_03;
 import com.cllin.cci.chap14.Exercise14_01;
 import com.cllin.cci.chap14.Exercise14_02;
 import com.cllin.cci.chap14.Exercise14_03;
@@ -222,7 +222,7 @@ public class Main {
 	public static final int EX14_03 = 1403;
 	public static final int EX14_02 = 1402;
 	public static final int EX14_01 = 1401;
-	public static final int EX11_01 = 1101;
+	public static final int EX11_03 = 1103;
 	public static final int EX10_07 = 1007;
 	public static final int EX10_04 = 1004;
 	public static final int EX10_03 = 1003;
@@ -431,7 +431,11 @@ public class Main {
 	public static void main(String args[]) {
 		Exercise exercise = null;
 		
+<<<<<<< HEAD
 		int option = PalindromePartitioningII;
+=======
+		int option = EX11_03;
+>>>>>>> 7014c4f6cb015de7628339b618e399a12d9a27ad
 
 		switch (option) {
 /************************************************************
@@ -678,8 +682,8 @@ public class Main {
 		case EX14_01:
 			exercise = new Exercise14_01();
 			break;
-		case EX11_01:
-			exercise = new Exercise11_01();
+		case EX11_03:
+			exercise = new Exercise11_03();
 			break;
 		case EX10_07:
 			exercise = new Exercise10_07();

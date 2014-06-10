@@ -30,7 +30,7 @@ public class NQueensII implements LeetCodeExercise {
 		}
 	}
 	
-	private int totalNQueens(int n) {
+	private static int totalNQueens(int n) {
 		if (n < 1) return 0;
 
 		boolean[][] chessBoard = new boolean[n][n];
@@ -41,7 +41,7 @@ public class NQueensII implements LeetCodeExercise {
 		return placeQueen(0, n, chessBoard);
     }
 	
-	private int placeQueen(int col, int n, boolean[][] chessBoard){
+	private static int placeQueen(int col, int n, boolean[][] chessBoard) {
 		if (col == n) return 1;
 		int result = 0;
 
@@ -64,13 +64,12 @@ public class NQueensII implements LeetCodeExercise {
 		return result;
 	}
 	
-	private boolean isSafe(int x, int y, int n, boolean[][] chessBoard) {
-		int i, j;
+	private static boolean isSafe(int x, int y, int n, boolean[][] chessBoard) {
+		for (int i = x; i >= 0; i--) if (!chessBoard[i][y]) return false; 
+		for (int j = y; j >= 0; j--) if (!chessBoard[x][j]) return false;
 		
-		for (i = x; i >= 0; i--) if (!chessBoard[i][y]) return false; 
-		for (j = y; j >= 0; j--) if (!chessBoard[x][j]) return false; 
-		for (i = x, j = y; i >= 0 && j >= 0; i--, j--) if (!chessBoard[i][j]) return false; 
-		for (i = x, j = y; i < n && j >= 0; i++, j--) if (!chessBoard[i][j]) return false; 
+		for (int i = x, j = y; i >= 0 && j >= 0; i--, j--) if (!chessBoard[i][j]) return false; 
+		for (int i = x, j = y; i < n && j >= 0; i++, j--) if (!chessBoard[i][j]) return false; 
 		
 		return true;
 	}

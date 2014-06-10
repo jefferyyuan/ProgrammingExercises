@@ -47,12 +47,12 @@ public class PalindromePartitioningII implements LeetCodeExercise {
 	 * If S(i, j) is palindrome,
 	 * D(i) = Minimum(D(i), D(j + 1) + 1)
 	 */
-	private int minCut(String string) {
+	private static int minCut(String string) {
 		if (string == null || string.length() <= 1) return 0;
 
 		int length = string.length();
 		int[] partition = new int[length + 1];
-		boolean[][] isPalindrome = new boolean[length][length];		// 
+		boolean[][] isPalindrome = new boolean[length][length]; 
 		
 //		Naive cut
 		for (int i = 0; i < length + 1; i++) {
@@ -74,7 +74,7 @@ public class PalindromePartitioningII implements LeetCodeExercise {
 			}
 		}
 		
-//		1 partition require 0 cut, 2 partitions require 1 cut, etc.
+//		1 partition requires 0 cut, 2 partitions require 1 cut, etc.
     	return partition[0] - 1;
     }
 

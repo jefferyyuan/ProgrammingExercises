@@ -428,10 +428,10 @@ public class Main {
 	public static final int MaxPointsOnALine = 5149;
 	public static final int WordLadderII = 5150;
 	
-	public static void main(String args[]){
+	public static void main(String args[]) {
 		Exercise exercise = null;
 		
-		int option = LetterCombinationsOfAPhoneNumber;
+		int option = PalindromePartitioningII;
 
 		switch (option) {
 /************************************************************

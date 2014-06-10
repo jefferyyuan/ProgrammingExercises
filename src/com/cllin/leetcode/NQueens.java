@@ -30,7 +30,7 @@ public class NQueens implements LeetCodeExercise {
 		}
 	}
 	
-    private ArrayList<String[]> solveNQueens(int n) {
+    private static ArrayList<String[]> solveNQueens(int n) {
     	ArrayList<String[]> boards = new ArrayList<String[]>();
 		if (n < 1) return boards;
 
@@ -62,7 +62,7 @@ public class NQueens implements LeetCodeExercise {
     	return boards;
     }
     
-	private ArrayList<ArrayList<Integer>> placeQueen(int col, int n, boolean[][] chessBoard){
+	private static ArrayList<ArrayList<Integer>> placeQueen(int col, int n, boolean[][] chessBoard) {
 		ArrayList<ArrayList<Integer>> boards = new ArrayList<ArrayList<Integer>>();
 		if (col == n) return boards;
 
@@ -105,15 +105,14 @@ public class NQueens implements LeetCodeExercise {
 		return boards;
 	}
 	
-	private boolean isSafe(int x, int y, int n, boolean[][] chessBoard) {
-		int i, j;
+	private static boolean isSafe(int x, int y, int n, boolean[][] chessBoard) {
 //		Check vertically and horizontally
-		for (i = x; i >= 0; i--) if (!chessBoard[i][y]) return false; 
-		for (j = y; j >= 0; j--) if (!chessBoard[x][j]) return false; 
+		for (int i = x; i >= 0; i--) if (!chessBoard[i][y]) return false; 
+		for (int j = y; j >= 0; j--) if (!chessBoard[x][j]) return false; 
 
 //		Check diagonally
-		for (i = x, j = y; i >= 0 && j >= 0; i--, j--) 	if (!chessBoard[i][j]) return false; 
-		for (i = x, j = y; i < n && j >= 0; i++, j--) if (!chessBoard[i][j]) return false; 
+		for (int i = x, j = y; i >= 0 && j >= 0; i--, j--) 	if (!chessBoard[i][j]) return false; 
+		for (int i = x, j = y; i < n && j >= 0; i++, j--) if (!chessBoard[i][j]) return false; 
 		
 		return true;
 	}

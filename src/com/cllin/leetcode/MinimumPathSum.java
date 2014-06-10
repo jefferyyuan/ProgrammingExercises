@@ -44,7 +44,7 @@ public class MinimumPathSum implements LeetCodeExercise {
 	 * S(m, n) = minimum path sum from A(0, 0) to A(m, n)
 	 * S(m, n) = minimum(S(m - 1, n), S(m, n - 1)) + A(m, n)
 	 */
-    private int minPathSum(int[][] grid) {
+    private static int minPathSum(int[][] grid) {
     	if (grid.length < 1 || grid[0].length < 1) return 0;
     	
     	int m = grid.length;
@@ -53,7 +53,7 @@ public class MinimumPathSum implements LeetCodeExercise {
     	
     	sum[0][0] = grid[0][0];
     	for (int i = 1; i < m; i++) sum[i][0] = sum[i - 1][0] + grid[i][0];
-    	for (int i = 1; i < n; i++) sum[0][i] = sum[0][i - 1] + grid[0][i];
+    	for (int j = 1; j < n; j++) sum[0][j] = sum[0][j - 1] + grid[0][j];
     	
     	for (int i = 1; i < m; i++) {
     		for (int j = 1; j < n; j++) {

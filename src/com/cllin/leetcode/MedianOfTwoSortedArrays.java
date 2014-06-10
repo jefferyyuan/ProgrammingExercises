@@ -57,7 +57,7 @@ public class MedianOfTwoSortedArrays implements LeetCodeExercise {
 			
 			return (p + q) / 2;
 		} else {
-			return getKth(A, B, (lengthA + lengthB) / 2,0, A.length - 1, 0, B.length - 1);
+			return getKth(A, B, (lengthA + lengthB) / 2, 0, A.length - 1, 0, B.length - 1);
 		}
     }
 	

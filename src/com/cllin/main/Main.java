@@ -32,6 +32,7 @@ import com.cllin.algorithms.PrefixOfStrings;
 import com.cllin.algorithms.PrintEvolutionaryTree;
 import com.cllin.algorithms.PyramidOfCups;
 import com.cllin.algorithms.QueueInAnInteger;
+import com.cllin.algorithms.RandomSeven;
 import com.cllin.algorithms.RearrangeArray;
 import com.cllin.algorithms.ReconstructJourney;
 import com.cllin.algorithms.RepeatedPattern;
@@ -46,6 +47,7 @@ import com.cllin.algorithms.SubstituteCharacters;
 import com.cllin.algorithms.SubstringConcatenation;
 import com.cllin.algorithms.SumOfPairs;
 import com.cllin.algorithms.SumUnderThreshold;
+import com.cllin.algorithms.UpdateVersionNumber;
 import com.cllin.algorithms.WordsFromLetterCollection;
 import com.cllin.cci.chap01.Exercise01_01;
 import com.cllin.cci.chap01.Exercise01_02;
@@ -190,6 +192,8 @@ public class Main {
 	public static final int NumberOfBlocks = 95;
 	public static final int PrefixOfStrings = 96;
 	public static final int DifferenceOfPairs = 97;
+	public static final int RandomSeven = 98;
+	public static final int UpdateVersionNumber = 99;
 	
 	/************************************************************
 	 * Sorting
@@ -431,11 +435,7 @@ public class Main {
 	public static void main(String args[]) {
 		Exercise exercise = null;
 		
-<<<<<<< HEAD
-		int option = PalindromePartitioningII;
-=======
-		int option = EX11_03;
->>>>>>> 7014c4f6cb015de7628339b618e399a12d9a27ad
+		int option = UpdateVersionNumber;
 
 		switch (option) {
 /************************************************************
@@ -609,6 +609,12 @@ public class Main {
 			break;
 		case DifferenceOfPairs:
 			exercise = new DifferenceOfPairs();
+			break;
+		case RandomSeven:
+			exercise = new RandomSeven();
+			break;
+		case UpdateVersionNumber:
+			exercise = new UpdateVersionNumber();
 			break;
 		
 /************************************************************

@@ -42,17 +42,17 @@ public class RemoveDuplicatesFromSortedList implements LeetCodeExercise {
 		else System.out.println("Failed");	
 	}
 	
-	private ListNode deleteDuplicates(ListNode head) {
+	private static ListNode deleteDuplicates(ListNode head) {
 		if (head == null) return null;
 		
-		ListNode last = head;
+		ListNode previous = head;
 		ListNode node = head.next;
 		
 		while (node != null) {
-			if (node.val == last.val) {
-				last.next = node.next;
+			if (node.val == previous.val) {
+				previous.next = node.next;
 			} else {
-				last = node;
+				previous = node;
 			}
 			node = node.next;
 		}

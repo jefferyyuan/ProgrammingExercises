@@ -45,18 +45,17 @@ public class RemoveDuplicatesFromSortedListII implements LeetCodeExercise {
 
 	}
 	
-	private ListNode deleteDuplicates(ListNode head) {
+	private static ListNode deleteDuplicates(ListNode head) {
 		ListNode dummy = new ListNode(-1);
 		dummy.next = head;
 		
 		ListNode prev = dummy;
 		ListNode node = head;
-		
 		while (node != null) {
-			ListNode next = node.next;
-			int count = 0;
+			if (node.next == null) break;
 			
-			if (next == null) break;
+			int count = 0;
+			ListNode next = node.next;
 			while (next != null && next.val == node.val) {
 				next = next.next;
 				count++;
@@ -89,7 +88,7 @@ public class RemoveDuplicatesFromSortedListII implements LeetCodeExercise {
 		return true;
 	}
 
-	private class ListNode {
+	private static class ListNode {
 		int val;
 		ListNode next;
 		ListNode(int x) {

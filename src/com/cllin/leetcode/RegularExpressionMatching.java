@@ -10,13 +10,13 @@ import com.cllin.main.LeetCodeExercise;
  * The matching should cover the entire input string (not partial).
  * 
  * Some examples:
- * 		isMatch("aa","a") ¡÷ false
- * 		isMatch("aa","aa") ¡÷ true
- * 		isMatch("aaa","aa") ¡÷ false
- * 		isMatch("aa", "a*") ¡÷ true
- * 		isMatch("aa", ".*") ¡÷ true
- * 		isMatch("ab", ".*") ¡÷ true
- * 		isMatch("aab", "c*a*b") ¡÷ true
+ * 		isMatch("aa","a") -> false
+ * 		isMatch("aa","aa") -> true
+ * 		isMatch("aaa","aa") -> false
+ * 		isMatch("aa", "a*") -> true
+ * 		isMatch("aa", ".*") -> true
+ * 		isMatch("ab", ".*") -> true
+ * 		isMatch("aab", "c*a*b") -> true
  * 
  * Source: http://oj.leetcode.com/problems/regular-expression-matching/
  */
@@ -62,39 +62,42 @@ public class RegularExpressionMatching implements LeetCodeExercise {
 	 * 		3) P(j) == '*' AND M(i, j - 2)							--- Omitting the previous character
 	 * 		4) P(j) == '*' AND P(j - 1) == S(i) AND M(i - 1, j)		--- Repeating the previous character
 	 */
-	private boolean isMatch(String s, String p) {
+	private static boolean isMatch(String s, String p) {
 		if (s == null) return (p == null);
 
 		boolean[][] matches = new boolean[s.length() + 1][p.length() + 1];
 		
-		for (int i = 0; i <= s.length(); i++) matches[i][0] = false;
-		for (int j = 0; j <= p.length(); j++) matches[0][j] = false;
 		matches[0][0] = true;
+		for (int i = 1; i <= s.length(); i++) matches[i][0] = false;
+		for (int j = 1; j <= p.length(); j++) matches[0][j] = false;
 		
 		for (int i = 0; i <= s.length(); i++) {
 			for (int j = 1; j <= p.length(); j++) {
 				if (i >= 1 && matches[i - 1][j - 1] && matches(s.charAt(i - 1), p.charAt(j - 1))) {
 					matches[i][j] = true;
+					continue;
 				}
 				
 				if (j >= 2 && p.charAt(j - 1) == '*') {
 					if (matches[i][j - 2]) {
 						matches[i][j] = true;
+						continue;
+					}
+					
+					if (i >= 1 && matches[i - 1][j] && matches(s.charAt(i - 1), p.charAt(j - 2))) {
+						matches[i][j] = true;
+						continue;
 					}
 				}
 				
-				if (j >= 2 && i >= 1 && p.charAt(j - 1) == '*') {
-					if (matches[i - 1][j] && matches(s.charAt(i - 1), p.charAt(j - 2))) {
-						matches[i][j] = true;
-					}
-				}
+				matches[i][j] = false;
 			}
 		}
 		
 		return matches[s.length()][p.length()];
 	}
 	
-	private boolean matches(char s, char p) {
+	private static boolean matches(char s, char p) {
 		return (s == p || p == '.');
 	}
 	

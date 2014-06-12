@@ -53,7 +53,7 @@ public class RemoveNthNodeFromEndOfList implements LeetCodeExercise {
 		else System.out.println("Failed");	
 	}
 	
-    private ListNode removeNthFromEnd(ListNode head, int n) {
+    private static ListNode removeNthFromEnd(ListNode head, int n) {
     	ListNode i = head;
     	ListNode j = head;
     	
@@ -65,11 +65,10 @@ public class RemoveNthNodeFromEndOfList implements LeetCodeExercise {
     	
     	/*
     	 * Remove the first element
-    	 * It is guaranteed that n is always valid, so no need to worry about cases about n > list size
+    	 * It is guaranteed that n is always valid, so no need to worry about cases about n > list.size
     	 */
     	if (i == null && count == n) {
-    		head = head.next;
-    		return head;
+    		return head.next;
     	} 
     	
     	while (i.next != null) {
@@ -77,8 +76,7 @@ public class RemoveNthNodeFromEndOfList implements LeetCodeExercise {
     		j = j.next;
     	}
     	
-    	ListNode next = j.next;
-    	j.next = next.next;
+    	j.next = j.next.next;
     	
         return head;
     }

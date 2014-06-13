@@ -36,6 +36,7 @@ import com.cllin.algorithms.RearrangeArray;
 import com.cllin.algorithms.ReconstructJourney;
 import com.cllin.algorithms.RepeatedPattern;
 import com.cllin.algorithms.RodCutting;
+import com.cllin.algorithms.RunLengthEncoding;
 import com.cllin.algorithms.SerializeBinaryTree;
 import com.cllin.algorithms.SixSixPair;
 import com.cllin.algorithms.SortByDictionary;
@@ -96,7 +97,6 @@ import com.cllin.cci.chap09.Exercise09_07;
 import com.cllin.cci.chap10.Exercise10_03;
 import com.cllin.cci.chap10.Exercise10_04;
 import com.cllin.cci.chap10.Exercise10_07;
-import com.cllin.cci.chap11.Exercise11_03;
 import com.cllin.cci.chap14.Exercise14_01;
 import com.cllin.cci.chap14.Exercise14_02;
 import com.cllin.cci.chap14.Exercise14_03;
@@ -190,6 +190,7 @@ public class Main {
 	public static final int NumberOfBlocks = 95;
 	public static final int PrefixOfStrings = 96;
 	public static final int DifferenceOfPairs = 97;
+	public static final int RunLengthEncoding = 98;
 	
 	/************************************************************
 	 * Sorting
@@ -431,11 +432,7 @@ public class Main {
 	public static void main(String args[]) {
 		Exercise exercise = null;
 		
-<<<<<<< HEAD
-		int option = PalindromePartitioningII;
-=======
-		int option = EX11_03;
->>>>>>> 7014c4f6cb015de7628339b618e399a12d9a27ad
+		int option = RunLengthEncoding;
 
 		switch (option) {
 /************************************************************
@@ -609,6 +606,9 @@ public class Main {
 			break;
 		case DifferenceOfPairs:
 			exercise = new DifferenceOfPairs();
+			break;
+		case RunLengthEncoding:
+			exercise = new RunLengthEncoding();
 			break;
 		
 /************************************************************

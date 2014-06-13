@@ -46,7 +46,8 @@ public class ReorderList implements LeetCodeExercise {
 		
 		System.out.println("------------------");
 	}
-	private void reorderList(ListNode head) {
+	
+	private static void reorderList(ListNode head) {
 		if (head == null) return;
 		
 //		Get the tail of the first half, and the head of the second half 
@@ -71,7 +72,6 @@ public class ReorderList implements LeetCodeExercise {
 			prev = node;
 			node = next;
 		}
-		
 		
 //		Re-link the list
 		ListNode dummyHead = new ListNode(Integer.MIN_VALUE);
@@ -113,7 +113,7 @@ public class ReorderList implements LeetCodeExercise {
 		return true;
 	}
 	
-	private	class ListNode {
+	private	static class ListNode {
 		int val;
 		ListNode next;
 		ListNode(int x) {

@@ -97,6 +97,7 @@ import com.cllin.cci.chap09.Exercise09_07;
 import com.cllin.cci.chap10.Exercise10_03;
 import com.cllin.cci.chap10.Exercise10_04;
 import com.cllin.cci.chap10.Exercise10_07;
+import com.cllin.cci.chap11.Exercise11_03;
 import com.cllin.cci.chap14.Exercise14_01;
 import com.cllin.cci.chap14.Exercise14_02;
 import com.cllin.cci.chap14.Exercise14_03;
@@ -191,6 +192,8 @@ public class Main {
 	public static final int PrefixOfStrings = 96;
 	public static final int DifferenceOfPairs = 97;
 	public static final int RunLengthEncoding = 98;
+	public static final int RandomSeven = 99;
+	public static final int UpdateVersionNumber = 100;
 	
 	/************************************************************
 	 * Sorting
@@ -431,7 +434,6 @@ public class Main {
 	
 	public static void main(String args[]) {
 		Exercise exercise = null;
-		
 		int option = RunLengthEncoding;
 
 		switch (option) {
@@ -609,7 +611,12 @@ public class Main {
 			break;
 		case RunLengthEncoding:
 			exercise = new RunLengthEncoding();
-			break;
+//		case RandomSeven:
+//			exercise = new RandomSeven();
+//			break;
+//		case UpdateVersionNumber:
+//			exercise = new UpdateVersionNumber();
+//			break;
 		
 /************************************************************
  * Data Structures

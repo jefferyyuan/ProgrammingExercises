@@ -5,7 +5,9 @@ import java.util.Arrays;
 import com.cllin.main.LeetCodeExercise;
 
 /*
- * Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
+ * Given a sorted array, 
+ * remove the duplicates in place such that each element appear only once and return the new length.
+ * 
  * Do not allocate extra space for another array, you must do this in place with constant memory.
  * 
  * Source: http://oj.leetcode.com/problems/remove-duplicates-from-sorted-array/
@@ -44,13 +46,12 @@ public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
 	 * i indicates the last unique element
 	 * j traverses the entire array, if there is a new unique element, move it after the previous unique element
 	 */
-    private int removeDuplicates(int[] A) {
+    private static int removeDuplicates(int[] A) {
     	if (A.length == 0) return 0;
-    	int length = A.length;
     	
         int i = 0;
         int j = 1;
-        while (j < length) {
+        while (j < A.length) {
         	if (A[j] != A[i]) {
         		A[++i] = A[j];
         	}
@@ -58,8 +59,8 @@ public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
         	j++;
         }
         
-//      Values are set to -2147483648 to pass my own test cases
-        for (int k = i + 1; k < length; k++) {
+//      Values are set to Integer.MIN_VALUE to pass my own test cases
+        for (int k = i + 1; k < A.length; k++) {
         	A[k] = Integer.MIN_VALUE;
         }
         
@@ -68,9 +69,8 @@ public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
 
 	@Override
 	public boolean test() {
-		int length = array.length;
 		int count = 0;
-		for (int i = 0; i < length; i++) {
+		for (int i = 0; i < array.length; i++) {
 			for (int j = 0; j < i; j++) {
 				if (array[i] == array[j] && array[i] != Integer.MIN_VALUE) {
 					return false;
@@ -80,7 +80,7 @@ public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
 			if (array[i] != Integer.MIN_VALUE) count++;
 		}
 		
-		return (count == result)? true : false;
+		return count == result;
 	}
 
 }

@@ -32,6 +32,7 @@ import com.cllin.algorithms.PrefixOfStrings;
 import com.cllin.algorithms.PrintEvolutionaryTree;
 import com.cllin.algorithms.PyramidOfCups;
 import com.cllin.algorithms.QueueInAnInteger;
+import com.cllin.algorithms.RandomSeven;
 import com.cllin.algorithms.RearrangeArray;
 import com.cllin.algorithms.ReconstructJourney;
 import com.cllin.algorithms.RepeatedPattern;
@@ -47,6 +48,7 @@ import com.cllin.algorithms.SubstituteCharacters;
 import com.cllin.algorithms.SubstringConcatenation;
 import com.cllin.algorithms.SumOfPairs;
 import com.cllin.algorithms.SumUnderThreshold;
+import com.cllin.algorithms.UpdateVersionNumber;
 import com.cllin.algorithms.WordsFromLetterCollection;
 import com.cllin.cci.chap01.Exercise01_01;
 import com.cllin.cci.chap01.Exercise01_02;
@@ -611,12 +613,12 @@ public class Main {
 			break;
 		case RunLengthEncoding:
 			exercise = new RunLengthEncoding();
-//		case RandomSeven:
-//			exercise = new RandomSeven();
-//			break;
-//		case UpdateVersionNumber:
-//			exercise = new UpdateVersionNumber();
-//			break;
+		case RandomSeven:
+			exercise = new RandomSeven();
+			break;
+		case UpdateVersionNumber:
+			exercise = new UpdateVersionNumber();
+			break;
 		
 /************************************************************
  * Data Structures

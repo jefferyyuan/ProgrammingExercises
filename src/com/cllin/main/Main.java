@@ -22,6 +22,7 @@ import com.cllin.algorithms.LongestCommonSubsequence;
 import com.cllin.algorithms.MajorityCounting;
 import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.algorithms.MergeContacts;
+import com.cllin.algorithms.MinimumJourneyCost;
 import com.cllin.algorithms.MinimumQueue;
 import com.cllin.algorithms.MinimumSequence;
 import com.cllin.algorithms.MinimumWindow;
@@ -107,7 +108,6 @@ import com.cllin.cci.chap14.Exercise14_04;
 import com.cllin.cci.chap14.Exercise14_05;
 import com.cllin.cci.chap19.Exercise19_01;
 import com.cllin.cci.chap19.Exercise19_03;
-import com.cllin.cci.chap19.Exercise19_05;
 import com.cllin.cci.chap19.Exercise19_08;
 import com.cllin.cci.chap19.Exercise19_10;
 import com.cllin.enumeration.EnumerationExercise;
@@ -131,312 +131,241 @@ import com.cllin.tree.BinarySearchTreeExercise;
 import com.cllin.trie.TrieExercise;
 
 public class Main {
-	/************************************************************
-	 * Operators and Java Concepts
-	 ************************************************************/
-	public static final int Exclusive_Or = 1;
-	public static final int TernaryOperators = 2;
-	public static final int BitwiseOperation = 3;
-	public static final int Thread101 = 4;
-	public static final int Synchronization = 5;
-	public static final int Deadlock = 6;
-	public static final int ExtendAndSuper = 7;
-	public static final int Enumeration = 8;
 	
-	/************************************************************
-	 * Programming Problems
-	 ************************************************************/	
-	public static final int BreadthFirstTraversal = 51;
-	public static final int KPalindrome = 52;
-	public static final int RodCutting = 53;
-	public static final int LongestCommonSubsequence = 54;
-	public static final int MaximumSubarray_NOT_LEETCODE = 55;
-	public static final int BoundedSlices = 56;
-	public static final int AnagramSubstring = 57;
-	public static final int MajorityCounting = 58;
-	public static final int SubarraySum = 59;
-	public static final int RearrangeArray = 60;
-	public static final int RepeatedPattern = 61;
-	public static final int KthOfUnsortedArray = 62;
-	public static final int SerializeBinaryTree = 63;
-	public static final int EditString = 64;
-	public static final int MinimumSequence = 65;
-	public static final int PotsOfGold = 66;
-	public static final int MinimumWindow = 67;
-	public static final int SixSixPair = 68;
-	public static final int SubsequenceInHaystack = 69;
-	public static final int PartialSort = 70;
-	public static final int SortByDictionary = 71;
-	public static final int LongestArithmeticProgression = 72;
-	public static final int AggregatedNumber = 73;
-	public static final int GenerateEquation = 74;
-	public static final int PrintEvolutionaryTree = 75;
-	public static final int GenerateRandom = 76;
-	public static final int FirstUniqueElement = 77;
-	public static final int BuildMinimumSum = 78;
-	public static final int CombinationsOfTargetedSum = 79;
-	public static final int SubstitudeCharacters = 80;
-	public static final int ConvertNumber = 81;
-	public static final int ReconstructJourney = 82;
-	public static final int MergeContacts = 83;
-	public static final int ConsecutiveGroups = 84;
-	public static final int StringReduction = 85;
-	public static final int PyramidOfCups = 86;
-	public static final int SubstringConcatenation = 87;
-	public static final int WordsFromLetterCollection = 88;
-	public static final int SumOfPairs = 89;
-	public static final int CeilingValue = 90;
-	public static final int MinimumQueue = 91;
-	public static final int QueueInAnInteger = 92;
-	public static final int SumUnderThreshold = 93;
-	public static final int BreakingPoint = 94;
-	public static final int NumberOfBlocks = 95;
-	public static final int PrefixOfStrings = 96;
-	public static final int DifferenceOfPairs = 97;
-	public static final int RunLengthEncoding = 98;
-	public static final int RandomSeven = 99;
-	public static final int UpdateVersionNumber = 100;
-	
-	/************************************************************
-	 * Sorting
-	 ************************************************************/
-	public static final int InsertionSort = 3001;
-	public static final int MergeSort = 3002;
-	public static final int HeapSort = 3003;
-	public static final int QuickSort = 3004;
-	public static final int CountingSort = 3005;
-	public static final int SelectionSort = 3006;
-	
-	/************************************************************
-	 * Data Structures
-	 ************************************************************/
-	public static final int Trie = 4001;
-	public static final int BinarySearchTree = 4002;
-	public static final int AVLTree = 4003;
-	public static final int Heap = 4004;
-	
-	/************************************************************
-	 * Exercises from "Cracking the Coding Interview"
-	 ************************************************************/
-	public static final int EX19_10 = 1910;
-	public static final int EX19_08 = 1908;
-	public static final int EX19_05 = 1905;
-	public static final int EX19_03 = 1903;
-	public static final int EX19_01 = 1901;
-	public static final int EX14_05 = 1405;
-	public static final int EX14_04 = 1404;
-	public static final int EX14_03 = 1403;
-	public static final int EX14_02 = 1402;
-	public static final int EX14_01 = 1401;
-	public static final int EX11_03 = 1103;
-	public static final int EX10_07 = 1007;
-	public static final int EX10_04 = 1004;
-	public static final int EX10_03 = 1003;
-	public static final int EX09_07 = 907;
-	public static final int EX09_06 = 906;
-	public static final int EX09_05 = 905;
-	public static final int EX09_02 = 902;
-	public static final int EX09_01 = 901;
-	public static final int EX08_08 = 808;
-	public static final int EX08_07 = 807;
-	public static final int EX08_06 = 806;
-	public static final int EX08_05 = 805;
-	public static final int EX08_04 = 804;
-	public static final int EX08_03 = 803;
-	public static final int EX08_02 = 802;
-	public static final int EX08_01 = 801;
-	public static final int EX07_05 = 705;
-	public static final int EX07_02 = 702;
-	public static final int EX06_06 = 606;
-	public static final int EX06_03 = 603;
-	public static final int EX05_06 = 506;
-	public static final int EX05_05 = 505;
-	public static final int EX05_03 = 503;
-	public static final int EX05_02 = 502;
-	public static final int EX05_01 = 501;
-	public static final int EX04_08 = 408;
-	public static final int EX04_07 = 407;
-	public static final int EX04_06 = 406;
-	public static final int EX04_05 = 405;
-	public static final int EX04_04 = 404;
-	public static final int EX04_03 = 403;
-	public static final int EX03_06 = 306;
-	public static final int EX03_05 = 305;
-	public static final int EX03_04 = 304;
-	public static final int EX03_03 = 303;
-	public static final int EX03_02 = 302;
-	public static final int EX03_01 = 301;
-	public static final int EX02_05 = 205;
-	public static final int EX02_04 = 204;
-	public static final int EX02_03 = 203;
-	public static final int EX02_02 = 202;
-	public static final int EX02_01 = 201;
-	public static final int EX01_08 = 108;
-	public static final int EX01_07 = 107;
-	public static final int EX01_06 = 106;
-	public static final int EX01_05 = 105;
-	public static final int EX01_04 = 104;
-	public static final int EX01_03 = 103;
-	public static final int EX01_02 = 102;
-	public static final int EX01_01 = 101;
-	
-	/************************************************************
-	 * Exercises from LeetCode
-	 ************************************************************/
-	public static final int MaximumDepthOfBinaryTree = 5001;
-	public static final int SingleNumber = 5002;
-	public static final int SameTree = 5003;
-	public static final int ReverseInteger = 5004;
-	public static final int BestTimetoBuyandSellStockII = 5005;
-	public static final int UniqueBinarySearchTrees = 5006;
-	public static final int LinkedListCycle = 5007;
-	public static final int PopulatingNextRightPointersInEachNode = 5008;
-	public static final int SearchInsertPosition = 5009;
-	public static final int RemoveDuplicatesFromSortedList = 5010;
-	public static final int BinaryTreeInorderTraversal = 5011;
-	public static final int RemoveElement = 5012;
-	public static final int RemoveDuplicatesFromSortedArray = 5013;
-	public static final int MaximumSubarray = 5014;
-	public static final int ClimbingStairs = 5015;
-	public static final int RomanToInteger = 5016;
-	public static final int MergeTwoSortedLists = 5017;
-	public static final int SymmetricTree = 5018;
-	public static final int MergeSortedArray = 5019;
-	public static final int ConvertSortedArrayToBinarySearchTree = 5020;
-	public static final int SwapNodesInPairs = 5021;
-	public static final int IntegerToRoman = 5022;
-	public static final int PascalsTriangle = 5023;
-	public static final int BalancedBinaryTree = 5024;
-	public static final int SingleNumberII = 5025;
-	public static final int BestTimeToBuyAndSellStock = 5026;
-	public static final int GrayCode = 5027;
-	public static final int Permutations = 5028;
-	public static final int BinaryTreeLevelOrderTraversalII = 5029;
-	public static final int SortColors = 5030;
-	public static final int GenerateParentheses = 5031;
-	public static final int MinimumPathSum = 5032;
-	public static final int LinkedListCycleII = 5033;
-	public static final int RotateImage = 5034;
-	public static final int UniquePaths = 5035;
-	public static final int BinaryTreeLevelOrderTraversal = 5036;
-	public static final int BinaryTreePostorderTraversal = 5037;
-	public static final int SetMatrixZeroes = 5038;
-	public static final int ContainerWithMostWater = 5039;
-	public static final int PlusOne = 5040;
-	public static final int RemoveNthNodeFromEndOfList = 5041;
-	public static final int SpiralMatrixII = 5042;
-	public static final int SearchA2DMatrix = 5043;
-	public static final int PathSum = 5044;
-	public static final int RemoveDuplicatesFromSortedArrayII = 5045;
-	public static final int Combinations = 5046;
-	public static final int SearchInRotatedSortedArray = 5047;
-	public static final int SearchInRotatedSortedArrayII = 5048;
-	public static final int PascalsTriangleII = 5049;
-	public static final int PopulatingNextRightPointersInEachNodeII = 5050;
-	public static final int PalindromeNumber = 5051;
-	public static final int MinimumDepthOfBinaryTree = 5052;
-	public static final int SumRootToLeafNumbers = 5053;
-	public static final int TrappingRainWater = 5054;
-	public static final int NQueensII = 5055;
-	public static final int ValidParentheses = 5056;
-	public static final int LengthOfLastWord = 5057;
-	public static final int PathSumII = 5058;
-	public static final int ThreeSumClosest = 5059;
-	public static final int ValidSudoku = 5060;
-	public static final int UniquePathsII = 5061;
-	public static final int Subsets = 5062;
-	public static final int LongestCommonPrefix = 5063;
-	public static final int JumpGame = 5064;
-	public static final int SubsetsII = 5065;
-	public static final int LongestConsecutiveSequence = 5066;
-	public static final int ConvertSortedListToBinarySearchTree = 5067;
-	public static final int SearchForARange = 5068;
-	public static final int FlattenBinaryTreeToLinkedList = 5069;
-	public static final int CountAndSay = 5070;
-	public static final int BinaryTreeZigzagLevelOrderTraversal = 5071;
-	public static final int PartitionList = 5072;
-	public static final int Power = 5073;
-	public static final int CombinationSum = 5074;
-	public static final int Triangle = 5075;
-	public static final int UniqueBinarySearchTreesII = 5076;
-	public static final int LetterCombinationsOfAPhoneNumber = 5077;
-	public static final int InsertionSortList = 5078;
-	public static final int NQueens = 5079;
-	public static final int ValidateBinarySearchTree = 5080;
-	public static final int ReverseLinkedListII = 5081;
-	public static final int ConstructBinaryTreeFromInorderAndPostorderTraversal = 5082;
-	public static final int ConstructBinaryTreeFromPreorderAndInorderTraversal = 5083;
-	public static final int AddBinary = 5084;
-	public static final int RemoveDuplicatesFromSortedListII = 5085;
-	public static final int NextPermutation = 5086;
-	public static final int PalindromePartitioning = 5087;
-	public static final int PermutationsII = 5088;
-	public static final int EditDistance = 5089;
-	public static final int GasStation = 5090;
-	public static final int ReverseNodesInKGroup = 5091;
-	public static final int DistinctSubsequences = 5092;
-	public static final int CombinationSumII = 5093;
-	public static final int JumpGameII = 5094;
-	public static final int MergeKSortedLists = 5095;
-	public static final int LongestSubstringWithoutRepeatingCharacters = 5096;
-	public static final int Anagrams = 5097;
-	public static final int AddTwoNumbers = 5098;
-	public static final int ZigZagConversion = 5099;
-	public static final int RecoverBinarySearchTree = 5100;
-	public static final int FourSum = 5101;
-	public static final int FirstMissingPositive = 5102;
-	public static final int BestTimeToBuyAndSellStockIII = 5103;
-	public static final int SqrtX = 5104;
-	public static final int RotateList = 5105;
-	public static final int ValidPalindrome = 5106;
-	public static final int CopyListWithRandomPointer = 5107;
-	public static final int ScrambleString = 5108;
-	public static final int PermutationSequence = 5109;
-	public static final int MaximalRectangle = 5110;
-	public static final int CloneGraph = 5111;
-	public static final int ImplementStrStr = 5112;
-	public static final int LongestPalindromicSubstring = 5113;
-	public static final int SudokuSolver = 5114;
-	public static final int LargestRectangleInHistogram = 5115;
-	public static final int InsertInterval = 5116;
-	public static final int MergeIntervals = 5117;
-	public static final int SpiralMatrix = 5118;
-	public static final int RestoreIPAddresses = 5119;
-	public static final int WordBreak = 5120;
-	public static final int MultiplyStrings = 5121;
-	public static final int SortList = 5122;
-	public static final int BinaryTreeMaximumPathSum = 5123;
-	public static final int RegularExpressionMatching = 5124;
-	public static final int TwoSum = 5125;
-	public static final int WordSearch = 5126;
-	public static final int ReorderList = 5127;
-	public static final int EvaluateReversePolishNotation = 5128;
-	public static final int SimplifyPath = 5129;
-	public static final int LongestValidParentheses = 5130;
-	public static final int InterleavingString = 5131;
-	public static final int SubstringWithConcatenationOfAllWords = 5132;
-	public static final int PalindromePartitioningII = 5133;
-	public static final int Candy = 5134;
-	public static final int MinimumWindowSubstring = 5135;
-	public static final int WordLadder = 5136;
-	public static final int MedianOfTwoSortedArrays = 5137;
-	public static final int ThreeSum = 5138;
-	public static final int DecodeWays = 5139;
-	public static final int DivideTwoIntegers = 5140;
-	public static final int ReverseWordsInAString = 5141;
-	public static final int WordBreakII = 5142;
-	public static final int StringToInteger = 5143;
-	public static final int SurroundedRegions = 5144;
-	public static final int TextJustification = 5145;
-	public static final int LRUCache = 5146;
-	public static final int WildcardMatching = 5147;
-	public static final int ValidNumber = 5148;
-	public static final int MaxPointsOnALine = 5149;
-	public static final int WordLadderII = 5150;
-	
+	public static enum Options {
+//		Operators and Java Concepts
+		Exclusive_Or, TernaryOperators, BitwiseOperation, Thread101, Synchronization, Deadlock, ExtendAndSuper, Enumeration,
+		
+//		Programming Problems
+		BreadthFirstTraversal,
+		KPalindrome, 
+		RodCutting, 
+		LongestCommonSubsequence, 
+		MaximumSubarray_NOT_LEETCODE, 
+		BoundedSlices, 
+		AnagramSubstring, 
+		MajorityCounting, 
+		SubarraySum, 
+		RearrangeArray, 
+		RepeatedPattern, 
+		KthOfUnsortedArray, 
+		SerializeBinaryTree, 
+		EditString, 
+		MinimumSequence, 
+		PotsOfGold, 
+		MinimumWindow, 
+		SixSixPair, 
+		SubsequenceInHaystack,  
+		PartialSort, 
+		SortByDictionary, 
+		LongestArithmeticProgression, 
+		AggregatedNumber, 
+		GenerateEquation, 
+		PrintEvolutionaryTree, 
+		GenerateRandom, 
+		FirstUniqueElement, 
+		BuildMinimumSum, 
+		CombinationsOfTargetedSum, 
+		SubstitudeCharacters, 
+		ConvertNumber, 
+		ReconstructJourney, 
+		MergeContacts, 
+		ConsecutiveGroups, 
+		StringReduction, 
+		PyramidOfCups, 
+		SubstringConcatenation, 
+		WordsFromLetterCollection, 
+		SumOfPairs, 
+		CeilingValue, 
+		MinimumQueue, 
+		QueueInAnInteger, 
+		SumUnderThreshold, 
+		BreakingPoint, 
+		NumberOfBlocks, 
+		PrefixOfStrings, 
+		DifferenceOfPairs, 
+		RunLengthEncoding, 
+		RandomSeven, 
+		UpdateVersionNumber, 
+		MinimumJourneyCost,
+		
+//		Sorting
+		InsertionSort, MergeSort, HeapSort, QuickSort, CountingSort, SelectionSort,
+		
+//		Data Structures
+		Trie, BinarySearchTree, AVLTree, Heap, 
+
+//		Exercises from "Cracking the Coding Interview"
+		EX19_10, EX19_08, EX19_03, EX19_01, 
+		EX14_05, EX14_04, EX14_03, EX14_02,	EX14_01, 
+		EX11_03, 
+		EX10_07, EX10_04, EX10_03, 
+		EX09_07, EX09_06, EX09_02, EX09_01, 
+		EX08_08, EX08_07, EX08_06, EX08_05, EX08_04, EX08_03, EX08_02, EX08_01, 
+		EX07_05, EX07_02,
+		EX06_06, EX06_03, 
+		EX05_06, EX05_05, EX05_03, EX05_02, EX05_01, 
+		EX04_08, EX04_07, EX04_06, EX04_05,	EX04_04, EX04_03, 
+		EX03_06, EX03_05, EX03_04, EX03_03, EX03_02, EX03_01, 
+		EX02_05, EX02_04, EX02_03, EX02_02, EX02_01, 
+		EX01_08, EX01_07, EX01_06, EX01_05, EX01_04, EX01_03, EX01_02, EX01_01, 
+		
+//		Exercises from LeetCode
+		MaximumDepthOfBinaryTree, 
+		SingleNumber, 
+		SameTree, 
+		ReverseInteger, 
+		BestTimetoBuyandSellStockII, 
+		UniqueBinarySearchTrees, 
+		LinkedListCycle, 
+		PopulatingNextRightPointersInEachNode, 
+		SearchInsertPosition, 
+		RemoveDuplicatesFromSortedList, 
+		BinaryTreeInorderTraversal, 
+		RemoveElement, 
+		RemoveDuplicatesFromSortedArray, 
+		MaximumSubarray, 
+		ClimbingStairs, 
+		RomanToInteger, 
+		MergeTwoSortedLists, 
+		SymmetricTree, 
+		MergeSortedArray, 
+		ConvertSortedArrayToBinarySearchTree, 
+		SwapNodesInPairs, 
+		IntegerToRoman, 
+		PascalsTriangle, 
+		BalancedBinaryTree, 
+		SingleNumberII, 
+		BestTimeToBuyAndSellStock, 
+		GrayCode, 
+		Permutations, 
+		BinaryTreeLevelOrderTraversalII, 
+		SortColors, 
+		GenerateParentheses, 
+		MinimumPathSum, 
+		LinkedListCycleII, 
+		RotateImage, 
+		UniquePaths, 
+		BinaryTreeLevelOrderTraversal, 
+		BinaryTreePostorderTraversal, 
+		SetMatrixZeroes, 
+		ContainerWithMostWater, 
+		PlusOne, 
+		RemoveNthNodeFromEndOfList, 
+		SpiralMatrixII, 
+		SearchA2DMatrix, 
+		PathSum, 
+		RemoveDuplicatesFromSortedArrayII, 
+		Combinations, 
+		SearchInRotatedSortedArray, 
+		SearchInRotatedSortedArrayII, 
+		PascalsTriangleII, 
+		PopulatingNextRightPointersInEachNodeII, 
+		PalindromeNumber, 
+		MinimumDepthOfBinaryTree, 
+		SumRootToLeafNumbers, 
+		TrappingRainWater, 
+		NQueensII, 
+		ValidParentheses, 
+		LengthOfLastWord, 
+		PathSumII, 
+		ThreeSumClosest, 
+		ValidSudoku, 
+		UniquePathsII, 
+		Subsets, 
+		LongestCommonPrefix, 
+		JumpGame, 
+		SubsetsII, 
+		LongestConsecutiveSequence, 
+		ConvertSortedListToBinarySearchTree, 
+		SearchForARange, 
+		FlattenBinaryTreeToLinkedList, 
+		CountAndSay, 
+		BinaryTreeZigzagLevelOrderTraversal, 
+		PartitionList, 
+		Power, 
+		CombinationSum, 
+		Triangle, 
+		UniqueBinarySearchTreesII, 
+		LetterCombinationsOfAPhoneNumber, 
+		InsertionSortList, 
+		NQueens, 
+		ValidateBinarySearchTree, 
+		ReverseLinkedListII, 
+		ConstructBinaryTreeFromInorderAndPostorderTraversal, 
+		ConstructBinaryTreeFromPreorderAndInorderTraversal, 
+		AddBinary, 
+		RemoveDuplicatesFromSortedListII, 
+		NextPermutation, 
+		PalindromePartitioning, 
+		PermutationsII, 
+		EditDistance, 
+		GasStation, 
+		ReverseNodesInKGroup, 
+		DistinctSubsequences, 
+		CombinationSumII, 
+		JumpGameII, 
+		MergeKSortedLists, 
+		LongestSubstringWithoutRepeatingCharacters, 
+		Anagrams, 
+		AddTwoNumbers, 
+		ZigZagConversion, 
+		RecoverBinarySearchTree, 
+		FourSum, 
+		FirstMissingPositive, 
+		BestTimeToBuyAndSellStockIII, 
+		SqrtX, 
+		RotateList, 
+		ValidPalindrome, 
+		CopyListWithRandomPointer, 
+		ScrambleString, 
+		PermutationSequence, 
+		MaximalRectangle, 
+		CloneGraph, 
+		ImplementStrStr, 
+		LongestPalindromicSubstring, 
+		SudokuSolver, 
+		LargestRectangleInHistogram, 
+		InsertInterval, 
+		MergeIntervals, 
+		SpiralMatrix, 
+		RestoreIPAddresses, 
+		WordBreak, 
+		MultiplyStrings, 
+		SortList, 
+		BinaryTreeMaximumPathSum, 
+		RegularExpressionMatching, 
+		TwoSum, 
+		WordSearch, 
+		ReorderList, 
+		EvaluateReversePolishNotation, 
+		SimplifyPath, 
+		LongestValidParentheses, 
+		InterleavingString, 
+		SubstringWithConcatenationOfAllWords, 
+		PalindromePartitioningII, 
+		Candy, 
+		MinimumWindowSubstring, 
+		WordLadder, 
+		MedianOfTwoSortedArrays, 
+		ThreeSum, 
+		DecodeWays, 
+		DivideTwoIntegers, 
+		ReverseWordsInAString, 
+		WordBreakII, 
+		StringToInteger, 
+		SurroundedRegions, 
+		TextJustification, 
+		LRUCache, 
+		WildcardMatching, 
+		ValidNumber, 
+		MaxPointsOnALine, 
+		WordLadderII
+	}
+
 	public static void main(String args[]) {
 		Exercise exercise = null;
-		int option = RunLengthEncoding;
+		Options option = Options.EX19_10;
 
 		switch (option) {
 /************************************************************
@@ -619,6 +548,9 @@ public class Main {
 		case UpdateVersionNumber:
 			exercise = new UpdateVersionNumber();
 			break;
+		case MinimumJourneyCost:
+			exercise = new MinimumJourneyCost();
+			break;
 		
 /************************************************************
  * Data Structures
@@ -666,9 +598,6 @@ public class Main {
 			break;
 		case EX19_08:
 			exercise = new Exercise19_08();
-			break;
-		case EX19_05:
-			exercise = new Exercise19_05();
 			break;
 		case EX19_03:
 			exercise = new Exercise19_03();

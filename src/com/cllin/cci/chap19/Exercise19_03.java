@@ -2,42 +2,49 @@ package com.cllin.cci.chap19;
 
 import com.cllin.main.Exercise;
 
+/*
+ * Write an algorithm which computes the number of trailing zeros in n factorial.
+ */
+
 public class Exercise19_03 implements Exercise {
 
 	@Override
 	public void runExercise() {
-		for(int i = 0; i < 10; i++){
-			int n = (int)(Math.random() * 25);
+		for (int n = 20; n >= 1; n--) {
 			long input = getFactorial(n);
-			System.out.println("***");
-			System.out.println(input + " has " + getZeros(input) + " zeros");
-//			ANOTHER APPROACH
-			System.out.println(input + " has " + getFives(n) + " zeros");
+			int numOfZeros = getZeros(n); 
+			
+			if (getReference(input) != getZeros(n)) {
+				System.out.println("Failed");
+			}
+
+			System.out.printf("%d! = %d, it has %d zeros%n", n, input, numOfZeros);
 		}
 	}
 	
-	private int getZeros(long input){
-		int number = 0;
-		while(input % 10 == 0){
-			number++;
+	private static int getReference(long input) {
+		int count = 0;
+		while (input % 10 == 0) {
+			count++;
 			input /= 10;
 		}
-		return number;
+		
+		return count;
 	}
 	
-	private int getFives(int n){
-		int counts = 0;
+	private static int getZeros(long n) {
+		int count = 0;
 		
-		for(int i = 5; n / i > 0; i *= 5){
-			counts += n / i;
+		for (long i = 5; i <= n; i *= 5) {
+			count += n / i;
 		}
 		
-		return counts;
+		return count;
 	}
 	
-	private long getFactorial(int input){
+	private static long getFactorial(int input) {
 		long factorial = 1;
-		for(int i = 1; i < input + 1; i++){
+		for (int i = 1; i < input + 1; i++) {
 			factorial *= i;
 		}
 		

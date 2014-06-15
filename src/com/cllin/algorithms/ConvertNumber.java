@@ -22,7 +22,7 @@ public class ConvertNumber implements Exercise {
 		}
 	}
 	
-	private String numberToString(int n) {
+	private static String numberToString(int n) {
 		if (n < 1) return "Out of Bound";
 		if (n <= 26) return Integer.toString(n);
 		n -= 26;
@@ -40,7 +40,7 @@ public class ConvertNumber implements Exercise {
 		return buffer.toString();
 	}
 	
-	private int stringToNumber(String string) {
+	private static int stringToNumber(String string) {
 		try {
 			return Integer.parseInt(string, 10);
 		} catch (NumberFormatException e) {
@@ -53,14 +53,14 @@ public class ConvertNumber implements Exercise {
 			if (index == 3) return -1;
 			
 			number *= 26;
-			number += (int) string.charAt(index) - 64;
+			number += (int) string.charAt(index) - 'A' - 1;
 			index++;
 		}
 		
 		return number + 26;
 	}
 
-	private String mapNumberToString(int n) {
-		return Character.toString ((char) (n + 64));
+	private static String mapNumberToString(int n) {
+		return Character.toString ((char) (n + 'A' - 1));
 	}
 }

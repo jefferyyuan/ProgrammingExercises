@@ -314,3 +314,7 @@
 45. Number of Blocks
 46. Prefix of Strings
 47. Difference of Pairs
+48. Run Length Encoding
+49. Random Seven
+50. Update Version Number
+51. MinimumJourneyCost

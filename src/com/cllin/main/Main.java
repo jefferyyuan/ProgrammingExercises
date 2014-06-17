@@ -1,5 +1,6 @@
 package com.cllin.main;
 
+import com.cllin.algorithms.AddWithoutOperators;
 import com.cllin.algorithms.AggregatedNumber;
 import com.cllin.algorithms.AnagramSubstring;
 import com.cllin.algorithms.BoundedSlices;
@@ -188,6 +189,7 @@ public class Main {
 		RandomSeven, 
 		UpdateVersionNumber, 
 		MinimumJourneyCost,
+		AddWithoutOperators,
 		
 //		Sorting
 		InsertionSort, MergeSort, HeapSort, QuickSort, CountingSort, SelectionSort,
@@ -365,7 +367,7 @@ public class Main {
 
 	public static void main(String args[]) {
 		Exercise exercise = null;
-		Options option = Options.EX19_10;
+		Options option = Options.AddWithoutOperators;
 
 		switch (option) {
 /************************************************************
@@ -550,6 +552,9 @@ public class Main {
 			break;
 		case MinimumJourneyCost:
 			exercise = new MinimumJourneyCost();
+			break;
+		case AddWithoutOperators:
+			exercise = new AddWithoutOperators();
 			break;
 		
 /************************************************************

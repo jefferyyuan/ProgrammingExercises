@@ -367,7 +367,7 @@ public class Main {
 
 	public static void main(String args[]) {
 		Exercise exercise = null;
-		Options option = Options.AddWithoutOperators;
+		Options option = Options.FourSum;
 
 		switch (option) {
 /************************************************************

@@ -2,6 +2,8 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 
 import com.cllin.main.LeetCodeExercise;
 
@@ -97,15 +99,16 @@ public class FourSum implements LeetCodeExercise {
 	public void runExercise() {
 		for (index = 0; index < testSuite.length; index++) {
 			for (target = 0; target <= 0; target++) {
-				long start = System.currentTimeMillis();
+				long start = 0;
 				
+				start = System.currentTimeMillis();
 				combinations = fourSum(testSuite[index], target);
 				
 				if (!test()) System.out.println("Failed");
 				
-				System.out.println("------------------");
+				System.out.println();
 				System.out.printf("Time Cost = %d ms%n", (int) (System.currentTimeMillis() - start));
-				System.out.println("------------------");
+				System.out.println("------------------------------");
 			}
 		}
 	}
@@ -157,9 +160,49 @@ public class FourSum implements LeetCodeExercise {
 		
 		return solution;
     }
+	
+//	Hashset will be a nice solution if we only want to know if there exist such quadruplets.
+	private static boolean fourSumLessTime(int[] num, int target) {
+		if (num == null || num.length == 0) return false;
+		
+		HashMap<Integer, HashSet<HashSet<Integer>>> twoSumTable = twoSum(num);
+		
+		for (int i = 0; i < num.length; i++) {
+			for (int j = i + 1; j < num.length; j++) {
+				int key = target - num[i] - num[j];
+				if (twoSumTable.containsKey(key) && twoSumTable.get(key).size() != 0) return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	private static HashMap<Integer, HashSet<HashSet<Integer>>> twoSum(int[] num) {
+		HashMap<Integer, HashSet<HashSet<Integer>>> map = new HashMap<Integer, HashSet<HashSet<Integer>>>();
+		if (num == null || num.length == 0) return map;
+
+		for (int i = 0; i < num.length; i++) {
+			for (int j = i + 1; j < num.length; j++) {
+				int key = num[i] + num[j];
+				HashSet<HashSet<Integer>> set = 
+						(map.containsKey(key))? map.get(key) : new HashSet<HashSet<Integer>>();
+						
+				HashSet<Integer> s = new HashSet<Integer>();
+				s.add(i);
+				s.add(j);
+				set.add(s);
+				map.put(key, set);
+			}
+		}
+		
+		return map;
+	}
 
 	@Override
 	public boolean test() {
+		boolean hasAuadruplet = fourSumLessTime(testSuite[index], target);
+		if (combinations.size() == 0 && hasAuadruplet) return false;
+		
 		System.out.print("For this set of candidates: { ");
 		for (int i = 0; i < testSuite[index].length; i++) System.out.printf("%d ", testSuite[index][i]);
 		System.out.printf("} and %d as the target, there are %d combinations: %n", target, combinations.size());

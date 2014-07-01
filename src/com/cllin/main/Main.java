@@ -13,6 +13,7 @@ import com.cllin.algorithms.ConsecutiveGroups;
 import com.cllin.algorithms.ConvertNumber;
 import com.cllin.algorithms.DifferenceOfPairs;
 import com.cllin.algorithms.EditString;
+import com.cllin.algorithms.FindMissing;
 import com.cllin.algorithms.FirstUniqueElement;
 import com.cllin.algorithms.GenerateEquation;
 import com.cllin.algorithms.GenerateRandom;
@@ -190,6 +191,7 @@ public class Main {
 		UpdateVersionNumber, 
 		MinimumJourneyCost,
 		AddWithoutOperators,
+		FindMissing,
 		
 //		Sorting
 		InsertionSort, MergeSort, HeapSort, QuickSort, CountingSort, SelectionSort,
@@ -367,7 +369,7 @@ public class Main {
 
 	public static void main(String args[]) {
 		Exercise exercise = null;
-		Options option = Options.FourSum;
+		Options option = Options.FindMissing;
 
 		switch (option) {
 /************************************************************
@@ -555,6 +557,9 @@ public class Main {
 			break;
 		case AddWithoutOperators:
 			exercise = new AddWithoutOperators();
+			break;
+		case FindMissing:
+			exercise = new FindMissing();
 			break;
 		
 /************************************************************

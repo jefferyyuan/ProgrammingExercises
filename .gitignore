@@ -1,1 +1,8 @@
+# ignore generated files
 /bin
+
+# ignore project settings
+.project
+
+# ignore temporary files
+*~

@@ -19,7 +19,7 @@ public class BreakingPoint implements Exercise {
 	private int breakingPoint;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			breakingPoint = getBreakingPoint(testSuite[index]);
 			test();

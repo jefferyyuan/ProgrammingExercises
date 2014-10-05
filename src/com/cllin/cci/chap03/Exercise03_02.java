@@ -17,7 +17,7 @@ public class Exercise03_02 implements Exercise {
 	private Stack<Integer> reference;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		test();
 	}

@@ -23,7 +23,7 @@ public class MinimumJourneyCost implements Exercise {
 	private int[] mileages;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		System.out.printf("For journey J = { ");

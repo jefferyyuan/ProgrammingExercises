@@ -38,7 +38,7 @@ public class RepeatedPattern implements Exercise {
 	private boolean isRepeatedPattern;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			isRepeatedPattern = isRepeatedPattern(testSuite[index]);
 			test();

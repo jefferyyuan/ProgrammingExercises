@@ -17,7 +17,7 @@ public class Exercise06_06 implements Exercise {
 	private LinkedList<Integer> mOpenedLocker;
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		mOpenedLocker = findOpenedLocker(100);
 		printResult();
 	}

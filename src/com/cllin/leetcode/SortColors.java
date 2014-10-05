@@ -37,7 +37,7 @@ public class SortColors implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		numbers = sortColors(numbers);

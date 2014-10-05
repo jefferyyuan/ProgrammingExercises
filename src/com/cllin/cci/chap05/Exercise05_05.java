@@ -19,7 +19,7 @@ public class Exercise05_05 implements Exercise {
 	}; 
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (TestCase test : testSuite) {
 			int a = test.a;
 			int b = test.b;

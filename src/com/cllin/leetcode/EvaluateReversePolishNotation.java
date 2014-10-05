@@ -32,7 +32,7 @@ public class EvaluateReversePolishNotation implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			result = evalRPN(Arrays.copyOf(testSuite[index], testSuite[index].length));
 			test();

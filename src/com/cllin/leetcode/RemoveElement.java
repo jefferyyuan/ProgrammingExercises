@@ -30,7 +30,7 @@ public class RemoveElement implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		newLength = removeElement(array, value);

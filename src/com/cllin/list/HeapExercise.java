@@ -13,7 +13,7 @@ public class HeapExercise implements Exercise {
 	private int[] reference;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		heap = new PriorityQueue<Integer>();
 		reference = new int[SIZE];
 		

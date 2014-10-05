@@ -87,7 +87,7 @@ public class MergeKSortedLists implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		for (index = 0; index < testSuite.size(); index++) {
 			head = mergeKLists(testSuite.get(index));

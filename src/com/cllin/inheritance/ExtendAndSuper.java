@@ -7,7 +7,7 @@ import com.cllin.main.Exercise;
 public class ExtendAndSuper implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		ArrayList<Vehicle> list = new ArrayList<Vehicle>();
 		
 		list.add(new Vehicle());

@@ -18,7 +18,7 @@ public class DivideTwoIntegers implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < 10; i++) {
 			int dividend = (int) (Math.random() * MAXIMUM * 10) - MAXIMUM * 10 / 2;
 			int divisor = (int) (Math.random() * MAXIMUM) - MAXIMUM / 2;

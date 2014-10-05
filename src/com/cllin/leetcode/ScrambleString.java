@@ -33,7 +33,7 @@ public class ScrambleString implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			TestCase test = testSuite[index];
 			

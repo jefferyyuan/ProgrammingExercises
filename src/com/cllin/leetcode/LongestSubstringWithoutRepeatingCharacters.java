@@ -29,7 +29,7 @@ public class LongestSubstringWithoutRepeatingCharacters implements
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			length = lengthOfLongestSubstring(testSuite[index]);
 			test();

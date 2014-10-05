@@ -24,7 +24,7 @@ public class PathSum implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		for (int sum = 0; sum < 50; sum++) {
 			System.out.printf("The tree %s a root-to-leaf whose sum is %d%n", 

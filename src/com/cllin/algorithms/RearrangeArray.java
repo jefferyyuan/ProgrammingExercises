@@ -33,7 +33,7 @@ public class RearrangeArray implements Exercise {
 	private int[] result;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			result = rearrangeArray(testSuite[index]);
 			test();

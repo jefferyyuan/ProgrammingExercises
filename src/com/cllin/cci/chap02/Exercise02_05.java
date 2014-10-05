@@ -23,7 +23,7 @@ public class Exercise02_05 implements Exercise {
 	private LinkedList<TestCase> testSuite;
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		for (TestCase test : testSuite) {

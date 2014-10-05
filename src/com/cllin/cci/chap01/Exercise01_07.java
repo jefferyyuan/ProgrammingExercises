@@ -1,67 +1,103 @@
 package com.cllin.cci.chap01;
 
-import java.util.ArrayList;
-
 import com.cllin.main.Exercise;
 
 /*
  * Write an algorithm such that if an element in an M x N matrix is 0, its entire row and column is set to 0.
  */
 
-public class Exercise01_07 implements Exercise {
-	private final int SIZE_M = 10;
-	private final int SIZE_N = 5;
-	private int[][] matrix;
+public class Exercise01_07 extends Exercise {
+    private final int SIZE_M = 10;
+    private final int SIZE_N = 5;
+    private int[][] matrix;
+    
+    @Override
+    protected void initialize() {
+        matrix = new int[SIZE_M][SIZE_N];
+        for (int i = 0; i < SIZE_M; i++) {
+            for (int j = 0; j < SIZE_N; j++) {
+                matrix[i][j] = getRandomNumber();
+            }
+        }
+        
+        System.out.println("Input matrix:");
+        printMatrix();
+    }
 
-	@Override
-	public void runExercise() {
-		initialize();
-		setZero(matrix);
-	}
-	
-//	If the content of the matrix is limited to a certain scope, define a symbol to mark elements that should be set to 0
-	private void setZero(int[][] matrix) {
-		if (matrix == null || matrix.length == 0) return;
-		
-		ArrayList<Integer> rowsToBeZero = new ArrayList<Integer>();
-		ArrayList<Integer> columnsToBeZero = new ArrayList<Integer>();
-		
-		int nRows = matrix.length;
-		int nCols = matrix[0].length;
-		
-		for (int i = 0; i < nRows; i++) {
-			for (int j = 0; j < nCols; j++) {
-				if (matrix[i][j] == 0) {
-					rowsToBeZero.add(i);
-					columnsToBeZero.add(j);
-				}
-			}
-		}
-		
-		for (int rows : rowsToBeZero) {
-			for (int j = 0; j < nCols; j++) {
-				matrix[rows][j] = 0;
-			}
-		}
-		
-		for (int cols : columnsToBeZero) {
-			for (int i = 0; i < nRows; i++) {
-				matrix[i][cols] = 0;
-			}
-		}
-	}
-	
-	private void initialize() {
-		matrix = new int[SIZE_M][SIZE_N];
-		for(int i = 0; i < SIZE_M; i++){
-			for(int j = 0; j < SIZE_N; j++){
-				matrix[i][j] = getRandomNumber();
-			}
-		}
-	}
-	
-	private int getRandomNumber() {
-		return (Math.random() < 0.3)? 0 : 1;
-	}
+    @Override
+    protected void runExercise() {
+	setZeroes(matrix);        
+    }
+
+    @Override
+    protected void test() {
+        System.out.println("Result:");
+        printMatrix();        
+    }
+
+    /*
+     * Use the first row and column to store whether this row/column should be set to zero.
+     * Before that, store whether the first row/column should be set to zero.
+     * 
+     * Add a buffer for the first row and the first column if you want to restore them.
+     */
+    private void setZeroes(int[][] matrix) {
+        if (matrix.length == 0 || matrix[0].length == 0) return;
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        
+        boolean firstRowHasZero = false;
+        boolean firstColumnHasZero = false;
+        
+        for (int j = 0; j < cols; j++) {
+            if (matrix[0][j] == 0) {
+                firstRowHasZero = true;
+                break;
+            }
+        }
+        
+        for (int i = 0; i < rows; i++) {
+            if (matrix[i][0] == 0) {
+                firstColumnHasZero = true;
+                break;
+            }
+        }
+        
+        for (int i = 1; i < rows; i++) {
+            for (int j = 1; j < cols; j++) {
+                if (matrix[i][j] == 0) {
+                    matrix[i][0] = 0;
+                    matrix[0][j] = 0;
+                }
+            }
+        }
+        
+        for (int i = 1; i < rows; i++) {
+            for (int j = 1; j < cols; j++) {
+                if (matrix[i][0] == 0 || matrix[0][j] == 0) matrix[i][j] = 0;
+            }
+        }
+        
+        if (firstRowHasZero) {
+            for (int j = 0; j < cols; j++) matrix[0][j] = 0;
+        }
+        
+        if (firstColumnHasZero) {
+            for (int i = 0; i < rows; i++) matrix[i][0] = 0;
+        }
+    }
+    
+    private void printMatrix() {
+        for (int i = 0; i < SIZE_M; i++) {
+            for (int j = 0; j < SIZE_N; j++) {
+            System.out.printf("%d ", matrix[i][j]);
+            }
+            System.out.println();
+        }
+    }
+    
+    private static int getRandomNumber() {
+        return (Math.random() < 0.3)? 0 : 1;
+    }
 
 }

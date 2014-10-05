@@ -30,7 +30,7 @@ public class SumOfPairs implements Exercise {
 	}
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		hasPairs = getNumberOfPairs(array, k);
 		test();

@@ -5,7 +5,7 @@ import com.cllin.main.Exercise;
 public class ThisDemo implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		House h1 = new House(1, 1);
 		House h2 = new House(1);
 		House h3 = new House();

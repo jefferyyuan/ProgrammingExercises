@@ -18,7 +18,7 @@ public class Exercise04_06 implements Exercise {
 	private Node nodeB;
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < 10; i++) {
 			initialize();
 			Node fcs = getFirstCommonAncestor(tree.root, nodeA, nodeB);

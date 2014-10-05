@@ -33,7 +33,7 @@ public class PartitionList implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		head = partition(head, target);
 		

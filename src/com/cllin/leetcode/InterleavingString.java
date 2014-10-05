@@ -28,7 +28,7 @@ public class InterleavingString implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < testSuite.length; i++) {
 			TestCase test = testSuite[i];
 			

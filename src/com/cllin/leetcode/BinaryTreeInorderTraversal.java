@@ -39,7 +39,7 @@ public class BinaryTreeInorderTraversal implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		inorder = inorderTraversal(tree.root);
 		preorder = preorderTraversal(tree.root);

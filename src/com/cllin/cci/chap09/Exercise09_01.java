@@ -19,7 +19,7 @@ public class Exercise09_01 implements Exercise {
 	protected int[] b = new int[SIZE_B];
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		a = merge(a, b, SIZE_ACTUAL_A, SIZE_B);
 		check();

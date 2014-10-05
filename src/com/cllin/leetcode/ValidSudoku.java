@@ -25,7 +25,7 @@ public class ValidSudoku implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		isValidSudoku(new char[0][0]);
 	}
 	

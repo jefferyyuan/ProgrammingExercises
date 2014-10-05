@@ -39,7 +39,7 @@ public class SumUnderThreshold implements Exercise {
 	}
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		nPairs = getNumPairs(array, threshold);
 		test();

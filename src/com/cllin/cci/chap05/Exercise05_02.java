@@ -11,7 +11,7 @@ public class Exercise05_02 implements Exercise {
 	private final String[] testSuite = {"1.5", "3.1415926", "2.8", "0.5566", "0.25", "0", "2.125"};
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (String string : testSuite) {
 			String inBinary = getInBinary(string);
 			

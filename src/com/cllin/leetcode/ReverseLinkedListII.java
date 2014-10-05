@@ -34,7 +34,7 @@ public class ReverseLinkedListII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		for (TestCase test : testSuite) {

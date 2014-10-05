@@ -17,7 +17,7 @@ public class SqrtX implements LeetCodeExercise {
 	}
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 1; i <= 2147483647 && i > 0; i *= 2) {
 			int squareRoot = sqrt(i);
 			System.out.printf("The square root of %d is %d%n", i, squareRoot);

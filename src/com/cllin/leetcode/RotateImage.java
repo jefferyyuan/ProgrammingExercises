@@ -33,7 +33,7 @@ public class RotateImage implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		rotate(matrix);

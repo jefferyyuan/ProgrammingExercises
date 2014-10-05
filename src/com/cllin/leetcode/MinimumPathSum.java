@@ -30,7 +30,7 @@ public class MinimumPathSum implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		size_x = 12;
 		size_y = 18;
 		initialize();

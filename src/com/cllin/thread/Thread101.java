@@ -5,7 +5,7 @@ import com.cllin.main.Exercise;
 public class Thread101 implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		try {
 			System.out.println("Starting running a new thread, calling join() this time");
 			Thread thread1 = new Thread(new MyRunnable(1));

@@ -33,7 +33,7 @@ public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		result = removeDuplicates(array);

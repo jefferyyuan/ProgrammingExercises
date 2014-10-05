@@ -18,7 +18,7 @@ public class Exercise04_04 implements Exercise {
 	private LinkedList<LinkedList<Node>> nodes;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		nodes = getNodeByLevel();
 		

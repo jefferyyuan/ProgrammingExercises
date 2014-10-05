@@ -18,7 +18,7 @@ public class Exercise08_05 implements Exercise {
 	ArrayList<String> result;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n : testSuite) {
 			System.out.println("For " + n + " parenthese,");
 			result = getParentheses(n);

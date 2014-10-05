@@ -12,7 +12,7 @@ public class LongestCommonSubsequence implements Exercise {
 	private static final int LEFT = 2;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (TestCase test : testSuite) {
 			String string1 = test.string1;
 			String string2 = test.string2;

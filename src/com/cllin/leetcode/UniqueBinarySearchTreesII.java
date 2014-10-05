@@ -29,7 +29,7 @@ public class UniqueBinarySearchTreesII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (n = 0; n <= 10; n++) {
 			result = generateTrees(n);
 			

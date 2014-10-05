@@ -19,7 +19,7 @@ public class SubsequenceInHaystack implements Exercise {
 	private String needle = "cat";
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		int numValid = getCount(haystack, needle);
 		
 		System.out.printf("There are %d valid substring for:%nH = %s%nN = %s", numValid, haystack, needle);

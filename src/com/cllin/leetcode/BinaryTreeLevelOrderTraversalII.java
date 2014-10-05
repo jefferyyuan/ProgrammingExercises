@@ -28,7 +28,7 @@ public class BinaryTreeLevelOrderTraversalII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		result = levelOrderBottom(tree.root);
 		test();

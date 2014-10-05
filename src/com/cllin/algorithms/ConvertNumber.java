@@ -12,7 +12,7 @@ import com.cllin.main.Exercise;
 public class ConvertNumber implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < 10; i++) {
 			int N = (int) (Math.random() * 20000) + 1;
 			String string = numberToString(N);

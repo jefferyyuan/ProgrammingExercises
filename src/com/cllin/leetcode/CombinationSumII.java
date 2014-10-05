@@ -41,7 +41,7 @@ public class CombinationSumII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 1; index < testSuite.length; index++) {
 			for (target = 1; target <= 1; target++) {
 				result = combinationSum2(testSuite[index], target);

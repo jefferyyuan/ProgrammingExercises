@@ -36,7 +36,7 @@ public class PalindromePartitioning implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		int length = testSuite.length;
 		for (int i = 0; i < length; i++) {
 			result = partition(testSuite[i]);

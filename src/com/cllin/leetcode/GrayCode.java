@@ -30,7 +30,7 @@ public class GrayCode implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n : testSuite) {
 			ArrayList<Integer> result = grayCode(n);
 			

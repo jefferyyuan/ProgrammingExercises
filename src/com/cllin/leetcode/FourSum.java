@@ -96,7 +96,7 @@ public class FourSum implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			for (target = 0; target <= 0; target++) {
 				long start = 0;

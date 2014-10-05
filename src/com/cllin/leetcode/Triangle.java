@@ -46,7 +46,7 @@ public class Triangle implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		result = minimumTotal(triangle);
 		test();

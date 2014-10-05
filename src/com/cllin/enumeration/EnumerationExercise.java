@@ -5,7 +5,7 @@ import com.cllin.main.Exercise;
 public class EnumerationExercise implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for(Day day : Day.values()){
 			System.out.printf(day.getMonkeyActivity() + " on %s%n", day.name());
 		}

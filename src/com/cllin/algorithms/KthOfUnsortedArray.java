@@ -34,7 +34,7 @@ public class KthOfUnsortedArray implements Exercise {
 	}
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		for (k = 1; k <= SIZE; k++) {

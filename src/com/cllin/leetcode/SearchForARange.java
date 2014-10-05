@@ -39,7 +39,7 @@ public class SearchForARange implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < 100; i++) {
 			initialize();
 			result = searchRange(numbers, target);

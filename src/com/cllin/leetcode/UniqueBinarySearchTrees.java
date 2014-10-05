@@ -25,7 +25,7 @@ public class UniqueBinarySearchTrees implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n = 1; n <= 10; n++) {
 			int num = numTrees(n);
 			System.out.printf("There are %d unique binary search trees to integer 1-%d%n", num, n);

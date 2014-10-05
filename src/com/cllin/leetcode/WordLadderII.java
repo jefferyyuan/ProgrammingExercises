@@ -99,7 +99,7 @@ public class WordLadderII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		for (index = 0; index < testSuite.size(); index++) {

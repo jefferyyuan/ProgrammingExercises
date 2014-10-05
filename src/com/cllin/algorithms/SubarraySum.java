@@ -37,7 +37,7 @@ public class SubarraySum implements Exercise {
 	private ArrayList<Integer> result;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			for (target = 0; target <= 5; target++) {
 				result = hasSum(testSuite[index], target);

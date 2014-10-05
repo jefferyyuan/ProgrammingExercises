@@ -10,7 +10,7 @@ import com.cllin.main.Exercise;
 public class Exercise19_10 implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		final int size = 10000;
 		int[] counts = new int[7];
 		

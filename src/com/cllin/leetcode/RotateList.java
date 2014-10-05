@@ -31,7 +31,7 @@ public class RotateList implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (N = 0; N <= SIZE * 2; N++) {
 			initialize();
 			head = rotateRight(head, N);

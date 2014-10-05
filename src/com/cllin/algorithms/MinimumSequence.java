@@ -22,7 +22,7 @@ public class MinimumSequence implements Exercise {
 	private int minimumSequenceLength;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			for (sum = 1; sum <= 12; sum++) {
 				minimumSequenceLength = getMinimumSequenceLength(testSuite[index], sum);

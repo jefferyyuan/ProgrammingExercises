@@ -44,7 +44,7 @@ public class RemoveNthNodeFromEndOfList implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		head = removeNthFromEnd(head, n);

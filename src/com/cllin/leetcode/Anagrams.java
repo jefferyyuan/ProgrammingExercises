@@ -28,7 +28,7 @@ public class Anagrams implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			anagrams = anagrams(testSuite[index]);
 			test();

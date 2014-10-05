@@ -21,7 +21,7 @@ public class QueueInAnInteger implements Exercise {
 	private LinkedList<Integer> queue;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int[] test : testSuite) {
 			queue = new LinkedList<Integer>();
 			for (int n : test) {

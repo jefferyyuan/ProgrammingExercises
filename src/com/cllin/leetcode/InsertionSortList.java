@@ -26,7 +26,7 @@ public class InsertionSortList implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		head = insertionSortList(head);
 		

@@ -7,7 +7,7 @@ import java.util.Comparator;
 import com.cllin.main.Exercise;
 
 /*
- * A circus is designing a tower routine consisting of people standing atop one another¡¦s shoulders. 
+ * A circus is designing a tower routine consisting of people standing atop one anotherï¿½ï¿½s shoulders. 
  * For practical and aesthetic reasons, each person must be both shorter and lighter than the person below him or her. 
  * 
  * Given the heights and weights of each person in the circus, 
@@ -25,7 +25,7 @@ public class Exercise09_07 implements Exercise {
 	private ArrayList<Person> longestTower;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		longestTower = getLongestTower(circus);
 		

@@ -40,7 +40,7 @@ public class SameTree implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		result1 = isSameTree(tree.root, treeCopy.root);

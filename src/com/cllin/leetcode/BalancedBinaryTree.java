@@ -27,7 +27,7 @@ public class BalancedBinaryTree implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		Node node = new Node(1);

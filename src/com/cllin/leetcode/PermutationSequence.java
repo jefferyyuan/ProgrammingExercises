@@ -29,7 +29,7 @@ public class PermutationSequence implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n = 1; n <= 5; n++) {
 			int factorial = getFactorial(n);
 			

@@ -28,7 +28,7 @@ public class DifferenceOfPairs implements Exercise {
 	private ArrayList<ArrayList<Integer>> pairs;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < 5; i++) {
 			initialize();
 			pairs = getPairs(array, target);

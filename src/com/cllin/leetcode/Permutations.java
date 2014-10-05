@@ -31,7 +31,7 @@ public class Permutations implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 
 		permutations = permute(numbers);

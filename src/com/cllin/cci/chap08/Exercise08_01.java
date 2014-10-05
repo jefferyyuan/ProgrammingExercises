@@ -10,7 +10,7 @@ public class Exercise08_01 implements Exercise {
 //	Limited by the size of an integer, can be extended by using a long instead
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n = 1; n <= 45; n++) {
 			int fibonacci = getFibonacciNumber(n);
 			System.out.println("The " + n + "th Fibonacci number is " + fibonacci);

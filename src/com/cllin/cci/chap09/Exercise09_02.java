@@ -15,7 +15,7 @@ public class Exercise09_02 implements Exercise {
 	};
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (String[] strings : testSuite) {
 			System.out.println("Before sorting:");
 			printStrings(strings);

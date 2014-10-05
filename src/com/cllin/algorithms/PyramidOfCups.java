@@ -23,7 +23,7 @@ public class PyramidOfCups implements Exercise {
 	private double[][] pyramid;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int levels = 3; levels <= 5; levels++) {
 			test = new TestCase(levels);
 			pyramid = getPyramid(test.levels, test.capacity, 100);

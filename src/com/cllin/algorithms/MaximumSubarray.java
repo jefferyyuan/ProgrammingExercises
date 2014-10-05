@@ -8,7 +8,7 @@ public class MaximumSubarray implements Exercise {
 	private int[] numbers = new int[SIZE];
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		Solution solution;
 		
 		initialization();

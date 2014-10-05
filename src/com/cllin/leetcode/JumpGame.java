@@ -33,7 +33,7 @@ public class JumpGame implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			result = canJump(testSuite[index]);
 			test();

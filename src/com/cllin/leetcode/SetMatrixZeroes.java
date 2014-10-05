@@ -27,7 +27,7 @@ public class SetMatrixZeroes implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		setZeroes(matrix);
 		

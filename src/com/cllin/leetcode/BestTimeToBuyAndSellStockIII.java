@@ -30,7 +30,7 @@ public class BestTimeToBuyAndSellStockIII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			initialize();
 			maximumProfit = maxProfit(testSuite[index]);

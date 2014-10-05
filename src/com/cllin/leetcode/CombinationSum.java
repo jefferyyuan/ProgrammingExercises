@@ -43,7 +43,7 @@ public class CombinationSum implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 5; index < testSuite.length; index++) {
 			for (target = 310; target <= 310; target++) {
 				long start = System.nanoTime();

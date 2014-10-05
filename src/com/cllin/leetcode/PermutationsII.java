@@ -33,7 +33,7 @@ public class PermutationsII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 2; index < testSuite.length; index++) {
 			result = permuteUnique(testSuite[index]);
 			test();

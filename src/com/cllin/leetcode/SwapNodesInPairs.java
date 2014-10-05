@@ -37,7 +37,7 @@ public class SwapNodesInPairs implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		head = swapPairs(head);

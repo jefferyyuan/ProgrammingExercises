@@ -16,7 +16,7 @@ import com.cllin.main.Exercise;
 public class GenerateEquation implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n = 1; n < 15; n++) {
 			System.out.printf("The %dth element of the sequence is %d%n", n, generateEquation(n));
 		}

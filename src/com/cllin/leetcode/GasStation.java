@@ -49,7 +49,7 @@ public class GasStation implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 6; index < testSuite.length; index++) {
 			TestCase testCase = testSuite[index];
 			startingIndex = canCompleteCircuit(testCase.gas, testCase.cost);

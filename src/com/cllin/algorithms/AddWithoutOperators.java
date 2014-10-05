@@ -11,7 +11,7 @@ public class AddWithoutOperators implements Exercise {
 	private static final int MAXIMUM = 1000000; 
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < 100; i++) {
 			int a = (int) (Math.random() * MAXIMUM);
 			int b = (int) (Math.random() * MAXIMUM);

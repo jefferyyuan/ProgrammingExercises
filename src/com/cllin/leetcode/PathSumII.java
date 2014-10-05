@@ -25,7 +25,7 @@ public class PathSumII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		for (int sum = 0; sum < 50; sum++) {
 			result = pathSum(tree.root, sum);

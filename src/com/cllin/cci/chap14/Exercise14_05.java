@@ -7,7 +7,7 @@ import com.cllin.main.Exercise;
 public class Exercise14_05 implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		MyClass myclass = MyClass.getSingletonInstance();
 		Method method;
 		

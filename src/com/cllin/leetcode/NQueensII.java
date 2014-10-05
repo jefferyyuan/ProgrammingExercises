@@ -20,7 +20,7 @@ public class NQueensII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		for (int n = 0; n <= 10; n++) {

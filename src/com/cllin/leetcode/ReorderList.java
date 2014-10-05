@@ -33,7 +33,7 @@ public class ReorderList implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		System.out.println("The list before reordering is: ");

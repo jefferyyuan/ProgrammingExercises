@@ -30,7 +30,7 @@ public class BinaryTreePostorderTraversal implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		result = postorderTraversal(tree.root);
 		

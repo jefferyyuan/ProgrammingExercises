@@ -25,7 +25,7 @@ public class GenerateRandom implements Exercise {
 	private int[] array;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		N = 30;
 		initialize();
 		

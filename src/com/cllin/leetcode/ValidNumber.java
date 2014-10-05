@@ -32,7 +32,7 @@ public class ValidNumber implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (String input : testSuite) {
 			boolean isNumber = isNumber(input);
 			System.out.printf("%s %s a valid number%n", input, (isNumber)? "is" : "is not");

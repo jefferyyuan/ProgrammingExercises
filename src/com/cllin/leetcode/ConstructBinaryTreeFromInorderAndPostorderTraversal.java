@@ -44,7 +44,7 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal implements
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		root = buildTree(inorder, postorder);
 

@@ -12,7 +12,7 @@ public class PalindromeNumber implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		for (int n : testSuite) {

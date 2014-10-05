@@ -36,7 +36,7 @@ public class SudokuSolver implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			solveSudoku(testSuite[index]);
 			

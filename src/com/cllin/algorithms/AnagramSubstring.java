@@ -26,7 +26,7 @@ public class AnagramSubstring implements Exercise {
 	private boolean result;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			result = hasAnagramSubstring(testSuite[index].A, testSuite[index].B);
 			test();

@@ -13,7 +13,7 @@ public class Exercise08_08 implements Exercise {
 	private Pair[] pairs = new Pair[8];
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		for (int i = 0; i < 8; i++) {

@@ -26,7 +26,7 @@ public class PascalsTriangleII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i <= 15; i++) {
 			rowIndex = i;
 			result = getRow(rowIndex);

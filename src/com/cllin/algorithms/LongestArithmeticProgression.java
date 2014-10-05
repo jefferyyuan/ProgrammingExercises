@@ -10,7 +10,7 @@ import com.cllin.main.Exercise;
  * i.e find a sequence i1 < i2 < ... < ik, such that A[i1], A[i2], ..., A[ik] forms an arithmetic progression, 
  * and k is the largest possible.
  * 
- * The sequence S1, S2, ..., Sk is called an arithmetic progression if Sj+1 ¡V Sj is a constant.
+ * The sequence S1, S2, ..., Sk is called an arithmetic progression if Sj+1 ï¿½V Sj is a constant.
  * 
  * Source: http://www.geeksforgeeks.org/forums/topic/google-interview-question-16/
  */
@@ -24,7 +24,7 @@ public class LongestArithmeticProgression implements Exercise {
 	private int maximumLength;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		maximumLength = getLongestArithmeticProgression(array);
 		test();

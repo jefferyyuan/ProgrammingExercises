@@ -46,7 +46,7 @@ public class SubsetsII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		for (index = 5; index < testSuite.length; index++) {
 			result = subsetsWithDup(testSuite[index]);

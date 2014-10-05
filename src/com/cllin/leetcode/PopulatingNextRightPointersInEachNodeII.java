@@ -23,7 +23,7 @@ public class PopulatingNextRightPointersInEachNodeII implements
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		connect(root);
 		

@@ -11,7 +11,7 @@ public class RodCutting implements Exercise{
 	};
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int[] test : testSuite) {
 			
 			System.out.print("For P = { ");

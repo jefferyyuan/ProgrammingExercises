@@ -42,7 +42,7 @@ public class LinkedListCycleII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 
 		ListNode a = detectCycle(listA);

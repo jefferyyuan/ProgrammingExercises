@@ -11,7 +11,7 @@ import com.cllin.main.Exercise;
 public class Exercise07_05 implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		System.out.println("I've built a online book reader system, yay!");
 	}
 	

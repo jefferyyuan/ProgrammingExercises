@@ -22,7 +22,7 @@ public class NumberOfBlocks implements Exercise {
 	private int nBlocks;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		for (TestCase t : testSuite) {
 			testCase = t;

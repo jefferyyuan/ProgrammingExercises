@@ -60,7 +60,7 @@ public class RomanToInteger implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		for (String string : testSuites) {

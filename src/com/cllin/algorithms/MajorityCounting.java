@@ -28,7 +28,7 @@ public class MajorityCounting implements Exercise {
 	private int majority;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			majority = majorityCount(testSuite[index]);
 			test();

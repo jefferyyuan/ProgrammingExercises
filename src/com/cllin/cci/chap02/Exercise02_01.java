@@ -17,7 +17,7 @@ public class Exercise02_01 implements Exercise {
 	private Node listHead;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		boolean isSuccess = true;
 		for (int i = 0; i < 100 && isSuccess; i++) {
 			initialize();

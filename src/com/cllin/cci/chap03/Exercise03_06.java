@@ -16,7 +16,7 @@ public class Exercise03_06 implements Exercise {
 	private Stack<Integer> stack;
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		stack = sort(stack);
 		test();

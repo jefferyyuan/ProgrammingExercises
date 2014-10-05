@@ -35,7 +35,7 @@ public class ConvertSortedListToBinarySearchTree implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		root = sortedListToBST(head);
 		

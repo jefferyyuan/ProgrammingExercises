@@ -18,7 +18,7 @@ public class Exercise08_02 implements Exercise {
 	private final int[] testSuite = {1, 2, 3, 4, 6, 8, 10, 15, 20};
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n : testSuite) {
 			int nRoutes = getRouteNumber(n);
 			System.out.println("There are " + nRoutes + " routes for a squre grid with size " + n);

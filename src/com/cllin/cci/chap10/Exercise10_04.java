@@ -11,7 +11,7 @@ public class Exercise10_04 implements Exercise {
 	private static final int MAXIMUM = 1000;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < 1000; i++) {
 			int a = (int) (Math.random() * MAXIMUM);
 			int b = (int) (Math.random() * MAXIMUM);

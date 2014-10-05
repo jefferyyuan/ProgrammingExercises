@@ -22,7 +22,7 @@ public class CombinationsOfTargetedSum implements Exercise {
 	private ArrayList<ArrayList<Integer>> combinations;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (N = 2; N <= 10; N++) {
 			combinations = getCombinations(N);
 			

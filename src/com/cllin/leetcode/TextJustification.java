@@ -39,7 +39,7 @@ public class TextJustification implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			TestCase test = testSuite[index];
 			result = fullJustify(test.words, test.L);

@@ -13,7 +13,7 @@ public class AVLTreeExercise implements Exercise {
 	private int[] reference = new int[SIZE];
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		tree = new AVLTree();
 		buildTree();
 		

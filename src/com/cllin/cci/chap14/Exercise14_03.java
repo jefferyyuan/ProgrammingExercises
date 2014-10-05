@@ -8,7 +8,7 @@ public class Exercise14_03 implements Exercise {
 	private final int finalInteger = 1;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 //		THIS OPERATION IS NOT ALLOWED
 //		finalInteger++;
 		

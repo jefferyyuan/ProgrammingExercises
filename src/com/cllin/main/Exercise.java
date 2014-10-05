@@ -1,5 +1,14 @@
 package com.cllin.main;
 
-public interface Exercise {
-	public void runExercise();
+public abstract class Exercise {
+    
+    public final void run() {
+	initialize();
+	runExercise();
+	test();
+    }
+    
+    protected abstract void initialize();
+    protected abstract void runExercise();
+    protected abstract void test();
 }

@@ -25,7 +25,7 @@ public class SixSixPair implements Exercise {
 	private Domino[] dominoes;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		HashSet<Domino> pair = hasSixSixPair(dominoes);

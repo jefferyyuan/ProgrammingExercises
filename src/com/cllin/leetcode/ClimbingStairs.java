@@ -18,7 +18,7 @@ public class ClimbingStairs implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (levels = 0; levels <= 50; levels++) {
 			int count = climbStairs(levels);
 			System.out.printf("There are %d ways to climb a %d-level letter%n", count, levels);

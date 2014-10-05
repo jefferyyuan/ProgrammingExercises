@@ -27,7 +27,7 @@ public class MinimumWindow implements Exercise {
 	private int[] window;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			TestCase test = testSuite[index];
 			window = getMinimumWindow(test.list1, test.list2, test.list3);

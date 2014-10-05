@@ -22,7 +22,7 @@ public class FindMissing implements Exercise {
 	private int reference;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < 100; i++) {
 			initialize();
 			missingValue = getMissing(array1, array2);

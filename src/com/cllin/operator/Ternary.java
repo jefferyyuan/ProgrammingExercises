@@ -5,7 +5,7 @@ import com.cllin.main.Exercise;
 public class Ternary implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for(int i = 0; i < 10; i++){
 			boolean randomBoolean = getRandomBoolean();
 			String output =	randomBoolean ? "Got true" : "Got false";

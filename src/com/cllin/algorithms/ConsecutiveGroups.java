@@ -28,7 +28,7 @@ public class ConsecutiveGroups implements Exercise {
 	private ArrayList<ArrayList<Integer>> output;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			output = getGroup(testSuite[index]);
 			test();

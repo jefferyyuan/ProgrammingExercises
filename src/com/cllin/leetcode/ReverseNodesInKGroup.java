@@ -37,7 +37,7 @@ public class ReverseNodesInKGroup implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (K = 2; K <= MAXIMUM * 2; K++) {
 			initialize();
 			head = reverseKGroup(head, K);

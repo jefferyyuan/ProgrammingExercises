@@ -20,7 +20,7 @@ public class BuildMinimumSum implements Exercise {
 	private int[] array;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (LENGTH = 2; LENGTH <= 10; LENGTH++) {
 			initialize();
 			sum = getMinimumSum(array);

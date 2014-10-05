@@ -24,7 +24,7 @@ public class LRUCache implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		test();
 	}
 

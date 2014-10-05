@@ -9,7 +9,7 @@ public class RunLengthEncoding implements Exercise {
 	};
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (String input : testSuite) {
 			String output = encode(input);
 			System.out.println(output);

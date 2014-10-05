@@ -29,7 +29,7 @@ public class SubstituteCharacters implements Exercise {
 	private ArrayList<String> output;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		for (index = 0; index < testSuite.size(); index++) {
 			output = getSubstitute(testSuite.get(index).map, testSuite.get(index).string);

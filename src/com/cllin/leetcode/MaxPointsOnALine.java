@@ -27,7 +27,7 @@ public class MaxPointsOnALine implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			maximum = maxPoints(testSuite[index]);
 			test();

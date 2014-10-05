@@ -28,7 +28,7 @@ public class ValidPalindrome implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (TestCase test : testSuite) {
 			if (isPalindrome(test.string) == test.isPalindrome) System.out.println("Success");
 			else System.out.println("Failed");

@@ -11,7 +11,7 @@ public class Exercise05_06 implements Exercise {
 	private final int[] testSuite = {1, 4, 6, 10, 73, 183, 5566};
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for(int n : testSuite) {
 			int output = swapEvenAndOddBits(n);
 			System.out.printf("%s -> %s%n",

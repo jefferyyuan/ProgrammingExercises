@@ -13,7 +13,7 @@ public class BreadthFirstTraversal implements Exercise {
 	private BinarySearchTree tree;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		breadFirstTraversal(tree.root);
 		

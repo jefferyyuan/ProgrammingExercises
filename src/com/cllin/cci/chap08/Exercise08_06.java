@@ -14,7 +14,7 @@ public class Exercise08_06 implements Exercise {
 	private Point[][] plane;
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		System.out.println("Origin:");
 		printPlane();

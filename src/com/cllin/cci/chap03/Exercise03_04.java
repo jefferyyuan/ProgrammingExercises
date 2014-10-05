@@ -22,7 +22,7 @@ public class Exercise03_04 implements Exercise {
 	private Stack<Integer> stack3;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		moveDisk(SIZE, stack1, stack2,stack3);
 		test();

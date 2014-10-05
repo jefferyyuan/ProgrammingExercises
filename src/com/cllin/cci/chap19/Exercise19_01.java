@@ -10,7 +10,7 @@ public class Exercise19_01 implements Exercise {
 	private static final int MAXIMUM = 100;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < 10; i++) {
 			Pair pair = new Pair();
 			int a_buf = pair.a;

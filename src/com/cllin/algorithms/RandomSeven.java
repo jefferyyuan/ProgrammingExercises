@@ -12,7 +12,7 @@ import com.cllin.main.Exercise;
 public class RandomSeven implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		final int size = 100000;
 		
 		int[] counts = new int[7];

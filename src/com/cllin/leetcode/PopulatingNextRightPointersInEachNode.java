@@ -23,7 +23,7 @@ public class PopulatingNextRightPointersInEachNode implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		connect(new TreeLinkNode(0));
 	}
 	

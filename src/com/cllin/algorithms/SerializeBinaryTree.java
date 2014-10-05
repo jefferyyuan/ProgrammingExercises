@@ -20,7 +20,7 @@ public class SerializeBinaryTree implements Exercise {
 	private Node node;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		serialize = serialize(tree.root, new String());

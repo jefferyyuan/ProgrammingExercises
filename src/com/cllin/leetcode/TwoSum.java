@@ -34,7 +34,7 @@ public class TwoSum implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			for (target = 0; target < 10; target++) {
 				indices = twoSum(testSuite[index], target);

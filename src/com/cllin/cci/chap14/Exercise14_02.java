@@ -5,7 +5,7 @@ import com.cllin.main.Exercise;
 public class Exercise14_02 implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		try{
 			System.out.println("Executing something that might go wrong...");
 			System.out.println("...");

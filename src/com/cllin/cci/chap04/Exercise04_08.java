@@ -18,7 +18,7 @@ public class Exercise04_08 implements Exercise {
 	private BinarySearchTree tree;
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		for (int n = 10; n < 30; n++) {

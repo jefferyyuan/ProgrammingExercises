@@ -18,7 +18,7 @@ public class Exercise09_06 implements Exercise {
 	private int[][] matrix;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		for (int i = 0; i < 10; i++) {

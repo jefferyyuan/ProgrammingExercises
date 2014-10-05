@@ -5,7 +5,7 @@ import com.cllin.main.Exercise;
 public class TrieExercise implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		String apple = "apple";
 		String apartment = "apartment";
 		String apart = "apart";

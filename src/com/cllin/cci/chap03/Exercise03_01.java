@@ -13,7 +13,7 @@ public class Exercise03_01 implements Exercise {
 	private final int SIZE = 10;
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		test();
 	}
 	

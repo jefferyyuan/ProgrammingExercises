@@ -29,7 +29,7 @@ public class KPalindrome implements Exercise {
 	};
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (String string : testSuite) {
 			for (int k = 0; k <= string.length(); k++) {
 				boolean isKPalindrome = isKPalindrome(string, k);

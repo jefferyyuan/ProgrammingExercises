@@ -5,7 +5,7 @@ import com.cllin.main.Exercise;
 public class Exercise14_01 implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		System.out.println("******************");
 		System.out.println("SINGLETON PATTERN");
 		System.out.println("******************");

@@ -14,7 +14,7 @@ import com.cllin.main.Exercise;
 public class Exercise05_01 implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		
 		int n = 1024;
 		int m = 21;

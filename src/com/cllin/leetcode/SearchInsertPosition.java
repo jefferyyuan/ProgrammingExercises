@@ -37,7 +37,7 @@ public class SearchInsertPosition implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		test();
 	}
 	

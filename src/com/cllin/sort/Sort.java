@@ -11,7 +11,7 @@ public class Sort implements Exercise {
 	private int[] reference = new int[SIZE];
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		long start = System.nanoTime();

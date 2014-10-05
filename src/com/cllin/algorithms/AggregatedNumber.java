@@ -27,7 +27,7 @@ public class AggregatedNumber implements Exercise {
 	};
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n : testSuite) {
 			System.out.printf("%d %s an aggregated number%n", n, (isAggregatedNumber(n))? "is" : "is not");
 		}

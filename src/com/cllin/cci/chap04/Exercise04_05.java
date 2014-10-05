@@ -21,7 +21,7 @@ public class Exercise04_05 implements Exercise {
 	private Node result;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < 100; i++) {
 			initialize();
 			result = getNextNode(node);

@@ -21,7 +21,7 @@ public class UniquePaths implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < 10; i++) {
 			int m = (int)(Math.random() * MAXIMUM) + 1;
 			int n = (int)(Math.random() * MAXIMUM) + 1;

@@ -24,7 +24,7 @@ public class TrappingRainWater implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < testSuites.length; i++) {
 			initialize();
 			result = trap(testSuites[i]);

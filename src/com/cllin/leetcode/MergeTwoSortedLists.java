@@ -62,7 +62,7 @@ public class MergeTwoSortedLists implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		list1 = mergeTwoLists(list1, list2);

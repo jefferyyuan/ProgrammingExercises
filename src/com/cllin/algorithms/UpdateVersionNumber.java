@@ -27,7 +27,7 @@ public class UpdateVersionNumber implements Exercise {
 	};
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (String string : testSuite) {
 			for (int i = -1; i <= 4; i++) {
 				String newVersion = new String();

@@ -30,7 +30,7 @@ public class StringToInteger implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (String input : testSuite) {
 			output = atoi(input);
 			System.out.printf("%s = %d%n", input, output);test();

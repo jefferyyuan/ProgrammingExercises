@@ -20,7 +20,7 @@ public class GenerateParentheses implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (n = 1; n <= 5; n++) {
 			result = generateParenthesis(n);
 			test();

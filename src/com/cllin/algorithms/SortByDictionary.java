@@ -11,7 +11,7 @@ import com.cllin.main.Exercise;
  * If input word is "SHEEP", sorting will make it as "EEHPS".
  * 
  * But in the dictionary, E may not be at first. As per the dictionary, if P is first, S followed and E later and finally H.
- * Then sorted array is ¡§PSEEH¡§.
+ * Then sorted array is ï¿½ï¿½PSEEHï¿½ï¿½.
  * 
  * Source: http://www.geeksforgeeks.org/forums/topic/google-telephonic-interview-questions/
  */
@@ -27,7 +27,7 @@ public class SortByDictionary implements Exercise {
 	private String output;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			output = sortByDictionary(testSuite[index].dictionary, testSuite[index].string);
 			test();

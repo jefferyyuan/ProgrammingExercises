@@ -53,7 +53,7 @@ public class AddTwoNumbers implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (DIGITS = 1; DIGITS <= 5; DIGITS++) {
 			initialize();
 			result = addTwoNumbers(head1, head2);

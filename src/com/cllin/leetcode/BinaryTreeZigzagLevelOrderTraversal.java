@@ -28,7 +28,7 @@ public class BinaryTreeZigzagLevelOrderTraversal implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		result = zigzagLevelOrder(tree.root);
 		test();

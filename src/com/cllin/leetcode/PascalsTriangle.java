@@ -31,7 +31,7 @@ public class PascalsTriangle implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		result = generate(SIZE);
 		
 		if (test()) System.out.println("Success");

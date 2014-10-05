@@ -20,7 +20,7 @@ public class Exercise02_03 implements Exercise {
 	private ArrayList<Integer> reference;
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		test();
 	}

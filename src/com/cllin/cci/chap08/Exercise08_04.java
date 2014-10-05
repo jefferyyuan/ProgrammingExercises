@@ -13,7 +13,7 @@ public class Exercise08_04 implements Exercise {
 	private final String[] testSuites = {"lol", "bbc", "apple", "banana", "car", "computer"};
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (String string : testSuites) {
 			ArrayList<String> permutations = getPermutation(string);
 			for (String permutation : permutations) {

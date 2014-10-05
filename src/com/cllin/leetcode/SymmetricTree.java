@@ -28,7 +28,7 @@ public class SymmetricTree implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		boolean isSymmetric = isSymmetric(tree.root);

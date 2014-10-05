@@ -35,7 +35,7 @@ public class FirstMissingPositive implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			result = firstMissingPositive(testSuite[index]);
 			test();

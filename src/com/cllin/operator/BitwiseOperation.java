@@ -5,7 +5,7 @@ import com.cllin.main.Exercise;
 public class BitwiseOperation implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		int integer = 0x00FF;
 		int shift = 2;
 		

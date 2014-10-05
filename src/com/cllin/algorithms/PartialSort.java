@@ -28,7 +28,7 @@ public class PartialSort implements Exercise {
 	private int[] output;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			output = partialSort(Arrays.copyOf(testSuite[index], testSuite[index].length));
 			test();

@@ -33,7 +33,7 @@ public class NextPermutation implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int[] test : testSuite) {
 			nextPermutation(test);
 		}

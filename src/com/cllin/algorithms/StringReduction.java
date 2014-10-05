@@ -28,7 +28,7 @@ public class StringReduction implements Exercise {
 	private String output;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			output = reduceString(testSuite[index]);
 			test();

@@ -14,7 +14,7 @@ public class Exercise08_03 implements Exercise {
 	
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n : testSuite) {
 			initialize(n);
 			ArrayList<ArrayList<Integer>> subsets = getSubset(set);

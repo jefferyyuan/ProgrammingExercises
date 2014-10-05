@@ -22,7 +22,7 @@ public class FirstUniqueElement implements Exercise {
 	private String unique;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			unique = getFirstUnique(testSuite[index]);
 			test();

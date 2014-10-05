@@ -29,7 +29,7 @@ public class MergeContacts implements Exercise {
 	private HashSet<HashSet<String>> contactClusters;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			contactClusters = mergeContacts(testSuite[index]);
 			test();

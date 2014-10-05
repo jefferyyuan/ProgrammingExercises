@@ -5,7 +5,7 @@ import com.cllin.main.Exercise;
 public class ExclusiveOR implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for(int i = 0; i < 10; i++){
 			boolean a = getRandomBoolean();
 			boolean b = getRandomBoolean();

@@ -33,7 +33,7 @@ public class ThreeSumClosest implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		int lowerBound = - (MAXIMUM / 2);
 		int upperBound = MAXIMUM / 2;

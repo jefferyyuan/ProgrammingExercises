@@ -33,7 +33,7 @@ public class ReconstructJourney implements Exercise {
 	private ArrayList<String> route;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			route = getRoute(testSuite[index]);
 			test();

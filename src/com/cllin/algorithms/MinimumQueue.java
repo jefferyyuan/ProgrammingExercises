@@ -17,7 +17,7 @@ public class MinimumQueue implements Exercise {
 	};
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int[] test : testSuite) {
 			Queue queue = new Queue();
 			

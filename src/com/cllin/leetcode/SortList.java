@@ -29,7 +29,7 @@ public class SortList implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		boolean isSuccess = true;
 		
 		for (int i = 0; i < 100; i++) {

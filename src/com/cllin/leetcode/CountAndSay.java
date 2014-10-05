@@ -24,7 +24,7 @@ public class CountAndSay implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n = 1; n <= 5; n++) {
 			String sequence = countAndSay(n);
 			System.out.printf("The %dth sequence is %s%n", n, sequence);

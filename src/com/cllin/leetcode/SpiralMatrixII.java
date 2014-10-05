@@ -28,7 +28,7 @@ public class SpiralMatrixII implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i <= 5; i++) {
 			n = i;
 			matrix = generateMatrix(n);

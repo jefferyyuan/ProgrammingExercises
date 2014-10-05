@@ -18,7 +18,7 @@ public class EditString implements Exercise {
 	};
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (String string : testSuite) {
 			int distance = getDistance(string);
 			System.out.printf("The minimum distance of %s is %d%n", string, distance);

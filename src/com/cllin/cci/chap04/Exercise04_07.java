@@ -18,7 +18,7 @@ public class Exercise04_07 implements Exercise {
 	private BinarySearchTree tree2;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i < 10; i++) {
 			initialize();
 			System.out.printf("T2 %s a subtree of T1%n", (isSubtree(tree1, tree2))? "is" : "is not");

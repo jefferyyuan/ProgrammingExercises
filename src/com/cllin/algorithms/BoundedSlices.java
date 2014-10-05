@@ -25,7 +25,7 @@ public class BoundedSlices implements Exercise {
 	private ArrayList<ArrayList<Integer>> slices;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			slices = boundedSlices(testSuite[index]);
 			test();

@@ -32,7 +32,7 @@ public class WordsFromLetterCollection implements Exercise {
 	private String longestWord;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			longestWord = getLongestWordFromDictionary(testSuite[index].dictionary, testSuite[index].characters);
 			test();

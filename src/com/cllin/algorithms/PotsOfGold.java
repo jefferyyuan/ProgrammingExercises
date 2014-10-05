@@ -26,7 +26,7 @@ public class PotsOfGold implements Exercise {
 	private int maximum;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		maximum = maximumGold(pots);
 		test();

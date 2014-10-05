@@ -12,7 +12,7 @@ public class Exercise06_03 implements Exercise {
 	private final int MAXIMUM_B = 7;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 0; i <= MAXIMUM_A; i++) {
 			int nSteps = getWater(i, MAXIMUM_A, MAXIMUM_B);
 			System.out.printf("It takes %d steps to get %d%n", nSteps, i);

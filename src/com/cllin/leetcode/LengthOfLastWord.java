@@ -25,7 +25,7 @@ public class LengthOfLastWord implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		for (idx = 0; idx < testSuite.length; idx++) {
 			result = lengthOfLastWord(testSuite[idx]);

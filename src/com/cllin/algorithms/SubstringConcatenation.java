@@ -30,7 +30,7 @@ public class SubstringConcatenation implements Exercise {
     private String substring;
     
     @Override
-    public void runExercise() {
+    public void run() {
         for (index = 0; index < testSuite.length; index++) {
             substring = getSubstring(testSuite[index].S, testSuite[index].L);
             test();

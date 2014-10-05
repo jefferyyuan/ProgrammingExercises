@@ -28,7 +28,7 @@ public class EditDistance implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (TestCase test : testSuite) {
 			int distance = minDistance(test.word1, test.word2);
 			System.out.printf("The edit distance between '%s' and '%s' is %d%n", test.word1, test.word2, distance);

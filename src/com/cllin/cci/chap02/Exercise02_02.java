@@ -20,7 +20,7 @@ public class Exercise02_02 implements Exercise {
 	private LinkedList<Integer> reference;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		for (int testCase : testSuite) {
 			n = testCase;

@@ -8,7 +8,7 @@ public class Exercise10_03 implements Exercise {
 			new Line(0, 10, true), new Line(0, 3, true), new Line(0, 10, true)};
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (Line line : lines) {
 			for (Line anotherLine : lines) {
 				if (line.isIntersecting(anotherLine)) {

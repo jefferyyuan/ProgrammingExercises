@@ -27,7 +27,7 @@ public class MinimumDepthOfBinaryTree implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		minimumHeight = minDepth(tree.root);
 		

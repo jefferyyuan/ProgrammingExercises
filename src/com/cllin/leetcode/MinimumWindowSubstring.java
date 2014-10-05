@@ -34,7 +34,7 @@ public class MinimumWindowSubstring implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			TestCase test = testSuite[index];
 			window = minWindow(test.S, test.T);

@@ -14,7 +14,7 @@ public class Exercise11_03 implements Exercise {
 	private ArrayList<Integer> missingIntegers;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initizalize();
 		missingIntegers = findMissingIntegers(numbers);
 		

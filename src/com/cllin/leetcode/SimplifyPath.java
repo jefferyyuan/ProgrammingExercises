@@ -36,7 +36,7 @@ public class SimplifyPath implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			simplifiedPath = simplifyPath(testSuite[index]);
 			test();

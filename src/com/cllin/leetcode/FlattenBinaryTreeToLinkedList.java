@@ -22,7 +22,7 @@ public class FlattenBinaryTreeToLinkedList implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		flatten(tree.root);
 	}

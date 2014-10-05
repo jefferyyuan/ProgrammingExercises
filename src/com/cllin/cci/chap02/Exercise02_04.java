@@ -25,7 +25,7 @@ public class Exercise02_04 implements Exercise {
 	private Node output;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		output = add(listA, listB);

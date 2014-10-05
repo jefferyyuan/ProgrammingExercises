@@ -3,7 +3,7 @@ package com.cllin.thread;
 import com.cllin.main.Exercise;
 
 /***************************************************************************************
-*    Title: Java Tutorials Code Sample ¡V Deadlock.java
+*    Title: Java Tutorials Code Sample ï¿½V Deadlock.java
 *    Author: Oracle
 *    Date: 2013/12/14
 *    Code version: N/A
@@ -14,7 +14,7 @@ import com.cllin.main.Exercise;
 public class Deadlock implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		final Friend alphonse = new Friend("Alphonse");
 		final Friend gaston = new Friend("Gaston");
 		

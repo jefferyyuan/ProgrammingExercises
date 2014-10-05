@@ -6,7 +6,7 @@ public class Synchronization implements Exercise {
 	private CounterWithoutSynchronization counterWithoutSynchronization;
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		counterWithoutSynchronization = new CounterWithoutSynchronization();
 		
 		try {

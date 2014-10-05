@@ -35,7 +35,7 @@ public class AddBinary implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			solution = addBinary(testSuite[index].a, testSuite[index].b);
 			

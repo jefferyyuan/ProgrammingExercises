@@ -34,7 +34,7 @@ public class ThreeSum implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			long start = System.currentTimeMillis();
 			

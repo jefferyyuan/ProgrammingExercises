@@ -50,7 +50,7 @@ public class MergeSortedArray implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		merge(arrayA, SIZE_A, arrayB, SIZE_B);

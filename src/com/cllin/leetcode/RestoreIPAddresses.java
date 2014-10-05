@@ -26,7 +26,7 @@ public class RestoreIPAddresses implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			result = restoreIpAddresses(testSuite[index]);
 			test();

@@ -23,7 +23,7 @@ public class NQueens implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (N = 0; N <= 5; N++) {
 			result = solveNQueens(N);
 			test();

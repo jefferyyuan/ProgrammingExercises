@@ -11,7 +11,7 @@ public class Exercise08_07 implements Exercise {
 	private final int[] testSuites = {1, 27, 39, 100, 25, 492, 20, 1734, 5566, 183, 5};
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n : testSuites) {
 			System.out.println("There are " + makeChanges(n) + " ways of changes for " + n);
 		}

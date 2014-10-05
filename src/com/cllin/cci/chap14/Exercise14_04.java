@@ -11,7 +11,7 @@ public class Exercise14_04 implements Exercise {
 	ArrayList<Float> myFloatList;
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		
 		System.out.println("--------");
 		System.out.println("WILDCARD");

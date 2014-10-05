@@ -35,7 +35,7 @@ import com.cllin.main.Exercise;
 public class PrintEvolutionaryTree implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		ArrayList<Relation> input = new ArrayList<Relation>();
 		
 		input.add(new Relation("animal", "mammal"));

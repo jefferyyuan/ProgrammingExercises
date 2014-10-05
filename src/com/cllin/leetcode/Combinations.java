@@ -26,7 +26,7 @@ public class Combinations implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int i = 1; i <= 10; i++) {
 			initialize();
 			result = combine(n, k);

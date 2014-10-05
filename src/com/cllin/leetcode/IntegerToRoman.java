@@ -26,7 +26,7 @@ public class IntegerToRoman implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		for (int n : numbers) {

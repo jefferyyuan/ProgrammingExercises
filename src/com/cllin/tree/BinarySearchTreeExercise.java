@@ -10,7 +10,7 @@ public class BinarySearchTreeExercise implements Exercise{
 	private int[] keys;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		buildTree();
 //		The tree is too big to be printed out
 //		tree.inOrderTreeWalk(tree.root);

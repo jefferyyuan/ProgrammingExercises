@@ -33,7 +33,7 @@ public class SingleNumber implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		result = singleNumber(array);

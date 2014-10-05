@@ -35,7 +35,7 @@ public class SumRootToLeafNumbers implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		sum = sumNumbers(tree.root);
 		test();

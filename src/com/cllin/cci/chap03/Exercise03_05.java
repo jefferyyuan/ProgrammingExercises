@@ -17,7 +17,7 @@ public class Exercise03_05 implements Exercise {
 	private MyQueue myQueue;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		test();
 	}

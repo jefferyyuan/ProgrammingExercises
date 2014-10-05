@@ -9,7 +9,7 @@ import com.cllin.main.Exercise;
 public class Exercise19_03 implements Exercise {
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n = 20; n >= 1; n--) {
 			long input = getFactorial(n);
 			int numOfZeros = getZeros(n); 

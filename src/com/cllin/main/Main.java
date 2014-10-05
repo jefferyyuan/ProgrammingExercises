@@ -1236,7 +1236,7 @@ public class Main {
 			break;
 		}
 		
-		exercise.runExercise();
+		exercise.run();
 		
 		System.exit(0);
 	}

@@ -28,7 +28,7 @@ public class Exercise03_03 implements Exercise {
 	private Stack<Plate> reference;
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		test();
 	}
 	

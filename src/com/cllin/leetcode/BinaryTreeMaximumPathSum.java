@@ -35,7 +35,7 @@ public class BinaryTreeMaximumPathSum implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		for (TreeNode root : testSuite) {

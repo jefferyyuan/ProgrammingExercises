@@ -50,7 +50,7 @@ public class SpiralMatrix implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			int rows = testSuite[index].length;
 			int cols = testSuite[index][0].length;

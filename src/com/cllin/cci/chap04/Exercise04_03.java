@@ -17,7 +17,7 @@ public class Exercise04_03 implements Exercise {
 	private Tree tree;
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		
 		tree.root = buildTree(array);

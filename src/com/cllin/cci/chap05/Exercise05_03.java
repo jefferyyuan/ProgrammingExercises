@@ -11,7 +11,7 @@ public class Exercise05_03 implements Exercise {
 	private final int[] testSuite = {2, 6, 16, 30, 126, 254, 512};
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (int n : testSuite) {
 			int nextSmallest = getNextSmallestNumber(n);
 			int nextLargest = getNextLargestNumber(n);

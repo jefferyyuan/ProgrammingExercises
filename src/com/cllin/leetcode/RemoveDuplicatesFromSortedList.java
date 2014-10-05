@@ -35,7 +35,7 @@ public class RemoveDuplicatesFromSortedList implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		deleteDuplicates(root);
 		if (test()) System.out.println("Success");

@@ -43,7 +43,7 @@ public class DecodeWays implements LeetCodeExercise {
 	}
 
 	@Override
-	public void runExercise() {
+	public void run() {
 		for (index = 0; index < testSuite.length; index++) {
 			nWays = numDecodings(testSuite[index]);
 			test();

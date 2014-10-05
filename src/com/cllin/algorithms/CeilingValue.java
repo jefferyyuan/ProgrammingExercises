@@ -28,7 +28,7 @@ public class CeilingValue implements Exercise {
 	}
 	
 	@Override
-	public void runExercise() {
+	public void run() {
 		initialize();
 		ceilingValue = getCeilingValue(tree.root, target, ceilingValue);
 		test();

@@ -2,6 +2,8 @@
 
 *This project consists of my programming exercises, including Data Structure, Operator, Sorting, Exercises from "Cracking Coding Interview" and other General Issues*
 
+*Currently I am working on refactoring the architecture of this project, the work will be done on Refactor branch. I will also update the solution of some exercises if found necessary.*
+
 ======
 ###CONTENT
 1. [Data Structure] (#1)

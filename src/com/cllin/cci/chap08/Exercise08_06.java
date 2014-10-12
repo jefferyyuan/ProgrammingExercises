@@ -12,18 +12,6 @@ import com.cllin.main.Exercise;
 public class Exercise08_06 extends Exercise {
     private final int SIZE = 20;
     private Point[][] plane;
-
-    @Override
-    public void run() {
-        initialize();
-        System.out.println("Origin:");
-        printPlane();
-        
-        fillPaint(2, 3, Point.BLUE, Point.RED);
-        
-        System.out.println("After:");
-        printPlane();
-    }
     
     private void fillPaint(int x, int y, int originPaint, int newPaint) {
         if (x + 1 < SIZE) {
@@ -51,26 +39,6 @@ public class Exercise08_06 extends Exercise {
             if (plane[x][y - 1].color == originPaint) {
                 plane[x][y - 1].color = newPaint;
                 fillPaint(x, y - 1, originPaint, newPaint);
-            }
-        }
-    }
-    
-    protected void initialize() {
-        plane = new Point[SIZE][SIZE]; 
-        
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                plane[i][j] = new Point();
-            }
-        }
-        
-//        Create a blue square
-        int x = 2;
-        int y = 3;
-        int size = 4;
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                plane[x + i][y + j].color = Point.BLUE;
             }
         }
     }
@@ -117,5 +85,42 @@ public class Exercise08_06 extends Exercise {
                     break;
             }
         }
+    }
+
+    @Override
+    protected void initialize() {
+        plane = new Point[SIZE][SIZE]; 
+        
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
+                plane[i][j] = new Point();
+            }
+        }
+        
+//      Create a blue square
+        int x = 2;
+        int y = 3;
+        int size = 4;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                plane[x + i][y + j].color = Point.BLUE;
+            }
+        }
+    }
+
+    @Override
+    protected void runExercise() {
+        System.out.println("Origin:");
+        printPlane();
+        
+        fillPaint(2, 3, Point.BLUE, Point.RED);
+        
+        System.out.println("After:");
+        printPlane();
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

@@ -10,13 +10,6 @@ import com.cllin.main.Exercise;
 public class Exercise08_07 extends Exercise {
     private final int[] testSuites = {1, 27, 39, 100, 25, 492, 20, 1734, 5566, 183, 5};
 
-    @Override
-    public void run() {
-        for (int n : testSuites) {
-            System.out.println("There are " + makeChanges(n) + " ways of changes for " + n);
-        }
-    }
-    
     /*
      * C(j) = Changes in order. For example, {1, 5, 10, 25}
      * W(i, j) = Ways to representing i cents with C(0, j) (inclusive)
@@ -45,5 +38,22 @@ public class Exercise08_07 extends Exercise {
         }
         
         return counts[n][3];
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (int n : testSuites) {
+            System.out.println("There are " + makeChanges(n) + " ways of changes for " + n);
+        }    
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

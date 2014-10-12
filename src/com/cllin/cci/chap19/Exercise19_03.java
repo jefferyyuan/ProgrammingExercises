@@ -7,20 +7,6 @@ import com.cllin.main.Exercise;
  */
 
 public class Exercise19_03 extends Exercise {
-
-    @Override
-    public void run() {
-        for (int n = 20; n >= 1; n--) {
-            long input = getFactorial(n);
-            int numOfZeros = getZeros(n); 
-            
-            if (getReference(input) != getZeros(n)) {
-                System.out.println("Failed");
-            }
-
-            System.out.printf("%d! = %d, it has %d zeros%n", n, input, numOfZeros);
-        }
-    }
     
     private static int getReference(long input) {
         int count = 0;
@@ -49,6 +35,31 @@ public class Exercise19_03 extends Exercise {
         }
         
         return factorial;
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (int n = 20; n >= 1; n--) {
+            long input = getFactorial(n);
+            int numOfZeros = getZeros(n);
+
+            if (getReference(input) != getZeros(n)) {
+                System.out.println("Failed");
+            }
+
+            System.out.printf("%d! = %d, it has %d zeros%n", n, input,
+                    numOfZeros);
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 
 }

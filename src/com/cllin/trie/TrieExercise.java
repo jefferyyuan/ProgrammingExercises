@@ -6,7 +6,7 @@ public class TrieExercise extends Exercise {
 
     @Override
     protected void initialize() {
-	return;
+        return;
     }
 
     @Override
@@ -35,12 +35,12 @@ public class TrieExercise extends Exercise {
         trie.find(banana);
         
         trie.delete(apple);
-        trie.find(apple);	
+        trie.find(apple);
     }
 
     @Override
     protected void test() {
-	return;
+        return;
     }
 
 }

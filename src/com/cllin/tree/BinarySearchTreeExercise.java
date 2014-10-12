@@ -18,7 +18,7 @@ public class BinarySearchTreeExercise extends Exercise{
             int key = (int) (Math.random() * MAXIMUM);
             keys[i] = key;
             tree.insert(new Node(key, null, null, null));
-        }	
+        }
     }
 
     @Override
@@ -71,11 +71,11 @@ public class BinarySearchTreeExercise extends Exercise{
           }
       }
       
-      System.out.println("After " + validDeletes + " deletion, the size of the tree is " + tree.getSize());	
+      System.out.println("After " + validDeletes + " deletion, the size of the tree is " + tree.getSize());
     }
 
     @Override
     protected void test() {
-	return;
+        return;
     }
 }

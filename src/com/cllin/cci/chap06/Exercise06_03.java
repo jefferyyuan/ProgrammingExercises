@@ -11,15 +11,6 @@ public class Exercise06_03 extends Exercise {
     private final int MAXIMUM_A = 11;
     private final int MAXIMUM_B = 7;
     
-    @Override
-    public void run() {
-        for (int i = 0; i <= MAXIMUM_A; i++) {
-            int nSteps = getWater(i, MAXIMUM_A, MAXIMUM_B);
-            System.out.printf("It takes %d steps to get %d%n", nSteps, i);
-            System.out.println("------------------------------");
-        }
-    }
-    
     private static int getWater(int goal, int maxA, int maxB) {
         if (goal > maxA && goal > maxB) return Integer.MAX_VALUE;
         
@@ -63,6 +54,25 @@ public class Exercise06_03 extends Exercise {
         A_POUR_TO_B,
         CLEAR_B,
         FILL_A
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (int i = 0; i <= MAXIMUM_A; i++) {
+            int nSteps = getWater(i, MAXIMUM_A, MAXIMUM_B);
+            System.out.printf("It takes %d steps to get %d%n", nSteps, i);
+            System.out.println("------------------------------");
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 
 }

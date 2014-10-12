@@ -5,7 +5,12 @@ import com.cllin.main.Exercise;
 public class Exercise14_01 extends Exercise {
 
     @Override
-    public void run() {
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
         System.out.println("******************");
         System.out.println("SINGLETON PATTERN");
         System.out.println("******************");
@@ -19,5 +24,10 @@ public class Exercise14_01 extends Exercise {
         
         MyClass factory = MyClass.getFactoryInstance("Hello World!");
         System.out.println("content=\t" + factory.getContent());
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

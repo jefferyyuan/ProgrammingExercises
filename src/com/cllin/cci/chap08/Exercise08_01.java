@@ -7,16 +7,7 @@ import com.cllin.main.Exercise;
  */
 
 public class Exercise08_01 extends Exercise {
-//    Limited by the size of an integer, can be extended by using a long instead
 
-    @Override
-    public void run() {
-        for (int n = 1; n <= 45; n++) {
-            int fibonacci = getFibonacciNumber(n);
-            System.out.println("The " + n + "th Fibonacci number is " + fibonacci);
-        }
-    }
-    
     private static int getFibonacciNumber(int n){
         if (n == 1 || n == 2) return 1;
         
@@ -32,6 +23,25 @@ public class Exercise08_01 extends Exercise {
         }
         
         return number;
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (int n = 1; n <= 45; n++) {
+//          Limited by the size of an integer, can be extended by using a long instead
+            int fibonacci = getFibonacciNumber(n);
+            System.out.println("The " + n + "th Fibonacci number is " + fibonacci);
+        }        
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 
 }

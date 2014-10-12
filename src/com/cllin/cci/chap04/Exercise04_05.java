@@ -78,7 +78,7 @@ public class Exercise04_05 extends Exercise {
 
     @Override
     protected void runExercise() {
-    result = getNextNode(node);    
+        result = getNextNode(node);    
     }
 
     @Override

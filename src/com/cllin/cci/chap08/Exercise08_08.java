@@ -12,32 +12,6 @@ public class Exercise08_08 extends Exercise {
     private int count;
     private Pair[] pairs = new Pair[8];
 
-    @Override
-    public void run() {
-        initialize();
-        
-        for (int i = 0; i < 8; i++) {
-            count = 0;
-            initialize();
-            placeQueen(i, 0);
-            
-//            PRINT SOLUTION
-            if(count == 8){
-                System.out.println("-------------------------");
-                for (int j = 0; j < count; j++) {
-                    System.out.print(" (" + pairs[j].x + "," + pairs[j].y + ")");
-                    if (j == 3) System.out.println();
-                    
-                    chessBoard[(int)pairs[j].x][(int)pairs[j].y] = true;
-                }
-                
-                printBoard(chessBoard);
-                System.out.println("-------------------------");
-            }
-        }
-        
-    }
-    
     private void placeQueen(int x, int y) {
         chessBoard[x][y] = false;
         pairs[count] = new Pair(x, y);
@@ -55,18 +29,9 @@ public class Exercise08_08 extends Exercise {
         
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {
-                if(chessBoard[i][j]){
+                if (chessBoard[i][j]) {
                     placeQueen(i, j);
                 }
-            }
-        }
-    }
-    
-    protected void initialize() {
-        chessBoard = new boolean[8][8];
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
-                chessBoard[i][j] = true;
             }
         }
     }
@@ -88,6 +53,42 @@ public class Exercise08_08 extends Exercise {
         private Pair(int x, int y) {
             this.x = x;
             this.y = y;
+        }
+    }
+    
+    @Override
+    protected void initialize() {
+        chessBoard = new boolean[8][8];
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                chessBoard[i][j] = true;
+            }
+        }
+    }
+
+    @Override
+    protected void runExercise() {
+        for (int i = 0; i < 8; i++) {
+            count = 0;
+            initialize();
+            placeQueen(i, 0);
+
+        }
+    }
+
+    @Override
+    protected void test() {
+        if (count == 8) {
+            System.out.println("-------------------------");
+            for (int j = 0; j < count; j++) {
+                System.out.print(" (" + pairs[j].x + "," + pairs[j].y + ")");
+                if (j == 3) System.out.println();
+                
+                chessBoard[(int)pairs[j].x][(int)pairs[j].y] = true;
+            }
+            
+            printBoard(chessBoard);
+            System.out.println("-------------------------");
         }
     }
 }

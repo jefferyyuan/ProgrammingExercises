@@ -28,7 +28,7 @@ public class Thread101 extends Exercise {
 
     @Override
     protected void initialize() {
-	return;
+        return;
     }
 
     @Override
@@ -46,12 +46,12 @@ public class Thread101 extends Exercise {
             System.out.println("MyRunnable is finally finished...really?");
         } catch (Exception e) {
             e.printStackTrace();
-        }	
+        }
     }
 
     @Override
     protected void test() {
-	return;
+        return;
     }
 
 }

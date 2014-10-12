@@ -9,24 +9,13 @@ import com.cllin.main.Exercise;
  * There can be multiple employees, but only one TL or PM. 
  * 
  * An incoming telephone call must be allocated to a fresher who is free. 
- * If a fresher can��t handle the call, he or she must escalate the call to technical lead. 
+ * If a fresher can't handle the call, he or she must escalate the call to technical lead. 
  * If the TL is not free or not able to handle it, then the call should be escalated to PM. 
  * 
  * Design the classes and data structures for this problem. Implement a method getCallHandler().
  */
 
 public class Exercise07_02 extends Exercise {
-
-    @Override
-    public void run() {
-        CallCenter center = new CallCenter();
-        
-        int trials = 10;
-        for (int i = 0; i < trials; i++) {
-            center.getCall();
-            System.out.println("------------------------------");
-        }
-    }
     
     private class CallCenter {
         private final int nFresher = 5;
@@ -86,7 +75,9 @@ public class Exercise07_02 extends Exercise {
             @Override
             public boolean takePhoneCall() {
                 boolean isAble = isAbleToHandle();
-                System.out.printf("%s%n", (isAble)? "I'm a fresher. Your problem is solved, thank you for your call!" : "I'm a fresher. Sorry that I cannot solve your problem, please allow me to transfer the call to our technical lead");
+                System.out.printf("%s%n", 
+                        (isAble)? "I'm a fresher. Your problem is solved, thank you for your call!" 
+                                : "I'm a fresher. Sorry that I cannot solve your problem, please allow me to transfer the call to our technical lead");
                 return isAble;
             }
 
@@ -117,7 +108,9 @@ public class Exercise07_02 extends Exercise {
                     return false;
                 }
                 
-                System.out.printf("%s%n", (isAble)? "I'm the technical lead. Your problem is solved, thank you for your call!" : "I'm the technical lead. Sorry that I cannot solve your problem, please allow me to transfer the call to our product manager");
+                System.out.printf("%s%n", 
+                        (isAble)? "I'm the technical lead. Your problem is solved, thank you for your call!" 
+                                : "I'm the technical lead. Sorry that I cannot solve your problem, please allow me to transfer the call to our product manager");
                 return isAble;
             }
 
@@ -161,5 +154,29 @@ public class Exercise07_02 extends Exercise {
         boolean isAbleToHandle();
         boolean takePhoneCall();
         boolean getRandomBoolean();
+    }
+
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+
+    @Override
+    protected void runExercise() {
+        CallCenter center = new CallCenter();
+        
+        int trials = 10;
+        for (int i = 0; i < trials; i++) {
+            center.getCall();
+            System.out.println("This is the end of a call\n\n");
+        }
+    }
+
+
+    @Override
+    protected void test() {
+        return;
     }
 }

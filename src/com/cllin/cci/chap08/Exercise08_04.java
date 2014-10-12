@@ -11,19 +11,6 @@ import com.cllin.main.Exercise;
 
 public class Exercise08_04 extends Exercise {
     private final String[] testSuites = {"lol", "bbc", "apple", "banana", "car", "computer"};
-
-    @Override
-    public void run() {
-        for (String string : testSuites) {
-            ArrayList<String> permutations = getPermutation(string);
-            for (String permutation : permutations) {
-                System.out.println(permutation + " is a pemutation of " + string);
-            }
-            
-            System.out.println("------------------------");
-        }
-
-    }
     
     private static ArrayList<String> getPermutation(String input) {
         ArrayList<String> permutations = new ArrayList<String>();
@@ -49,6 +36,28 @@ public class Exercise08_04 extends Exercise {
         }
         
         return permutations;
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (String string : testSuites) {
+            ArrayList<String> permutations = getPermutation(string);
+            for (String permutation : permutations) {
+                System.out.println(permutation + " is a pemutation of " + string);
+            }
+            
+            System.out.println("------------------------");
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 
 }

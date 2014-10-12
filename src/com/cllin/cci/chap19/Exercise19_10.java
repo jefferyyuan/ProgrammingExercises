@@ -9,20 +9,6 @@ import com.cllin.main.Exercise;
 
 public class Exercise19_10 extends Exercise {
 
-    @Override
-    public void run() {
-        final int size = 10000;
-        int[] counts = new int[7];
-        
-        for (int i = 0; i < size; i++) {
-            counts[rand7() - 1]++;
-        }
-        
-        for (int i = 0; i < 7; i++) {
-            System.out.printf("P(%d) = %f%n", i + 1, (double) counts[i] / (double) size);
-        }
-    }
-    
     private static int rand7() {
         int c = Integer.MAX_VALUE;
         
@@ -37,5 +23,30 @@ public class Exercise19_10 extends Exercise {
     
     private static int rand5() {
         return (int) (Math.random() * 5) + 1;
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        final int size = 10000;
+        int[] counts = new int[7];
+
+        for (int i = 0; i < size; i++) {
+            counts[rand7() - 1]++;
+        }
+
+        for (int i = 0; i < 7; i++) {
+            System.out.printf("P(%d) = %f%n", i + 1, (double) counts[i]
+                    / (double) size);
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

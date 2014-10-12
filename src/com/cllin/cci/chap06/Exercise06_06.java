@@ -14,27 +14,32 @@ import com.cllin.main.Exercise;
  */
 
 public class Exercise06_06 extends Exercise {
-    private LinkedList<Integer> mOpenedLocker;
-
-    @Override
-    public void run() {
-        mOpenedLocker = findOpenedLocker(100);
-        printResult();
-    }
+    private LinkedList<Integer> mOpenedLockers;
     
     private static LinkedList<Integer> findOpenedLocker(int nLockers){
         LinkedList<Integer> openedLocker = new LinkedList<Integer>();
         
         for (int i = 1; i <= nLockers; i++) {
-//            Using i <= nLockers / i instead of i * i <= nLockers to avoid overflow
+//          Using i <= nLockers / i instead of i * i <= nLockers to avoid overflow
             if (i * i <= nLockers / i) openedLocker.add(i);
         }
         
         return openedLocker;
     }
-    
-    private void printResult(){
-        for (int n : mOpenedLocker) {
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        mOpenedLockers = findOpenedLocker(100);
+    }
+
+    @Override
+    protected void test() {
+        for (int n : mOpenedLockers) {
             System.out.printf("The %dth locker is open%n", n);
         }
     }

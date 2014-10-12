@@ -10,11 +10,6 @@ import com.cllin.main.Exercise;
 
 public class Exercise07_05 extends Exercise {
 
-    @Override
-    public void run() {
-        System.out.println("I've built a online book reader system, yay!");
-    }
-    
     @SuppressWarnings("unused")
     private class SystemManager {
         private ArrayList<Book> mBookList;
@@ -29,22 +24,19 @@ public class Exercise07_05 extends Exercise {
         }
         
         public boolean addBook(String name, String content){
-//            Blah blah
             return true;
         }
         
         public boolean deleteBook(String name){
-//            Blah blah
             return true;
         }
         
         public boolean addUser(String name, String content){
-//            Blah blah
             return true;
         }
         
         private int getNextAvailableID(int flag){
-//            Manage ID pools for Book and User
+//          Manage ID pools for Book and User
             return 0;
         }
         
@@ -74,7 +66,6 @@ public class Exercise07_05 extends Exercise {
         private int page;
         public BookOfUser(String name, String content) {
             super(name, content);
-//            Blah blah
         }
         
         public int getPage() {
@@ -96,24 +87,35 @@ public class Exercise07_05 extends Exercise {
         private ArrayList<BookOfUser> mReadingList;
         @Override
         public boolean addBookToReadingList() {
-//            Blah blah
             return false;
         }
         @Override
         public boolean deleteBookFromReadingList() {
-//            Blah blah
             return false;
         }
         @Override
         public boolean updateBookToReadingList(BookOfUser book) {
-//            Blah blah
             return false;
         }
         @Override
         public BookOfUser findBookFromReadingList() {
-//            Blah blah
             return null;
         }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        System.out.println("I've built a online book reader system, yay!");
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 
 }

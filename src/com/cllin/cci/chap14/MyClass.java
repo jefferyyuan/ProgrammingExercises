@@ -33,7 +33,6 @@ public class MyClass{
         return content;
     }
     
-//    ************************************************************
     
 //    ************************************************************
 //    Methods below are used in Exercise 14_05
@@ -54,6 +53,4 @@ public class MyClass{
     public void methodWithAnnotation(){
         System.out.println("\tI am a method with a cool annotation!");
     }
-    
-//    ************************************************************
 }

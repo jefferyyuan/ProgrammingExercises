@@ -24,17 +24,6 @@ public class Exercise09_07 extends Exercise {
     private Person[] circus;
     private ArrayList<Person> longestTower;
     
-    @Override
-    public void run() {
-        initialize();
-        longestTower = getLongestTower(circus);
-        
-        System.out.println("The longest tower is:");
-        for (Person person : longestTower) {
-            System.out.printf("(%d, %d) ", person.height, person.weight);
-        }
-    }
-    
     private static ArrayList<Person> getLongestTower(Person[] circus) {
         Person[] sortByHeight = Arrays.copyOf(circus, circus.length);
         Person[] sortByWeight = Arrays.copyOf(circus, circus.length);
@@ -76,13 +65,6 @@ public class Exercise09_07 extends Exercise {
             return Integer.compare(a.weight, b.weight);
         }
     }
-    
-    protected void initialize() {
-        circus = new Person[CIRCUS_SIZE];
-        for (int i = 0; i < CIRCUS_SIZE; i++) {
-            circus[i] = new Person();
-        }
-    }
 
     private class Person {
         private static final int MAXIMUM_HEIGHT = 200;
@@ -97,5 +79,28 @@ public class Exercise09_07 extends Exercise {
             height = (int)(Math.random() * (MAXIMUM_HEIGHT - MINIMUM_HEIGHT)) + MINIMUM_HEIGHT;
             weight = (int)(Math.random() * (MAXIMUM_WEIGHT - MINIMUM_WEIGHT)) + MINIMUM_WEIGHT;
         }
+    }
+
+    @Override
+    protected void initialize() {
+        circus = new Person[CIRCUS_SIZE];
+        for (int i = 0; i < CIRCUS_SIZE; i++) {
+            circus[i] = new Person();
+        }
+    }
+
+    @Override
+    protected void runExercise() {
+        longestTower = getLongestTower(circus);
+
+        System.out.println("The longest tower is:");
+        for (Person person : longestTower) {
+            System.out.printf("(%d, %d) ", person.height, person.weight);
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

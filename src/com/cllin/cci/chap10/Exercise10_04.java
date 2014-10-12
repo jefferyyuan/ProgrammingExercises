@@ -10,34 +10,6 @@ public class Exercise10_04 extends Exercise {
 
     private static final int MAXIMUM = 1000;
     
-    @Override
-    public void run() {
-        for (int i = 0; i < 1000; i++) {
-            int a = (int) (Math.random() * MAXIMUM);
-            int b = (int) (Math.random() * MAXIMUM);
-            
-            if (generateNegative()) a = -a;
-            if (generateNegative()) b = -b;
-            
-            if (a - b != minus(a, b)) {
-                System.out.println("Failed, minus");
-                return;
-            }
-            
-            if (a * b != time(a, b)) {
-                System.out.println("Failed, time");
-                return;
-            }
-            
-            if (a / b != divide(a, b)) {
-                System.out.println("Failed, divide");
-                return;
-            }
-        }
-        
-        System.out.println("Success!");
-    }
-    
     private static int minus(int a, int b) {
         return a + (-b);
     }
@@ -84,5 +56,45 @@ public class Exercise10_04 extends Exercise {
     
     private static boolean generateNegative() {
         return Math.random() > 0.5;
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (int i = 0; i < 1000; i++) {
+            int a = (int) (Math.random() * MAXIMUM);
+            int b = (int) (Math.random() * MAXIMUM);
+
+            if (generateNegative())
+                a = -a;
+            if (generateNegative())
+                b = -b;
+
+            if (a - b != minus(a, b)) {
+                System.out.println("Failed, minus");
+                return;
+            }
+
+            if (a * b != time(a, b)) {
+                System.out.println("Failed, time");
+                return;
+            }
+
+            if (a / b != divide(a, b)) {
+                System.out.println("Failed, divide");
+                return;
+            }
+        }
+
+        System.out.println("Success!");
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

@@ -42,7 +42,7 @@ public class Exercise03_04 extends Exercise {
 
     @Override
     protected void runExercise() {
-    moveDisk(SIZE, stack1, stack2,stack3);    
+        moveDisk(SIZE, stack1, stack2,stack3);    
     }
 
     @Override

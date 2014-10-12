@@ -25,15 +25,15 @@ public class AVLTreeExercise extends Exercise {
     
     @Override
     protected void initialize() {
-	tree = new AVLTree();
-	
+        tree = new AVLTree();
+        
         for (int i = 0; i < SIZE; i++) {
             int key = (int)(Math.random() * MAXIMUM);
             tree.insert(key);
             reference[i] = key;
         }
         
-        Arrays.sort(reference);	
+        Arrays.sort(reference);
     }
 
     @Override
@@ -48,11 +48,11 @@ public class AVLTreeExercise extends Exercise {
         System.out.printf("The minimum value on the tree is %d%n", minimum);
         System.out.printf("The size of the tree is %d%n", size);
         System.out.printf("The tree is %s%n", (isEmpty)? "empty" : "not empty");
-        System.out.printf("The tree is %s%n", (isSorted)? "sorted" : "not sorted");	
+        System.out.printf("The tree is %s%n", (isSorted)? "sorted" : "not sorted");
     }
 
     @Override
     protected void test() {
-	return;
+        return;
     }
 }

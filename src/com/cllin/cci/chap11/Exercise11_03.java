@@ -13,14 +13,6 @@ public class Exercise11_03 extends Exercise {
     private HashSet<Integer> reference;
     private ArrayList<Integer> missingIntegers;
     
-    @Override
-    public void run() {
-        initizalize();
-        missingIntegers = findMissingIntegers(numbers);
-        
-        test();
-    }
-    
     private static ArrayList<Integer> findMissingIntegers(int[] numbers) {
         ArrayList<Integer> missing = new ArrayList<Integer>();
         byte[] map = new byte[1000];
@@ -38,7 +30,8 @@ public class Exercise11_03 extends Exercise {
         return missing;
     }
     
-    private void initizalize() {
+    @Override
+    protected void initialize() {
         numbers = new int[SIZE];
         reference = new HashSet<Integer>();
         
@@ -53,7 +46,13 @@ public class Exercise11_03 extends Exercise {
         
         reference.removeAll(contains);
     }
-    
+
+    @Override
+    protected void runExercise() {
+        missingIntegers = findMissingIntegers(numbers);
+    }
+
+    @Override
     protected void test() {
         if (reference.size() != missingIntegers.size()) {
             System.out.println("Failed");
@@ -74,5 +73,4 @@ public class Exercise11_03 extends Exercise {
         
         System.out.println("Success!");
     }
-
 }

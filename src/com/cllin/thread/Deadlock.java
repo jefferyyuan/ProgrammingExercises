@@ -34,7 +34,7 @@ public class Deadlock extends Exercise {
 
     @Override
     protected void initialize() {
-	return;
+        return;
     }
 
     @Override
@@ -48,11 +48,11 @@ public class Deadlock extends Exercise {
 
         new Thread(new Runnable() {
             public void run() { gaston.bow(alphonse); }
-        }).start();	
+        }).start();
     }
 
     @Override
     protected void test() {
-	return;
+        return;
     }
 }

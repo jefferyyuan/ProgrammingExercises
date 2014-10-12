@@ -17,20 +17,6 @@ public class Exercise08_05 extends Exercise {
     
     ArrayList<String> result;
     
-    @Override
-    public void run() {
-        for (int n : testSuite) {
-            System.out.println("For " + n + " parenthese,");
-            result = getParentheses(n);
-            
-            for (String string : result) {
-                System.out.printf("%s%n", string);
-            }
-            
-            System.out.println("------------------------------");
-        }
-    }
-    
     private static ArrayList<String> getParentheses(int n) {
         return getParenthesesHelper(new ArrayList<String>(), new String(), n, n);
     }
@@ -49,5 +35,27 @@ public class Exercise08_05 extends Exercise {
         return result;
     }
 
+    @Override
+    protected void initialize() {
+        return;
+    }
 
+    @Override
+    protected void runExercise() {
+        for (int n : testSuite) {
+            System.out.println("For " + n + " parenthese,");
+            result = getParentheses(n);
+            
+            for (String string : result) {
+                System.out.printf("%s%n", string);
+            }
+            
+            System.out.println("------------------------------");
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
+    }
 }

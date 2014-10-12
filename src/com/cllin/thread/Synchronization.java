@@ -69,7 +69,7 @@ public class Synchronization extends Exercise {
 
     @Override
     protected void initialize() {
-	return;
+        return;
     }
 
     @Override
@@ -87,11 +87,11 @@ public class Synchronization extends Exercise {
             System.out.println("Such unpredictable behavior is due to THREAD INTERFERENCE");
         } catch (Exception e) {
             e.printStackTrace();
-        }	
+        }
     }
 
     @Override
     protected void test() {
-	return;
+        return;
     }
 }

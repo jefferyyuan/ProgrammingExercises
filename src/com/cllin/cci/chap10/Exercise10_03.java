@@ -7,17 +7,6 @@ public class Exercise10_03 extends Exercise {
             new Line(2, 1, false), new Line(7, 9, false), new Line(-12, 10, false), 
             new Line(0, 10, true), new Line(0, 3, true), new Line(0, 10, true)};
     
-    @Override
-    public void run() {
-        for (Line line : lines) {
-            for (Line anotherLine : lines) {
-                if (line.isIntersecting(anotherLine)) {
-                    System.out.println(line.getLine() + " and " + anotherLine.getLine() + " will not intersect");
-                }
-            }
-        }
-    }
-
     private class Line {
         private int slope = 0;
         private int yIntercept = 0;
@@ -52,5 +41,27 @@ public class Exercise10_03 extends Exercise {
                 return "y=" + slope + "x + " + yIntercept;
             }
         }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (Line line : lines) {
+            for (Line anotherLine : lines) {
+                if (line.isIntersecting(anotherLine)) {
+                    System.out.println(line.getLine() + " and "
+                            + anotherLine.getLine() + " will not intersect");
+                }
+            }
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

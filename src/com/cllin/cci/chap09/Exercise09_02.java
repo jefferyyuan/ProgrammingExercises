@@ -13,19 +13,6 @@ public class Exercise09_02 extends Exercise {
     private final String[][] testSuite = {
             {"abc", "pas", "ddj", "jbd", "sap", "cab", "bac"}
     };
-
-    @Override
-    public void run() {
-        for (String[] strings : testSuite) {
-            System.out.println("Before sorting:");
-            printStrings(strings);
-            
-            String[] sorted = sortByAnagrams(strings);
-            
-            System.out.println("After sorting:");
-            printStrings(sorted);
-        }
-    }
     
     private static String[] sortByAnagrams(String[] strings) {
         AnagramComparator comparator = new AnagramComparator();
@@ -69,5 +56,28 @@ public class Exercise09_02 extends Exercise {
             System.out.println("\t" + strings[i]);
         }
         System.out.println("------------------------------");
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (String[] strings : testSuite) {
+            System.out.println("Before sorting:");
+            printStrings(strings);
+
+            String[] sorted = sortByAnagrams(strings);
+
+            System.out.println("After sorting:");
+            printStrings(sorted);
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

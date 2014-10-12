@@ -18,31 +18,6 @@ public class Exercise09_01 extends Exercise {
     protected int[] a = new int[SIZE_A];
     protected int[] b = new int[SIZE_B];
     
-    @Override
-    public void run() {
-        initialize();
-        a = merge(a, b, SIZE_ACTUAL_A, SIZE_B);
-        check();
-    }
-    
-    private void check() {
-        int size = SIZE_ACTUAL_A + SIZE_B;
-        for (int i = 1; i < size; i++) {
-            if(a[i] < a[i - 1]){
-                System.out.println("Failed");
-                return;
-            }
-        }
-        
-        for (int i = size; i < SIZE_A; i++) {
-            if (a[i] != 0) {
-                System.out.println("Failed");
-                return;
-            }
-        }
-        System.out.println("Success!");
-    }
-    
     private int[] merge(int[] a, int[] b, int sizeA, int sizeB) {
         int i = sizeA - 1;
         int j = sizeB - 1;
@@ -65,6 +40,7 @@ public class Exercise09_01 extends Exercise {
         return a;
     }
     
+    @Override
     protected void initialize() {
         Arrays.fill(a, 0);
         
@@ -78,5 +54,29 @@ public class Exercise09_01 extends Exercise {
         
         Arrays.sort(a, 0, SIZE_ACTUAL_A);
         Arrays.sort(b);
+    }
+
+    @Override
+    protected void runExercise() {
+        a = merge(a, b, SIZE_ACTUAL_A, SIZE_B);        
+    }
+
+    @Override
+    protected void test() {
+        int size = SIZE_ACTUAL_A + SIZE_B;
+        for (int i = 1; i < size; i++) {
+            if(a[i] < a[i - 1]){
+                System.out.println("Failed");
+                return;
+            }
+        }
+        
+        for (int i = size; i < SIZE_A; i++) {
+            if (a[i] != 0) {
+                System.out.println("Failed");
+                return;
+            }
+        }
+        System.out.println("Success!");
     }
 }

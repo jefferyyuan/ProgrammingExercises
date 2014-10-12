@@ -12,17 +12,6 @@ public class Exercise08_03 extends Exercise {
     private final int[] testSuite = new int[]{3, 5, 6, 7};
     private ArrayList<Integer> set;
     
-    
-    @Override
-    public void run() {
-        for (int n : testSuite) {
-            initialize(n);
-            ArrayList<ArrayList<Integer>> subsets = getSubset(set);
-            
-            printSet(set, subsets);
-        }
-    }
-    
     private static ArrayList<ArrayList<Integer>> getSubset(ArrayList<Integer> set) {
         return getSubsetHelper(set, 0);
     }
@@ -75,5 +64,25 @@ public class Exercise08_03 extends Exercise {
         for (int i = 0; i < size; i++) {
             set.add(i);
         }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (int n : testSuite) {
+            initialize(n);
+            ArrayList<ArrayList<Integer>> subsets = getSubset(set);
+            
+            printSet(set, subsets);
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

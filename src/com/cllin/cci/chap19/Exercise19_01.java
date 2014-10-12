@@ -9,23 +9,6 @@ import com.cllin.main.Exercise;
 public class Exercise19_01 extends Exercise {
     private static final int MAXIMUM = 100;
     
-    @Override
-    public void run() {
-        for (int i = 0; i < 10; i++) {
-            Pair pair = new Pair();
-            int a_buf = pair.a;
-            int b_buf = pair.b;
-            
-            pair.swap();
-            
-            if (a_buf != pair.b || b_buf != pair.a) {
-                System.out.println("Failed");
-                return;
-            }
-        }
-        System.out.println("Successed!");
-    }
-    
     private class Pair {
         public int a = 0;
         public int b = 0;
@@ -39,5 +22,32 @@ public class Exercise19_01 extends Exercise {
             b = b - a;
             a = a + b;
         }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (int i = 0; i < 10; i++) {
+            Pair pair = new Pair();
+            int a_buf = pair.a;
+            int b_buf = pair.b;
+
+            pair.swap();
+
+            if (a_buf != pair.b || b_buf != pair.a) {
+                System.out.println("Failed");
+                return;
+            }
+        }
+        System.out.println("Success!");
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

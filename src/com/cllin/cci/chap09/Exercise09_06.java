@@ -17,29 +17,6 @@ public class Exercise09_06 extends Exercise {
     private int[] reference;
     private int[][] matrix;
     
-    @Override
-    public void run() {
-        initialize();
-        
-        for (int i = 0; i < 10; i++) {
-            int target = (int) (Math.random() * MAXIMUM);
-            
-            int key = find(matrix, target);
-            int ref = search(reference, target);
-            
-            if (key == -1 && ref == -1) {
-                System.out.println(target + " does not exist in the matrix, success!");
-            } else if (key != -1 && ref != -1) {
-                int col = key % ROW;
-                int row = (key - col) / ROW;
-                System.out.println(target + " is found at (" + row + "," + col + "), success");
-            } else {
-                System.out.println("Failed");
-            }
-        }
-
-    }
-    
     private static int find(int[][] matrix, int target){
         int nRows = matrix.length;
         int nCols = matrix[0].length;
@@ -84,6 +61,16 @@ public class Exercise09_06 extends Exercise {
         return -1;
     }
     
+    private static int search(int[] array, int target) {
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target)
+                return i;
+        }
+
+        return -1;
+    }
+
+    @Override
     protected void initialize(){
         reference = new int[SIZE];
         matrix = new int[ROW][COLUMN];
@@ -101,14 +88,32 @@ public class Exercise09_06 extends Exercise {
                 matrix[i][j] = reference[i * ROW + j];
             }
         }
-        
     }
-    
-    private static int search(int[] array, int target) {
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == target) return i;
+
+    @Override
+    protected void runExercise() {
+        for (int i = 0; i < 10; i++) {
+            int target = (int) (Math.random() * MAXIMUM);
+
+            int key = find(matrix, target);
+            int ref = search(reference, target);
+
+            if (key == -1 && ref == -1) {
+                System.out.println(target
+                        + " does not exist in the matrix, success!");
+            } else if (key != -1 && ref != -1) {
+                int col = key % ROW;
+                int row = (key - col) / ROW;
+                System.out.println(target + " is found at (" + row + "," + col
+                        + "), success");
+            } else {
+                System.out.println("Failed");
+            }
         }
-        
-        return -1;
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

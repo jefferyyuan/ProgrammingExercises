@@ -22,66 +22,66 @@ import com.cllin.main.LeetCodeExercise;
  */
 
 public class SortColors implements LeetCodeExercise {
-	private final int MAXIMUM = 3;
-	private final int SIZE = 10;
-	
-	private int[] numbers;
-	
-	@Override
-	public void initialize() {
-		numbers = new int[SIZE];
-		
-		for (int i = 0; i < SIZE; i++) {
-			numbers[i] = (int)(Math.random() * MAXIMUM);
-		}
-	}
+    private final int MAXIMUM = 3;
+    private final int SIZE = 10;
+    
+    private int[] numbers;
+    
+    @Override
+    public void initialize() {
+        numbers = new int[SIZE];
+        
+        for (int i = 0; i < SIZE; i++) {
+            numbers[i] = (int)(Math.random() * MAXIMUM);
+        }
+    }
 
-	@Override
-	public void run() {
-		initialize();
-		
-		numbers = sortColors(numbers);
-		
-		if (test()) System.out.println("Success");
-		else System.out.println("Failed");	
-	}
-	
+    @Override
+    public void run() {
+        initialize();
+        
+        numbers = sortColors(numbers);
+        
+        if (test()) System.out.println("Success");
+        else System.out.println("Failed");    
+    }
+    
     private int[] sortColors(int[] A) {
-    	if (A.length == 0) return null;
-    	
-    	int R = 0;
-    	int B = A.length - 1;
-    	
-    	int i = 0;
-    	while (i < B + 1) {
-    		switch(A[i]) {
-    		case 0:
-    			swap(A, R++, i);
-    			continue;
-    		case 2:
-    			swap(A, B--, i);
-    			continue;
-    		}
-    		
-    		i++;
-    	}
-    	
+        if (A.length == 0) return null;
+        
+        int R = 0;
+        int B = A.length - 1;
+        
+        int i = 0;
+        while (i < B + 1) {
+            switch(A[i]) {
+            case 0:
+                swap(A, R++, i);
+                continue;
+            case 2:
+                swap(A, B--, i);
+                continue;
+            }
+            
+            i++;
+        }
+        
         return A;
     }
     
     private void swap(int[] A, int x, int y) {
-    	int temp = A[x];
-    	A[x] = A[y];
-    	A[y] = temp;
+        int temp = A[x];
+        A[x] = A[y];
+        A[y] = temp;
     }
 
-	@Override
-	public boolean test() {
-		for (int i = 1; i < SIZE; i++) {
-			if (numbers[i] < numbers[i - 1]) return false;
-		}
-		
-		return true;
-	}
+    @Override
+    public boolean test() {
+        for (int i = 1; i < SIZE; i++) {
+            if (numbers[i] < numbers[i - 1]) return false;
+        }
+        
+        return true;
+    }
 
 }

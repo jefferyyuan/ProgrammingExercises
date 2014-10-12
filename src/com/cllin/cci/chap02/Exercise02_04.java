@@ -47,12 +47,12 @@ public class Exercise02_04 extends Exercise {
         }
         
         listA = dummyA.next;
-        listB = dummyB.next;	
+        listB = dummyB.next;    
     }
 
     @Override
     protected void runExercise() {
-	output = add(listA, listB);	
+    output = add(listA, listB);    
     }
 
     @Override
@@ -69,7 +69,7 @@ public class Exercise02_04 extends Exercise {
         }
         
         System.out.printf("%s%n", 
-        	(solution == referenceA + referenceB)? "Success!" : "Failed");
+            (solution == referenceA + referenceB)? "Success!" : "Failed");
     }
     
     private Node add(Node listA, Node listB) {

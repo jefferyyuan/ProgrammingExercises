@@ -9,7 +9,7 @@ import com.cllin.main.Exercise;
 public class Exercise01_05 extends Exercise {
     
     private final String[] testSuite = new String[]{
-	    "true and false are defined constants of the language and are not the same as True and False"
+        "true and false are defined constants of the language and are not the same as True and False"
     };
     
     private String input;
@@ -17,7 +17,7 @@ public class Exercise01_05 extends Exercise {
 
     @Override
     protected void initialize() {
-	return;
+    return;
     }
 
     @Override
@@ -25,17 +25,17 @@ public class Exercise01_05 extends Exercise {
         for (String string : testSuite) {
             input = string;
             output = replaceSpaces(input);
-        }	
+        }    
     }
 
     @Override
     protected void test() {
-	if (output.equals(input.replaceAll(" ", "%20"))) {
-	    System.out.printf("Input = %s,%nOutput = %s%n", input, output);	
-	} else {
-	    System.out.printf(
-		    "Wrong result: Input = %s,%nOutput = %s%n", input, output);
-	}
+    if (output.equals(input.replaceAll(" ", "%20"))) {
+        System.out.printf("Input = %s,%nOutput = %s%n", input, output);    
+    } else {
+        System.out.printf(
+            "Wrong result: Input = %s,%nOutput = %s%n", input, output);
+    }
     }
 
 //  or, in Java, user input.replaceAll(" ", "%20")

@@ -33,17 +33,17 @@ public class Exercise02_03 extends Exercise {
             node = node.next;
         }
         
-        listHead = dummy.next;	
+        listHead = dummy.next;    
     }
 
     @Override
     protected void runExercise() {
-	return;
+    return;
     }
 
     @Override
     protected void test() {
-	final int nTests = 10;
+    final int nTests = 10;
         for (int count = 0; count < nTests; count++) {
 //          get the node
             int i = 0;
@@ -73,7 +73,7 @@ public class Exercise02_03 extends Exercise {
             }
         }
         
-        System.out.println("Success!");	
+        System.out.println("Success!");    
     }
     
     /*

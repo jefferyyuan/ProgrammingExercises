@@ -26,7 +26,7 @@ public class Exercise01_07 extends Exercise {
 
     @Override
     protected void runExercise() {
-	setZeroes(matrix);        
+    setZeroes(matrix);        
     }
 
     @Override

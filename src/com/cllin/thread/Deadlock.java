@@ -3,7 +3,7 @@ package com.cllin.thread;
 import com.cllin.main.Exercise;
 
 /***************************************************************************************
-*    Title: Java Tutorials Code Sample �V Deadlock.java
+*    Title: Java Tutorials Code Sample Deadlock.java
 *    Author: Oracle
 *    Date: 2013/12/14
 *    Code version: N/A
@@ -11,23 +11,9 @@ import com.cllin.main.Exercise;
 *
 ***************************************************************************************/
 
-public class Deadlock implements Exercise {
+public class Deadlock extends Exercise {
 
-	@Override
-	public void run() {
-		final Friend alphonse = new Friend("Alphonse");
-		final Friend gaston = new Friend("Gaston");
-		
-		new Thread(new Runnable() {
-			public void run() { alphonse.bow(gaston); }
-		}).start();
-
-		new Thread(new Runnable() {
-			public void run() { gaston.bow(alphonse); }
-		}).start();
-	}
-
-	static class Friend {
+    static class Friend {
         private final String name;
         public Friend(String name) {
             this.name = name;
@@ -44,5 +30,29 @@ public class Deadlock implements Exercise {
         public synchronized void bowBack(Friend bower) {
             System.out.format("%s: %s" + " has bowed back to me!%n", this.name, bower.getName());
         }
+    }
+
+    @Override
+    protected void initialize() {
+	return;
+    }
+
+    @Override
+    protected void runExercise() {
+        final Friend alphonse = new Friend("Alphonse");
+        final Friend gaston = new Friend("Gaston");
+        
+        new Thread(new Runnable() {
+            public void run() { alphonse.bow(gaston); }
+        }).start();
+
+        new Thread(new Runnable() {
+            public void run() { gaston.bow(alphonse); }
+        }).start();	
+    }
+
+    @Override
+    protected void test() {
+	return;
     }
 }

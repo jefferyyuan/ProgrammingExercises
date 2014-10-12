@@ -14,7 +14,7 @@ public class Exercise01_02 extends Exercise {
     
     @Override
     protected void initialize() {
-	return;
+    return;
     }
 
     @Override
@@ -26,7 +26,7 @@ public class Exercise01_02 extends Exercise {
 
     @Override
     protected void test() {
-	System.out.printf("The reverse of %s is %s%n", input, getReverse(input));        
+    System.out.printf("The reverse of %s is %s%n", input, getReverse(input));        
     }
     
     private String getReverse(String string) {

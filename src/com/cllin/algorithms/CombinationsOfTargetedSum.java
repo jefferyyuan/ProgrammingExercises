@@ -16,66 +16,66 @@ import com.cllin.main.Exercise;
  * Source: http://www.careercup.com/question?id=5678435150069760
  */
 
-public class CombinationsOfTargetedSum implements Exercise {
+public class CombinationsOfTargetedSum extends Exercise {
 
-	private int N;
-	private ArrayList<ArrayList<Integer>> combinations;
-	
-	@Override
-	public void run() {
-		for (N = 2; N <= 10; N++) {
-			combinations = getCombinations(N);
-			
-			System.out.printf("N = %d%n", N);
-			for (ArrayList<Integer> combination : combinations) {
-				System.out.print("{ ");
-				for (Integer n : combination) {
-					System.out.printf("%d ", n);
-				}
-				System.out.printf("}%n");
-			}
-			
-			System.out.println("------------------------------");
-		}
-	}
-	
-	private ArrayList<ArrayList<Integer>> getCombinations(int n) {
-		if (n < 2) return new ArrayList<ArrayList<Integer>>();
-		
-		HashSet<ArrayList<Integer>> queue = new HashSet<ArrayList<Integer>>();
-		HashSet<ArrayList<Integer>> next = new HashSet<ArrayList<Integer>>();
-		
-		ArrayList<Integer> initialState = new ArrayList<Integer>();
-		initialState.add(1);
-		initialState.add(1);
-		queue.add(initialState);
-		
-		for (int i = 2; i < n; i++) {
-			for (ArrayList<Integer> combination : queue) {
-				ArrayList<Integer> naiveCombination = new ArrayList<Integer>(combination);
-				naiveCombination.add(0, 1);
-				next.add(naiveCombination);
-				
-				for (Integer integer : combination) {
-					ArrayList<Integer> extendedCombination = new ArrayList<Integer>(combination);
-					extendedCombination.remove(integer);
-					extendedCombination.add(integer + 1);
-					next.add(extendedCombination);
-				}
-			}
-			
-			queue = next;
-			next = new HashSet<ArrayList<Integer>>();
-			
-		}
-		
-		ArrayList<ArrayList<Integer>> combinations = new ArrayList<ArrayList<Integer>>();
-		for (ArrayList<Integer> combination : queue) {
-			Collections.sort(combination);
-			combinations.add(combination);
-		}
-		
-		return combinations;
-	}
+    private int N;
+    private ArrayList<ArrayList<Integer>> combinations;
+    
+    @Override
+    public void run() {
+        for (N = 2; N <= 10; N++) {
+            combinations = getCombinations(N);
+            
+            System.out.printf("N = %d%n", N);
+            for (ArrayList<Integer> combination : combinations) {
+                System.out.print("{ ");
+                for (Integer n : combination) {
+                    System.out.printf("%d ", n);
+                }
+                System.out.printf("}%n");
+            }
+            
+            System.out.println("------------------------------");
+        }
+    }
+    
+    private ArrayList<ArrayList<Integer>> getCombinations(int n) {
+        if (n < 2) return new ArrayList<ArrayList<Integer>>();
+        
+        HashSet<ArrayList<Integer>> queue = new HashSet<ArrayList<Integer>>();
+        HashSet<ArrayList<Integer>> next = new HashSet<ArrayList<Integer>>();
+        
+        ArrayList<Integer> initialState = new ArrayList<Integer>();
+        initialState.add(1);
+        initialState.add(1);
+        queue.add(initialState);
+        
+        for (int i = 2; i < n; i++) {
+            for (ArrayList<Integer> combination : queue) {
+                ArrayList<Integer> naiveCombination = new ArrayList<Integer>(combination);
+                naiveCombination.add(0, 1);
+                next.add(naiveCombination);
+                
+                for (Integer integer : combination) {
+                    ArrayList<Integer> extendedCombination = new ArrayList<Integer>(combination);
+                    extendedCombination.remove(integer);
+                    extendedCombination.add(integer + 1);
+                    next.add(extendedCombination);
+                }
+            }
+            
+            queue = next;
+            next = new HashSet<ArrayList<Integer>>();
+            
+        }
+        
+        ArrayList<ArrayList<Integer>> combinations = new ArrayList<ArrayList<Integer>>();
+        for (ArrayList<Integer> combination : queue) {
+            Collections.sort(combination);
+            combinations.add(combination);
+        }
+        
+        return combinations;
+    }
 
 }

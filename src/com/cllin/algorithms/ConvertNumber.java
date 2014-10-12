@@ -9,58 +9,58 @@ import com.cllin.main.Exercise;
  * Source: http://www.careercup.com/question?id=6139456847347712
  */
 
-public class ConvertNumber implements Exercise {
+public class ConvertNumber extends Exercise {
 
-	@Override
-	public void run() {
-		for (int i = 0; i < 10; i++) {
-			int N = (int) (Math.random() * 20000) + 1;
-			String string = numberToString(N);
-			int number = stringToNumber(string);
-			
-			System.out.printf("%d -> %s -> %d%n", N, string, number);
-		}
-	}
-	
-	private static String numberToString(int n) {
-		if (n < 1) return "Out of Bound";
-		if (n <= 26) return Integer.toString(n);
-		n -= 26;
-		
-		int count = 0;
-		StringBuffer buffer = new StringBuffer();
-		while (n > 0 && count <= 3) {
-			if (count == 3) return "Out of Bound";
-			
-			buffer.insert(0, mapNumberToString(n % 26));
-			n /= 26;
-			count++;
-		}
-		
-		return buffer.toString();
-	}
-	
-	private static int stringToNumber(String string) {
-		try {
-			return Integer.parseInt(string, 10);
-		} catch (NumberFormatException e) {
-			
-		}
-		
-		int index = 0;
-		int number = 0;
-		while (index < string.length() && index <= 3) {
-			if (index == 3) return -1;
-			
-			number *= 26;
-			number += (int) string.charAt(index) - 'A' - 1;
-			index++;
-		}
-		
-		return number + 26;
-	}
+    @Override
+    public void run() {
+        for (int i = 0; i < 10; i++) {
+            int N = (int) (Math.random() * 20000) + 1;
+            String string = numberToString(N);
+            int number = stringToNumber(string);
+            
+            System.out.printf("%d -> %s -> %d%n", N, string, number);
+        }
+    }
+    
+    private static String numberToString(int n) {
+        if (n < 1) return "Out of Bound";
+        if (n <= 26) return Integer.toString(n);
+        n -= 26;
+        
+        int count = 0;
+        StringBuffer buffer = new StringBuffer();
+        while (n > 0 && count <= 3) {
+            if (count == 3) return "Out of Bound";
+            
+            buffer.insert(0, mapNumberToString(n % 26));
+            n /= 26;
+            count++;
+        }
+        
+        return buffer.toString();
+    }
+    
+    private static int stringToNumber(String string) {
+        try {
+            return Integer.parseInt(string, 10);
+        } catch (NumberFormatException e) {
+            
+        }
+        
+        int index = 0;
+        int number = 0;
+        while (index < string.length() && index <= 3) {
+            if (index == 3) return -1;
+            
+            number *= 26;
+            number += (int) string.charAt(index) - 'A' - 1;
+            index++;
+        }
+        
+        return number + 26;
+    }
 
-	private static String mapNumberToString(int n) {
-		return Character.toString ((char) (n + 'A' - 1));
-	}
+    private static String mapNumberToString(int n) {
+        return Character.toString ((char) (n + 'A' - 1));
+    }
 }

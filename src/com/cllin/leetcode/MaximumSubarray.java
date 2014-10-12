@@ -10,45 +10,45 @@ import com.cllin.main.LeetCodeExercise;
  */
 
 public class MaximumSubarray implements LeetCodeExercise {
-	private final int MAXIMUM = 100;
-	private final int SIZE = 1000;
-	
-	private int[] array;
-	private int result;
-	
-	@Override
-	public void initialize() {
-		array = new int[SIZE];
-		result = 0;
-		
-		for (int i = 0; i < SIZE; i++) {
-			int value = (int)(Math.random() * MAXIMUM);
-			if (Math.random() > 0.5) value *= -1;
-			
-			array[i] = value;
-		}
-	}
+    private final int MAXIMUM = 100;
+    private final int SIZE = 1000;
+    
+    private int[] array;
+    private int result;
+    
+    @Override
+    public void initialize() {
+        array = new int[SIZE];
+        result = 0;
+        
+        for (int i = 0; i < SIZE; i++) {
+            int value = (int)(Math.random() * MAXIMUM);
+            if (Math.random() > 0.5) value *= -1;
+            
+            array[i] = value;
+        }
+    }
 
-	@Override
-	public void run() {
-		initialize();
-		result = maxSubArray(array);
-		test();
-	}
-	
-	/*
-	 * S(n) = S(n) = sum of maximum subarray that ends at n
-	 * S(n) = 
-	 * 		1) S(n - 1) + A(n), if S(n - 1) + A(n) > 0
-	 * 		2) Else, 0
-	 * 
-	 * In another word, S(n) = max(S(n - 1) + A(n), 0)
-	 */
+    @Override
+    public void run() {
+        initialize();
+        result = maxSubArray(array);
+        test();
+    }
+    
+    /*
+     * S(n) = S(n) = sum of maximum subarray that ends at n
+     * S(n) = 
+     *         1) S(n - 1) + A(n), if S(n - 1) + A(n) > 0
+     *         2) Else, 0
+     * 
+     * In another word, S(n) = max(S(n - 1) + A(n), 0)
+     */
     public int maxSubArray(int[] array) {
-    	int length = array.length;
-    	if (length == 0) return 0; 
-    	
-//    	If the elements are all negative, return the largest one
+        int length = array.length;
+        if (length == 0) return 0; 
+        
+//        If the elements are all negative, return the largest one
         int sum = detect(array);
         if (sum < 0) return sum;
         
@@ -72,10 +72,10 @@ public class MaximumSubarray implements LeetCodeExercise {
         return max;
     }
 
-	@Override
-	public boolean test() {
-		System.out.printf("The sum of the maximum subarray is %d%n", result);
-		return true;
-	}
+    @Override
+    public boolean test() {
+        System.out.printf("The sum of the maximum subarray is %d%n", result);
+        return true;
+    }
 
 }

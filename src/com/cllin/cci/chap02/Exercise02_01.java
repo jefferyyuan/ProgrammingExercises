@@ -26,7 +26,7 @@ public class Exercise02_01 extends Exercise {
             node = node.next;
         }
         
-        listHead = dummy.next;	
+        listHead = dummy.next;    
     }
 
     @Override
@@ -43,7 +43,7 @@ public class Exercise02_01 extends Exercise {
             int value = node.value;
             
             if (set.contains(value)) {
-        	System.out.println("Failed");
+            System.out.println("Failed");
             }
             
             set.add(value);

@@ -20,7 +20,7 @@ import com.cllin.main.Exercise;
  * Source: http://www.careercup.com/question?id=12332722
  */
 
-public class SubstringConcatenation implements Exercise {
+public class SubstringConcatenation extends Exercise {
 
     private final TestCase[] testSuite = new TestCase[]{
             new TestCase("lingmindraboofooowingdingbarrwingmonkeypoundcake", new String[]{"fooo", "barr", "wing", "ding", "wing"})
@@ -93,7 +93,7 @@ public class SubstringConcatenation implements Exercise {
         return "Substring not found";
     }
     
-    private void test() {
+    protected void test() {
         System.out.printf("S = %s%n", testSuite[index].S);
         
         System.out.print("L = { ");

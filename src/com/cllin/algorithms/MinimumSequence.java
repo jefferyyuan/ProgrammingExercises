@@ -11,47 +11,47 @@ import com.cllin.main.Exercise;
  * Source: http://www.careercup.com/question?id=5653018213089280
  */
 
-public class MinimumSequence implements Exercise {
+public class MinimumSequence extends Exercise {
 
-	private int[][] testSuite = {
-			{2, 1, 1, 4, 3, 6}
-	};
-	
-	private int index;
-	private int sum;
-	private int minimumSequenceLength;
-	
-	@Override
-	public void run() {
-		for (index = 0; index < testSuite.length; index++) {
-			for (sum = 1; sum <= 12; sum++) {
-				minimumSequenceLength = getMinimumSequenceLength(testSuite[index], sum);
-				test();
-			}
-		}
-	}
+    private int[][] testSuite = {
+            {2, 1, 1, 4, 3, 6}
+    };
+    
+    private int index;
+    private int sum;
+    private int minimumSequenceLength;
+    
+    @Override
+    public void run() {
+        for (index = 0; index < testSuite.length; index++) {
+            for (sum = 1; sum <= 12; sum++) {
+                minimumSequenceLength = getMinimumSequenceLength(testSuite[index], sum);
+                test();
+            }
+        }
+    }
 
-	private int getMinimumSequenceLength(int[] array, int target) {
-//		TODO
-		return -1;
-	}
-	
-	private void test() {
-		System.out.print("A = { ");
-		for (int n : testSuite[index]) {
-			System.out.printf("%d ", n);
-		}
-		System.out.printf("}%n");
-		
-		System.out.printf("S = %d%n", sum);
-		
-		if (minimumSequenceLength == -1) {
-			System.out.printf("Does not exist subsequence whose sum is larger than %d%n", sum);
-			return;
-		}
-		
-		System.out.printf("Minimum sequence length = %d%n", minimumSequenceLength);
-		
-		System.out.println("------------------------------");
-	}
+    private int getMinimumSequenceLength(int[] array, int target) {
+//        TODO
+        return -1;
+    }
+    
+    protected void test() {
+        System.out.print("A = { ");
+        for (int n : testSuite[index]) {
+            System.out.printf("%d ", n);
+        }
+        System.out.printf("}%n");
+        
+        System.out.printf("S = %d%n", sum);
+        
+        if (minimumSequenceLength == -1) {
+            System.out.printf("Does not exist subsequence whose sum is larger than %d%n", sum);
+            return;
+        }
+        
+        System.out.printf("Minimum sequence length = %d%n", minimumSequenceLength);
+        
+        System.out.println("------------------------------");
+    }
 }

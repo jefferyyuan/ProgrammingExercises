@@ -10,52 +10,52 @@ import com.cllin.main.Exercise;
  * The following are the only functions that should be used to write this program: push, pop, peek, isEmpty.
  */
 
-public class Exercise03_06 implements Exercise {
-	private final int MAXIMUM = 1000;
-	private final int SIZE = 10;
-	private Stack<Integer> stack;
+public class Exercise03_06 extends Exercise {
+    private final int MAXIMUM = 1000;
+    private final int SIZE = 10;
+    private Stack<Integer> stack;
 
-	@Override
-	public void run() {
-		initialize();
-		stack = sort(stack);
-		test();
-	}
-	
-	private Stack<Integer> sort(Stack<Integer> stack) {
-		Stack<Integer> buffer = new Stack<Integer>();
-		
-		while (!stack.isEmpty()) {
-			int fromOrigin = stack.pop();
-			while (!buffer.isEmpty() && buffer.peek() > fromOrigin) {
-				stack.push(buffer.pop());
-			}
-			buffer.push(fromOrigin);
-		}
-		
-		while (!buffer.isEmpty()) {
-			stack.push(buffer.pop());
-		}
-		
-		return stack;
-	}
-	
-	private void test() {
-		int prev = Integer.MIN_VALUE;
-		while (!stack.isEmpty()) {
-			if (stack.peek() < prev) {
-				System.out.println("Failed");
-				return;
-			}
-			prev = stack.pop();
-		}
-		System.out.println("Success!");
-	}
+    private Stack<Integer> sort(Stack<Integer> stack) {
+        Stack<Integer> buffer = new Stack<Integer>();
+        
+        while (!stack.isEmpty()) {
+            int fromOrigin = stack.pop();
+            while (!buffer.isEmpty() && buffer.peek() > fromOrigin) {
+                stack.push(buffer.pop());
+            }
+            buffer.push(fromOrigin);
+        }
+        
+        while (!buffer.isEmpty()) {
+            stack.push(buffer.pop());
+        }
+        
+        return stack;
+    }
+    
+    @Override
+    protected void initialize() {
+        stack = new Stack<Integer>();
+        for (int i = 0; i < SIZE; i++) {
+            stack.push((int) (Math.random() * MAXIMUM));
+        }    
+    }
 
-	private void initialize(){
-		stack = new Stack<Integer>();
-		for(int i = 0; i < SIZE; i++){
-			stack.push((int)(Math.random() * MAXIMUM));
-		}
-	}
+    @Override
+    protected void runExercise() {
+    stack = sort(stack);    
+    }
+
+    @Override
+    protected void test() {
+        int prev = Integer.MIN_VALUE;
+        while (!stack.isEmpty()) {
+            if (stack.peek() < prev) {
+                System.out.println("Failed");
+                return;
+            }
+            prev = stack.pop();
+        }
+        System.out.println("Success!");    
+    }
 }

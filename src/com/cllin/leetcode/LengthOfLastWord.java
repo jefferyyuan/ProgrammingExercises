@@ -13,47 +13,47 @@ import com.cllin.main.LeetCodeExercise;
  */
 
 public class LengthOfLastWord implements LeetCodeExercise {
-	private static final String[] testSuite = {"", " ", "   ","a ", " a", "  a  bc  ", "laptop", "hello world ", "how do you do?"};
-	
-	private int idx;
-	private int result;
+    private static final String[] testSuite = {"", " ", "   ","a ", " a", "  a  bc  ", "laptop", "hello world ", "how do you do?"};
+    
+    private int idx;
+    private int result;
 
-	@Override
-	public void initialize() {
-		idx = 0;
-		result = 0;
-	}
-
-	@Override
-	public void run() {
-		initialize();
-		for (idx = 0; idx < testSuite.length; idx++) {
-			result = lengthOfLastWord(testSuite[idx]);
-			test();
-		}
-	}
-	
-    private int lengthOfLastWord(String string) {
-    	if (string.length() == 0) return 0;
-
-    	int index = string.length() - 1;
-    	while (index >= 0 && string.charAt(index) == ' ') {
-    		index--;
-    	}
-    	
-    	int length = 0;
-    	while (index >= 0 && string.charAt(index) != ' ') {
-    		length++;
-    		index--;
-    	}
-    	
-    	return length;
+    @Override
+    public void initialize() {
+        idx = 0;
+        result = 0;
     }
 
-	@Override
-	public boolean test() {
-		System.out.printf("The length of the last word of -%s- is %d%n", testSuite[idx], result);
-		return false;
-	}
+    @Override
+    public void run() {
+        initialize();
+        for (idx = 0; idx < testSuite.length; idx++) {
+            result = lengthOfLastWord(testSuite[idx]);
+            test();
+        }
+    }
+    
+    private int lengthOfLastWord(String string) {
+        if (string.length() == 0) return 0;
+
+        int index = string.length() - 1;
+        while (index >= 0 && string.charAt(index) == ' ') {
+            index--;
+        }
+        
+        int length = 0;
+        while (index >= 0 && string.charAt(index) != ' ') {
+            length++;
+            index--;
+        }
+        
+        return length;
+    }
+
+    @Override
+    public boolean test() {
+        System.out.printf("The length of the last word of -%s- is %d%n", testSuite[idx], result);
+        return false;
+    }
 
 }

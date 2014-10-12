@@ -38,19 +38,19 @@ public class Exercise02_02 extends Exercise {
 
     @Override
     protected void runExercise() {
-	n = (int) (Math.random() * SIZE);
-	result = getNToLast(listHead, n);
+    n = (int) (Math.random() * SIZE);
+    result = getNToLast(listHead, n);
     }
 
     @Override
     protected void test() {
-	System.out.printf("%s%n", (result.value == reference.get(SIZE - n))? "Success!" : "Failed");        
+    System.out.printf("%s%n", (result.value == reference.get(SIZE - n))? "Success!" : "Failed");        
     }
     
     private Node getNToLast(Node list, int n) {
         if (list == null) return null;
         
-//  	use two pointers
+//      use two pointers
         Node node1 = list;
         Node node2 = list;
         

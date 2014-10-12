@@ -21,19 +21,19 @@ public class Exercise01_01 extends Exercise {
     
     @Override
     protected void initialize() {
-	return;
+    return;
     }
 
     @Override
     protected void runExercise() {
         for (String string : testSuite) {
             input = string;
-        }	
+        }    
     }
 
     @Override
     protected void test() {
-	System.out.printf("%s has %s characters%n", input, (isAllUnique(input))? "all unique" : "duplicate");	
+    System.out.printf("%s has %s characters%n", input, (isAllUnique(input))? "all unique" : "duplicate");    
     }
     
     /*

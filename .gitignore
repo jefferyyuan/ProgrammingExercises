@@ -3,6 +3,10 @@
 
 # ignore project settings
 .project
+.pydevproject
 
 # ignore temporary files
 *~
+
+# ignore OS X settings
+*.DS_Store

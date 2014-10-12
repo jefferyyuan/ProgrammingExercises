@@ -18,87 +18,87 @@ import com.cllin.main.Exercise;
  * S = {{1, 5}, {1, 5}, {5, 9}}
  */
 
-public class DifferenceOfPairs implements Exercise {
+public class DifferenceOfPairs extends Exercise {
 
-	private final int SIZE = 10;
-	private final int MAXIMUM = 10;
-	
-	private int target;
-	private int[] array;
-	private ArrayList<ArrayList<Integer>> pairs;
-	
-	@Override
-	public void run() {
-		for (int i = 0; i < 5; i++) {
-			initialize();
-			pairs = getPairs(array, target);
-			test();
-		}
-	}
-	
-	private ArrayList<ArrayList<Integer>> getPairs(int[] array, int target) {
-		ArrayList<ArrayList<Integer>> pairs = new ArrayList<ArrayList<Integer>>();
-		if (array == null || array.length <= 1) return pairs;
-		
-		Arrays.sort(array);
-		
-		HashMap<Integer, LinkedList<Integer>> indices = new HashMap<Integer, LinkedList<Integer>>();
-		for (int i = 0; i < array.length; i++) {
-			int n = array[i];
-			
-			if (indices.containsKey(n - target)) {
-				for (int index : indices.get(n - target)) {
-					ArrayList<Integer> pair = new ArrayList<Integer>();
-					pair.add(index);
-					pair.add(i);
-					pairs.add(pair);
-				}
-			} 
-			
-			if (indices.containsKey(n + target)) {
-				for (int index : indices.get(n + target)) {
-					ArrayList<Integer> pair = new ArrayList<Integer>();
-					pair.add(index);
-					pair.add(i);
-					pairs.add(pair);
-				}
-			}
-			
-			LinkedList<Integer> index = (indices.containsKey(n))? indices.get(n) : new LinkedList<Integer>();
-			index.add(i);
-			indices.put(n, index);
-		}
-		
-		return pairs;
-	}
-	
-	private void test() {
-		System.out.print("A = { ");
-		for (int n : array) {
-			System.out.printf("%d ", n);
-		}
-		System.out.printf("}, T = %d%n", target);
-		
-		System.out.print("Pairs = { ");
-		for (ArrayList<Integer> pair : pairs) {
-			System.out.print("{ ");
-			
-			for (int index : pair) {
-				System.out.printf("%d ", array[index]);
-			}
-			
-			System.out.print("} ");
-		}
-		System.out.print("}\n");
-		System.out.println("------------------------------");
-	}
-	
-	private void initialize() {
-		array = new int[SIZE];
-		for (int i = 0; i < array.length; i++) {
-			array[i] = (int) (Math.random() * MAXIMUM);
-		}
-		
-		target = (int) (Math.random() * MAXIMUM);
-	}
+    private final int SIZE = 10;
+    private final int MAXIMUM = 10;
+    
+    private int target;
+    private int[] array;
+    private ArrayList<ArrayList<Integer>> pairs;
+    
+    @Override
+    public void run() {
+        for (int i = 0; i < 5; i++) {
+            initialize();
+            pairs = getPairs(array, target);
+            test();
+        }
+    }
+    
+    private ArrayList<ArrayList<Integer>> getPairs(int[] array, int target) {
+        ArrayList<ArrayList<Integer>> pairs = new ArrayList<ArrayList<Integer>>();
+        if (array == null || array.length <= 1) return pairs;
+        
+        Arrays.sort(array);
+        
+        HashMap<Integer, LinkedList<Integer>> indices = new HashMap<Integer, LinkedList<Integer>>();
+        for (int i = 0; i < array.length; i++) {
+            int n = array[i];
+            
+            if (indices.containsKey(n - target)) {
+                for (int index : indices.get(n - target)) {
+                    ArrayList<Integer> pair = new ArrayList<Integer>();
+                    pair.add(index);
+                    pair.add(i);
+                    pairs.add(pair);
+                }
+            } 
+            
+            if (indices.containsKey(n + target)) {
+                for (int index : indices.get(n + target)) {
+                    ArrayList<Integer> pair = new ArrayList<Integer>();
+                    pair.add(index);
+                    pair.add(i);
+                    pairs.add(pair);
+                }
+            }
+            
+            LinkedList<Integer> index = (indices.containsKey(n))? indices.get(n) : new LinkedList<Integer>();
+            index.add(i);
+            indices.put(n, index);
+        }
+        
+        return pairs;
+    }
+    
+    protected void test() {
+        System.out.print("A = { ");
+        for (int n : array) {
+            System.out.printf("%d ", n);
+        }
+        System.out.printf("}, T = %d%n", target);
+        
+        System.out.print("Pairs = { ");
+        for (ArrayList<Integer> pair : pairs) {
+            System.out.print("{ ");
+            
+            for (int index : pair) {
+                System.out.printf("%d ", array[index]);
+            }
+            
+            System.out.print("} ");
+        }
+        System.out.print("}\n");
+        System.out.println("------------------------------");
+    }
+    
+    protected void initialize() {
+        array = new int[SIZE];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * MAXIMUM);
+        }
+        
+        target = (int) (Math.random() * MAXIMUM);
+    }
 }

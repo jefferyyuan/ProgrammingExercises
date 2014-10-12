@@ -17,14 +17,14 @@ public class Exercise01_03 extends Exercise {
     
     @Override
     protected void initialize() {
-	return;
+    return;
     }
 
     @Override
     protected void runExercise() {
         for (String string : testSuite) {
             input = string;
-        }	
+        }    
     }
 
     @Override
@@ -54,13 +54,13 @@ public class Exercise01_03 extends Exercise {
         for (int i = 0; i <= tail; i++) {
             
             for (int j = i + 1; j <= tail; j++) {
-//        	if there is any duplicate character, swap it with the last unique one
-        	if (word[j] == word[i]) {
-        	    char temp = word[tail];
-        	    word[tail] = word[j];
-        	    word[j] = temp;
-        	    
-        	}
+//            if there is any duplicate character, swap it with the last unique one
+            if (word[j] == word[i]) {
+                char temp = word[tail];
+                word[tail] = word[j];
+                word[j] = temp;
+                
+            }
             }
         }
         

@@ -11,57 +11,57 @@ import com.cllin.main.LeetCodeExercise;
  */
 
 public class LongestSubstringWithoutRepeatingCharacters implements
-		LeetCodeExercise {
+        LeetCodeExercise {
 
-	private final String[] testSuite = {
-			"abcabcbb",
-			"bbbbb",
-			"aabcd",
-			"wlrbbmqbhcdarzowkkyhiddqscdxrjmowfrxsjybldbefsarcbynecdyggxxpklorellnmpapqfwkhopkmco"
-	};
-	
-	private int index;
-	private int length;
-	
-	@Override
-	public void initialize() {
-		// TODO Auto-generated method stub
-	}
-
-	@Override
-	public void run() {
-		for (index = 0; index < testSuite.length; index++) {
-			length = lengthOfLongestSubstring(testSuite[index]);
-			test();
-		}
-	}
-	
-	/*
-	 * L(i) = Longest valid substring in A(0, i)
-	 * L(i + 1) = 
-	 * 		1) If A(i + 1) does not exist in the current longest substring, L(i) + A(i + 1)
-	 * 		2) Else, update the longest length. The new substring starts from the last occurance of A(i + 1) 
-	 */
-    private int lengthOfLongestSubstring(String string) {
-    	if (string == null || string.length() == 0) return 0; 
-
-    	int longestSubstringLength = 0;
-    	String buffer = new String();
-    	for (int i = 0; i < string.length(); i++) {
-    		char c = string.charAt(i);
-    		int index = buffer.indexOf(c);
-    		
-    		buffer = (index != -1)? buffer.substring(index + 1) + c : buffer + c;
-    		longestSubstringLength = Math.max(longestSubstringLength, buffer.length());
-    	}
-    	
-    	return longestSubstringLength;
+    private final String[] testSuite = {
+            "abcabcbb",
+            "bbbbb",
+            "aabcd",
+            "wlrbbmqbhcdarzowkkyhiddqscdxrjmowfrxsjybldbefsarcbynecdyggxxpklorellnmpapqfwkhopkmco"
+    };
+    
+    private int index;
+    private int length;
+    
+    @Override
+    public void initialize() {
+        // TODO Auto-generated method stub
     }
 
-	@Override
-	public boolean test() {
-		System.out.printf("The length of longest substring without repeating characters of %s is %d%n", testSuite[index], length);
-		return true;
-	}
+    @Override
+    public void run() {
+        for (index = 0; index < testSuite.length; index++) {
+            length = lengthOfLongestSubstring(testSuite[index]);
+            test();
+        }
+    }
+    
+    /*
+     * L(i) = Longest valid substring in A(0, i)
+     * L(i + 1) = 
+     *         1) If A(i + 1) does not exist in the current longest substring, L(i) + A(i + 1)
+     *         2) Else, update the longest length. The new substring starts from the last occurance of A(i + 1) 
+     */
+    private int lengthOfLongestSubstring(String string) {
+        if (string == null || string.length() == 0) return 0; 
+
+        int longestSubstringLength = 0;
+        String buffer = new String();
+        for (int i = 0; i < string.length(); i++) {
+            char c = string.charAt(i);
+            int index = buffer.indexOf(c);
+            
+            buffer = (index != -1)? buffer.substring(index + 1) + c : buffer + c;
+            longestSubstringLength = Math.max(longestSubstringLength, buffer.length());
+        }
+        
+        return longestSubstringLength;
+    }
+
+    @Override
+    public boolean test() {
+        System.out.printf("The length of longest substring without repeating characters of %s is %d%n", testSuite[index], length);
+        return true;
+    }
 
 }

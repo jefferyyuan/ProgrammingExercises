@@ -17,50 +17,50 @@ import com.cllin.main.Exercise;
  * Source: http://www.careercup.com/question?id=14948278
  */
 
-public class AggregatedNumber implements Exercise {
+public class AggregatedNumber extends Exercise {
 
-	private final int[] testSuite = {
-			112358,
-			122436,
-			1299111210,
-			112112224
-	};
-	
-	@Override
-	public void run() {
-		for (int n : testSuite) {
-			System.out.printf("%d %s an aggregated number%n", n, (isAggregatedNumber(n))? "is" : "is not");
-		}
-	}
-	
-	private boolean isAggregatedNumber(int n) {
-		String string = Integer.toString(n, 10);
-		
-		for (int i = 1; i < string.length(); i++) {
-			for (int j = i + 1; j < string.length(); j++) {
-				if (isMatch(string, i, j)) return true;
-			}
-		}
-		
-		return false;
-	}
-	
-	private boolean isMatch(String string, int i, int j) {
-		String first = string.substring(0, i);
-		String second = string.substring(i, j);
-		
-		StringBuffer buffer = new StringBuffer();
-		buffer.append(first).append(second);
-		
-		while (buffer.length() < string.length()) {
-			String third = Integer.toString(Integer.parseInt(first) + Integer.parseInt(second), 10);
-			buffer.append(third);
-			
-			first = second;
-			second = third;
-		}
-		
-		return buffer.equals(string);
-	}
+    private final int[] testSuite = {
+            112358,
+            122436,
+            1299111210,
+            112112224
+    };
+    
+    @Override
+    public void run() {
+        for (int n : testSuite) {
+            System.out.printf("%d %s an aggregated number%n", n, (isAggregatedNumber(n))? "is" : "is not");
+        }
+    }
+    
+    private boolean isAggregatedNumber(int n) {
+        String string = Integer.toString(n, 10);
+        
+        for (int i = 1; i < string.length(); i++) {
+            for (int j = i + 1; j < string.length(); j++) {
+                if (isMatch(string, i, j)) return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    private boolean isMatch(String string, int i, int j) {
+        String first = string.substring(0, i);
+        String second = string.substring(i, j);
+        
+        StringBuffer buffer = new StringBuffer();
+        buffer.append(first).append(second);
+        
+        while (buffer.length() < string.length()) {
+            String third = Integer.toString(Integer.parseInt(first) + Integer.parseInt(second), 10);
+            buffer.append(third);
+            
+            first = second;
+            second = third;
+        }
+        
+        return buffer.equals(string);
+    }
 
 }

@@ -17,7 +17,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/zigzag-conversion/
  */
 
-public class ZigZagConversion implements LeetCodeExercise {
+public class ZigZagConversion extends LeetCodeExercise {
 
     private final TestCase[] testSuite = {
             new TestCase("PAYPALISHIRING", "PAHNAPLSIIGYIR", 3),

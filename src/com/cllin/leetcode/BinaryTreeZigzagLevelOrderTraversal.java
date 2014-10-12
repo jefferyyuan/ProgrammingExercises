@@ -14,7 +14,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
  */
 
-public class BinaryTreeZigzagLevelOrderTraversal implements LeetCodeExercise {
+public class BinaryTreeZigzagLevelOrderTraversal extends LeetCodeExercise {
     private final int SIZE = 10;
     private final int MAXIMUM = 10;
     

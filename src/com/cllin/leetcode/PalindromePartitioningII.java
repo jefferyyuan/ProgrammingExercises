@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/palindrome-partitioning-ii/
  */
 
-public class PalindromePartitioningII implements LeetCodeExercise {
+public class PalindromePartitioningII extends LeetCodeExercise {
 
     private final String[] testSuite = {
             "aab",

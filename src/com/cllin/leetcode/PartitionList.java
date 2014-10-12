@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/partition-list/
  */
 
-public class PartitionList implements LeetCodeExercise {
+public class PartitionList extends LeetCodeExercise {
     private final int SIZE = 10;
     private final int MAXIMUM = 10;
 

@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/merge-k-sorted-lists/
  */
 
-public class MergeKSortedLists implements LeetCodeExercise {
+public class MergeKSortedLists extends LeetCodeExercise {
     
     private ArrayList<ArrayList<ListNode>> testSuite;
     private int index;

@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  */
 
 
-public class ImplementStrStr implements LeetCodeExercise {
+public class ImplementStrStr extends LeetCodeExercise {
 
     private TestCase[] testSuite = {
         new TestCase("", ""),

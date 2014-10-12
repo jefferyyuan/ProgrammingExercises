@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/simplify-path/
  */
 
-public class SimplifyPath implements LeetCodeExercise {
+public class SimplifyPath extends LeetCodeExercise {
 
     private final String[] testSuite = {
             "/home/",

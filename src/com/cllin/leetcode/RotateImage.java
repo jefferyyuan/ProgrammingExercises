@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/rotate-image/
  */
 
-public class RotateImage implements LeetCodeExercise {
+public class RotateImage extends LeetCodeExercise {
     private final int SIZE = 2;
     private final int MAXIMUM = 10;
     private int[][] matrix;

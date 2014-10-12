@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/add-binary/
  */
 
-public class AddBinary implements LeetCodeExercise {
+public class AddBinary extends LeetCodeExercise {
     private final TestCase[] testSuite = {
         new TestCase("", "", "0"),
         new TestCase("1", "1", "10"),

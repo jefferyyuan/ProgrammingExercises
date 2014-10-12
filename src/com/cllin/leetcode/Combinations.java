@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/combinations/
  */
 
-public class Combinations implements LeetCodeExercise {
+public class Combinations extends LeetCodeExercise {
     private final int MAXIMUM = 10;
     
     private int n;

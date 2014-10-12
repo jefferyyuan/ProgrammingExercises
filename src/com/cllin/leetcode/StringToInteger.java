@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/string-to-integer-atoi/
  */
 
-public class StringToInteger implements LeetCodeExercise {
+public class StringToInteger extends LeetCodeExercise {
 
     private String[] testSuite = {
             "+-+2",

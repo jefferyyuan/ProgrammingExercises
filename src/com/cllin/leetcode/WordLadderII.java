@@ -30,7 +30,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/word-ladder-ii/
  */
 
-public class WordLadderII implements LeetCodeExercise {
+public class WordLadderII extends LeetCodeExercise {
 
     private int index;
     private ArrayList<TestCase> testSuite;

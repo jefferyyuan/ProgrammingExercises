@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/merge-intervals/
  */
 
-public class MergeIntervals implements LeetCodeExercise {
+public class MergeIntervals extends LeetCodeExercise {
 
     private ArrayList<ArrayList<Interval>> testSuite;
     

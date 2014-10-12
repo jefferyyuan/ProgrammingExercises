@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/permutations-ii/
  */
 
-public class PermutationsII implements LeetCodeExercise {
+public class PermutationsII extends LeetCodeExercise {
     private final int[][] testSuite = {
             {},
             {1},

@@ -20,7 +20,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/gray-code/
  */
 
-public class GrayCode implements LeetCodeExercise {
+public class GrayCode extends LeetCodeExercise {
     private final int[] testSuite = {0, 1, 2, 3, 4, 5, 6};
     
     @Override

@@ -19,7 +19,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/search-insert-position/
  */
 
-public class SearchInsertPosition implements LeetCodeExercise {
+public class SearchInsertPosition extends LeetCodeExercise {
     private final int MAXIMUM = 10;
     private final int SIZE = 10;
     

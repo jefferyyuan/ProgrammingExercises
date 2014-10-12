@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/maximal-rectangle/
  */
 
-public class MaximalRectangle implements LeetCodeExercise {
+public class MaximalRectangle extends LeetCodeExercise {
 
     private char[][][] testSuite = {
             {{'1'}},

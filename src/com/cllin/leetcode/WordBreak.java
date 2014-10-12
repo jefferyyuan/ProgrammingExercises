@@ -19,7 +19,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/word-break/
  */
 
-public class WordBreak implements LeetCodeExercise {
+public class WordBreak extends LeetCodeExercise {
 
     private final TestCase[] testSuite = {
             new TestCase("leetcode", new String[]{"leet", "code"}),

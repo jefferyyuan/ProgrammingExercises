@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
  */
 
-public class RemoveDuplicatesFromSortedListII implements LeetCodeExercise {
+public class RemoveDuplicatesFromSortedListII extends LeetCodeExercise {
 
     private final int MAXIMUM = 10;
     private final int SIZE = 10;

@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/candy/
  */
 
-public class Candy implements LeetCodeExercise {
+public class Candy extends LeetCodeExercise {
 
     private int[][] testSuite = {
             {1, 2, 2},

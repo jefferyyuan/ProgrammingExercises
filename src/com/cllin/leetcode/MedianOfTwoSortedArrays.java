@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/median-of-two-sorted-arrays/
  */
 
-public class MedianOfTwoSortedArrays implements LeetCodeExercise {
+public class MedianOfTwoSortedArrays extends LeetCodeExercise {
     
     private int MAXIMUM = 100;
     private int SIZE = 5;

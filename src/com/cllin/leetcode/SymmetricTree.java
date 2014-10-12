@@ -12,7 +12,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/symmetric-tree/
  */
 
-public class SymmetricTree implements LeetCodeExercise {
+public class SymmetricTree extends LeetCodeExercise {
     private final int MAXIMUM = 0;
     private final int SIZE = 100;
     

@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/populating-next-right-pointers-in-each-node/
  */
 
-public class PopulatingNextRightPointersInEachNode implements LeetCodeExercise {
+public class PopulatingNextRightPointersInEachNode extends LeetCodeExercise {
 
     @Override
     public void initialize() {

@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/anagrams/
  */
 
-public class Anagrams implements LeetCodeExercise {
+public class Anagrams extends LeetCodeExercise {
     
     private final String[][] testSuite = {
             {"army", "apple", "mary"},

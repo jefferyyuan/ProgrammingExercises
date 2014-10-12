@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * http://oj.leetcode.com/problems/pascals-triangle-ii/
  */
 
-public class PascalsTriangleII implements LeetCodeExercise {
+public class PascalsTriangleII extends LeetCodeExercise {
     private ArrayList<Integer> result;
     private int rowIndex;
     

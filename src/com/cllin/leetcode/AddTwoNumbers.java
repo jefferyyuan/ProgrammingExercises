@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/add-two-numbers/
  */
 
-public class AddTwoNumbers implements LeetCodeExercise {
+public class AddTwoNumbers extends LeetCodeExercise {
     private final int MAXIMUM = 10;
     
     private int DIGITS;

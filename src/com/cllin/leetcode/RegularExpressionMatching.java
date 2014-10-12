@@ -21,7 +21,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/regular-expression-matching/
  */
 
-public class RegularExpressionMatching implements LeetCodeExercise {
+public class RegularExpressionMatching extends LeetCodeExercise {
 
     private TestCase[] testSuite = {
             new TestCase("aa", "a"),

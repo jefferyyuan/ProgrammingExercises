@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/reverse-integer/
  */
 
-public class ReverseInteger implements LeetCodeExercise {
+public class ReverseInteger extends LeetCodeExercise {
     private final int MAXIMUM = (1 << 30) - 1 + (1 << 30);
     private final int SIZE = 5;
     

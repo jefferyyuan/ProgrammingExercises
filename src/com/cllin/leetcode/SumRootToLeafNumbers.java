@@ -21,7 +21,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/sum-root-to-leaf-numbers/
  */
 
-public class SumRootToLeafNumbers implements LeetCodeExercise {
+public class SumRootToLeafNumbers extends LeetCodeExercise {
     private final int SIZE = 10;
     private final int MAXIMUM = 10;
     

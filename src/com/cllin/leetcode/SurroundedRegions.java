@@ -23,7 +23,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/surrounded-regions/
  */
 
-public class SurroundedRegions implements LeetCodeExercise {
+public class SurroundedRegions extends LeetCodeExercise {
 
     private final char[][][] testSuite = {
             {

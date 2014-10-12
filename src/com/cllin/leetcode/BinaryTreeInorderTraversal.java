@@ -14,7 +14,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/binary-tree-preorder-traversal/
  */
 
-public class BinaryTreeInorderTraversal implements LeetCodeExercise {
+public class BinaryTreeInorderTraversal extends LeetCodeExercise {
     private final int MAXIMUM = 1000;
     private final int SIZE = 1000;
     

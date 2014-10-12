@@ -17,7 +17,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/longest-consecutive-sequence/
  */
 
-public class LongestConsecutiveSequence implements LeetCodeExercise {
+public class LongestConsecutiveSequence extends LeetCodeExercise {
     
     private final int[][] testSuite = {
             new int[]{0},

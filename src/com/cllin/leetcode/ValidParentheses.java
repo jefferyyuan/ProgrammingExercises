@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/valid-parentheses/
  */
 
-public class ValidParentheses implements LeetCodeExercise {
+public class ValidParentheses extends LeetCodeExercise {
     private final String[] testSuite = {
             "", "()[]{}", "([)]{}", "([])", "(("
             };

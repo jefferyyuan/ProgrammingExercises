@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/remove-nth-node-from-end-of-list/
  */
 
-public class RemoveNthNodeFromEndOfList implements LeetCodeExercise {
+public class RemoveNthNodeFromEndOfList extends LeetCodeExercise {
     private final int MAXIMUM = 100;
     private final int LENGTH = 100;
 

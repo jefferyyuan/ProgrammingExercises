@@ -11,7 +11,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/same-tree/
  */
 
-public class SameTree implements LeetCodeExercise {
+public class SameTree extends LeetCodeExercise {
     private final int MAXIMUM = 100;
     private final int SIZE = 100;
     

@@ -20,7 +20,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/reverse-words-in-a-string/
  */
 
-public class ReverseWordsInAString implements LeetCodeExercise {
+public class ReverseWordsInAString extends LeetCodeExercise {
 
     private final String[] testSuite = {
             "the sky is blue",

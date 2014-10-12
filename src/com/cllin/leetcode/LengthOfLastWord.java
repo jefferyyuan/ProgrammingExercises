@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/length-of-last-word/
  */
 
-public class LengthOfLastWord implements LeetCodeExercise {
+public class LengthOfLastWord extends LeetCodeExercise {
     private static final String[] testSuite = {"", " ", "   ","a ", " a", "  a  bc  ", "laptop", "hello world ", "how do you do?"};
     
     private int idx;

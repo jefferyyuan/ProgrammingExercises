@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/valid-sudoku/
  */
 
-public class ValidSudoku implements LeetCodeExercise {
+public class ValidSudoku extends LeetCodeExercise {
 
     @Override
     public void initialize() {

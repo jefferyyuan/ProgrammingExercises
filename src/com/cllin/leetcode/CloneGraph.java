@@ -23,7 +23,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/clone-graph/
  */
 
-public class CloneGraph implements LeetCodeExercise {
+public class CloneGraph extends LeetCodeExercise {
     
     private UndirectedGraphNode[] testSuite = {
             null,

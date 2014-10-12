@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/multiply-strings/
  */
 
-public class MultiplyStrings implements LeetCodeExercise {
+public class MultiplyStrings extends LeetCodeExercise {
 
     private final TestCase[] testSuite = {
             new TestCase("0", "0"),            

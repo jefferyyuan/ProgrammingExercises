@@ -18,7 +18,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/substring-with-concatenation-of-all-words/
  */
 
-public class SubstringWithConcatenationOfAllWords implements LeetCodeExercise {
+public class SubstringWithConcatenationOfAllWords extends LeetCodeExercise {
 
     private TestCase[] testSuite = {
             new TestCase("a", new String[]{"a"}),

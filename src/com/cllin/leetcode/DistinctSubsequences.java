@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/distinct-subsequences/
  */
 
-public class DistinctSubsequences implements LeetCodeExercise {
+public class DistinctSubsequences extends LeetCodeExercise {
 
     private final TestCase[] testSuite = {
         new TestCase("rabbbit", "rabbit", 3),

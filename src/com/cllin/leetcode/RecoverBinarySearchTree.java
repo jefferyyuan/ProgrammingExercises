@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/recover-binary-search-tree/
  */
 
-public class RecoverBinarySearchTree implements LeetCodeExercise {
+public class RecoverBinarySearchTree extends LeetCodeExercise {
     
     private TreeNode[] testSuite = {
             new TreeNode(0),

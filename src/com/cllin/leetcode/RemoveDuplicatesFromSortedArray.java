@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/remove-duplicates-from-sorted-array/
  */
 
-public class RemoveDuplicatesFromSortedArray implements LeetCodeExercise {
+public class RemoveDuplicatesFromSortedArray extends LeetCodeExercise {
     private final int MAXIMUM = 100;
     private final int SIZE = 1000;
     

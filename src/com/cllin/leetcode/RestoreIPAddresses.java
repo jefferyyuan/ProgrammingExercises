@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/restore-ip-addresses/
  */
 
-public class RestoreIPAddresses implements LeetCodeExercise {
+public class RestoreIPAddresses extends LeetCodeExercise {
 
     private final String[] testSuite = {
             "25525511135",

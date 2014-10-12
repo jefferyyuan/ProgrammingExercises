@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/sort-list/
  */
 
-public class SortList implements LeetCodeExercise {
+public class SortList extends LeetCodeExercise {
 
     private final int SIZE = 5;
     private final int MAXIMUM = 1000;

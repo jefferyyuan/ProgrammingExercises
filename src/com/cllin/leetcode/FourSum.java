@@ -24,7 +24,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/4sum/
  */
 
-public class FourSum implements LeetCodeExercise {
+public class FourSum extends LeetCodeExercise {
 
     private final int[][] testSuite = {
             {1, 0, -1, 0, -2, 2},

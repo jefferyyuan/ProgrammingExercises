@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/jump-game/
  */
 
-public class JumpGame implements LeetCodeExercise {
+public class JumpGame extends LeetCodeExercise {
     private final int[][] testSuite = {
             {2, 3, 1, 1, 4},
             {3, 2, 1, 0, 4},

@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/reorder-list/
  */
 
-public class ReorderList implements LeetCodeExercise {
+public class ReorderList extends LeetCodeExercise {
 
     private int SIZE = 4;
     private ListNode head;

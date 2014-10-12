@@ -1,7 +1,16 @@
 package com.cllin.main;
 
 
-public abstract class LeetCodeExercise extends Exercise {
-    public abstract void initialize();
-    public abstract void test();
+public class LeetCodeExercise extends Exercise {
+    protected void initialize() {
+
+    }
+
+    protected void runExercise() {
+
+    }
+
+    protected void test() {
+
+    }
 }

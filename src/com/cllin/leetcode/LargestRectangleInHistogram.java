@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/largest-rectangle-in-histogram/
  */
 
-public class LargestRectangleInHistogram implements LeetCodeExercise {
+public class LargestRectangleInHistogram extends LeetCodeExercise {
 
     private int[][] testSuite = {
             {2, 1, 5, 6, 2, 3},

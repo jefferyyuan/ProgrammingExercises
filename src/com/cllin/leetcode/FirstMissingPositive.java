@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/first-missing-positive/
  */
 
-public class FirstMissingPositive implements LeetCodeExercise {
+public class FirstMissingPositive extends LeetCodeExercise {
     
     private final int[][] testSuite = {
             {0},

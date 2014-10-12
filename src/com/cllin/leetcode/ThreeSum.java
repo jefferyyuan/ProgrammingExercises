@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/3sum/
  */
 
-public class ThreeSum implements LeetCodeExercise {
+public class ThreeSum extends LeetCodeExercise {
     
     private final int[][] testSuite = {
             {-1, 0, 1, 2, -1, -4},

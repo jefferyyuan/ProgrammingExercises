@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/integer-to-roman/
  */
 
-public class IntegerToRoman implements LeetCodeExercise {
+public class IntegerToRoman extends LeetCodeExercise {
     private final int SIZE = 100;
     private final int MAXIMUM = 3998;
 

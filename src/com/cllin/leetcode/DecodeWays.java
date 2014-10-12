@@ -17,7 +17,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/decode-ways/
  */
 
-public class DecodeWays implements LeetCodeExercise {
+public class DecodeWays extends LeetCodeExercise {
 
     private final String[] testSuite = {
             "1212",

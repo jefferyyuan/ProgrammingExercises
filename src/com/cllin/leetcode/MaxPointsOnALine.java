@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/max-points-on-a-line/
  */
 
-public class MaxPointsOnALine implements LeetCodeExercise {
+public class MaxPointsOnALine extends LeetCodeExercise {
     
     private final Point[][] testSuite = {
             {new Point(0, 0)},

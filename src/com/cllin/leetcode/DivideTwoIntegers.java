@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/divide-two-integers/
  */
 
-public class DivideTwoIntegers implements LeetCodeExercise {
+public class DivideTwoIntegers extends LeetCodeExercise {
 
     private final int MAXIMUM = 100;
     

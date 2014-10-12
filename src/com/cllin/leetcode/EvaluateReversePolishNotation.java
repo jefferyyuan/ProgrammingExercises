@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/evaluate-reverse-polish-notation/
  */
 
-public class EvaluateReversePolishNotation implements LeetCodeExercise {
+public class EvaluateReversePolishNotation extends LeetCodeExercise {
 
     private final String[][] testSuite = {
             {"2", "1", "+", "3", "*"},

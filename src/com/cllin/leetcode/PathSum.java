@@ -11,7 +11,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/path-sum/
  */
 
-public class PathSum implements LeetCodeExercise {
+public class PathSum extends LeetCodeExercise {
     private final int MAXIMUM = 10;
     private final int SIZE = 10;
     

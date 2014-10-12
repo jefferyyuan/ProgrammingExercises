@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/roman-to-integer/
  */
 
-public class RomanToInteger implements LeetCodeExercise {
+public class RomanToInteger extends LeetCodeExercise {
     private ArrayList<String> testSuites;
     private ArrayList<Integer> answers;
     private ArrayList<Integer> results;

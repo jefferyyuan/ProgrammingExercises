@@ -20,7 +20,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/pascals-triangle/
  */
 
-public class PascalsTriangle implements LeetCodeExercise {
+public class PascalsTriangle extends LeetCodeExercise {
     private final int SIZE = 5;
     
     private ArrayList<ArrayList<Integer>> result;

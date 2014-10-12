@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/powx-n/
  */
 
-public class Power implements LeetCodeExercise {
+public class Power extends LeetCodeExercise {
     private final int MAXIMUM = 10;
     
     private double result;

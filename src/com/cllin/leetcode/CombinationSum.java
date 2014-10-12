@@ -23,7 +23,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/combination-sum/
  */
 
-public class CombinationSum implements LeetCodeExercise {
+public class CombinationSum extends LeetCodeExercise {
     private static final int[][] testSuite = new int[][]{
         {}, 
         {7, 3, 2},

@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/remove-element/
  */
 
-public class RemoveElement implements LeetCodeExercise {
+public class RemoveElement extends LeetCodeExercise {
     private final int MAXIMUM = 1000;
     private final int SIZE = 1000;
     

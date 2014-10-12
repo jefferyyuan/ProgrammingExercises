@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/merge-sorted-array/
  */
 
-public class MergeSortedArray implements LeetCodeExercise {
+public class MergeSortedArray extends LeetCodeExercise {
     private final int MAXIMUM = 100;
     private final int SIZE = 100;
     private final int SIZE_A = 50;

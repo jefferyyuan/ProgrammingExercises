@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/sqrtx/
  */
 
-public class SqrtX implements LeetCodeExercise {
+public class SqrtX extends LeetCodeExercise {
 
     @Override
     public void initialize() {

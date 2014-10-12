@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/single-number/
  */
 
-public class SingleNumber implements LeetCodeExercise {
+public class SingleNumber extends LeetCodeExercise {
     private final int MAXIMUM = 100;
     private final int SIZE = 100;
     

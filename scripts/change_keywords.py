@@ -8,7 +8,10 @@ for filename in full_file_paths:
         content = open(filename).read()
         if "implements Exercise" in content:
             content = content.replace("implements Exercise", "extends Exercise")
-             
+            
+        if "implements LeetCodeExercise" in content:
+            content = content.replace("implements LeetCodeExercise", "extends LeetCodeExercise")
+            
         if '\t' in content:
             content = content.replace('\t', "    ")
          

@@ -18,7 +18,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/reverse-nodes-in-k-group/ 
  */
 
-public class ReverseNodesInKGroup implements LeetCodeExercise {
+public class ReverseNodesInKGroup extends LeetCodeExercise {
 
     private final int MAXIMUM = 10;
     

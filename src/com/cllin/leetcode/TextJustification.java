@@ -20,7 +20,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/text-justification/
  */
 
-public class TextJustification implements LeetCodeExercise {
+public class TextJustification extends LeetCodeExercise {
 
     private final TestCase[] testSuite = {
             new TestCase(new String[]{"This", "is", "an", "example", "of", "text", "justification."}, 16),

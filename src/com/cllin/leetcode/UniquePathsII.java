@@ -22,7 +22,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/unique-paths-ii/
  */
 
-public class UniquePathsII implements LeetCodeExercise {
+public class UniquePathsII extends LeetCodeExercise {
     private final int[][][] testSuite = new int[][][]{
             {{1, 0}},
             {{0, 0}, {0, 0}},

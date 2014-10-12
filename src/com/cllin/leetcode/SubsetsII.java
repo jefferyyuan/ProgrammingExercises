@@ -27,7 +27,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/subsets-ii/
  */
 
-public class SubsetsII implements LeetCodeExercise {
+public class SubsetsII extends LeetCodeExercise {
     private final int[][] testSuite = {
             {}, 
             {1}, 

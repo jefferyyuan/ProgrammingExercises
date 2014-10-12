@@ -26,7 +26,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/word-ladder/
  */
 
-public class WordLadder implements LeetCodeExercise {
+public class WordLadder extends LeetCodeExercise {
 
     private ArrayList<TestCase> testSuite;
     

@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/generate-parentheses/ 
  */
 
-public class GenerateParentheses implements LeetCodeExercise {
+public class GenerateParentheses extends LeetCodeExercise {
     
     private int n;
     private ArrayList<String> result;

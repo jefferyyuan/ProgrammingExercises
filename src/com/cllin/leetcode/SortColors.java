@@ -21,7 +21,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/sort-colors/
  */
 
-public class SortColors implements LeetCodeExercise {
+public class SortColors extends LeetCodeExercise {
     private final int MAXIMUM = 3;
     private final int SIZE = 10;
     

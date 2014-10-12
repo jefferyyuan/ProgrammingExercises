@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/n-queens-ii/
  */
 
-public class NQueensII implements LeetCodeExercise {
+public class NQueensII extends LeetCodeExercise {
 
     private int result;
     private int N;

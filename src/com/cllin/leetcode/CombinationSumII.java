@@ -20,7 +20,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/combination-sum-ii/
  */
 
-public class CombinationSumII implements LeetCodeExercise {
+public class CombinationSumII extends LeetCodeExercise {
     private static final int[][] testSuite = new int[][]{
         {},
         {1},

@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/interleaving-string/
  */
 
-public class InterleavingString implements LeetCodeExercise {
+public class InterleavingString extends LeetCodeExercise {
 
     private final TestCase[] testSuite = {
             new TestCase("aabcc", "dbbca", "aadbbcbcac", true),

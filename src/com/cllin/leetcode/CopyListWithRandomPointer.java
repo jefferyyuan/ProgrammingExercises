@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/copy-list-with-random-pointer/
  */
 
-public class CopyListWithRandomPointer implements LeetCodeExercise {
+public class CopyListWithRandomPointer extends LeetCodeExercise {
     
     private RandomListNode[] testSuite = {
             null,

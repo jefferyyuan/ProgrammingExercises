@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/plus-one/
  */
 
-public class PlusOne implements LeetCodeExercise {
+public class PlusOne extends LeetCodeExercise {
     private final int MAXIMUM = 10;
     
     private int LENGTH = 5;

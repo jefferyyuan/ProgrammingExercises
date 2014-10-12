@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/longest-valid-parentheses/
  */
 
-public class LongestValidParentheses implements LeetCodeExercise {
+public class LongestValidParentheses extends LeetCodeExercise {
 
     private final String[] testSuite = {
             "(()",

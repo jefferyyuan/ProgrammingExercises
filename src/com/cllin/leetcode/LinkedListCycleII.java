@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/linked-list-cycle-ii/
  */
 
-public class LinkedListCycleII implements LeetCodeExercise {
+public class LinkedListCycleII extends LeetCodeExercise {
     private final int SIZE = 2 - 1;
     private final int MAXIMUM = 100;
     private final int CYCLE_BEGINNING = 0;

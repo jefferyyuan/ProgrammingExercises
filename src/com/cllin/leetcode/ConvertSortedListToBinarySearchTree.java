@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/convert-sorted-list-to-binary-search-tree/
  */
 
-public class ConvertSortedListToBinarySearchTree implements LeetCodeExercise {
+public class ConvertSortedListToBinarySearchTree extends LeetCodeExercise {
     private final int SIZE = 10;
     private final int MAXIMUM = 10;
     

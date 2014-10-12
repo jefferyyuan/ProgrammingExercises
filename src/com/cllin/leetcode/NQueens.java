@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/n-queens/
  */
 
-public class NQueens implements LeetCodeExercise {
+public class NQueens extends LeetCodeExercise {
 
     private int N;
     private ArrayList<String[]> result;

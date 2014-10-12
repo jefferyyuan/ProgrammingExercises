@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/sudoku-solver/
  */
 
-public class SudokuSolver implements LeetCodeExercise {
+public class SudokuSolver extends LeetCodeExercise {
 
     private char[][][] testSuite = {
             {

@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
-public class PalindromeNumber implements LeetCodeExercise {
+public class PalindromeNumber extends LeetCodeExercise {
     private final int[] testSuite = {0, 1, 5566, 183, 1111, 11011};
     private boolean result;
     

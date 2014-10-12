@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/climbing-stairs/
  */
 
-public class ClimbingStairs implements LeetCodeExercise {
+public class ClimbingStairs extends LeetCodeExercise {
     private int levels;
     
     @Override

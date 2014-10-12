@@ -18,7 +18,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/search-for-a-range/
  */
 
-public class SearchForARange implements LeetCodeExercise {
+public class SearchForARange extends LeetCodeExercise {
     private final int SIZE = 10;
     private final int MAXIMUM = 10;
     

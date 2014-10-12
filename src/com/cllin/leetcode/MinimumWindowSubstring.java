@@ -19,7 +19,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/minimum-window-substring/
  */
 
-public class MinimumWindowSubstring implements LeetCodeExercise {
+public class MinimumWindowSubstring extends LeetCodeExercise {
 
     private final TestCase[] testSuite = {
             new TestCase("ADOBECODEBANC", "ABC")

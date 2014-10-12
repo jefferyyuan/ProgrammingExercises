@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/container-with-most-water/
  */
 
-public class ContainerWithMostWater implements LeetCodeExercise {
+public class ContainerWithMostWater extends LeetCodeExercise {
     private final int MAXIMUM = 2;
     private final int SIZE = 100;
     

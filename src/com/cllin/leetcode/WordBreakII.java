@@ -21,7 +21,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/word-break-ii/
  */
 
-public class WordBreakII implements LeetCodeExercise {
+public class WordBreakII extends LeetCodeExercise {
 
     private int index;
     private ArrayList<TestCase> testSuite;

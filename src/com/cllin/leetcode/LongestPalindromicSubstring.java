@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/longest-palindromic-substring/
  */
 
-public class LongestPalindromicSubstring implements LeetCodeExercise {
+public class LongestPalindromicSubstring extends LeetCodeExercise {
 
     private String[] testSuite = {
         "ccc",

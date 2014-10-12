@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/lru-cache/
  */
 
-public class LRUCache implements LeetCodeExercise {
+public class LRUCache extends LeetCodeExercise {
 
     @Override
     public void initialize() {

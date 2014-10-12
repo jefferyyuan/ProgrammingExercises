@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/unique-binary-search-trees/
  */
 
-public class UniqueBinarySearchTrees implements LeetCodeExercise {
+public class UniqueBinarySearchTrees extends LeetCodeExercise {
 
     @Override
     public void initialize() {

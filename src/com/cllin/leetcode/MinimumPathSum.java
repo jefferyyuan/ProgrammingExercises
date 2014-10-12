@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/minimum-path-sum/
  */
 
-public class MinimumPathSum implements LeetCodeExercise {
+public class MinimumPathSum extends LeetCodeExercise {
     private final int MAXIMUM = 10;
     
     private int size_x;

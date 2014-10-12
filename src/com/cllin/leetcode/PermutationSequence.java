@@ -21,7 +21,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/permutation-sequence/
  */
 
-public class PermutationSequence implements LeetCodeExercise {
+public class PermutationSequence extends LeetCodeExercise {
 
     @Override
     public void initialize() {

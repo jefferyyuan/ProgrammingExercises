@@ -11,7 +11,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/maximum-depth-of-binary-tree/
  */
 
-public class MaximumDepthOfBinaryTree implements LeetCodeExercise {
+public class MaximumDepthOfBinaryTree extends LeetCodeExercise {
     private final int MAXIMUM = 100;
     private final int SIZE = 100;
     

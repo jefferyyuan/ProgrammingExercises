@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/swap-nodes-in-pairs/
  */
 
-public class SwapNodesInPairs implements LeetCodeExercise {
+public class SwapNodesInPairs extends LeetCodeExercise {
     private final int SIZE = 100;
     private final int MAXIMUM = 1000;
     

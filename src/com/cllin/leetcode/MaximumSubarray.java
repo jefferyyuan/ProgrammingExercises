@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/maximum-subarray/
  */
 
-public class MaximumSubarray implements LeetCodeExercise {
+public class MaximumSubarray extends LeetCodeExercise {
     private final int MAXIMUM = 100;
     private final int SIZE = 1000;
     

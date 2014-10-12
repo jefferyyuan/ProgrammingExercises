@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/merge-two-sorted-lists/
  */
 
-public class MergeTwoSortedLists implements LeetCodeExercise {
+public class MergeTwoSortedLists extends LeetCodeExercise {
     private final int MAXIMUM = 1000;
     private final int SIZE = 1000;
     

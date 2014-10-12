@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/gas-station/
  */
 
-public class GasStation implements LeetCodeExercise {
+public class GasStation extends LeetCodeExercise {
 
     private final TestCase[] testSuite = {
             new TestCase(new int[]{3, 0, 0, 0}, new int[]{0, 1, 1, 1}),

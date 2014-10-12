@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/next-permutation/
  */
 
-public class NextPermutation implements LeetCodeExercise {
+public class NextPermutation extends LeetCodeExercise {
     private final int[][] testSuite = {
             {1, 2, 3}, 
             {3, 2, 1}, 

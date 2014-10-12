@@ -18,7 +18,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/spiral-matrix-ii/
  */
 
-public class SpiralMatrixII implements LeetCodeExercise {
+public class SpiralMatrixII extends LeetCodeExercise {
     private int n;
     private int[][] matrix;
     

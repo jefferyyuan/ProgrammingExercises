@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
  */
 
-public class BestTimetoBuyandSellStockII implements LeetCodeExercise {
+public class BestTimetoBuyandSellStockII extends LeetCodeExercise {
     private final int MAXIMUM = 100;
     
     private int SIZE = 100;

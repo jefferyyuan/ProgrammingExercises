@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/3sum-closest/
  */
 
-public class ThreeSumClosest implements LeetCodeExercise {
+public class ThreeSumClosest extends LeetCodeExercise {
     private final int MAXIMUM = 100;
     private int SIZE = 10;
     private int target;

@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/longest-common-prefix/
  */
 
-public class LongestCommonPrefix implements LeetCodeExercise {
+public class LongestCommonPrefix extends LeetCodeExercise {
     private static final String[][] testSuite = {
             {"", "apple"}, 
             {"apple", "apartment", "apply"}, 

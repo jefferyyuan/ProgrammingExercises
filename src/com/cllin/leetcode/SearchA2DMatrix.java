@@ -22,7 +22,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/search-a-2d-matrix/
  */
 
-public class SearchA2DMatrix implements LeetCodeExercise {
+public class SearchA2DMatrix extends LeetCodeExercise {
     private int MAXIMUM;
     private int SIZE_X;
     private int SIZE_Y;

@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/permutations/
  */
 
-public class Permutations implements LeetCodeExercise {
+public class Permutations extends LeetCodeExercise {
     private final int SIZE = 5;
     private final int MAXIMUM = 5;
 

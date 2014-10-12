@@ -14,7 +14,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/binary-tree-level-order-traversal-ii/
  */
 
-public class BinaryTreeLevelOrderTraversalII implements LeetCodeExercise {
+public class BinaryTreeLevelOrderTraversalII extends LeetCodeExercise {
     private final int SIZE = 10;
     private final int MAXIMUM = 10;
     

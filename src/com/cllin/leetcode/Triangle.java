@@ -23,7 +23,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/triangle/
  */
 
-public class Triangle implements LeetCodeExercise {
+public class Triangle extends LeetCodeExercise {
     private final int MAXIMUM = 10;
     
     private int SIZE;

@@ -22,7 +22,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/wildcard-matching/
  */
 
-public class WildcardMatching implements LeetCodeExercise {
+public class WildcardMatching extends LeetCodeExercise {
 
     private final TestCase[] testSuite = {
             new TestCase("b", "*a*"),

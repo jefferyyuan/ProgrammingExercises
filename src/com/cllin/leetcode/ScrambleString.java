@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/scramble-string/
  */
 
-public class ScrambleString implements LeetCodeExercise {
+public class ScrambleString extends LeetCodeExercise {
 
     private final TestCase[] testSuite = {
             new TestCase("", "", true),

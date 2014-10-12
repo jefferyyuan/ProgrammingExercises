@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
  */
 
-public class BestTimeToBuyAndSellStockIII implements LeetCodeExercise {
+public class BestTimeToBuyAndSellStockIII extends LeetCodeExercise {
     private final int[][] testSuite = {
             {1, 2},
             {2, 1},

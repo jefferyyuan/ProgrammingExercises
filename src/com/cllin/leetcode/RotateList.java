@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/rotate-list/
  */
 
-public class RotateList implements LeetCodeExercise {
+public class RotateList extends LeetCodeExercise {
     
     private int SIZE = 10;
     

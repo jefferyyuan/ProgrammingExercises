@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/letter-combinations-of-a-phone-number/
  */
 
-public class LetterCombinationsOfAPhoneNumber implements LeetCodeExercise {
+public class LetterCombinationsOfAPhoneNumber extends LeetCodeExercise {
     private String[] testSuite = {"","23", "5566"};
     
     private int index;

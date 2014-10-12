@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/validate-binary-search-tree/
  */
 
-public class ValidateBinarySearchTree implements LeetCodeExercise {
+public class ValidateBinarySearchTree extends LeetCodeExercise {
     private TreeNode[] testSuite = {
             null,
             new TreeNode(10),

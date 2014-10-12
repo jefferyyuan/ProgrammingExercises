@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import com.cllin.main.LeetCodeExercise;
 
-public class BinaryTreeMaximumPathSum implements LeetCodeExercise {
+public class BinaryTreeMaximumPathSum extends LeetCodeExercise {
 
     private TreeNode[] testSuite = {
             new TreeNode(1),

@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/count-and-say/
  */
 
-public class CountAndSay implements LeetCodeExercise {
+public class CountAndSay extends LeetCodeExercise {
 
     @Override
     public void initialize() {

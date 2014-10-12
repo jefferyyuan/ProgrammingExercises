@@ -9,7 +9,7 @@ import com.cllin.tree.Node;
  * 
  * Source: http://oj.leetcode.com/problems/flatten-binary-tree-to-linked-list/
  */
-public class FlattenBinaryTreeToLinkedList implements LeetCodeExercise {
+public class FlattenBinaryTreeToLinkedList extends LeetCodeExercise {
     private final int SIZE = 5;
     private final int MAXIMUM = 10;
     

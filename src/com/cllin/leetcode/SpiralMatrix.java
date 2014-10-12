@@ -20,7 +20,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/spiral-matrix/
  */
 
-public class SpiralMatrix implements LeetCodeExercise {
+public class SpiralMatrix extends LeetCodeExercise {
 
     private final int[][][] testSuite = {
             {

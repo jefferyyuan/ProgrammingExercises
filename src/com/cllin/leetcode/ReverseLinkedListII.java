@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/reverse-linked-list-ii/
  */
 
-public class ReverseLinkedListII implements LeetCodeExercise {
+public class ReverseLinkedListII extends LeetCodeExercise {
     private final TestCase[] testSuite = {
             new TestCase(0, 0, 0),
             new TestCase(5, 2, 4),

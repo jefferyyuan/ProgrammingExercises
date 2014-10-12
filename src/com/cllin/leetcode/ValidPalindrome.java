@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/valid-palindrome/
  */
 
-public class ValidPalindrome implements LeetCodeExercise {
+public class ValidPalindrome extends LeetCodeExercise {
     
     private final TestCase[] testSuite = {
             new TestCase(new String(), true),

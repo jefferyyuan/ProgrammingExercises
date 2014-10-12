@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/set-matrix-zeroes/
  */
 
-public class SetMatrixZeroes implements LeetCodeExercise {
+public class SetMatrixZeroes extends LeetCodeExercise {
     private final int MAXIMUM = 5;
     private final int SIZE_X = 10;
     private final int SIZE_Y = 1;

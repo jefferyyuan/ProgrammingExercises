@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/search-in-rotated-sorted-array-ii/
  */
 
-public class SearchInRotatedSortedArrayII implements LeetCodeExercise {
+public class SearchInRotatedSortedArrayII extends LeetCodeExercise {
     private final int MAXIMUM = 200;
     private final int SIZE = 100;
     

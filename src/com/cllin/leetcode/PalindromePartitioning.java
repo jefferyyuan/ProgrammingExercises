@@ -18,7 +18,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/palindrome-partitioning/
  */
 
-public class PalindromePartitioning implements LeetCodeExercise {
+public class PalindromePartitioning extends LeetCodeExercise {
 
     private final String[] testSuite = {
             "",

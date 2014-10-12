@@ -11,7 +11,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/minimum-depth-of-binary-tree/
  */
 
-public class MinimumDepthOfBinaryTree implements LeetCodeExercise {
+public class MinimumDepthOfBinaryTree extends LeetCodeExercise {
     private final int SIZE = 100;
     private final int MAXIMUM = 10;
     

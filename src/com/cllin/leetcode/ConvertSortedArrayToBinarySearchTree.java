@@ -11,7 +11,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
  */
 
-public class ConvertSortedArrayToBinarySearchTree implements LeetCodeExercise {
+public class ConvertSortedArrayToBinarySearchTree extends LeetCodeExercise {
     private final int SIZE = 1000;
     private final int MAXIMUM = 1000;
     

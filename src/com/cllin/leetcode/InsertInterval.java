@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/insert-interval/
  */
 
-public class InsertInterval implements LeetCodeExercise {
+public class InsertInterval extends LeetCodeExercise {
 
     private ArrayList<ArrayList<Interval>> testSuite;
     private ArrayList<Interval> newIntervals;

@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
-public class BinaryTreePostorderTraversal implements LeetCodeExercise {
+public class BinaryTreePostorderTraversal extends LeetCodeExercise {
     private final int MAXIMUM = 3;
     private final int SIZE = 3;
     

@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/two-sum/
  */
 
-public class TwoSum implements LeetCodeExercise {
+public class TwoSum extends LeetCodeExercise {
 
     private int[][] testSuite = {
             {2, 7, 11, 15},

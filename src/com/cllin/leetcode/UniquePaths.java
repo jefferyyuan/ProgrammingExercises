@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/unique-paths/
  */
 
-public class UniquePaths implements LeetCodeExercise {
+public class UniquePaths extends LeetCodeExercise {
     private final int MAXIMUM = 10;
     
     @Override

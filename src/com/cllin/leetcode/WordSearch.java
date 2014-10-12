@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/word-search/
  */
 
-public class WordSearch implements LeetCodeExercise {
+public class WordSearch extends LeetCodeExercise {
     private final TestCase[] testSuite = {
             new TestCase(
                     new char[][]{

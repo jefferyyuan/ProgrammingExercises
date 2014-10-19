@@ -11,22 +11,6 @@ public class LongestCommonSubsequence extends Exercise {
     private static final int UP = 1;
     private static final int LEFT = 2;
     
-    @Override
-    public void run() {
-        for (TestCase test : testSuite) {
-            String string1 = test.string1;
-            String string2 = test.string2;
-
-            System.out.printf("S1 = %s%nS2 = %s%n", string1, string2); 
-            
-            System.out.printf("The Longest Common Subsequence is: %s%n", getLCSubsequence(string1, string2));
-            System.out.printf("The Longest Common Substring is: %s%n", getLCSubstring(string1, string2));
-            
-            System.out.println("------------------------------");
-        }
-        
-    }
-    
     private String getLCSubsequence(String string1, String string2) {
         int length1 = string1.length();
         int length2 = string2.length();
@@ -111,5 +95,30 @@ public class LongestCommonSubsequence extends Exercise {
             this.string1 = string1;
             this.string2 = string2;
         }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (TestCase test : testSuite) {
+            String string1 = test.string1;
+            String string2 = test.string2;
+
+            System.out.printf("S1 = %s%nS2 = %s%n", string1, string2); 
+            
+            System.out.printf("The Longest Common Subsequence is: %s%n", getLCSubsequence(string1, string2));
+            System.out.printf("The Longest Common Substring is: %s%n", getLCSubstring(string1, string2));
+            
+            System.out.println("------------------------------");
+        }        
     }
 }

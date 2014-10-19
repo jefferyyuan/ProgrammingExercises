@@ -26,25 +26,13 @@ import com.cllin.main.Exercise;
 
 public class SubarraySum extends Exercise {
 
-    private int[][] testSuite = {
+    private final int[][] testSuite = {
             {4, 2, -3, 1, 6},
             {4, 2, -3, 1, 6},
             {-3, 2, 3, 1, 6}
     };
     
-    private int index;
-    private int target;
     private ArrayList<Integer> result;
-    
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            for (target = 0; target <= 5; target++) {
-                result = hasSum(testSuite[index], target);
-                test();
-            }
-        }
-    }
     
     private ArrayList<Integer> hasSum(int[] array, int target) {
         int sum = 0;
@@ -67,29 +55,45 @@ public class SubarraySum extends Exercise {
         return new ArrayList<Integer>();
     }
     
-    protected void test() {
-        System.out.print("A = { ");
-        for (int n : testSuite[index]) {
-            System.out.printf("%d ", n);
-        }
-        System.out.printf("}%n");
-        
-        System.out.printf("T = %d%n", target);
-        
-        if (result.size() == 0) {
-            System.out.println("No matching subarray");
-            System.out.println("------------------------------");
-            return;
-        }
-        
-        int start = result.get(0);
-        int end = result.get(1);
-        System.out.print("S = { ");
-        for (int i = start; i <= end; i++) {
-            System.out.printf("%d ", testSuite[index][i]);
-        }
-        System.out.printf("}%n");
-        System.out.println("------------------------------");
+    @Override
+    protected void initialize() {
+        return;
     }
 
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (int index = 0; index < testSuite.length; index++) {
+            for (int target = 0; target <= 5; target++) {
+                result = hasSum(testSuite[index], target);
+
+                System.out.print("A = { ");
+                for (int n : testSuite[index]) {
+                    System.out.printf("%d ", n);
+                }
+                System.out.printf("}%n");
+
+                System.out.printf("T = %d%n", target);
+
+                if (result.size() == 0) {
+                    System.out.println("No matching subarray");
+                    System.out.println("------------------------------");
+                    return;
+                }
+
+                int start = result.get(0);
+                int end = result.get(1);
+                System.out.print("S = { ");
+                for (int i = start; i <= end; i++) {
+                    System.out.printf("%d ", testSuite[index][i]);
+                }
+                System.out.printf("}%n");
+                System.out.println("------------------------------");
+            }
+        }
+    }
 }

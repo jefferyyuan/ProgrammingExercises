@@ -26,13 +26,6 @@ public class AggregatedNumber extends Exercise {
             112112224
     };
     
-    @Override
-    public void run() {
-        for (int n : testSuite) {
-            System.out.printf("%d %s an aggregated number%n", n, (isAggregatedNumber(n))? "is" : "is not");
-        }
-    }
-    
     private boolean isAggregatedNumber(int n) {
         String string = Integer.toString(n, 10);
         
@@ -61,6 +54,23 @@ public class AggregatedNumber extends Exercise {
         }
         
         return buffer.equals(string);
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (int n : testSuite) {
+            System.out.printf("%d %s an aggregated number%n", n, (isAggregatedNumber(n)) ? "is" : "is not");
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 
 }

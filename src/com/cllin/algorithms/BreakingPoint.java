@@ -18,14 +18,6 @@ public class BreakingPoint extends Exercise {
     private int index;
     private int breakingPoint;
     
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            breakingPoint = getBreakingPoint(testSuite[index]);
-            test();
-        }
-    }
-    
     private int getBreakingPoint(int[] array) {
         int sumOfFirstHalf = 0;
         int sumOfSecondHalf = 0;
@@ -46,11 +38,26 @@ public class BreakingPoint extends Exercise {
         return -1;
     }
 
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
     protected void test() {
-        System.out.print("A = { ");
-        for (int n : testSuite[index]) {
-            System.out.printf("%d ", n);
+        for (index = 0; index < testSuite.length; index++) {
+            breakingPoint = getBreakingPoint(testSuite[index]);
+
+            System.out.print("A = { ");
+            for (int n : testSuite[index]) {
+                System.out.printf("%d ", n);
+            }
+            System.out.printf("}, Breaking point is %d%n", breakingPoint);
         }
-        System.out.printf("}, Breaking point is %d%n", breakingPoint);
     }
 }

@@ -27,14 +27,6 @@ public class MajorityCounting extends Exercise {
     private int index;
     private int majority;
     
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            majority = majorityCount(testSuite[index]);
-            test();
-        }
-    }
-
     private int majorityCount(int[] array) {
         int count = 1;
         int majorityIndex = 0;
@@ -58,11 +50,28 @@ public class MajorityCounting extends Exercise {
         return (count > array.length / 2)? array[majorityIndex] : -1;
     }
     
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
     protected void test() {
-        System.out.print("A = { ");
-        for (int n : testSuite[index]) {
-            System.out.printf("%d ", n);
-        }
-        System.out.printf("}, Majority = %s%n", (majority == -1)? "None" : Integer.toString(majority));
+        for (index = 0; index < testSuite.length; index++) {
+            majority = majorityCount(testSuite[index]);
+            
+            System.out.print("A = { ");
+            for (int n : testSuite[index]) {
+                System.out.printf("%d ", n);
+            }
+
+            System.out.printf("}, Majority = %s%n",
+                    (majority == -1) ? "None" : Integer.toString(majority));
+        }  
     }
 }

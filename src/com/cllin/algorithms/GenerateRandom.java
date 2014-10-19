@@ -21,24 +21,8 @@ import com.cllin.main.Exercise;
 
 public class GenerateRandom extends Exercise {
 
-    private int N;
+    private final int N = 30;
     private int[] array;
-    
-    @Override
-    public void run() {
-        N = 30;
-        initialize();
-        
-        System.out.printf("N = %d%n", N);
-        
-        System.out.print("K = { ");
-        for (int n : array) {
-            System.out.printf("%d ", n);
-        }
-        System.out.printf("}%n");
-        
-        test();
-    }
     
     private int getRandom(int N, int K[]) {
         int target = uniform(N - K.length);
@@ -60,6 +44,11 @@ public class GenerateRandom extends Exercise {
         return i;
     }
     
+    private final int uniform(int n) {
+        return (int) (Math.random() * n);
+    }
+
+    @Override
     protected void initialize() {
         int k = (int) (Math.random() * N);
         HashSet<Integer> set = new HashSet<Integer>();
@@ -73,12 +62,22 @@ public class GenerateRandom extends Exercise {
         for (int n : set) {
             array[i++] = n;
         }
+
+        System.out.printf("N = %d%n", N);
+
+        System.out.print("K = { ");
+        for (int n : array) {
+            System.out.printf("%d ", n);
+        }
+        System.out.printf("}%n");
     }
 
-    private final int uniform(int n) {
-        return (int) (Math.random() * n);
+    @Override
+    protected void runExercise() {
+        return;
     }
     
+    @Override
     protected void test() {
         final int TRIALS = 10000;
         HashMap<Integer, Integer> counts = new HashMap<Integer, Integer>();

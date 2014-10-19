@@ -21,16 +21,6 @@ public class PrefixOfStrings extends Exercise {
     private int index;
     private String shortestPrefix;
     
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            TestCase test = testSuite[index];
-            
-            shortestPrefix = getShortestPrefix(test.word, Arrays.copyOf(test.list, test.list.length));
-            test();
-        }
-    }
-    
     private String getShortestPrefix(String word, String[] list) {
         int index = 0;
         int size = list.length;
@@ -54,17 +44,6 @@ public class PrefixOfStrings extends Exercise {
         
         return (size == 0)? word.substring(0, index - 1) : "No valid prefix";
     }
-    
-    protected void test() {
-        System.out.printf("Word = %s%nList = { ", testSuite[index].word);
-        for (String string : testSuite[index].list) {
-            System.out.printf("%s ", string);
-        }
-        System.out.printf("}%n");
-        
-        System.out.printf("The shortest prefix is: '%s'%n", shortestPrefix);
-        System.out.println("------------------------------");
-    }
 
     private class TestCase {
         String word;
@@ -73,6 +52,34 @@ public class PrefixOfStrings extends Exercise {
         TestCase(String word, String[] list) {
             this.word = word;
             this.list = list;
+        }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (index = 0; index < testSuite.length; index++) {
+            TestCase test = testSuite[index];
+            
+            shortestPrefix = getShortestPrefix(test.word, Arrays.copyOf(test.list, test.list.length));
+
+            System.out.printf("Word = %s%nList = { ", testSuite[index].word);
+            for (String string : testSuite[index].list) {
+                System.out.printf("%s ", string);
+            }
+            System.out.printf("}%n");
+
+            System.out.printf("The shortest prefix is: '%s'%n", shortestPrefix);
+            System.out.println("------------------------------");
         }
     }
 }

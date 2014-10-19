@@ -24,22 +24,6 @@ public class SixSixPair extends Exercise {
     private final int SIZE = 100;
     private Domino[] dominoes;
     
-    @Override
-    public void run() {
-        initialize();
-        
-        HashSet<Domino> pair = hasSixSixPair(dominoes);
-        if (pair.isEmpty()) {
-            System.out.println("The array does not have any 6-6 pairs");    
-        } else {
-            System.out.println("The array has at least one 6-6 pair:");
-            
-            for (Domino domino : pair) {
-                System.out.printf("(%d, %d)%n", domino.left, domino.right);
-            }
-        }
-    }
-    
     private HashSet<Domino> hasSixSixPair(Domino[] array) {
         HashMap<Integer, Domino> dominoes = new HashMap<Integer, Domino>();
         HashSet<Domino> pair = new HashSet<Domino>();
@@ -66,6 +50,17 @@ public class SixSixPair extends Exercise {
         return pair;
     }
     
+    private class Domino {
+        int left;
+        int right;
+
+        Domino(int left, int right) {
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+    @Override
     protected void initialize() {
         dominoes = new Domino[SIZE];
         for (int i = 0; i < SIZE; i++) {
@@ -76,13 +71,22 @@ public class SixSixPair extends Exercise {
         }
     }
 
-    private class Domino {
-        int left;
-        int right;
-        
-        Domino(int left, int right) {
-            this.left = left;
-            this.right = right;
+    @Override
+    protected void runExercise() {
+        HashSet<Domino> pair = hasSixSixPair(dominoes);
+        if (pair.isEmpty()) {
+            System.out.println("The array does not have any 6-6 pairs");
+        } else {
+            System.out.println("The array has at least one 6-6 pair:");
+
+            for (Domino domino : pair) {
+                System.out.printf("(%d, %d)%n", domino.left, domino.right);
+            }
         }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

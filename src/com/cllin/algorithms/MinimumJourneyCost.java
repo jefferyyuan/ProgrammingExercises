@@ -22,27 +22,6 @@ public class MinimumJourneyCost extends Exercise {
     private HashMap<Integer, String> reference;
     private int[] mileages;
     
-    @Override
-    public void run() {
-        initialize();
-        
-        System.out.printf("For journey J = { ");
-        for (int i = 0; i < mileages.length; i++) {
-            System.out.printf("%s = %d ", reference.get(mileages[i]), mileages[i]);
-        }
-        System.out.printf("}%n");
-        
-        int minimumCost = getJourney(mileages);
-        
-        System.out.printf("Minimum Cost = %d%n", minimumCost);
-        System.out.printf("Minimum Journey = {%n");
-        while (!shortestJourney.isEmpty()) {
-            int index = shortestJourney.poll();
-            System.out.printf("    %s = %d%n", reference.get(mileages[index]), mileages[index]);
-        }
-        System.out.println("}");
-    }
-    
     /*
      * C(i, j) = Cost from i to j
      * C(i, n) = Minimum(C(i, j) + C(j, n)), i + 1 <= j < n
@@ -82,6 +61,7 @@ public class MinimumJourneyCost extends Exercise {
         return costs[0];
     }
     
+    @Override
     protected void initialize() {
         mileages = new int[SIZE];
         reference = new HashMap<Integer, String>();
@@ -111,5 +91,29 @@ public class MinimumJourneyCost extends Exercise {
     
     private static String mapNumberToString(int n) {
         return Character.toString ((char) (n + (int) 'A'));
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        System.out.printf("For journey J = { ");
+        for (int i = 0; i < mileages.length; i++) {
+            System.out.printf("%s = %d ", reference.get(mileages[i]), mileages[i]);
+        }
+        System.out.printf("}%n");
+
+        int minimumCost = getJourney(mileages);
+
+        System.out.printf("Minimum Cost = %d%n", minimumCost);
+        System.out.printf("Minimum Journey = {%n");
+        while (!shortestJourney.isEmpty()) {
+            int index = shortestJourney.poll();
+            System.out.printf("    %s = %d%n", reference.get(mileages[index]), mileages[index]);
+        }
+        System.out.println("}");
     }
 }

@@ -29,14 +29,6 @@ public class SubstringConcatenation extends Exercise {
     private int index;
     private String substring;
     
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            substring = getSubstring(testSuite[index].S, testSuite[index].L);
-            test();
-        }
-    }
-    
     private String getSubstring(String string, String[] list) {
         if (list == null || list.length == 0) return new String();
         
@@ -92,20 +84,7 @@ public class SubstringConcatenation extends Exercise {
         
         return "Substring not found";
     }
-    
-    protected void test() {
-        System.out.printf("S = %s%n", testSuite[index].S);
-        
-        System.out.print("L = { ");
-        for (String word : testSuite[index].L) {
-            System.out.printf("%s ", word);
-        }
-        System.out.printf("}%n");
-        
-        System.out.printf("Substring = %s%n", substring);
-        
-        System.out.println("------------------------------");
-    }
+
     
     private class TestCase {
         String S;
@@ -117,4 +96,32 @@ public class SubstringConcatenation extends Exercise {
         }
     }
 
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (index = 0; index < testSuite.length; index++) {
+            substring = getSubstring(testSuite[index].S, testSuite[index].L);
+
+            System.out.printf("S = %s%n", testSuite[index].S);
+
+            System.out.print("L = { ");
+            for (String word : testSuite[index].L) {
+                System.out.printf("%s ", word);
+            }
+            System.out.printf("}%n");
+
+            System.out.printf("Substring = %s%n", substring);
+
+            System.out.println("------------------------------");
+        }
+    }
 }

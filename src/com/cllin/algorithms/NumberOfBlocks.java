@@ -21,17 +21,6 @@ public class NumberOfBlocks extends Exercise {
     
     private int nBlocks;
     
-    @Override
-    public void run() {
-        initialize();
-        for (TestCase t : testSuite) {
-            testCase = t;
-            nBlocks = getNumBlocks(t.nodes, t.head);
-            test();
-        }
-
-    }
-    
     private int getNumBlocks(Node[] nodes, Node head) {
         HashSet<Node> set = new HashSet<Node>();
         int count = 0;
@@ -46,6 +35,7 @@ public class NumberOfBlocks extends Exercise {
         return count;
     }
 
+    @Override
     protected void initialize() {
         testSuite = new ArrayList<TestCase>();
         for (int size = 1; size < 15; size++) {
@@ -53,28 +43,39 @@ public class NumberOfBlocks extends Exercise {
         }
     }
     
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
     protected void test() {
-        System.out.print("List = { ");
-        Node node = testCase.head;
-        while (node != null) {
-            System.out.printf("%d ", node.value);
-            node = node.next;
-        }
-        System.out.printf("}%n");
-        
-        if (testCase.nodes.length == 0) {
-            System.out.printf("Block = { }, there is %d block%n", nBlocks);
+        for (TestCase t : testSuite) {
+            testCase = t;
+            nBlocks = getNumBlocks(t.nodes, t.head);
+
+            System.out.print("List = { ");
+            Node node = testCase.head;
+            while (node != null) {
+                System.out.printf("%d ", node.value);
+                node = node.next;
+            }
+            System.out.printf("}%n");
+
+            if (testCase.nodes.length == 0) {
+                System.out.printf("Block = { }, there is %d block%n", nBlocks);
+                System.out.println("------------------------------");
+                return;
+            }
+
+            System.out.print("Block = { ");
+            for (int i = 0; i < testCase.nodes.length; i++) {
+                System.out.printf("%d ", testCase.nodes[i].value);
+            }
+            System.out.printf("}, there are %d blocks%n", nBlocks);
+
             System.out.println("------------------------------");
-            return;
         }
-        
-        System.out.print("Block = { ");
-        for (int i = 0; i < testCase.nodes.length; i++) {
-            System.out.printf("%d ", testCase.nodes[i].value);
-        }
-        System.out.printf("}, there are %d blocks%n", nBlocks);
-        
-        System.out.println("------------------------------");
     }
     
     private class TestCase {

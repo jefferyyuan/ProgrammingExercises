@@ -27,15 +27,6 @@ public class DifferenceOfPairs extends Exercise {
     private int[] array;
     private ArrayList<ArrayList<Integer>> pairs;
     
-    @Override
-    public void run() {
-        for (int i = 0; i < 5; i++) {
-            initialize();
-            pairs = getPairs(array, target);
-            test();
-        }
-    }
-    
     private ArrayList<ArrayList<Integer>> getPairs(int[] array, int target) {
         ArrayList<ArrayList<Integer>> pairs = new ArrayList<ArrayList<Integer>>();
         if (array == null || array.length <= 1) return pairs;
@@ -72,6 +63,22 @@ public class DifferenceOfPairs extends Exercise {
         return pairs;
     }
     
+    @Override
+    protected void initialize() {
+        array = new int[SIZE];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (int) (Math.random() * MAXIMUM);
+        }
+
+        target = (int) (Math.random() * MAXIMUM);
+    }
+
+    @Override
+    protected void runExercise() {
+        pairs = getPairs(array, target);
+    }
+
+    @Override
     protected void test() {
         System.out.print("A = { ");
         for (int n : array) {
@@ -91,14 +98,5 @@ public class DifferenceOfPairs extends Exercise {
         }
         System.out.print("}\n");
         System.out.println("------------------------------");
-    }
-    
-    protected void initialize() {
-        array = new int[SIZE];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = (int) (Math.random() * MAXIMUM);
-        }
-        
-        target = (int) (Math.random() * MAXIMUM);
     }
 }

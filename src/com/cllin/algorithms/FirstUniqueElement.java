@@ -21,14 +21,6 @@ public class FirstUniqueElement extends Exercise {
     private int index;
     private String unique;
     
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            unique = getFirstUnique(testSuite[index]);
-            test();
-        }
-    }
-    
     private String getFirstUnique(String[] array) {
         HashMap<String, Node> map = new HashMap<String, Node>();
         LinkedList list = new LinkedList();
@@ -104,20 +96,34 @@ public class FirstUniqueElement extends Exercise {
         }
     }
     
-    protected void test() {
-        System.out.print("A = { ");
-        for (String n : testSuite[index]) {
-            System.out.printf("%s ", n);
-        }
-        System.out.printf("}%n");
-        
-        if (unique == null) {
-            System.out.printf("The list does not have unique elements%n");
-        } else {
-            System.out.printf("The first unique element is %s%n", unique);
-        }
-        
-        System.out.println("------------------------------");
+    @Override
+    protected void initialize() {
+        return;
     }
 
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (index = 0; index < testSuite.length; index++) {
+            unique = getFirstUnique(testSuite[index]);
+
+            System.out.print("A = { ");
+            for (String n : testSuite[index]) {
+                System.out.printf("%s ", n);
+            }
+            System.out.printf("}%n");
+
+            if (unique == null) {
+                System.out.printf("The list does not have unique elements%n");
+            } else {
+                System.out.printf("The first unique element is %s%n", unique);
+            }
+
+            System.out.println("------------------------------");
+        }
+    }
 }

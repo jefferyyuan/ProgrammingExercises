@@ -28,22 +28,6 @@ public class KPalindrome extends Exercise {
         "abaxbabax"
     };
     
-    @Override
-    public void run() {
-        for (String string : testSuite) {
-            for (int k = 0; k <= string.length(); k++) {
-                boolean isKPalindrome = isKPalindrome(string, k);
-                System.out.printf("%s %s a %d palindrome%n", string, (isKPalindrome)? "is" : "is not", k);
-                
-                if (isKPalindrome) {
-                    System.out.printf("->%s%n", getKPalindrome(string, k));
-                }
-                
-                System.out.println("------------------");
-            }
-        }
-    }
-    
     private boolean isKPalindrome(String string, int K) {
         String reverse = new StringBuilder(string).reverse().toString();
         
@@ -109,6 +93,32 @@ public class KPalindrome extends Exercise {
         }
         
         return palindrome.toString();
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (String string : testSuite) {
+            for (int k = 0; k <= string.length(); k++) {
+                boolean isKPalindrome = isKPalindrome(string, k);
+                System.out.printf("%s %s a %d palindrome%n", string, (isKPalindrome) ? "is" : "is not", k);
+
+                if (isKPalindrome) {
+                    System.out.printf("->%s%n", getKPalindrome(string, k));
+                }
+
+                System.out.println("------------------");
+            }
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
     
 }

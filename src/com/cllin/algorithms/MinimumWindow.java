@@ -20,20 +20,11 @@ import com.cllin.main.Exercise;
 public class MinimumWindow extends Exercise {
 
     private final TestCase[] testSuite = {
-            new TestCase(new int[]{4, 10, 15, 24, 26}, new int[]{0, 9, 12, 20}, new int[]{5, 18, 22, 30})
+        new TestCase(new int[]{4, 10, 15, 24, 26}, new int[]{0, 9, 12, 20}, new int[]{5, 18, 22, 30})
     };
     
     private int index;
     private int[] window;
-    
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            TestCase test = testSuite[index];
-            window = getMinimumWindow(test.list1, test.list2, test.list3);
-            test();
-        }
-    }
     
     private static int[] getMinimumWindow(int[] l1, int[] l2, int[] l3) {
         LinkedList<Integer> list1 = new LinkedList<Integer>();
@@ -181,34 +172,6 @@ public class MinimumWindow extends Exercise {
         return true;
     }
     
-    protected void test() {
-        TestCase test = testSuite[index];
-        
-        System.out.print("List 1 = { ");
-        for (int n : test.list1) {
-            System.out.printf("%d ", n);
-        }
-        System.out.printf("}%n");
-        
-        System.out.print("List 2 = { ");
-        for (int n : test.list2) {
-            System.out.printf("%d ", n);
-        }
-        System.out.printf("}%n");
-        
-        System.out.print("List 3 = { ");
-        for (int n : test.list3) {
-            System.out.printf("%d ", n);
-        }
-        System.out.printf("}%n");
-        
-        System.out.print("Minimum Window that covers at least one element in each list = { ");
-        for (int n : window) {
-            System.out.printf("%d ", n);
-        }
-        System.out.printf("}%n");
-    }
-    
     private class TestCase {
         int[] list1;
         int[] list2;
@@ -221,4 +184,45 @@ public class MinimumWindow extends Exercise {
         }
     }
 
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (index = 0; index < testSuite.length; index++) {
+            TestCase test = testSuite[index];
+            window = getMinimumWindow(test.list1, test.list2, test.list3);
+
+            System.out.print("List 1 = { ");
+            for (int n : test.list1) {
+                System.out.printf("%d ", n);
+            }
+            System.out.printf("}%n");
+
+            System.out.print("List 2 = { ");
+            for (int n : test.list2) {
+                System.out.printf("%d ", n);
+            }
+            System.out.printf("}%n");
+
+            System.out.print("List 3 = { ");
+            for (int n : test.list3) {
+                System.out.printf("%d ", n);
+            }
+            System.out.printf("}%n");
+
+            System.out.print("Minimum Window that covers at least one element in each list = { ");
+            for (int n : window) {
+                System.out.printf("%d ", n);
+            }
+            System.out.printf("}%n");
+        }
+    }
 }

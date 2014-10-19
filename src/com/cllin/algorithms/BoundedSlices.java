@@ -24,14 +24,6 @@ public class BoundedSlices extends Exercise {
     private int index;
     private ArrayList<ArrayList<Integer>> slices;
     
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            slices = boundedSlices(testSuite[index]);
-            test();
-        }
-    }
-    
 //    Time Complexity = O(n ^ 2), n is the size of the array
     private ArrayList<ArrayList<Integer>> boundedSlices(int[] array) {
         ArrayList<ArrayList<Integer>> slices = new ArrayList<ArrayList<Integer>>();
@@ -55,21 +47,37 @@ public class BoundedSlices extends Exercise {
         return slices;
     }
 
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
     protected void test() {
-        System.out.print("A = { ");
-        for (int n : testSuite[index]) {
-            System.out.printf("%d ", n);
-        }
-        System.out.print("}\n");
-        
-        System.out.println("Slices whose difference between minimum and maximum is smaller than 2 are:");
-        for (ArrayList<Integer> slice : slices) {
-            for (int n : slice) {
-                System.out.printf("A[%d] = %d ", n, testSuite[index][n]);
+        for (index = 0; index < testSuite.length; index++) {
+            slices = boundedSlices(testSuite[index]);
+
+            System.out.print("A = { ");
+            for (int n : testSuite[index]) {
+                System.out.printf("%d ", n);
             }
-            System.out.println();
+            System.out.print("}\n");
+
+            System.out
+                    .println("Slices whose difference between minimum and maximum is smaller than 2 are:");
+            for (ArrayList<Integer> slice : slices) {
+                for (int n : slice) {
+                    System.out.printf("A[%d] = %d ", n, testSuite[index][n]);
+                }
+                System.out.println();
+            }
+
+            System.out.println("------------------------------");
         }
-        
-        System.out.println("------------------------------");
     }
 }

@@ -13,28 +13,13 @@ import com.cllin.main.Exercise;
 
 public class FindMissing extends Exercise {
 
-    private static final int SIZE = 5;
-    private static final int MAXIMUM = 1000;
+    private final int SIZE = 5;
+    private final int MAXIMUM = 1000;
     
     private int[] array1;
     private int[] array2;
     private int missingValue;
     private int reference;
-    
-    @Override
-    public void run() {
-        for (int i = 0; i < 100; i++) {
-            initialize();
-            missingValue = getMissing(array1, array2);
-            
-            if (missingValue != reference) {
-                System.out.println("Failed");
-                return;
-            }
-        }
-        
-        System.out.println("Success!");
-    }
     
     private int getMissing(int[] A1, int[] A2) {
         int start = 0;
@@ -57,6 +42,7 @@ public class FindMissing extends Exercise {
         return (A1[start] == A2[start])? A1[end] : A1[start];
     }
     
+    @Override
     protected void initialize() {
         array1 = new int[SIZE];
         array2 = new int[SIZE - 1];
@@ -82,6 +68,21 @@ public class FindMissing extends Exercise {
                 array2[j++] = array1[i++];
             }
         }
+    }
+
+    @Override
+    protected void runExercise() {
+        missingValue = getMissing(array1, array2);
+    }
+
+    @Override
+    protected void test() {
+        if (missingValue != reference) {
+            System.out.println("Failed");
+            return;
+        }
+
+        System.out.println("Success!");
     }
 
 }

@@ -20,33 +20,6 @@ public class KthOfUnsortedArray extends Exercise {
     private int[] array;
     private int[] reference;
     
-    protected void initialize() {
-        array = new int[SIZE];
-        reference = new int[SIZE];
-        
-        for (int i = 0; i < SIZE; i++) {
-            int num = (int) (Math.random() * MAXIMUM);
-            array[i] = num;
-            reference[i] = num;
-        }
-        
-        Arrays.sort(reference);
-    }
-    
-    @Override
-    public void run() {
-        initialize();
-        
-        for (k = 1; k <= SIZE; k++) {
-            if (k % 2 == 1) continue;
-
-            int[] copy = Arrays.copyOf(array, array.length);
-            result = getKth(copy , 0, array.length - 1, k);
-            test();
-        }
-        
-    }
-    
     private int getKth(int[] array, int start, int end, int k) {
         if (start == end) return array[start];
         
@@ -83,9 +56,36 @@ public class KthOfUnsortedArray extends Exercise {
         array[y] = temp;
     }
 
+    @Override
+    protected void initialize() {
+        array = new int[SIZE];
+        reference = new int[SIZE];
+
+        for (int i = 0; i < SIZE; i++) {
+            int num = (int) (Math.random() * MAXIMUM);
+            array[i] = num;
+            reference[i] = num;
+        }
+
+        Arrays.sort(reference);
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
     protected void test() {
-        int answer = reference[k - 1];
-        
-        System.out.printf("The %dth element of the array is %d, %s%n", k, result, (result == answer)? "correct!" : "incorrect");
+        for (k = 1; k <= SIZE; k++) {
+            if (k % 2 == 1) continue;
+
+            int[] copy = Arrays.copyOf(array, array.length);
+            result = getKth(copy , 0, array.length - 1, k);
+            
+            int answer = reference[k - 1];
+            System.out.printf("The %dth element of the array is %d, %s%n", k, result,
+                    (result == answer) ? "correct!" : "incorrect");
+        }
     }
 }

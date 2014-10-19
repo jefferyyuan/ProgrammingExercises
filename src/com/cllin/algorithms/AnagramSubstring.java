@@ -25,14 +25,6 @@ public class AnagramSubstring extends Exercise {
     private int index;
     private boolean result;
     
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            result = hasAnagramSubstring(testSuite[index].A, testSuite[index].B);
-            test();
-        }
-    }
-    
     private boolean hasAnagramSubstring(String A, String B) {
         if (A.length() > B.length()) return false;
 
@@ -60,12 +52,6 @@ public class AnagramSubstring extends Exercise {
         return false;
     }
 
-    protected void test() {
-        TestCase test = testSuite[index];
-        System.out.printf("%s %s an anagram that is a substring of %s%n", test.A, (result)? "has" : "does not have", test.B);
-        
-    }
-    
     private class TestCase {
         String A;
         String B;
@@ -73,6 +59,27 @@ public class AnagramSubstring extends Exercise {
         TestCase(String A, String B) {
             this.A = A;
             this.B = B;
+        }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (index = 0; index < testSuite.length; index++) {
+            result = hasAnagramSubstring(testSuite[index].A, testSuite[index].B);
+
+            TestCase test = testSuite[index];
+            System.out.printf("%s %s an anagram that is a substring of %s%n", test.A,
+                    (result) ? "has" : "does not have", test.B);
         }
     }
 }

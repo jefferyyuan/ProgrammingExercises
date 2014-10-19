@@ -33,20 +33,6 @@ import com.cllin.main.Exercise;
  */
 
 public class PrintEvolutionaryTree extends Exercise {
-
-    @Override
-    public void run() {
-        ArrayList<Relation> input = new ArrayList<Relation>();
-        
-        input.add(new Relation("animal", "mammal"));
-        input.add(new Relation("animal", "bird"));
-        input.add(new Relation("lifeform", "animal"));
-        input.add(new Relation("cat", "lion"));
-        input.add(new Relation("mammal", "cat"));
-        input.add(new Relation("animal", "fish"));
-        
-        printTree(input);
-    }
     
     private void printTree(ArrayList<Relation> input) {
         HashMap<String, ArrayList<String>> map = new HashMap<String, ArrayList<String>>();
@@ -89,5 +75,29 @@ public class PrintEvolutionaryTree extends Exercise {
             this.parent = parent;
             this.child = child;
         }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        ArrayList<Relation> input = new ArrayList<Relation>();
+
+        input.add(new Relation("animal", "mammal"));
+        input.add(new Relation("animal", "bird"));
+        input.add(new Relation("lifeform", "animal"));
+        input.add(new Relation("cat", "lion"));
+        input.add(new Relation("mammal", "cat"));
+        input.add(new Relation("animal", "fish"));
+
+        printTree(input);
+    }
+
+    @Override
+    protected void test() {
+        return;
     } 
 }

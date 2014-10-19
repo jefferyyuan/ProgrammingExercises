@@ -13,28 +13,20 @@ import com.cllin.main.Exercise;
 
 public class MergeContacts extends Exercise {
 
-    private Contact[][] testSuite = {
-            new Contact[]{
-                    new Contact("Bob", new String[]{"bob@gmail.com", "bob@yahoo.com"}),
-                    new Contact("Jack Smith", new String[]{"jack@gmail.com"}),
-                    new Contact("Bob C", new String[]{"bob@fb.com", "bob@yahoo.com"}),
-                    new Contact("Jack A. Smith", new String[]{"jack@gmail.com", "jack5566@gmail.com"}),
-                    new Contact("Bobby", new String[]{"bob@fb.com"}),
-                    new Contact("Nate", new String[]{"nate@gmail.com"}),
-                    new Contact("Bob", new String[]{"bob@hotmail.com"})
-            }
+    private final Contact[][] testSuite = {
+        new Contact[]{
+            new Contact("Bob", new String[]{"bob@gmail.com", "bob@yahoo.com"}),
+            new Contact("Jack Smith", new String[]{"jack@gmail.com"}),
+            new Contact("Bob C", new String[]{"bob@fb.com", "bob@yahoo.com"}),
+            new Contact("Jack A. Smith", new String[]{"jack@gmail.com", "jack5566@gmail.com"}),
+            new Contact("Bobby", new String[]{"bob@fb.com"}),
+            new Contact("Nate", new String[]{"nate@gmail.com"}),
+            new Contact("Bob", new String[]{"bob@hotmail.com"})
+        }
     };
     
     private int index;
     private HashSet<HashSet<String>> contactClusters;
-    
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            contactClusters = mergeContacts(testSuite[index]);
-            test();
-        }
-    }
     
     private HashSet<HashSet<String>> mergeContacts(Contact[] contacts) {
         HashSet<HashSet<String>> clusters = new HashSet<HashSet<String>>();
@@ -76,38 +68,53 @@ public class MergeContacts extends Exercise {
         
         return clusters;
     }
-    
-    protected void test() {
-        System.out.print("Contacts = { ");
-        for (Contact contact : testSuite[index]) {
-            System.out.printf("%n    %s = { ", contact.name);
-            
-            for (String email : contact.emails) {
-                System.out.printf("%n        %s", email);
-            }
-            System.out.printf("%n    }%n");
-        }
-        System.out.printf("}%n%n");
-        
-        System.out.print("Merged Contacts = { ");
-        for (HashSet<String> cluster : contactClusters) {
-            
-            System.out.printf("%n    { ");
-            for (String name : cluster) {
-                System.out.printf("%n        %s", name);
-            }
-            System.out.printf("%n    }%n");
-        }
-        System.out.printf("}%n");
-    }
 
     private class Contact {
         String name;
         String[] emails;
-        
+
         Contact(String name, String[] emails) {
             this.name = name;
             this.emails = emails;
+        }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+    
+    @Override
+    protected void test() {
+        for (index = 0; index < testSuite.length; index++) {
+            contactClusters = mergeContacts(testSuite[index]);
+            
+            System.out.print("Contacts = { ");
+            for (Contact contact : testSuite[index]) {
+                System.out.printf("%n    %s = { ", contact.name);
+
+                for (String email : contact.emails) {
+                    System.out.printf("%n        %s", email);
+                }
+                System.out.printf("%n    }%n");
+            }
+            System.out.printf("}%n%n");
+            
+            System.out.print("Merged Contacts = { ");
+            for (HashSet<String> cluster : contactClusters) {
+
+                System.out.printf("%n    { ");
+                for (String name : cluster) {
+                    System.out.printf("%n        %s", name);
+                }
+                System.out.printf("%n    }%n");
+            }
+            System.out.printf("}%n");
         }
     }
 }

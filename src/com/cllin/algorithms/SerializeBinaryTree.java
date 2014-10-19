@@ -18,22 +18,7 @@ public class SerializeBinaryTree extends Exercise {
     
     private String serialize;
     private Node node;
-    
-    @Override
-    public void run() {
-        initialize();
-        
-        serialize = serialize(tree.root, new String());
-        node = deserialize();
-        
-        test();
-    }
-    
-    protected void initialize() {
-        tree = new BinarySearchTree();
-        tree.buildTree(SIZE, MAXIMUM);
-    }
-    
+
     private String serialize(Node node, String string){
         if (node == null) {
             string += "#";
@@ -74,10 +59,23 @@ public class SerializeBinaryTree extends Exercise {
         return string;
     }
 
+    @Override
+    protected void initialize() {
+        tree = new BinarySearchTree();
+        tree.buildTree(SIZE, MAXIMUM);
+    }
+
+    @Override
+    protected void runExercise() {
+        serialize = serialize(tree.root, new String());
+        node = deserialize();
+    }
+
+    @Override
     protected void test() {
         String newTree = inorderTraversal(node, new String());
         String oldTree = tree.printTree();
-        
-        System.out.printf("%s%n", (newTree.equals(oldTree))? "Success!" : "Failed");
+
+        System.out.printf("%s%n", (newTree.equals(oldTree)) ? "Success!" : "Failed");
     }
 }

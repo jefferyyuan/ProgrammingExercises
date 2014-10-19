@@ -10,8 +10,23 @@ public class AddWithoutOperators extends Exercise {
 
     private static final int MAXIMUM = 1000000; 
     
+    private static int add(int a, int b) {
+        if (b == 0)
+            return a;
+
+        int withoutCarry = a ^ b;
+        int carry = (a & b) << 1;
+
+        return add(withoutCarry, carry);
+    }
+
     @Override
-    public void run() {
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
         for (int i = 0; i < 100; i++) {
             int a = (int) (Math.random() * MAXIMUM);
             int b = (int) (Math.random() * MAXIMUM);
@@ -26,12 +41,8 @@ public class AddWithoutOperators extends Exercise {
         System.out.println("Success!");
     }
 
-    private static int add(int a, int b) {
-        if (b == 0) return a;
-        
-        int withoutCarry = a ^ b;
-        int carry = (a & b) << 1;
-        
-        return add(withoutCarry, carry);
+    @Override
+    protected void test() {
+        return;
     }
 }

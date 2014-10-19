@@ -31,14 +31,6 @@ public class WordsFromLetterCollection extends Exercise {
     private int index;
     private String longestWord;
     
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            longestWord = getLongestWordFromDictionary(testSuite[index].dictionary, testSuite[index].characters);
-            test();
-        }
-    }
-    
     private String getLongestWordFromDictionary(String[] dictionary, char[] characters) {
         HashMap<Character, Integer> characterCounts = new HashMap<Character, Integer>();
         String longestWork = new String();
@@ -66,26 +58,10 @@ public class WordsFromLetterCollection extends Exercise {
             }
         }
         
-        return (longestWork.length() == 0)? "Cannot found word that can be spelled with the collection of letters" : longestWork;
+        return (longestWork.length() == 0)? 
+                "Cannot found word that can be spelled with the collection of letters" : longestWork;
     }
 
-    protected void test() {
-        System.out.print("Dictionary = { ");
-        for (String word : testSuite[index].dictionary) {
-            System.out.printf("%s ", word);
-        }
-        System.out.printf("}%n");
-        
-        System.out.print("Characters = { ");
-        for (char character : testSuite[index].characters) {
-            System.out.printf("%c ", character);
-        }
-        System.out.printf("}%n");
-        
-        System.out.printf("Longest word that can spelled with the collection of letters is %s%n", longestWord);
-        System.out.println("------------------------------");
-    }
-    
     private class TestCase {
         String[] dictionary;
         char[] characters;
@@ -93,6 +69,38 @@ public class WordsFromLetterCollection extends Exercise {
         TestCase(String[] dictionary, char[] characters) {
             this.dictionary = dictionary;
             this.characters = characters;
+        }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+    
+    @Override
+    protected void test() {
+        for (index = 0; index < testSuite.length; index++) {
+            longestWord = getLongestWordFromDictionary(testSuite[index].dictionary, testSuite[index].characters);
+
+            System.out.print("Dictionary = { ");
+            for (String word : testSuite[index].dictionary) {
+                System.out.printf("%s ", word);
+            }
+            System.out.printf("}%n");
+            
+            System.out.print("Characters = { ");
+            for (char character : testSuite[index].characters) {
+                System.out.printf("%c ", character);
+            }
+            System.out.printf("}%n");
+            
+            System.out.printf("Longest word that can spelled with the collection of letters is %s%n", longestWord);
+            System.out.println("------------------------------");
         }
     }
 }

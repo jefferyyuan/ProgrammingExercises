@@ -281,40 +281,39 @@
 12. Kth of UnsortedArray
 13. Serialize Binary Tree
 14. Edit String
-15. Minimum Sequence
-16. Pots of Gold
-17. Minimum Window
-18. 6-6 Pair
-19. Subsequence in Haystack
-20. Partial Sort
-21. Aggregated Number
-22. Longest Arithmetic Progression
-23. Sort by Dictionary
-24. Generate Equation
-25. Print Evolutionary Tree
-26. Generate Random
-27. First Unique Element
-28. Build Minimum Sum
-29. Combinations of Targeted Sum
-30. Convert Number
-31. Substitude Characters
-32. Reconstruct Journey
-33. Merge Contacts
-34. Consecutive Groups
-35. Pyramid of Cups
-36. String Reduction
-37. Substring Concatenation
-38. Words from Letter Collection
-39. Sum of Pairs
-40. Ceiling Value
-41. Minimum Queue
-42. Queue in an Integer
-43. Sum under Threshold
-44. Breaking Point
-45. Number of Blocks
-46. Prefix of Strings
-47. Difference of Pairs
-48. Run Length Encoding
-49. Random Seven
-50. Update Version Number
-51. MinimumJourneyCost
+15. Pots of Gold
+16. Minimum Window
+17. 6-6 Pair
+18. Subsequence in Haystack
+19. Partial Sort
+20. Aggregated Number
+21. Longest Arithmetic Progression
+22. Sort by Dictionary
+23. Generate Equation
+24. Print Evolutionary Tree
+25. Generate Random
+26. First Unique Element
+27. Build Minimum Sum
+28. Combinations of Targeted Sum
+29. Convert Number
+30. Substitude Characters
+31. Reconstruct Journey
+32. Merge Contacts
+33. Consecutive Groups
+34. Pyramid of Cups
+35. String Reduction
+36. Substring Concatenation
+37. Words from Letter Collection
+38. Sum of Pairs
+49. Ceiling Value
+50. Minimum Queue
+41. Queue in an Integer
+42. Sum under Threshold
+43. Breaking Point
+44. Number of Blocks
+45. Prefix of Strings
+46. Difference of Pairs
+47. Run Length Encoding
+48. Random Seven
+49. Update Version Number
+50. MinimumJourneyCost

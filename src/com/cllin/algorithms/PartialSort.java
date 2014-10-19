@@ -27,14 +27,6 @@ public class PartialSort extends Exercise {
     private int index;
     private int[] output;
     
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            output = partialSort(Arrays.copyOf(testSuite[index], testSuite[index].length));
-            test();
-        }
-    }
-
     private int[] partialSort(int[] array) {
         for (int i = 1; i < array.length; i++) {
             if (array[i] >= 0) continue; 
@@ -55,17 +47,32 @@ public class PartialSort extends Exercise {
         return array;
     }
     
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
     protected void test() {
-        System.out.print("Input = { ");
-        for (int n : testSuite[index]) {
-            System.out.printf("%d ", n);
+        for (index = 0; index < testSuite.length; index++) {
+            output = partialSort(Arrays.copyOf(testSuite[index], testSuite[index].length));
+
+            System.out.print("Input = { ");
+            for (int n : testSuite[index]) {
+                System.out.printf("%d ", n);
+            }
+            System.out.printf("}%n");
+
+            System.out.print("Output = { ");
+            for (int n : output) {
+                System.out.printf("%d ", n);
+            }
+            System.out.printf("}%n");
         }
-        System.out.printf("}%n");
-        
-        System.out.print("Output = { ");
-        for (int n : output) {
-            System.out.printf("%d ", n);
-        }
-        System.out.printf("}%n");
     }
 }

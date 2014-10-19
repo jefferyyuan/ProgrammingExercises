@@ -27,16 +27,7 @@ public class ConsecutiveGroups extends Exercise {
     private int index;
     private ArrayList<ArrayList<Integer>> output;
     
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            output = getGroup(testSuite[index]);
-            test();
-            
-        }
-    }
-    
-//    Assuming there are no duplicates in the array. If so, valueToIndex should be HashMap<Integer, ArrayList<Integer>>
+    // Assuming there are no duplicates in the array. If so, valueToIndex should be HashMap<Integer, ArrayList<Integer>> 
     private ArrayList<ArrayList<Integer>> getGroup(int[] array) {
         int minimum = Integer.MAX_VALUE;
         int maximum = Integer.MIN_VALUE;
@@ -94,23 +85,38 @@ public class ConsecutiveGroups extends Exercise {
         return output;
     }
     
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
     protected void test() {
-        System.out.print("Input = { ");
-        for (int n : testSuite[index]) {
-            System.out.printf("%d ", n);
-        }
-        System.out.printf("}%n");
-        
-        System.out.print("Output = { ");
-        for (ArrayList<Integer> group : output) {
-            System.out.printf("{ ");
-            for (Integer n : group) {
-                System.out.printf("%d ", n.intValue());
+        for (index = 0; index < testSuite.length; index++) {
+            output = getGroup(testSuite[index]);
+
+            System.out.print("Input = { ");
+            for (int n : testSuite[index]) {
+                System.out.printf("%d ", n);
             }
-            System.out.printf("} ");
+            System.out.printf("}%n");
+
+            System.out.print("Output = { ");
+            for (ArrayList<Integer> group : output) {
+                System.out.printf("{ ");
+                for (Integer n : group) {
+                    System.out.printf("%d ", n.intValue());
+                }
+                System.out.printf("} ");
+            }
+            System.out.printf("}%n");
+            System.out.println("------------------------------");
         }
-        System.out.printf("}%n");
-        System.out.println("------------------------------");
     }
 
 }

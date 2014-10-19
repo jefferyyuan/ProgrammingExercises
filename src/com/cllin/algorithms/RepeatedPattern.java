@@ -37,21 +37,27 @@ public class RepeatedPattern extends Exercise {
     private int index;
     private boolean isRepeatedPattern;
     
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            isRepeatedPattern = isRepeatedPattern(testSuite[index]);
-            test();
-        }
-    }
-    
     private boolean isRepeatedPattern(String string) {
         String concatenate = string + string;
         return (concatenate.indexOf(string, 1) < string.length());
     }
-    
-    protected void test() {
-        System.out.printf("%s %s a pattern of its substring%n", testSuite[index], (isRepeatedPattern)? "is" : "is not");
+
+    @Override
+    protected void initialize() {
+        return;
     }
 
+    @Override
+    protected void runExercise() {
+        return;
+    }
+    
+    @Override
+    protected void test() {
+        for (index = 0; index < testSuite.length; index++) {
+            isRepeatedPattern = isRepeatedPattern(testSuite[index]);
+
+            System.out.printf("%s %s a pattern of its substring%n", testSuite[index], (isRepeatedPattern)? "is" : "is not");
+        }
+    }
 }

@@ -25,13 +25,6 @@ public class PotsOfGold extends Exercise {
     private int[] pots;
     private int maximum;
     
-    @Override
-    public void run() {
-        initialize();
-        maximum = maximumGold(pots);
-        test();
-    }
-    
     private int[][] strategy;
     private int[][] gold;
     private int maximumGold(int[] pots) {
@@ -72,6 +65,7 @@ public class PotsOfGold extends Exercise {
         return gold[start][end];
     }
     
+    @Override
     protected void initialize() {
         pots = new int[SIZE];
         for (int i = 0; i < SIZE; i++) {
@@ -79,6 +73,12 @@ public class PotsOfGold extends Exercise {
         }
     }
 
+    @Override
+    protected void runExercise() {
+        maximum = maximumGold(pots);
+    }
+
+    @Override
     protected void test() {
         System.out.print("Gold = { ");
         for (int n : pots) {

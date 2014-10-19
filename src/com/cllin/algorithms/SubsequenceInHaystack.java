@@ -17,13 +17,6 @@ public class SubsequenceInHaystack extends Exercise {
 
     private String haystack = "cciatatcgatctta";
     private String needle = "cat";
-    
-    @Override
-    public void run() {
-        int numValid = getCount(haystack, needle);
-        
-        System.out.printf("There are %d valid substring for:%nH = %s%nN = %s", numValid, haystack, needle);
-    }
 
     private int getCount(String haystack, String needle) {
         HashMap<Character, ArrayList<Integer>> indices = new HashMap<Character, ArrayList<Integer>>();
@@ -66,6 +59,22 @@ public class SubsequenceInHaystack extends Exercise {
         }
         
         return numValid;
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        int numValid = getCount(haystack, needle);
+        System.out.printf("There are %d valid substring for:%nH = %s%nN = %s", numValid, haystack, needle);        
     } 
     
 }

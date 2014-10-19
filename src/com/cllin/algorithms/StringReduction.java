@@ -24,17 +24,6 @@ public class StringReduction extends Exercise {
             "CCCCC"
     };
     
-    private int index;
-    private String output;
-    
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            output = reduceString(testSuite[index]);
-            test();
-        }
-    }
-    
     private String reduceString(String input) {
         String minimum = new String(input);
         LinkedList<String> queue = new LinkedList<String>();
@@ -60,11 +49,26 @@ public class StringReduction extends Exercise {
         return minimum;
     }
     
-    protected void test() {
-        System.out.printf("Input = %s%n", testSuite[index]);
-        System.out.printf("Output = %s%n", output);
-        
-        System.out.println("------------------------------");
+    @Override
+    protected void initialize() {
+        return;
     }
 
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (int index = 0; index < testSuite.length; index++) {
+            String output = reduceString(testSuite[index]);
+
+            System.out.printf("Input = %s%n", testSuite[index]);
+            System.out.printf("Output = %s%n", output);
+
+            System.out.println("------------------------------");
+        }
+        
+    }
 }

@@ -19,32 +19,8 @@ public class SumUnderThreshold extends Exercise {
     
     private int[] array;
     private int threshold;
-    
     private int nPairs;
     
-    protected void initialize() {
-        array = new int[SIZE];
-        
-        HashSet<Integer> set = new HashSet<Integer>();
-        while (set.size() < 10) {
-            set.add((int) (Math.random() * MAXIMUM));
-        }
-        
-        int index = 0;
-        for (int n : set) {
-            array[index++] = n;
-        }
-        
-        threshold = (int) (Math.random() * MAXIMUM);;
-    }
-    
-    @Override
-    public void run() {
-        initialize();
-        nPairs = getNumPairs(array, threshold);
-        test();
-    }
-
     /*
      * Solution 1: With sorting
      * Complexity = O(n * long(n)), can be improved to O(n) with counting sort
@@ -120,6 +96,29 @@ public class SumUnderThreshold extends Exercise {
     }
     */
     
+    @Override
+    protected void initialize() {
+        array = new int[SIZE];
+        
+        HashSet<Integer> set = new HashSet<Integer>();
+        while (set.size() < 10) {
+            set.add((int) (Math.random() * MAXIMUM));
+        }
+        
+        int index = 0;
+        for (int n : set) {
+            array[index++] = n;
+        }
+        
+        threshold = (int) (Math.random() * MAXIMUM);;
+    }
+
+    @Override
+    protected void runExercise() {
+        nPairs = getNumPairs(array, threshold);        
+    }
+    
+    @Override
     protected void test() {
         System.out.print("A = { ");
         for (int n : array) {

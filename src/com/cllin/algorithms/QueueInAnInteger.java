@@ -12,31 +12,12 @@ import com.cllin.main.Exercise;
 
 public class QueueInAnInteger extends Exercise {
 
-//    Use -1 to mark a poll
+    // Use -1 to mark a poll
     private final int[][] testSuite = new int[][]{
             new int[]{0, 0, 8, 2, -1, 4, 1}
     };
     
     private int integerQueue = 1;
-    private LinkedList<Integer> queue;
-    
-    @Override
-    public void run() {
-        for (int[] test : testSuite) {
-            queue = new LinkedList<Integer>();
-            for (int n : test) {
-                if (n == -1) {
-                    poll();
-                    queue.poll();
-                } else {
-                    push(n);
-                    queue.add(n);
-                }
-            }
-            
-            test();
-        }
-    }
 
     private void push(int value) {
         integerQueue *= 10;
@@ -65,18 +46,42 @@ public class QueueInAnInteger extends Exercise {
         return size;
     }
     
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
     protected void test() {
-        boolean isSuccess = true;
-        while (!queue.isEmpty()) {
-            int a = poll();
-            int b = queue.pollFirst();
-            
-            if (a != b) {
-                isSuccess = false;
-                break;
+        for (int[] test : testSuite) {
+            LinkedList<Integer> queue = new LinkedList<Integer>();
+            for (int n : test) {
+                if (n == -1) {
+                    poll();
+                    queue.poll();
+                } else {
+                    push(n);
+                    queue.add(n);
+                }
             }
+
+            boolean isSuccess = true;
+            while (!queue.isEmpty()) {
+                int a = poll();
+                int b = queue.pollFirst();
+
+                if (a != b) {
+                    isSuccess = false;
+                    break;
+                }
+            }
+
+            System.out.printf("%s%n", (isSuccess) ? "Success" : "Failed");
         }
-        
-        System.out.printf("%s%n", (isSuccess)? "Success" : "Failed");
     }
 }

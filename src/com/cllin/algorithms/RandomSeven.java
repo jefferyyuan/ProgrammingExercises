@@ -11,8 +11,29 @@ import com.cllin.main.Exercise;
 
 public class RandomSeven extends Exercise {
 
+    private static int random7() {
+        int c = Integer.MAX_VALUE;
+        while (c >= 21) {
+            int a = random5();
+            int b = random5();
+
+            c = a * 5 + b;
+        }
+
+        return c % 7;
+    }
+
+    private static int random5() {
+        return (int) (Math.random() * 5);
+    }
+
     @Override
-    public void run() {
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
         final int size = 100000;
         
         int[] counts = new int[7];
@@ -31,19 +52,8 @@ public class RandomSeven extends Exercise {
         }
     }
 
-    private static int random7() {
-        int c = Integer.MAX_VALUE;
-        while (c >= 21) {
-            int a = random5();
-            int b = random5();
-            
-            c = a * 5 + b;
-        }
-        
-        return c % 7;
-    }
-    
-    private static int random5() {
-        return (int) (Math.random() * 5);
+    @Override
+    protected void test() {
+        return;
     }
 }

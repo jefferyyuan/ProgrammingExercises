@@ -15,13 +15,6 @@ import com.cllin.main.Exercise;
 
 public class GenerateEquation extends Exercise {
 
-    @Override
-    public void run() {
-        for (int n = 1; n < 15; n++) {
-            System.out.printf("The %dth element of the sequence is %d%n", n, generateEquation(n));
-        }
-    }
-
     private int generateEquation(int n) {
         int value = 1;
         PriorityQueue<Integer> heap = new PriorityQueue<Integer>();
@@ -42,5 +35,22 @@ public class GenerateEquation extends Exercise {
         }
         
         return value;
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (int n = 1; n < 15; n++) {
+            System.out.printf("The %dth element of the sequence is %d%n", n, generateEquation(n));
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

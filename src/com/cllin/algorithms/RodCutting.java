@@ -2,28 +2,13 @@ package com.cllin.algorithms;
 
 import com.cllin.main.Exercise;
 
-public class RodCutting extends Exercise{
+public class RodCutting extends Exercise {
     
     private final int[][] testSuite = {
             {1, 5, 8, 9, 10, 17, 17, 20},
             {3, 5, 8, 9, 10, 17, 17, 20},
             {1, 5, 8, 9, 10, 17, 17, 20, 24, 30}
     };
-    
-    @Override
-    public void run() {
-        for (int[] test : testSuite) {
-            
-            System.out.print("For P = { ");
-            
-            int[] prices = test;
-            for (int price : prices) {
-                System.out.printf("%d ", price);
-            }
-            
-            System.out.printf("}%nR = %d%n", rodCutting(prices));
-        }
-    }
     
     /*
      * P(i) = Price of a rod with length i
@@ -36,13 +21,13 @@ public class RodCutting extends Exercise{
      *                     ...
      *                     M(1) + M(i - 1))
      */
-    private int rodCutting(int[] prices){
+    private int rodCutting(int[] prices) {
         if (prices.length < 1) return 0;
         
         int[] revenues = new int[prices.length + 1];
         revenues[0] = 0;
         
-        for(int i = 1; i <= prices.length; i++){
+        for (int i = 1; i <= prices.length; i++) {
             int max = prices[i - 1];
             
             for (int j = 0; j <= i / 2; j++) {
@@ -53,5 +38,30 @@ public class RodCutting extends Exercise{
         }
         
         return revenues[prices.length];
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (int[] test : testSuite) {
+
+            System.out.print("For P = { ");
+
+            int[] prices = test;
+            for (int price : prices) {
+                System.out.printf("%d ", price);
+            }
+
+            System.out.printf("}%nR = %d%n", rodCutting(prices));
+        }
     }
 }

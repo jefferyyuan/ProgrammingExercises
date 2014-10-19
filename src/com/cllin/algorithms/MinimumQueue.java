@@ -12,24 +12,9 @@ import com.cllin.main.Exercise;
 
 public class MinimumQueue extends Exercise {
 
-    private int[][] testSuite = new int[][]{
+    private final int[][] testSuite = new int[][] {
             new int[]{4, 5, 1, 2}
     };
-    
-    @Override
-    public void run() {
-        for (int[] test : testSuite) {
-            Queue queue = new Queue();
-            
-            for (int i = 0; i < test.length; i++) {
-                queue.push(test[i]);
-            }
-            
-            for (int i = 0; i < test.length; i++) {
-                queue.pop();
-            }
-        }
-    }
 
     private class Queue {
         LinkedList<Integer> queue;
@@ -73,6 +58,31 @@ public class MinimumQueue extends Exercise {
                 System.out.printf("%d ", n);
             }
             System.out.printf("}, Minimum = %d%n", this.getMinimum());
+        }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (int[] test : testSuite) {
+            Queue queue = new Queue();
+
+            for (int i = 0; i < test.length; i++) {
+                queue.push(test[i]);
+            }
+
+            for (int i = 0; i < test.length; i++) {
+                queue.pop();
+            }
         }
     }
 }

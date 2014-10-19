@@ -29,17 +29,6 @@ public class RearrangeArray extends Exercise {
             {0, 1, 2, 3}
     };
     
-    private int index;
-    private int[] result;
-    
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            result = rearrangeArray(testSuite[index]);
-            test();
-        }
-    }
-
     private int[] rearrangeArray(int[] array) {
         int length = array.length;
         int[] result = Arrays.copyOf(array, length);
@@ -55,18 +44,33 @@ public class RearrangeArray extends Exercise {
         return result;
     }
     
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
     protected void test() {
-        System.out.print("I = { ");
-        for (int n : testSuite[index]) {
-            System.out.printf("%d ", n);
+        for (int index = 0; index < testSuite.length; index++) {
+            int[] result = rearrangeArray(testSuite[index]);
+
+            System.out.print("I = { ");
+            for (int n : testSuite[index]) {
+                System.out.printf("%d ", n);
+            }
+            System.out.printf("}%n");
+
+            System.out.print("O = { ");
+            for (int n : result) {
+                System.out.printf("%d ", n);
+            }
+            System.out.printf("}%n");
+            System.out.println("------------------------------");
         }
-        System.out.printf("}%n");
-        
-        System.out.print("O = { ");
-        for (int n : result) {
-            System.out.printf("%d ", n);
-        }
-        System.out.printf("}%n");
-        System.out.println("------------------------------");
     }
 }

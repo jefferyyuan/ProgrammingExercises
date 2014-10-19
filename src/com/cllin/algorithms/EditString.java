@@ -9,7 +9,7 @@ import com.cllin.main.Exercise;
 
 public class EditString extends Exercise {
 
-    private String[] testSuite = {
+    private final String[] testSuite = {
             "AAAA",
             "BBBB",
             "AABB",
@@ -17,14 +17,6 @@ public class EditString extends Exercise {
             "BABA",
     };
     
-    @Override
-    public void run() {
-        for (String string : testSuite) {
-            int distance = getDistance(string);
-            System.out.printf("The minimum distance of %s is %d%n", string, distance);
-        }
-    }
-
     private int getDistance(String string) {
         int length = string.length();
         int distance = Integer.MAX_VALUE;
@@ -49,5 +41,23 @@ public class EditString extends Exercise {
         }
         
         return distance;
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (String string : testSuite) {
+            int distance = getDistance(string);
+            System.out.printf("The minimum distance of %s is %d%n", string, distance);
+        }
     }
 }

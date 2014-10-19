@@ -20,22 +20,6 @@ public class SumOfPairs extends Exercise {
     private int k;
     private boolean hasPairs;
     
-    protected void initialize() {
-        array = new int[SIZE];
-        for (int i = 0; i < SIZE; i++) {
-            array[i] = (int) (Math.random() * MAXIMUM) + 1;
-        }
-        
-        k = (int) (Math.random() * MAXIMUM) + 1;
-    }
-    
-    @Override
-    public void run() {
-        initialize();
-        hasPairs = getNumberOfPairs(array, k);
-        test();
-    }
-    
     private boolean getNumberOfPairs(int[] array, int k) {
         int[] counts = new int[k];
         for (int i = 0; i < array.length; i++) {
@@ -52,6 +36,22 @@ public class SumOfPairs extends Exercise {
         return (count == array.length / 2);
     }
     
+    @Override
+    protected void initialize() {
+        array = new int[SIZE];
+        for (int i = 0; i < SIZE; i++) {
+            array[i] = (int) (Math.random() * MAXIMUM) + 1;
+        }
+
+        k = (int) (Math.random() * MAXIMUM) + 1;
+    }
+
+    @Override
+    protected void runExercise() {
+        hasPairs = getNumberOfPairs(array, k);
+    }
+
+    @Override
     protected void test() {
         System.out.print("A = { ");
         for (int n : array) {
@@ -59,5 +59,4 @@ public class SumOfPairs extends Exercise {
         }
         System.out.printf("}, T = %d, A %s form %d pairs whose sum is %d%n", k, (hasPairs)? "can" : "cannot", array.length / 2, k);
     }
-
 }

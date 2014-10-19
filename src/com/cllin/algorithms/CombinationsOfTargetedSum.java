@@ -21,24 +21,6 @@ public class CombinationsOfTargetedSum extends Exercise {
     private int N;
     private ArrayList<ArrayList<Integer>> combinations;
     
-    @Override
-    public void run() {
-        for (N = 2; N <= 10; N++) {
-            combinations = getCombinations(N);
-            
-            System.out.printf("N = %d%n", N);
-            for (ArrayList<Integer> combination : combinations) {
-                System.out.print("{ ");
-                for (Integer n : combination) {
-                    System.out.printf("%d ", n);
-                }
-                System.out.printf("}%n");
-            }
-            
-            System.out.println("------------------------------");
-        }
-    }
-    
     private ArrayList<ArrayList<Integer>> getCombinations(int n) {
         if (n < 2) return new ArrayList<ArrayList<Integer>>();
         
@@ -76,6 +58,34 @@ public class CombinationsOfTargetedSum extends Exercise {
         }
         
         return combinations;
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (N = 2; N <= 10; N++) {
+            combinations = getCombinations(N);
+
+            System.out.printf("N = %d%n", N);
+            for (ArrayList<Integer> combination : combinations) {
+                System.out.print("{ ");
+                for (Integer n : combination) {
+                    System.out.printf("%d ", n);
+                }
+                System.out.printf("}%n");
+            }
+
+            System.out.println("------------------------------");
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 
 }

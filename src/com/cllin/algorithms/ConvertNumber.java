@@ -11,17 +11,6 @@ import com.cllin.main.Exercise;
 
 public class ConvertNumber extends Exercise {
 
-    @Override
-    public void run() {
-        for (int i = 0; i < 10; i++) {
-            int N = (int) (Math.random() * 20000) + 1;
-            String string = numberToString(N);
-            int number = stringToNumber(string);
-            
-            System.out.printf("%d -> %s -> %d%n", N, string, number);
-        }
-    }
-    
     private static String numberToString(int n) {
         if (n < 1) return "Out of Bound";
         if (n <= 26) return Integer.toString(n);
@@ -62,5 +51,26 @@ public class ConvertNumber extends Exercise {
 
     private static String mapNumberToString(int n) {
         return Character.toString ((char) (n + 'A' - 1));
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (int i = 0; i < 10; i++) {
+            int N = (int) (Math.random() * 20000) + 1;
+            String string = numberToString(N);
+            int number = stringToNumber(string);
+
+            System.out.printf("%d -> %s -> %d%n", N, string, number);
+        }
     }
 }

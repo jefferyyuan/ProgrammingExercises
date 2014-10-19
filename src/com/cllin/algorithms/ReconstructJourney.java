@@ -32,14 +32,6 @@ public class ReconstructJourney extends Exercise {
     private int index;
     private ArrayList<String> route;
     
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            route = getRoute(testSuite[index]);
-            test();
-        }
-    }
-    
     /*
      * The code stands on two premises:
      *         1) There is only one starting point, i.e. it's not a forest
@@ -68,14 +60,6 @@ public class ReconstructJourney extends Exercise {
         
         return route;
     }
-    
-    protected void test() {
-        System.out.print("Journey = \n");
-        for (String string : route) {
-            System.out.printf("-> %s ", string);
-        }
-        System.out.println("\r\n------------------------------");
-    }
 
     private class Ticket {
         String departure;
@@ -84,6 +68,29 @@ public class ReconstructJourney extends Exercise {
         Ticket(String departure, String destination) {
             this.departure = departure;
             this.destination = destination;
+        }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (index = 0; index < testSuite.length; index++) {
+            route = getRoute(testSuite[index]);
+
+            System.out.print("Journey = \n");
+            for (String string : route) {
+                System.out.printf("-> %s ", string);
+            }
+            System.out.println("\r\n------------------------------");
         }
     }
 }

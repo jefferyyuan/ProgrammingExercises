@@ -23,17 +23,6 @@ public class SortByDictionary extends Exercise {
             new TestCase(new char[]{'P', 'S', 'E', 'H'}, "SHEEP")
     };
     
-    private int index;
-    private String output;
-    
-    @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            output = sortByDictionary(testSuite[index].dictionary, testSuite[index].string);
-            test();
-        }
-    }
-    
     private String sortByDictionary(char[] dictionary, String string) {
         StringBuffer buffer = new StringBuffer();
         HashMap<Character, Integer> counts = new HashMap<Character, Integer>();
@@ -61,19 +50,6 @@ public class SortByDictionary extends Exercise {
         return buffer.toString();
     }
     
-    protected void test() {
-        System.out.print("Dictionary = { ");
-        for (char c : testSuite[index].dictionary) {
-            System.out.printf("%c ", c);
-        }
-        System.out.printf("}%n");
-        
-        System.out.printf("Input = %s%n", testSuite[index].string);
-        System.out.printf("Output = %s%n", output);
-        
-        System.out.println("------------------------------");
-    }
-
     private class TestCase {
         char[] dictionary;
         String string;
@@ -81,6 +57,34 @@ public class SortByDictionary extends Exercise {
         TestCase(char[] dictionary, String string) {
             this.dictionary = dictionary;
             this.string = string;
+        }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected void test() {
+        for (int index = 0; index < testSuite.length; index++) {
+            String output = sortByDictionary(testSuite[index].dictionary, testSuite[index].string);
+
+            System.out.print("Dictionary = { ");
+            for (char c : testSuite[index].dictionary) {
+                System.out.printf("%c ", c);
+            }
+            System.out.printf("}%n");
+
+            System.out.printf("Input = %s%n", testSuite[index].string);
+            System.out.printf("Output = %s%n", output);
+
+            System.out.println("------------------------------");
         }
     }
 }

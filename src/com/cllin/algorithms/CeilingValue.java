@@ -19,22 +19,6 @@ public class CeilingValue extends Exercise {
     private int target;
     private BinarySearchTree tree;
     
-    protected void initialize() {
-        tree = new BinarySearchTree();
-        tree.buildTree(SIZE, MAXIMUM);
-        
-        ceilingValue = Integer.MIN_VALUE;
-        target = (int) (Math.random() * MAXIMUM);
-    }
-    
-    @Override
-    public void run() {
-        initialize();
-        ceilingValue = getCeilingValue(tree.root, target, ceilingValue);
-        test();
-
-    }
-    
     private int getCeilingValue(Node node, int target, int ceiling) {
         if (node == null) return ceiling;
         
@@ -48,13 +32,27 @@ public class CeilingValue extends Exercise {
         return result;
     }
     
+    @Override
+    protected void initialize() {
+        tree = new BinarySearchTree();
+        tree.buildTree(SIZE, MAXIMUM);
+
+        ceilingValue = Integer.MIN_VALUE;
+        target = (int) (Math.random() * MAXIMUM);
+    }
+
+    @Override
+    protected void runExercise() {
+        ceilingValue = getCeilingValue(tree.root, target, ceilingValue);
+    }
+
+    @Override
     protected void test() {
         if (ceilingValue == Integer.MIN_VALUE) {
             System.out.printf("Cannot find any number larger than %d in the tree%n", target);
             return;
         }
-        
+
         System.out.printf("The ceiling value of %d is %d%n", target, ceilingValue);
     }
-
 }

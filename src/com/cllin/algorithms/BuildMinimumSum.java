@@ -15,18 +15,9 @@ import com.cllin.main.Exercise;
 
 public class BuildMinimumSum extends Exercise {
 
-    private int LENGTH;
+    private final int LENGTH = 10;
     private int sum;
     private int[] array;
-    
-    @Override
-    public void run() {
-        for (LENGTH = 2; LENGTH <= 10; LENGTH++) {
-            initialize();
-            sum = getMinimumSum(array);
-            test();
-        }
-    }
     
     private int getMinimumSum(int[] array) {
         Arrays.sort(array);
@@ -45,6 +36,20 @@ public class BuildMinimumSum extends Exercise {
         return a + b;
     }
     
+    @Override
+    protected void initialize() {
+        array = new int[LENGTH];
+        for (int i = 0; i < LENGTH; i++) {
+            array[i] = (int) (Math.random() * 10);
+        }
+    }
+
+    @Override
+    protected void runExercise() {
+        sum = getMinimumSum(array);
+    }
+
+    @Override
     protected void test() {
         System.out.print("A = { ");
         for (int n : array) {
@@ -54,12 +59,5 @@ public class BuildMinimumSum extends Exercise {
         
         System.out.printf("Minimum Sum = %d%n", sum);
         System.out.println("------------------------------");
-    }
-
-    protected void initialize() {
-        array = new int[LENGTH];
-        for (int i = 0; i < LENGTH; i++) {
-            array[i] = (int) (Math.random() * 10);
-        }
     }
 }

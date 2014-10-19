@@ -7,14 +7,6 @@ public class RunLengthEncoding extends Exercise {
     private final String[] testSuite = new String[] {
             "BBBWBBBBBWWWBB"
     };
-    
-    @Override
-    public void run() {
-        for (String input : testSuite) {
-            String output = encode(input);
-            System.out.println(output);
-        }
-    }
 
     private static String encode(String input) {
         if (input == null || input.length() == 0) return new String();
@@ -34,5 +26,23 @@ public class RunLengthEncoding extends Exercise {
         }
         
         return output.toString();
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (String input : testSuite) {
+            String output = encode(input);
+            System.out.println(output);
+        }
+    }
+
+    @Override
+    protected void test() {
+        return;
     }
 }

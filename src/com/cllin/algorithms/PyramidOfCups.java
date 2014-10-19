@@ -21,17 +21,7 @@ public class PyramidOfCups extends Exercise {
 
     private TestCase test;
     private double[][] pyramid;
-    
-    @Override
-    public void run() {
-        for (int levels = 3; levels <= 5; levels++) {
-            test = new TestCase(levels);
-            pyramid = getPyramid(test.levels, test.capacity, 100);
-            
-            test();
-        }
-    }
-    
+
     private double[][] getPyramid(int levels, int[] capacity, double water) {
         double[][] pyramid = new double[levels][0];
         for (int i = 0; i < levels; i++) {
@@ -61,6 +51,35 @@ public class PyramidOfCups extends Exercise {
         return pyramid;
     }
     
+    private class TestCase {
+        static final int MAXIMUM_CAPACITY = 30;
+        int[] capacity;
+        int levels;
+
+        TestCase(int levels) {
+            this.levels = levels;
+
+            capacity = new int[(levels + 1) * levels / 2];
+            for (int i = 0; i < capacity.length; i++) {
+                capacity[i] = (int) (Math.random() * MAXIMUM_CAPACITY) + 1;
+            }
+        }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        int levels = 5;
+
+        test = new TestCase(levels);
+        pyramid = getPyramid(test.levels, test.capacity, 100);
+    }
+
+    @Override
     protected void test() {
         int count = 0;
         int levels = 1;
@@ -93,20 +112,4 @@ public class PyramidOfCups extends Exercise {
         
         System.out.println("------------------------------");
     }
-    
-    private class TestCase {
-        static final int MAXIMUM_CAPACITY = 30;
-        int[] capacity;
-        int levels;
-        
-        TestCase(int levels) {
-            this.levels = levels;
-            
-            capacity = new int[(levels + 1) * levels / 2];
-            for (int i = 0; i < capacity.length; i++) {
-                capacity[i] = (int) (Math.random() * MAXIMUM_CAPACITY) + 1;
-            }
-        }
-    }
-
 }

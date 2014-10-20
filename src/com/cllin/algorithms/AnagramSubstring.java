@@ -16,63 +16,72 @@ import com.cllin.main.Exercise;
  * Source: http://www.careercup.com/question?id=5389078581215232
  */
 
-public class AnagramSubstring implements Exercise {
+public class AnagramSubstring extends Exercise {
 
-	private final TestCase[] testSuite = {
-			new TestCase("xyz", "afdgzyxksldfm")
-	};
-	
-	private int index;
-	private boolean result;
-	
-	@Override
-	public void runExercise() {
-		for (index = 0; index < testSuite.length; index++) {
-			result = hasAnagramSubstring(testSuite[index].A, testSuite[index].B);
-			test();
-		}
-	}
-	
-	private boolean hasAnagramSubstring(String A, String B) {
-		if (A.length() > B.length()) return false;
+    private final TestCase[] testSuite = {
+            new TestCase("xyz", "afdgzyxksldfm")
+    };
+    
+    private int index;
+    private boolean result;
+    
+    private boolean hasAnagramSubstring(String A, String B) {
+        if (A.length() > B.length()) return false;
 
-		HashMap<Character, Integer> counts = new HashMap<Character, Integer>();
-		HashMap<Character, Integer> reference = new HashMap<Character, Integer>();
-		for (char key : A.toCharArray()) {
-			int count = (reference.containsKey(key))? reference.get(key) : 0;
-			reference.put(key, count + 1);
-		}
-		
-		for (int i = 0; i < B.length() - A.length(); i++) {
-			char key = B.charAt(i);
-			int count = (counts.containsKey(B.charAt(i)))? counts.get(key) : 0;
-			counts.put(B.charAt(i), count + 1);
-			
-			if (i < A.length()) continue;
-			
-			char last = B.charAt(i - A.length());
-			counts.put(last, counts.get(last) - 1);
-			if (counts.get(last) == 0) counts.remove(last);
-			
-			if (counts.equals(reference)) return true;
-		}
-		
-		return false;
-	}
+        HashMap<Character, Integer> counts = new HashMap<Character, Integer>();
+        HashMap<Character, Integer> reference = new HashMap<Character, Integer>();
+        for (char key : A.toCharArray()) {
+            int count = (reference.containsKey(key))? reference.get(key) : 0;
+            reference.put(key, count + 1);
+        }
+        
+        for (int i = 0; i < B.length() - A.length(); i++) {
+            char key = B.charAt(i);
+            int count = (counts.containsKey(B.charAt(i)))? counts.get(key) : 0;
+            counts.put(B.charAt(i), count + 1);
+            
+            if (i < A.length()) continue;
+            
+            char last = B.charAt(i - A.length());
+            counts.put(last, counts.get(last) - 1);
+            if (counts.get(last) == 0) counts.remove(last);
+            
+            if (counts.equals(reference)) return true;
+        }
+        
+        return false;
+    }
 
-	private void test() {
-		TestCase test = testSuite[index];
-		System.out.printf("%s %s an anagram that is a substring of %s%n", test.A, (result)? "has" : "does not have", test.B);
-		
-	}
-	
-	private class TestCase {
-		String A;
-		String B;
-		
-		TestCase(String A, String B) {
-			this.A = A;
-			this.B = B;
-		}
-	}
+    private class TestCase {
+        String A;
+        String B;
+        
+        TestCase(String A, String B) {
+            this.A = A;
+            this.B = B;
+        }
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected boolean test() {
+        for (index = 0; index < testSuite.length; index++) {
+            result = hasAnagramSubstring(testSuite[index].A, testSuite[index].B);
+
+            TestCase test = testSuite[index];
+            System.out.printf("%s %s an anagram that is a substring of %s%n", test.A,
+                    (result) ? "has" : "does not have", test.B);
+        }
+
+        return true;
+    }
 }

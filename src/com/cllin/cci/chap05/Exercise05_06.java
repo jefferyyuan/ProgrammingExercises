@@ -7,26 +7,36 @@ import com.cllin.main.Exercise;
  * (e.g., bit 0 and bit 1 are swapped, bit 2 and bit 3 are swapped, etc).
  */
 
-public class Exercise05_06 implements Exercise {
-	private final int[] testSuite = {1, 4, 6, 10, 73, 183, 5566};
-	
-	@Override
-	public void runExercise() {
-		for(int n : testSuite) {
-			int output = swapEvenAndOddBits(n);
-			System.out.printf("%s -> %s%n",
-					Integer.toBinaryString(n), 
-					Integer.toBinaryString(output));
-		}
+public class Exercise05_06 extends Exercise {
+    private final int[] testSuite = {1, 4, 6, 10, 42, 183, 5566};
+    
+    private int swapEvenAndOddBits(int input) {
+        int copyOddToEven = (input & 0XAAAAAAAA) >> 1;
+        int copyEvenToOdd = (input & 0X55555555) << 1;
+        int output = copyEvenToOdd | copyOddToEven;
+        
+        return output;
+    }
 
-	}
-	
-	private int swapEvenAndOddBits(int input) {
-		int copyOddToEven = (input & 0XAAAAAAAA) >> 1;
-		int copyEvenToOdd = (input & 0X55555555) << 1;
-		int output = copyEvenToOdd | copyOddToEven;
-		
-		return output;
-	}
+    @Override
+    protected void initialize() {
+    return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (int n : testSuite) {
+            int output = swapEvenAndOddBits(n);
+            
+            System.out.printf("%s -> %s%n",
+                    Integer.toBinaryString(n), 
+                    Integer.toBinaryString(output));
+        }    
+    }
+
+    @Override
+    protected boolean test() {
+        return true;
+    }
 
 }

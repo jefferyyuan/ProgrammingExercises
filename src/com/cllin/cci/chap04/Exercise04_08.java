@@ -11,55 +11,56 @@ import com.cllin.tree.Node;
  * Note that it can be any path in the tree - it does not have to start at the root.
  */
 
-public class Exercise04_08 implements Exercise {
-	private final int MAXIMUM = 100;
-	private final int SIZE = 1000;
-	
-	private BinarySearchTree tree;
+public class Exercise04_08 extends Exercise {
+    private final int MAXIMUM = 100;
+    private final int SIZE = 1000;
+    
+    private BinarySearchTree tree;
 
-	@Override
-	public void runExercise() {
-		initialize();
-		
-		for (int n = 10; n < 30; n++) {
-			findPath(tree.root, n, new ArrayList<Integer>());
-		}
-		
-		System.out.println("All paths are found");
-	}
-	
-	private void findPath(Node node, int sum, ArrayList<Integer> path) {
-		if (node == null) return;
-		
-		path.add(node.value);
+    private void findPath(Node node, int sum, ArrayList<Integer> path) {
+        if (node == null) return;
+        
+        path.add(node.value);
 
-		int tmp = sum;
-		int end = path.size() - 1;
-		int start = end;
-		
-		for (int i = start; i >= 0; i--) {
-			tmp -= path.get(i);
-			
-			if (tmp == 0) {
-				start = i;
-				printPath(sum, start, end, path);
-			}
-		}
-		
-		findPath(node.right, sum, new ArrayList<Integer>(path));
-		findPath(node.left, sum, new ArrayList<Integer>(path));
-	}
-	
-	private void printPath(int sum, int start, int end, ArrayList<Integer> path) {
-		for (int i = start; i <= end; i++) {
-			System.out.printf("%d -> ", path.get(i));
-		}
-		
-		System.out.printf(", sum = %d%n", sum);
-	}
+        int tmp = sum;
+        int end = path.size() - 1;
+        int start = end;
+        
+        for (int i = start; i >= 0; i--) {
+            tmp -= path.get(i);
+            
+            if (tmp == 0) {
+                start = i;
+                printPath(sum, start, end, path);
+            }
+        }
+        
+        findPath(node.right, sum, new ArrayList<Integer>(path));
+        findPath(node.left, sum, new ArrayList<Integer>(path));
+    }
+    
+    private void printPath(int sum, int start, int end, ArrayList<Integer> path) {
+        for (int i = start; i <= end; i++) {
+            System.out.printf("%d -> ", path.get(i));
+        }
+        
+        System.out.printf(", sum = %d%n", sum);
+    }
 
-	private void initialize() {
-		tree = new BinarySearchTree(SIZE, MAXIMUM);
-	}
+    @Override
+    protected void initialize() {
+        tree = new BinarySearchTree(SIZE, MAXIMUM);
+    }
 
+    @Override
+    protected void runExercise() {
+        for (int n = 10; n < 30; n++) {
+            findPath(tree.root, n, new ArrayList<Integer>());
+        }
+    }
+
+    @Override
+    protected boolean test() {
+        return true;
+    }
 }

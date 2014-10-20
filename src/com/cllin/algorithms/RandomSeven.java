@@ -9,41 +9,51 @@ import com.cllin.main.Exercise;
  * return integer between 0 to 6 (inclusively) in uniform distribution.
  */
 
-public class RandomSeven implements Exercise {
+public class RandomSeven extends Exercise {
 
-	@Override
-	public void runExercise() {
-		final int size = 100000;
-		
-		int[] counts = new int[7];
-		Arrays.fill(counts, 0);
-		
-		for (int i = 0; i < size; i++) {
-			int n = random7();
-			
-			assert(n >= 0 && n <= 6);
-			
-			counts[n]++;
-		}
-		
-		for (int i = 0; i < 7; i++) {
-			System.out.printf("P(%d) = %f%n", i, ((double) counts[i] / (double) size));
-		}
-	}
+    private static int random7() {
+        int c = Integer.MAX_VALUE;
+        while (c >= 21) {
+            int a = random5();
+            int b = random5();
 
-	private static int random7() {
-		int c = Integer.MAX_VALUE;
-		while (c >= 21) {
-			int a = random5();
-			int b = random5();
-			
-			c = a * 5 + b;
-		}
-		
-		return c % 7;
-	}
-	
-	private static int random5() {
-		return (int) (Math.random() * 5);
-	}
+            c = a * 5 + b;
+        }
+
+        return c % 7;
+    }
+
+    private static int random5() {
+        return (int) (Math.random() * 5);
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        final int size = 100000;
+        
+        int[] counts = new int[7];
+        Arrays.fill(counts, 0);
+        
+        for (int i = 0; i < size; i++) {
+            int n = random7();
+            
+            assert(n >= 0 && n <= 6);
+            
+            counts[n]++;
+        }
+        
+        for (int i = 0; i < 7; i++) {
+            System.out.printf("P(%d) = %f%n", i, ((double) counts[i] / (double) size));
+        }
+    }
+
+    @Override
+    protected boolean test() {
+        return true;
+    }
 }

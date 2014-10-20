@@ -14,32 +14,41 @@ import com.cllin.main.Exercise;
  * 
  */
 
-public class Exercise08_02 implements Exercise {
-	private final int[] testSuite = {1, 2, 3, 4, 6, 8, 10, 15, 20};
-	
-	@Override
-	public void runExercise() {
-		for (int n : testSuite) {
-			int nRoutes = getRouteNumber(n);
-			System.out.println("There are " + nRoutes + " routes for a squre grid with size " + n);
-		}
-		
-	}
-	
-	private static int getRouteNumber(int size) {
-		int[][] paths = new int[size][size];
-		
-		for (int i = 0; i < size; i++) {
-			paths[0][i] = 1;
-			paths[i][0] = 1;
-		}
-		
-		for (int i = 1; i < size; i++) {
-			for (int j = 1; j < size; j++) {
-				paths[i][j] = paths[i - 1][j] + paths[i][j - 1];
-			}
-		}
-		
-		return paths[size - 1][size - 1];
-	}
+public class Exercise08_02 extends Exercise {
+    private final int[] testSuite = {1, 2, 3, 4, 6, 8, 10, 15, 20};
+    
+    private static int getRouteNumber(int size) {
+        int[][] paths = new int[size][size];
+        
+        for (int i = 0; i < size; i++) {
+            paths[0][i] = 1;
+            paths[i][0] = 1;
+        }
+        
+        for (int i = 1; i < size; i++) {
+            for (int j = 1; j < size; j++) {
+                paths[i][j] = paths[i - 1][j] + paths[i][j - 1];
+            }
+        }
+        
+        return paths[size - 1][size - 1];
+    }
+
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        for (int n : testSuite) {
+            int nRoutes = getRouteNumber(n);
+            System.out.println("There are " + nRoutes + " routes for a squre grid with size " + n);
+        }        
+    }
+
+    @Override
+    protected boolean test() {
+        return true;
+    }
 }

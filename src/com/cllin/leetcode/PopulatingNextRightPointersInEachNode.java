@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Populate each next pointer to point to its next right node. 
@@ -15,39 +15,39 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/populating-next-right-pointers-in-each-node/
  */
 
-public class PopulatingNextRightPointersInEachNode implements LeetCodeExercise {
+public class PopulatingNextRightPointersInEachNode extends Exercise {
 
-	@Override
-	public void initialize() {
-		// TODO Auto-generated method stub
-	}
+    @Override
+    public void initialize() {
+        // TODO Auto-generated method stub
+    }
 
-	@Override
-	public void runExercise() {
-		connect(new TreeLinkNode(0));
-	}
-	
+    @Override
+    protected void runExercise() {
+        connect(new TreeLinkNode(0));
+    }
+    
     private static void connect(TreeLinkNode root) {
         link(root, null);
     }
     
     private static void link(TreeLinkNode node, TreeLinkNode next){
-    	if (node == null) return;
-    	
-    	node.next = next;
-    	
-    	link(node.left, node.right);
-    	link(node.right, (next == null)? null : next.left);
+        if (node == null) return;
+        
+        node.next = next;
+        
+        link(node.left, node.right);
+        link(node.right, (next == null)? null : next.left);
     }
 
-	@Override
-	public boolean test() {
-		return false;
-	}
+    @Override
+    public boolean test() {
+        return false;
+    }
 
-	public class TreeLinkNode {
-		int val;
-		TreeLinkNode left, right, next;
-		TreeLinkNode(int x) { val = x; }
-	}
+    public class TreeLinkNode {
+        int val;
+        TreeLinkNode left, right, next;
+        TreeLinkNode(int x) { val = x; }
+    }
 }

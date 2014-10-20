@@ -20,7 +20,7 @@ import com.cllin.main.Exercise;
  * Source: http://www.careercup.com/question?id=12332722
  */
 
-public class SubstringConcatenation implements Exercise {
+public class SubstringConcatenation extends Exercise {
 
     private final TestCase[] testSuite = new TestCase[]{
             new TestCase("lingmindraboofooowingdingbarrwingmonkeypoundcake", new String[]{"fooo", "barr", "wing", "ding", "wing"})
@@ -28,14 +28,6 @@ public class SubstringConcatenation implements Exercise {
     
     private int index;
     private String substring;
-    
-    @Override
-    public void runExercise() {
-        for (index = 0; index < testSuite.length; index++) {
-            substring = getSubstring(testSuite[index].S, testSuite[index].L);
-            test();
-        }
-    }
     
     private String getSubstring(String string, String[] list) {
         if (list == null || list.length == 0) return new String();
@@ -92,20 +84,7 @@ public class SubstringConcatenation implements Exercise {
         
         return "Substring not found";
     }
-    
-    private void test() {
-        System.out.printf("S = %s%n", testSuite[index].S);
-        
-        System.out.print("L = { ");
-        for (String word : testSuite[index].L) {
-            System.out.printf("%s ", word);
-        }
-        System.out.printf("}%n");
-        
-        System.out.printf("Substring = %s%n", substring);
-        
-        System.out.println("------------------------------");
-    }
+
     
     private class TestCase {
         String S;
@@ -117,4 +96,34 @@ public class SubstringConcatenation implements Exercise {
         }
     }
 
+    @Override
+    protected void initialize() {
+        return;
+    }
+
+    @Override
+    protected void runExercise() {
+        return;
+    }
+
+    @Override
+    protected boolean test() {
+        for (index = 0; index < testSuite.length; index++) {
+            substring = getSubstring(testSuite[index].S, testSuite[index].L);
+
+            System.out.printf("S = %s%n", testSuite[index].S);
+
+            System.out.print("L = { ");
+            for (String word : testSuite[index].L) {
+                System.out.printf("%s ", word);
+            }
+            System.out.printf("}%n");
+
+            System.out.printf("Substring = %s%n", substring);
+
+            System.out.println("------------------------------");
+        }
+
+        return true;
+    }
 }

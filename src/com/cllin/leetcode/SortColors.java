@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an array with n objects colored red, white or blue, 
@@ -21,67 +21,70 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/sort-colors/
  */
 
-public class SortColors implements LeetCodeExercise {
-	private final int MAXIMUM = 3;
-	private final int SIZE = 10;
-	
-	private int[] numbers;
-	
-	@Override
-	public void initialize() {
-		numbers = new int[SIZE];
-		
-		for (int i = 0; i < SIZE; i++) {
-			numbers[i] = (int)(Math.random() * MAXIMUM);
-		}
-	}
+public class SortColors extends Exercise {
+    private final int MAXIMUM = 3;
+    private final int SIZE = 10;
+    
+    private int[] numbers;
+    
+    @Override
+    public void initialize() {
+        numbers = new int[SIZE];
+        
+        for (int i = 0; i < SIZE; i++) {
+            numbers[i] = (int)(Math.random() * MAXIMUM);
+        }
+    }
 
-	@Override
-	public void runExercise() {
-		initialize();
-		
-		numbers = sortColors(numbers);
-		
-		if (test()) System.out.println("Success");
-		else System.out.println("Failed");	
-	}
-	
+    @Override
+    protected void runExercise() {
+        initialize();
+        
+        numbers = sortColors(numbers);
+        
+        if (test()) System.out.println("Success");
+        else System.out.println("Failed");    
+    }
+    
     private int[] sortColors(int[] A) {
-    	if (A.length == 0) return null;
-    	
-    	int R = 0;
-    	int B = A.length - 1;
-    	
-    	int i = 0;
-    	while (i < B + 1) {
-    		switch(A[i]) {
-    		case 0:
-    			swap(A, R++, i);
-    			continue;
-    		case 2:
-    			swap(A, B--, i);
-    			continue;
-    		}
-    		
-    		i++;
-    	}
-    	
+        if (A.length == 0) return null;
+        
+        int R = 0;
+        int B = A.length - 1;
+        
+        int i = 0;
+        while (i < B + 1) {
+            switch(A[i]) {
+            case 0:
+                swap(A, R, i);
+                R++;
+                i++;
+                continue;
+            case 2:
+                swap(A, B, i);
+                B--;
+                continue;
+            }
+            
+            i++;
+        }
+        
         return A;
     }
     
     private void swap(int[] A, int x, int y) {
-    	int temp = A[x];
-    	A[x] = A[y];
-    	A[y] = temp;
+        int temp = A[x];
+        A[x] = A[y];
+        A[y] = temp;
     }
 
-	@Override
-	public boolean test() {
-		for (int i = 1; i < SIZE; i++) {
-			if (numbers[i] < numbers[i - 1]) return false;
-		}
-		
-		return true;
-	}
+    @Override
+    public boolean test() {
+        for (int i = 1; i < SIZE; i++) {
+            if (numbers[i] < numbers[i - 1]) return false;
+        }
+        
+        return true;
+    }
 
 }

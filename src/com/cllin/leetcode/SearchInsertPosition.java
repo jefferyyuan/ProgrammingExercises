@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a sorted array and a target value, return the index if the target is found. 
@@ -19,61 +19,61 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/search-insert-position/
  */
 
-public class SearchInsertPosition implements LeetCodeExercise {
-	private final int MAXIMUM = 10;
-	private final int SIZE = 10;
-	
-	private int[] integers;
+public class SearchInsertPosition extends Exercise {
+    private final int MAXIMUM = 10;
+    private final int SIZE = 10;
+    
+    private int[] integers;
 
-	@Override
-	public void initialize() {
-		integers = new int[SIZE];
-		
-		for (int i = 0; i < SIZE; i++) {
-			integers[i] = (int)(Math.random() * MAXIMUM);
-		}
-		
-		Arrays.sort(integers);
-	}
+    @Override
+    public void initialize() {
+        integers = new int[SIZE];
+        
+        for (int i = 0; i < SIZE; i++) {
+            integers[i] = (int)(Math.random() * MAXIMUM);
+        }
+        
+        Arrays.sort(integers);
+    }
 
-	@Override
-	public void runExercise() {
-		test();
-	}
-	
+    @Override
+    protected void runExercise() {
+        test();
+    }
+    
     public int searchInsert(int[] A, int target) {
-    	int position = 0;
-    	while (position < A.length && target > A[position]) {
-    		position++;
-    	}
-    	
+        int position = 0;
+        while (position < A.length && target > A[position]) {
+            position++;
+        }
+        
         return position;
     }
 
-	@Override
-	public boolean test() {
-		for (int i = 0; i < 10; i++) {
-			initialize();
-			int target = (int)(Math.random() * MAXIMUM);
-			int position = searchInsert(integers, target);
-			
-			for (int n : integers) {
-				System.out.printf("%d ", n);
-			}
-			System.out.println();
-			
-			
-			if (position == integers.length)
-				System.out.printf("%d should be insert after %d%n", target, integers[position - 1]);
-			else if (position == 0) 
-				System.out.printf("%d should be insert before %d%n", target, integers[position]);
-			else 
-				System.out.printf("%d should be insert after %d and before %d%n", target, integers[position - 1], integers[position]);
-			
-			System.out.println("------------");
-		}
-		
-		return true;
-	}
+    @Override
+    public boolean test() {
+        for (int i = 0; i < 10; i++) {
+            initialize();
+            int target = (int)(Math.random() * MAXIMUM);
+            int position = searchInsert(integers, target);
+            
+            for (int n : integers) {
+                System.out.printf("%d ", n);
+            }
+            System.out.println();
+            
+            
+            if (position == integers.length)
+                System.out.printf("%d should be insert after %d%n", target, integers[position - 1]);
+            else if (position == 0) 
+                System.out.printf("%d should be insert before %d%n", target, integers[position]);
+            else 
+                System.out.printf("%d should be insert after %d and before %d%n", target, integers[position - 1], integers[position]);
+            
+            System.out.println("------------");
+        }
+        
+        return true;
+    }
 
 }

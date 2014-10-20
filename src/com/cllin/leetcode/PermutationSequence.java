@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * The set [1, 2, 3, ..., n] contains a total of n! unique permutations.
@@ -21,7 +21,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/permutation-sequence/
  */
 
-public class PermutationSequence extends LeetCodeExercise {
+public class PermutationSequence extends Exercise {
 
     @Override
     public void initialize() {
@@ -29,7 +29,7 @@ public class PermutationSequence extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int n = 1; n <= 5; n++) {
             int factorial = getFactorial(n);
             

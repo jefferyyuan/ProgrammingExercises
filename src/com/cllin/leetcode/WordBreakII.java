@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string s and a dictionary of words dictionary, 
@@ -21,12 +21,9 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/word-break-ii/
  */
 
-public class WordBreakII extends LeetCodeExercise {
+public class WordBreakII extends Exercise {
 
-    private int index;
     private ArrayList<TestCase> testSuite;
-    
-    private ArrayList<String> solutions;
     
     @Override
     public void initialize() {
@@ -34,7 +31,7 @@ public class WordBreakII extends LeetCodeExercise {
         String string;
         HashSet<String> dictionary;
         
-//        CASE 0
+        // CASE 0
         string = "catsanddog";
         dictionary = new HashSet<String>();
         dictionary.add("cat");
@@ -45,7 +42,7 @@ public class WordBreakII extends LeetCodeExercise {
         
         testSuite.add(new TestCase(string, dictionary));
         
-//        CASE 1
+        // CASE 1
         string = "aaaaaaa";
         dictionary = new HashSet<String>();
         dictionary.add("aaaa");
@@ -53,7 +50,7 @@ public class WordBreakII extends LeetCodeExercise {
         
         testSuite.add(new TestCase(string, dictionary));
 
-//        CASE 2
+        // CASE 2
         string = "bb";
         dictionary = new HashSet<String>();
         dictionary.add("a");
@@ -63,7 +60,7 @@ public class WordBreakII extends LeetCodeExercise {
         
         testSuite.add(new TestCase(string, dictionary));
         
-//        CASE 3
+        // CASE 3
         string = "aaaaaaa";
         dictionary = new HashSet<String>();
         dictionary.add("aaaa");
@@ -71,7 +68,7 @@ public class WordBreakII extends LeetCodeExercise {
         
         testSuite.add(new TestCase(string, dictionary));
         
-//        CASE 4
+        // CASE 4
         string = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab";
         dictionary = new HashSet<String>();
         
@@ -90,17 +87,11 @@ public class WordBreakII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
-        initialize();
-        for (index = 0; index < testSuite.size(); index++) {
-            TestCase test = testSuite.get(index);
-            solutions = wordBreak(test.string, test.dictionary);
-            
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
-//    Modified version of Word Break I
+    // Modified version of Word Break I
     private ArrayList<String> wordBreak(String string, Set<String> dictionary) {
         ArrayList<String> solutions = new ArrayList<String>();
         if (string == null || string.length() == 0 || dictionary == null || dictionary.isEmpty()) {
@@ -151,22 +142,24 @@ public class WordBreakII extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        TestCase test = testSuite.get(index);
-        
-        System.out.printf("S = %s%n", test.string);
-        System.out.print("Dictionary = { ");
-        for (String word : test.dictionary) {
-            System.out.printf("%s ", word);
-        }
-        System.out.print("}\n");
-        
+        for (int index = 0; index < testSuite.size(); index++) {
+            TestCase test = testSuite.get(index);
+            ArrayList<String> solutions = wordBreak(test.string, test.dictionary);
 
-        System.out.print("Solution = {\n");
-        for (String solution : solutions) {
-            System.out.printf("    %s%n", solution);
+            System.out.printf("S = %s%n", test.string);
+            System.out.print("Dictionary = { ");
+            for (String word : test.dictionary) {
+                System.out.printf("%s ", word);
+            }
+            System.out.print("}\n");
+
+            System.out.print("Solution = {\n");
+            for (String solution : solutions) {
+                System.out.printf("    %s%n", solution);
+            }
+            System.out.print("}\n");
+            System.out.println("------------------");
         }
-        System.out.print("}\n");
-        System.out.println("------------------");
         
         return true;
     }

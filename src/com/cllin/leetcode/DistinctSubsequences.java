@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string S and a string T, count the number of distinct subsequences of T in S.
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/distinct-subsequences/
  */
 
-public class DistinctSubsequences extends LeetCodeExercise {
+public class DistinctSubsequences extends Exercise {
 
     private final TestCase[] testSuite = {
         new TestCase("rabbbit", "rabbit", 3),
@@ -28,25 +28,18 @@ public class DistinctSubsequences extends LeetCodeExercise {
     
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
-
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            TestCase test = testSuite[index];
-            result = numDistinct(test.S, test.T);
-            
-            if (test()) System.out.println("Success");
-            else System.out.println("Failed");
-        }
+    protected void runExercise() {
+        return;
     }
 
     /*
      * D(i, j) = Number of subsequence of S(0, i) in T(0, j)
      * if S(i) == T(j)
-     *         D(i, j) = D(i - 1, j - 1) + D(i - 1, j)        --- S(i - 1, j) + A new subsequence
+     *         D(i, j) = D(i - 1, j - 1) + D(i - 1, j)      --- S(i - 1, j) + A new subsequence
      * else
      *         D(i, j) = D(i - 1, j)                        --- Number remain the same as S(i - 1, j)
      */
@@ -74,7 +67,19 @@ public class DistinctSubsequences extends LeetCodeExercise {
     
     @Override
     public boolean test() {
-        return (testSuite[index].numDistinctSubsequences == result);
+        for (index = 0; index < testSuite.length; index++) {
+            TestCase test = testSuite[index];
+            result = numDistinct(test.S, test.T);
+
+            if ((testSuite[index].numDistinctSubsequences == result)) {
+                System.out.println("Success");
+            } else {
+                System.out.println("Failed");
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private class TestCase {

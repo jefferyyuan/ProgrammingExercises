@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * A message containing letters from A-Z is being encoded to numbers using the following mapping:
@@ -17,7 +17,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/decode-ways/
  */
 
-public class DecodeWays extends LeetCodeExercise {
+public class DecodeWays extends Exercise {
 
     private final String[] testSuite = {
             "1212",
@@ -34,20 +34,14 @@ public class DecodeWays extends LeetCodeExercise {
             "47159"
     };
     
-    private int index;
-    private int nWays;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            nWays = numDecodings(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     /*
@@ -85,7 +79,11 @@ public class DecodeWays extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.printf("There are %d ways to decode '%s'%n", nWays, testSuite[index]);
+        for (int index = 0; index < testSuite.length; index++) {
+            int nWays = numDecodings(testSuite[index]);
+
+            System.out.printf("There are %d ways to decode '%s'%n", nWays, testSuite[index]);
+        }
         return true;
     }
 

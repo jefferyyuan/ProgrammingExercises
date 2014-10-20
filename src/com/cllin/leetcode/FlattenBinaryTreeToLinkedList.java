@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
@@ -9,7 +9,7 @@ import com.cllin.tree.Node;
  * 
  * Source: http://oj.leetcode.com/problems/flatten-binary-tree-to-linked-list/
  */
-public class FlattenBinaryTreeToLinkedList extends LeetCodeExercise {
+public class FlattenBinaryTreeToLinkedList extends Exercise {
     private final int SIZE = 5;
     private final int MAXIMUM = 10;
     
@@ -22,7 +22,7 @@ public class FlattenBinaryTreeToLinkedList extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         flatten(tree.root);
     }

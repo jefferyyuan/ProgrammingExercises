@@ -31,11 +31,12 @@ public class Exercise01_08 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         String s1 = testCase.s1;
         String s2 = testCase.s2;
         
         System.out.printf("%s %s a rotation of %s%n", s2, (isRotation(s1, s2))? "is" : "is not", s1);    
+        return true;
     }
     
     private boolean isRotation(String s1, String s2) {

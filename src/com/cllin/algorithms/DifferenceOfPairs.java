@@ -79,7 +79,7 @@ public class DifferenceOfPairs extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         System.out.print("A = { ");
         for (int n : array) {
             System.out.printf("%d ", n);
@@ -98,5 +98,6 @@ public class DifferenceOfPairs extends Exercise {
         }
         System.out.print("}\n");
         System.out.println("------------------------------");
+        return true;
     }
 }

@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.
@@ -18,7 +18,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/spiral-matrix-ii/
  */
 
-public class SpiralMatrixII extends LeetCodeExercise {
+public class SpiralMatrixII extends Exercise {
     private int n;
     private int[][] matrix;
     
@@ -28,7 +28,7 @@ public class SpiralMatrixII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 0; i <= 5; i++) {
             n = i;
             matrix = generateMatrix(n);

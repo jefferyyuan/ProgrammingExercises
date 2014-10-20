@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * You are given an n x n 2D matrix representing an image.
@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/rotate-image/
  */
 
-public class RotateImage extends LeetCodeExercise {
+public class RotateImage extends Exercise {
     private final int SIZE = 2;
     private final int MAXIMUM = 10;
     private int[][] matrix;
@@ -33,7 +33,7 @@ public class RotateImage extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         rotate(matrix);

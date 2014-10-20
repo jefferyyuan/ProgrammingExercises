@@ -20,7 +20,8 @@ public class Exercise06_06 extends Exercise {
         LinkedList<Integer> openedLocker = new LinkedList<Integer>();
         
         for (int i = 1; i <= nLockers; i++) {
-//          Using i <= nLockers / i instead of i * i <= nLockers to avoid overflow
+            // Using i <= nLockers / i instead of i * i <= nLockers to avoid
+            // overflow
             if (i * i <= nLockers / i) openedLocker.add(i);
         }
         
@@ -38,10 +39,12 @@ public class Exercise06_06 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (int n : mOpenedLockers) {
             System.out.printf("The %dth locker is open%n", n);
         }
+
+        return true;
     }
 
 }

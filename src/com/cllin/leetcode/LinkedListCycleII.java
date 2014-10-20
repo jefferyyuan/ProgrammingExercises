@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a linked list, return the node where the cycle begins. If there is no cycle, return null.
@@ -11,8 +11,8 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/linked-list-cycle-ii/
  */
 
-public class LinkedListCycleII extends LeetCodeExercise {
-    private final int SIZE = 2 - 1;
+public class LinkedListCycleII extends Exercise {
+    private final int SIZE = 3 - 1;
     private final int MAXIMUM = 100;
     private final int CYCLE_BEGINNING = 0;
     
@@ -42,9 +42,7 @@ public class LinkedListCycleII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
-        initialize();
-
+    protected void runExercise() {
         ListNode a = detectCycle(listA);
         ListNode b = detectCycle(listB);
         
@@ -56,29 +54,28 @@ public class LinkedListCycleII extends LeetCodeExercise {
         ListNode a = head;
         ListNode b = head;
         
-        while (a != null && b != null && a.hashCode() != b.hashCode()) {
-            if (a.next == null) return null;
-
-            a = a.next.next;
+        while (a != null && b != null) {
+            if (a.next != null) a = a.next.next;
+            else return null;
             b = b.next;
             
             if (a == null || b == null) return null;
+            if (a == b) break;
         }
         
         a = head;
         while (a != null) {
-            if (a.hashCode() == b.hashCode()) return a;
+            if (a == b) return a;
             
             a = a.next;
             b = b.next;
         }
         
-        return null;
+        return null;  
     }
 
     @Override
     public boolean test() {
-        // TODO Auto-generated method stub
         return false;
     }
 

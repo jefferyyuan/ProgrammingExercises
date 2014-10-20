@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a matrix of m x n elements (m rows, n columns), return all elements of the matrix in spiral order.
@@ -20,7 +20,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/spiral-matrix/
  */
 
-public class SpiralMatrix extends LeetCodeExercise {
+public class SpiralMatrix extends Exercise {
 
     private final int[][][] testSuite = {
             {
@@ -46,25 +46,12 @@ public class SpiralMatrix extends LeetCodeExercise {
     
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            int rows = testSuite[index].length;
-            int cols = testSuite[index][0].length;
-            
-            int[][] matrix = new int[rows][cols];
-            for (int i = 0; i < rows; i++) {
-                for (int j = 0; j < cols; j++) {
-                    matrix[i][j] = testSuite[index][i][j];
-                }
-            }
-            
-            output = spiralOrder(matrix);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     int goRight = 1;
@@ -136,21 +123,34 @@ public class SpiralMatrix extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.print("For the matrix:\n");
-        
-        int[][] matrix = testSuite[index];
-        for (int[] row : matrix) {
-            for (int n : row) {
-                System.out.printf("%d ", n);
+        for (index = 0; index < testSuite.length; index++) {
+            int rows = testSuite[index].length;
+            int cols = testSuite[index][0].length;
+            
+            int[][] matrix = new int[rows][cols];
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    matrix[i][j] = testSuite[index][i][j];
+                }
             }
-            System.out.println();
+            
+            output = spiralOrder(matrix);
+
+            System.out.print("For the matrix:\n");
+            
+            for (int[] row : matrix) {
+                for (int n : row) {
+                    System.out.printf("%d ", n);
+                }
+                System.out.println();
+            }
+            
+            System.out.print("The elements is spiral order are displayed as: ");
+            
+            for (int n : output) System.out.printf("%d ", n);
+            
+            System.out.println("\n------------------");
         }
-        
-        System.out.print("The elements is spiral order are displayed as: ");
-        
-        for (int n : output) System.out.printf("%d ", n);
-        
-        System.out.println("\n------------------");
         
         return false;
     }

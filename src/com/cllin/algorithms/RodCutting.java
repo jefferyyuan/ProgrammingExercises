@@ -51,7 +51,7 @@ public class RodCutting extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (int[] test : testSuite) {
 
             System.out.print("For P = { ");
@@ -63,5 +63,7 @@ public class RodCutting extends Exercise {
 
             System.out.printf("}%nR = %d%n", rodCutting(prices));
         }
+
+        return true;
     }
 }

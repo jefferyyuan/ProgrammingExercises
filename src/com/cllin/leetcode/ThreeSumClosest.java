@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an array S of n integers, find three integers in S such that the sum is closest to a given number, target. 
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/3sum-closest/
  */
 
-public class ThreeSumClosest extends LeetCodeExercise {
+public class ThreeSumClosest extends Exercise {
     private final int MAXIMUM = 100;
     private int SIZE = 10;
     private int target;
@@ -33,7 +33,7 @@ public class ThreeSumClosest extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         int lowerBound = - (MAXIMUM / 2);
         int upperBound = MAXIMUM / 2;

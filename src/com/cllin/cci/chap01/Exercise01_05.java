@@ -29,16 +29,16 @@ public class Exercise01_05 extends Exercise {
     }
 
     @Override
-    protected void test() {
-    if (output.equals(input.replaceAll(" ", "%20"))) {
-        System.out.printf("Input = %s,%nOutput = %s%n", input, output);    
-    } else {
-        System.out.printf(
-            "Wrong result: Input = %s,%nOutput = %s%n", input, output);
-    }
+    protected boolean test() {
+        if (output.equals(input.replaceAll(" ", "%20"))) {
+            System.out.printf("Input = %s,%nOutput = %s%n", input, output);
+        } else {
+            System.out.printf("Wrong result: Input = %s,%nOutput = %s%n", input, output);
+        }
+        return true;
     }
 
-//  or, in Java, user input.replaceAll(" ", "%20")
+    // or, in Java, user input.replaceAll(" ", "%20")
     private String replaceSpaces(String input) {
         StringBuffer output = new StringBuffer();
         

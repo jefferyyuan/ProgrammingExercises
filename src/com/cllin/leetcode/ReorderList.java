@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a singly linked list L: L0 -> L1 -> ... -> Ln-1 -> Ln,
@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/reorder-list/
  */
 
-public class ReorderList extends LeetCodeExercise {
+public class ReorderList extends Exercise {
 
     private int SIZE = 4;
     private ListNode head;
@@ -33,7 +33,7 @@ public class ReorderList extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         System.out.println("The list before reordering is: ");

@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Stack;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, 
@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/largest-rectangle-in-histogram/
  */
 
-public class LargestRectangleInHistogram extends LeetCodeExercise {
+public class LargestRectangleInHistogram extends Exercise {
 
     private int[][] testSuite = {
             {2, 1, 5, 6, 2, 3},
@@ -20,9 +20,6 @@ public class LargestRectangleInHistogram extends LeetCodeExercise {
             {1, 1, 1, 1, 1, 1, 1, 1, 1},
             null
     };
-    
-    private int index;
-    private int area;
     
     @Override
     public void initialize() {
@@ -33,13 +30,8 @@ public class LargestRectangleInHistogram extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
-        initialize();
-        
-        for (index = 0; index < testSuite.length; index++) {
-            area = largestRectangleArea(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
 
     /*
@@ -53,13 +45,13 @@ public class LargestRectangleInHistogram extends LeetCodeExercise {
      *     2) Calculate maximum rectangle area, A
      * 
      * Iterate the array:
-     *         If H(i) >= S.peek()    || S.isEmpty()        ------ Still non-descending
+     *         If H(i) >= S.peek() || S.isEmpty()       ------ Still non-descending
      *             S.push(i)                            ------ Build/maintain the stack
      *         Else
      *             Get last maximal, im, A = h * w
      *             h = H(im)
      *             w = i || i - S.peek() - 1            ------ Calculate maximum rectangle area, A
-     *                                                 ------ Why i? i is the local n, the rectangle stops here
+     *                                                  ------ Why i? i is the local n, the rectangle stops here
      * 
      * In case of there are pending maximum after iterating the array once,
      * update maximum area based on the remaining in the stack. 
@@ -100,10 +92,16 @@ public class LargestRectangleInHistogram extends LeetCodeExercise {
     
     @Override
     public boolean test() {
-        System.out.print("The largest are from the histogram [ ");
-        for (int h : testSuite[index]) System.out.printf("%d ", h);
-        
-        System.out.printf("] is %d%n", area);
+        for (int index = 0; index < testSuite.length; index++) {
+            int area = largestRectangleArea(testSuite[index]);
+
+            System.out.print("The largest are from the histogram [ ");
+            for (int h : testSuite[index]) {
+                System.out.printf("%d ", h);
+            }
+
+            System.out.printf("] is %d%n", area);
+        }
         return true;
     }
 

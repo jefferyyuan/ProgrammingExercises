@@ -77,7 +77,7 @@ public class Exercise08_08 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         if (count == 8) {
             System.out.println("-------------------------");
             for (int j = 0; j < count; j++) {
@@ -90,5 +90,7 @@ public class Exercise08_08 extends Exercise {
             printBoard(chessBoard);
             System.out.println("-------------------------");
         }
+
+        return true;
     }
 }

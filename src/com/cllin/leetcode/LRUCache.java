@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Hashtable;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Design and implement a data structure for Least Recently Used (LRU) cache. 
@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/lru-cache/
  */
 
-public class LRUCache extends LeetCodeExercise {
+public class LRUCache extends Exercise {
 
     @Override
     public void initialize() {
@@ -24,7 +24,7 @@ public class LRUCache extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         test();
     }
 

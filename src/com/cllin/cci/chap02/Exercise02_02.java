@@ -43,14 +43,16 @@ public class Exercise02_02 extends Exercise {
     }
 
     @Override
-    protected void test() {
-    System.out.printf("%s%n", (result.value == reference.get(SIZE - n))? "Success!" : "Failed");        
+    protected boolean test() {
+        System.out
+                .printf("%s%n", (result.value == reference.get(SIZE - n)) ? "Success!" : "Failed");
+        return result.value == reference.get(SIZE - n);
     }
     
     private Node getNToLast(Node list, int n) {
         if (list == null) return null;
         
-//      use two pointers
+        // use two pointers
         Node node1 = list;
         Node node2 = list;
         
@@ -62,11 +64,11 @@ public class Exercise02_02 extends Exercise {
             count++;
         }
         
-//      right now, node2 is at the n-th element, 
-//      (l - n) elements away from the tail, l is the lenght of the list
-//      
-//      move node1 to the (l - n)-th, 
-//      it will be (l - (l - n)) = n elements away from the tail
+        // right now, node2 is at the n-th element,
+        // (l - n) elements away from the tail, l is the lenght of the list
+        //
+        // move node1 to the (l - n)-th,
+        // it will be (l - (l - n)) = n elements away from the tail
         while (node2.next != null) {
             node1 = node1.next;
             node2 = node2.next;

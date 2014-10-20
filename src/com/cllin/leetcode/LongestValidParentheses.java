@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Stack;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string containing just the characters '(' and ')', 
@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/longest-valid-parentheses/
  */
 
-public class LongestValidParentheses extends LeetCodeExercise {
+public class LongestValidParentheses extends Exercise {
 
     private final String[] testSuite = {
             "(()",
@@ -23,21 +23,14 @@ public class LongestValidParentheses extends LeetCodeExercise {
             ")()()()()()()))()(()"
     };
     
-    private int index;
-    private int lengthOfValidParentheses;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            lengthOfValidParentheses = longestValidParentheses(testSuite[index]);
-            
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     /*
@@ -75,7 +68,13 @@ public class LongestValidParentheses extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.printf("The length of longest valid parentheses from %s is %d%n", testSuite[index], lengthOfValidParentheses);
+        for (int index = 0; index < testSuite.length; index++) {
+            int lengthOfValidParentheses = longestValidParentheses(testSuite[index]);
+            
+            System.out.printf(
+                    "The length of longest valid parentheses from %s is %d%n", testSuite[index], 
+                    lengthOfValidParentheses);
+        }
         
         return true;
     }

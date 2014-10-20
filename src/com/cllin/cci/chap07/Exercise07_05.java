@@ -17,26 +17,26 @@ public class Exercise07_05 extends Exercise {
         private boolean[] mUserIDPool;
         private int mUserIDPoolSize = 10;
         
-        public SystemManager(){
+        public SystemManager() {
             mBookList = new ArrayList<Book>();
             mUserList = new ArrayList<User>();
             mUserIDPool = new boolean[mUserIDPoolSize];
         }
         
-        public boolean addBook(String name, String content){
+        public boolean addBook(String name, String content) {
             return true;
         }
         
-        public boolean deleteBook(String name){
+        public boolean deleteBook(String name) {
             return true;
         }
         
-        public boolean addUser(String name, String content){
+        public boolean addUser(String name, String content) {
             return true;
         }
         
-        private int getNextAvailableID(int flag){
-//          Manage ID pools for Book and User
+        private int getNextAvailableID(int flag) {
+            // Manage ID pools for Book and User
             return 0;
         }
         
@@ -114,8 +114,8 @@ public class Exercise07_05 extends Exercise {
     }
 
     @Override
-    protected void test() {
-        return;
+    protected boolean test() {
+        return true;
     }
 
 }

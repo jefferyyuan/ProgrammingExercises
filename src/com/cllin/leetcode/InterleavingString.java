@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given s1, s2, s3, find whether s3 is formed by the interleaving of s1 and s2.
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/interleaving-string/
  */
 
-public class InterleavingString extends LeetCodeExercise {
+public class InterleavingString extends Exercise {
 
     private final TestCase[] testSuite = {
             new TestCase("aabcc", "dbbca", "aadbbcbcac", true),
@@ -28,7 +28,7 @@ public class InterleavingString extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 0; i < testSuite.length; i++) {
             TestCase test = testSuite[i];
             

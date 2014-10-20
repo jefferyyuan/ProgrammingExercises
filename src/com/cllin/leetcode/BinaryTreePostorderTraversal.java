@@ -5,11 +5,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Stack;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
-public class BinaryTreePostorderTraversal extends LeetCodeExercise {
+public class BinaryTreePostorderTraversal extends Exercise {
     private final int MAXIMUM = 3;
     private final int SIZE = 3;
     
@@ -30,7 +30,7 @@ public class BinaryTreePostorderTraversal extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         result = postorderTraversal(tree.root);
         

@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * There are N children standing in a line. Each child is assigned a rating value.
@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/candy/
  */
 
-public class Candy extends LeetCodeExercise {
+public class Candy extends Exercise {
 
     private int[][] testSuite = {
             {1, 2, 2},
@@ -22,20 +22,14 @@ public class Candy extends LeetCodeExercise {
             {4, 2, 3, 4, 1}
     };
     
-    private int index;
-    private int minimumCandy;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            minimumCandy = candy(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     @SuppressWarnings("unused")
@@ -55,7 +49,7 @@ public class Candy extends LeetCodeExercise {
         }
         
         for (int i = ratings.length - 2; i >= 0; i--) {
-//            If the rating is higher but with less or equal number of candies
+            // If the rating is higher but with less or equal number of candies
             if (ratings[i] > ratings[i + 1] && candies[i] <= candies[i + 1]) {
                 candies[i] = candies[i + 1] + 1;
             }
@@ -91,7 +85,7 @@ public class Candy extends LeetCodeExercise {
         
         for (int i = 1; i < ratings.length; i++) {
             if (ratings[i] < ratings[i - 1]) {
-//                Increment length of the descending sequence
+                // Increment length of the descending sequence
                 lengthDescendingSequence++;
                 
                 /*
@@ -106,7 +100,7 @@ public class Candy extends LeetCodeExercise {
                     lengthDescendingSequence++;
                 }
                 
-//                Shift the entire sequence by one
+                // Shift the entire sequence by one
                 nCandy += lengthDescendingSequence;
                 prevCandy = 1;
             } else {
@@ -123,12 +117,17 @@ public class Candy extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.print("For the following rating: { ");
-        for (int i = 0; i < testSuite[index].length; i++) {
-            System.out.printf("%d ", testSuite[index][i]);
+        for (int index = 0; index < testSuite.length; index++) {
+            int minimumCandy = candy(testSuite[index]);
+
+            System.out.print("For the following rating: { ");
+            for (int i = 0; i < testSuite[index].length; i++) {
+                System.out.printf("%d ", testSuite[index][i]);
+            }
+
+            System.out.printf("}, it needs %d candies at least%n", minimumCandy);
         }
         
-        System.out.printf("}, it needs %d candies at least%n", minimumCandy);
         return false;
     }
 

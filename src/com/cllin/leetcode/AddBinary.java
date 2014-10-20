@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given two binary strings, return their sum (also a binary string).
@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/add-binary/
  */
 
-public class AddBinary extends LeetCodeExercise {
+public class AddBinary extends Exercise {
     private final TestCase[] testSuite = {
         new TestCase("", "", "0"),
         new TestCase("1", "1", "10"),
@@ -31,17 +31,12 @@ public class AddBinary extends LeetCodeExercise {
 
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            solution = addBinary(testSuite[index].a, testSuite[index].b);
-            
-            if (test()) System.out.println("Success");
-            else System.out.println("Failed");
-        }
+    protected void runExercise() {
+        return;
     }
     
     private String addBinary(String a, String b) {
@@ -84,7 +79,18 @@ public class AddBinary extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        return (solution.equals(testSuite[index].solution));
+        for (index = 0; index < testSuite.length; index++) {
+            solution = addBinary(testSuite[index].a, testSuite[index].b);
+
+            if ((solution.equals(testSuite[index].solution))) {
+                System.out.println("Success");
+            } else {
+                System.out.println("Failed");
+                return false;
+            }
+        }
+
+        return true;
     }
 
     private class TestCase {

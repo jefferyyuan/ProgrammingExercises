@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Merge k sorted linked lists and return it as one sorted list. Analyze and describe its complexity.
@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/merge-k-sorted-lists/
  */
 
-public class MergeKSortedLists extends LeetCodeExercise {
+public class MergeKSortedLists extends Exercise {
     
     private ArrayList<ArrayList<ListNode>> testSuite;
     private int index;
@@ -87,7 +87,7 @@ public class MergeKSortedLists extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         for (index = 0; index < testSuite.size(); index++) {
             head = mergeKLists(testSuite.get(index));

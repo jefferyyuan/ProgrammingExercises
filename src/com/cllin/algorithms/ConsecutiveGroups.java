@@ -96,7 +96,7 @@ public class ConsecutiveGroups extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             output = getGroup(testSuite[index]);
 
@@ -117,6 +117,7 @@ public class ConsecutiveGroups extends Exercise {
             System.out.printf("}%n");
             System.out.println("------------------------------");
         }
+        return true;
     }
 
 }

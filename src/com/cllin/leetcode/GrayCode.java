@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * The gray code is a binary numeral system where two successive values differ in only one bit.
@@ -20,7 +20,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/gray-code/
  */
 
-public class GrayCode extends LeetCodeExercise {
+public class GrayCode extends Exercise {
     private final int[] testSuite = {0, 1, 2, 3, 4, 5, 6};
     
     @Override
@@ -30,7 +30,7 @@ public class GrayCode extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int n : testSuite) {
             ArrayList<Integer> result = grayCode(n);
             

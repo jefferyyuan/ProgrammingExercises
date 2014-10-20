@@ -66,7 +66,7 @@ public class SubarraySum extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (int index = 0; index < testSuite.length; index++) {
             for (int target = 0; target <= 5; target++) {
                 result = hasSum(testSuite[index], target);
@@ -82,7 +82,7 @@ public class SubarraySum extends Exercise {
                 if (result.size() == 0) {
                     System.out.println("No matching subarray");
                     System.out.println("------------------------------");
-                    return;
+                    return true;
                 }
 
                 int start = result.get(0);
@@ -95,5 +95,7 @@ public class SubarraySum extends Exercise {
                 System.out.println("------------------------------");
             }
         }
+
+        return true;
     }
 }

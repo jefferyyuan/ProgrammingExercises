@@ -76,13 +76,14 @@ public class FindMissing extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         if (missingValue != reference) {
             System.out.println("Failed");
-            return;
+            return false;
         }
 
         System.out.println("Success!");
+        return true;
     }
 
 }

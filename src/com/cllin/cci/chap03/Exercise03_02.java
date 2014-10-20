@@ -69,7 +69,7 @@ public class Exercise03_02 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         while (!myStack.isEmpty()) {
             int minimum = Integer.MAX_VALUE;
             for (int n : reference) {
@@ -78,20 +78,21 @@ public class Exercise03_02 extends Exercise {
             
             if (myStack.getMinimum() != minimum) {
                 System.out.println("Failed");
-                return;
+                return false;
             }
             
             if (myStack.pop() != reference.pop()) {
                 System.out.println("Failed");
-                return;    
+                return false;
             }
         }
         
         if (!reference.isEmpty()) {
             System.out.println("Failed");
-            return;
+            return false;
         }
         
-        System.out.println("Success!");    
+        System.out.println("Success!");
+        return true;
     }
 }

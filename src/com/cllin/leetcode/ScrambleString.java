@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string s1, we may represent it as a binary tree by partitioning it to two non-empty substrings recursively.
@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/scramble-string/
  */
 
-public class ScrambleString extends LeetCodeExercise {
+public class ScrambleString extends Exercise {
 
     private final TestCase[] testSuite = {
             new TestCase("", "", true),
@@ -24,23 +24,14 @@ public class ScrambleString extends LeetCodeExercise {
             new TestCase("abcd", "bcda", true)
     };
     
-    private int index;
-    private boolean isScrambleString;
-    
     @Override
     public void initialize() {
-//        TODO
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            TestCase test = testSuite[index];
-            
-            isScrambleString = isScramble(test.string1, test.string2);
-            if (test()) System.out.println("Success");
-            else System.out.println("Failed");
-        }
+    protected void runExercise() {
+        return;
     }
     
     private boolean isScramble(String s1, String s2) {
@@ -76,7 +67,19 @@ public class ScrambleString extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        return (testSuite[index].isScrambleString == isScrambleString);
+        for (int index = 0; index < testSuite.length; index++) {
+            TestCase test = testSuite[index];
+
+            boolean isScrambleString = isScramble(test.string1, test.string2);
+            if (testSuite[index].isScrambleString == isScrambleString) {
+                System.out.println("Success");
+            } else {
+                System.out.println("Failed");
+                return false;
+            }
+        }
+
+        return true;
     }
     
     private class TestCase {

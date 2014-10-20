@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Suppose a sorted array is rotated at some pivot unknown to you beforehand.
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/search-in-rotated-sorted-array/
  */
 
-public class SearchInRotatedSortedArray extends LeetCodeExercise {
+public class SearchInRotatedSortedArray extends Exercise {
     private final int MAXIMUM = 20;
     private final int SIZE = 10;
     
@@ -57,7 +57,7 @@ public class SearchInRotatedSortedArray extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 0; i < 10; i++) {
             initialize();
             

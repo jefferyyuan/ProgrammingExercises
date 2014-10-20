@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an array of integers, every element appears twice except for one. Find that single one.
@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/single-number/
  */
 
-public class SingleNumber extends LeetCodeExercise {
+public class SingleNumber extends Exercise {
     private final int MAXIMUM = 100;
     private final int SIZE = 100;
     
@@ -33,7 +33,7 @@ public class SingleNumber extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         result = singleNumber(array);

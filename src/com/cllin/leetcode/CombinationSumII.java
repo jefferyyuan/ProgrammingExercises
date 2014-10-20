@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a collection of candidate numbers (C) and a target number (T), 
@@ -20,7 +20,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/combination-sum-ii/
  */
 
-public class CombinationSumII extends LeetCodeExercise {
+public class CombinationSumII extends Exercise {
     private static final int[][] testSuite = new int[][]{
         {},
         {1},
@@ -31,24 +31,16 @@ public class CombinationSumII extends LeetCodeExercise {
         {10, 1, 2, 7, 6, 1, 5}
     };
     
-    private int index;
-    private int target;
     private ArrayList<ArrayList<Integer>> result;
     
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 1; index < testSuite.length; index++) {
-            for (target = 1; target <= 1; target++) {
-                result = combinationSum2(testSuite[index], target);
-                
-                if (!test()) System.out.println("Failed");
-            }
-        }
+    protected void runExercise() {
+        return;
     }
     
     private ArrayList<ArrayList<Integer>> combinationSum2(int[] num, int target) {
@@ -99,21 +91,33 @@ public class CombinationSumII extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.print("For this set of candidates: { ");
-        for (int i = 0; i < testSuite[index].length; i++) System.out.printf("%d ", testSuite[index][i]);
-        System.out.printf("} and %d as the target, there are %d combinations: %n", target, result.size());
-        
-        for (ArrayList<Integer> combination : result) {
-            int sum = 0;
-            for (int i = 0; i < combination.size(); i++) {
-                System.out.printf("%d ", combination.get(i));
-                sum += combination.get(i);
+        for (int index = 1; index < testSuite.length; index++) {
+            for (int target = 1; target <= 1; target++) {
+                result = combinationSum2(testSuite[index], target);
+                
+                System.out.print("For this set of candidates: { ");
+                for (int i = 0; i < testSuite[index].length; i++) System.out.printf("%d ", testSuite[index][i]);
+                System.out.printf("} and %d as the target, there are %d combinations: %n", target, result.size());
+                
+                for (ArrayList<Integer> combination : result) {
+                    int sum = 0;
+                    for (int i = 0; i < combination.size(); i++) {
+                        System.out.printf("%d ", combination.get(i));
+                        sum += combination.get(i);
+                    }
+
+                    if (sum != target) {
+                        System.out.println("Failed");
+                        return false;
+                    }
+                    System.out.println();
+                }
+                
+                System.out.println();
             }
-            if (sum != target) return false;
-            System.out.println();
         }
         
-        System.out.println();
+        System.out.println("Success");
         return true;
     }
 

@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/partition-list/
  */
 
-public class PartitionList extends LeetCodeExercise {
+public class PartitionList extends Exercise {
     private final int SIZE = 10;
     private final int MAXIMUM = 10;
 
@@ -33,7 +33,7 @@ public class PartitionList extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         head = partition(head, target);
         

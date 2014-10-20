@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a collection of intervals, merge all overlapping intervals.
@@ -12,12 +12,9 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/merge-intervals/
  */
 
-public class MergeIntervals extends LeetCodeExercise {
+public class MergeIntervals extends Exercise {
 
     private ArrayList<ArrayList<Interval>> testSuite;
-    
-    private int index;
-    private ArrayList<Interval> result;
     
     @Override
     public void initialize() {
@@ -25,7 +22,7 @@ public class MergeIntervals extends LeetCodeExercise {
         
         ArrayList<Interval> test;
         
-//        CASE 1
+        // CASE 1
         test = new ArrayList<Interval>();
         test.add(new Interval(1, 3));
         test.add(new Interval(2, 6));
@@ -33,13 +30,13 @@ public class MergeIntervals extends LeetCodeExercise {
         test.add(new Interval(15, 18));
         testSuite.add(test);
         
-//        CASE 2
+        // CASE 2
         test = new ArrayList<Interval>();
         test.add(new Interval(1, 4));
         test.add(new Interval(5, 5));
         testSuite.add(test);
         
-//        CASE 3
+        // CASE 3
         test = new ArrayList<Interval>();
         test.add(new Interval(1, 4));
         test.add(new Interval(0, 1));
@@ -47,13 +44,8 @@ public class MergeIntervals extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
-        initialize();
-        
-        for (index = 0; index < testSuite.size(); index++) {
-            result = merge(new ArrayList<Interval> (testSuite.get(index)));
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     /*
@@ -103,19 +95,23 @@ public class MergeIntervals extends LeetCodeExercise {
     
     @Override
     public boolean test() {
-        System.out.print("For the interval set: ");
-        
-        for (Interval interval : testSuite.get(index)) {
-            System.out.printf("[ %d, %d ] ", interval.start, interval.end);
+        for (int index = 0; index < testSuite.size(); index++) {
+            ArrayList<Interval> result = merge(new ArrayList<Interval>(testSuite.get(index)));
+
+            System.out.print("For the interval set: ");
+
+            for (Interval interval : testSuite.get(index)) {
+                System.out.printf("[ %d, %d ] ", interval.start, interval.end);
+            }
+
+            System.out.print("The new set without overlap is:\n");
+
+            for (Interval interval : result) {
+                System.out.printf("[ %d, %d ] ", interval.start, interval.end);
+            }
+
+            System.out.println("\n------------------");
         }
-        
-        System.out.print("The new set without overlap is:\n");
-        
-        for (Interval interval : result) {
-            System.out.printf("[ %d, %d ] ", interval.start, interval.end);
-        }
-        
-        System.out.println("\n------------------");
         
         return true;
     }

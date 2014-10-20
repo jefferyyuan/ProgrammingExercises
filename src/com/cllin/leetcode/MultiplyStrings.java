@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given two numbers represented as strings, return multiplication of the numbers as a string.
@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/multiply-strings/
  */
 
-public class MultiplyStrings extends LeetCodeExercise {
+public class MultiplyStrings extends Exercise {
 
     private final TestCase[] testSuite = {
             new TestCase("0", "0"),            
@@ -19,22 +19,14 @@ public class MultiplyStrings extends LeetCodeExercise {
             new TestCase("6913259244", "71103343")
     };
     
-    private int index;
-    private String product;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            TestCase test = testSuite[index];
-            product = multiply(test.num1, test.num2);
-            
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private String multiply(String num1, String num2) {
@@ -78,8 +70,12 @@ public class MultiplyStrings extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        TestCase test = testSuite[index];
-        System.out.printf("%s * %s = %s%n", test.num1, test.num2, product);
+        for (int index = 0; index < testSuite.length; index++) {
+            TestCase test = testSuite[index];
+            String product = multiply(test.num1, test.num2);
+
+            System.out.printf("%s * %s = %s%n", test.num1, test.num2, product);
+        }
         
         return true;
     }

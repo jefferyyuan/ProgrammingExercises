@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Determine if a Sudoku is valid.
@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/valid-sudoku/
  */
 
-public class ValidSudoku extends LeetCodeExercise {
+public class ValidSudoku extends Exercise {
 
     @Override
     public void initialize() {
@@ -25,7 +25,7 @@ public class ValidSudoku extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         isValidSudoku(new char[0][0]);
     }
     

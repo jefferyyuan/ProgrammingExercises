@@ -66,7 +66,7 @@ public class SubstituteCharacters extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.size(); index++) {
             ArrayList<String> output = 
                     getSubstitute(testSuite.get(index).map, testSuite.get(index).string);
@@ -90,6 +90,8 @@ public class SubstituteCharacters extends Exercise {
             }
             System.out.printf("}%n");
         }
+
+        return true;
     }
     
     private class TestCase {

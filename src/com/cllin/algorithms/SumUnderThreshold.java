@@ -119,11 +119,13 @@ public class SumUnderThreshold extends Exercise {
     }
     
     @Override
-    protected void test() {
+    protected boolean test() {
         System.out.print("A = { ");
         for (int n : array) {
             System.out.printf("%d ", n);
         }
         System.out.printf("},%nTHRESHOLD = %d.%nThere are %d pairs whose sum is smaller than THRESHOLD%n", threshold, nPairs);
+
+        return true;
     }
 }

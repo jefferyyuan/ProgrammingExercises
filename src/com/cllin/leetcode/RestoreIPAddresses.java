@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string containing only digits, restore it by returning all possible valid IP address combinations.
@@ -10,27 +10,21 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/restore-ip-addresses/
  */
 
-public class RestoreIPAddresses extends LeetCodeExercise {
+public class RestoreIPAddresses extends Exercise {
 
     private final String[] testSuite = {
             "25525511135",
             "010010"
     };
     
-    private int index;
-    private ArrayList<String> result;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            result = restoreIpAddresses(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private ArrayList<String> restoreIpAddresses(String string) {
@@ -72,7 +66,7 @@ public class RestoreIPAddresses extends LeetCodeExercise {
     private boolean isValidAddress(String address) {
         int addr = Integer.parseInt(address, 10);
         
-//        Ruling out the leading zeros
+        // Ruling out the leading zeros
         if (address.length() != Integer.toString(addr).length()) return false;
         
         return (0 <= addr && addr < 256);
@@ -80,13 +74,17 @@ public class RestoreIPAddresses extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.printf("For the string %s, possible IP addresses are:%n", testSuite[index]);
-        
-        for (String address : result) {
-            System.out.println("\t" + address);
+        for (int index = 0; index < testSuite.length; index++) {
+            ArrayList<String> result = restoreIpAddresses(testSuite[index]);
+
+            System.out.printf("For the string %s, possible IP addresses are:%n", testSuite[index]);
+
+            for (String address : result) {
+                System.out.println("\t" + address);
+            }
+
+            System.out.println("------------------");
         }
-        
-        System.out.println("------------------");
         
         return true;
     }

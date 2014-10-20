@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/combinations/
  */
 
-public class Combinations extends LeetCodeExercise {
+public class Combinations extends Exercise {
     private final int MAXIMUM = 10;
     
     private int n;
@@ -26,7 +26,7 @@ public class Combinations extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 1; i <= 10; i++) {
             initialize();
             result = combine(n, k);

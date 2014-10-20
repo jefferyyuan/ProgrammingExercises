@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a m x n grid filled with non-negative numbers, 
@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/minimum-path-sum/
  */
 
-public class MinimumPathSum extends LeetCodeExercise {
+public class MinimumPathSum extends Exercise {
     private final int MAXIMUM = 10;
     
     private int size_x;
@@ -30,7 +30,7 @@ public class MinimumPathSum extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         size_x = 12;
         size_y = 18;
         initialize();

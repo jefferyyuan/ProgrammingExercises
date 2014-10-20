@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a 2D board and a word, find if the word exists in the grid.
@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/word-search/
  */
 
-public class WordSearch extends LeetCodeExercise {
+public class WordSearch extends Exercise {
     private final TestCase[] testSuite = {
             new TestCase(
                     new char[][]{
@@ -26,39 +26,17 @@ public class WordSearch extends LeetCodeExercise {
                     })
     };
     
-    private int index;
-    private int wordIndex;
-    private boolean canBeFound;
-
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            TestCase test = testSuite[index];
-            
-            int rows = test.board.length;
-            int cols = test.board[0].length;
-            
-            for (wordIndex = 0; wordIndex < test.words.length; wordIndex++) {
-                char[][] board = new char[rows][cols];
-                
-                for (int i = 0; i < rows; i++) {
-                    for (int j = 0; j < cols; j++) {
-                        board[i][j] = test.board[i][j];
-                    }
-                }
-                
-                canBeFound = exist(board, test.words[wordIndex]);
-                test();
-            }
-        }
+    protected void runExercise() {
+        return;
     }
     
-//    Depth-first search
+    // Depth-first search
     private boolean exist(char[][] board, String word) {
         if (board == null || board.length == 0) return (word.length() == 0);
         
@@ -92,7 +70,7 @@ public class WordSearch extends LeetCodeExercise {
                 return true;
             }
             
-//            Restore the board
+            // Restore the board
             board[i][j] = temp;
         }
         
@@ -101,18 +79,36 @@ public class WordSearch extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        TestCase test = testSuite[index];
-        
-        System.out.println("For the following board:");
-        for (char[] row : test.board) {
-            for (char c : row) {
-                System.out.printf("%c ", c);
+        for (int index = 0; index < testSuite.length; index++) {
+            TestCase test = testSuite[index];
+            
+            int rows = test.board.length;
+            int cols = test.board[0].length;
+            
+            for (int wordIndex = 0; wordIndex < test.words.length; wordIndex++) {
+                char[][] board = new char[rows][cols];
+                
+                for (int i = 0; i < rows; i++) {
+                    for (int j = 0; j < cols; j++) {
+                        board[i][j] = test.board[i][j];
+                    }
+                }
+
+                System.out.println("For the following board:");
+                for (char[] row : test.board) {
+                    for (char c : row) {
+                        System.out.printf("%c ", c);
+                    }
+                    System.out.println();
+                }
+                
+                boolean canBeFound = exist(board, test.words[wordIndex]);
+                System.out.printf(
+                        "%s %s be found%n", test.words[wordIndex], (canBeFound)? "can" : "cannot");
+                System.out.println("------------------");
             }
-            System.out.println();
         }
         
-        System.out.printf("%s %s be found%n", test.words[wordIndex], (canBeFound)? "can" : "cannot");
-        System.out.println("------------------");
         return true;
     }
     

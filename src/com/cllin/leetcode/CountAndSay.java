@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * The count-and-say sequence is the sequence of integers beginning as follows:
@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/count-and-say/
  */
 
-public class CountAndSay extends LeetCodeExercise {
+public class CountAndSay extends Exercise {
 
     @Override
     public void initialize() {
@@ -24,7 +24,7 @@ public class CountAndSay extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int n = 1; n <= 5; n++) {
             String sequence = countAndSay(n);
             System.out.printf("The %dth sequence is %s%n", n, sequence);

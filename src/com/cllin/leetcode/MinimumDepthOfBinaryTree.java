@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
@@ -11,7 +11,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/minimum-depth-of-binary-tree/
  */
 
-public class MinimumDepthOfBinaryTree extends LeetCodeExercise {
+public class MinimumDepthOfBinaryTree extends Exercise {
     private final int SIZE = 100;
     private final int MAXIMUM = 10;
     
@@ -27,7 +27,7 @@ public class MinimumDepthOfBinaryTree extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         minimumHeight = minDepth(tree.root);
         

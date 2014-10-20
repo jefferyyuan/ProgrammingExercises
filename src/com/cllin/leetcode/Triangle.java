@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
@@ -23,7 +23,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/triangle/
  */
 
-public class Triangle extends LeetCodeExercise {
+public class Triangle extends Exercise {
     private final int MAXIMUM = 10;
     
     private int SIZE;
@@ -46,7 +46,7 @@ public class Triangle extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         result = minimumTotal(triangle);
         test();

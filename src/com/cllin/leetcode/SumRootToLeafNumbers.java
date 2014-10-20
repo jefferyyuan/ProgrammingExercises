@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
@@ -21,7 +21,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/sum-root-to-leaf-numbers/
  */
 
-public class SumRootToLeafNumbers extends LeetCodeExercise {
+public class SumRootToLeafNumbers extends Exercise {
     private final int SIZE = 10;
     private final int MAXIMUM = 10;
     
@@ -35,7 +35,7 @@ public class SumRootToLeafNumbers extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         sum = sumNumbers(tree.root);
         test();

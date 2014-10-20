@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.HashMap;
 import java.util.Stack;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/valid-parentheses/
  */
 
-public class ValidParentheses extends LeetCodeExercise {
+public class ValidParentheses extends Exercise {
     private final String[] testSuite = {
             "", "()[]{}", "([)]{}", "([])", "(("
             };
@@ -23,7 +23,7 @@ public class ValidParentheses extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         for (int i = 0; i < testSuite.length; i++) {

@@ -72,10 +72,12 @@ public class SerializeBinaryTree extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         String newTree = inorderTraversal(node, new String());
         String oldTree = tree.printTree();
 
         System.out.printf("%s%n", (newTree.equals(oldTree)) ? "Success!" : "Failed");
+
+        return true;
     }
 }

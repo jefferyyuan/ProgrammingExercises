@@ -35,7 +35,7 @@ public class Exercise02_01 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         Node node = listHead;
         HashSet<Integer> set = new HashSet<Integer>();
         
@@ -43,7 +43,8 @@ public class Exercise02_01 extends Exercise {
             int value = node.value;
             
             if (set.contains(value)) {
-            System.out.println("Failed");
+                System.out.println("Failed");
+                return false;
             }
             
             set.add(value);
@@ -51,6 +52,7 @@ public class Exercise02_01 extends Exercise {
         }
 
         System.out.println("Success!");
+        return true;
     }
     
     /*

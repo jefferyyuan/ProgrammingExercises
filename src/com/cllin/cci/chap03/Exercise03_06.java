@@ -47,15 +47,17 @@ public class Exercise03_06 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         int prev = Integer.MIN_VALUE;
         while (!stack.isEmpty()) {
             if (stack.peek() < prev) {
                 System.out.println("Failed");
-                return;
+                return false;
             }
             prev = stack.pop();
         }
-        System.out.println("Success!");    
+
+        System.out.println("Success!");
+        return true;
     }
 }

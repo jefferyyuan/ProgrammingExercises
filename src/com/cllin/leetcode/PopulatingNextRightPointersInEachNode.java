@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Populate each next pointer to point to its next right node. 
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/populating-next-right-pointers-in-each-node/
  */
 
-public class PopulatingNextRightPointersInEachNode extends LeetCodeExercise {
+public class PopulatingNextRightPointersInEachNode extends Exercise {
 
     @Override
     public void initialize() {
@@ -23,7 +23,7 @@ public class PopulatingNextRightPointersInEachNode extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         connect(new TreeLinkNode(0));
     }
     

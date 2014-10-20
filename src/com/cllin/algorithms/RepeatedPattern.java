@@ -53,11 +53,13 @@ public class RepeatedPattern extends Exercise {
     }
     
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             isRepeatedPattern = isRepeatedPattern(testSuite[index]);
 
             System.out.printf("%s %s a pattern of its substring%n", testSuite[index], (isRepeatedPattern)? "is" : "is not");
         }
+
+        return true;
     }
 }

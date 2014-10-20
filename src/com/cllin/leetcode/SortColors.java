@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an array with n objects colored red, white or blue, 
@@ -21,7 +21,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/sort-colors/
  */
 
-public class SortColors extends LeetCodeExercise {
+public class SortColors extends Exercise {
     private final int MAXIMUM = 3;
     private final int SIZE = 10;
     
@@ -37,7 +37,7 @@ public class SortColors extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         numbers = sortColors(numbers);
@@ -56,10 +56,13 @@ public class SortColors extends LeetCodeExercise {
         while (i < B + 1) {
             switch(A[i]) {
             case 0:
-                swap(A, R++, i);
+                swap(A, R, i);
+                R++;
+                i++;
                 continue;
             case 2:
-                swap(A, B--, i);
+                swap(A, B, i);
+                B--;
                 continue;
             }
             

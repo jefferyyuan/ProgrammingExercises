@@ -64,7 +64,7 @@ public class ConvertNumber extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (int i = 0; i < 10; i++) {
             int N = (int) (Math.random() * 20000) + 1;
             String string = numberToString(N);
@@ -72,5 +72,6 @@ public class ConvertNumber extends Exercise {
 
             System.out.printf("%d -> %s -> %d%n", N, string, number);
         }
+        return true;
     }
 }

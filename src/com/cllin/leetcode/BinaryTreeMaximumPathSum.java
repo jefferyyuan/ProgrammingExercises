@@ -1,8 +1,8 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
-public class BinaryTreeMaximumPathSum extends LeetCodeExercise {
+public class BinaryTreeMaximumPathSum extends Exercise {
 
     private TreeNode[] testSuite = {
             new TreeNode(1),
@@ -35,7 +35,7 @@ public class BinaryTreeMaximumPathSum extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         for (TreeNode root : testSuite) {

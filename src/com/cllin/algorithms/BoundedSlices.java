@@ -58,7 +58,7 @@ public class BoundedSlices extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             slices = boundedSlices(testSuite[index]);
 
@@ -79,5 +79,7 @@ public class BoundedSlices extends Exercise {
 
             System.out.println("------------------------------");
         }
+
+        return true;
     }
 }

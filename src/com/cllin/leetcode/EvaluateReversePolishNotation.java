@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Evaluate the value of an arithmetic expression in Reverse Polish Notation.
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/evaluate-reverse-polish-notation/
  */
 
-public class EvaluateReversePolishNotation extends LeetCodeExercise {
+public class EvaluateReversePolishNotation extends Exercise {
 
     private final String[][] testSuite = {
             {"2", "1", "+", "3", "*"},
@@ -23,20 +23,14 @@ public class EvaluateReversePolishNotation extends LeetCodeExercise {
             {"3", "-4", "+"}
     };
     
-    private int index;
-    private int result;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            result = evalRPN(Arrays.copyOf(testSuite[index], testSuite[index].length));
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private int evalRPN(String[] tokens) {
@@ -107,12 +101,16 @@ public class EvaluateReversePolishNotation extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.print("The value of { ");
-        for (String string : testSuite[index]) {
-            System.out.printf("%s ", string);
+        for (int index = 0; index < testSuite.length; index++) {
+            int result = evalRPN(Arrays.copyOf(testSuite[index], testSuite[index].length));
+
+            System.out.print("The value of { ");
+            for (String string : testSuite[index]) {
+                System.out.printf("%s ", string);
+            }
+            System.out.printf("} is %d%n", result);
+            System.out.println("------------------");
         }
-        System.out.printf("} is %d%n", result);
-        System.out.println("------------------");
         
         return true;
     }

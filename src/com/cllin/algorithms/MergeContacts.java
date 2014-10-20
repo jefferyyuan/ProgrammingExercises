@@ -90,7 +90,7 @@ public class MergeContacts extends Exercise {
     }
     
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             contactClusters = mergeContacts(testSuite[index]);
             
@@ -116,5 +116,7 @@ public class MergeContacts extends Exercise {
             }
             System.out.printf("}%n");
         }
+
+        return true;
     }
 }

@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * You are given two linked lists representing two non-negative numbers.
@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/add-two-numbers/
  */
 
-public class AddTwoNumbers extends LeetCodeExercise {
+public class AddTwoNumbers extends Exercise {
     private final int MAXIMUM = 10;
     
     private int DIGITS;
@@ -53,7 +53,7 @@ public class AddTwoNumbers extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (DIGITS = 1; DIGITS <= 5; DIGITS++) {
             initialize();
             result = addTwoNumbers(head1, head2);

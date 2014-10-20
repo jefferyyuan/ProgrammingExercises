@@ -67,7 +67,7 @@ public class Exercise03_01 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         Stack<Integer> stack1 = new Stack<Integer>();
         Stack<Integer> stack2 = new Stack<Integer>();
         Stack<Integer> stack3 = new Stack<Integer>();
@@ -92,14 +92,14 @@ public class Exercise03_01 extends Exercise {
                 || stack2.peek() != myStack.peek(1)
                 || stack3.peek() != myStack.peek(2)) {
             System.out.println("Failed");
-            return;
+            return false;
         }
         
         if (stack1.isEmpty() != myStack.isEmpty(0)
                 || stack2.isEmpty() != myStack.isEmpty(1)
                 || stack2.isEmpty() != myStack.isEmpty(2)) {
             System.out.println("Failed");
-            return;
+            return false;
         }
         
         for (int i = 0; i < SIZE; i++) {
@@ -107,10 +107,11 @@ public class Exercise03_01 extends Exercise {
                     || stack2.pop() != myStack.pop(1)
                     || stack3.pop() != myStack.pop(2)) {
                 System.out.println("Failed");
-                return;
+                return false;
             }
         }
         
-        System.out.println("Success!");    
+        System.out.println("Success!");
+        return true;
     }
 }

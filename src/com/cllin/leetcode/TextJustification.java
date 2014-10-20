@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an array of words and a length L, 
@@ -20,7 +20,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/text-justification/
  */
 
-public class TextJustification extends LeetCodeExercise {
+public class TextJustification extends Exercise {
 
     private final TestCase[] testSuite = {
             new TestCase(new String[]{"This", "is", "an", "example", "of", "text", "justification."}, 16),
@@ -30,22 +30,14 @@ public class TextJustification extends LeetCodeExercise {
             new TestCase(new String[]{"My", "momma", "always", "said,", "'Life", "was", "like", "a", "box", "of", "chocolates.", "You", "never", "know", "what" ,"you're", "gonna", "get."}, 20),
     };
     
-    private int index;
-    private ArrayList<String> result;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            TestCase test = testSuite[index];
-            result = fullJustify(test.words, test.L);
-            
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private ArrayList<String> fullJustify(String[] words, int L) {
@@ -60,13 +52,13 @@ public class TextJustification extends LeetCodeExercise {
             int start = index;
             int currentLength = -1;
             
-//            Count how many words can fit in this line
+            // Count how many words can fit in this line
             while (index < words.length && currentLength + 1 + words[index].length() <= L) {
                 currentLength += (currentLength == 0)? words[index].length() : 1 + words[index].length();
                 index++;
             }
 
-//            Count how long the space in this line should be 
+            // Count how long the space in this line should be
             index--;
             StringBuffer buffer = new StringBuffer();
             int count = index - start + 1;
@@ -80,7 +72,7 @@ public class TextJustification extends LeetCodeExercise {
                 space.append(' ');
             }
 
-//            Build line
+            // Build line
             int i = start;
             ArrayList<StringBuffer> buf = new ArrayList<StringBuffer>();
             
@@ -92,7 +84,7 @@ public class TextJustification extends LeetCodeExercise {
             
             buf.add(new StringBuffer(words[i]));
             
-//            Adjust spaces between word if needed
+            // Adjust spaces between word if needed
             if (count != 1 && left % (count - 1) != 0 && index != words.length - 1) {
                 int remain = left % (count - 1);
                 for (int p = 0; p < buf.size(); p++) {
@@ -107,7 +99,7 @@ public class TextJustification extends LeetCodeExercise {
                 buffer.append(buf);
             }
             
-//            Fill the line with spaces if needed
+            // Fill the line with spaces if needed
             while (buffer.length() < L) {
                 buffer.append(' ');
             }
@@ -121,18 +113,23 @@ public class TextJustification extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        TestCase test = testSuite[index];
-        System.out.printf("For L = %d,%nwords = { ", test.L);
-        for (String word : test.words) {
-            System.out.printf("%s ", word);    
+        for (int index = 0; index < testSuite.length; index++) {
+            TestCase test = testSuite[index];
+            ArrayList<String> result = fullJustify(test.words, test.L);
+            
+            System.out.printf("For L = %d,%nwords = { ", test.L);
+            for (String word : test.words) {
+                System.out.printf("%s ", word);    
+            }
+            System.out.print("}, the justified string is:\n");
+            
+            for (String line : result) {
+                System.out.println("\t" + line);
+            }
+            
+            System.out.println("------------------");
         }
-        System.out.print("}, the justified string is:\n");
         
-        for (String line : result) {
-            System.out.println("\t" + line);
-        }
-        
-        System.out.println("------------------");
         return true;
     }
 

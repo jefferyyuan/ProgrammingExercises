@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Follow up for "Remove Duplicates":
@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
  */
 
-public class RemoveDuplicatesFromSortedArrayII extends LeetCodeExercise {
+public class RemoveDuplicatesFromSortedArrayII extends Exercise {
     private final int MAXIMUM = 100;
     private final int SIZE = 100;
     
@@ -31,7 +31,7 @@ public class RemoveDuplicatesFromSortedArrayII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         result = removeDuplicates(array);

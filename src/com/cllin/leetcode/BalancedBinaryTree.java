@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
@@ -12,7 +12,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/balanced-binary-tree/
  */
 
-public class BalancedBinaryTree extends LeetCodeExercise {
+public class BalancedBinaryTree extends Exercise {
     private final int SIZE = 1000;
     private final int MAXIMUM = 1000;
     
@@ -27,7 +27,7 @@ public class BalancedBinaryTree extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         Node node = new Node(1);

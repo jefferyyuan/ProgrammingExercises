@@ -107,7 +107,7 @@ public class SubstringConcatenation extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             substring = getSubstring(testSuite[index].S, testSuite[index].L);
 
@@ -123,5 +123,7 @@ public class SubstringConcatenation extends Exercise {
 
             System.out.println("------------------------------");
         }
+
+        return true;
     }
 }

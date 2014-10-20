@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an array of non-negative integers, you are initially positioned at the first index of the array.
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/jump-game/
  */
 
-public class JumpGame extends LeetCodeExercise {
+public class JumpGame extends Exercise {
     private final int[][] testSuite = {
             {2, 3, 1, 1, 4},
             {3, 2, 1, 0, 4},
@@ -28,16 +28,12 @@ public class JumpGame extends LeetCodeExercise {
 
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
-
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            result = canJump(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private boolean canJump(int[] array) {
@@ -54,14 +50,18 @@ public class JumpGame extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        int[] array = testSuite[index];
+        for (index = 0; index < testSuite.length; index++) {
+            result = canJump(testSuite[index]);
+
+            int[] array = testSuite[index];
+            
+            System.out.print("For this array: {");
+            for (int i = 0; i < array.length; i++) System.out.printf(" %d", array[i]);
+            if (result) System.out.print(" }, it is possible to finish to jump game\n");
+            else System.out.print(" }, it is impossible to finish to jump game\n");
+        }
         
-        System.out.print("For this array: {");
-        for (int i = 0; i < array.length; i++) System.out.printf(" %d", array[i]);
-        if (result) System.out.print(" }, it is possible to finish to jump game\n");
-        else System.out.print(" }, it is impossible to finish to jump game\n");
-        
-        return false;
+        return true;
     }
 
 }

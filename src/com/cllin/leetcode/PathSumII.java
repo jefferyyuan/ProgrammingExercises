@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
@@ -12,7 +12,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/path-sum-ii/
  */
 
-public class PathSumII extends LeetCodeExercise {
+public class PathSumII extends Exercise {
     private final int MAXIMUM = 10;
     private final int SIZE = 10;
     
@@ -25,7 +25,7 @@ public class PathSumII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         for (int sum = 0; sum < 50; sum++) {
             result = pathSum(tree.root, sum);

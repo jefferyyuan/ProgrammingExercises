@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string s, partition s such that every substring of the partition is a palindrome.
@@ -18,7 +18,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/palindrome-partitioning/
  */
 
-public class PalindromePartitioning extends LeetCodeExercise {
+public class PalindromePartitioning extends Exercise {
 
     private final String[] testSuite = {
             "",
@@ -36,7 +36,7 @@ public class PalindromePartitioning extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         int length = testSuite.length;
         for (int i = 0; i < length; i++) {
             result = partition(testSuite[i]);

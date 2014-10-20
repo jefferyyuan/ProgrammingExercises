@@ -66,7 +66,7 @@ public class PrefixOfStrings extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             TestCase test = testSuite[index];
             
@@ -81,5 +81,7 @@ public class PrefixOfStrings extends Exercise {
             System.out.printf("The shortest prefix is: '%s'%n", shortestPrefix);
             System.out.println("------------------------------");
         }
+
+        return true;
     }
 }

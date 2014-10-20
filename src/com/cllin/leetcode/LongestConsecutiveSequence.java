@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an unsorted array of integers, find the length of the longest consecutive elements sequence.
@@ -17,7 +17,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/longest-consecutive-sequence/
  */
 
-public class LongestConsecutiveSequence extends LeetCodeExercise {
+public class LongestConsecutiveSequence extends Exercise {
     
     private final int[][] testSuite = {
             new int[]{0},
@@ -25,21 +25,15 @@ public class LongestConsecutiveSequence extends LeetCodeExercise {
             new int[]{2147483646, -2147483647, 0, 2, 2147483644, -2147483645, 2147483645},
             new int[]{-3, -9, -3, 4, -3, -9, -3, -6, 8, -3, 0, 1, 5, -1, -4, 0, -7, 1, 5}
     };
-    private int index;
-    private int result;
 
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            result = longestConsecutive(testSuite[index]);
-            test();
-        }
-
+    protected void runExercise() {
+        return;
     }
     
     private static int longestConsecutive(int[] num) {
@@ -82,13 +76,18 @@ public class LongestConsecutiveSequence extends LeetCodeExercise {
     
     @Override
     public boolean test() {
-        System.out.print("A = { ");
-        for (int n : testSuite[index]) {
-            System.out.printf("%d ", n);
+        for (int index = 0; index < testSuite.length; index++) {
+            int result = longestConsecutive(testSuite[index]);
+
+            System.out.print("A = { ");
+            for (int n : testSuite[index]) {
+                System.out.printf("%d ", n);
+            }
+            System.out.printf("}%n");
+
+            System.out.printf("The length of the longest consecutive sequence is %d%n", result);
         }
-        System.out.printf("}%n");
         
-        System.out.printf("The length of the longest consecutive sequence is %d%n", result);
         return false;
     }
 

@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * There are N gas stations along a circular route, where the amount of gas at station i is gas[i].
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/gas-station/
  */
 
-public class GasStation extends LeetCodeExercise {
+public class GasStation extends Exercise {
 
     private final TestCase[] testSuite = {
             new TestCase(new int[]{3, 0, 0, 0}, new int[]{0, 1, 1, 1}),
@@ -40,21 +40,14 @@ public class GasStation extends LeetCodeExercise {
                         7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26})
     };
     
-    private int index;
-    private int startingIndex;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 6; index < testSuite.length; index++) {
-            TestCase testCase = testSuite[index];
-            startingIndex = canCompleteCircuit(testCase.gas, testCase.cost);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private int canCompleteCircuit(int[] gas, int[] cost) {
@@ -79,18 +72,24 @@ public class GasStation extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.print("Given the gas and cost on the route,\n");
+        for (int index = 0; index < testSuite.length; index++) {
+            TestCase testCase = testSuite[index];
+            int startingIndex = canCompleteCircuit(testCase.gas, testCase.cost);
+
+            System.out.print("Given the gas and cost on the route,\n");
+            
+            System.out.print("Gas = \t{ ");
+            for (int gas : testSuite[index].gas) System.out.printf("%d ", gas);
+            System.out.print("}\n");
+            
+            System.out.print("Cost = \t{ ");
+            for (int gas : testSuite[index].cost) System.out.printf("%d ", gas);
+            System.out.print("}\n");
+            
+            System.out.printf("We can travel around the route only if we start from station #%d%n", startingIndex);
+            System.out.println("------------------");
+        }
         
-        System.out.print("Gas = \t{ ");
-        for (int gas : testSuite[index].gas) System.out.printf("%d ", gas);
-        System.out.print("}\n");
-        
-        System.out.print("Cost = \t{ ");
-        for (int gas : testSuite[index].cost) System.out.printf("%d ", gas);
-        System.out.print("}\n");
-        
-        System.out.printf("We can travel around the route only if we start from station #%d%n", startingIndex);
-        System.out.println("------------------");
         
         return true;
     }

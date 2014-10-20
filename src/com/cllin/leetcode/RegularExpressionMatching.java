@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Implement regular expression matching with support for '.' and '*'.
@@ -21,7 +21,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/regular-expression-matching/
  */
 
-public class RegularExpressionMatching extends LeetCodeExercise {
+public class RegularExpressionMatching extends Exercise {
 
     private TestCase[] testSuite = {
             new TestCase("aa", "a"),
@@ -36,22 +36,14 @@ public class RegularExpressionMatching extends LeetCodeExercise {
             new TestCase("aaa", "a*a")
     };
     
-    private int index;
-    private boolean isMatch;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            TestCase test = testSuite[index];
-            isMatch = isMatch(test.s, test.p);
-            
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     /*
@@ -60,7 +52,7 @@ public class RegularExpressionMatching extends LeetCodeExercise {
      *         1) P(j) == S(i)
      *         2) P(j) == '.'
      *         3) P(j) == '*' AND M(i, j - 2)                            --- Omitting the previous character
-     *         4) P(j) == '*' AND P(j - 1) == S(i) AND M(i - 1, j)        --- Repeating the previous character
+     *         4) P(j) == '*' AND P(j - 1) == S(i) AND M(i - 1, j)       --- Repeating the previous character
      */
     private static boolean isMatch(String s, String p) {
         if (s == null) return (p == null);
@@ -103,8 +95,12 @@ public class RegularExpressionMatching extends LeetCodeExercise {
     
     @Override
     public boolean test() {
-        TestCase test = testSuite[index];
-        System.out.printf("%s %s %s%n", test.p, (isMatch)? "matches" : "does not match", test.s);
+        for (int index = 0; index < testSuite.length; index++) {
+            TestCase test = testSuite[index];
+            boolean isMatch = isMatch(test.s, test.p);
+            
+            System.out.printf("%s %s %s%n", test.p, (isMatch)? "matches" : "does not match", test.s);
+        }
         
         return true;
     }

@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Implement atoi to convert a string to an integer.
@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/string-to-integer-atoi/
  */
 
-public class StringToInteger extends LeetCodeExercise {
+public class StringToInteger extends Exercise {
 
     private String[] testSuite = {
             "+-+2",
@@ -30,7 +30,7 @@ public class StringToInteger extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (String input : testSuite) {
             output = atoi(input);
             System.out.printf("%s = %d%n", input, output);test();

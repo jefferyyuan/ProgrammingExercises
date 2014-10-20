@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given two words (start and end), and a dictionary, 
@@ -26,7 +26,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/word-ladder/
  */
 
-public class WordLadder extends LeetCodeExercise {
+public class WordLadder extends Exercise {
 
     private ArrayList<TestCase> testSuite;
     
@@ -85,7 +85,7 @@ public class WordLadder extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         for (TestCase test : testSuite) {

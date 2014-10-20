@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Write a function to find the longest common prefix string amongst an array of strings.
@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/longest-common-prefix/
  */
 
-public class LongestCommonPrefix extends LeetCodeExercise {
+public class LongestCommonPrefix extends Exercise {
     private static final String[][] testSuite = {
             {"", "apple"}, 
             {"apple", "apartment", "apply"}, 
@@ -20,19 +20,12 @@ public class LongestCommonPrefix extends LeetCodeExercise {
     
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
-
+        return;
     }
 
     @Override
-    public void run() {
-        initialize();
-        
-        for (index = 0; index < testSuite.length; index++) {
-            result = longestCommonPrefix(testSuite[index]);
-            test();
-        }
-
+    protected void runExercise() {
+        return;
     }
 
     private String longestCommonPrefix(String[] strings) {
@@ -58,13 +51,16 @@ public class LongestCommonPrefix extends LeetCodeExercise {
     
     @Override
     public boolean test() {
-        System.out.print("For the set of {");
-        for (String string : testSuite[index]) System.out.printf(" -%s-", string);
-        System.out.print(" }, ");
-        
-        System.out.printf("the longest prefix is -%s-%n", result);
-        
-        return false;
+        for (index = 0; index < testSuite.length; index++) {
+            result = longestCommonPrefix(testSuite[index]);
+
+            System.out.print("For the set of {");
+            for (String string : testSuite[index]) System.out.printf(" -%s-", string);
+            System.out.print(" }, ");
+            
+            System.out.printf("the longest prefix is -%s-%n", result);
+        }
+        return true;
     }
 
 }

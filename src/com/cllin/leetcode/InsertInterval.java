@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a set of non-overlapping intervals, insert a new interval into the intervals (merge if necessary).
@@ -11,14 +11,10 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/insert-interval/
  */
 
-public class InsertInterval extends LeetCodeExercise {
+public class InsertInterval extends Exercise {
 
     private ArrayList<ArrayList<Interval>> testSuite;
     private ArrayList<Interval> newIntervals;
-    
-    private ArrayList<Interval> result;
-    
-    private int index;
     
     @Override
     public void initialize() {
@@ -27,14 +23,14 @@ public class InsertInterval extends LeetCodeExercise {
         
         ArrayList<Interval> test;
         
-//        CASE 1
+        // CASE 1
         test = new ArrayList<Interval>();
         test.add(new Interval(1, 3));
         test.add(new Interval(6, 9));
         newIntervals.add(new Interval(2, 5));
         testSuite.add(test);
 
-//        CASE 2
+        // CASE 2
         test = new ArrayList<Interval>();
         test.add(new Interval(1, 2));
         test.add(new Interval(3, 5));
@@ -44,7 +40,7 @@ public class InsertInterval extends LeetCodeExercise {
         newIntervals.add(new Interval(4, 9));
         testSuite.add(test);
 
-//        CASE 3
+        // CASE 3
         test = new ArrayList<Interval>();
         test.add(new Interval(1, 2));
         test.add(new Interval(8, 10));
@@ -52,7 +48,7 @@ public class InsertInterval extends LeetCodeExercise {
         newIntervals.add(new Interval(0, 9));
         testSuite.add(test);
         
-//        CASE 4
+        // CASE 4
         test = new ArrayList<Interval>();
         test.add(new Interval(1, 2));
         test.add(new Interval(8, 10));
@@ -60,7 +56,7 @@ public class InsertInterval extends LeetCodeExercise {
         newIntervals.add(new Interval(9, 20));
         testSuite.add(test);
         
-//        CASE 5
+        // CASE 5
         test = new ArrayList<Interval>();
         test.add(new Interval(8, 10));
         test.add(new Interval(12, 16));
@@ -70,13 +66,8 @@ public class InsertInterval extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
-        initialize();
-        
-        for (index = 0; index < testSuite.size(); index++) {
-            result = insert(new ArrayList<Interval> (testSuite.get(index)), newIntervals.get(index));
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
 
     private ArrayList<Interval> insert(ArrayList<Interval> intervals, Interval newInterval) {
@@ -93,7 +84,7 @@ public class InsertInterval extends LeetCodeExercise {
         
         intervals.add(index, newInterval);
         
-//        Merge with the previous interval if needed
+        // Merge with the previous interval if needed
         if (index > 0 && intervals.get(index - 1).end >= intervals.get(index).start) {
             int end = Math.max(intervals.get(index - 1).end, intervals.get(index).end);
             
@@ -102,7 +93,7 @@ public class InsertInterval extends LeetCodeExercise {
             intervals.remove(index--);
         }
 
-//        Merge with the next interval if needed
+        // Merge with the next interval if needed
         int j = index + 1;
         while (j < intervals.size() && intervals.get(j).start <= newInterval.end) {
             int end = Math.max(intervals.get(index).end, intervals.get(j).end);
@@ -117,20 +108,25 @@ public class InsertInterval extends LeetCodeExercise {
     
     @Override
     public boolean test() {
-        System.out.print("For the interval set: ");
-        
-        for (Interval interval : testSuite.get(index)) {
-            System.out.printf("[ %d, %d ] ", interval.start, interval.end);
+        for (int index = 0; index < testSuite.size(); index++) {
+            ArrayList<Interval> result = 
+                    insert(new ArrayList<Interval> (testSuite.get(index)), newIntervals.get(index));
+
+            System.out.print("For the interval set: ");
+
+            for (Interval interval : testSuite.get(index)) {
+                System.out.printf("[ %d, %d ] ", interval.start, interval.end);
+            }
+
+            System.out.printf(", and the new interval: [ %d, %d ], the new set is:%n",
+                    newIntervals.get(index).start, newIntervals.get(index).end);
+
+            for (Interval interval : result) {
+                System.out.printf("[ %d, %d ] ", interval.start, interval.end);
+            }
+
+            System.out.println("\n------------------");
         }
-        
-        System.out.printf(", and the new interval: [ %d, %d ], the new set is:%n", 
-                newIntervals.get(index).start, newIntervals.get(index).end);
-        
-        for (Interval interval : result) {
-            System.out.printf("[ %d, %d ] ", interval.start, interval.end);
-        }
-        
-        System.out.println("\n------------------");
         
         return true;
     }

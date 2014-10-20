@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Hashtable;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * You are given a string, S, and a list of words, L, that are all of the same length. 
@@ -18,7 +18,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/substring-with-concatenation-of-all-words/
  */
 
-public class SubstringWithConcatenationOfAllWords extends LeetCodeExercise {
+public class SubstringWithConcatenationOfAllWords extends Exercise {
 
     private TestCase[] testSuite = {
             new TestCase("a", new String[]{"a"}),
@@ -28,22 +28,14 @@ public class SubstringWithConcatenationOfAllWords extends LeetCodeExercise {
             new TestCase("lingmindraboofooowingdingbarrwingmonkeypoundcake", new String[]{"fooo", "barr", "wing", "ding", "wing"}),
     };
     
-    private int index;
-    private ArrayList<Integer> startingIndices;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            TestCase test = testSuite[index];
-            startingIndices = findSubstring(test.S, test.L);
-            
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
 
     private ArrayList<Integer> findSubstring(String S, String[] L) {
@@ -96,20 +88,24 @@ public class SubstringWithConcatenationOfAllWords extends LeetCodeExercise {
     
     @Override
     public boolean test() {
-        TestCase test = testSuite[index];
-        
-        System.out.printf("S = %s%n", test.S);
-        System.out.print("L = ");
-        for (String string : test.L) {
-            System.out.printf("%s ", string);
+        for (int index = 0; index < testSuite.length; index++) {
+            TestCase test = testSuite[index];
+            ArrayList<Integer> startingIndices = findSubstring(test.S, test.L);
+
+            System.out.printf("S = %s%n", test.S);
+            System.out.print("L = ");
+            for (String string : test.L) {
+                System.out.printf("%s ", string);
+            }
+
+            System.out.print("\nIndices = ");
+            for (int i : startingIndices) {
+                System.out.printf("%d ", i);
+            }
+
+            System.out.println("\n------------------");
         }
         
-        System.out.print("\nIndices = ");
-        for (Integer index : startingIndices) {
-            System.out.printf("%d ", index);
-        }
-        
-        System.out.println("\n------------------");
         return true;
     }
     

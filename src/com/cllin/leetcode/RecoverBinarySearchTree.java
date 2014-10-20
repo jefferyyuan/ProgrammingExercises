@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Two elements of a binary search tree (BST) are swapped by mistake.
@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/recover-binary-search-tree/
  */
 
-public class RecoverBinarySearchTree extends LeetCodeExercise {
+public class RecoverBinarySearchTree extends Exercise {
     
     private TreeNode[] testSuite = {
             new TreeNode(0),
@@ -41,7 +41,7 @@ public class RecoverBinarySearchTree extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         for (index = 0; index < testSuite.length; index++) {

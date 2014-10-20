@@ -6,25 +6,25 @@ import com.cllin.main.Exercise;
 
 public class ExtendAndSuper extends Exercise {
     
-    private class SuperVehicle {
-        private static final String name = "super vehicle";
-        private static final int capacity = 0;
+    class SuperVehicle {
+        protected static final String name = "super vehicle";
+        protected static final int capacity = 0;
     } 
     
-    private class Vehicle extends SuperVehicle {
-        private static final String name = "vehicle";
-        private static final int capacity = 1;
+    class Vehicle extends SuperVehicle {
+        protected static final String name = "vehicle";
+        protected static final int capacity = 1;
         
         @SuppressWarnings("static-access")
-    public void getCapacity() {
+        private void getCapacity() {
             System.out.print("A " + name + " can carry " + capacity + " people. ");
             System.out.println("Its parent, a " + super.name + " can carry " + super.capacity + " people. ");
         }
     }
     
-    private class Automobile extends Vehicle {
-        private static final String name = "automobile";
-        private static final int capacity = 4;
+    class Automobile extends Vehicle {
+        protected static final String name = "automobile";
+        protected static final int capacity = 4;
 
         @SuppressWarnings("static-access")
         public void getCapacity() {
@@ -37,7 +37,7 @@ public class ExtendAndSuper extends Exercise {
         private static final String name = "bicycle";
         private static final int capacity = 1;
         
-        @SuppressWarnings("static-access")
+        @SuppressWarnings({ "static-access", "unused" })
         public void getCapacity() {
             System.out.print("A " + name + " can carry " + capacity + " people. ");
             System.out.println("Its parent, a " + super.name + " can carry " + super.capacity + " people. ");
@@ -68,7 +68,7 @@ public class ExtendAndSuper extends Exercise {
 
     @Override
     protected void initialize() {
-    return;
+        return;
     }
 
     @Override
@@ -86,8 +86,8 @@ public class ExtendAndSuper extends Exercise {
     }
 
     @Override
-    protected void test() {
-    return;
+    protected boolean test() {
+        return true;
     }
 
 }

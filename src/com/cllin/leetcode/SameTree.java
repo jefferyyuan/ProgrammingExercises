@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
@@ -11,7 +11,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/same-tree/
  */
 
-public class SameTree extends LeetCodeExercise {
+public class SameTree extends Exercise {
     private final int MAXIMUM = 100;
     private final int SIZE = 100;
     
@@ -40,7 +40,7 @@ public class SameTree extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         result1 = isSameTree(tree.root, treeCopy.root);

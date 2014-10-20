@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Follow up for "Unique Paths":
@@ -22,7 +22,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/unique-paths-ii/
  */
 
-public class UniquePathsII extends LeetCodeExercise {
+public class UniquePathsII extends Exercise {
     private final int[][][] testSuite = new int[][][]{
             {{1, 0}},
             {{0, 0}, {0, 0}},
@@ -41,12 +41,8 @@ public class UniquePathsII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
-        initialize();
-        for (index = 0; index < testSuite.length; index++) {
-            result = uniquePathsWithObstacles(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private int uniquePathsWithObstacles(int[][] obstacleGrid) {
@@ -76,20 +72,25 @@ public class UniquePathsII extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        int[][] grid = testSuite[index];
-        int m = grid.length;
-        int n = grid[0].length;
-        
-        System.out.printf("There are %d unique paths for this grid%n", result);
-        
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.printf("%d ", grid[i][j]);
+        for (index = 0; index < testSuite.length; index++) {
+            result = uniquePathsWithObstacles(testSuite[index]);
+
+            int[][] grid = testSuite[index];
+            int m = grid.length;
+            int n = grid[0].length;
+
+            System.out.printf("There are %d unique paths for this grid%n", result);
+
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < n; j++) {
+                    System.out.printf("%d ", grid[i][j]);
+                }
+                System.out.println();
             }
-            System.out.println();
+
+            System.out.println("------------");
         }
         
-        System.out.println("------------");
-        return false;
+        return true;
     }
 }

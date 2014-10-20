@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a collection of integers that might contain duplicates, S, return all possible subsets.
@@ -27,7 +27,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/subsets-ii/
  */
 
-public class SubsetsII extends LeetCodeExercise {
+public class SubsetsII extends Exercise {
     private final int[][] testSuite = {
             {}, 
             {1}, 
@@ -46,12 +46,8 @@ public class SubsetsII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
-        initialize();
-        for (index = 5; index < testSuite.length; index++) {
-            result = subsetsWithDup(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private ArrayList<ArrayList<Integer>> subsetsWithDup(int[] set) {
@@ -95,16 +91,21 @@ public class SubsetsII extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.printf("For the set [ ");
-        for (int n : testSuite[index]) System.out.printf("%d ", n);
-        System.out.printf("], the subsets are:%n");
-        for (ArrayList<Integer> subset : result) {
-            int size = subset.size();
-            
-            System.out.print("- ");
-            for (int i = 0; i < size; i++) System.out.printf("%d ", subset.get(i));
-            System.out.print("-\n");
+        for (index = 5; index < testSuite.length; index++) {
+            result = subsetsWithDup(testSuite[index]);
+
+            System.out.printf("For the set [ ");
+            for (int n : testSuite[index]) System.out.printf("%d ", n);
+            System.out.printf("], the subsets are:%n");
+            for (ArrayList<Integer> subset : result) {
+                int size = subset.size();
+                
+                System.out.print("- ");
+                for (int i = 0; i < size; i++) System.out.printf("%d ", subset.get(i));
+                System.out.print("-\n");
+            }
         }
-        return false;
+        
+        return true;
     }
 }

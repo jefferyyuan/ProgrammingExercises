@@ -83,7 +83,7 @@ public class WordsFromLetterCollection extends Exercise {
     }
     
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             longestWord = getLongestWordFromDictionary(testSuite[index].dictionary, testSuite[index].characters);
 
@@ -102,5 +102,7 @@ public class WordsFromLetterCollection extends Exercise {
             System.out.printf("Longest word that can spelled with the collection of letters is %s%n", longestWord);
             System.out.println("------------------------------");
         }
+
+        return true;
     }
 }

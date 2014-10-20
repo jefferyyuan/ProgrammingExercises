@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an array of non-negative integers, you are initially positioned at the first index of the array.
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/jump-game-ii/
  */
 
-public class JumpGameII extends LeetCodeExercise {
+public class JumpGameII extends Exercise {
 
     private final int[][] testSuite = {
             {2, 3, 1, 1, 4}, 
@@ -27,20 +27,14 @@ public class JumpGameII extends LeetCodeExercise {
             {1, 1, 1, 1, 1, 1, 1, 1}
     };
     
-    private int index;
-    private int numMinimumJumps;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            numMinimumJumps = jump(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     /*
@@ -72,10 +66,15 @@ public class JumpGameII extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.print("For the array { ");
-        for (int num : testSuite[index]) System.out.printf("%d ", num);
+        for (int index = 0; index < testSuite.length; index++) {
+            int numMinimumJumps = jump(testSuite[index]);
+
+            System.out.print("For the array { ");
+            for (int num : testSuite[index]) System.out.printf("%d ", num);
+            
+            System.out.printf("}, it takes at least %d jumps to finish%n", numMinimumJumps);
+        }
         
-        System.out.printf("}, it takes at least %d jumps to finish%n", numMinimumJumps);
         return true;
     }
 

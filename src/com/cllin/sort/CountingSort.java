@@ -3,8 +3,8 @@ package com.cllin.sort;
 import java.util.Arrays;
 
 /*
- * Average case performance            :O(n)
- * Worst case space complexity        :O(n)
+ * Average case performance             :O(n)
+ * Worst case space complexity          :O(n)
  */
 
 public class CountingSort extends Sort {
@@ -12,7 +12,7 @@ public class CountingSort extends Sort {
         countingSort(numbers);
     }
 
-//    The array is guaranteed to be non-negative
+    // The array is guaranteed to be non-negative
     private void countingSort(int[] array) {
         int max = getMaximum(array);
         int length = array.length;

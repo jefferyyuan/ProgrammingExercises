@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Sort a linked list using insertion sort.
@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/insertion-sort-list/
  */
 
-public class InsertionSortList extends LeetCodeExercise {
+public class InsertionSortList extends Exercise {
     private final int SIZE = 1000;
     private final int MAXIMUM = 1000;
 
@@ -26,7 +26,7 @@ public class InsertionSortList extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         head = insertionSortList(head);
         

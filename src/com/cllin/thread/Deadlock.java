@@ -22,7 +22,7 @@ public class Deadlock extends Exercise {
             return this.name;
         }
         
-//      The deadlock will not happen if the method is not synchronized
+        // The deadlock will not happen if the method is not synchronized
         public synchronized void bow(Friend bower) {
             System.out.format("%s: %s" + "  has bowed to me!%n", this.name, bower.getName());
             bower.bowBack(this);
@@ -43,16 +43,20 @@ public class Deadlock extends Exercise {
         final Friend gaston = new Friend("Gaston");
         
         new Thread(new Runnable() {
-            public void run() { alphonse.bow(gaston); }
+            public void run() {
+                alphonse.bow(gaston);
+            }
         }).start();
 
         new Thread(new Runnable() {
-            public void run() { gaston.bow(alphonse); }
+            public void run() {
+                gaston.bow(alphonse);
+            }
         }).start();
     }
 
     @Override
-    protected void test() {
-        return;
+    protected boolean test() {
+        return true;
     }
 }

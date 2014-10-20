@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an array S of n integers, are there elements a, b, c, and d in S such that a + b + c + d = target? 
@@ -24,7 +24,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/4sum/
  */
 
-public class FourSum extends LeetCodeExercise {
+public class FourSum extends Exercise {
 
     private final int[][] testSuite = {
             {1, 0, -1, 0, -2, 2},
@@ -86,31 +86,14 @@ public class FourSum extends LeetCodeExercise {
             }
     };
     
-    private int index;
-    private int target;
-    private ArrayList<ArrayList<Integer>> combinations;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            for (target = 0; target <= 0; target++) {
-                long start = 0;
-                
-                start = System.currentTimeMillis();
-                combinations = fourSum(testSuite[index], target);
-                
-                if (!test()) System.out.println("Failed");
-                
-                System.out.println();
-                System.out.printf("Time Cost = %d ms%n", (int) (System.currentTimeMillis() - start));
-                System.out.println("------------------------------");
-            }
-        }
+    protected void runExercise() {
+        return;
     }
     
     private ArrayList<ArrayList<Integer>> fourSum(int[] num, int target) {
@@ -161,7 +144,8 @@ public class FourSum extends LeetCodeExercise {
         return solution;
     }
     
-//    Hashset will be a nice solution if we only want to know if there exist such quadruplets.
+    // Hashset will be a nice solution if we only want to know if there exist
+    // such quadruplets.
     private static boolean fourSumLessTime(int[] num, int target) {
         if (num == null || num.length == 0) return false;
         
@@ -200,24 +184,37 @@ public class FourSum extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        boolean hasAuadruplet = fourSumLessTime(testSuite[index], target);
-        if (combinations.size() == 0 && hasAuadruplet) return false;
-        
-        System.out.print("For this set of candidates: { ");
-        for (int i = 0; i < testSuite[index].length; i++) System.out.printf("%d ", testSuite[index][i]);
-        System.out.printf("} and %d as the target, there are %d combinations: %n", target, combinations.size());
-        
-        for (ArrayList<Integer> combination : combinations) {
-            int sum = 0;
-            for (int i = 0; i < combination.size(); i++) {
-                System.out.printf("%d\t", combination.get(i));
-                sum += combination.get(i);
+        for (int index = 0; index < testSuite.length; index++) {
+            for (int target = 0; target <= 0; target++) {
+                ArrayList<ArrayList<Integer>> combinations = fourSum(testSuite[index], target);
+                
+                boolean hasAuadruplet = fourSumLessTime(testSuite[index], target);
+                if (combinations.size() == 0 && hasAuadruplet) {
+                    System.out.println("Failed");
+                    return false;
+                }
+                
+                System.out.print("For this set of candidates: { ");
+                for (int i = 0; i < testSuite[index].length; i++) System.out.printf("%d ", testSuite[index][i]);
+                System.out.printf("} and %d as the target, there are %d combinations: %n", target, combinations.size());
+                
+                for (ArrayList<Integer> combination : combinations) {
+                    int sum = 0;
+                    for (int i = 0; i < combination.size(); i++) {
+                        System.out.printf("%d\t", combination.get(i));
+                        sum += combination.get(i);
+                    }
+                    if (sum != target) {
+                        System.out.println("Failed");
+                        return false;
+                    }
+                    System.out.println();
+                }
+                
+                System.out.println("------------------------------");
             }
-            if (sum != target) return false;
-            System.out.println();
         }
         
-        System.out.println();
         return true;
     }
 

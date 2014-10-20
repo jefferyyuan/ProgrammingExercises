@@ -46,21 +46,22 @@ public class Exercise03_04 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         if (!stack1.isEmpty() || !stack2.isEmpty()) {
             System.out.println("Failed");
-            return;
+            return false;
         }
         
         int prev = Integer.MIN_VALUE;
         while (!stack3.isEmpty()) {
             if (stack3.peek() < prev) {
                 System.out.println("Failed");
-                return;
+                return false;
             }
             prev = stack3.pop();
         }
         
-        System.out.println("Success!");    
+        System.out.println("Success!");
+        return true;
     }
 }

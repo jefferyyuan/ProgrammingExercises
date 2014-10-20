@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given numRows, generate the first numRows of Pascal's triangle.
@@ -20,7 +20,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/pascals-triangle/
  */
 
-public class PascalsTriangle extends LeetCodeExercise {
+public class PascalsTriangle extends Exercise {
     private final int SIZE = 5;
     
     private ArrayList<ArrayList<Integer>> result;
@@ -31,7 +31,7 @@ public class PascalsTriangle extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         result = generate(SIZE);
         
         if (test()) System.out.println("Success");

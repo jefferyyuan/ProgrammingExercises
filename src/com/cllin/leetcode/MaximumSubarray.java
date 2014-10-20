@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Find the contiguous subarray within an array (containing at least one number) which has the largest sum.
@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/maximum-subarray/
  */
 
-public class MaximumSubarray extends LeetCodeExercise {
+public class MaximumSubarray extends Exercise {
     private final int MAXIMUM = 100;
     private final int SIZE = 1000;
     
@@ -30,7 +30,7 @@ public class MaximumSubarray extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         result = maxSubArray(array);
         test();

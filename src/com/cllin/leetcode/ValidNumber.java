@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Validate if a given string is numeric.
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/valid-number/
  */
 
-public class ValidNumber extends LeetCodeExercise {
+public class ValidNumber extends Exercise {
 
     private final String[] testSuite = {
             "0",
@@ -32,7 +32,7 @@ public class ValidNumber extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (String input : testSuite) {
             boolean isNumber = isNumber(input);
             System.out.printf("%s %s a valid number%n", input, (isNumber)? "is" : "is not");

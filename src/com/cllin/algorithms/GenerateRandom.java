@@ -78,7 +78,7 @@ public class GenerateRandom extends Exercise {
     }
     
     @Override
-    protected void test() {
+    protected boolean test() {
         final int TRIALS = 10000;
         HashMap<Integer, Integer> counts = new HashMap<Integer, Integer>();
         for (int i = 0; i < TRIALS; i++) {
@@ -92,5 +92,7 @@ public class GenerateRandom extends Exercise {
             double probability = (double) counts.get(key) / (double) TRIALS;
             System.out.printf("P(%d) = %f%n", key.intValue(), probability);
         }
+
+        return true;
     }
 }

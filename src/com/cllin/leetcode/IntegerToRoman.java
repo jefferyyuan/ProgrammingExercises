@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an integer, convert it to a Roman numeral.
@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/integer-to-roman/
  */
 
-public class IntegerToRoman extends LeetCodeExercise {
+public class IntegerToRoman extends Exercise {
     private final int SIZE = 100;
     private final int MAXIMUM = 3998;
 
@@ -26,7 +26,7 @@ public class IntegerToRoman extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         for (int n : numbers) {

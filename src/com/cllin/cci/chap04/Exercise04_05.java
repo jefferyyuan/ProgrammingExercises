@@ -82,20 +82,23 @@ public class Exercise04_05 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         ArrayList<Node> sorted = inOrderTreeWalk(tree.root, new ArrayList<Node>());
         
         for (int i = 0; i < sorted.size(); i++) {
             if (sorted.get(i).hashCode() != node.hashCode()) continue;
 
             if (i == sorted.size() - 1) {
-            System.out.printf("%s%n", (result == null)? "Success" : "Failed");
+                System.out.printf("%s%n", (result == null) ? "Success" : "Failed");
+                return result == null;
             }
             
             System.out.printf("%s%n", (sorted.get(i + 1) == result)? "Success" : "Failed");
+            return sorted.get(i + 1) == result;
         }
         
         System.out.println("Failed");
+        return false;
     }
 
 }

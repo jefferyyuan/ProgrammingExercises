@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a set of candidate numbers (C) and a target number (T), 
@@ -23,7 +23,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/combination-sum/
  */
 
-public class CombinationSum extends LeetCodeExercise {
+public class CombinationSum extends Exercise {
     private static final int[][] testSuite = new int[][]{
         {}, 
         {7, 3, 2},
@@ -33,31 +33,17 @@ public class CombinationSum extends LeetCodeExercise {
         {92, 71, 89, 74, 102, 91, 70, 119, 86, 116, 114, 106, 80, 81, 115, 99, 117, 93, 76, 77, 111, 110, 75, 104, 95, 112, 94, 73}
     };
     
-    private int index;
-    private int target;
-    private ArrayList<ArrayList<Integer>> result;
-
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 5; index < testSuite.length; index++) {
-            for (target = 310; target <= 310; target++) {
-                long start = System.nanoTime();
-                
-                result = combinationSum(testSuite[index], target);
-                if (!test()) System.out.println("Failed");
-                
-                long end = System.nanoTime();
-                System.out.println("\nTime Cost=" + (double) ((end - start) / 1000000) + "ms");
-            }
-        }
+    protected void runExercise() {
+        return;
     }
     
-//    Depth-first search. Assuming C and T are all positive.
+    // Depth-first search. Assuming C and T are all positive.
     private static ArrayList<ArrayList<Integer>> combinationSum(int[] candidates, int target) {
         if (candidates.length == 0 || target <= 0) return new ArrayList<ArrayList<Integer>>();
 
@@ -87,22 +73,32 @@ public class CombinationSum extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.print("For this set of candidates: { ");
-        for (int i = 0; i < testSuite[index].length; i++) System.out.printf("%d ", testSuite[index][i]);
-        System.out.printf("} and %d as the target, there are %d combinations: %n", target, result.size());
-        
-        for (ArrayList<Integer> combination : result) {
-            int sum = 0;
-            for (int i = 0; i < combination.size(); i++) {
-                System.out.printf("%d ", combination.get(i));
-                sum += combination.get(i);
+        for (int index = 0; index < testSuite.length; index++) {
+            for (int target = 0; target < 100; target++) {
+                ArrayList<ArrayList<Integer>> result = combinationSum(testSuite[index], target);
+                
+                System.out.print("For this set of candidates: { ");
+                for (int i = 0; i < testSuite[index].length; i++) System.out.printf("%d ", testSuite[index][i]);
+                System.out.printf("} and %d as the target, there are %d combinations: %n", target, result.size());
+                
+                for (ArrayList<Integer> combination : result) {
+                    int sum = 0;
+                    for (int i = 0; i < combination.size(); i++) {
+                        System.out.printf("%d ", combination.get(i));
+                        sum += combination.get(i);
+                    }
+                    if (sum != target) {
+                        System.out.println("Failed");
+                        return false;
+                    }
+                    System.out.println();
+                }
+                
+                System.out.println("Success");
+                return true;
             }
-            if (sum != target) return false;
-            System.out.println();
         }
-        
-        System.out.println();
+
         return true;
     }
-
 }

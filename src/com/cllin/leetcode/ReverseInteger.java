@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Reverse digits of an integer.
@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/reverse-integer/
  */
 
-public class ReverseInteger extends LeetCodeExercise {
+public class ReverseInteger extends Exercise {
     private final int MAXIMUM = (1 << 30) - 1 + (1 << 30);
     private final int SIZE = 5;
     
@@ -36,7 +36,7 @@ public class ReverseInteger extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         for(int i = 0; i < SIZE; i++){

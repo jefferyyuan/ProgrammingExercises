@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? 
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/3sum/
  */
 
-public class ThreeSum extends LeetCodeExercise {
+public class ThreeSum extends Exercise {
     
     private final int[][] testSuite = {
             {-1, 0, 1, 2, -1, -4},
@@ -25,25 +25,14 @@ public class ThreeSum extends LeetCodeExercise {
             {0, 0, 0, 0}
     };
     
-    private int index;
-    private ArrayList<ArrayList<Integer>> triplets;
-
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            long start = System.currentTimeMillis();
-            
-            triplets = threeSum(Arrays.copyOf(testSuite[index], testSuite[index].length));
-            
-            test();
-            long end = System.currentTimeMillis();
-            System.out.printf("Time Cost = %d ms%n", (int) (end - start));
-        }
+    protected void runExercise() {
+        return;
     }
     
     private ArrayList<ArrayList<Integer>> threeSum(int[] num) {
@@ -55,7 +44,7 @@ public class ThreeSum extends LeetCodeExercise {
         
         int i = 0;
         while (i <= num.length - 3) {
-//            Skip duplicated elements
+            // Skip duplicated elements
             while (i < num.length && i >= 1 && num[i] == num[i - 1]) i++;
             
             int j = i + 1;
@@ -97,20 +86,25 @@ public class ThreeSum extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.print("Given the set { ");
-        for (int n : testSuite[index]) {
-            System.out.printf("%d ", n);
-        }
-        System.out.print("}, the solution set is:\n");
-        
-        for (ArrayList<Integer> triplet : triplets) {
-            for (int n : triplet) {
+        for (int index = 0; index < testSuite.length; index++) {
+            ArrayList<ArrayList<Integer>> triplets = 
+                    threeSum(Arrays.copyOf(testSuite[index], testSuite[index].length));
+            
+            System.out.print("Given the set { ");
+            for (int n : testSuite[index]) {
                 System.out.printf("%d ", n);
             }
-            System.out.println();
+            System.out.print("}, the solution set is:\n");
+
+            for (ArrayList<Integer> triplet : triplets) {
+                for (int n : triplet) {
+                    System.out.printf("%d ", n);
+                }
+                System.out.println();
+            }
+
+            System.out.println("------------------");
         }
-        
-        System.out.println("------------------");
         
         return true;
     }

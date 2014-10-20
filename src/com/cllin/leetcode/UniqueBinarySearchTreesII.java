@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given n, generate all structurally unique BST's (binary search trees) that store values 1 ... n.
@@ -18,7 +18,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/unique-binary-search-trees-ii/
  */
 
-public class UniqueBinarySearchTreesII extends LeetCodeExercise {
+public class UniqueBinarySearchTreesII extends Exercise {
 
     private int n;
     private ArrayList<TreeNode> result;
@@ -29,7 +29,7 @@ public class UniqueBinarySearchTreesII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (n = 0; n <= 10; n++) {
             result = generateTrees(n);
             

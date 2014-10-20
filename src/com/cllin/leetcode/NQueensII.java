@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Follow up for N-Queens problem.
@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/n-queens-ii/
  */
 
-public class NQueensII extends LeetCodeExercise {
+public class NQueensII extends Exercise {
 
     private int result;
     private int N;
@@ -20,7 +20,7 @@ public class NQueensII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         for (int n = 0; n <= 10; n++) {

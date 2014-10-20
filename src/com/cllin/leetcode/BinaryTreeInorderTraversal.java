@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Stack;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
@@ -14,7 +14,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/binary-tree-preorder-traversal/
  */
 
-public class BinaryTreeInorderTraversal extends LeetCodeExercise {
+public class BinaryTreeInorderTraversal extends Exercise {
     private final int MAXIMUM = 1000;
     private final int SIZE = 1000;
     
@@ -39,7 +39,7 @@ public class BinaryTreeInorderTraversal extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         inorder = inorderTraversal(tree.root);
         preorder = preorderTraversal(tree.root);

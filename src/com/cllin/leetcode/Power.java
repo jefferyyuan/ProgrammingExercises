@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Implement pow(x, n).
@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/powx-n/
  */
 
-public class Power extends LeetCodeExercise {
+public class Power extends Exercise {
     private final int MAXIMUM = 10;
     
     private double result;
@@ -23,7 +23,7 @@ public class Power extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 0; i < 100; i++) {
             initialize();
             result = pow(1.00001, 123456);

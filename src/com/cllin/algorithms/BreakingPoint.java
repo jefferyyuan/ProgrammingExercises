@@ -49,7 +49,7 @@ public class BreakingPoint extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             breakingPoint = getBreakingPoint(testSuite[index]);
 
@@ -59,5 +59,7 @@ public class BreakingPoint extends Exercise {
             }
             System.out.printf("}, Breaking point is %d%n", breakingPoint);
         }
+
+        return true;
     }
 }

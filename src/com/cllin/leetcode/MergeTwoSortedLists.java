@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Merge two sorted linked lists and return it as a new list.
@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/merge-two-sorted-lists/
  */
 
-public class MergeTwoSortedLists extends LeetCodeExercise {
+public class MergeTwoSortedLists extends Exercise {
     private final int MAXIMUM = 1000;
     private final int SIZE = 1000;
     
@@ -62,7 +62,7 @@ public class MergeTwoSortedLists extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         list1 = mergeTwoLists(list1, list2);

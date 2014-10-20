@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Write an efficient algorithm that searches for a value in an m x n matrix. This matrix has the following properties:
@@ -22,10 +22,10 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/search-a-2d-matrix/
  */
 
-public class SearchA2DMatrix extends LeetCodeExercise {
-    private int MAXIMUM;
-    private int SIZE_X;
-    private int SIZE_Y;
+public class SearchA2DMatrix extends Exercise {
+    private final int SIZE_X = 10;
+    private final int SIZE_Y = 10;
+    private final int MAXIMUM = SIZE_X * SIZE_Y * 1;
     
     private int[][] matrix;
     private int[] reference;
@@ -55,24 +55,13 @@ public class SearchA2DMatrix extends LeetCodeExercise {
             
             lowerbound += level;
         }
+        
+        target = (int) (Math.random() * MAXIMUM);
     }
 
     @Override
-    public void run() {
-        
-        for (int i = 0; i < 10; i++) {
-            SIZE_X = 10;
-            SIZE_Y = 10;
-            MAXIMUM = SIZE_X * SIZE_Y * 1;
-            target = (int)(Math.random() * MAXIMUM);
-            
-            initialize();
-            result = searchMatrix(matrix, target);
-            
-            if (test()) System.out.println("Success");
-            else System.out.println("Failed");
-        }
-        
+    protected void runExercise() {
+        result = searchMatrix(matrix, target);
     }
     
     private boolean searchMatrix(int[][] matrix, int target) {
@@ -137,7 +126,13 @@ public class SearchA2DMatrix extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        return (Arrays.binarySearch(reference, target) >= 0) == result;
+        if ((Arrays.binarySearch(reference, target) >= 0) == result) {
+            System.out.println("Success");
+            return true;
+        }
+
+        System.out.println("Failed");
+        return false;
     }
 
 }

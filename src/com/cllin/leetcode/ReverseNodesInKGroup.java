@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a linked list, reverse the nodes of a linked list k at a time and return its modified list.
@@ -18,7 +18,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/reverse-nodes-in-k-group/ 
  */
 
-public class ReverseNodesInKGroup extends LeetCodeExercise {
+public class ReverseNodesInKGroup extends Exercise {
 
     private final int MAXIMUM = 10;
     
@@ -37,7 +37,7 @@ public class ReverseNodesInKGroup extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (K = 2; K <= MAXIMUM * 2; K++) {
             initialize();
             head = reverseKGroup(head, K);

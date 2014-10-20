@@ -54,10 +54,12 @@ public class EditString extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (String string : testSuite) {
             int distance = getDistance(string);
             System.out.printf("The minimum distance of %s is %d%n", string, distance);
         }
+
+        return true;
     }
 }

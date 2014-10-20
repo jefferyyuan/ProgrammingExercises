@@ -26,14 +26,14 @@ public class Synchronization extends Exercise {
     private class CounterWithoutSynchronization {
         private int count = 0;
         
-//        Things change after adding the keyword "synchronized" to each method,  
-//        public synchronized void increment() {
-//            count++;
-//        }
-//        
-//        public synchronized void decrement() {
-//            count--;
-//        }
+        // Things change after adding the keyword "synchronized" to each method,
+        // public synchronized void increment() {
+        //     count++;
+        // }
+        //
+        // public synchronized void decrement() {
+        //     count--;
+        // }
         
         public void increment() {
             count++;
@@ -91,7 +91,7 @@ public class Synchronization extends Exercise {
     }
 
     @Override
-    protected void test() {
-        return;
+    protected boolean test() {
+        return true;
     }
 }

@@ -58,7 +58,7 @@ public class PartialSort extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             output = partialSort(Arrays.copyOf(testSuite[index], testSuite[index].length));
 
@@ -74,5 +74,7 @@ public class PartialSort extends Exercise {
             }
             System.out.printf("}%n");
         }
+
+        return true;
     }
 }

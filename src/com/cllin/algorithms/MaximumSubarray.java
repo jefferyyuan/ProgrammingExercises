@@ -90,8 +90,9 @@ public class MaximumSubarray extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         findMaximumSubarray(numbers, 0, numbers.length - 1).printSolution();
+        return true;
     }
 
 }

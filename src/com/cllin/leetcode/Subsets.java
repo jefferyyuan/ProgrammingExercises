@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a set of distinct integers, S, return all possible subsets.
@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/subsets/
  */
 
-public class Subsets extends LeetCodeExercise {
+public class Subsets extends Exercise {
     private final int[][] testSuite = {
             {}, 
             {1}, 
@@ -33,12 +33,8 @@ public class Subsets extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
-        initialize();
-        for (index = 0; index < testSuite.length; index++) {
-            result = subsets(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     /*
@@ -62,14 +58,15 @@ public class Subsets extends LeetCodeExercise {
             while (!thisLevel.isEmpty()) {
                 ArrayList<Integer> subset = thisLevel.poll();
                 
-//                Get the maximum value of the previous level
+                // Get the maximum value of the previous level
                 int lastMax = Integer.MIN_VALUE;
                 for (int p = 0; p < subset.size(); p++) {
                     lastMax = Math.max(lastMax, subset.get(p));
                 }
                 
-//                Build a new subset by adding one new element.
-//                New elements should be larger than the maximum of the previous level
+                // Build a new subset by adding one new element.
+                // New elements should be larger than the maximum of the
+                // previous level
                 int index = 0;
                 while (index < set.length && set[index] <= lastMax) {
                     index++;
@@ -92,15 +89,22 @@ public class Subsets extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.printf("For the set [ ");
-        for (int n : testSuite[index]) System.out.printf("%d ", n);
-        System.out.printf("], the subsets are:%n\t");
-        for (ArrayList<Integer> subset : result) {
-            int size = subset.size();
-            for (int i = 0; i < size; i++) System.out.printf("%d ", subset.get(i));
-            
-            System.out.println();
+        for (index = 0; index < testSuite.length; index++) {
+            result = subsets(testSuite[index]);
+
+            System.out.printf("For the set [ ");
+            for (int n : testSuite[index])
+                System.out.printf("%d ", n);
+            System.out.printf("], the subsets are:%n\t");
+            for (ArrayList<Integer> subset : result) {
+                int size = subset.size();
+                for (int i = 0; i < size; i++)
+                    System.out.printf("%d ", subset.get(i));
+
+                System.out.println();
+            }
         }
+
         return false;
     }
 

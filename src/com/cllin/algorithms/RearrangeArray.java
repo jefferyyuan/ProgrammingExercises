@@ -55,7 +55,7 @@ public class RearrangeArray extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (int index = 0; index < testSuite.length; index++) {
             int[] result = rearrangeArray(testSuite[index]);
 
@@ -72,5 +72,7 @@ public class RearrangeArray extends Exercise {
             System.out.printf("}%n");
             System.out.println("------------------------------");
         }
+
+        return true;
     }
 }

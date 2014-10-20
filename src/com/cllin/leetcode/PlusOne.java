@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a non-negative number represented as an array of digits, plus one to the number.
@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/plus-one/
  */
 
-public class PlusOne extends LeetCodeExercise {
+public class PlusOne extends Exercise {
     private final int MAXIMUM = 10;
     
     private int LENGTH = 5;
@@ -34,7 +34,7 @@ public class PlusOne extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 0; i < 10; i++) {
             initialize();
             

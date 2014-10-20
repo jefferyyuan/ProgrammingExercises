@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a binary tree, determine if it is a valid binary search tree (BST).
@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/validate-binary-search-tree/
  */
 
-public class ValidateBinarySearchTree extends LeetCodeExercise {
+public class ValidateBinarySearchTree extends Exercise {
     private TreeNode[] testSuite = {
             null,
             new TreeNode(10),
@@ -61,7 +61,7 @@ public class ValidateBinarySearchTree extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         if (test()) System.out.println("Success");

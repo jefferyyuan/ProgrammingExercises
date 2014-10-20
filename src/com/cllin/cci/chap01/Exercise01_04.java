@@ -29,9 +29,11 @@ public class Exercise01_04 extends Exercise {
     }
 
     @Override
-    protected void test() {
-    boolean result = areAnagrams(pair.s1, pair.s2);
-    System.out.printf("%s and %s %s anagrams%n", pair.s1, pair.s2, (result)? "are" : "are not");
+    protected boolean test() {
+        boolean result = areAnagrams(pair.s1, pair.s2);
+        System.out
+                .printf("%s and %s %s anagrams%n", pair.s1, pair.s2, (result) ? "are" : "are not");
+        return true;
     }
     
     /*

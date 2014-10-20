@@ -80,7 +80,7 @@ public class PyramidOfCups extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         int count = 0;
         int levels = 1;
         System.out.printf("Capacity = {%n");
@@ -111,5 +111,7 @@ public class PyramidOfCups extends Exercise {
         System.out.printf("}, Water in the Pyramid = %f%n", amount);
         
         System.out.println("------------------------------");
+
+        return true;
     }
 }

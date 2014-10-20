@@ -57,7 +57,7 @@ public class QueueInAnInteger extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (int[] test : testSuite) {
             LinkedList<Integer> queue = new LinkedList<Integer>();
             for (int n : test) {
@@ -83,5 +83,7 @@ public class QueueInAnInteger extends Exercise {
 
             System.out.printf("%s%n", (isSuccess) ? "Success" : "Failed");
         }
+
+        return true;
     }
 }

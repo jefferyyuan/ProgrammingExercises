@@ -50,7 +50,7 @@ public class BuildMinimumSum extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         System.out.print("A = { ");
         for (int n : array) {
             System.out.printf("%d ", n);
@@ -59,5 +59,7 @@ public class BuildMinimumSum extends Exercise {
         
         System.out.printf("Minimum Sum = %d%n", sum);
         System.out.println("------------------------------");
+
+        return true;
     }
 }

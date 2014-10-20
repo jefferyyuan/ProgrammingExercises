@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Clone an undirected graph. Each node in the graph contains a label and a list of its neighbors.
@@ -23,7 +23,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/clone-graph/
  */
 
-public class CloneGraph extends LeetCodeExercise {
+public class CloneGraph extends Exercise {
     
     private UndirectedGraphNode[] testSuite = {
             null,
@@ -37,9 +37,9 @@ public class CloneGraph extends LeetCodeExercise {
 
     @Override
     public void initialize() {
-//        CASE 0
+        // CASE 0
         
-//        CASE 1
+        // CASE 1
         UndirectedGraphNode n0;
         UndirectedGraphNode n1;
         UndirectedGraphNode n2;
@@ -54,7 +54,7 @@ public class CloneGraph extends LeetCodeExercise {
         n1.neighbors.add(n2);
         n2.neighbors.add(n2);
         
-//        CASE 2
+        // CASE 2
         n0 = testSuite[2];
         n1 = new UndirectedGraphNode(1);
         n2 = new UndirectedGraphNode(2);
@@ -63,7 +63,7 @@ public class CloneGraph extends LeetCodeExercise {
         n1.neighbors.add(n2);
         n2.neighbors.add(n2);
         
-//        CASE 3
+        // CASE 3
         n0 = testSuite[3];
         
         n0.neighbors.add(n0);
@@ -71,13 +71,8 @@ public class CloneGraph extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
-        initialize();
-        
-        for (index = 0; index < testSuite.length; index++) {
-            newGraph = cloneGraph(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     /*
@@ -125,61 +120,66 @@ public class CloneGraph extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        if (testSuite[index] == null && newGraph == null) {
-            System.out.println("The graph was correctly copied");
-            return true;
-        }
-        
-        if (testSuite[index] == null || newGraph == null) {
-            System.out.println("A null graph was not correctly copied OR the new graph was falsely set to null");
-            return false;
-        }
-        
-        LinkedList<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
-        LinkedList<UndirectedGraphNode> newQueue = new LinkedList<UndirectedGraphNode>();
-        
-        ArrayList<Integer> visited = new ArrayList<Integer>();
-        ArrayList<Integer> newVisited = new ArrayList<Integer>();
-        
-        queue.add(testSuite[index]);
-        newQueue.add(newGraph);
-        
-        while (!queue.isEmpty()) {
-            UndirectedGraphNode n = queue.pop();
-            
-            if (!visited.contains(n.label)) {
-                for (UndirectedGraphNode neighbor : n.neighbors) {
-                    queue.add(neighbor);
-                }
-                visited.add(n.label);
+        for (index = 0; index < testSuite.length; index++) {
+            newGraph = cloneGraph(testSuite[index]);
+
+            if (testSuite[index] == null && newGraph == null) {
+                System.out.println("Success");
+                continue;
             }
-        }
-        
-        while (!newQueue.isEmpty()) {
-            UndirectedGraphNode n = newQueue.pop();
-            
-            if (!newVisited.contains(n.label)) {
-                for (UndirectedGraphNode neighbor : n.neighbors) {
-                    newQueue.add(neighbor);
-                }
-                newVisited.add(n.label);
-            }
-        }
-        
-        if (visited.size() != newVisited.size()) {
-            System.out.println("Wrong number of nodes were copied");
-            return false;
-        }
-        
-        int size = visited.size();
-        for (int i = 0; i < size; i++) {
-            if (visited.get(i) != newVisited.get(i)) {
-                System.out.println("The graph was not correctly copied");
+
+            if (testSuite[index] == null || newGraph == null) {
+                System.out.println("Failed");
                 return false;
             }
+
+            LinkedList<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
+            LinkedList<UndirectedGraphNode> newQueue = new LinkedList<UndirectedGraphNode>();
+
+            ArrayList<Integer> visited = new ArrayList<Integer>();
+            ArrayList<Integer> newVisited = new ArrayList<Integer>();
+
+            queue.add(testSuite[index]);
+            newQueue.add(newGraph);
+            
+            while (!queue.isEmpty()) {
+                UndirectedGraphNode n = queue.pop();
+
+                if (!visited.contains(n.label)) {
+                    for (UndirectedGraphNode neighbor : n.neighbors) {
+                        queue.add(neighbor);
+                    }
+                    visited.add(n.label);
+                }
+            }
+            
+            while (!newQueue.isEmpty()) {
+                UndirectedGraphNode n = newQueue.pop();
+
+                if (!newVisited.contains(n.label)) {
+                    for (UndirectedGraphNode neighbor : n.neighbors) {
+                        newQueue.add(neighbor);
+                    }
+                    newVisited.add(n.label);
+                }
+            }
+
+            if (visited.size() != newVisited.size()) {
+                System.out.println("Failed");
+                return false;
+            }
+
+            int size = visited.size();
+            for (int i = 0; i < size; i++) {
+                if (visited.get(i) != newVisited.get(i)) {
+                    System.out.println("Failed");
+                    return false;
+                }
+            }
+
+            System.out.println("Success");
         }
         
-        System.out.println("The graph was correctly copied");
         return true;
     }
 

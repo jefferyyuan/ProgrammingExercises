@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
@@ -12,8 +12,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
  */
 
-public class ConstructBinaryTreeFromInorderAndPostorderTraversal implements
-        LeetCodeExercise {
+public class ConstructBinaryTreeFromInorderAndPostorderTraversal extends Exercise {
 
     private final int SIZE = 10;
     
@@ -44,7 +43,7 @@ public class ConstructBinaryTreeFromInorderAndPostorderTraversal implements
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         root = buildTree(inorder, postorder);
 

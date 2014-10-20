@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
@@ -11,7 +11,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/path-sum/
  */
 
-public class PathSum extends LeetCodeExercise {
+public class PathSum extends Exercise {
     private final int MAXIMUM = 10;
     private final int SIZE = 10;
     
@@ -24,7 +24,7 @@ public class PathSum extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         for (int sum = 0; sum < 50; sum++) {
             System.out.printf("The tree %s a root-to-leaf whose sum is %d%n", 

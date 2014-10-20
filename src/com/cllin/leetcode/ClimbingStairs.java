@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * You are climbing a stair case. It takes n steps to reach to the top.
@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/climbing-stairs/
  */
 
-public class ClimbingStairs extends LeetCodeExercise {
+public class ClimbingStairs extends Exercise {
     private int levels;
     
     @Override
@@ -18,7 +18,7 @@ public class ClimbingStairs extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (levels = 0; levels <= 50; levels++) {
             int count = climbStairs(levels);
             System.out.printf("There are %d ways to climb a %d-level letter%n", count, levels);

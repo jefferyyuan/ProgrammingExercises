@@ -1,8 +1,8 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
-public class PalindromeNumber extends LeetCodeExercise {
+public class PalindromeNumber extends Exercise {
     private final int[] testSuite = {0, 1, 5566, 183, 1111, 11011};
     private boolean result;
     
@@ -12,7 +12,7 @@ public class PalindromeNumber extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         for (int n : testSuite) {

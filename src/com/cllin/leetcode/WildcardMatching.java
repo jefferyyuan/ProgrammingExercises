@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Implement wildcard pattern matching with support for '?' and '*'.
@@ -22,7 +22,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/wildcard-matching/
  */
 
-public class WildcardMatching extends LeetCodeExercise {
+public class WildcardMatching extends Exercise {
 
     private final TestCase[] testSuite = {
             new TestCase("b", "*a*"),
@@ -56,22 +56,14 @@ public class WildcardMatching extends LeetCodeExercise {
             new TestCase("mississippi", "m*issip*")
     };
     
-    private int index;
-    private boolean isMatch;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            TestCase test = testSuite[index];
-            isMatch = isMatch(test.s, test.p);
-            
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
 
     private boolean isMatch(String s, String p) {
@@ -85,19 +77,20 @@ public class WildcardMatching extends LeetCodeExercise {
                 i++;
                 j++;
             } else if (i < p.length() && p.charAt(i) == '*') {
-//                Skip consecutive asterisks
+                // Skip consecutive asterisks
                 while (i < p.length() && p.charAt(i) == '*') {
                     i++;
                 }
                 
-//                Return true if the string ends with an asterisk
+                // Return true if the string ends with an asterisk
                 if (i == p.length()) return true;
                 
                 hasAsterisk = true;
                 sI = i;
                 sJ = j;
             } else if (hasAsterisk) {
-//                If it doesn't match, go back to last asterisk, forward source string by one
+                // If it doesn't match, go back to last asterisk, forward source
+                // string by one
                 i = sI;
                 j = ++sJ;
             } else {
@@ -114,8 +107,13 @@ public class WildcardMatching extends LeetCodeExercise {
     
     @Override
     public boolean test() {
-        TestCase test = testSuite[index];
-        System.out.printf("'%s' %s '%s'%n", test.p, (isMatch)? "matches" : "doesn't match", test.s);
+        for (int index = 0; index < testSuite.length; index++) {
+            TestCase test = testSuite[index];
+            boolean isMatch = isMatch(test.s, test.p);
+            
+            System.out.printf("'%s' %s '%s'%n", test.p, 
+                    (isMatch)? "matches" : "doesn't match", test.s);
+        }
         
         return true;
     }

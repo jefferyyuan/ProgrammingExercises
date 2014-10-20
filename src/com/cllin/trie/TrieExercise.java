@@ -39,8 +39,8 @@ public class TrieExercise extends Exercise {
     }
 
     @Override
-    protected void test() {
-        return;
+    protected boolean test() {
+        return true;
     }
 
 }

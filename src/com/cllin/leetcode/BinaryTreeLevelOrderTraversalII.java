@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
@@ -14,7 +14,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/binary-tree-level-order-traversal-ii/
  */
 
-public class BinaryTreeLevelOrderTraversalII extends LeetCodeExercise {
+public class BinaryTreeLevelOrderTraversalII extends Exercise {
     private final int SIZE = 10;
     private final int MAXIMUM = 10;
     
@@ -28,7 +28,7 @@ public class BinaryTreeLevelOrderTraversalII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         result = levelOrderBottom(tree.root);
         test();

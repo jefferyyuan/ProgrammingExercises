@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Write a program to solve a Sudoku puzzle by filling the empty cells.
@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/sudoku-solver/
  */
 
-public class SudokuSolver extends LeetCodeExercise {
+public class SudokuSolver extends Exercise {
 
     private char[][][] testSuite = {
             {
@@ -28,20 +28,14 @@ public class SudokuSolver extends LeetCodeExercise {
             
     };
     
-    private int index;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            solveSudoku(testSuite[index]);
-            
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private void solveSudoku(char[][] board) {
@@ -77,7 +71,7 @@ public class SudokuSolver extends LeetCodeExercise {
         int length = board.length;
         int gridSize = (int) Math.sqrt(length);
         
-//        Check by rows and columns 
+        // Check by rows and columns
         for (int m = 0; m < length; m++) {
             if (m != i) {
                 if (board[m][j] == board[i][j]) {
@@ -92,7 +86,7 @@ public class SudokuSolver extends LeetCodeExercise {
             }                        
         }
         
-//        Check by grid
+        // Check by grid
         int startX = i / gridSize;
         int startY = j / gridSize;
         for (int m = 0; m < gridSize; m++) {
@@ -113,16 +107,20 @@ public class SudokuSolver extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.println("The solution is:");
-        
-        for (char[] col : testSuite[index]) {
-            for (char c : col) {
-                System.out.printf("%c ", c);
+        for (int index = 0; index < testSuite.length; index++) {
+            solveSudoku(testSuite[index]);
+
+            System.out.println("The solution is:");
+
+            for (char[] col : testSuite[index]) {
+                for (char c : col) {
+                    System.out.printf("%c ", c);
+                }
+                System.out.println();
             }
-            System.out.println();
+
+            System.out.println("------------------");
         }
-        
-        System.out.println("------------------");
         
         return true;
     }

@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Follow up for "Search in Rotated Sorted Array":
@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/search-in-rotated-sorted-array-ii/
  */
 
-public class SearchInRotatedSortedArrayII extends LeetCodeExercise {
+public class SearchInRotatedSortedArrayII extends Exercise {
     private final int MAXIMUM = 200;
     private final int SIZE = 100;
     
@@ -41,7 +41,7 @@ public class SearchInRotatedSortedArrayII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 0; i < 10; i++) {
             initialize();
             

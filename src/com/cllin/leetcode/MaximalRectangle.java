@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Stack;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a 2D binary matrix filled with 0's and 1's, find the largest rectangle containing all ones and return its area.
@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/maximal-rectangle/
  */
 
-public class MaximalRectangle extends LeetCodeExercise {
+public class MaximalRectangle extends Exercise {
 
     private char[][][] testSuite = {
             {{'1'}},
@@ -27,20 +27,14 @@ public class MaximalRectangle extends LeetCodeExercise {
                     {'0', '0', '0', '1', '1', '1', '1', '1', '0'}}
     };
     
-    private int index;
-    private int maximum;    
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            maximum = maximalRectangle(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private int maximalRectangle(char[][] matrix) {
@@ -50,12 +44,12 @@ public class MaximalRectangle extends LeetCodeExercise {
         int[] histogram = new int[matrix[0].length];
         
         for (int i = 0; i < matrix.length; i++) {
-//            Build histogram
+            // Build histogram
             for (int j = 0; j < matrix[0].length; j++) {
                 histogram[j] = (matrix[i][j] == '1')? histogram[j] + 1 : 0;
             }
             
-//            Applied the same thing in "Largest Rectangle In Histogram"
+            // Applied the same thing in "Largest Rectangle In Histogram"
             maximum = Math.max(maximum, getMaximum(histogram));
         }
 
@@ -95,16 +89,20 @@ public class MaximalRectangle extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.printf("The area of the maximum rectangle of the below grid is %d%n", maximum);
-        
-        for (int i = 0; i < testSuite[index].length; i++) {
-            for (int j = 0; j < testSuite[index][0].length; j++) {
-                System.out.printf("%c ", testSuite[index][i][j]);
+        for (int index = 0; index < testSuite.length; index++) {
+            int maximum = maximalRectangle(testSuite[index]);
+
+            System.out.printf("The area of the maximum rectangle of the below grid is %d%n", maximum);
+            
+            for (int i = 0; i < testSuite[index].length; i++) {
+                for (int j = 0; j < testSuite[index][0].length; j++) {
+                    System.out.printf("%c ", testSuite[index][i][j]);
+                }
+                System.out.println();
             }
-            System.out.println();
+            
+            System.out.println("------------------");
         }
-        
-        System.out.println("------------------");
         
         return true;
     }

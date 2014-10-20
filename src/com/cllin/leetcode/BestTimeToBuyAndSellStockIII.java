@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Say you have an array for which the i-th element is the price of a given stock on day i.
@@ -14,29 +14,21 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
  */
 
-public class BestTimeToBuyAndSellStockIII extends LeetCodeExercise {
+public class BestTimeToBuyAndSellStockIII extends Exercise {
     private final int[][] testSuite = {
             {1, 2},
             {2, 1},
             {1, 2, 4, 2, 5, 7, 2, 4, 9, 0}
     };
     
-    private int index;
-    private int maximumProfit;
-    
     @Override
     public void initialize() {
-//        TODO
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            initialize();
-            maximumProfit = maxProfit(testSuite[index]);
-            
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private int maxProfit(int[] prices) {
@@ -69,13 +61,17 @@ public class BestTimeToBuyAndSellStockIII extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.printf("The maximum profit from the below prices is %d%n", maximumProfit);
-        
-        System.out.print("{ ");
-        for (int price : testSuite[index]) System.out.printf("%d ", price);
-        System.out.print("}\n");
-        
-        System.out.println("------------------");
+        for (int index = 0; index < testSuite.length; index++) {
+            int maximumProfit = maxProfit(testSuite[index]);
+            System.out.printf("The maximum profit from the below prices is %d%n", maximumProfit);
+
+            System.out.print("{ ");
+            for (int price : testSuite[index])
+                System.out.printf("%d ", price);
+            System.out.print("}\n");
+
+            System.out.println("------------------");
+        }
         
         return true;
     }

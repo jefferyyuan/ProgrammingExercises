@@ -53,16 +53,16 @@ public class Exercise11_03 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         if (reference.size() != missingIntegers.size()) {
             System.out.println("Failed");
-            return;
+            return false;
         }
         
         for (int n : missingIntegers) {
             if (!reference.contains(n)) {
                 System.out.println("Failed");
-                return;    
+                return false;
             }
         }
         
@@ -72,5 +72,6 @@ public class Exercise11_03 extends Exercise {
         }
         
         System.out.println("Success!");
+        return true;
     }
 }

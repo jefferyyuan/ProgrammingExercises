@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an unsorted integer array, find the first missing positive integer.
@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/first-missing-positive/
  */
 
-public class FirstMissingPositive extends LeetCodeExercise {
+public class FirstMissingPositive extends Exercise {
     
     private final int[][] testSuite = {
             {0},
@@ -25,21 +25,15 @@ public class FirstMissingPositive extends LeetCodeExercise {
             {1, 2, 0},
             {3, 4, -1, 1}
     };
-    
-    private int index;
-    private int result;
 
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            result = firstMissingPositive(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private int firstMissingPositive(int[] array) {
@@ -59,7 +53,8 @@ public class FirstMissingPositive extends LeetCodeExercise {
             }
         }
     
-//        Starting from 1, which is saved in array[shift], iterate the array until the first non-negative number 
+        // Starting from 1, which is saved in array[shift], iterate the array
+        // until the first non-negative number
         for (int i = shift; i < length; i++) {
             if (array[i] > 0) {
                 return i - shift + 1;
@@ -69,7 +64,7 @@ public class FirstMissingPositive extends LeetCodeExercise {
         return length - shift + 1;
     }
     
-//    Move all non-positive number to the left of the array
+    // Move all non-positive number to the left of the array
     private int segregate(int[] array) {
         int shift = 0;
         
@@ -88,9 +83,13 @@ public class FirstMissingPositive extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.print("The missing positive integer of the sequence { ");
-        for (int i = 0; i < testSuite[index].length; i++) System.out.printf("%d ", testSuite[index][i]);
-        System.out.printf("} is %d%n", result);
+        for (int index = 0; index < testSuite.length; index++) {
+            int result = firstMissingPositive(testSuite[index]);
+
+            System.out.print("The missing positive integer of the sequence { ");
+            for (int i = 0; i < testSuite[index].length; i++) System.out.printf("%d ", testSuite[index][i]);
+            System.out.printf("} is %d%n", result);
+        }
         
         return true;
     }

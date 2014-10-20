@@ -5,7 +5,7 @@ import java.util.Arrays;
 import com.cllin.main.Exercise;
 
 public class Sort extends Exercise {
-    private final int MAXIMUM = 100;
+    private final int MAXIMUM = 10;
     protected final int SIZE = 10;
     protected int[] numbers = new int[SIZE];
     private int[] reference = new int[SIZE];
@@ -20,8 +20,7 @@ public class Sort extends Exercise {
     }
 
     protected void sort() {
-//      will be overriden
-    return;
+        // will be overriden
     }
 
     @Override
@@ -48,13 +47,16 @@ public class Sort extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (int i = 0; i < SIZE; i++) {
             if (numbers[i] != reference[i]) {
                 System.out.println("Failed");
-                return;
+
+                return false;
             }
         }
-        System.out.println("The sequence is sorted");    
+
+        System.out.println("The sequence is sorted");
+        return true;
     }
 }

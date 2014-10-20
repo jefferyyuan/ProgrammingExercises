@@ -107,7 +107,7 @@ public class FirstUniqueElement extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             unique = getFirstUnique(testSuite[index]);
 
@@ -125,5 +125,7 @@ public class FirstUniqueElement extends Exercise {
 
             System.out.println("------------------------------");
         }
+
+        return true;
     }
 }

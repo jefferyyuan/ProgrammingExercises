@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a sorted array of integers, find the starting and ending position of a given target value.
@@ -18,7 +18,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/search-for-a-range/
  */
 
-public class SearchForARange extends LeetCodeExercise {
+public class SearchForARange extends Exercise {
     private final int SIZE = 10;
     private final int MAXIMUM = 10;
     
@@ -39,7 +39,7 @@ public class SearchForARange extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 0; i < 100; i++) {
             initialize();
             result = searchRange(numbers, target);

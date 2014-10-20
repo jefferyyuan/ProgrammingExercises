@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given n, how many structurally unique BST's (binary search trees) that store values 1 ... n?
@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/unique-binary-search-trees/
  */
 
-public class UniqueBinarySearchTrees extends LeetCodeExercise {
+public class UniqueBinarySearchTrees extends Exercise {
 
     @Override
     public void initialize() {
@@ -25,7 +25,7 @@ public class UniqueBinarySearchTrees extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int n = 1; n <= 10; n++) {
             int num = numTrees(n);
             System.out.printf("There are %d unique binary search trees to integer 1-%d%n", num, n);

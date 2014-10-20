@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an array of strings, return all groups of strings that are anagrams.
@@ -12,27 +12,21 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/anagrams/
  */
 
-public class Anagrams extends LeetCodeExercise {
+public class Anagrams extends Exercise {
     
     private final String[][] testSuite = {
             {"army", "apple", "mary"},
             {"ape", "and", "cat"}
     };
     
-    private int index;
-    ArrayList<String> anagrams;
-
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            anagrams = anagrams(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     /*
@@ -74,15 +68,20 @@ public class Anagrams extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.print("For the strings { ");
-        for (String string : testSuite[index]) System.out.printf("%s ", string);
-        System.out.print("}, the anagram sets are:\n");
-        
-        for (String string : anagrams) {
-            System.out.printf("%s ", string);
+        for (int index = 0; index < testSuite.length; index++) {
+            ArrayList<String> anagrams = anagrams(testSuite[index]);
+
+            System.out.print("For the strings { ");
+            for (String string : testSuite[index])
+                System.out.printf("%s ", string);
+            System.out.print("}, the anagram sets are:\n");
+
+            for (String string : anagrams) {
+                System.out.printf("%s ", string);
+            }
+
+            System.out.println();
         }
-        
-        System.out.println();
         
         return true;
     }

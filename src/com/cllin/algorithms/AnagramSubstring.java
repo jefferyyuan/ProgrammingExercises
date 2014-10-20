@@ -73,7 +73,7 @@ public class AnagramSubstring extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             result = hasAnagramSubstring(testSuite[index].A, testSuite[index].B);
 
@@ -81,5 +81,7 @@ public class AnagramSubstring extends Exercise {
             System.out.printf("%s %s an anagram that is a substring of %s%n", test.A,
                     (result) ? "has" : "does not have", test.B);
         }
+
+        return true;
     }
 }

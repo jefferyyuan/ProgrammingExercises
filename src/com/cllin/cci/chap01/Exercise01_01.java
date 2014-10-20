@@ -21,7 +21,7 @@ public class Exercise01_01 extends Exercise {
     
     @Override
     protected void initialize() {
-    return;
+        return;
     }
 
     @Override
@@ -32,8 +32,10 @@ public class Exercise01_01 extends Exercise {
     }
 
     @Override
-    protected void test() {
-    System.out.printf("%s has %s characters%n", input, (isAllUnique(input))? "all unique" : "duplicate");    
+    protected boolean test() {
+        System.out.printf("%s has %s characters%n", input, 
+                (isAllUnique(input)) ? "all unique" : "duplicate");
+        return true;
     }
     
     /*

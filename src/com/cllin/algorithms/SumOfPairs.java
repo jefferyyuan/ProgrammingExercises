@@ -52,11 +52,13 @@ public class SumOfPairs extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         System.out.print("A = { ");
         for (int n : array) {
             System.out.printf("%d ", n);
         }
         System.out.printf("}, T = %d, A %s form %d pairs whose sum is %d%n", k, (hasPairs)? "can" : "cannot", array.length / 2, k);
+
+        return true;
     }
 }

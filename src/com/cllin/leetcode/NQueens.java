@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an integer n, return all distinct solutions to the n-queens puzzle.
@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/n-queens/
  */
 
-public class NQueens extends LeetCodeExercise {
+public class NQueens extends Exercise {
 
     private int N;
     private ArrayList<String[]> result;
@@ -23,7 +23,7 @@ public class NQueens extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (N = 0; N <= 5; N++) {
             result = solveNQueens(N);
             test();

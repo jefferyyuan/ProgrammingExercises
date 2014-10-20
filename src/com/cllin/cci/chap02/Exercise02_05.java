@@ -25,7 +25,7 @@ public class Exercise02_05 extends Exercise {
     protected void initialize() {
         testSuite = new LinkedList<TestCase>();
         
-//      Case 1: No cycle
+        // Case 1: No cycle
     Node dummyA = new Node();
         Node nodeA = dummyA;
         for (int i = 0; i < SIZE; i++) {
@@ -34,7 +34,7 @@ public class Exercise02_05 extends Exercise {
         }
         testSuite.add(new TestCase(dummyA.next, null));
       
-//      Case 2: Cycle
+        // Case 2: Cycle
         Node dummyB = new Node();
         Node nodeB = dummyB;
         Node cycleBeginning = null;
@@ -58,11 +58,11 @@ public class Exercise02_05 extends Exercise {
     }
 
     @Override
-    protected void test() {
-    return;
+    protected boolean test() {
+        return true;
     }
     
-//  use two pointers, a fast one and a slow one
+    // use two pointers, a fast one and a slow one
     private Node getBeginning(Node head) {
         Node a = head;
         Node b = head;

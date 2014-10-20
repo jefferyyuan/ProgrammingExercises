@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Reverse a linked list from position m to n. Do it in-place and in one-pass.
@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/reverse-linked-list-ii/
  */
 
-public class ReverseLinkedListII extends LeetCodeExercise {
+public class ReverseLinkedListII extends Exercise {
     private final TestCase[] testSuite = {
             new TestCase(0, 0, 0),
             new TestCase(5, 2, 4),
@@ -34,7 +34,7 @@ public class ReverseLinkedListII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         for (TestCase test : testSuite) {

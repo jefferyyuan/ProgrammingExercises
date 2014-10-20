@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.LinkedList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * A linked list is given such that each node contains an additional random pointer 
@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/copy-list-with-random-pointer/
  */
 
-public class CopyListWithRandomPointer extends LeetCodeExercise {
+public class CopyListWithRandomPointer extends Exercise {
     
     private RandomListNode[] testSuite = {
             null,
@@ -21,9 +21,6 @@ public class CopyListWithRandomPointer extends LeetCodeExercise {
             new RandomListNode(1),
             new RandomListNode(1),
     };
-    
-    private int index;
-    private RandomListNode newHead;
 
     @Override
     public void initialize() {
@@ -33,9 +30,9 @@ public class CopyListWithRandomPointer extends LeetCodeExercise {
         RandomListNode n4;
         RandomListNode n5;
         
-//        CASE 0: null list
+        // CASE 0: null list
         
-//        CASE 1
+        // CASE 1
         n1 = testSuite[1];
         n2 = new RandomListNode(2);
         n3 = new RandomListNode(3);
@@ -54,9 +51,9 @@ public class CopyListWithRandomPointer extends LeetCodeExercise {
         n4.random = n3;
         n5.random = n2;
         
-//        CASE 2: NODE WITH SINGLE ELEMENT
+        // CASE 2: NODE WITH SINGLE ELEMENT
         
-//        CASE 3: NODES WITH NULLRANDOM POINTERS
+        // CASE 3: NODES WITH NULLRANDOM POINTERS
         n1 = testSuite[3];
         n2 = new RandomListNode(2);
         
@@ -68,14 +65,8 @@ public class CopyListWithRandomPointer extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            initialize();
-            newHead = copyRandomList(testSuite[index]);
-            
-            if (test()) System.out.println("Success");
-            else System.out.println("Failed");
-        }
+    protected void runExercise() {
+        return;
     }
     
     private static RandomListNode copyRandomList(RandomListNode head) {
@@ -99,7 +90,7 @@ public class CopyListWithRandomPointer extends LeetCodeExercise {
             node = node.next;
         }
         
-//        Link OLD.next to NEW
+        // Link OLD.next to NEW
         node = head;
         newNode = dummyNewHead.next;
         while (node != null) {
@@ -127,7 +118,7 @@ public class CopyListWithRandomPointer extends LeetCodeExercise {
             newNode = newNode.next;
         }
         
-//        Restore the origin list
+        // Restore the origin list
         node = head;
         while (node != null) {
             node.next = originNexts.poll();
@@ -139,20 +130,32 @@ public class CopyListWithRandomPointer extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        RandomListNode node = testSuite[index];
-        RandomListNode newNode = newHead;
-        
-        while (node != null) {
-            if (node.label != newNode.label) return false;
+        for (int index = 0; index < testSuite.length; index++) {
+            RandomListNode newHead = copyRandomList(testSuite[index]);
             
-            if ((node.random == null && newNode.random != null) || (node.random != null && newNode.random == null)) return false;
-            else if (node.random == null && newNode.random == null) ;    // DO NOTHING
-            else if (node.random.label != newNode.random.label) return false;
+            RandomListNode node = testSuite[index];
+            RandomListNode newNode = newHead;
             
-            node = node.next;
-            newNode = newNode.next;
+            while (node != null) {
+                if (node.label != newNode.label)
+                    return false;
+
+                if ((node.random == null && newNode.random != null)
+                        || (node.random != null && newNode.random == null)) {
+                    System.out.println("Failed");
+                    return false;
+                } else if (node.random == null && newNode.random == null) {
+                    // do nothing
+                } else if (node.random.label != newNode.random.label) {
+                    System.out.println("Failed");
+                    return false;
+                }
+
+                node = node.next;
+                newNode = newNode.next;
+            }
         }
-        
+
         return true;
     }
 

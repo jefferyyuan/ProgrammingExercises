@@ -62,21 +62,23 @@ public class Exercise09_01 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         int size = SIZE_ACTUAL_A + SIZE_B;
         for (int i = 1; i < size; i++) {
             if(a[i] < a[i - 1]){
                 System.out.println("Failed");
-                return;
+                return false;
             }
         }
         
         for (int i = size; i < SIZE_A; i++) {
             if (a[i] != 0) {
                 System.out.println("Failed");
-                return;
+                return false;
             }
         }
+
         System.out.println("Success!");
+        return true;
     }
 }

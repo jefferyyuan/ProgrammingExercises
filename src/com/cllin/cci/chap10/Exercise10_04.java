@@ -66,8 +66,8 @@ public class Exercise10_04 extends Exercise {
     @Override
     protected void runExercise() {
         for (int i = 0; i < 1000; i++) {
-            int a = (int) (Math.random() * MAXIMUM);
-            int b = (int) (Math.random() * MAXIMUM);
+            int a = (int) (Math.random() * MAXIMUM) + 1;
+            int b = (int) (Math.random() * MAXIMUM) + 1;
 
             if (generateNegative())
                 a = -a;
@@ -94,7 +94,7 @@ public class Exercise10_04 extends Exercise {
     }
 
     @Override
-    protected void test() {
-        return;
+    protected boolean test() {
+        return true;
     }
 }

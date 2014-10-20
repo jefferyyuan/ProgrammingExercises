@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.HashMap;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an array of integers, find two numbers such that they add up to a specific target number.
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/two-sum/
  */
 
-public class TwoSum extends LeetCodeExercise {
+public class TwoSum extends Exercise {
 
     private int[][] testSuite = {
             {2, 7, 11, 15},
@@ -23,24 +23,14 @@ public class TwoSum extends LeetCodeExercise {
             {0, 4, 3, 0}
     };
     
-    private int index;
-    
-    private int target;
-    private int[] indices;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            for (target = 0; target < 10; target++) {
-                indices = twoSum(testSuite[index], target);
-                test();
-            }
-        }
+    protected void runExercise() {
+return;
     }
     
     /*
@@ -67,16 +57,22 @@ public class TwoSum extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.print("For the set { ");
-        for (int n : testSuite[index]) System.out.printf("%d ", n);
+        for (int index = 0; index < testSuite.length; index++) {
+            for (int target = 0; target < 10; target++) {
+                int[] indices = twoSum(testSuite[index], target);
 
-        if (indices[0] == indices[1]) {
-            System.out.printf("}, there is no pair whose sum is %d%n", target);
-        } else {
-            System.out.printf("}, the sum of element #%d and #%d is %d%n", indices[0], indices[1], target);
+                System.out.print("For the set { ");
+                for (int n : testSuite[index]) System.out.printf("%d ", n);
+                
+                if (indices[0] == indices[1]) {
+                    System.out.printf("}, there is no pair whose sum is %d%n", target);
+                } else {
+                    System.out.printf("}, the sum of element #%d and #%d is %d%n", indices[0], indices[1], target);
+                }
+            }
+            System.out.println("------------------------------");
         }
         
-        System.out.println("------------------------------");
         return true;
     }
 

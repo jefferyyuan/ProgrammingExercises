@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a sorted linked list, delete all duplicates such that each element appear only once.
@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/remove-duplicates-from-sorted-list/
  */
 
-public class RemoveDuplicatesFromSortedList extends LeetCodeExercise {
+public class RemoveDuplicatesFromSortedList extends Exercise {
     private final int MAXIMUM = 1000;
     private final int SIZE = 1000;
     
@@ -35,7 +35,7 @@ public class RemoveDuplicatesFromSortedList extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         deleteDuplicates(root);
         if (test()) System.out.println("Success");

@@ -65,8 +65,8 @@ public class Exercise05_02 extends Exercise {
     }
 
     @Override
-    protected void test() {
-    return;
+    protected boolean test() {
+        return true;
     }
 
 }

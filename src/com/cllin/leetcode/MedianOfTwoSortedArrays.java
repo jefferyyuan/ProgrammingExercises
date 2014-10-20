@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * There are two sorted arrays A and B of size m and n respectively. Find the median of the two sorted arrays. 
@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/median-of-two-sorted-arrays/
  */
 
-public class MedianOfTwoSortedArrays extends LeetCodeExercise {
+public class MedianOfTwoSortedArrays extends Exercise {
     
     private int MAXIMUM = 100;
     private int SIZE = 5;
@@ -35,7 +35,7 @@ public class MedianOfTwoSortedArrays extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 0; i < 10; i++) {
             initialize();
             medium = findMedianSortedArrays(A, B);

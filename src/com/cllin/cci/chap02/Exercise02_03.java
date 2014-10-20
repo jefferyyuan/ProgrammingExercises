@@ -42,10 +42,10 @@ public class Exercise02_03 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
     final int nTests = 10;
         for (int count = 0; count < nTests; count++) {
-//          get the node
+            // get the node
             int i = 0;
             int index = (int)(Math.random() * (SIZE - count - 1));
             
@@ -55,17 +55,17 @@ public class Exercise02_03 extends Exercise {
                 node = node.next;
             }
             
-//          remove node from the list and the reference
+            // remove node from the list and the reference
             remove(node);
             reference.remove(index);
             
-//          test if the result is correct
+            // test if the result is correct
             i = 0;
             node = listHead;
             while (node != null) {
                 if (node.value != reference.get(i)) {
                     System.out.println("Failed");
-                    return;
+                    return false;
                 }
                 
                 i++;
@@ -73,7 +73,8 @@ public class Exercise02_03 extends Exercise {
             }
         }
         
-        System.out.println("Success!");    
+        System.out.println("Success!");
+        return true;
     }
     
     /*

@@ -76,7 +76,7 @@ public class KthOfUnsortedArray extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (k = 1; k <= SIZE; k++) {
             if (k % 2 == 1) continue;
 
@@ -87,5 +87,7 @@ public class KthOfUnsortedArray extends Exercise {
             System.out.printf("The %dth element of the array is %d, %s%n", k, result,
                     (result == answer) ? "correct!" : "incorrect");
         }
+
+        return true;
     }
 }

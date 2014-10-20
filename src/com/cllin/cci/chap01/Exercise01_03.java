@@ -11,7 +11,7 @@ import com.cllin.main.Exercise;
 
 public class Exercise01_03 extends Exercise {
 
-//  Null string, all duplicates, no duplicates, continuous duplicates, non-continuous duplicates
+    // Null string, all duplicates, no duplicates, continuous duplicates, non-continuous duplicates
     private final String[] testSuite = {null, "zzzzz", "car", "apple", "banana"};
     private String input;
     
@@ -28,7 +28,7 @@ public class Exercise01_03 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         String output = removeDuplicates(input);
         
         if (output != null) {
@@ -36,16 +36,17 @@ public class Exercise01_03 extends Exercise {
                 for (int j = 0; j < i; j++) {
                     if (output.charAt(j) == output.charAt(i)) {
                         System.out.println("Failed");
-                        return;
+                        return false;
                     }
                 }
             }
         }
         
         System.out.printf("Origin = %s, Output = %s%n", input, output);
+        return true;
     }
     
-//  Note that in Java, we can not change characters in a string, so an extra char[] is needed
+    // Note that in Java, we can not change characters in a string, so an extra char[] is needed
     private String removeDuplicates(String string) {
         if (string == null) return null;
         char[] word = string.toCharArray();
@@ -54,13 +55,12 @@ public class Exercise01_03 extends Exercise {
         for (int i = 0; i <= tail; i++) {
             
             for (int j = i + 1; j <= tail; j++) {
-//            if there is any duplicate character, swap it with the last unique one
+                // if there is any duplicate character, swap it with the last unique one
             if (word[j] == word[i]) {
                 char temp = word[tail];
                 word[tail] = word[j];
                 word[j] = temp;
-                
-            }
+                }
             }
         }
         

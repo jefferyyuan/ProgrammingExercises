@@ -33,24 +33,25 @@ public class Exercise01_06 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         int length = matrix.length;
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < length; j++) {
                 if (reference[i][j] != matrix[j][length - i - 1]) {
                     System.out.println("Failed");
-                    return;
+                    return false;
                 }
             }
         }
         
-        System.out.println("Success!");        
+        System.out.println("Success!");
+        return true;
     }
     
     private int[][] rotate(int[][] matrix) {
         if (matrix == null) return matrix;
         
-//      Mirror the matrix diagonally
+        // Mirror the matrix diagonally
         int length = matrix.length;
         for (int i = 0; i < length; i++) {
             for (int j = i + 1; j < length; j++) {
@@ -60,7 +61,7 @@ public class Exercise01_06 extends Exercise {
             }
         }
         
-//      Mirror the matrix horizontally
+        // Mirror the matrix horizontally
         int bound = length / 2;
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < bound; j++) {

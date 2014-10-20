@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this:
@@ -17,7 +17,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/zigzag-conversion/
  */
 
-public class ZigZagConversion extends LeetCodeExercise {
+public class ZigZagConversion extends Exercise {
 
     private final TestCase[] testSuite = {
             new TestCase("PAYPALISHIRING", "PAHNAPLSIIGYIR", 3),
@@ -35,7 +35,7 @@ public class ZigZagConversion extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (index = 0; index < testSuite.length; index++) {
             TestCase test = testSuite[index];
             result = convert(test.input, test.nRows);

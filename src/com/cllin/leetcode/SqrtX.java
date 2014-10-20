@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Implement int sqrt(int x).
@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/sqrtx/
  */
 
-public class SqrtX extends LeetCodeExercise {
+public class SqrtX extends Exercise {
 
     @Override
     public void initialize() {
@@ -17,7 +17,7 @@ public class SqrtX extends LeetCodeExercise {
     }
     
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 1; i <= 2147483647 && i > 0; i *= 2) {
             int squareRoot = sqrt(i);
             System.out.printf("The square root of %d is %d%n", i, squareRoot);

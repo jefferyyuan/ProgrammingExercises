@@ -108,7 +108,7 @@ public class LongestCommonSubsequence extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (TestCase test : testSuite) {
             String string1 = test.string1;
             String string2 = test.string2;
@@ -119,6 +119,8 @@ public class LongestCommonSubsequence extends Exercise {
             System.out.printf("The Longest Common Substring is: %s%n", getLCSubstring(string1, string2));
             
             System.out.println("------------------------------");
-        }        
+        }
+
+        return true;
     }
 }

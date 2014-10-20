@@ -56,7 +56,7 @@ public class Exercise02_04 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         int solution = 0;
         int power = 1;
         Node node = output;
@@ -70,6 +70,8 @@ public class Exercise02_04 extends Exercise {
         
         System.out.printf("%s%n", 
             (solution == referenceA + referenceB)? "Success!" : "Failed");
+
+        return solution == referenceA + referenceB;
     }
     
     private Node add(Node listA, Node listB) {

@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string s, partition s such that every substring of the partition is a palindrome.
@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/palindrome-partitioning-ii/
  */
 
-public class PalindromePartitioningII extends LeetCodeExercise {
+public class PalindromePartitioningII extends Exercise {
 
     private final String[] testSuite = {
             "aab",
@@ -21,20 +21,14 @@ public class PalindromePartitioningII extends LeetCodeExercise {
             "banana"
     };
     
-    private int index;
-    private int nCuts;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            nCuts = minCut(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     /*
@@ -54,7 +48,7 @@ public class PalindromePartitioningII extends LeetCodeExercise {
         int[] partition = new int[length + 1];
         boolean[][] isPalindrome = new boolean[length][length]; 
         
-//        Naive cut
+        // Naive cut
         for (int i = 0; i <= length; i++) {
             partition[i] = length - i;
         }
@@ -74,14 +68,20 @@ public class PalindromePartitioningII extends LeetCodeExercise {
             }
         }
         
-//        1 partition requires 0 cut, 2 partitions require 1 cut, etc.
+        // 1 partition requires 0 cut, 2 partitions require 1 cut, etc.
         return partition[0] - 1;
     }
 
     @Override
     public boolean test() {
-        System.out.printf("The minimum cuts needed for a palindrome partitioning of { %s } is %d%n", testSuite[index], nCuts);
+        for (int index = 0; index < testSuite.length; index++) {
+            int nCuts = minCut(testSuite[index]);
+
+            System.out.printf(
+                    "The minimum cuts needed for a palindrome partitioning of { %s } is %d%n",
+                    testSuite[index], nCuts);
+        }
+
         return true;
     }
-
 }

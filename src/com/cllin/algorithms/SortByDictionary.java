@@ -71,7 +71,7 @@ public class SortByDictionary extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (int index = 0; index < testSuite.length; index++) {
             String output = sortByDictionary(testSuite[index].dictionary, testSuite[index].string);
 
@@ -86,5 +86,7 @@ public class SortByDictionary extends Exercise {
 
             System.out.println("------------------------------");
         }
+
+        return true;
     }
 }

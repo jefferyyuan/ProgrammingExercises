@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string S, find the longest palindromic substring in S. 
@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/longest-palindromic-substring/
  */
 
-public class LongestPalindromicSubstring extends LeetCodeExercise {
+public class LongestPalindromicSubstring extends Exercise {
 
     private String[] testSuite = {
         "ccc",
@@ -27,20 +27,14 @@ public class LongestPalindromicSubstring extends LeetCodeExercise {
         "321012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210012321001232100123210123210012321001232100123210123"
         };
     
-    private int index;
-    private String longest;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            longest = longestPalindrome(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private String longestPalindrome(String string) {
@@ -72,7 +66,12 @@ public class LongestPalindromicSubstring extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.printf("The longest palindromic substring of '%s' is '%s'%n", testSuite[index], longest);
+        for (int index = 0; index < testSuite.length; index++) {
+            String longest = longestPalindrome(testSuite[index]);
+
+            System.out.printf("The longest palindromic substring of '%s' is '%s'%n", testSuite[index], longest);
+        }
+        
         return true;
     }
 

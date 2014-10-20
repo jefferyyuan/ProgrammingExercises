@@ -83,19 +83,20 @@ public class Exercise03_05 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         if (myQueue.size() != reference.size()) {
             System.out.println("Failed");
-            return;
+            return false;
         }
         
         while (!myQueue.isEmpty()) {
             if (myQueue.peek() != reference.peek() || myQueue.remove() != reference.poll()) {
                 System.out.println("Failed");
-                return;
+                return false;
             }
         }
         
-        System.out.println("Success!");    
+        System.out.println("Success!");
+        return true;
     }
 }

@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Say you have an array for which the i-th element is the price of a given stock on day i.
@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
  */
 
-public class BestTimetoBuyandSellStockII extends LeetCodeExercise {
+public class BestTimetoBuyandSellStockII extends Exercise {
     private final int MAXIMUM = 100;
     
     private int SIZE = 100;
@@ -28,7 +28,7 @@ public class BestTimetoBuyandSellStockII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (SIZE = 2; SIZE <= 100; SIZE++) {
             initialize();
             int maximumProfit = maxProfit(prices);

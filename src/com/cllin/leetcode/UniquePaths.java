@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * A robot is located at the top-left corner of a m x n grid.
@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/unique-paths/
  */
 
-public class UniquePaths extends LeetCodeExercise {
+public class UniquePaths extends Exercise {
     private final int MAXIMUM = 10;
     
     @Override
@@ -21,7 +21,7 @@ public class UniquePaths extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 0; i < 10; i++) {
             int m = (int)(Math.random() * MAXIMUM) + 1;
             int n = (int)(Math.random() * MAXIMUM) + 1;

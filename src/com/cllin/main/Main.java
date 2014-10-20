@@ -26,7 +26,6 @@ import com.cllin.algorithms.MaximumSubarray;
 import com.cllin.algorithms.MergeContacts;
 import com.cllin.algorithms.MinimumJourneyCost;
 import com.cllin.algorithms.MinimumQueue;
-import com.cllin.algorithms.MinimumSequence;
 import com.cllin.algorithms.MinimumWindow;
 import com.cllin.algorithms.NumberOfBlocks;
 import com.cllin.algorithms.PartialSort;
@@ -135,10 +134,11 @@ import com.cllin.trie.TrieExercise;
 public class Main {
     
     public static enum Options {
-//        Operators and Java Concepts
-        Exclusive_Or, TernaryOperators, BitwiseOperation, Thread101, Synchronization, Deadlock, ExtendAndSuper, Enumeration,
+        // Operators and Java Concepts
+        Exclusive_Or, TernaryOperators, BitwiseOperation, Thread101, Synchronization, 
+        Deadlock, ExtendAndSuper, Enumeration,
         
-//        Programming Problems
+        // Programming Problems
         BreadthFirstTraversal,
         KPalindrome, 
         RodCutting, 
@@ -153,7 +153,6 @@ public class Main {
         KthOfUnsortedArray, 
         SerializeBinaryTree, 
         EditString, 
-        MinimumSequence, 
         PotsOfGold, 
         MinimumWindow, 
         SixSixPair, 
@@ -193,13 +192,13 @@ public class Main {
         AddWithoutOperators,
         FindMissing,
         
-//        Sorting
+        // Sorting
         InsertionSort, MergeSort, HeapSort, QuickSort, CountingSort, SelectionSort,
         
-//        Data Structures
+        // Data Structures
         Trie, BinarySearchTree, AVLTree, Heap, 
 
-//        Exercises from "Cracking the Coding Interview"
+        // Exercises from "Cracking the Coding Interview"
         EX19_10, EX19_08, EX19_03, EX19_01, 
         EX14_05, EX14_04, EX14_03, EX14_02,    EX14_01, 
         EX11_03, 
@@ -214,7 +213,7 @@ public class Main {
         EX02_05, EX02_04, EX02_03, EX02_02, EX02_01, 
         EX01_08, EX01_07, EX01_06, EX01_05, EX01_04, EX01_03, EX01_02, EX01_01, 
         
-//        Exercises from LeetCode
+        // Exercises from LeetCode
         MaximumDepthOfBinaryTree, 
         SingleNumber, 
         SameTree, 
@@ -372,9 +371,9 @@ public class Main {
         Options option = Options.FindMissing;
 
         switch (option) {
-/************************************************************
- * Operators and Java Concepts
- ************************************************************/
+        /************************************************************
+         * Operators and Java Concepts
+         ************************************************************/
         case Exclusive_Or:
             exercise = new ExclusiveOR();
             break;
@@ -400,9 +399,9 @@ public class Main {
             exercise = new EnumerationExercise();
             break;
         
-/************************************************************
- * Programming Problems
- ************************************************************/
+        /************************************************************
+         * Programming Exercises
+         ************************************************************/
         case BreadthFirstTraversal:
             exercise = new BreadthFirstTraversal();
             break;
@@ -444,9 +443,6 @@ public class Main {
             break;
         case EditString:
             exercise = new EditString();
-            break;
-        case MinimumSequence:
-            exercise = new MinimumSequence();
             break;
         case PotsOfGold:
             exercise = new PotsOfGold();
@@ -562,9 +558,9 @@ public class Main {
             exercise = new FindMissing();
             break;
         
-/************************************************************
- * Data Structures
- ************************************************************/
+        /************************************************************
+         * Data Structures
+         ************************************************************/
         case Trie:
             exercise = new TrieExercise();
             break;
@@ -578,9 +574,9 @@ public class Main {
             exercise = new HeapExercise();
             break;
                 
-/************************************************************
- * Sorting
- ************************************************************/                
+        /************************************************************
+         * Sorting
+         ************************************************************/
         case InsertionSort:
             exercise = new InsertionSort();
             break;
@@ -600,9 +596,9 @@ public class Main {
             exercise = new SelectionSort();
             break;
                 
-/************************************************************
- * Exercises from "Cracking the Coding Interview"
- ************************************************************/
+        /************************************************************
+         * Exercises from "Cracking the Coding Interview"
+         ************************************************************/
         case EX19_10:
             exercise = new Exercise19_10();
             break;
@@ -781,9 +777,9 @@ public class Main {
             exercise = new Exercise01_01();
             break;
                 
-/************************************************************
- * Exercises from LeetCode
- ************************************************************/
+        /************************************************************
+         * Exercises from LeetCode
+         ************************************************************/
         case MaximumDepthOfBinaryTree:
             exercise = new MaximumDepthOfBinaryTree();
             break;

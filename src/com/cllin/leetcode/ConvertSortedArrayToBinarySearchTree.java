@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.Node;
 
 /*
@@ -11,7 +11,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
  */
 
-public class ConvertSortedArrayToBinarySearchTree extends LeetCodeExercise {
+public class ConvertSortedArrayToBinarySearchTree extends Exercise {
     private final int SIZE = 1000;
     private final int MAXIMUM = 1000;
     
@@ -30,7 +30,7 @@ public class ConvertSortedArrayToBinarySearchTree extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         root = sortedArrayToBST(numbers);

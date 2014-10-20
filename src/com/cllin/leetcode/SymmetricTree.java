@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 import com.cllin.tree.BinarySearchTree;
 import com.cllin.tree.Node;
 
@@ -12,7 +12,7 @@ import com.cllin.tree.Node;
  * Source: http://oj.leetcode.com/problems/symmetric-tree/
  */
 
-public class SymmetricTree extends LeetCodeExercise {
+public class SymmetricTree extends Exercise {
     private final int MAXIMUM = 0;
     private final int SIZE = 100;
     
@@ -28,7 +28,7 @@ public class SymmetricTree extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         boolean isSymmetric = isSymmetric(tree.root);

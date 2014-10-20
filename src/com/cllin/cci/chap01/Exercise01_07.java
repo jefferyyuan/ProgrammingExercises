@@ -30,9 +30,11 @@ public class Exercise01_07 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         System.out.println("Result:");
-        printMatrix();        
+        printMatrix();
+
+        return true;
     }
 
     /*

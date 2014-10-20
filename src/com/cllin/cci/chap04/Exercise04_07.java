@@ -39,25 +39,25 @@ public class Exercise04_07 extends Exercise {
     
     @Override
     protected void initialize() {
-    tree1 = new BinarySearchTree((int)(Math.random() * MAXIMUM));
-    tree2 = new BinarySearchTree((int)(Math.random() * MAXIMUM));
-    
-    for (int i = 0; i < SIZE_1; i++) {
-        tree1.insert(new Node((int)(Math.random() * MAXIMUM), null, null, null));
-    }
-    
-    for (int i = 0; i < SIZE_2; i++) {
-        tree2.insert(new Node((int)(Math.random() * MAXIMUM), null, null, null));
-    }
+        tree1 = new BinarySearchTree((int) (Math.random() * MAXIMUM));
+        tree2 = new BinarySearchTree((int) (Math.random() * MAXIMUM));
+
+        for (int i = 0; i < SIZE_1; i++) {
+            tree1.insert(new Node((int) (Math.random() * MAXIMUM), null, null, null));
+        }
+
+        for (int i = 0; i < SIZE_2; i++) {
+            tree2.insert(new Node((int) (Math.random() * MAXIMUM), null, null, null));
+        }
     }
 
     @Override
     protected void runExercise() {
-    System.out.printf("T2 %s a subtree of T1%n", (isSubtree(tree1, tree2))? "is" : "is not");    
+        System.out.printf("T2 %s a subtree of T1%n", (isSubtree(tree1, tree2)) ? "is" : "is not");
     }
 
     @Override
-    protected void test() {
-    return;
+    protected boolean test() {
+        return true;
     }
 }

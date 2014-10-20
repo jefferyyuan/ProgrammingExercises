@@ -72,7 +72,7 @@ public class MinimumQueue extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (int[] test : testSuite) {
             Queue queue = new Queue();
 
@@ -84,5 +84,7 @@ public class MinimumQueue extends Exercise {
                 queue.pop();
             }
         }
+
+        return true;
     }
 }

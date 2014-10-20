@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a list, rotate the list to the right by k places, where k is non-negative.
@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/rotate-list/
  */
 
-public class RotateList extends LeetCodeExercise {
+public class RotateList extends Exercise {
     
     private int SIZE = 10;
     
@@ -31,7 +31,7 @@ public class RotateList extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (N = 0; N <= SIZE * 2; N++) {
             initialize();
             head = rotateRight(head, N);

@@ -47,12 +47,13 @@ public class CeilingValue extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         if (ceilingValue == Integer.MIN_VALUE) {
             System.out.printf("Cannot find any number larger than %d in the tree%n", target);
-            return;
+            return true;
         }
 
         System.out.printf("The ceiling value of %d is %d%n", target, ceilingValue);
+        return true;
     }
 }

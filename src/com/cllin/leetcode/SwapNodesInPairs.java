@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a linked list, swap every two adjacent nodes and return its head.
@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/swap-nodes-in-pairs/
  */
 
-public class SwapNodesInPairs extends LeetCodeExercise {
+public class SwapNodesInPairs extends Exercise {
     private final int SIZE = 100;
     private final int MAXIMUM = 1000;
     
@@ -37,7 +37,7 @@ public class SwapNodesInPairs extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         head = swapPairs(head);

@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/convert-sorted-list-to-binary-search-tree/
  */
 
-public class ConvertSortedListToBinarySearchTree extends LeetCodeExercise {
+public class ConvertSortedListToBinarySearchTree extends Exercise {
     private final int SIZE = 10;
     private final int MAXIMUM = 10;
     
@@ -35,7 +35,7 @@ public class ConvertSortedListToBinarySearchTree extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         root = sortedListToBST(head);
         

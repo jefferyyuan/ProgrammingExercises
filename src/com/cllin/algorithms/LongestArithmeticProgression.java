@@ -74,7 +74,7 @@ public class LongestArithmeticProgression extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         System.out.print("A = { ");
         for (int n : array) {
             System.out.printf("%d ", n);
@@ -83,5 +83,6 @@ public class LongestArithmeticProgression extends Exercise {
 
         System.out.printf("Length of the Longest Arithmetic Progression = %d%n", maximumLength);
 
+        return true;
     }
 }

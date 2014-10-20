@@ -12,7 +12,7 @@ import com.cllin.tree.Node;
 public class Exercise04_06 extends Exercise {
     private final int MAXIMUM = 1000;
     private final int SIZE = 1000;
-    
+
     private BinarySearchTree tree;
     private Node nodeA;
     private Node nodeB;
@@ -67,11 +67,12 @@ public class Exercise04_06 extends Exercise {
 
     @Override
     protected void runExercise() {
-    fcs = getFirstCommonAncestor(tree.root, nodeA, nodeB);    
+        fcs = getFirstCommonAncestor(tree.root, nodeA, nodeB);
     }
 
     @Override
-    protected void test() {
-    System.out.printf("The first common ancestor of %d and %d is %d%n", nodeA.value, nodeB.value, fcs.value);    
+    protected boolean test() {
+        System.out.printf("The first common ancestor of %d and %d is %d%n", nodeA.value, nodeB.value, fcs.value);
+        return true;
     }
 }

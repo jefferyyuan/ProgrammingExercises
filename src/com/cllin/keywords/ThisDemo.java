@@ -6,7 +6,7 @@ public class ThisDemo extends Exercise {
 
     @Override
     protected void initialize() {
-    return;
+        return;
     }
 
     @Override
@@ -21,8 +21,8 @@ public class ThisDemo extends Exercise {
     }
 
     @Override
-    protected void test() {
-    return;
+    protected boolean test() {
+        return true;
     }
     
     class House {

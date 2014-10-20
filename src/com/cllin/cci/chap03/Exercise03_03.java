@@ -114,12 +114,12 @@ public class Exercise03_03 extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         initialize();
         while (!set.isEmpty() && !reference.isEmpty()) {
             if (set.pop().hashCode() != reference.pop().hashCode()) {
                 System.out.println("Failed");
-                return;
+                return false;
             }
         }
         
@@ -134,10 +134,11 @@ public class Exercise03_03 extends Exercise {
             int hashFromReference = reference.pop().hashCode();
             if (hashFromReference != hashFromSet) {
                 System.out.println("Failed");
-                return;
+                return false;
             }
         }
         
-        System.out.println("Success!");    
+        System.out.println("Success!");
+        return true;
     }
 }

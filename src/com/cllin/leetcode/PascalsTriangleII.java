@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an index k, return the kth row of the Pascal's triangle.
@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * http://oj.leetcode.com/problems/pascals-triangle-ii/
  */
 
-public class PascalsTriangleII extends LeetCodeExercise {
+public class PascalsTriangleII extends Exercise {
     private ArrayList<Integer> result;
     private int rowIndex;
     
@@ -26,7 +26,7 @@ public class PascalsTriangleII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 0; i <= 15; i++) {
             rowIndex = i;
             result = getRow(rowIndex);

@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a sorted linked list, delete all nodes that have duplicate numbers, 
@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
  */
 
-public class RemoveDuplicatesFromSortedListII extends LeetCodeExercise {
+public class RemoveDuplicatesFromSortedListII extends Exercise {
 
     private final int MAXIMUM = 10;
     private final int SIZE = 10;
@@ -36,7 +36,7 @@ public class RemoveDuplicatesFromSortedListII extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         head = deleteDuplicates(head);
         

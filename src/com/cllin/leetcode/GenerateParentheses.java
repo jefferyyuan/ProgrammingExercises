@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given n pairs of parentheses, write a function to generate all combinations of well-formed parentheses.
@@ -10,7 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/generate-parentheses/ 
  */
 
-public class GenerateParentheses extends LeetCodeExercise {
+public class GenerateParentheses extends Exercise {
     
     private int n;
     private ArrayList<String> result;
@@ -20,7 +20,7 @@ public class GenerateParentheses extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (n = 1; n <= 5; n++) {
             result = generateParenthesis(n);
             test();

@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a collection of numbers that might contain duplicates, return all possible unique permutations.
@@ -15,7 +15,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/permutations-ii/
  */
 
-public class PermutationsII extends LeetCodeExercise {
+public class PermutationsII extends Exercise {
     private final int[][] testSuite = {
             {},
             {1},
@@ -29,15 +29,12 @@ public class PermutationsII extends LeetCodeExercise {
 
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 2; index < testSuite.length; index++) {
-            result = permuteUnique(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
 
     private ArrayList<ArrayList<Integer>> permuteUnique(int[] num) {
@@ -89,16 +86,23 @@ public class PermutationsII extends LeetCodeExercise {
     
     @Override
     public boolean test() {
-        System.out.print("For the set [ ");
-        for (int n : testSuite[index]) System.out.printf("%d ", n);
-        System.out.print("], the permutions are:\n");
-        
-        for (ArrayList<Integer> permution : result) {
-            for (int n : permution) System.out.printf("%d ", n);
-            System.out.println();
+        for (index = 2; index < testSuite.length; index++) {
+            result = permuteUnique(testSuite[index]);
+
+            System.out.print("For the set [ ");
+            for (int n : testSuite[index])
+                System.out.printf("%d ", n);
+            System.out.print("], the permutions are:\n");
+
+            for (ArrayList<Integer> permution : result) {
+                for (int n : permution)
+                    System.out.printf("%d ", n);
+                System.out.println();
+            }
+
+            System.out.println("------------------");
         }
         
-        System.out.println("------------------");
         return true;
     }
 

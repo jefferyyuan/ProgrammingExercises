@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an input string, reverse the string word by word.
@@ -20,7 +20,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/reverse-words-in-a-string/
  */
 
-public class ReverseWordsInAString extends LeetCodeExercise {
+public class ReverseWordsInAString extends Exercise {
 
     private final String[] testSuite = {
             "the sky is blue",
@@ -30,21 +30,14 @@ public class ReverseWordsInAString extends LeetCodeExercise {
             "  sup   buddy  "
     };
     
-    private int index;
-    private String reversedString;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            reversedString = reverseWords(testSuite[index]);
-            
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private String reverseWords(String string) {
@@ -52,7 +45,7 @@ public class ReverseWordsInAString extends LeetCodeExercise {
         
         int length = string.length();
 
-//        Swap characters in the entire string
+        // Swap characters in the entire string
         char[] charArray = string.toCharArray();
         for (int i = 0; i < length / 2; i++) {
             char tmp = charArray[length - 1 - i];
@@ -60,7 +53,7 @@ public class ReverseWordsInAString extends LeetCodeExercise {
             charArray[i] = tmp;
         }
         
-//        Swap characters in a word
+        // Swap characters in a word
         int i = 0;
         while (i < length) {
             int j = i + 1;
@@ -81,7 +74,7 @@ public class ReverseWordsInAString extends LeetCodeExercise {
             }
         }
         
-//        Remove redundant spaces
+        // Remove redundant spaces
         StringBuffer buffer = new StringBuffer(new String(charArray));
         for (int idx = 1; idx < buffer.length(); idx++) {
             if (buffer.charAt(idx) == ' ' && buffer.charAt(idx - 1) == ' ') {
@@ -90,7 +83,7 @@ public class ReverseWordsInAString extends LeetCodeExercise {
             }
         }
         
-//        Remove leading spaces
+        // Remove leading spaces
         while (buffer.length() >= 0 && buffer.charAt(0) == ' ') {
             buffer.deleteCharAt(0);
         }
@@ -104,7 +97,12 @@ public class ReverseWordsInAString extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.printf("%s -> %s%n", testSuite[index], reversedString);
+        for (int index = 0; index < testSuite.length; index++) {
+            String reversedString = reverseWords(testSuite[index]);
+
+            System.out.printf("%s -> %s%n", testSuite[index], reversedString);
+        }
+
         return true;
     }
 

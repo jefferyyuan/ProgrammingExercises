@@ -61,7 +61,7 @@ public class MajorityCounting extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             majority = majorityCount(testSuite[index]);
             
@@ -72,6 +72,8 @@ public class MajorityCounting extends Exercise {
 
             System.out.printf("}, Majority = %s%n",
                     (majority == -1) ? "None" : Integer.toString(majority));
-        }  
+        }
+
+        return true;
     }
 }

@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). 
@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/container-with-most-water/
  */
 
-public class ContainerWithMostWater extends LeetCodeExercise {
+public class ContainerWithMostWater extends Exercise {
     private final int MAXIMUM = 2;
     private final int SIZE = 100;
     
@@ -29,7 +29,7 @@ public class ContainerWithMostWater extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 0; i < 10; i++) {
             initialize();
             area = maxArea(height);

@@ -14,19 +14,20 @@ public class Exercise01_02 extends Exercise {
     
     @Override
     protected void initialize() {
-    return;
+        return;
     }
 
     @Override
     protected void runExercise() {
         for (String string : testSuite) {
             input = string;
-        }        
+        }
     }
 
     @Override
-    protected void test() {
-    System.out.printf("The reverse of %s is %s%n", input, getReverse(input));        
+    protected boolean test() {
+        System.out.printf("The reverse of %s is %s%n", input, getReverse(input));
+        return true;
     }
     
     private String getReverse(String string) {

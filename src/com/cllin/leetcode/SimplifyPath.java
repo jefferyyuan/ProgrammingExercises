@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.LinkedList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an absolute path for a file (Unix-style), simplify it.
@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/simplify-path/
  */
 
-public class SimplifyPath extends LeetCodeExercise {
+public class SimplifyPath extends Exercise {
 
     private final String[] testSuite = {
             "/home/",
@@ -27,20 +27,14 @@ public class SimplifyPath extends LeetCodeExercise {
             "/home/foo/.ssh/../.ssh2/authorized_keys/"
     };
     
-    private int index;
-    private String simplifiedPath;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            simplifiedPath = simplifyPath(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private String simplifyPath(String path) {
@@ -78,7 +72,13 @@ public class SimplifyPath extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.printf("The simplified path of {%s} is {%s}%n", testSuite[index], simplifiedPath);
+        for (int index = 0; index < testSuite.length; index++) {
+            String simplifiedPath = simplifyPath(testSuite[index]);
+
+            System.out.printf(
+                    "The simplified path of {%s} is {%s}%n", testSuite[index], simplifiedPath);
+        }
+
         return true;
     }
 

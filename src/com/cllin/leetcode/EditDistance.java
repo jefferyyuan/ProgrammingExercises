@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2. 
@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/edit-distance/
  */
 
-public class EditDistance extends LeetCodeExercise {
+public class EditDistance extends Exercise {
     private final TestCase[] testSuite = {
             new TestCase("", ""),
             new TestCase("a", "a"),
@@ -28,7 +28,7 @@ public class EditDistance extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (TestCase test : testSuite) {
             int distance = minDistance(test.word1, test.word2);
             System.out.printf("The edit distance between '%s' and '%s' is %d%n", test.word1, test.word2, distance);

@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Sort a linked list in O(n log n) time using constant space complexity.
@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/sort-list/
  */
 
-public class SortList extends LeetCodeExercise {
+public class SortList extends Exercise {
 
     private final int SIZE = 5;
     private final int MAXIMUM = 1000;
@@ -29,7 +29,7 @@ public class SortList extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         boolean isSuccess = true;
         
         for (int i = 0; i < 100; i++) {

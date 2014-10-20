@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a sorted array and a target value, return the index if the target is found. 
@@ -19,7 +19,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/search-insert-position/
  */
 
-public class SearchInsertPosition extends LeetCodeExercise {
+public class SearchInsertPosition extends Exercise {
     private final int MAXIMUM = 10;
     private final int SIZE = 10;
     
@@ -37,7 +37,7 @@ public class SearchInsertPosition extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         test();
     }
     

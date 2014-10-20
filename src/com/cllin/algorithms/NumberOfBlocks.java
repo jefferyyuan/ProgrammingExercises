@@ -49,7 +49,7 @@ public class NumberOfBlocks extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (TestCase t : testSuite) {
             testCase = t;
             nBlocks = getNumBlocks(t.nodes, t.head);
@@ -65,7 +65,7 @@ public class NumberOfBlocks extends Exercise {
             if (testCase.nodes.length == 0) {
                 System.out.printf("Block = { }, there is %d block%n", nBlocks);
                 System.out.println("------------------------------");
-                return;
+                return true;
             }
 
             System.out.print("Block = { ");
@@ -76,6 +76,8 @@ public class NumberOfBlocks extends Exercise {
 
             System.out.println("------------------------------");
         }
+
+        return true;
     }
     
     private class TestCase {

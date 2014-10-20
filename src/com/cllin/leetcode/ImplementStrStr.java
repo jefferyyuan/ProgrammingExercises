@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Implement strStr().
@@ -13,7 +13,7 @@ import com.cllin.main.LeetCodeExercise;
  */
 
 
-public class ImplementStrStr extends LeetCodeExercise {
+public class ImplementStrStr extends Exercise {
 
     private TestCase[] testSuite = {
         new TestCase("", ""),
@@ -31,7 +31,7 @@ public class ImplementStrStr extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (index = 0; index < testSuite.length; index++) {
             TestCase test = testSuite[index];
             subString = strStr(test.haystack, test.needle);

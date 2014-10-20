@@ -49,19 +49,18 @@ public class Exercise04_08 extends Exercise {
 
     @Override
     protected void initialize() {
-    tree = new BinarySearchTree(SIZE, MAXIMUM);    
+        tree = new BinarySearchTree(SIZE, MAXIMUM);
     }
 
     @Override
     protected void runExercise() {
-    for (int n = 10; n < 30; n++) {
-        findPath(tree.root, n, new ArrayList<Integer>());
-    }    
+        for (int n = 10; n < 30; n++) {
+            findPath(tree.root, n, new ArrayList<Integer>());
+        }
     }
 
     @Override
-    protected void test() {
-    return;
+    protected boolean test() {
+        return true;
     }
-
 }

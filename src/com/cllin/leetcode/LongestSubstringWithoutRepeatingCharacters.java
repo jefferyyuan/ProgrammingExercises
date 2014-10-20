@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string, find the length of the longest substring without repeating characters. 
@@ -10,8 +10,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/longest-substring-without-repeating-characters/
  */
 
-public class LongestSubstringWithoutRepeatingCharacters implements
-        LeetCodeExercise {
+public class LongestSubstringWithoutRepeatingCharacters extends Exercise {
 
     private final String[] testSuite = {
             "abcabcbb",
@@ -20,20 +19,14 @@ public class LongestSubstringWithoutRepeatingCharacters implements
             "wlrbbmqbhcdarzowkkyhiddqscdxrjmowfrxsjybldbefsarcbynecdyggxxpklorellnmpapqfwkhopkmco"
     };
     
-    private int index;
-    private int length;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            length = lengthOfLongestSubstring(testSuite[index]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     /*
@@ -60,7 +53,13 @@ public class LongestSubstringWithoutRepeatingCharacters implements
 
     @Override
     public boolean test() {
-        System.out.printf("The length of longest substring without repeating characters of %s is %d%n", testSuite[index], length);
+        for (int index = 0; index < testSuite.length; index++) {
+            int length = lengthOfLongestSubstring(testSuite[index]);
+            System.out.printf(
+                    "The length of longest substring without repeating characters of %s is %d%n",
+                    testSuite[index], length);
+        }
+        
         return true;
     }
 

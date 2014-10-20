@@ -79,7 +79,7 @@ public class PotsOfGold extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         System.out.print("Gold = { ");
         for (int n : pots) {
             System.out.printf("%d ", n);
@@ -109,5 +109,7 @@ public class PotsOfGold extends Exercise {
         System.out.printf("}%n");
         
         System.out.printf("Sum = %d%n", maximum);
+
+        return true;
     }
 }

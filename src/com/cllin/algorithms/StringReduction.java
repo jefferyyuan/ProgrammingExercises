@@ -60,7 +60,7 @@ public class StringReduction extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (int index = 0; index < testSuite.length; index++) {
             String output = reduceString(testSuite[index]);
 
@@ -70,5 +70,6 @@ public class StringReduction extends Exercise {
             System.out.println("------------------------------");
         }
         
+        return true;
     }
 }

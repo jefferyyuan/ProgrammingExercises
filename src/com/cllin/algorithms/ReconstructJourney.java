@@ -82,7 +82,7 @@ public class ReconstructJourney extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             route = getRoute(testSuite[index]);
 
@@ -92,5 +92,7 @@ public class ReconstructJourney extends Exercise {
             }
             System.out.println("\r\n------------------------------");
         }
+
+        return true;
     }
 }

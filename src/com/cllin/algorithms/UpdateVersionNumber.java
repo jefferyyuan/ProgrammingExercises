@@ -74,7 +74,7 @@ public class UpdateVersionNumber extends Exercise {
     }
 
     @Override
-    protected void test() {
-        return;
+    protected boolean test() {
+        return true;
     }
 }

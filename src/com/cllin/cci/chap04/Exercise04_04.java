@@ -52,11 +52,11 @@ public class Exercise04_04 extends Exercise {
 
     @Override
     protected void runExercise() {
-    nodes = getNodeByLevel();
+        nodes = getNodeByLevel();
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         LinkedList<Integer> result = new LinkedList<Integer>();
         LinkedList<Integer> reference = new LinkedList<Integer>();
         
@@ -84,6 +84,7 @@ public class Exercise04_04 extends Exercise {
         }
         
         System.out.printf("%s%n", (result.equals(reference))? "Success!" : "Failed");
+        return result.equals(reference);
     }
 
 }

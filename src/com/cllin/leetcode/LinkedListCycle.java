@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a linked list, determine if it has a cycle in it.
@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/linked-list-cycle/
  */
 
-public class LinkedListCycle extends LeetCodeExercise {
+public class LinkedListCycle extends Exercise {
     private final int SIZE = 1000 - 1;
     private final int MAXIMUM = 1000;
     private final int CYCLE_BEGINNING = 500;
@@ -42,11 +42,8 @@ public class LinkedListCycle extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
-        initialize();
-        
-        if (test()) System.out.println("Success");
-        else System.out.println("Failed");        
+    protected void runExercise() {
+        return;
     }
     
     private boolean hasCycle(ListNode head) {
@@ -60,7 +57,7 @@ public class LinkedListCycle extends LeetCodeExercise {
             b = b.next;
             
             if (a == null || b == null) return false;
-            if (a.hashCode() == b.hashCode()) return true;
+            if (a == b) return true;
         }
         
         return false;
@@ -68,9 +65,12 @@ public class LinkedListCycle extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        if (hasCycle(listA)) return false;
-        if (!hasCycle(listB)) return false;
+        if (hasCycle(listA) || !hasCycle(listB)) {
+            System.out.println("Failed");
+            return false;
+        }
         
+        System.out.println("Success");
         return true;
     }
 

@@ -195,7 +195,7 @@ public class MinimumWindow extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         for (index = 0; index < testSuite.length; index++) {
             TestCase test = testSuite[index];
             window = getMinimumWindow(test.list1, test.list2, test.list3);
@@ -224,5 +224,7 @@ public class MinimumWindow extends Exercise {
             }
             System.out.printf("}%n");
         }
+
+        return true;
     }
 }

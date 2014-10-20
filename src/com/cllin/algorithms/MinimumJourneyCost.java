@@ -99,7 +99,7 @@ public class MinimumJourneyCost extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         System.out.printf("For journey J = { ");
         for (int i = 0; i < mileages.length; i++) {
             System.out.printf("%s = %d ", reference.get(mileages[i]), mileages[i]);
@@ -115,5 +115,7 @@ public class MinimumJourneyCost extends Exercise {
             System.out.printf("    %s = %d%n", reference.get(mileages[index]), mileages[index]);
         }
         System.out.println("}");
+
+        return true;
     }
 }

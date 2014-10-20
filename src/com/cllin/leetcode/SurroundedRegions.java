@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.LinkedList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a 2D board containing 'X' and 'O', capture all regions surrounded by 'X'.
@@ -23,7 +23,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/surrounded-regions/
  */
 
-public class SurroundedRegions extends LeetCodeExercise {
+public class SurroundedRegions extends Exercise {
 
     private final char[][][] testSuite = {
             {
@@ -40,30 +40,16 @@ public class SurroundedRegions extends LeetCodeExercise {
             }
     };
     
-    private int index;
     private char[][] board;
     
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            
-            int rows = testSuite[index].length;
-            int cols = testSuite[index][0].length;
-            board = new char[rows][cols];
-            for (int i = 0; i < rows; i++) {
-                for (int j = 0; j < cols; j++) {
-                    board[i][j] = testSuite[index][i][j];
-                }
-            }
-            
-            solve(board);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private void solve(char[][] board) {
@@ -141,24 +127,38 @@ public class SurroundedRegions extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.println("Before:");
-        for (char[] row : testSuite[index]) {
-            for (char c: row) {
-                System.out.printf("%c ", c);
+        for (int index = 0; index < testSuite.length; index++) {
+
+            int rows = testSuite[index].length;
+            int cols = testSuite[index][0].length;
+            board = new char[rows][cols];
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    board[i][j] = testSuite[index][i][j];
+                }
+            }
+
+            solve(board);
+            System.out.println("Before:");
+            for (char[] row : testSuite[index]) {
+                for (char c : row) {
+                    System.out.printf("%c ", c);
+                }
+                System.out.println();
             }
             System.out.println();
-        }
-        System.out.println();
-        
-        System.out.println("After:");
-        for (char[] row : board) {
-            for (char c: row) {
-                System.out.printf("%c ", c);
+
+            System.out.println("After:");
+            for (char[] row : board) {
+                for (char c : row) {
+                    System.out.printf("%c ", c);
+                }
+                System.out.println();
             }
-            System.out.println();
+
+            System.out.println("\n------------------");
         }
-        
-        System.out.println("\n------------------");
+
         return true;
     }
 

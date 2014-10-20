@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a digit string, return all possible letter combinations that the number could represent.
@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/letter-combinations-of-a-phone-number/
  */
 
-public class LetterCombinationsOfAPhoneNumber extends LeetCodeExercise {
+public class LetterCombinationsOfAPhoneNumber extends Exercise {
     private String[] testSuite = {"","23", "5566"};
     
     private int index;
@@ -19,23 +19,19 @@ public class LetterCombinationsOfAPhoneNumber extends LeetCodeExercise {
 
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            result = letterCombinations(testSuite[index]);
-            
-            if (test()) System.out.println("Success");
-            else System.out.println("Failed");
-        }
+    protected void runExercise() {
+        return;
     }
     
-//    Classic Breadth-first search
+    // Classic Breadth-first search
     private static ArrayList<String> letterCombinations(String digits) {
         if (digits.length() == 0) {
-//            It is required to have a null String to pass the test cases of LeetCode, blah :S
+            // It is required to have a null String to pass the test cases of
+            // LeetCode, blah :S
             ArrayList<String> combinations = new ArrayList<String>();
             combinations.add(new String());
             return combinations;
@@ -95,19 +91,29 @@ public class LetterCombinationsOfAPhoneNumber extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        int expectedSize = 1;
-        String input = testSuite[index];
-        
-        if (input.length() == 0) expectedSize = 1;
-        else {
-            for (char c : input.toCharArray()) {
-                int digit  = Character.getNumericValue(c);
-                if (digit < 7 || digit == 8) expectedSize *= 3;
-                else expectedSize *= 4;
+        for (index = 0; index < testSuite.length; index++) {
+            result = letterCombinations(testSuite[index]);
+            
+            int expectedSize = 1;
+            String input = testSuite[index];
+            
+            if (input.length() == 0) expectedSize = 1;
+            else {
+                for (char c : input.toCharArray()) {
+                    int digit  = Character.getNumericValue(c);
+                    if (digit < 7 || digit == 8) expectedSize *= 3;
+                    else expectedSize *= 4;
+                }
+            }
+            if ((result.size() == expectedSize)) {
+                System.out.println("Success");
+            } else {
+                System.out.println("Failed");
+                return false;
             }
         }
         
-        return (result.size() == expectedSize);
+        return true;
     }
 
 }

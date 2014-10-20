@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Divide two integers without using multiplication, division and mod operator.
@@ -8,7 +8,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/divide-two-integers/
  */
 
-public class DivideTwoIntegers extends LeetCodeExercise {
+public class DivideTwoIntegers extends Exercise {
 
     private final int MAXIMUM = 100;
     
@@ -18,7 +18,7 @@ public class DivideTwoIntegers extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int i = 0; i < 10; i++) {
             int dividend = (int) (Math.random() * MAXIMUM * 10) - MAXIMUM * 10 / 2;
             int divisor = (int) (Math.random() * MAXIMUM) - MAXIMUM / 2;

@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given an array and a value, remove all instances of that value in place and return the new length.
@@ -9,7 +9,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/remove-element/
  */
 
-public class RemoveElement extends LeetCodeExercise {
+public class RemoveElement extends Exercise {
     private final int MAXIMUM = 1000;
     private final int SIZE = 1000;
     
@@ -30,7 +30,7 @@ public class RemoveElement extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         newLength = removeElement(array, value);

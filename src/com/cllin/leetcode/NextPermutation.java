@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Implement next permutation, which rearranges numbers into the lexicographically next greater permutation of numbers.
@@ -16,7 +16,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/next-permutation/
  */
 
-public class NextPermutation extends LeetCodeExercise {
+public class NextPermutation extends Exercise {
     private final int[][] testSuite = {
             {1, 2, 3}, 
             {3, 2, 1}, 
@@ -33,7 +33,7 @@ public class NextPermutation extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (int[] test : testSuite) {
             nextPermutation(test);
         }

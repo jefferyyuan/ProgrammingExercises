@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a collection of numbers, return all possible permutations.
@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/permutations/
  */
 
-public class Permutations extends LeetCodeExercise {
+public class Permutations extends Exercise {
     private final int SIZE = 5;
     private final int MAXIMUM = 5;
 
@@ -31,7 +31,7 @@ public class Permutations extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
 
         permutations = permute(numbers);

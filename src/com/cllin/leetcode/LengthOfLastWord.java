@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string s consists of upper/lower-case alphabets and empty space characters ' ', 
@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/length-of-last-word/
  */
 
-public class LengthOfLastWord extends LeetCodeExercise {
+public class LengthOfLastWord extends Exercise {
     private static final String[] testSuite = {"", " ", "   ","a ", " a", "  a  bc  ", "laptop", "hello world ", "how do you do?"};
     
     private int idx;
@@ -25,12 +25,8 @@ public class LengthOfLastWord extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
-        initialize();
-        for (idx = 0; idx < testSuite.length; idx++) {
-            result = lengthOfLastWord(testSuite[idx]);
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private int lengthOfLastWord(String string) {
@@ -52,8 +48,11 @@ public class LengthOfLastWord extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        System.out.printf("The length of the last word of -%s- is %d%n", testSuite[idx], result);
-        return false;
+        for (idx = 0; idx < testSuite.length; idx++) {
+            result = lengthOfLastWord(testSuite[idx]);
+            System.out.printf("The length of the last word of -%s- is %d%n", testSuite[idx], result);
+        }
+        return true;
     }
 
 }

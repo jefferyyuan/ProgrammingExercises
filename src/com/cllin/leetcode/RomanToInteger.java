@@ -3,7 +3,7 @@ package com.cllin.leetcode;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a Roman numeral, convert it to an integer.
@@ -12,7 +12,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/roman-to-integer/
  */
 
-public class RomanToInteger extends LeetCodeExercise {
+public class RomanToInteger extends Exercise {
     private ArrayList<String> testSuites;
     private ArrayList<Integer> answers;
     private ArrayList<Integer> results;
@@ -60,7 +60,7 @@ public class RomanToInteger extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         for (String string : testSuites) {

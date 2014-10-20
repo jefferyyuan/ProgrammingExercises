@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given two sorted integer arrays A and B, merge B into A as one sorted array.
@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/merge-sorted-array/
  */
 
-public class MergeSortedArray extends LeetCodeExercise {
+public class MergeSortedArray extends Exercise {
     private final int MAXIMUM = 100;
     private final int SIZE = 100;
     private final int SIZE_A = 50;
@@ -50,7 +50,7 @@ public class MergeSortedArray extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         merge(arrayA, SIZE_A, arrayB, SIZE_B);

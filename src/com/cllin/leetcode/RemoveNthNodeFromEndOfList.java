@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.ArrayList;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a linked list, remove the nth node from the end of list and return its head.
@@ -14,7 +14,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/remove-nth-node-from-end-of-list/
  */
 
-public class RemoveNthNodeFromEndOfList extends LeetCodeExercise {
+public class RemoveNthNodeFromEndOfList extends Exercise {
     private final int MAXIMUM = 100;
     private final int LENGTH = 100;
 
@@ -44,7 +44,7 @@ public class RemoveNthNodeFromEndOfList extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         initialize();
         
         head = removeNthFromEnd(head, n);

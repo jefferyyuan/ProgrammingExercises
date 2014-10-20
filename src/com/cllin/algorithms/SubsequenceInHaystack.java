@@ -72,9 +72,12 @@ public class SubsequenceInHaystack extends Exercise {
     }
 
     @Override
-    protected void test() {
+    protected boolean test() {
         int numValid = getCount(haystack, needle);
-        System.out.printf("There are %d valid substring for:%nH = %s%nN = %s", numValid, haystack, needle);        
+        System.out.printf("There are %d valid substring for:%nH = %s%nN = %s", numValid, haystack,
+                needle);
+
+        return true;
     } 
     
 }

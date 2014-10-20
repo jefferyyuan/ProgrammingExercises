@@ -1,6 +1,6 @@
 package com.cllin.leetcode;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.
@@ -11,7 +11,7 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/valid-palindrome/
  */
 
-public class ValidPalindrome extends LeetCodeExercise {
+public class ValidPalindrome extends Exercise {
     
     private final TestCase[] testSuite = {
             new TestCase(new String(), true),
@@ -28,7 +28,7 @@ public class ValidPalindrome extends LeetCodeExercise {
     }
 
     @Override
-    public void run() {
+    protected void runExercise() {
         for (TestCase test : testSuite) {
             if (isPalindrome(test.string) == test.isPalindrome) System.out.println("Success");
             else System.out.println("Failed");

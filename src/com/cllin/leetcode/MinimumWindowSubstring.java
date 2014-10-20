@@ -2,7 +2,7 @@ package com.cllin.leetcode;
 
 import java.util.Arrays;
 
-import com.cllin.main.LeetCodeExercise;
+import com.cllin.main.Exercise;
 
 /*
  * Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
@@ -19,28 +19,20 @@ import com.cllin.main.LeetCodeExercise;
  * Source: http://oj.leetcode.com/problems/minimum-window-substring/
  */
 
-public class MinimumWindowSubstring extends LeetCodeExercise {
+public class MinimumWindowSubstring extends Exercise {
 
     private final TestCase[] testSuite = {
             new TestCase("ADOBECODEBANC", "ABC")
     };
     
-    private int index;
-    private String window;
-    
     @Override
     public void initialize() {
-        // TODO Auto-generated method stub
+        return;
     }
 
     @Override
-    public void run() {
-        for (index = 0; index < testSuite.length; index++) {
-            TestCase test = testSuite[index];
-            window = minWindow(test.S, test.T);
-            
-            test();
-        }
+    protected void runExercise() {
+        return;
     }
     
     private String minWindow(String S, String T) {
@@ -53,14 +45,15 @@ public class MinimumWindowSubstring extends LeetCodeExercise {
         int minimumWindowBegin = 0;
         int minimumWindowEnd = 0;
 
-//        Build a table that stores the number of each characters t has
+        // Build a table that stores the number of each characters t has
         int[] needToFind = new int[128];
         Arrays.fill(needToFind, 0);
         for (int i = 0; i < tLength; i++) {
             needToFind[T.charAt(i)]++;
         }
 
-//        Build a table that stores the number of each characters the current window has
+        // Build a table that stores the number of each characters the current
+        // window has
         int[] hasFound = new int[128];
         Arrays.fill(hasFound, 0);
 
@@ -69,12 +62,14 @@ public class MinimumWindowSubstring extends LeetCodeExercise {
             char c = S.charAt(end);
             if (needToFind[(int) c] == 0) continue;
             
-//            Maintain the flag that indicates whether the constraint is reached
+            // Maintain the flag that indicates whether the constraint is
+            // reached
             if (++hasFound[(int) c] <= needToFind[(int) c]) validLength++;
             
-//            If the constraint is reached
+            // If the constraint is reached
             if (validLength == tLength) {
-//                Trim current window by removing unneeded characters (from the beginning)
+                // Trim current window by removing unneeded characters (from the
+                // beginning)
                 while (needToFind[(int) S.charAt(begin)] == 0 || 
                         hasFound[(int) S.charAt(begin)] > needToFind[(int) S.charAt(begin)]) {
                     if (hasFound[(int) S.charAt(begin)] > needToFind[(int) S.charAt(begin)]) {
@@ -83,7 +78,7 @@ public class MinimumWindowSubstring extends LeetCodeExercise {
                     begin++;
                 }
                 
-//                Update the minimum window if needed
+                // Update the minimum window if needed
                 int windowLength = end - begin + 1;
                 if (windowLength < minimumWindowLength) {
                     minimumWindowLength = windowLength;
@@ -98,8 +93,14 @@ public class MinimumWindowSubstring extends LeetCodeExercise {
 
     @Override
     public boolean test() {
-        TestCase test = testSuite[index];
-        System.out.printf("The minimum window of { %s } that contains characters from { %s } is { %s }%n", test.S, test.T, window);
+        for (int index = 0; index < testSuite.length; index++) {
+            TestCase test = testSuite[index];
+            String window = minWindow(test.S, test.T);
+            
+            System.out.printf(
+                    "The minimum window of { %s } that contains characters from { %s } is { %s }%n", 
+                    test.S, test.T, window);
+        }
         
         return true;
     }
